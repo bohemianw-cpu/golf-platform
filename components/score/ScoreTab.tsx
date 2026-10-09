@@ -1,0 +1,205 @@
+'use client'
+
+import React, { useState } from 'react'
+import type { ClubItem } from '@/types/golf'
+import ClubModal from './ClubModal'
+import RoundReport from './RoundReport'
+import ShotInputCard from './ShotInputCard'
+import ShotComparison from './ShotComparison'
+import ClubStatsTable from './ClubStatsTable'
+import Scorecard from './Scorecard'
+import { useChoiceDialog } from './ConfirmDialog'
+import { useRound } from '@/hooks/useRound'
+import { DEFAULT_CLUBS, sortClubs } from '@/utils/golf/clubs'
+
+// 기존 import 경로 호환 (ClubModal 등에서 './ScoreTab'으로 가져오던 것)
+export { sortClubs } from '@/utils/golf/clubs'
+
+const statLabel: React.CSSProperties = { fontSize: '11px', color: '#94a3b8', marginBottom: '4px', fontWeight: 500, whiteSpace: 'nowrap' }
+const statValue: React.CSSProperties = { fontSize: '19px', fontWeight: 'bold' }
+const statSub: React.CSSProperties = { fontSize: '10px', color: '#64748b', marginTop: '2px', whiteSpace: 'nowrap' }
+
+export default function ScoreTab() {
+  const { choose, confirm, dialog } = useChoiceDialog()
+  const [clubs, setClubs] = useState<ClubItem[]>(() => sortClubs(DEFAULT_CLUBS))
+  const [isClubModalOpen, setIsClubModalOpen] = useState(false)
+
+  const round = useRound(clubs, { choose, confirm })
+  const { completedHoles, currentHole, currentPar, currentShots, currentPrevDistance, summary, isRoundComplete, isSaving, saveError } = round
+
+  if (round.showRoundReport) {
+    return (
+      <>
+        <RoundReport
+          completedHoles={completedHoles}
+          holePars={round.holePars}
+          clubs={clubs}
+          currentCcName={round.golfClubName.trim() || undefined}
+          onBackToScore={() => round.setShowRoundReport(false)}
+          onStartNewRound={round.startNewRound}
+        />
+        {dialog}
+      </>
+    )
+  }
+
+  const { totalDiff } = summary
+  const diffText = completedHoles.length === 0 || totalDiff === 0 ? '0' : totalDiff > 0 ? `+${totalDiff}` : `${totalDiff}`
+  const previousHole = completedHoles.find((h) => h.holeNumber === currentHole - 1)
+
+  return (
+    <div style={{ padding: '16px', maxWidth: '1000px', margin: '0 auto', fontFamily: 'sans-serif' }}>
+      {/* 상단 헤더: 골프장/코스 이름 + 클럽 설정 */}
+      <div
+        style={{
+          padding: '12px',
+          backgroundColor: '#f8fafc',
+          borderRadius: '12px',
+          border: '1px solid #e2e8f0',
+          marginBottom: '12px',
+        }}
+      >
+        {/* 1줄: 골프장 이름 + 코스 */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span style={{ fontSize: '18px', flexShrink: 0 }}>⛳</span>
+          <input
+            type="text"
+            value={round.golfClubName}
+            onChange={(e) => round.setGolfClubName(e.target.value)}
+            placeholder="골프장 이름"
+            aria-label="골프장 이름"
+            style={{ flex: 1, minWidth: 0, boxSizing: 'border-box', padding: '8px 10px', borderRadius: '6px', border: '1.5px solid #047857', fontWeight: 'bold', fontSize: '13.5px', color: '#0f172a', backgroundColor: '#ffffff' }}
+          />
+          <input
+            type="text"
+            value={round.courseName}
+            onChange={(e) => round.setCourseName(e.target.value)}
+            placeholder="코스"
+            aria-label="코스"
+            style={{ width: '84px', flexShrink: 0, boxSizing: 'border-box', padding: '8px', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '13px', color: '#475569', textAlign: 'center', backgroundColor: '#ffffff' }}
+          />
+        </div>
+
+        {/* 2줄: 저장 상태 + 버튼 */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginTop: '10px' }}>
+          <span style={{ fontSize: '11px', color: '#10b981', fontWeight: 'bold', minHeight: '16px' }}>
+            {isSaving ? '● 저장중...' : ''}
+          </span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            {(round.currentRoundId || completedHoles.length > 0) && (
+              <button
+                onClick={round.resetCurrentRound}
+                disabled={isSaving}
+                title="진행 중인 라운드 삭제"
+                style={{ padding: '7px 11px', backgroundColor: '#fee2e2', color: '#dc2626', border: '1px solid #fecaca', borderRadius: '8px', fontSize: '12px', fontWeight: 'bold', cursor: isSaving ? 'not-allowed' : 'pointer', opacity: isSaving ? 0.6 : 1 }}
+              >
+                🗑️ 초기화
+              </button>
+            )}
+            <button
+              onClick={() => setIsClubModalOpen(true)}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '7px 12px', backgroundColor: '#047857', color: '#ffffff', border: 'none', borderRadius: '8px', fontSize: '12.5px', fontWeight: 'bold', cursor: 'pointer' }}
+            >
+              <span>🎒 클럽 설정</span>
+              <span style={{ backgroundColor: 'rgba(255,255,255,0.25)', padding: '1px 6px', borderRadius: '10px', fontSize: '11px' }}>{clubs.length}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* 저장 오류 배너 */}
+      {saveError && (
+        <div
+          role="alert"
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', padding: '10px 14px', marginBottom: '12px', backgroundColor: '#fef2f2', border: '1px solid #fecaca', borderRadius: '10px', color: '#b91c1c', fontSize: '12.5px' }}
+        >
+          <span>{saveError}</span>
+          <button
+            onClick={round.retrySync}
+            disabled={isSaving}
+            style={{ flexShrink: 0, padding: '6px 10px', backgroundColor: '#dc2626', color: '#ffffff', border: 'none', borderRadius: '6px', fontSize: '12px', fontWeight: 'bold', cursor: 'pointer' }}
+          >
+            다시 시도
+          </button>
+        </div>
+      )}
+
+      {/* 핵심 지표 */}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: '4px',
+          backgroundColor: '#0f172a',
+          color: '#ffffff',
+          padding: '14px 6px',
+          borderRadius: '12px',
+          marginBottom: '16px',
+          textAlign: 'center',
+          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+        }}
+      >
+        <div style={{ padding: '2px' }}>
+          <div style={statLabel}>진행 홀</div>
+          <div style={{ ...statValue, color: '#38bdf8' }}>{currentHole}H</div>
+        </div>
+        <div style={{ padding: '2px', borderLeft: '1px solid #1e293b' }}>
+          <div style={statLabel}>기준파 대비</div>
+          <div style={{ ...statValue, color: totalDiff <= 0 ? '#4ade80' : '#f87171' }}>{diffText}</div>
+        </div>
+        <div style={{ padding: '2px', borderLeft: '1px solid #1e293b' }}>
+          <div style={statLabel}>페어웨이 안착률</div>
+          <div style={{ ...statValue, color: '#34d399' }}>{summary.fwPercent}%</div>
+          <div style={statSub}>({summary.fwHit}/{summary.fwEligible})</div>
+        </div>
+        <div style={{ padding: '2px', borderLeft: '1px solid #1e293b' }}>
+          <div style={statLabel}>그린 적중률</div>
+          <div style={{ ...statValue, color: '#fbbf24' }}>{summary.girPercent}%</div>
+          <div style={statSub}>({summary.girCount}/{completedHoles.length})</div>
+        </div>
+      </div>
+
+      {/* 샷 입력 / 라운드 완료 */}
+      {isRoundComplete ? (
+        <div style={{ backgroundColor: '#ecfdf5', border: '1.5px solid #86efac', borderRadius: '12px', padding: '18px 16px', marginBottom: '20px', textAlign: 'center' }}>
+          <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#166534', marginBottom: '4px' }}>라운드가 끝났습니다</div>
+          <div style={{ fontSize: '12.5px', color: '#475569', marginBottom: '14px' }}>리포트를 보거나 마지막 홀을 수정할 수 있어요.</div>
+          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <button onClick={() => round.setShowRoundReport(true)} style={{ padding: '10px 14px', backgroundColor: '#047857', color: '#ffffff', border: 'none', borderRadius: '8px', fontSize: '13px', fontWeight: 'bold', cursor: 'pointer' }}>
+              리포트 보기
+            </button>
+            <button onClick={round.undoPreviousHole} disabled={isSaving} style={{ padding: '10px 14px', backgroundColor: '#ffffff', color: '#475569', border: '1px solid #cbd5e1', borderRadius: '8px', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
+              18번 홀 수정
+            </button>
+            <button onClick={round.startNewRound} style={{ padding: '10px 14px', backgroundColor: '#ffffff', color: '#047857', border: '1px solid #86efac', borderRadius: '8px', fontSize: '13px', fontWeight: 'bold', cursor: 'pointer' }}>
+              새 라운드 시작
+            </button>
+          </div>
+        </div>
+      ) : (
+        <ShotInputCard round={round} clubs={clubs} />
+      )}
+
+      <ShotComparison
+        previousHole={previousHole}
+        currentHole={currentHole}
+        currentPar={currentPar}
+        currentShots={currentShots}
+        currentPrevDistance={currentPrevDistance}
+      />
+
+      <ClubStatsTable clubs={clubs} clubStats={round.clubStatsAll} clubApproach={round.clubApproach} />
+
+      <Scorecard holePars={round.holePars} completedHoles={completedHoles} />
+
+      <ClubModal
+        clubs={clubs}
+        isOpen={isClubModalOpen}
+        onClose={() => setIsClubModalOpen(false)}
+        onSave={(updated) => setClubs(sortClubs(updated))}
+      />
+
+      {dialog}
+    </div>
+  )
+}
