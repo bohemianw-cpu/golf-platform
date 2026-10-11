@@ -43,15 +43,17 @@ npm run build
 
 구장 검색은 `verification_status = 'verified'`인 카탈로그 항목만 반환합니다. 공식 공개 체육시설 데이터와 관리자 보정 자료를 출처로 사용하고, 관리자 검수 후 공개해야 합니다. 공식 원본의 코스별 홀 파·거리 정보는 별도 검증 자료가 없으면 플레이 가능한 레이아웃으로 간주하지 않습니다. 구장에 OUT/IN 등 두 개 9홀 코스를 등록하면 사용자가 오늘의 코스 순서를 고를 수 있습니다.
 
-기준으로 삼는 [문화체육관광부 전국 골프장 현황](https://www.data.go.kr/data/15118920/fileData.do)은 2024-12-31 추출 CSV이며 골프장 명칭·사업자·소재지·면적·홀 수·구분을 제공하지만 홀별 파와 거리를 제공하지 않습니다. importer는 검수 전 자료를 `pending`으로만 추가하며, 구장 검수 후 코스 레이아웃을 별도로 등록해야 검색 및 라운드 기록에 사용할 수 있습니다.
+기준으로 삼는 [문화체육관광부 전국 골프장 현황](https://www.data.go.kr/data/15118920/fileData.do)은 2024-12-31 추출 CSV입니다. 원본에서 필요한 이름·지역·소재지·홀 수만 남긴 [검수 후보 541행](supabase/seed/mcst-courses-2024-12-31.csv)을 함께 보관합니다. 516개 구장으로 정규화되며, importer는 검수 전 자료를 `pending`으로만 추가합니다. 원본은 홀별 파와 거리를 제공하지 않으므로 관리자 코스 보정 후에야 플레이 기록에 사용할 수 있습니다.
 
 CSV 헤더가 자동 인식되지 않으면 정확한 헤더명을 지정하세요. 기본 실행은 미리보기이며, 실제 적재 시에만 `--apply`를 붙입니다. service role 키는 서버 비밀 환경변수로만 전달해야 합니다.
 
 ```powershell
 $env:SUPABASE_SERVICE_ROLE_KEY = '서버 비밀 키'
-node scripts/import-mcst-courses.mjs --input 'C:\data\mcst-golf-courses.csv'
-node scripts/import-mcst-courses.mjs --input 'C:\data\mcst-golf-courses.csv' --name-column '골프장명' --address-column '소재지' --holes-column '홀수' --apply
+node scripts/import-mcst-courses.mjs --input 'supabase/seed/mcst-courses-2024-12-31.csv'
+node scripts/import-mcst-courses.mjs --input 'supabase/seed/mcst-courses-2024-12-31.csv' --apply
 ```
+
+검수된 코스 보정 자료는 `{ "courses": [{ "name": "CSV의 정확한 이름", "region": "강원", "routes": [{ "route_code": "OUT", "hole_count": 9, "pars": [4,4,3,5,4,4,3,4,5], "distances_m": [380,390,150,480,360,400,170,360,490] }] }] }` 형식의 JSON으로 `scripts/import-course-corrections.mjs`에 전달합니다. 예시 숫자는 형식만 설명하며 실제 구장 레이아웃 자료가 아닙니다. 검수자가 확인한 파·거리만 입력하세요. 이 importer도 기본은 미리보기이고 저장에는 `--apply`가 필요합니다.
 
 현재 배포 DB에는 아직 검증 카탈로그가 없습니다. Golfzon 카탈로그 수집은 사용 허가 전까지 하지 않습니다.
 

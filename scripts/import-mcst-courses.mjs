@@ -37,7 +37,7 @@ function regionFromAddress(address) {
   const first = address.trim().split(/\s+/)[0] ?? ''
   return first.replace(/(특별자치도|특별자치시|특별시|광역시|도)$/u, '') || null
 }
-function sourceId(values) { return createHash('sha256').update(values.join('\u001f')).digest('hex') }
+function sourceId(value) { return createHash('sha256').update(value).digest('hex') }
 
 const raw = await readFile(inputPath, 'utf8')
 if (raw.includes('\uFFFD')) throw new Error('CSV 인코딩에 손상이 있습니다. UTF-8로 다시 저장한 파일을 사용해 주세요.')
@@ -51,10 +51,10 @@ const pickColumn = (argName, candidates, required = false) => {
   if (required && index === undefined) throw new Error(`CSV 열을 찾지 못했습니다. --${argName}에 정확한 헤더명을 지정하세요.`)
   return index
 }
-const nameColumn = pickColumn('name-column', ['골프장명', '업소명', '사업장명', '시설명', '명칭'], true)
+const nameColumn = pickColumn('name-column', ['골프장명', '이름', '업소명', '사업장명', '시설명', '명칭'], true)
 const addressColumn = pickColumn('address-column', ['소재지도로명주소', '도로명주소', '소재지주소', '소재지', '주소'])
 const regionColumn = pickColumn('region-column', ['시도', '지역', '소재지시도'])
-const holesColumn = pickColumn('holes-column', ['홀수', '총홀수', '총홀수(홀)', '홀수(홀)'])
+const holesColumn = pickColumn('holes-column', ['홀수', '총홀수', '총홀수(홀)', '홀수(홀)', '홀'])
 const sourceIdColumn = pickColumn('id-column', ['관리번호', '골프장코드', '시설코드', '고유번호', '번호'])
 const cellAt = (row, column) => column === undefined ? '' : (row[column] ?? '').trim()
 const sourceName = 'MCST 전국 골프장 현황'
