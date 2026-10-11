@@ -288,39 +288,59 @@ export default function ShotInputCard({ round: r, clubs }: Props) {
       <div
         style={{
           display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          gap: '4px 6px',
+          gap: '6px',
           backgroundColor: isOb ? '#f8fafc' : '#eff6ff',
           border: isOb ? '1.5px solid #cbd5e1' : '2px solid #60a5fa',
           borderRadius: '10px',
-          padding: '6px 8px',
+          padding: '8px 10px',
           marginBottom: '6px',
           opacity: isOb ? 0.55 : 1,
         }}
       >
-        <span style={{ fontSize: '14px', fontWeight: 'bold', color: isOb ? '#b91c1c' : '#1e3a8a', whiteSpace: 'nowrap' }}>
-          {isOb ? '📍 원위치 유지' : '　📍　남은 거리　📍'}
+        <span style={{ fontSize: '14px', fontWeight: 'bold', color: isOb ? '#b91c1c' : '#1e3a8a', whiteSpace: 'nowrap', textAlign: 'center' }}>
+          {isOb ? '📍 원위치 유지' : '📍 남은 거리 📍'}
         </span>
-        <DistanceStepper
-          value={isOb ? r.currentPrevDistance : r.remainingDistance}
-          onChange={r.changeRemaining}
-          disabled={isOb}
-          step={step}
-          onKeyDown={onKeyDownDistance}
-          name="샷 후 남은 거리"
-          emphasized
-        />
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '8px' }}>
+          <DistanceStepper
+            value={isOb ? r.currentPrevDistance : r.remainingDistance}
+            onChange={r.changeRemaining}
+            disabled={isOb}
+            step={step}
+            onKeyDown={onKeyDownDistance}
+            name="샷 후 남은 거리"
+            emphasized
+          />
+          <button
+            type="button"
+            disabled={isOb}
+            aria-pressed={r.isPinOver}
+            onClick={() => r.setIsPinOver(!r.isPinOver)}
+            style={{
+              minHeight: '36px',
+              padding: '5px 10px',
+              fontSize: '11px',
+              borderRadius: '8px',
+              border: r.isPinOver ? '1px solid #d97706' : '1px solid #93c5fd',
+              backgroundColor: r.isPinOver ? '#f59e0b' : '#ffffff',
+              color: r.isPinOver ? '#ffffff' : '#1d4ed8',
+              fontWeight: 'bold',
+              cursor: isOb ? 'not-allowed' : 'pointer',
+            }}
+          >
+            핀 오버
+          </button>
+        </div>
       </div>
 
-      {/* 계산 비거리 + 핀 오버 */}
+      {/* 계산 비거리 */}
       <div
         style={{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '8px',
+          justifyContent: 'center',
+          gap: '6px',
           backgroundColor: r.isPinOver ? '#fef3c7' : '#f0fdf4',
           border: r.isPinOver ? '1.5px solid #f59e0b' : '1.5px solid #86efac',
           borderRadius: '10px',
@@ -335,23 +355,6 @@ export default function ShotInputCard({ round: r, clubs }: Props) {
           </span>
           <span style={{ fontSize: '10.5px', color: '#64748b', whiteSpace: 'nowrap' }}>({r.selectedClub})</span>
         </div>
-        <button
-          type="button"
-          onClick={() => r.setIsPinOver(!r.isPinOver)}
-          style={{
-            flexShrink: 0,
-            padding: '5px 9px',
-            fontSize: '11px',
-            borderRadius: '8px',
-            border: r.isPinOver ? '1px solid #d97706' : '1px solid #cbd5e1',
-            backgroundColor: r.isPinOver ? '#f59e0b' : '#ffffff',
-            color: r.isPinOver ? '#ffffff' : '#64748b',
-            fontWeight: 'bold',
-            cursor: 'pointer',
-          }}
-        >
-          핀 오버
-        </button>
       </div>
 
       {/* 메인 버튼 */}
