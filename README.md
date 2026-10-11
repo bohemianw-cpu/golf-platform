@@ -27,12 +27,13 @@ npm run build
 
 ## Supabase 설정
 
-`supabase/migrations/202610120001_golf_round_foundation.sql`은 기존 `profiles`, `rounds`, `round_holes` 테이블이 있는 Supabase 프로젝트에 적용하는 추가 마이그레이션입니다. 적용 전 DB 백업과 현재 스키마 확인이 필요합니다. 이 작업에서는 저장된 원격 프로젝트를 변경하지 않았습니다.
+`supabase/migrations/20261011171754_golf_round_foundation.sql`은 기존 `profiles`, `rounds`, `round_holes` 테이블이 있는 Supabase 프로젝트에 적용하는 추가 마이그레이션입니다. 이어 `20261011173403_course_hole_tee_catalog.sql`과 `20261011230414_course_green_variants.sql`에서 홀·티·그린별 거리 카탈로그와 라운드별 그린 선택 저장을 추가합니다. 세 마이그레이션은 현재 연결된 원격 DB에 적용했습니다.
 
 이 마이그레이션은 다음을 추가합니다.
 
 - 프로필의 자기 신고 핸디캡과 비교 그룹 (`beginner`, `amateur`, `pro`)
 - 출처와 검수 상태를 추적하는 `golf_courses`, `golf_course_routes`
+- 9홀 코스별 홀 파와 실제로 제공되는 티만 저장하는 `golf_course_holes`, `golf_course_hole_tees`
 - 모든 샷을 정규화해 기기 간 복원하는 `round_shots`
 - 라운드 당시 실력 그룹, 필드/스크린 방식, 코스 구간 순서, 공개 범위
 - 친구 관계와 친구 공개 라운드/익명 그룹 통계를 위한 RLS 및 RPC
@@ -45,7 +46,7 @@ npm run build
 
 기준으로 삼는 [문화체육관광부 전국 골프장 현황](https://www.data.go.kr/data/15118920/fileData.do)은 2024-12-31 추출 CSV입니다. 원본에서 필요한 이름·지역·소재지·홀 수만 남긴 [검수 후보 541행](supabase/seed/mcst-courses-2024-12-31.csv)을 함께 보관합니다. 516개 구장으로 정규화되며, importer는 검수 전 자료를 `pending`으로만 추가합니다. 원본은 홀별 파와 거리를 제공하지 않으므로 관리자 코스 보정 후에야 플레이 기록에 사용할 수 있습니다.
 
-CSV 헤더가 자동 인식되지 않으면 정확한 헤더명을 지정하세요. 기본 실행은 미리보기이며, 실제 적재 시에만 `--apply`를 붙입니다. service role 키는 서버 비밀 환경변수로만 전달해야 합니다.
+CSV 헤더가 자동 인식되지 않으면 정확한 헤더명을 지정하세요. 기본 실행은 미리보기이며, 실제 적재 시에만 `--apply`를 붙입니다. MCP SQL 적재용 정규화 JSON을 만들 때는 `--export-json <파일>`을 사용합니다. service role 키는 서버 비밀 환경변수로만 전달해야 합니다.
 
 ```powershell
 $env:SUPABASE_SERVICE_ROLE_KEY = '서버 비밀 키'
@@ -53,9 +54,15 @@ node scripts/import-mcst-courses.mjs --input 'supabase/seed/mcst-courses-2024-12
 node scripts/import-mcst-courses.mjs --input 'supabase/seed/mcst-courses-2024-12-31.csv' --apply
 ```
 
-검수된 코스 보정 자료는 `{ "courses": [{ "name": "CSV의 정확한 이름", "region": "강원", "routes": [{ "route_code": "OUT", "hole_count": 9, "pars": [4,4,3,5,4,4,3,4,5], "distances_m": [380,390,150,480,360,400,170,360,490] }] }] }` 형식의 JSON으로 `scripts/import-course-corrections.mjs`에 전달합니다. 예시 숫자는 형식만 설명하며 실제 구장 레이아웃 자료가 아닙니다. 검수자가 확인한 파·거리만 입력하세요. 이 importer도 기본은 미리보기이고 저장에는 `--apply`가 필요합니다.
+검수 자료는 `courses[].routes[].holes[]`에 홀 번호, 파, 선택값인 핸디캡 인덱스, 실제 확인된 `tees[]`를 넣습니다. 각 티는 `tee_code`, `display_name`, `tee_color`, `distance_m`를 갖습니다. 기본 그린은 `green_code: "standard"`, `green_name: "기본 그린"`으로 처리하며, 복수 그린은 같은 티 코드로 그린별 행을 추가하고 `green_code`/`green_name`을 지정합니다. DB는 홀·티·그린 조합으로 거리를 저장합니다. 각 9홀 코스에는 공식 `source_url`이 필요합니다. 구장 전체 `hole_count`를 제공하면 1~72 범위와 레이아웃 홀 수 합계를 검사하고 해당 메타데이터도 저장합니다. 자료가 없는 블랙티는 행을 만들지 않습니다. `supabase/seed/`의 이든·감포 JSON은 공식 페이지를 대조한 검수 자료입니다. 검수 importer는 기본 미리보기이며 저장에만 `--apply`가 필요합니다.
 
-현재 배포 DB에는 아직 검증 카탈로그가 없습니다. Golfzon 카탈로그 수집은 사용 허가 전까지 하지 않습니다.
+실제 적재 스크립트는 프로젝트 URL과 서버 전용 `SUPABASE_SECRET_KEY`를 환경변수로 읽습니다. `--check`는 seed와 DB의 구장·코스·홀·티·그린 행을 비교하고, 누락·추가·거리 불일치를 오류로 표시합니다. 키는 브라우저·저장소·채팅에 넣지 마세요. 구형 `SUPABASE_SERVICE_ROLE_KEY`도 호환을 위해 읽습니다.
+
+```powershell
+node scripts/import-course-corrections.mjs --input 'supabase/seed/<verified-course>.json' --check
+```
+
+현재 배포 DB에는 MCST 목록 중 미검수 구장 491개가 `pending`으로, 골프존카운티 이든·감포·천안·안성W·선산·이글몬트·안성H·선운·진천·영암45·화랑·드래곤·오라·무주·사천·구미·경남·송도·순천·경주신라·코스카CC·클럽디 더플레이어스·클럽디 보은·클럽디 거창·에콜리안 제천 25개 구장의 검수 코스 65개(585홀, 1,839개 티·그린 거리)가 `verified`로 있습니다. 이 중 골프존카운티 [이든·밸리](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=56&golfclubSeq=70), [감포 OUT·IN](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=2&golfclubSeq=1), [천안 OUT·IN](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=16&golfclubSeq=47), [안성W OUT·IN](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=4&golfclubSeq=2), [선산 OUT·IN](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=15&golfclubSeq=28), [이글몬트](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=52&golfclubSeq=64), [안성H](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=29&golfclubSeq=53), [선운·화시](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=13&golfclubSeq=5), [진천 레이크·마운틴·밸리](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=9&golfclubSeq=4), [영암45 짐앵·카일 필립스](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=48&golfclubSeq=59), [화랑](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=26&golfclubSeq=52), [드래곤](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=34&golfclubSeq=55), [오라](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=5&golfclubSeq=3), [무주](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=30&golfclubSeq=54), [사천](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=35&golfclubSeq=56), [구미](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=24&golfclubSeq=50), [경남](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=22&golfclubSeq=49), [송도](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=54&golfclubSeq=68), [순천](https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=40&golfclubSeq=57), [경주신라 천마·화랑](https://www.sillacc.co.kr/swp/cheonma_course), [코스카CC](https://www.koscacc.kr/pagesite/course/intro.asp), [클럽디 더플레이어스](https://www.clubd.com/theplayers/course/course_south.do), [클럽디 보은](https://www.clubd.com/boeun/course/course_east.do), [클럽디 거창](https://www.clubd.co.kr/geochang/course/courseIntro.do), [에콜리안 제천](https://www.ecolian.or.kr/cotents/course/courseInfo.do?coDiv=105)의 공식 자료를 확인했습니다. 화랑은 [공식 화랑 코스](https://www.sillacc.co.kr/swp/hwarang_course) 페이지도 대조했습니다. MCST 목록은 시설 검색 후보이지, 코스나 홀 거리를 보증하지 않습니다. 에콜리안 제천 데이터는 코스별 9홀을 선택해 같은 코스를 반복하면 18홀 라운드에 사용할 수 있습니다. 각 홀의 좌·우 그린과 티별 거리는 [검수 seed](supabase/seed/ecolian-jecheon-2026-verified.json)에 보관했습니다.
 
 ## 데이터 공개와 비교
 

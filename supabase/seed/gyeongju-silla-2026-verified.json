@@ -1,0 +1,735 @@
+{
+  "courses": [
+    {
+      "name": "경주신라컨트리클럽",
+      "match_name": "경주신라C.C",
+      "region": "경북",
+      "address": "경상북도 경주시 보문로 319",
+      "aliases": [
+        "경주신라컨트리클럽",
+        "경주신라CC",
+        "경주신라 C.C"
+      ],
+      "supports_screen": false,
+      "verification_status": "verified",
+      "routes": [
+        {
+          "route_code": "CHEONMA_OUT",
+          "display_name": "천마 OUT",
+          "hole_count": 9,
+          "source_url": "https://www.sillacc.co.kr/swp/cheonma_course",
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "handicap_index": 14,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 389
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 357
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 5,
+              "handicap_index": 18,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 485
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 462
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "handicap_index": 16,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 174
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 146
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "handicap_index": 8,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 334
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 302
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "handicap_index": 4,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 357
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 338
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 5,
+              "handicap_index": 10,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 517
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 485
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 3,
+              "handicap_index": 6,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 196
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 174
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "handicap_index": 12,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 347
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 320
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "handicap_index": 2,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 398
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 375
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "CHEONMA_IN",
+          "display_name": "천마 IN",
+          "hole_count": 9,
+          "source_url": "https://www.sillacc.co.kr/swp/cheonma_course",
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "handicap_index": 1,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 384
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 347
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 5,
+              "handicap_index": 11,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 507
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 475
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "handicap_index": 15,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 366
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 329
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 3,
+              "handicap_index": 7,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 210
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 192
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "handicap_index": 5,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 425
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 402
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "handicap_index": 13,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 343
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 311
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "handicap_index": 9,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 402
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 366
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "handicap_index": 17,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 137
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 123
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 5,
+              "handicap_index": 3,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 553
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 521
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "HWARANG_OUT",
+          "display_name": "화랑 OUT",
+          "hole_count": 9,
+          "source_url": "https://www.sillacc.co.kr/swp/hwarang_course",
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "handicap_index": 11,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 339
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 319
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "handicap_index": 5,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 387
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 352
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "handicap_index": 3,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 190
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 175
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 5,
+              "handicap_index": 15,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 541
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 521
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "handicap_index": 13,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 296
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 273
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 3,
+              "handicap_index": 17,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 168
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 140
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 5,
+              "handicap_index": 9,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 504
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 484
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "handicap_index": 1,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 387
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 370
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "handicap_index": 7,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 351
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 331
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "HWARANG_IN",
+          "display_name": "화랑 IN",
+          "hole_count": 9,
+          "source_url": "https://www.sillacc.co.kr/swp/hwarang_course",
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "handicap_index": 12,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 403
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 383
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 5,
+              "handicap_index": 18,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 474
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 451
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "handicap_index": 10,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 370
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 345
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 3,
+              "handicap_index": 2,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 214
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 186
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 5,
+              "handicap_index": 4,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 567
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 543
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "handicap_index": 14,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 336
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 316
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 3,
+              "handicap_index": 16,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 149
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 124
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "handicap_index": 8,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 391
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 371
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "handicap_index": 6,
+              "tees": [
+                {
+                  "tee_code": "ct",
+                  "display_name": "C.T",
+                  "tee_color": "#475569",
+                  "distance_m": 384
+                },
+                {
+                  "tee_code": "rt",
+                  "display_name": "R.T",
+                  "tee_color": "#cbd5e1",
+                  "distance_m": 360
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

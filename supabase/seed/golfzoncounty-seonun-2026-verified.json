@@ -1,0 +1,49 @@
+{
+  "courses": [
+    {
+      "name": "골프존카운티 선운",
+      "match_name": "골프존카운티선운",
+      "region": "전북",
+      "address": "전북 고창군 아산면 운곡로 418",
+      "aliases": ["골프존카운티 선운", "선운CC", "골프존카운티선운"],
+      "supports_screen": false,
+      "verification_status": "verified",
+      "routes": [
+        {
+          "route_code": "SEONUN",
+          "display_name": "선운",
+          "hole_count": 9,
+          "source_url": "https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=13&golfclubSeq=5",
+          "holes": [
+            {"hole_number":1,"par":4,"handicap_index":6,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":329},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":309},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":270}]},
+            {"hole_number":2,"par":5,"handicap_index":11,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":503},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":471},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":416}]},
+            {"hole_number":3,"par":4,"handicap_index":13,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":336},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":317},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":271}]},
+            {"hole_number":4,"par":3,"handicap_index":14,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":180},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":147},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":111}]},
+            {"hole_number":5,"par":4,"handicap_index":5,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":406},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":382},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":312}]},
+            {"hole_number":6,"par":4,"handicap_index":9,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":336},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":314},{"tee_color":"red","tee_code":"red","display_name":"레드티","distance_m":266}]},
+            {"hole_number":7,"par":4,"handicap_index":17,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":355},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":321},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":272}]},
+            {"hole_number":8,"par":3,"handicap_index":15,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":172},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":156},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":123}]},
+            {"hole_number":9,"par":5,"handicap_index":18,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":529},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":494},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":433}]}
+          ]
+        },
+        {
+          "route_code": "HWASI",
+          "display_name": "화시",
+          "hole_count": 9,
+          "source_url": "https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=13&golfclubSeq=5",
+          "holes": [
+            {"hole_number":1,"par":4,"handicap_index":10,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":364},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":343},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":299}]},
+            {"hole_number":2,"par":3,"handicap_index":16,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":158},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":148},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":113}]},
+            {"hole_number":3,"par":5,"handicap_index":4,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":503},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":477},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":412}]},
+            {"hole_number":4,"par":4,"handicap_index":1,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":355},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":336},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":267}]},
+            {"hole_number":5,"par":4,"handicap_index":8,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":395},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":367},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":294}]},
+            {"hole_number":6,"par":4,"handicap_index":3,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":407},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":383},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":316}]},
+            {"hole_number":7,"par":3,"handicap_index":7,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":188},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":167},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":100}]},
+            {"hole_number":8,"par":5,"handicap_index":12,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":494},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":462},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":384}]},
+            {"hole_number":9,"par":4,"handicap_index":2,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"blue","distance_m":404},{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":379},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":281}]}
+          ]
+        }
+      ]
+    }
+  ]
+}

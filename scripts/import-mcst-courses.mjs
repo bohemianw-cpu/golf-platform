@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 import { createHash } from 'node:crypto'
-import { readFile } from 'node:fs/promises'
+import { readFile, writeFile } from 'node:fs/promises'
 
 const args = new Map()
 for (let index = 2; index < process.argv.length; index += 1) {
@@ -90,14 +90,20 @@ for (const row of rows) {
 const courses = [...coursesByKey.values()]
 if (!courses.length) throw new Error('가져올 골프장 행이 없습니다. --name-column과 CSV 내용을 확인하세요.')
 console.log(`가져오기 후보: ${courses.length}개. 모든 항목은 관리자 검수 전까지 pending 상태입니다.`)
+const exportPath = args.get('export-json')
+if (exportPath) {
+  await writeFile(exportPath, `${JSON.stringify(courses, null, 2)}\n`, 'utf8')
+  console.log(`정규화된 후보를 ${exportPath}에 내보냈습니다.`)
+  process.exit(0)
+}
 if (!args.has('apply')) {
   console.log('실제 저장은 하지 않았습니다. 검토 후 --apply를 추가해 실행하세요.')
   process.exit(0)
 }
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL
-const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
-if (!url || !serviceKey) throw new Error('NEXT_PUBLIC_SUPABASE_URL과 SUPABASE_SERVICE_ROLE_KEY 환경변수를 설정하세요.')
+const serviceKey = process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY
+if (!url || !serviceKey) throw new Error('NEXT_PUBLIC_SUPABASE_URL과 서버 전용 SUPABASE_SECRET_KEY 환경변수를 설정하세요.')
 const supabase = createClient(url, serviceKey, { auth: { persistSession: false, autoRefreshToken: false } })
 let inserted = 0
 let refreshedPending = 0

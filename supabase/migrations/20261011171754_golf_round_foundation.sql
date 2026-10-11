@@ -211,6 +211,87 @@ create table if not exists public.round_shots (
   recorded_at timestamptz not null default now(),
   unique (round_id, hole_number, shot_number)
 );
+
+-- Older deployments already have a compact round_shots table. Keep its legacy
+-- columns for compatibility, and backfill the normalized fields used by the app.
+alter table public.round_shots
+  add column if not exists distance_to_pin_before integer,
+  add column if not exists distance_to_pin_after integer,
+  add column if not exists shot_distance integer,
+  add column if not exists ball_lie text,
+  add column if not exists penalty smallint not null default 0,
+  add column if not exists recorded_at timestamptz not null default now();
+
+do $$
+begin
+  if exists (
+    select 1 from information_schema.columns
+    where table_schema = 'public' and table_name = 'round_shots' and column_name = 'remaining_dist'
+  ) and exists (
+    select 1 from information_schema.columns
+    where table_schema = 'public' and table_name = 'round_shots' and column_name = 'shot_dist'
+  ) and exists (
+    select 1 from information_schema.columns
+    where table_schema = 'public' and table_name = 'round_shots' and column_name = 'lie'
+  ) then
+    execute $backfill$
+      update public.round_shots
+      set distance_to_pin_before = greatest(0, least(remaining_dist, 800)),
+          distance_to_pin_after = greatest(0, least(remaining_dist - shot_dist, 800)),
+          shot_distance = greatest(0, least(shot_dist, 800)),
+          ball_lie = case lie
+            when '티잉그라운드' then '티'
+            when '홀컵' then '홀아웃'
+            when '홀아웃' then '홀아웃'
+            when '티' then '티'
+            when '페어웨이' then '페어웨이'
+            when '러프' then '러프'
+            when '벙커' then '벙커'
+            when '그린' then '그린'
+            when '해저드' then '해저드'
+            when 'OB' then 'OB'
+            when '해저드티' then '해저드티'
+            when 'OB티' then 'OB티'
+            else '러프'
+          end
+      where distance_to_pin_before is null
+         or distance_to_pin_after is null
+         or shot_distance is null
+         or ball_lie is null
+    $backfill$;
+  end if;
+end;
+$$;
+
+alter table public.round_shots
+  alter column distance_to_pin_before set not null,
+  alter column distance_to_pin_after set not null,
+  alter column shot_distance set not null,
+  alter column ball_lie set not null;
+
+do $$
+begin
+  if not exists (select 1 from pg_constraint where conrelid = 'public.round_shots'::regclass and conname = 'round_shots_distance_before_range') then
+    alter table public.round_shots add constraint round_shots_distance_before_range
+      check (distance_to_pin_before between 0 and 800);
+  end if;
+  if not exists (select 1 from pg_constraint where conrelid = 'public.round_shots'::regclass and conname = 'round_shots_distance_after_range') then
+    alter table public.round_shots add constraint round_shots_distance_after_range
+      check (distance_to_pin_after between 0 and 800);
+  end if;
+  if not exists (select 1 from pg_constraint where conrelid = 'public.round_shots'::regclass and conname = 'round_shots_shot_distance_range') then
+    alter table public.round_shots add constraint round_shots_shot_distance_range
+      check (shot_distance between 0 and 800);
+  end if;
+  if not exists (select 1 from pg_constraint where conrelid = 'public.round_shots'::regclass and conname = 'round_shots_ball_lie_allowed') then
+    alter table public.round_shots add constraint round_shots_ball_lie_allowed
+      check (ball_lie in ('티', '페어웨이', '러프', '벙커', '그린', '해저드', 'OB', '해저드티', 'OB티', '홀아웃'));
+  end if;
+end;
+$$;
+
+create unique index if not exists round_shots_round_hole_shot_uidx
+  on public.round_shots (round_id, hole_number, shot_number);
 create index if not exists round_shots_round_hole_idx
   on public.round_shots (round_id, hole_number, shot_number);
 

@@ -1,0 +1,66 @@
+{
+  "courses": [
+    {
+      "name": "코스카 컨트리클럽",
+      "match_name": "코스카cc",
+      "region": "충북",
+      "address": "충북 음성군 음성읍 동음로 318",
+      "aliases": ["코스카CC", "코스카 컨트리클럽", "코스카 골프클럽"],
+      "supports_screen": false,
+      "verification_status": "verified",
+      "routes": [
+        {
+          "route_code": "MAPLE",
+          "display_name": "메이플",
+          "hole_count": 9,
+          "source_url": "https://www.koscacc.kr/pagesite/course/intro.asp",
+          "holes": [
+            {"hole_number":1,"par":4,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":402},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":381},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":358},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":332}]},
+            {"hole_number":2,"par":5,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":509},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":492},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":466},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":418}]},
+            {"hole_number":3,"par":3,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":176},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":158},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":136},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":100}]},
+            {"hole_number":4,"par":4,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":401},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":353},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":316},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":289}]},
+            {"hole_number":5,"par":5,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":470},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":447},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":419},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":389}]},
+            {"hole_number":6,"par":4,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":341},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":326},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":306},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":285}]},
+            {"hole_number":7,"par":4,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":332},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":310},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":288},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":254}]},
+            {"hole_number":8,"par":3,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":176},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":159},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":139},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":86}]},
+            {"hole_number":9,"par":4,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":384},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":356},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":328},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":304}]}
+          ]
+        },
+        {
+          "route_code": "LILY",
+          "display_name": "릴리",
+          "hole_count": 9,
+          "source_url": "https://www.koscacc.kr/pagesite/course/intro.asp",
+          "holes": [
+            {"hole_number":1,"par":4,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":338},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":318},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":312},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":259}]},
+            {"hole_number":2,"par":5,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":468},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":447},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":420},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":368}]},
+            {"hole_number":3,"par":4,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":394},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":374},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":353},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":311}]},
+            {"hole_number":4,"par":3,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":181},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":159},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":128},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":106}]},
+            {"hole_number":5,"par":5,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":484},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":489},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":440},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":385}]},
+            {"hole_number":6,"par":4,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":400},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":375},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":352},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":310}]},
+            {"hole_number":7,"par":4,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":332},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":312},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":292},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":228}]},
+            {"hole_number":8,"par":3,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":222},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":201},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":168},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":137}]},
+            {"hole_number":9,"par":4,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":380},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":361},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":345},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":287}]}
+          ]
+        },
+        {
+          "route_code": "PINE",
+          "display_name": "파인",
+          "hole_count": 9,
+          "source_url": "https://www.koscacc.kr/pagesite/course/intro.asp",
+          "holes": [
+            {"hole_number":1,"par":4,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":396},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":370},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":350},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":315}]},
+            {"hole_number":2,"par":4,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":337},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":314},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":287},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":263}]},
+            {"hole_number":3,"par":5,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":511},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":487},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":463},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":406}]},
+            {"hole_number":4,"par":3,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":191},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":168},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":152},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":100}]},
+            {"hole_number":5,"par":5,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":508},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":485},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":456},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":435}]},
+            {"hole_number":6,"par":4,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":328},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":304},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":281},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":226}]},
+            {"hole_number":7,"par":4,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":391},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":368},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":336},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":201}]},
+            {"hole_number":8,"par":3,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":156},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":137},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":117},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":93}]},
+            {"hole_number":9,"par":4,"tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#202124","distance_m":306},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":288},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":261},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":218}]}
+          ]
+        }
+      ]
+    }
+  ]
+}

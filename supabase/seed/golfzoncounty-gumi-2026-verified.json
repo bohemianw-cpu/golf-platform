@@ -1,0 +1,35 @@
+{
+  "courses": [{
+    "name": "골프존카운티 구미",
+    "match_name": "골프존카운티구미",
+    "region": "경북",
+    "address": "경북 구미시 산동읍 강동로 953-74",
+    "aliases": ["골프존카운티 구미", "골프존카운티구미", "구미CC"],
+    "supports_screen": false,
+    "verification_status": "verified",
+    "routes": [
+      {"route_code":"OUT","display_name":"OUT","hole_count":9,"source_url":"https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=24&golfclubSeq=50","holes":[
+        {"hole_number":1,"par":5,"handicap_index":4,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":380},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":338}]},
+        {"hole_number":2,"par":4,"handicap_index":7,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":320},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":305}]},
+        {"hole_number":3,"par":3,"handicap_index":3,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":130},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":100}]},
+        {"hole_number":4,"par":5,"handicap_index":2,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":440},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":355}]},
+        {"hole_number":5,"par":4,"handicap_index":5,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":292},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":225}]},
+        {"hole_number":6,"par":3,"handicap_index":9,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":90},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":90}]},
+        {"hole_number":7,"par":4,"handicap_index":6,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":265},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":215}]},
+        {"hole_number":8,"par":5,"handicap_index":1,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":400},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":340}]},
+        {"hole_number":9,"par":3,"handicap_index":8,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":130},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":110}]}
+      ]},
+      {"route_code":"IN","display_name":"IN","hole_count":9,"source_url":"https://www.golfzoncounty.com/golfclub/courseDtl?courseSeq=23&golfclubSeq=50","holes":[
+        {"hole_number":1,"par":4,"handicap_index":5,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":280},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":265}]},
+        {"hole_number":2,"par":3,"handicap_index":8,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":125},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":120}]},
+        {"hole_number":3,"par":5,"handicap_index":4,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":450},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":410}]},
+        {"hole_number":4,"par":3,"handicap_index":9,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":90},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":90}]},
+        {"hole_number":5,"par":4,"handicap_index":6,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":270},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":235}]},
+        {"hole_number":6,"par":3,"handicap_index":7,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":90},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":90}]},
+        {"hole_number":7,"par":5,"handicap_index":3,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":410},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":360}]},
+        {"hole_number":8,"par":4,"handicap_index":1,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":280},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":245}]},
+        {"hole_number":9,"par":5,"handicap_index":2,"tees":[{"tee_code":"white","display_name":"화이트티","tee_color":"white","distance_m":440},{"tee_code":"red","display_name":"레드티","tee_color":"red","distance_m":395}]}
+      ]}
+    ]
+  }]
+}

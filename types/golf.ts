@@ -30,6 +30,8 @@ export interface ShotRecord {
 
 export interface HoleRecord {
   holeNumber: number
+  greenCode: string
+  greenName: string
   par: number
   totalDistance: number
   shots: ShotRecord[]
@@ -40,6 +42,24 @@ export interface HoleRecord {
   gir: boolean
 }
 
+export interface GolfCourseTee {
+  tee_code: string
+  display_name: string
+  tee_color: string
+  distance_m: number
+  green_code: string
+  green_name: string
+}
+
+export interface GolfCourseHole {
+  id: string
+  route_id: string
+  hole_number: number
+  par: number
+  handicap_index: number | null
+  tees: GolfCourseTee[]
+}
+
 export interface GolfCourseRoute {
   id: string
   course_id: string
@@ -48,4 +68,6 @@ export interface GolfCourseRoute {
   hole_count: 9 | 18
   pars: number[]
   distances_m: number[]
+  source_url?: string | null
+  holes?: GolfCourseHole[]
 }

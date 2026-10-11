@@ -38,12 +38,12 @@ export default function ScoreTab() {
     setCourseId(course?.id ?? null)
     setGolfClubName(course?.name ?? '')
     setCourseName('')
-    configureCourseRoutes([])
+    configureCourseRoutes([], null, null)
     if (course && playMode && !(playMode === 'field' ? course.supports_field : course.supports_screen)) setPlayMode(null)
   }, [setCourseId, setGolfClubName, setCourseName, configureCourseRoutes, playMode, setPlayMode])
   const handleCourseResolved = useCallback((course: GolfCourseOption | null) => setSelectedCatalogCourse(course), [])
-  const handleRoutesChange = useCallback((routes: GolfRouteOption[]) => {
-    configureCourseRoutes(routes)
+  const handleRoutesChange = useCallback((routes: GolfRouteOption[], teeCode: string | null, teeName: string | null) => {
+    configureCourseRoutes(routes, teeCode, teeName)
   }, [configureCourseRoutes])
 
   if (round.showRoundReport) {
@@ -105,7 +105,7 @@ export default function ScoreTab() {
               if (round.courseId) {
                 setCourseId(null)
                 setSelectedCatalogCourse(null)
-                configureCourseRoutes([])
+                configureCourseRoutes([], null, null)
               }
             }}
             onBlur={() => window.setTimeout(() => setIsCourseSearchOpen(false), 120)}
@@ -130,6 +130,7 @@ export default function ScoreTab() {
         <CourseCatalogPicker
           courseId={round.courseId}
           routeIds={round.routeIds}
+          teeCode={round.teeCode}
           locked={!!round.currentRoundId || completedHoles.length > 0 || currentShots.length > 0}
           searchOpen={isCourseSearchOpen}
           onSearchOpenChange={setIsCourseSearchOpen}
@@ -240,6 +241,19 @@ export default function ScoreTab() {
           <div style={statSub}>({summary.girCount}/{completedHoles.length})</div>
         </div>
       </div>
+
+      {!isRoundComplete && round.playMode && round.routeDistances.length === 18 && round.currentGreenOptions.length > 1 && (
+        <fieldset style={{ margin: '0 0 12px', padding: '8px 10px', border: '1px solid #93c5fd', borderRadius: '10px', background: '#eff6ff' }}>
+          <legend style={{ padding: '0 4px', fontSize: '11px', fontWeight: 700, color: '#1d4ed8' }}>현재 홀 그린 선택</legend>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+            {round.currentGreenOptions.map((green) => <label key={green.green_code} style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '12px', color: '#1e3a8a' }}>
+              <input type="radio" name={`green-hole-${currentHole}`} checked={round.currentGreenCode === green.green_code} disabled={currentShots.length > 0 || completedHoles.some((hole) => hole.holeNumber === currentHole)} onChange={() => round.changeGreen(green.green_code, green.green_name, green.distance_m)} />
+              {green.green_name} · {green.distance_m}m
+            </label>)}
+          </div>
+          <p style={{ margin: '5px 0 0', fontSize: '10px', color: '#475569' }}>그 홀 첫 샷을 입력하기 전까지 변경할 수 있습니다.</p>
+        </fieldset>
+      )}
 
       {/* 샷 입력 / 라운드 완료 */}
       {isRoundComplete ? (

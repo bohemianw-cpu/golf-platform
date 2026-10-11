@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { createClient } from '@/utils/supabase/client'
-import type { ClubItem, BallLie, ShotRecord, HoleRecord, GolfCourseRoute } from '@/types/golf'
+import type { ClubItem, BallLie, ShotRecord, HoleRecord, GolfCourseRoute, GolfCourseTee } from '@/types/golf'
 import { INITIAL_HOLE_PARS } from '@/utils/golf/clubs'
 import {
   buildClubApproach,
@@ -36,7 +36,12 @@ interface Draft {
   playMode?: 'field' | 'screen' | null
   courseId?: string | null
   routeIds?: string[]
+  teeCode?: string | null
+  teeName?: string | null
   routeDistances?: number[]
+  greenCodes?: string[]
+  greenNames?: string[]
+  routeHoles?: GolfCourseRoute['holes']
   holePars: number[]
   currentHole: number
   holeDistance: number
@@ -65,6 +70,8 @@ interface RoundRow {
   play_mode?: 'field' | 'screen' | null
   course_id?: string | null
   route_ids?: string[]
+  tee_code?: string | null
+  tee_name?: string | null
 }
 
 interface HoleRow {
@@ -76,6 +83,8 @@ interface HoleRow {
   gir: boolean
   shots?: ShotRecord[] | null
   total_distance?: number | null
+  green_code?: string | null
+  green_name?: string | null
 }
 
 interface RoundShotRow {
@@ -106,6 +115,8 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
   const [playMode, setPlayMode] = useState<'field' | 'screen' | null>(null)
   const [courseId, setCourseId] = useState<string | null>(null)
   const [routeIds, setRouteIds] = useState<string[]>([])
+  const [teeCode, setTeeCode] = useState<string | null>(null)
+  const [teeName, setTeeName] = useState<string | null>(null)
   const [currentRoundId, setCurrentRoundId] = useState<string | null>(null)
   const [isSaving, setIsSaving] = useState(false)
   const [saveError, setSaveError] = useState<string | null>(null)
@@ -114,6 +125,9 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
   const [currentHole, setCurrentHole] = useState(1)
   const [holePars, setHolePars] = useState<number[]>(INITIAL_HOLE_PARS)
   const [routeDistances, setRouteDistances] = useState<number[]>([])
+  const [routeHoles, setRouteHoles] = useState<GolfCourseRoute['holes']>([])
+  const [greenCodes, setGreenCodes] = useState<string[]>([])
+  const [greenNames, setGreenNames] = useState<string[]>([])
   const [holeDistance, setHoleDistance] = useState(360)
   const [currentShots, setCurrentShots] = useState<ShotRecord[]>([])
   const [completedHoles, setCompletedHoles] = useState<HoleRecord[]>([])
@@ -133,10 +147,10 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
   const shotSyncQueueRef = useRef<Promise<unknown>>(Promise.resolve())
   const initRef = useRef(false)
   const userIdRef = useRef<string | null>(null)
-  const metaRef = useRef({ club: '', course: '', playMode: null as 'field' | 'screen' | null, courseId: null as string | null, routeIds: [] as string[] })
+  const metaRef = useRef({ club: '', course: '', playMode: null as 'field' | 'screen' | null, courseId: null as string | null, routeIds: [] as string[], teeCode: null as string | null, teeName: null as string | null })
   useEffect(() => {
-    metaRef.current = { club: golfClubName, course: courseName, playMode, courseId, routeIds }
-  }, [golfClubName, courseName, playMode, courseId, routeIds])
+    metaRef.current = { club: golfClubName, course: courseName, playMode, courseId, routeIds, teeCode, teeName }
+  }, [golfClubName, courseName, playMode, courseId, routeIds, teeCode, teeName])
 
   const setRoundId = useCallback((id: string | null) => {
     roundIdRef.current = id
@@ -300,7 +314,12 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
         playMode,
         courseId,
         routeIds,
+        teeCode,
+        teeName,
         routeDistances,
+        greenCodes,
+        greenNames,
+        routeHoles,
         holePars,
         currentHole,
         holeDistance,
@@ -309,7 +328,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
       }
       localStorage.setItem(DRAFT_KEY, JSON.stringify(draft))
     } catch {}
-  }, [ready, isRoundComplete, currentRoundId, golfClubName, courseName, playMode, courseId, routeIds, routeDistances, holePars, currentHole, holeDistance, currentShots, completedHoles])
+  }, [ready, isRoundComplete, currentRoundId, golfClubName, courseName, playMode, courseId, routeIds, teeCode, teeName, routeDistances, greenCodes, greenNames, routeHoles, holePars, currentHole, holeDistance, currentShots, completedHoles])
 
   // ---------- Supabase ----------
   const track = useCallback(async <T,>(fn: () => Promise<T>): Promise<T> => {
@@ -345,6 +364,8 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
               play_mode: metaRef.current.playMode,
               course_id: metaRef.current.courseId,
               route_ids: metaRef.current.routeIds,
+              tee_code: metaRef.current.teeCode,
+              tee_name: metaRef.current.teeName,
               skill_group_at_round: profile?.skill_group ?? 'beginner',
               status: 'in_progress',
             })
@@ -387,6 +408,8 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
                 gir: h.gir,
                 shots: h.shots,
                 total_distance: h.totalDistance,
+                green_code: h.greenCode || 'standard',
+                green_name: h.greenName || '기본 그린',
               })),
               { onConflict: 'round_id,hole_number' }
             )
@@ -403,6 +426,8 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
               play_mode: metaRef.current.playMode,
               course_id: metaRef.current.courseId,
               route_ids: metaRef.current.routeIds,
+              tee_code: metaRef.current.teeCode,
+              tee_name: metaRef.current.teeName,
               total_score: sumBy(all, 'score'),
               total_putts: sumBy(all, 'putts'),
               updated_at: new Date().toISOString(),
@@ -531,7 +556,12 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
       setPlayMode(d.playMode ?? null)
       setCourseId(d.courseId ?? null)
       setRouteIds(d.routeIds ?? [])
+      setTeeCode(d.teeCode ?? null)
+      setTeeName(d.teeName ?? null)
       setRouteDistances(d.routeDistances ?? [])
+      setGreenCodes(d.greenCodes ?? [])
+      setGreenNames(d.greenNames ?? [])
+      setRouteHoles(d.routeHoles ?? [])
       setHolePars(d.holePars)
       setCompletedHoles(d.completedHoles)
       setCurrentHole(d.currentHole)
@@ -583,10 +613,52 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
         if (routeError) throw routeError
         const routeMap = new Map(((data ?? []) as GolfCourseRoute[]).map((route) => [route.id, route]))
         routeRows = round.route_ids.flatMap((id) => routeMap.get(id) ? [routeMap.get(id)!] : [])
+        const { data: holeData, error: courseHolesError } = await supabase
+          .from('golf_course_holes')
+          .select('id,route_id,hole_number,par,handicap_index')
+          .in('route_id', round.route_ids)
+          .order('hole_number')
+        if (courseHolesError) throw courseHolesError
+        const courseHoles = (holeData ?? []) as { id: string; route_id: string; hole_number: number; par: number; handicap_index: number | null }[]
+        const { data: teeData, error: courseTeesError } = courseHoles.length
+          ? await supabase.from('golf_course_hole_tees')
+            .select('hole_id,tee_code,display_name,tee_color,distance_m,green_code,green_name')
+            .in('hole_id', courseHoles.map((hole) => hole.id))
+          : { data: [], error: null }
+        if (courseTeesError) throw courseTeesError
+        const teesByHole = new Map<string, GolfCourseTee[]>()
+        for (const tee of teeData ?? []) {
+          const row = tee as GolfCourseTee & { hole_id: string }
+          teesByHole.set(row.hole_id, [...(teesByHole.get(row.hole_id) ?? []), {
+            tee_code: row.tee_code, display_name: row.display_name, tee_color: row.tee_color, distance_m: row.distance_m,
+            green_code: row.green_code ?? 'standard', green_name: row.green_name ?? '기본 그린',
+          }])
+        }
+        routeRows = routeRows.map((route) => ({
+          ...route,
+          holes: courseHoles.filter((hole) => hole.route_id === route.id).map((hole) => ({ ...hole, tees: teesByHole.get(hole.id) ?? [] })),
+        }))
+        routeRows = (round.route_ids ?? []).map((routeId) => routeRows.find((route) => route.id === routeId)).filter((route): route is GolfCourseRoute => !!route)
       }
-      const routePars = routeRows.flatMap((route) => route.pars)
-      const routeDistancesForRound = routeRows.flatMap((route) => route.distances_m)
-      const hasFullRouteLayout = routePars.length === 18 && routeDistancesForRound.length === 18
+      const routePars = routeRows.flatMap((route) => route.holes?.length === route.hole_count ? route.holes.map((hole) => hole.par) : route.pars)
+      const savedTeeAvailableOnAllHoles = !!round.tee_code && routeRows.length > 0 && routeRows.every((route) =>
+        route.holes?.length === route.hole_count && route.holes.every((hole) => hole.tees.some((tee) => tee.tee_code === round.tee_code)),
+      )
+      const teeVariants = savedTeeAvailableOnAllHoles
+        ? routeRows.flatMap((route) => route.holes!.map((hole) => hole.tees.filter((tee) => tee.tee_code === round.tee_code)))
+        : []
+      const persistedHoles = (holes ?? []) as HoleRow[]
+      const restoredGreenCodes = teeVariants.map((variants, index) => {
+        const oldRecord = persistedHoles.find((hole) => hole.hole_number === index + 1)
+        const savedCode = oldRecord && 'green_code' in oldRecord ? oldRecord.green_code : null
+        return variants.find((tee) => tee.green_code === savedCode)?.green_code ?? variants.find((tee) => tee.green_code === 'standard')?.green_code ?? variants[0]?.green_code ?? 'standard'
+      })
+      const restoredGreenNames = teeVariants.map((variants, index) => variants.find((tee) => tee.green_code === restoredGreenCodes[index])?.green_name ?? '기본 그린')
+      const routeDistancesForRound = savedTeeAvailableOnAllHoles
+        ? teeVariants.map((variants, index) => variants.find((tee) => tee.green_code === restoredGreenCodes[index])?.distance_m ?? variants[0]?.distance_m ?? 0)
+        : routeRows.flatMap((route) => route.distances_m)
+      const hasFullRouteLayout = routePars.length === 18 && routeDistancesForRound.length === 18 &&
+        routeDistancesForRound.every((distance) => distance > 0 && distance <= 800)
       const pars = hasFullRouteLayout ? [...routePars] : [...INITIAL_HOLE_PARS]
       const eventsByHole = new Map<number, ShotRecord[]>()
       for (const row of (shotRows ?? []) as RoundShotRow[]) {
@@ -606,6 +678,8 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
         pars[h.hole_number - 1] = h.par
         return {
           holeNumber: h.hole_number,
+          greenCode: h.green_code ?? 'standard',
+          greenName: h.green_name ?? '기본 그린',
           par: h.par,
           totalDistance: h.total_distance ?? defaultDistanceForPar(h.par),
           shots: eventsByHole.get(h.hole_number) ?? (Array.isArray(h.shots) ? h.shots : []),
@@ -623,8 +697,13 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
       setPlayMode(round.play_mode === 'field' || round.play_mode === 'screen' ? round.play_mode : null)
       setCourseId(round.course_id ?? null)
       setRouteIds(round.route_ids ?? [])
+      setTeeCode(round.tee_code ?? null)
+      setTeeName(round.tee_name ?? null)
       setHolePars(pars)
       setRouteDistances(hasFullRouteLayout ? routeDistancesForRound : [])
+      setGreenCodes(restoredGreenCodes)
+      setGreenNames(restoredGreenNames)
+      setRouteHoles(routeRows.flatMap((route) => route.holes ?? []))
       setCompletedHoles(restored)
       const next = restored.length ? Math.min(18, Math.max(...restored.map((h) => h.holeNumber)) + 1) : 1
       prepareHole(next, pars, restored, hasFullRouteLayout ? routeDistancesForRound : [])
@@ -728,25 +807,53 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
   const changeHolePar = (holeIndex: number, newPar: number) =>
     setHolePars((prev) => prev.map((p, i) => (i === holeIndex ? newPar : p)))
 
-  const configureCourseRoutes = useCallback((routes: GolfCourseRoute[]) => {
+  const configureCourseRoutes = useCallback((routes: GolfCourseRoute[], selectedTeeCode: string | null, selectedTeeName: string | null) => {
     if (currentRoundId || completedHoles.length > 0 || currentShots.length > 0) return false
     setRouteIds(routes.map((route) => route.id))
     setCourseName(routes.map((route) => route.display_name).join(' → '))
-    const pars = routes.flatMap((route) => route.pars)
-    const distances = routes.flatMap((route) => route.distances_m)
+    setTeeCode(selectedTeeCode)
+    setTeeName(selectedTeeName)
+    const pars = routes.flatMap((route) => route.holes?.length === route.hole_count ? route.holes.map((hole) => hole.par) : route.pars)
+    const variantsByHole = selectedTeeCode ? routes.flatMap((route) => route.holes?.length === route.hole_count
+      ? route.holes.map((hole) => hole.tees.filter((tee) => tee.tee_code === selectedTeeCode))
+      : []) : []
+    const selectedGreens = variantsByHole.map((variants) => variants.find((tee) => tee.green_code === 'standard') ?? variants[0])
+    const greenCodesForRoutes = selectedGreens.map((tee) => tee?.green_code ?? 'standard')
+    const greenNamesForRoutes = selectedGreens.map((tee) => tee?.green_name ?? '기본 그린')
+    const distances = selectedGreens.map((tee) => tee?.distance_m ?? 0)
     const valid18HoleLayout = pars.length === 18 && distances.length === 18 &&
       pars.every((par) => par >= 3 && par <= 5) && distances.every((distance) => distance > 0 && distance <= 800)
     if (!valid18HoleLayout) {
-      setHolePars(INITIAL_HOLE_PARS)
+      setHolePars(pars.length === 18 && pars.every((par) => par >= 3 && par <= 5) ? pars : INITIAL_HOLE_PARS)
       setRouteDistances([])
-      prepareHole(1, INITIAL_HOLE_PARS, [], [])
+      setGreenCodes([])
+      setGreenNames([])
+      prepareHole(1, pars.length === 18 && pars.every((par) => par >= 3 && par <= 5) ? pars : INITIAL_HOLE_PARS, [], [])
       return false
     }
     setHolePars(pars)
     setRouteDistances(distances)
+    setGreenCodes(greenCodesForRoutes)
+    setGreenNames(greenNamesForRoutes)
+    setRouteHoles(routes.flatMap((route) => route.holes ?? []))
     prepareHole(1, pars, [], distances)
     return true
   }, [currentRoundId, completedHoles.length, currentShots.length, prepareHole])
+
+  const currentGreenOptions = useMemo(() => {
+    const hole = routeHoles?.[currentHole - 1]
+    return hole?.tees.filter((tee) => tee.tee_code === teeCode) ?? []
+  }, [routeHoles, currentHole, teeCode])
+
+  const changeGreen = useCallback((greenCode: string, greenName: string, distance: number) => {
+    if (currentShots.length > 0 || completedHoles.some((hole) => hole.holeNumber === currentHole)) return
+    setGreenCodes((previous) => previous.map((value, index) => index === currentHole - 1 ? greenCode : value))
+    setGreenNames((previous) => previous.map((value, index) => index === currentHole - 1 ? greenName : value))
+    const safeDistance = clamp(Math.round(distance), 0, 800)
+    setRouteDistances((previous) => previous.map((value, index) => index === currentHole - 1 ? safeDistance : value))
+    setHoleDistance(safeDistance)
+    setRemainingDistance(roundTo10(safeDistance - expectedDistance(selectedClub)))
+  }, [currentShots.length, completedHoles, currentHole, expectedDistance, selectedClub])
 
   const changeHoleDistance = (raw: number) => {
     const val = clamp(Math.round(raw), 0, 800)
@@ -761,6 +868,8 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
     const finalScore = calcHoleScore(shots)
     const record: HoleRecord = {
       holeNumber: currentHole,
+      greenCode: greenCodes[currentHole - 1] ?? 'standard',
+      greenName: greenNames[currentHole - 1] ?? '기본 그린',
       par: currentPar,
       totalDistance: holeDistance,
       shots,
@@ -922,7 +1031,12 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
         setCourseName('OUT/IN')
         setCourseId(null)
         setRouteIds([])
+        setTeeCode(null)
+        setTeeName(null)
         setRouteDistances([])
+        setGreenCodes([])
+        setGreenNames([])
+        setRouteHoles([])
         setHolePars(INITIAL_HOLE_PARS)
       }
       setPlayMode(null)
@@ -958,10 +1072,11 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
 
   return {
     // 메타
-    golfClubName, setGolfClubName, courseName, setCourseName, playMode, setPlayMode, courseId, setCourseId, routeIds, setRouteIds, routeDistances, configureCourseRoutes,
+    golfClubName, setGolfClubName, courseName, setCourseName, playMode, setPlayMode, courseId, setCourseId, routeIds, setRouteIds, teeCode, teeName, routeDistances, greenCodes, greenNames, configureCourseRoutes,
     currentRoundId, isSaving, saveError, retrySync, ready,
     // 진행 상태
     currentHole, currentPar, holeDistance, currentShots, completedHoles,
+    currentGreenOptions, currentGreenCode: greenCodes[currentHole - 1] ?? 'standard', changeGreen,
     isRoundComplete, showRoundReport, setShowRoundReport, holePars,
     // 입력 상태
     selectedClub, selectedLie, setSelectedLie, remainingDistance, isPinOver, setIsPinOver,

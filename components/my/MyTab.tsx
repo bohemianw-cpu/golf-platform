@@ -17,6 +17,8 @@ interface RoundSummary {
   course_id: string | null
   play_mode: 'field' | 'screen' | null
   route_ids: string[]
+  tee_code: string | null
+  tee_name: string | null
   visibility: 'private' | 'friends' | 'aggregate'
 }
 
@@ -60,6 +62,8 @@ interface HoleRow {
   gir: boolean
   shots: ShotRecord[] | null
   total_distance: number | null
+  green_code?: string | null
+  green_name?: string | null
 }
 
 interface ShotRow {
@@ -93,6 +97,8 @@ function toHoleRecords(rows: HoleRow[], shotRows: ShotRow[] = []): HoleRecord[] 
   }
   return rows.map((row) => ({
     holeNumber: row.hole_number,
+    greenCode: row.green_code ?? 'standard',
+    greenName: row.green_name ?? '기본 그린',
     par: row.par,
     score: row.score,
     scoreDiff: row.score - row.par,
@@ -134,7 +140,7 @@ export default function MyTab() {
     for (let from = 0; ; from += pageSize) {
       const { data, error: queryError } = await supabase
         .from('rounds')
-        .select('id,created_at,status,total_score,total_putts,club_name,golf_club,course_name,course_id,play_mode,route_ids,visibility')
+        .select('id,created_at,status,total_score,total_putts,club_name,golf_club,course_name,course_id,play_mode,route_ids,tee_code,tee_name,visibility')
         .eq('user_id', uid)
         .order('created_at', { ascending: false })
         .range(from, from + pageSize - 1)
@@ -487,7 +493,7 @@ export default function MyTab() {
         {rounds.length === 0 ? <p style={{ ...muted, marginBottom: 0 }}>아직 서버에 저장된 라운드가 없습니다. Score 탭에서 첫 라운드를 기록해 보세요.</p> : (
           <div style={{ marginTop: '12px', display: 'grid', gap: '8px' }}>
             {rounds.map((round) => <button key={round.id} type="button" onClick={() => void openRound(round)} style={{ width: '100%', padding: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '10px', textAlign: 'left', border: '1px solid #e2e8f0', borderRadius: '10px', background: '#fff', cursor: 'pointer' }}>
-              <span><strong style={{ display: 'block', color: '#0f172a', fontSize: '13px' }}>{roundLocation(round)}</strong><span style={{ display: 'block', marginTop: '4px', color: '#64748b', fontSize: '11px' }}>{formatDate(round.created_at)} · {round.course_name || '코스 미입력'} · {round.play_mode === 'field' ? '필드' : round.play_mode === 'screen' ? '스크린' : '방식 미설정'}</span></span>
+              <span><strong style={{ display: 'block', color: '#0f172a', fontSize: '13px' }}>{roundLocation(round)}</strong><span style={{ display: 'block', marginTop: '4px', color: '#64748b', fontSize: '11px' }}>{formatDate(round.created_at)} · {round.course_name || '코스 미입력'} · {round.tee_name ? `${round.tee_name} · ` : ''}{round.play_mode === 'field' ? '필드' : round.play_mode === 'screen' ? '스크린' : '방식 미설정'}</span></span>
               <span style={{ textAlign: 'right', whiteSpace: 'nowrap' }}><strong style={{ display: 'block', color: round.total_score == null ? '#64748b' : '#047857', fontSize: '17px' }}>{round.total_score == null ? '진행 중' : `${round.total_score}타`}</strong><span style={{ fontSize: '10px', color: '#64748b' }}>{round.status === 'completed' ? `${round.visibility === 'private' ? '비공개' : '공유 설정'}` : '기록 이어하기 가능'}</span></span>
             </button>)}
           </div>
@@ -497,7 +503,7 @@ export default function MyTab() {
       {detailLoading && <p role="status" style={{ ...muted, textAlign: 'center' }}>홀별 샷 상세를 불러오는 중입니다…</p>}
       {detail && <section style={CARD} aria-labelledby="round-detail-title">
         <div style={{ display: 'flex', justifyContent: 'space-between', gap: '10px', alignItems: 'start' }}>
-          <div><h2 id="round-detail-title" style={{ margin: '0 0 4px', fontSize: '16px' }}>{roundLocation(detail)} 상세</h2><p style={{ ...muted, margin: 0 }}>{formatDate(detail.created_at)} · {detail.course_name || '코스 미입력'} · 총 {detail.total_score ?? '진행 중'}타</p></div>
+          <div><h2 id="round-detail-title" style={{ margin: '0 0 4px', fontSize: '16px' }}>{roundLocation(detail)} 상세</h2><p style={{ ...muted, margin: 0 }}>{formatDate(detail.created_at)} · {detail.course_name || '코스 미입력'}{detail.tee_name ? ` · ${detail.tee_name}` : ''} · 총 {detail.total_score ?? '진행 중'}타</p></div>
           <button type="button" onClick={() => setDetail(null)} aria-label="라운드 상세 닫기" style={{ border: '1px solid #cbd5e1', borderRadius: '7px', padding: '6px 9px', background: '#fff', cursor: 'pointer' }}>닫기</button>
         </div>
         <div style={{ display: 'grid', gap: '9px', marginTop: '14px' }}>
@@ -517,7 +523,7 @@ export default function MyTab() {
             </div> : <p style={{ ...muted, margin: '8px 0 0' }}>현재 기준을 만족하는 익명 표본이 아직 없습니다.</p>}
           </div>}
           {detail.holes.map((hole) => <article key={hole.holeNumber} style={{ padding: '11px', border: '1px solid #e2e8f0', borderRadius: '9px', background: '#f8fafc' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', color: '#0f172a', fontSize: '12px' }}><strong>{hole.holeNumber}번 홀 · Par {hole.par}</strong><span>{hole.score}타 · 퍼트 {hole.putts}</span></div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', color: '#0f172a', fontSize: '12px' }}><strong>{hole.holeNumber}번 홀 · Par {hole.par} · {hole.greenName || '기본 그린'}</strong><span>{hole.score}타 · 퍼트 {hole.putts}</span></div>
             <ol style={{ margin: '8px 0 0', paddingLeft: '20px', display: 'grid', gap: '5px', color: '#475569', fontSize: '11px' }}>
               {hole.shots.map((shot) => <li key={`${hole.holeNumber}-${shot.shotNumber}`}>{shot.shotNumber}타 · {shot.club} · {shot.shotDistance}m · {shot.ballLie}{shot.penalty ? ` · 벌타 ${shot.penalty}` : ''}</li>)}
               {hole.shots.length === 0 && <li style={{ color: '#94a3b8' }}>저장된 샷 상세가 없습니다.</li>}
