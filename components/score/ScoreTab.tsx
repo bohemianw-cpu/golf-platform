@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import type { ClubItem } from '@/types/golf'
 import ClubModal from './ClubModal'
 import RoundReport from './RoundReport'
@@ -11,6 +11,7 @@ import Scorecard from './Scorecard'
 import { useChoiceDialog } from './ConfirmDialog'
 import { useRound } from '@/hooks/useRound'
 import { DEFAULT_CLUBS, sortClubs } from '@/utils/golf/clubs'
+import CourseCatalogPicker, { type GolfCourseOption, type GolfRouteOption } from './CourseCatalogPicker'
 
 // 기존 import 경로 호환 (ClubModal 등에서 './ScoreTab'으로 가져오던 것)
 export { sortClubs } from '@/utils/golf/clubs'
@@ -23,9 +24,23 @@ export default function ScoreTab() {
   const { choose, confirm, dialog } = useChoiceDialog()
   const [clubs, setClubs] = useState<ClubItem[]>(() => sortClubs(DEFAULT_CLUBS))
   const [isClubModalOpen, setIsClubModalOpen] = useState(false)
+  const [selectedCatalogCourse, setSelectedCatalogCourse] = useState<GolfCourseOption | null>(null)
 
   const round = useRound(clubs, { choose, confirm })
   const { completedHoles, currentHole, currentPar, currentShots, currentPrevDistance, summary, isRoundComplete, isSaving, saveError } = round
+  const { setCourseId, setGolfClubName, setCourseName, playMode, setPlayMode, configureCourseRoutes } = round
+  const handleCourseSelect = useCallback((course: GolfCourseOption | null) => {
+    setSelectedCatalogCourse(course)
+    setCourseId(course?.id ?? null)
+    setGolfClubName(course?.name ?? '')
+    setCourseName('')
+    configureCourseRoutes([])
+    if (course && playMode && !(playMode === 'field' ? course.supports_field : course.supports_screen)) setPlayMode(null)
+  }, [setCourseId, setGolfClubName, setCourseName, configureCourseRoutes, playMode, setPlayMode])
+  const handleCourseResolved = useCallback((course: GolfCourseOption | null) => setSelectedCatalogCourse(course), [])
+  const handleRoutesChange = useCallback((routes: GolfRouteOption[]) => {
+    configureCourseRoutes(routes)
+  }, [configureCourseRoutes])
 
   if (round.showRoundReport) {
     return (
@@ -44,6 +59,9 @@ export default function ScoreTab() {
   }
 
   const { totalDiff } = summary
+  const modeSupported = !selectedCatalogCourse || (round.playMode === 'field'
+    ? selectedCatalogCourse.supports_field
+    : selectedCatalogCourse.supports_screen)
   const diffText = completedHoles.length === 0 || totalDiff === 0 ? '0' : totalDiff > 0 ? `+${totalDiff}` : `${totalDiff}`
   const previousHole = completedHoles.find((h) => h.holeNumber === currentHole - 1)
 
@@ -66,6 +84,7 @@ export default function ScoreTab() {
             type="text"
             value={round.golfClubName}
             onChange={(e) => round.setGolfClubName(e.target.value)}
+            readOnly={!!round.courseId || !!round.currentRoundId}
             placeholder="골프장 이름"
             aria-label="골프장 이름"
             autoComplete="organization"
@@ -75,16 +94,25 @@ export default function ScoreTab() {
             type="text"
             value={round.courseName}
             onChange={(e) => round.setCourseName(e.target.value)}
+            readOnly={!!round.courseId || !!round.currentRoundId}
             placeholder="코스"
             aria-label="코스"
             style={{ width: '84px', flexShrink: 0, boxSizing: 'border-box', padding: '8px', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '13px', color: '#475569', textAlign: 'center', backgroundColor: '#ffffff' }}
           />
         </div>
+        <CourseCatalogPicker
+          courseId={round.courseId}
+          routeIds={round.routeIds}
+          locked={!!round.currentRoundId || completedHoles.length > 0 || currentShots.length > 0}
+          onCourseSelect={handleCourseSelect}
+          onCourseResolved={handleCourseResolved}
+          onRoutesChange={handleRoutesChange}
+        />
 
         <fieldset style={{ margin: '10px 0 0', padding: '8px 10px', border: '1px solid #cbd5e1', borderRadius: '8px', background: '#fff' }}>
           <legend style={{ padding: '0 4px', fontSize: '11px', fontWeight: 700, color: '#334155' }}>이번 라운드 방식 (필수)</legend>
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-            {(['field', 'screen'] as const).map((mode) => (
+            {(['field', 'screen'] as const).filter((mode) => !selectedCatalogCourse || (mode === 'field' ? selectedCatalogCourse.supports_field : selectedCatalogCourse.supports_screen)).map((mode) => (
               <label key={mode} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: '#334155', cursor: 'pointer' }}>
                 <input
                   type="radio"
@@ -199,11 +227,11 @@ export default function ScoreTab() {
             </button>
           </div>
         </div>
-      ) : round.playMode ? (
+      ) : round.playMode && modeSupported && (!round.courseId || round.routeDistances.length === 18) ? (
         <ShotInputCard round={round} clubs={clubs} />
       ) : (
         <div role="status" style={{ padding: '24px 16px', marginBottom: '16px', border: '1px dashed #94a3b8', borderRadius: '12px', background: '#fff', textAlign: 'center', color: '#475569', fontSize: '13px' }}>
-          라운드 방식을 선택하면 스코어와 샷을 입력할 수 있습니다.
+          {!round.playMode ? '라운드 방식을 선택하면 스코어와 샷을 입력할 수 있습니다.' : !modeSupported ? '선택한 구장이 지원하는 필드/스크린 방식을 확인해 주세요.' : '검증된 코스 레이아웃 18홀을 선택하면 스코어를 입력할 수 있습니다.'}
         </div>
       )}
 
@@ -217,7 +245,7 @@ export default function ScoreTab() {
 
       <ClubStatsTable clubs={clubs} clubStats={round.clubStatsAll} clubApproach={round.clubApproach} />
 
-      <Scorecard holePars={round.holePars} completedHoles={completedHoles} />
+      <Scorecard holePars={round.holePars} completedHoles={completedHoles} routeNames={round.courseName.split(' → ')} />
 
       <ClubModal
         clubs={clubs}

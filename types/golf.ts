@@ -39,3 +39,13 @@ export interface HoleRecord {
   fairwayHit: boolean | null
   gir: boolean
 }
+
+export interface GolfCourseRoute {
+  id: string
+  course_id: string
+  route_code: string
+  display_name: string
+  hole_count: 9 | 18
+  pars: number[]
+  distances_m: number[]
+}

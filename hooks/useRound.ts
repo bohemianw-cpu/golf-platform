@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { createClient } from '@/utils/supabase/client'
-import type { ClubItem, BallLie, ShotRecord, HoleRecord } from '@/types/golf'
+import type { ClubItem, BallLie, ShotRecord, HoleRecord, GolfCourseRoute } from '@/types/golf'
 import { INITIAL_HOLE_PARS } from '@/utils/golf/clubs'
 import {
   buildClubApproach,
@@ -34,6 +34,9 @@ interface Draft {
   golfClubName: string
   courseName: string
   playMode?: 'field' | 'screen' | null
+  courseId?: string | null
+  routeIds?: string[]
+  routeDistances?: number[]
   holePars: number[]
   currentHole: number
   holeDistance: number
@@ -60,6 +63,8 @@ interface RoundRow {
   golf_club?: string | null
   course_name?: string | null
   play_mode?: 'field' | 'screen' | null
+  course_id?: string | null
+  route_ids?: string[]
 }
 
 interface HoleRow {
@@ -99,6 +104,8 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
   const [golfClubName, setGolfClubName] = useState('')
   const [courseName, setCourseName] = useState('OUT/IN')
   const [playMode, setPlayMode] = useState<'field' | 'screen' | null>(null)
+  const [courseId, setCourseId] = useState<string | null>(null)
+  const [routeIds, setRouteIds] = useState<string[]>([])
   const [currentRoundId, setCurrentRoundId] = useState<string | null>(null)
   const [isSaving, setIsSaving] = useState(false)
   const [saveError, setSaveError] = useState<string | null>(null)
@@ -106,6 +113,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
 
   const [currentHole, setCurrentHole] = useState(1)
   const [holePars, setHolePars] = useState<number[]>(INITIAL_HOLE_PARS)
+  const [routeDistances, setRouteDistances] = useState<number[]>([])
   const [holeDistance, setHoleDistance] = useState(360)
   const [currentShots, setCurrentShots] = useState<ShotRecord[]>([])
   const [completedHoles, setCompletedHoles] = useState<HoleRecord[]>([])
@@ -125,10 +133,10 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
   const shotSyncQueueRef = useRef<Promise<unknown>>(Promise.resolve())
   const initRef = useRef(false)
   const userIdRef = useRef<string | null>(null)
-  const metaRef = useRef({ club: '', course: '', playMode: null as 'field' | 'screen' | null })
+  const metaRef = useRef({ club: '', course: '', playMode: null as 'field' | 'screen' | null, courseId: null as string | null, routeIds: [] as string[] })
   useEffect(() => {
-    metaRef.current = { club: golfClubName, course: courseName, playMode }
-  }, [golfClubName, courseName, playMode])
+    metaRef.current = { club: golfClubName, course: courseName, playMode, courseId, routeIds }
+  }, [golfClubName, courseName, playMode, courseId, routeIds])
 
   const setRoundId = useCallback((id: string | null) => {
     roundIdRef.current = id
@@ -226,9 +234,9 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
 
   // ---------- 입력 초기화 헬퍼 ----------
   const prepareHole = useCallback(
-    (holeNum: number, pars: number[], doneHoles: HoleRecord[]) => {
+    (holeNum: number, pars: number[], doneHoles: HoleRecord[], distances = routeDistances) => {
       const par = pars[holeNum - 1] ?? 4
-      const dist = defaultDistanceForPar(par)
+      const dist = distances[holeNum - 1] ?? defaultDistanceForPar(par)
       const stats = buildClubStats(doneHoles.flatMap((h) => h.shots), isPutter)
       const club = par <= 3 ? recommendClub(dist, clubs, stats) ?? teeClubName : teeClubName
       setCurrentHole(holeNum)
@@ -242,7 +250,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
         greenLie ? Math.min(WEDGE_GREEN_REMAINING, dist) : roundTo10(dist - getExpectedDistance(club, clubs, stats))
       )
     },
-    [clubs, isPutter, isWedge, teeClubName]
+    [clubs, isPutter, isWedge, teeClubName, routeDistances]
   )
 
   const setNextInputs = useCallback(
@@ -290,6 +298,9 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
         golfClubName,
         courseName,
         playMode,
+        courseId,
+        routeIds,
+        routeDistances,
         holePars,
         currentHole,
         holeDistance,
@@ -298,7 +309,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
       }
       localStorage.setItem(DRAFT_KEY, JSON.stringify(draft))
     } catch {}
-  }, [ready, isRoundComplete, currentRoundId, golfClubName, courseName, playMode, holePars, currentHole, holeDistance, currentShots, completedHoles])
+  }, [ready, isRoundComplete, currentRoundId, golfClubName, courseName, playMode, courseId, routeIds, routeDistances, holePars, currentHole, holeDistance, currentShots, completedHoles])
 
   // ---------- Supabase ----------
   const track = useCallback(async <T,>(fn: () => Promise<T>): Promise<T> => {
@@ -326,6 +337,8 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
               golf_club: name,
               course_name: metaRef.current.course,
               play_mode: metaRef.current.playMode,
+              course_id: metaRef.current.courseId,
+              route_ids: metaRef.current.routeIds,
               status: 'in_progress',
             })
             .select('id')
@@ -381,6 +394,8 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
               golf_club: name,
               course_name: metaRef.current.course,
               play_mode: metaRef.current.playMode,
+              course_id: metaRef.current.courseId,
+              route_ids: metaRef.current.routeIds,
               total_score: sumBy(all, 'score'),
               total_putts: sumBy(all, 'putts'),
               updated_at: new Date().toISOString(),
@@ -507,6 +522,9 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
       setGolfClubName(d.golfClubName)
       setCourseName(d.courseName)
       setPlayMode(d.playMode ?? null)
+      setCourseId(d.courseId ?? null)
+      setRouteIds(d.routeIds ?? [])
+      setRouteDistances(d.routeDistances ?? [])
       setHolePars(d.holePars)
       setCompletedHoles(d.completedHoles)
       setCurrentHole(d.currentHole)
@@ -521,7 +539,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
       if (last) {
         setNextInputs(last.distanceToPinAfter, last.ballLie, stats, last.club)
       } else {
-        prepareHole(d.currentHole, d.holePars, d.completedHoles)
+        prepareHole(d.currentHole, d.holePars, d.completedHoles, d.routeDistances ?? [])
         setHoleDistance(d.holeDistance)
       }
       if (d.completedHoles.length >= 18) {
@@ -549,7 +567,20 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
       if (error) throw error
       if (shotsError) throw shotsError
 
-      const pars = [...INITIAL_HOLE_PARS]
+      let routeRows: GolfCourseRoute[] = []
+      if (round.route_ids?.length) {
+        const { data, error: routeError } = await supabase
+          .from('golf_course_routes')
+          .select('id,course_id,route_code,display_name,hole_count,pars,distances_m')
+          .in('id', round.route_ids)
+        if (routeError) throw routeError
+        const routeMap = new Map(((data ?? []) as GolfCourseRoute[]).map((route) => [route.id, route]))
+        routeRows = round.route_ids.flatMap((id) => routeMap.get(id) ? [routeMap.get(id)!] : [])
+      }
+      const routePars = routeRows.flatMap((route) => route.pars)
+      const routeDistancesForRound = routeRows.flatMap((route) => route.distances_m)
+      const hasFullRouteLayout = routePars.length === 18 && routeDistancesForRound.length === 18
+      const pars = hasFullRouteLayout ? [...routePars] : [...INITIAL_HOLE_PARS]
       const eventsByHole = new Map<number, ShotRecord[]>()
       for (const row of (shotRows ?? []) as RoundShotRow[]) {
         const holeNumber = row.hole_number
@@ -583,15 +614,18 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
       setGolfClubName(round.club_name || round.golf_club || '')
       setCourseName(round.course_name || 'OUT/IN')
       setPlayMode(round.play_mode === 'field' || round.play_mode === 'screen' ? round.play_mode : null)
+      setCourseId(round.course_id ?? null)
+      setRouteIds(round.route_ids ?? [])
       setHolePars(pars)
+      setRouteDistances(hasFullRouteLayout ? routeDistancesForRound : [])
       setCompletedHoles(restored)
       const next = restored.length ? Math.min(18, Math.max(...restored.map((h) => h.holeNumber)) + 1) : 1
-      prepareHole(next, pars, restored)
+      prepareHole(next, pars, restored, hasFullRouteLayout ? routeDistancesForRound : [])
       const partialShots = eventsByHole.get(next) ?? []
       if (partialShots.length > 0) {
         setCurrentShots(partialShots)
         const last = partialShots[partialShots.length - 1]
-        setHoleDistance(defaultDistanceForPar(pars[next - 1] ?? 4))
+        setHoleDistance((hasFullRouteLayout ? routeDistancesForRound[next - 1] : undefined) ?? defaultDistanceForPar(pars[next - 1] ?? 4))
         setNextInputs(last.distanceToPinAfter, last.ballLie, buildClubStats([...restored.flatMap((h) => h.shots), ...partialShots], isPutter), last.club)
       }
     }
@@ -686,6 +720,26 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
 
   const changeHolePar = (holeIndex: number, newPar: number) =>
     setHolePars((prev) => prev.map((p, i) => (i === holeIndex ? newPar : p)))
+
+  const configureCourseRoutes = useCallback((routes: GolfCourseRoute[]) => {
+    if (currentRoundId || completedHoles.length > 0 || currentShots.length > 0) return false
+    setRouteIds(routes.map((route) => route.id))
+    setCourseName(routes.map((route) => route.display_name).join(' → '))
+    const pars = routes.flatMap((route) => route.pars)
+    const distances = routes.flatMap((route) => route.distances_m)
+    const valid18HoleLayout = pars.length === 18 && distances.length === 18 &&
+      pars.every((par) => par >= 3 && par <= 5) && distances.every((distance) => distance > 0 && distance <= 800)
+    if (!valid18HoleLayout) {
+      setHolePars(INITIAL_HOLE_PARS)
+      setRouteDistances([])
+      prepareHole(1, INITIAL_HOLE_PARS, [], [])
+      return false
+    }
+    setHolePars(pars)
+    setRouteDistances(distances)
+    prepareHole(1, pars, [], distances)
+    return true
+  }, [currentRoundId, completedHoles.length, currentShots.length, prepareHole])
 
   const changeHoleDistance = (raw: number) => {
     const val = clamp(Math.round(raw), 0, 800)
@@ -859,11 +913,15 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
       if (!keepClubName) {
         setGolfClubName('')
         setCourseName('OUT/IN')
+        setCourseId(null)
+        setRouteIds([])
+        setRouteDistances([])
+        setHolePars(INITIAL_HOLE_PARS)
       }
       setPlayMode(null)
-      prepareHole(1, INITIAL_HOLE_PARS, [])
+      prepareHole(1, keepClubName ? holePars : INITIAL_HOLE_PARS, [], keepClubName ? routeDistances : [])
     },
-    [setRoundId, clearDraft, prepareHole]
+    [setRoundId, clearDraft, prepareHole, holePars, routeDistances]
   )
 
   const resetCurrentRound = async () => {
@@ -893,7 +951,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
 
   return {
     // 메타
-    golfClubName, setGolfClubName, courseName, setCourseName, playMode, setPlayMode,
+    golfClubName, setGolfClubName, courseName, setCourseName, playMode, setPlayMode, courseId, setCourseId, routeIds, setRouteIds, routeDistances, configureCourseRoutes,
     currentRoundId, isSaving, saveError, retrySync, ready,
     // 진행 상태
     currentHole, currentPar, holeDistance, currentShots, completedHoles,
