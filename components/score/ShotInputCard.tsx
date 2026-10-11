@@ -55,6 +55,7 @@ function DistanceStepper({
   step = 1,
   onKeyDown,
   name,
+  emphasized = false,
 }: {
   value: number
   onChange: (next: number) => void
@@ -62,6 +63,7 @@ function DistanceStepper({
   step?: number
   onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void
   name: string
+  emphasized?: boolean
 }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
@@ -78,7 +80,16 @@ function DistanceStepper({
         value={value}
         onKeyDown={onKeyDown}
         onChange={(e) => onChange(Number(e.target.value))}
-        style={distInput}
+        style={emphasized ? {
+          ...distInput,
+          width: '64px',
+          height: '40px',
+          border: '2px solid #2563eb',
+          backgroundColor: '#eff6ff',
+          boxShadow: '0 0 0 2px #dbeafe',
+          fontSize: '22px',
+          color: '#1e40af',
+        } : distInput}
         aria-label={name}
       />
       {[1, 5].map((d) => (
@@ -281,15 +292,15 @@ export default function ShotInputCard({ round: r, clubs }: Props) {
           justifyContent: 'space-between',
           flexWrap: 'wrap',
           gap: '4px 6px',
-          backgroundColor: '#f8fafc',
-          border: '1.5px solid #cbd5e1',
+          backgroundColor: isOb ? '#f8fafc' : '#eff6ff',
+          border: isOb ? '1.5px solid #cbd5e1' : '2px solid #60a5fa',
           borderRadius: '10px',
           padding: '6px 8px',
           marginBottom: '6px',
           opacity: isOb ? 0.55 : 1,
         }}
       >
-        <span style={{ fontSize: '13px', fontWeight: 'bold', color: isOb ? '#b91c1c' : '#475569', whiteSpace: 'nowrap' }}>
+        <span style={{ fontSize: '14px', fontWeight: 'bold', color: isOb ? '#b91c1c' : '#1e3a8a', whiteSpace: 'nowrap' }}>
           {isOb ? '📍 원위치 유지' : '　📍　남은 거리　📍'}
         </span>
         <DistanceStepper
@@ -299,6 +310,7 @@ export default function ShotInputCard({ round: r, clubs }: Props) {
           step={step}
           onKeyDown={onKeyDownDistance}
           name="샷 후 남은 거리"
+          emphasized
         />
       </div>
 
