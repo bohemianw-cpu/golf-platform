@@ -96,13 +96,23 @@ export default function ScoreTab() {
             value={isCourseSearchOpen ? courseSearchQuery : round.golfClubName}
             placeholder="골프장 미지정"
             disabled={!!round.currentRoundId || completedHoles.length > 0 || currentShots.length > 0}
-            onFocus={() => { setIsCourseSearchOpen(true); setCourseSearchQuery('') }}
-            onChange={(event) => { setCourseSearchQuery(event.target.value); setIsCourseSearchOpen(true) }}
+            onFocus={() => { setIsCourseSearchOpen(true); setCourseSearchQuery(round.golfClubName) }}
+            onChange={(event) => {
+              const query = event.target.value
+              setCourseSearchQuery(query)
+              setIsCourseSearchOpen(true)
+              setGolfClubName(query)
+              if (round.courseId) {
+                setCourseId(null)
+                setSelectedCatalogCourse(null)
+                configureCourseRoutes([])
+              }
+            }}
             onBlur={() => window.setTimeout(() => setIsCourseSearchOpen(false), 120)}
             onKeyDown={(event) => {
               if (event.key === 'Escape') {
                 setIsCourseSearchOpen(false)
-                setCourseSearchQuery('')
+                setCourseSearchQuery(round.golfClubName)
               }
             }}
             style={{ flex: 1, minWidth: 0, boxSizing: 'border-box', padding: '8px 10px', borderRadius: '6px', border: '1.5px solid #047857', fontWeight: 'bold', fontSize: '13.5px', color: round.golfClubName ? '#0f172a' : '#64748b', backgroundColor: '#ffffff', textAlign: 'left' }}
