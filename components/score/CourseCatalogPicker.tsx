@@ -20,24 +20,26 @@ interface Props {
   courseId: string | null
   routeIds: string[]
   locked: boolean
+  searchOpen: boolean
+  onSearchOpenChange: (open: boolean) => void
+  searchQuery: string
+  onSearchQueryChange: (query: string) => void
   onCourseSelect: (course: GolfCourseOption | null) => void
   onCourseResolved: (course: GolfCourseOption | null) => void
   onRoutesChange: (routes: GolfRouteOption[]) => void
 }
 
-export default function CourseCatalogPicker({ courseId, routeIds, locked, onCourseSelect, onCourseResolved, onRoutesChange }: Props) {
+export default function CourseCatalogPicker({ courseId, routeIds, locked, searchOpen, onSearchOpenChange, searchQuery, onSearchQueryChange, onCourseSelect, onCourseResolved, onRoutesChange }: Props) {
   const supabase = useMemo(() => createClient(), [])
-  const [query, setQuery] = useState('')
   const [courses, setCourses] = useState<GolfCourseOption[]>([])
   const [selectedCourse, setSelectedCourse] = useState<GolfCourseOption | null>(null)
   const [routes, setRoutes] = useState<GolfRouteOption[]>([])
   const [loading, setLoading] = useState(false)
   const [catalogError, setCatalogError] = useState(false)
-  const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const search = query.trim()
-    if (search.length < 2) return
+    const search = searchQuery.trim()
+    if (search.length < 1) return
 
     let cancelled = false
     const timer = window.setTimeout(async () => {
@@ -48,7 +50,7 @@ export default function CourseCatalogPicker({ courseId, routeIds, locked, onCour
         .eq('verification_status', 'verified')
         .ilike('name', `%${search}%`)
         .order('name')
-        .limit(12)
+        .range(0, 999)
       if (cancelled) return
       setLoading(false)
       setCatalogError(!!error)
@@ -59,7 +61,7 @@ export default function CourseCatalogPicker({ courseId, routeIds, locked, onCour
       cancelled = true
       window.clearTimeout(timer)
     }
-  }, [query, supabase])
+  }, [searchQuery, supabase])
 
   useEffect(() => {
     if (!courseId) return
@@ -106,33 +108,32 @@ export default function CourseCatalogPicker({ courseId, routeIds, locked, onCour
   }, [courseId, supabase, onCourseResolved])
 
   return (
-    <section aria-label="검증된 골프장과 코스 검색" style={{ marginTop: '10px' }}>
-      <label htmlFor="course-catalog-search" style={{ display: 'block', marginBottom: '5px', fontSize: '11px', fontWeight: 700, color: '#334155' }}>
-        구장 검색 · 검증된 구장 선택
-      </label>
+    <section aria-label="골프장과 코스 검색" style={{ marginTop: searchOpen || (courseId && selectedCourse) ? '10px' : 0 }}>
+      {searchOpen && <>
       <div style={{ position: 'relative' }}>
+        <label htmlFor="golf-course-search" style={{ display: 'block', marginBottom: '4px', color: '#475569', fontSize: '11px', fontWeight: 700 }}>검증된 골프장 검색</label>
         <input
-          id="course-catalog-search"
+          id="golf-course-search"
           type="search"
           role="combobox"
-          disabled={locked}
-          value={query}
-          onFocus={() => setOpen(true)}
-          onChange={(event) => setQuery(event.target.value)}
-          placeholder="구장명 두 글자 이상 입력"
+          aria-expanded={searchQuery.trim().length > 0}
           aria-controls="course-catalog-results"
-          aria-expanded={open && query.trim().length >= 2}
+          aria-autocomplete="list"
           autoComplete="off"
-          style={{ width: '100%', boxSizing: 'border-box', padding: '9px 10px', borderRadius: '7px', border: '1px solid #cbd5e1', fontSize: '13px', background: '#fff' }}
+          value={searchQuery}
+          onChange={(event) => onSearchQueryChange(event.target.value)}
+          placeholder="골프장 이름을 입력하세요"
+          disabled={locked}
+          style={{ width: '100%', boxSizing: 'border-box', padding: '9px 10px', border: '1px solid #cbd5e1', borderRadius: '7px', fontSize: '12px' }}
         />
-        {open && query.trim().length >= 2 && (
+        {searchQuery.trim().length >= 1 && (
           <ul id="course-catalog-results" role="listbox" aria-label="골프장 검색 결과" style={{ position: 'absolute', top: '100%', left: 0, right: 0, zIndex: 20, maxHeight: '220px', overflowY: 'auto', margin: 0, padding: '4px', listStyle: 'none', background: '#fff', border: '1px solid #cbd5e1', borderRadius: '8px', boxShadow: '0 8px 20px #0f172a1a' }}>
             {loading ? <li role="status" style={{ padding: '9px', fontSize: '12px', color: '#64748b' }}>검색 중…</li>
               : catalogError ? <li role="alert" style={{ padding: '9px', fontSize: '12px', color: '#b91c1c' }}>구장 카탈로그를 불러오지 못했습니다.</li>
                 : courses.length === 0 ? <li style={{ padding: '9px', fontSize: '12px', color: '#64748b' }}>검증된 결과가 없습니다. 입력한 구장명으로 임시 기록할 수 있으며, 이 기록은 구장 평균 비교에서 제외됩니다.</li>
                   : courses.map((course) => (
-                    <li key={course.id} role="option" aria-selected={course.id === courseId}>
-                      <button type="button" disabled={locked} onClick={() => { setSelectedCourse(course); onCourseSelect(course); setQuery(''); setOpen(false) }} style={{ width: '100%', padding: '9px', border: 0, borderRadius: '6px', textAlign: 'left', background: course.id === courseId ? '#ecfdf5' : '#fff', cursor: 'pointer' }}>
+                    <li key={course.id}>
+                      <button type="button" role="option" aria-selected={course.id === courseId} disabled={locked} onMouseDown={(event) => event.preventDefault()} onClick={() => { setSelectedCourse(course); onCourseSelect(course); onSearchQueryChange(''); onSearchOpenChange(false) }} style={{ width: '100%', padding: '9px', border: 0, borderRadius: '6px', textAlign: 'left', background: course.id === courseId ? '#ecfdf5' : '#fff', cursor: 'pointer' }}>
                         <span style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: '#0f172a' }}>{course.name}</span>
                         <span style={{ display: 'block', marginTop: '2px', fontSize: '10px', color: '#64748b' }}>
                           {course.region || '지역 미등록'} · {course.venue_kind === 'virtual_screen' ? '스크린' : course.supports_field && course.supports_screen ? '필드/스크린' : course.supports_field ? '필드' : '스크린'}
@@ -143,6 +144,7 @@ export default function CourseCatalogPicker({ courseId, routeIds, locked, onCour
           </ul>
         )}
       </div>
+      </>}
       {courseId && selectedCourse && (
         <div style={{ marginTop: '8px', padding: '9px', background: '#f0fdf4', borderRadius: '8px', border: '1px solid #bbf7d0' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>

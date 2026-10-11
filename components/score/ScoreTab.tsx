@@ -24,12 +24,16 @@ export default function ScoreTab() {
   const { choose, confirm, dialog } = useChoiceDialog()
   const [clubs, setClubs] = useState<ClubItem[]>(() => sortClubs(DEFAULT_CLUBS))
   const [isClubModalOpen, setIsClubModalOpen] = useState(false)
+  const [isCourseSearchOpen, setIsCourseSearchOpen] = useState(false)
+  const [courseSearchQuery, setCourseSearchQuery] = useState('')
   const [selectedCatalogCourse, setSelectedCatalogCourse] = useState<GolfCourseOption | null>(null)
 
   const round = useRound(clubs, { choose, confirm })
   const { completedHoles, currentHole, currentPar, currentShots, currentPrevDistance, summary, isRoundComplete, isSaving, saveError } = round
   const { setCourseId, setGolfClubName, setCourseName, playMode, setPlayMode, configureCourseRoutes } = round
   const handleCourseSelect = useCallback((course: GolfCourseOption | null) => {
+    setIsCourseSearchOpen(false)
+    setCourseSearchQuery('')
     setSelectedCatalogCourse(course)
     setCourseId(course?.id ?? null)
     setGolfClubName(course?.name ?? '')
@@ -81,14 +85,27 @@ export default function ScoreTab() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <span style={{ fontSize: '18px', flexShrink: 0 }}>⛳</span>
           <input
-            type="text"
-            value={round.golfClubName}
-            onChange={(e) => round.setGolfClubName(e.target.value)}
-            readOnly={!!round.courseId || !!round.currentRoundId}
-            placeholder="골프장 이름"
-            aria-label="골프장 이름"
-            autoComplete="organization"
-            style={{ flex: 1, minWidth: 0, boxSizing: 'border-box', padding: '8px 10px', borderRadius: '6px', border: '1.5px solid #047857', fontWeight: 'bold', fontSize: '13.5px', color: '#0f172a', backgroundColor: '#ffffff' }}
+            id="course-catalog-search"
+            type="search"
+            role="combobox"
+            aria-label="골프장 이름 검색"
+            aria-autocomplete="list"
+            aria-controls="course-catalog-results"
+            aria-expanded={isCourseSearchOpen && courseSearchQuery.trim().length >= 1}
+            autoComplete="off"
+            value={isCourseSearchOpen ? courseSearchQuery : round.golfClubName}
+            placeholder="골프장 미지정"
+            disabled={!!round.currentRoundId || completedHoles.length > 0 || currentShots.length > 0}
+            onFocus={() => { setIsCourseSearchOpen(true); setCourseSearchQuery('') }}
+            onChange={(event) => { setCourseSearchQuery(event.target.value); setIsCourseSearchOpen(true) }}
+            onBlur={() => window.setTimeout(() => setIsCourseSearchOpen(false), 120)}
+            onKeyDown={(event) => {
+              if (event.key === 'Escape') {
+                setIsCourseSearchOpen(false)
+                setCourseSearchQuery('')
+              }
+            }}
+            style={{ flex: 1, minWidth: 0, boxSizing: 'border-box', padding: '8px 10px', borderRadius: '6px', border: '1.5px solid #047857', fontWeight: 'bold', fontSize: '13.5px', color: round.golfClubName ? '#0f172a' : '#64748b', backgroundColor: '#ffffff', textAlign: 'left' }}
           />
           <input
             type="text"
@@ -104,6 +121,10 @@ export default function ScoreTab() {
           courseId={round.courseId}
           routeIds={round.routeIds}
           locked={!!round.currentRoundId || completedHoles.length > 0 || currentShots.length > 0}
+          searchOpen={isCourseSearchOpen}
+          onSearchOpenChange={setIsCourseSearchOpen}
+          searchQuery={courseSearchQuery}
+          onSearchQueryChange={setCourseSearchQuery}
           onCourseSelect={handleCourseSelect}
           onCourseResolved={handleCourseResolved}
           onRoutesChange={handleRoutesChange}

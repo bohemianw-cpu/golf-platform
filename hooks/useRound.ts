@@ -329,6 +329,12 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
       if (!roundPromiseRef.current) {
         roundPromiseRef.current = (async () => {
           const name = metaRef.current.club.trim() || '골프장 미지정'
+          const { data: profile, error: profileError } = await supabase
+            .from('profiles')
+            .select('skill_group')
+            .eq('id', userId)
+            .maybeSingle()
+          if (profileError) throw profileError
           const { data, error } = await supabase
             .from('rounds')
             .insert({
@@ -339,6 +345,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
               play_mode: metaRef.current.playMode,
               course_id: metaRef.current.courseId,
               route_ids: metaRef.current.routeIds,
+              skill_group_at_round: profile?.skill_group ?? 'beginner',
               status: 'in_progress',
             })
             .select('id')

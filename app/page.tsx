@@ -1,9 +1,9 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import ScoreTab from '@/components/score/ScoreTab'
 import MyTab from '@/components/my/MyTab'
-import JoinTab from '@/components/join/JoinTab'
+import ComingSoonTab from '@/components/layout/ComingSoonTab'
 import AuthModal from '@/components/auth/AuthModal'
 import { createClient } from '@/utils/supabase/client'
 
@@ -17,32 +17,29 @@ export default function GolfPlatformPage() {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState<boolean>(false)
   const [authLoading, setAuthLoading] = useState<boolean>(true)
 
-  const supabase = createClient()
+  const supabase = useMemo(() => createClient(), [])
 
   // Supabase 실시간 세션 및 프로필(닉네임) 감지
   useEffect(() => {
+    let currentUserId: string | null = null
     // 세션 상태 구독 (로그인, 로그아웃, 토큰 갱신 등)
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       if (session?.user) {
+        currentUserId = session.user.id
         setIsLoggedIn(true)
-        try {
-          // profiles 테이블에서 DB에 저장된 실제 닉네임 조회
-          const { data, error } = await supabase
+        setUserNickname(session.user.user_metadata?.nickname || '골퍼')
+        queueMicrotask(() => {
+          void supabase
             .from('profiles')
             .select('nickname')
             .eq('id', session.user.id)
             .single()
-
-          if (!error && data?.nickname) {
-            setUserNickname(data.nickname)
-          } else {
-            // 트리거 반영 직후이거나 메타데이터에 있는 경우 대비
-            setUserNickname(session.user.user_metadata?.nickname || '골퍼')
-          }
-        } catch (err) {
-          setUserNickname('골퍼')
-        }
+            .then(({ data, error }) => {
+              if (!error && data?.nickname && currentUserId === session.user.id) setUserNickname(data.nickname)
+            })
+        })
       } else {
+        currentUserId = null
         setIsLoggedIn(false)
         setUserNickname('골퍼')
       }
@@ -50,6 +47,7 @@ export default function GolfPlatformPage() {
     })
 
     return () => {
+      currentUserId = null
       subscription.unsubscribe()
     }
   }, [supabase])
@@ -77,9 +75,11 @@ export default function GolfPlatformPage() {
         }}
       >
         <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div
+          <button
+            type="button"
             onClick={() => setActiveTab('home')}
-            style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}
+            aria-label="Golf Secretary 홈으로 이동"
+            style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', border: 0, padding: 0, background: 'transparent', textAlign: 'left' }}
           >
             <span style={{ fontSize: '24px' }}>⛳</span>
             <div>
@@ -88,19 +88,20 @@ export default function GolfPlatformPage() {
               </div>
               <div style={{ fontSize: '10px', color: '#64748b', fontWeight: 600 }}>골프 비서 & 라운드 플랫폼</div>
             </div>
-          </div>
+          </button>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             {authLoading ? (
               <span style={{ fontSize: '12px', color: '#94a3b8' }}>인증 확인 중...</span>
             ) : isLoggedIn ? (
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span
+                <button
+                  type="button"
                   onClick={() => setActiveTab('my')}
-                  style={{ fontSize: '13px', fontWeight: 'bold', color: '#0f172a', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }}
+                  style={{ fontSize: '13px', fontWeight: 'bold', color: '#0f172a', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px', border: 0, padding: 0, background: 'transparent' }}
                 >
                   <span style={{ color: '#047857' }}>●</span> {userNickname}님
-                </span>
+                </button>
                 <button
                   onClick={handleLogout}
                   style={{
@@ -144,10 +145,10 @@ export default function GolfPlatformPage() {
         {activeTab === 'home' && (
           <div style={{ padding: '16px' }}>
             <div style={{ backgroundColor: '#0f172a', color: '#fff', padding: '24px', borderRadius: '16px', marginBottom: '20px' }}>
-              <div style={{ fontSize: '13px', color: '#38bdf8', fontWeight: 'bold', marginBottom: '4px' }}>TODAY'S GOLF BRIEFING</div>
+              <div style={{ fontSize: '13px', color: '#38bdf8', fontWeight: 'bold', marginBottom: '4px' }}>TODAY&apos;S GOLF BRIEFING</div>
               <h2 style={{ margin: '0 0 10px 0', fontSize: '22px' }}>{userNickname}님, 오늘 라운드 준비되셨나요?</h2>
               <p style={{ margin: 0, fontSize: '14px', color: '#94a3b8', lineHeight: 1.5 }}>
-                동반자 조인부터 필드 샷 트래킹, 스윙 분석까지 한곳에서 관리하세요.
+                라운드와 모든 샷 기록을 쌓고, 내 데이터에 맞춘 분석과 연습 방향을 확인하세요.
               </p>
               <div style={{ display: 'flex', gap: '10px', marginTop: '16px', flexWrap: 'wrap' }}>
                 <button
@@ -160,33 +161,33 @@ export default function GolfPlatformPage() {
                   onClick={() => setActiveTab('join')}
                   style={{ padding: '10px 18px', backgroundColor: '#1e293b', color: '#38bdf8', border: '1px solid #38bdf8', borderRadius: '8px', fontWeight: 'bold', fontSize: '13px', cursor: 'pointer' }}
                 >
-                  👥 동반자 조인 / 벙개 찾기
+                  👥 조인·벙개 (서비스 준비 중)
                 </button>
               </div>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px' }}>
-              <div onClick={() => setActiveTab('join')} style={{ backgroundColor: '#fff', padding: '18px', borderRadius: '12px', border: '1px solid #e2e8f0', cursor: 'pointer' }}>
+              <button type="button" onClick={() => setActiveTab('join')} style={{ backgroundColor: '#fff', padding: '18px', borderRadius: '12px', border: '1px solid #e2e8f0', cursor: 'pointer', textAlign: 'left', font: 'inherit' }}>
                 <div style={{ fontSize: '24px', marginBottom: '8px' }}>👥</div>
                 <h3 style={{ margin: '0 0 4px 0', fontSize: '16px', fontWeight: 'bold' }}>필드 조인 & 스크린 벙개</h3>
-                <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>인원이 부족할 때 매너 있는 골프 동반자를 구해보세요.</p>
-              </div>
-              <div onClick={() => setActiveTab('video')} style={{ backgroundColor: '#fff', padding: '18px', borderRadius: '12px', border: '1px solid #e2e8f0', cursor: 'pointer' }}>
+                <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>곧 서비스가 시작됩니다.</p>
+              </button>
+              <button type="button" onClick={() => setActiveTab('video')} style={{ backgroundColor: '#fff', padding: '18px', borderRadius: '12px', border: '1px solid #e2e8f0', cursor: 'pointer', textAlign: 'left', font: 'inherit' }}>
                 <div style={{ fontSize: '24px', marginBottom: '8px' }}>🎬</div>
                 <h3 style={{ margin: '0 0 4px 0', fontSize: '16px', fontWeight: 'bold' }}>골프 영상 & 레슨 피드</h3>
-                <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>드라이버 비거리, 숏게임 원포인트 레슨 영상</p>
-              </div>
-              <div onClick={() => setActiveTab('shop')} style={{ backgroundColor: '#fff', padding: '18px', borderRadius: '12px', border: '1px solid #e2e8f0', cursor: 'pointer' }}>
+                <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>데이터와 연결되는 맞춤 영상 서비스를 준비하고 있습니다.</p>
+              </button>
+              <button type="button" onClick={() => setActiveTab('shop')} style={{ backgroundColor: '#fff', padding: '18px', borderRadius: '12px', border: '1px solid #e2e8f0', cursor: 'pointer', textAlign: 'left', font: 'inherit' }}>
                 <div style={{ fontSize: '24px', marginBottom: '8px' }}>🔥</div>
                 <h3 style={{ margin: '0 0 4px 0', fontSize: '16px', fontWeight: 'bold' }}>골프용품 공동구매</h3>
-                <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>골프공, 장갑, 거리측정기 최저가 핫딜</p>
-              </div>
+                <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>곧 서비스를 시작할 예정입니다.</p>
+              </button>
             </div>
           </div>
         )}
 
         {/* ② 조인 탭 */}
-        {activeTab === 'join' && <JoinTab />}
+        {activeTab === 'join' && <ComingSoonTab area="join" onGoToScore={() => setActiveTab('score')} />}
 
         {/* ③ 스코어 탭 */}
         {activeTab === 'score' && (
@@ -207,128 +208,18 @@ export default function GolfPlatformPage() {
 )}
 
         {/* ④ 골프 영상 탭 */}
-        {activeTab === 'video' && (
-          <div style={{ padding: '16px' }}>
-            <h2 style={{ fontSize: '20px', fontWeight: 'bold', margin: '0 0 16px 0' }}>🎬 맞춤 골프 영상 피드</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px' }}>
-              {[
-                { title: '드라이버 슬라이스 10분 만에 완치하는 릴리즈 공식', pro: '김태훈 프로', view: '2.4만회' },
-                { title: '아이언 정타율 200% 올려주는 하체 회전 비결', pro: '이정은 프로', view: '1.8만회' },
-                { title: '3퍼트 절대 안 하는 5m 거리감 맞추기 레슨', pro: '박민수 프로', view: '3.1만회' },
-              ].map((v, i) => (
-                <div key={i} style={{ backgroundColor: '#fff', borderRadius: '12px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
-                  <div style={{ height: '140px', backgroundColor: '#334155', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '32px' }}>
-                    ▶
-                  </div>
-                  <div style={{ padding: '14px' }}>
-                    <h3 style={{ margin: '0 0 8px 0', fontSize: '15px', fontWeight: 'bold' }}>{v.title}</h3>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#64748b' }}>
-                      <span>{v.pro}</span>
-                      <span>조회수 {v.view}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        {activeTab === 'video' && <ComingSoonTab area="video" onGoToScore={() => setActiveTab('score')} />}
 
         {/* ⑤ 레슨 프로 탭 */}
-        {activeTab === 'lesson' && (
-          <div style={{ padding: '16px' }}>
-            <h2 style={{ fontSize: '20px', fontWeight: 'bold', margin: '0 0 16px 0' }}>👨‍🏫 레슨 프로 찾기 & 영상 문의</h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {[
-                { name: '김진우 프로', spec: 'KPGA 투어프로 / 12년 경력', loc: '부산 해운대', field: '드라이버 비거리 교정 전문' },
-                { name: '이지안 프로', spec: 'KLPGA 정회원 / 국가대표 상비군 출신', loc: '서울 강남', field: '숏게임 & 퍼팅 정밀 레슨' },
-              ].map((p, i) => (
-                <div key={i} style={{ backgroundColor: '#fff', padding: '16px', borderRadius: '12px', border: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
-                  <div>
-                    <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 'bold' }}>{p.name} <span style={{ fontSize: '12px', color: '#047857' }}>● 레슨 가능</span></h3>
-                    <div style={{ fontSize: '13px', color: '#475569', marginTop: '4px' }}>{p.spec} · {p.loc}</div>
-                    <div style={{ fontSize: '12px', color: '#0284c7', marginTop: '2px' }}>주요 분야: {p.field}</div>
-                  </div>
-                  <button
-                    onClick={() => alert(`${p.name} 프로에게 스윙 영상 문의 기능이 준비되었습니다.`)}
-                    style={{ padding: '8px 16px', backgroundColor: '#047857', color: '#fff', border: 'none', borderRadius: '8px', fontWeight: 'bold', fontSize: '13px', cursor: 'pointer' }}
-                  >
-                    📹 스윙 영상으로 문의하기
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        {activeTab === 'lesson' && <ComingSoonTab area="lesson" onGoToScore={() => setActiveTab('score')} />}
 
         {/* ⑥ 쇼핑 탭 */}
-        {activeTab === 'shop' && (
-          <div style={{ padding: '16px' }}>
-            <h2 style={{ fontSize: '20px', fontWeight: 'bold', margin: '0 0 16px 0' }}>🛒 골프용품 공동구매 특가</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px' }}>
-              {[
-                { name: '타이틀리스트 PRO V1 (1더즌)', price: '52,000원', original: '68,000원', participants: 184 },
-                { name: '보이스캐디 프리미엄 레이저 거리측정기', price: '249,000원', original: '380,000원', participants: 92 },
-              ].map((item, i) => (
-                <div key={i} style={{ backgroundColor: '#fff', padding: '16px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-                  <span style={{ fontSize: '11px', backgroundColor: '#dc2626', color: '#fff', padding: '2px 6px', borderRadius: '4px', fontWeight: 'bold' }}>공구 마감 D-2</span>
-                  <h3 style={{ margin: '8px 0', fontSize: '16px', fontWeight: 'bold' }}>{item.name}</h3>
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-                    <span style={{ fontSize: '20px', fontWeight: 'bold', color: '#dc2626' }}>{item.price}</span>
-                    <span style={{ fontSize: '13px', color: '#94a3b8', textDecoration: 'line-through' }}>{item.original}</span>
-                  </div>
-                  <div style={{ fontSize: '12px', color: '#047857', marginTop: '6px' }}>현재 {item.participants}명 참여 중!</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        {activeTab === 'shop' && <ComingSoonTab area="shop" onGoToScore={() => setActiveTab('score')} />}
 
         {/* ⑦ MY 탭 */}
         {activeTab === 'my' && <MyTab />}
 
       </main>
-
-      {/* 3. 하단 상시 노출 광고 배너 영역 */}
-      <div
-        style={{
-          position: 'fixed',
-          bottom: '64px',
-          left: 0,
-          right: 0,
-          zIndex: 40,
-          backgroundColor: '#ffffff',
-          borderTop: '1px solid #e2e8f0',
-          borderBottom: '1px solid #e2e8f0',
-          padding: '8px 16px',
-          textAlign: 'center',
-          boxShadow: '0 -2px 10px rgba(0,0,0,0.03)',
-        }}
-      >
-        <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: '#475569' }}>
-            <span style={{ fontSize: '10px', backgroundColor: '#f1f5f9', border: '1px solid #cbd5e1', padding: '1px 5px', borderRadius: '4px', color: '#64748b' }}>
-              AD
-            </span>
-            <span>🏌️ <strong>2026 시즌 신상 비거리 드라이버 특가전</strong> (사은품 증정)</span>
-          </div>
-          <button
-            onClick={() => setActiveTab('shop')}
-            style={{
-              padding: '4px 10px',
-              fontSize: '11px',
-              backgroundColor: '#0f172a',
-              color: '#ffffff',
-              border: 'none',
-              borderRadius: '4px',
-              fontWeight: 'bold',
-              cursor: 'pointer',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            자세히 보기
-          </button>
-        </div>
-      </div>
 
       {/* 4. 하단 고정 메인 네비게이션 바 */}
       <nav
