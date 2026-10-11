@@ -1,0 +1,790 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+    "name": "메이플비치 골프&리조트",
+      "match_name": "메이플비치골프&리조트",
+      "region": "강원",
+      "address": "강릉시 강동면 풍호길 300-78",
+      "hole_count": 18,
+      "verification_status": "verified",
+      "supports_screen": false,
+      "routes": [
+        {
+          "route_code": "BEACH",
+          "display_name": "비치",
+          "hole_count": 9,
+          "primary_tee_code": "blue",
+          "source_url": "https://www.maplebeach.co.kr/golf/course-introduction/beach-course",
+          "source_data_url": "https://www.maplebeach.co.kr/chunks/BeachCourse-BTVDjqZR.js",
+          "verification_status": "verified",
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "handicap_index": 9,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h1-BL6GngyU.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 370,
+                  "source_distance": 370,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 335,
+                  "source_distance": 335,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 295,
+                  "source_distance": 295,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 260,
+                  "source_distance": 260,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 5,
+              "handicap_index": 3,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h2-DnxxpZxw.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 590,
+                  "source_distance": 590,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 555,
+                  "source_distance": 555,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#94a3b8",
+                  "distance_m": 512,
+                  "source_distance": 512,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 480,
+                  "source_distance": 480,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 445,
+                  "source_distance": 445,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "handicap_index": 1,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h3-kVYKAxPT.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 380,
+                  "source_distance": 380,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 350,
+                  "source_distance": 350,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 305,
+                  "source_distance": 305,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 270,
+                  "source_distance": 270,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 3,
+              "handicap_index": 6,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h4-DnNDePne.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 185,
+                  "source_distance": 185,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 150,
+                  "source_distance": 150,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 115,
+                  "source_distance": 115,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 100,
+                  "source_distance": 100,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 5,
+              "handicap_index": 4,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h5-C4YkWZ3Q.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 540,
+                  "source_distance": 540,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 500,
+                  "source_distance": 500,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 445,
+                  "source_distance": 445,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 395,
+                  "source_distance": 395,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 3,
+              "handicap_index": 8,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h6-BnFWRDPO.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 155,
+                  "source_distance": 155,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 130,
+                  "source_distance": 130,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 100,
+                  "source_distance": 100,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 85,
+                  "source_distance": 85,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "handicap_index": 5,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h7-BpdFumwx.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 365,
+                  "source_distance": 365,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 330,
+                  "source_distance": 330,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 290,
+                  "source_distance": 290,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 255,
+                  "source_distance": 255,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "handicap_index": 7,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h8-BA4TvlK-.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 360,
+                  "source_distance": 360,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 340,
+                  "source_distance": 340,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 305,
+                  "source_distance": 305,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 250,
+                  "source_distance": 250,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "handicap_index": 2,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h9-BvjggPI4.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 400,
+                  "source_distance": 400,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 365,
+                  "source_distance": 365,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 320,
+                  "source_distance": 320,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 280,
+                  "source_distance": 280,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "MAPLE",
+          "display_name": "메이플",
+          "hole_count": 9,
+          "primary_tee_code": "blue",
+          "source_url": "https://www.maplebeach.co.kr/golf/course-introduction/maple-course",
+          "source_data_url": "https://www.maplebeach.co.kr/chunks/MapleCourse-BU5zxXwW.js",
+          "verification_status": "verified",
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "handicap_index": 3,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h1-DBqCTVPS.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 415,
+                  "source_distance": 415,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 375,
+                  "source_distance": 375,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 335,
+                  "source_distance": 335,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 300,
+                  "source_distance": 300,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 5,
+              "handicap_index": 4,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h2-shY7ca8x.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 515,
+                  "source_distance": 515,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 490,
+                  "source_distance": 490,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 455,
+                  "source_distance": 455,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 420,
+                  "source_distance": 420,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#94a3b8",
+                  "distance_m": 367,
+                  "source_distance": 367,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "handicap_index": 7,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h3-BgQnDAKa.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 370,
+                  "source_distance": 370,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 345,
+                  "source_distance": 345,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 315,
+                  "source_distance": 315,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 280,
+                  "source_distance": 280,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "handicap_index": 6,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h4-lQkXs5Bs.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 365,
+                  "source_distance": 365,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 335,
+                  "source_distance": 335,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 300,
+                  "source_distance": 300,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 280,
+                  "source_distance": 280,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#94a3b8",
+                  "distance_m": 221,
+                  "source_distance": 221,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 3,
+              "handicap_index": 2,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h5-CnywFQOc.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 170,
+                  "source_distance": 170,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 145,
+                  "source_distance": 145,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 110,
+                  "source_distance": 110,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 85,
+                  "source_distance": 85,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 5,
+              "handicap_index": 9,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h6-CB1tZ7em.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 500,
+                  "source_distance": 500,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 470,
+                  "source_distance": 470,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 430,
+                  "source_distance": 430,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 395,
+                  "source_distance": 395,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "handicap_index": 5,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h7-BZO2jDFb.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 390,
+                  "source_distance": 390,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 365,
+                  "source_distance": 365,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#94a3b8",
+                  "distance_m": 334,
+                  "source_distance": 334,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 310,
+                  "source_distance": 310,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 275,
+                  "source_distance": 275,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "handicap_index": 8,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h8-DFYrt-xR.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 180,
+                  "source_distance": 180,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 160,
+                  "source_distance": 160,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 135,
+                  "source_distance": 135,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 115,
+                  "source_distance": 115,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "handicap_index": 1,
+              "source_image_url": "https://www.maplebeach.co.kr/assets/h9-BhJFDFNa.jpg",
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 400,
+                  "source_distance": 400,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 360,
+                  "source_distance": 360,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#d4af37",
+                  "distance_m": 310,
+                  "source_distance": 310,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 290,
+                  "source_distance": 290,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
