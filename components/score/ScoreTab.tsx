@@ -68,6 +68,7 @@ export default function ScoreTab() {
             onChange={(e) => round.setGolfClubName(e.target.value)}
             placeholder="골프장 이름"
             aria-label="골프장 이름"
+            autoComplete="organization"
             style={{ flex: 1, minWidth: 0, boxSizing: 'border-box', padding: '8px 10px', borderRadius: '6px', border: '1.5px solid #047857', fontWeight: 'bold', fontSize: '13.5px', color: '#0f172a', backgroundColor: '#ffffff' }}
           />
           <input
@@ -79,6 +80,28 @@ export default function ScoreTab() {
             style={{ width: '84px', flexShrink: 0, boxSizing: 'border-box', padding: '8px', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '13px', color: '#475569', textAlign: 'center', backgroundColor: '#ffffff' }}
           />
         </div>
+
+        <fieldset style={{ margin: '10px 0 0', padding: '8px 10px', border: '1px solid #cbd5e1', borderRadius: '8px', background: '#fff' }}>
+          <legend style={{ padding: '0 4px', fontSize: '11px', fontWeight: 700, color: '#334155' }}>이번 라운드 방식 (필수)</legend>
+          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+            {(['field', 'screen'] as const).map((mode) => (
+              <label key={mode} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: '#334155', cursor: 'pointer' }}>
+                <input
+                  type="radio"
+                  name="round-play-mode"
+                  value={mode}
+                  checked={round.playMode === mode}
+                  onChange={() => round.setPlayMode(mode)}
+                  disabled={!!round.playMode && (!!round.currentRoundId || completedHoles.length > 0 || currentShots.length > 0)}
+                />
+                {mode === 'field' ? '필드' : '스크린'}
+              </label>
+            ))}
+          </div>
+          {(round.currentRoundId || completedHoles.length > 0 || currentShots.length > 0) && (
+            <p style={{ margin: '6px 0 0', fontSize: '10px', color: '#64748b' }}>라운드 기록이 시작되어 방식을 변경할 수 없습니다.</p>
+          )}
+        </fieldset>
 
         {/* 2줄: 저장 상태 + 버튼 */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginTop: '10px' }}>
@@ -176,8 +199,12 @@ export default function ScoreTab() {
             </button>
           </div>
         </div>
-      ) : (
+      ) : round.playMode ? (
         <ShotInputCard round={round} clubs={clubs} />
+      ) : (
+        <div role="status" style={{ padding: '24px 16px', marginBottom: '16px', border: '1px dashed #94a3b8', borderRadius: '12px', background: '#fff', textAlign: 'center', color: '#475569', fontSize: '13px' }}>
+          라운드 방식을 선택하면 스코어와 샷을 입력할 수 있습니다.
+        </div>
       )}
 
       <ShotComparison

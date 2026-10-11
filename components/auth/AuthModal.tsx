@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { createClient } from '@/utils/supabase/client'
+import { getGolfLevelGroup, GOLF_LEVEL_GROUPS } from '@/utils/golf/levels'
 
 interface AuthModalProps {
   isOpen: boolean
@@ -13,6 +14,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [nickname, setNickname] = useState('')
+  const [handicapIndex, setHandicapIndex] = useState('')
   const [loading, setLoading] = useState(false)
   const [errorMsg, setErrorMsg] = useState('')
 
@@ -27,13 +29,22 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
     try {
       if (isSignUp) {
-        // 회원가입 (트리거를 통해 nickname 메타데이터가 profiles로 전달됨)
+        const parsedHandicap = handicapIndex.trim() === '' ? null : Number(handicapIndex)
+        if (parsedHandicap !== null && (!Number.isFinite(parsedHandicap) || parsedHandicap < -10 || parsedHandicap > 54)) {
+          throw new Error('핸디캡은 -10부터 54 사이로 입력해 주세요.')
+        }
+        const skillGroup = getGolfLevelGroup(parsedHandicap)
+
+        // 프로필 생성 트리거에서 활용할 수 있도록 가입 메타데이터에 함께 저장
         const { error } = await supabase.auth.signUp({
           email,
           password,
           options: {
             data: {
               nickname: nickname.trim() || '골퍼',
+              handicap_index: parsedHandicap,
+              skill_group: skillGroup,
+              skill_group_source: 'self_reported',
             },
           },
         })
@@ -49,8 +60,8 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
         if (error) throw error
         onClose()
       }
-    } catch (err: any) {
-      setErrorMsg(err.message || '인증 처리 중 오류가 발생했습니다.')
+    } catch (err: unknown) {
+      setErrorMsg(err instanceof Error ? err.message : '인증 처리 중 오류가 발생했습니다.')
     } finally {
       setLoading(false)
     }
@@ -112,6 +123,37 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
                 placeholder="사용할 닉네임"
                 style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #ddd', boxSizing: 'border-box' }}
               />
+            </div>
+          )}
+
+          {isSignUp && (
+            <div style={{ padding: '12px', borderRadius: '10px', backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0' }}>
+              <label htmlFor="signup-handicap" style={{ fontSize: '12px', color: '#166534', display: 'block', marginBottom: '6px', fontWeight: 700 }}>
+                핸디캡 지수 (선택)
+              </label>
+              <input
+                id="signup-handicap"
+                type="number"
+                min="-10"
+                max="54"
+                step="0.1"
+                inputMode="decimal"
+                value={handicapIndex}
+                onChange={(e) => setHandicapIndex(e.target.value)}
+                placeholder="예: 24.0"
+                aria-describedby="signup-handicap-help signup-level-preview"
+                style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #bbf7d0', boxSizing: 'border-box' }}
+              />
+              <div id="signup-handicap-help" style={{ marginTop: '6px', fontSize: '11px', lineHeight: 1.5, color: '#4b5563' }}>
+                모르면 비워 두세요. 우선 초보 그룹으로 시작하고, 라운드 기록이 쌓이면 조정할 수 있습니다.
+              </div>
+              <div id="signup-level-preview" aria-live="polite" style={{ marginTop: '8px', fontSize: '12px', color: '#166534', fontWeight: 700 }}>
+                비교 그룹: {GOLF_LEVEL_GROUPS[getGolfLevelGroup(handicapIndex.trim() ? Number(handicapIndex) : null)].label}
+                <span style={{ display: 'block', marginTop: '3px', fontSize: '11px', fontWeight: 400, color: '#4b5563' }}>
+                  {GOLF_LEVEL_GROUPS[getGolfLevelGroup(handicapIndex.trim() ? Number(handicapIndex) : null)].range}
+                  {' · 프로 자격 인증이 아닌 실력 비교용 분류입니다.'}
+                </span>
+              </div>
             </div>
           )}
 
