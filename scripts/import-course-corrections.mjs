@@ -51,6 +51,9 @@ for (const course of corrections) {
       }
     }
     if (holeNumbers.size !== route.hole_count) throw new Error(`${course.name}/${route.route_code}: 모든 홀 번호를 채워야 합니다.`)
+    if (route.primary_tee_code && route.holes.some((hole) => !hole.tees.some((tee) => tee.tee_code === route.primary_tee_code))) {
+      throw new Error(`${course.name}/${route.route_code}: primary_tee_code가 모든 홀에 등록되어야 합니다.`)
+    }
     if (route.verification_status && !['verified', 'rejected', 'pending'].includes(route.verification_status)) {
       throw new Error(`${course.name}/${route.route_code}: 허용되지 않는 검수 상태입니다.`)
     }
