@@ -76,6 +76,11 @@ function sameValue(actual, expected) {
   return JSON.stringify(actual) === JSON.stringify(expected)
 }
 
+function routeDistances(route) {
+  const primaryTeeCode = route.primary_tee_code ?? 'white'
+  return route.holes.map((hole) => hole.tees.find((tee) => tee.tee_code === primaryTeeCode)?.distance_m ?? hole.tees[0].distance_m)
+}
+
 async function verifyCourse(correction, courseId) {
   const { data: course, error: courseError } = await supabase.from('golf_courses')
     .select('name,normalized_name,address,aliases,venue_kind,supports_field,supports_screen,hole_count,verification_status')
@@ -111,7 +116,7 @@ async function verifyCourse(correction, courseId) {
       display_name: expectedRoute.display_name ?? expectedRoute.route_code,
       hole_count: expectedRoute.hole_count,
       pars: expectedRoute.holes.map((hole) => hole.par),
-      distances_m: expectedRoute.holes.map((hole) => hole.tees.find((tee) => tee.tee_code === 'white')?.distance_m ?? hole.tees[0].distance_m),
+      distances_m: routeDistances(expectedRoute),
       source_name: 'admin_curated',
       source_url: expectedRoute.source_url,
       verification_status: expectedRoute.verification_status ?? 'verified',
@@ -201,7 +206,7 @@ for (const correction of corrections) {
     display_name: route.display_name ?? route.route_code,
     hole_count: route.hole_count,
     pars: route.holes.map((hole) => hole.par),
-    distances_m: route.holes.map((hole) => hole.tees.find((tee) => tee.tee_code === 'white')?.distance_m ?? hole.tees[0].distance_m),
+    distances_m: routeDistances(route),
     source_name: 'admin_curated',
     source_url: route.source_url,
     source_checked_at: new Date().toISOString(),
