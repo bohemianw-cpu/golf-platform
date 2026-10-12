@@ -1,0 +1,41 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "name": "나주힐스CC",
+      "match_name": "나주힐스CC",
+      "region": "전남",
+      "hole_count": 9,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "MCST 기초 목록의 전남 나주힐스CC 9홀과 공식 나주힐스CC 사이트의 9홀 코스 페이지를 구장명 및 홀 수로 대조했습니다. 공식 사이트 하단 소재지가 MCST 주소와 달라 기존 MCST 주소는 변경하지 않았습니다.",
+        "공식 개별 홀 페이지에서 PAR, HDCP, 블랙·블루·화이트·레드 티의 거리와 미터 단위를 확인해 전사했습니다. 일부 홀은 특정 티 거리가 게시되지 않아 해당 티 레코드를 만들지 않았습니다. (2026-10-12 확인)."
+      ],
+      "routes": [
+        {
+          "route_code": "course",
+          "display_name": "나주힐스 코스",
+          "hole_count": 9,
+          "primary_tee_code": "back",
+          "verification_status": "verified",
+          "source_url": "https://najuhills.com/course-full/",
+          "review_notes": [
+            "홀별 공식 출처: https://najuhills.com/course-01/ ~ https://najuhills.com/course-09/ . 페이지의 course-bk, course-bl, course-wt, course-rd 표식으로 티 색을 확인했고, 각 티 거리 단위는 m로 표시되어 있습니다. 공식 홀 상세페이지의 PAR 합계는 36입니다."
+          ],
+          "holes": [
+            { "hole_number": 1, "par": 5, "handicap_index": 2, "tees": [{ "tee_code": "back", "display_name": "블랙", "tee_color": "#1f2937", "distance_m": 466, "source_distance": 466, "source_unit": "m" }, { "tee_code": "blue", "display_name": "블루", "tee_color": "#2563eb", "distance_m": 438, "source_distance": 438, "source_unit": "m" }, { "tee_code": "white", "display_name": "화이트", "tee_color": "#64748b", "distance_m": 420, "source_distance": 420, "source_unit": "m" }, { "tee_code": "red", "display_name": "레드", "tee_color": "#dc2626", "distance_m": 380, "source_distance": 380, "source_unit": "m" }] },
+            { "hole_number": 2, "par": 4, "handicap_index": 5, "tees": [{ "tee_code": "back", "display_name": "블랙", "tee_color": "#1f2937", "distance_m": 380, "source_distance": 380, "source_unit": "m" }, { "tee_code": "blue", "display_name": "블루", "tee_color": "#2563eb", "distance_m": 340, "source_distance": 340, "source_unit": "m" }, { "tee_code": "white", "display_name": "화이트", "tee_color": "#64748b", "distance_m": 327, "source_distance": 327, "source_unit": "m" }, { "tee_code": "red", "display_name": "레드", "tee_color": "#dc2626", "distance_m": 315, "source_distance": 315, "source_unit": "m" }] },
+            { "hole_number": 3, "par": 3, "handicap_index": 8, "tees": [{ "tee_code": "back", "display_name": "블랙", "tee_color": "#1f2937", "distance_m": 110, "source_distance": 110, "source_unit": "m" }, { "tee_code": "red", "display_name": "레드", "tee_color": "#dc2626", "distance_m": 100, "source_distance": 100, "source_unit": "m" }] },
+            { "hole_number": 4, "par": 4, "handicap_index": 1, "tees": [{ "tee_code": "back", "display_name": "블랙", "tee_color": "#1f2937", "distance_m": 362, "source_distance": 362, "source_unit": "m" }, { "tee_code": "blue", "display_name": "블루", "tee_color": "#2563eb", "distance_m": 335, "source_distance": 335, "source_unit": "m" }, { "tee_code": "white", "display_name": "화이트", "tee_color": "#64748b", "distance_m": 320, "source_distance": 320, "source_unit": "m" }, { "tee_code": "red", "display_name": "레드", "tee_color": "#dc2626", "distance_m": 305, "source_distance": 305, "source_unit": "m" }] },
+            { "hole_number": 5, "par": 3, "handicap_index": 7, "tees": [{ "tee_code": "back", "display_name": "블랙", "tee_color": "#1f2937", "distance_m": 150, "source_distance": 150, "source_unit": "m" }, { "tee_code": "blue", "display_name": "블루", "tee_color": "#2563eb", "distance_m": 138, "source_distance": 138, "source_unit": "m" }, { "tee_code": "red", "display_name": "레드", "tee_color": "#dc2626", "distance_m": 128, "source_distance": 128, "source_unit": "m" }] },
+            { "hole_number": 6, "par": 5, "handicap_index": 4, "tees": [{ "tee_code": "back", "display_name": "블랙", "tee_color": "#1f2937", "distance_m": 445, "source_distance": 445, "source_unit": "m" }, { "tee_code": "blue", "display_name": "블루", "tee_color": "#2563eb", "distance_m": 408, "source_distance": 408, "source_unit": "m" }, { "tee_code": "white", "display_name": "화이트", "tee_color": "#64748b", "distance_m": 393, "source_distance": 393, "source_unit": "m" }, { "tee_code": "red", "display_name": "레드", "tee_color": "#dc2626", "distance_m": 372, "source_distance": 372, "source_unit": "m" }] },
+            { "hole_number": 7, "par": 4, "handicap_index": 3, "tees": [{ "tee_code": "back", "display_name": "블랙", "tee_color": "#1f2937", "distance_m": 398, "source_distance": 398, "source_unit": "m" }, { "tee_code": "blue", "display_name": "블루", "tee_color": "#2563eb", "distance_m": 372, "source_distance": 372, "source_unit": "m" }, { "tee_code": "white", "display_name": "화이트", "tee_color": "#64748b", "distance_m": 335, "source_distance": 335, "source_unit": "m" }, { "tee_code": "red", "display_name": "레드", "tee_color": "#dc2626", "distance_m": 310, "source_distance": 310, "source_unit": "m" }] },
+            { "hole_number": 8, "par": 4, "handicap_index": 6, "tees": [{ "tee_code": "back", "display_name": "블랙", "tee_color": "#1f2937", "distance_m": 350, "source_distance": 350, "source_unit": "m" }, { "tee_code": "blue", "display_name": "블루", "tee_color": "#2563eb", "distance_m": 330, "source_distance": 330, "source_unit": "m" }, { "tee_code": "white", "display_name": "화이트", "tee_color": "#64748b", "distance_m": 315, "source_distance": 315, "source_unit": "m" }, { "tee_code": "red", "display_name": "레드", "tee_color": "#dc2626", "distance_m": 298, "source_distance": 298, "source_unit": "m" }] },
+            { "hole_number": 9, "par": 4, "handicap_index": 9, "tees": [{ "tee_code": "back", "display_name": "블랙", "tee_color": "#1f2937", "distance_m": 330, "source_distance": 330, "source_unit": "m" }, { "tee_code": "blue", "display_name": "블루", "tee_color": "#2563eb", "distance_m": 320, "source_distance": 320, "source_unit": "m" }, { "tee_code": "white", "display_name": "화이트", "tee_color": "#64748b", "distance_m": 307, "source_distance": 307, "source_unit": "m" }, { "tee_code": "red", "display_name": "레드", "tee_color": "#dc2626", "distance_m": 290, "source_distance": 290, "source_unit": "m" }] }
+          ]
+        }
+      ]
+    }
+  ]
+}

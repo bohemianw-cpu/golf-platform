@@ -59,3 +59,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ## 현재 웹 관리자 기능
 
 저장소에는 코스 카탈로그를 편집하는 웹 관리자 화면은 아직 없습니다. 현재 검수와 공개 전환은 이 보정 JSON, 두 importer, Supabase의 `verification_status`를 통해 운영합니다. 운영자 화면을 추가할 때도 공개 정책은 그대로 유지해 구장과 코스 상태를 함께 확인한 뒤 전환해야 합니다.
+
+## 최근 공식 자료 반영
+
+- 나주힐스CC: 공식 9홀 페이지의 PAR·HDCP·블랙/블루/화이트/레드 거리(m)를 반영했습니다. 일부 홀에 게시되지 않은 티는 저장하지 않았습니다. 자료 파일: `naju-hills-2026-official-verified.json`; 출처: [코스 전체](https://najuhills.com/course-full/), [1번 홀](https://najuhills.com/course-01/) ~ [9번 홀](https://najuhills.com/course-09/) (2026-10-12 확인).
