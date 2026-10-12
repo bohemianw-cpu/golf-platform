@@ -432,3 +432,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 자료: `flamingo-cc-2026-official-verified.json` (2026-10-13 확인).
 
 2026-10-13 플라밍고CC 반영 후 원격 전체 카탈로그: 검수 완료 266개, 미진행 245개, 반려 5개(총 516개). 다음은 인접 충남·세종·경북의 미진행 구장을 계속 조사하고, 부산·울산·경남 pending은 0개입니다.
+
+### 2026-10-13 — 인접 지역 미진행 구장 재조사 메모
+- 블루원상주골프리조트: 운영사 공식 [코스 안내](https://homepage-sj.blueone.com/club-introduction/information?type=1)에서 East/West 홀별 PAR·HDCP와 공략 설명은 확인되지만 공개 페이지에 홀별 티 거리표는 없습니다. 공식 과거 간행물에는 일부 홀 거리만 있어 전체 코스 입력 기준으로 부족하므로 pending 유지.
+- 세종레이캐슬골프&리조트: 운영사 공식 [세종](https://www.sjraycastle.com/Golf/Course/Sejong.aspx)·[레이](https://www.sjraycastle.com/Golf/Course/Ray.aspx)·[캐슬](https://www.sjraycastle.com/Golf/Course/Castle.aspx) 페이지는 코스 이미지 위주이며 PAR·홀별 거리표를 공개하지 않아 pending 유지.
+- 계룡산골프장: 공주시 공식 2012년 공고에는 시설 규모가 6홀로 기재되어 현재 카탈로그의 9홀과 차이가 있습니다([공주시보](https://www.gongju.go.kr/thumbnail/eBook/BOK_202004270152040200.pdf)). 최신 운영사 원문에서 코스 식별·홀 구성 및 홀별 PAR/거리를 확인하기 전까지 pending 유지.
+- 이 조사 시점 원격 카탈로그 상태: 검수 완료 266곳, 미진행 245곳, 반려 5곳(총 516곳). 위 미진행 항목의 불충분한 공식 자료 때문에 이번 조사에서는 DB 상태를 변경하지 않았습니다.
