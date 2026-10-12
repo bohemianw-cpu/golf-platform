@@ -1,0 +1,2205 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "세종에머슨CC",
+      "name": "세종에머슨CC",
+      "region": "세종",
+      "address": "세종특별자치시 전의면 운주산로 1510",
+      "aliases": [
+        "세종 에머슨 CC",
+        "세종에머슨 컨트리클럽",
+        "Sejong Emerson Country Club"
+      ],
+      "hole_count": 27,
+      "verification_status": "verified",
+      "supports_screen": false,
+      "review_notes": [
+        "운영사 공식 코스 페이지의 Lakes·Valley·Mountain 각 9홀 코스제원에서 27홀 PAR·HDCP와 Blue/White/Red 티별 좌·우 그린 거리(m)를 저장했습니다. 공식 합계와 모든 티/그린별 홀 합계가 일치합니다. 거리 하나만 표시된 홀은 원문 형식에 따라 좌·우 공통값으로 보존했습니다.",
+        "Valley 코스 HDCP는 3번과 9번이 모두 4로 표시되고, Mountain은 2·3번이 모두 3이며 4·7번이 모두 4로 표시됩니다. 공식 표의 HDCP 원문을 그대로 저장했습니다.",
+        "공식 홀별 거리 합과 표기 TOTAL이 완전히 일치하지 않는 코스가 있습니다. 레이크 화이트티는 홀별 표 합 2,815/2,816m, 표기 TOTAL 2,840/2,841m(+25/+25m); 밸리 블루티는 홀별 표 합 3,087/3,112m, 표기 TOTAL 3,084/3,109m(-3/-3m)입니다. 개별 홀 값을 보존하고 합계 차이를 코스 메모로 남겼습니다."
+      ],
+      "routes": [
+        {
+          "route_code": "LAKE",
+          "display_name": "레이크 코스",
+          "hole_count": 9,
+          "primary_tee_code": "white",
+          "verification_status": "verified",
+          "source_url": "https://www.sejongemerson.co.kr/golf/course_lake.asp?formname=Lake&hole=1",
+          "par_source_url": "https://www.sejongemerson.co.kr/golf/course_lake.asp?formname=Lake&hole=1",
+          "review_notes": [
+            "운영사 공식 레이크 코스제원 표의 PAR·HDCP와 BLUE/WHITE/RED 미터 거리를 반영했습니다. 좌·우 그린별 거리 2개가 있는 홀은 각각 보존하고, 공식 표에 거리가 하나만 표시된 홀은 좌·우 공통 거리로 적용했습니다. 공식 좌/우 티 합계: BLUE 2967/2965, WHITE 2840/2841, RED 2334/2355m.",
+            "레이크 화이트티 좌/우 홀별 값의 합은 2,815/2,816m이나 공식표 합계는 2,840/2,841m로 각각 25m 차이 납니다. 공식 개별 홀 값은 수정하지 않고 전체/경로 메모에 차이를 남겼습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 5,
+              "handicap_index": 8,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 481,
+                  "distance_m_source": "official",
+                  "source_distance": 481,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 473,
+                  "distance_m_source": "official",
+                  "source_distance": 473,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 386,
+                  "distance_m_source": "official",
+                  "source_distance": 386,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 455,
+                  "distance_m_source": "official",
+                  "source_distance": 455,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 447,
+                  "distance_m_source": "official",
+                  "source_distance": 447,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 360,
+                  "distance_m_source": "official",
+                  "source_distance": 360,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "handicap_index": 6,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 392,
+                  "distance_m_source": "official",
+                  "source_distance": 392,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 370,
+                  "distance_m_source": "official",
+                  "source_distance": 370,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 316,
+                  "distance_m_source": "official",
+                  "source_distance": 316,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 362,
+                  "distance_m_source": "official",
+                  "source_distance": 362,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 340,
+                  "distance_m_source": "official",
+                  "source_distance": 340,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 286,
+                  "distance_m_source": "official",
+                  "source_distance": 286,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "handicap_index": 2,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 145,
+                  "distance_m_source": "official",
+                  "source_distance": 145,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 120,
+                  "distance_m_source": "official",
+                  "source_distance": 120,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 133,
+                  "distance_m_source": "official",
+                  "source_distance": 133,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 145,
+                  "distance_m_source": "official",
+                  "source_distance": 145,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 120,
+                  "distance_m_source": "official",
+                  "source_distance": 120,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 133,
+                  "distance_m_source": "official",
+                  "source_distance": 133,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "handicap_index": 5,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 379,
+                  "distance_m_source": "official",
+                  "source_distance": 379,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 363,
+                  "distance_m_source": "official",
+                  "source_distance": 363,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 289,
+                  "distance_m_source": "official",
+                  "source_distance": 289,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 394,
+                  "distance_m_source": "official",
+                  "source_distance": 394,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 378,
+                  "distance_m_source": "official",
+                  "source_distance": 378,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 304,
+                  "distance_m_source": "official",
+                  "source_distance": 304,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "handicap_index": 4,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 339,
+                  "distance_m_source": "official",
+                  "source_distance": 339,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 323,
+                  "distance_m_source": "official",
+                  "source_distance": 323,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 258,
+                  "distance_m_source": "official",
+                  "source_distance": 258,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 306,
+                  "distance_m_source": "official",
+                  "source_distance": 306,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 290,
+                  "distance_m_source": "official",
+                  "source_distance": 290,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 225,
+                  "distance_m_source": "official",
+                  "source_distance": 225,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "handicap_index": 9,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 307,
+                  "distance_m_source": "official",
+                  "source_distance": 307,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 290,
+                  "distance_m_source": "official",
+                  "source_distance": 290,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 236,
+                  "distance_m_source": "official",
+                  "source_distance": 236,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 314,
+                  "distance_m_source": "official",
+                  "source_distance": 314,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 297,
+                  "distance_m_source": "official",
+                  "source_distance": 297,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 243,
+                  "distance_m_source": "official",
+                  "source_distance": 243,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 3,
+              "handicap_index": 1,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 165,
+                  "distance_m_source": "official",
+                  "source_distance": 165,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 160,
+                  "distance_m_source": "official",
+                  "source_distance": 160,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 113,
+                  "distance_m_source": "official",
+                  "source_distance": 113,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 135,
+                  "distance_m_source": "official",
+                  "source_distance": 135,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 133,
+                  "distance_m_source": "official",
+                  "source_distance": 133,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 106,
+                  "distance_m_source": "official",
+                  "source_distance": 106,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "handicap_index": 7,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 306,
+                  "distance_m_source": "official",
+                  "source_distance": 306,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 290,
+                  "distance_m_source": "official",
+                  "source_distance": 290,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 236,
+                  "distance_m_source": "official",
+                  "source_distance": 236,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 365,
+                  "distance_m_source": "official",
+                  "source_distance": 365,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 349,
+                  "distance_m_source": "official",
+                  "source_distance": 349,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 295,
+                  "distance_m_source": "official",
+                  "source_distance": 295,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 5,
+              "handicap_index": 3,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 453,
+                  "distance_m_source": "official",
+                  "source_distance": 453,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 426,
+                  "distance_m_source": "official",
+                  "source_distance": 426,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 367,
+                  "distance_m_source": "official",
+                  "source_distance": 367,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 489,
+                  "distance_m_source": "official",
+                  "source_distance": 489,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 462,
+                  "distance_m_source": "official",
+                  "source_distance": 462,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 403,
+                  "distance_m_source": "official",
+                  "source_distance": 403,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "VALLEY",
+          "display_name": "밸리 코스",
+          "hole_count": 9,
+          "primary_tee_code": "white",
+          "verification_status": "verified",
+          "source_url": "https://www.sejongemerson.co.kr/golf/course_valley.asp?formname=Valley&hole=1",
+          "par_source_url": "https://www.sejongemerson.co.kr/golf/course_valley.asp?formname=Valley&hole=1",
+          "review_notes": [
+            "운영사 공식 밸리 코스제원 표의 PAR·HDCP와 BLUE/WHITE/RED 미터 거리를 반영했습니다. 좌·우 그린별 거리 2개가 있는 홀은 각각 보존하고, 공식 표에 거리가 하나만 표시된 홀은 좌·우 공통 거리로 적용했습니다. 공식 좌/우 티 합계: BLUE 3084/3109, WHITE 2925/2950, RED 2370/2395m.",
+            "공식 HDCP는 홀별 표기를 원문대로 보존했으며 중복값이 있습니다: .",
+            "밸리 블루티 좌/우 홀별 값의 합은 3,087/3,112m이나 공식표 합계는 3,084/3,109m로 각각 3m 차이 납니다. 공식 개별 홀 값을 유지하고 합계 차이를 메모했습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 5,
+              "handicap_index": 9,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 450,
+                  "distance_m_source": "official",
+                  "source_distance": 450,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 437,
+                  "distance_m_source": "official",
+                  "source_distance": 437,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 350,
+                  "distance_m_source": "official",
+                  "source_distance": 350,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 473,
+                  "distance_m_source": "official",
+                  "source_distance": 473,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 460,
+                  "distance_m_source": "official",
+                  "source_distance": 460,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 373,
+                  "distance_m_source": "official",
+                  "source_distance": 373,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 3,
+              "handicap_index": 3,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 154,
+                  "distance_m_source": "official",
+                  "source_distance": 154,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 139,
+                  "distance_m_source": "official",
+                  "source_distance": 139,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 139,
+                  "distance_m_source": "official",
+                  "source_distance": 139,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 154,
+                  "distance_m_source": "official",
+                  "source_distance": 154,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 139,
+                  "distance_m_source": "official",
+                  "source_distance": 139,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 139,
+                  "distance_m_source": "official",
+                  "source_distance": 139,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "handicap_index": 4,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 371,
+                  "distance_m_source": "official",
+                  "source_distance": 371,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 353,
+                  "distance_m_source": "official",
+                  "source_distance": 353,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 285,
+                  "distance_m_source": "official",
+                  "source_distance": 285,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 381,
+                  "distance_m_source": "official",
+                  "source_distance": 381,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 363,
+                  "distance_m_source": "official",
+                  "source_distance": 363,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 295,
+                  "distance_m_source": "official",
+                  "source_distance": 295,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "handicap_index": 7,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 362,
+                  "distance_m_source": "official",
+                  "source_distance": 362,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 347,
+                  "distance_m_source": "official",
+                  "source_distance": 347,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 268,
+                  "distance_m_source": "official",
+                  "source_distance": 268,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 366,
+                  "distance_m_source": "official",
+                  "source_distance": 366,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 351,
+                  "distance_m_source": "official",
+                  "source_distance": 351,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 272,
+                  "distance_m_source": "official",
+                  "source_distance": 272,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 3,
+              "handicap_index": 6,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 160,
+                  "distance_m_source": "official",
+                  "source_distance": 160,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 133,
+                  "distance_m_source": "official",
+                  "source_distance": 133,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 115,
+                  "distance_m_source": "official",
+                  "source_distance": 115,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 187,
+                  "distance_m_source": "official",
+                  "source_distance": 187,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 160,
+                  "distance_m_source": "official",
+                  "source_distance": 160,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 142,
+                  "distance_m_source": "official",
+                  "source_distance": 142,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "handicap_index": 8,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 335,
+                  "distance_m_source": "official",
+                  "source_distance": 335,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 318,
+                  "distance_m_source": "official",
+                  "source_distance": 318,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 273,
+                  "distance_m_source": "official",
+                  "source_distance": 273,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 327,
+                  "distance_m_source": "official",
+                  "source_distance": 327,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 310,
+                  "distance_m_source": "official",
+                  "source_distance": 310,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 265,
+                  "distance_m_source": "official",
+                  "source_distance": 265,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "handicap_index": 2,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 379,
+                  "distance_m_source": "official",
+                  "source_distance": 379,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 364,
+                  "distance_m_source": "official",
+                  "source_distance": 364,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 294,
+                  "distance_m_source": "official",
+                  "source_distance": 294,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 354,
+                  "distance_m_source": "official",
+                  "source_distance": 354,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 339,
+                  "distance_m_source": "official",
+                  "source_distance": 339,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 269,
+                  "distance_m_source": "official",
+                  "source_distance": 269,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "handicap_index": 1,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 362,
+                  "distance_m_source": "official",
+                  "source_distance": 362,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 342,
+                  "distance_m_source": "official",
+                  "source_distance": 342,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 262,
+                  "distance_m_source": "official",
+                  "source_distance": 262,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 388,
+                  "distance_m_source": "official",
+                  "source_distance": 388,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 368,
+                  "distance_m_source": "official",
+                  "source_distance": 368,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 288,
+                  "distance_m_source": "official",
+                  "source_distance": 288,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 5,
+              "handicap_index": 4,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 514,
+                  "distance_m_source": "official",
+                  "source_distance": 514,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 492,
+                  "distance_m_source": "official",
+                  "source_distance": 492,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 384,
+                  "distance_m_source": "official",
+                  "source_distance": 384,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 482,
+                  "distance_m_source": "official",
+                  "source_distance": 482,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 460,
+                  "distance_m_source": "official",
+                  "source_distance": 460,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 352,
+                  "distance_m_source": "official",
+                  "source_distance": 352,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "MOUNTAIN",
+          "display_name": "마운틴 코스",
+          "hole_count": 9,
+          "primary_tee_code": "white",
+          "verification_status": "verified",
+          "source_url": "https://www.sejongemerson.co.kr/golf/course_mountain.asp?formname=Mountain&hole=1",
+          "par_source_url": "https://www.sejongemerson.co.kr/golf/course_mountain.asp?formname=Mountain&hole=1",
+          "review_notes": [
+            "운영사 공식 마운틴 코스제원 표의 PAR·HDCP와 BLUE/WHITE/RED 미터 거리를 반영했습니다. 좌·우 그린별 거리 2개가 있는 홀은 각각 보존하고, 공식 표에 거리가 하나만 표시된 홀은 좌·우 공통 거리로 적용했습니다. 공식 좌/우 티 합계: BLUE 3197/3133, WHITE 3046/2984, RED 2589/2530m.",
+            "공식 HDCP는 홀별 표기를 원문대로 보존했으며 중복값이 있습니다: ."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "handicap_index": 2,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 390,
+                  "distance_m_source": "official",
+                  "source_distance": 390,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 373,
+                  "distance_m_source": "official",
+                  "source_distance": 373,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 330,
+                  "distance_m_source": "official",
+                  "source_distance": 330,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 394,
+                  "distance_m_source": "official",
+                  "source_distance": 394,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 377,
+                  "distance_m_source": "official",
+                  "source_distance": 377,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 334,
+                  "distance_m_source": "official",
+                  "source_distance": 334,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 5,
+              "handicap_index": 3,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 517,
+                  "distance_m_source": "official",
+                  "source_distance": 517,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 493,
+                  "distance_m_source": "official",
+                  "source_distance": 493,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 410,
+                  "distance_m_source": "official",
+                  "source_distance": 410,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 531,
+                  "distance_m_source": "official",
+                  "source_distance": 531,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 507,
+                  "distance_m_source": "official",
+                  "source_distance": 507,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 424,
+                  "distance_m_source": "official",
+                  "source_distance": 424,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "handicap_index": 3,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 170,
+                  "distance_m_source": "official",
+                  "source_distance": 170,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 157,
+                  "distance_m_source": "official",
+                  "source_distance": 157,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 145,
+                  "distance_m_source": "official",
+                  "source_distance": 145,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 191,
+                  "distance_m_source": "official",
+                  "source_distance": 191,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 179,
+                  "distance_m_source": "official",
+                  "source_distance": 179,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 168,
+                  "distance_m_source": "official",
+                  "source_distance": 168,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "handicap_index": 4,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 345,
+                  "distance_m_source": "official",
+                  "source_distance": 345,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 326,
+                  "distance_m_source": "official",
+                  "source_distance": 326,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 276,
+                  "distance_m_source": "official",
+                  "source_distance": 276,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 312,
+                  "distance_m_source": "official",
+                  "source_distance": 312,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 293,
+                  "distance_m_source": "official",
+                  "source_distance": 293,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 243,
+                  "distance_m_source": "official",
+                  "source_distance": 243,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "handicap_index": 1,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 420,
+                  "distance_m_source": "official",
+                  "source_distance": 420,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 397,
+                  "distance_m_source": "official",
+                  "source_distance": 397,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 327,
+                  "distance_m_source": "official",
+                  "source_distance": 327,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 385,
+                  "distance_m_source": "official",
+                  "source_distance": 385,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 362,
+                  "distance_m_source": "official",
+                  "source_distance": 362,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 292,
+                  "distance_m_source": "official",
+                  "source_distance": 292,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 3,
+              "handicap_index": 6,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 152,
+                  "distance_m_source": "official",
+                  "source_distance": 152,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 147,
+                  "distance_m_source": "official",
+                  "source_distance": 147,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 136,
+                  "distance_m_source": "official",
+                  "source_distance": 136,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 144,
+                  "distance_m_source": "official",
+                  "source_distance": 144,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 140,
+                  "distance_m_source": "official",
+                  "source_distance": 140,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 131,
+                  "distance_m_source": "official",
+                  "source_distance": 131,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "handicap_index": 4,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 350,
+                  "distance_m_source": "official",
+                  "source_distance": 350,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 335,
+                  "distance_m_source": "official",
+                  "source_distance": 335,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 265,
+                  "distance_m_source": "official",
+                  "source_distance": 265,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 327,
+                  "distance_m_source": "official",
+                  "source_distance": 327,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 312,
+                  "distance_m_source": "official",
+                  "source_distance": 312,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 242,
+                  "distance_m_source": "official",
+                  "source_distance": 242,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "handicap_index": 5,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 391,
+                  "distance_m_source": "official",
+                  "source_distance": 391,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 367,
+                  "distance_m_source": "official",
+                  "source_distance": 367,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 308,
+                  "distance_m_source": "official",
+                  "source_distance": 308,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 394,
+                  "distance_m_source": "official",
+                  "source_distance": 394,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 370,
+                  "distance_m_source": "official",
+                  "source_distance": 370,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 311,
+                  "distance_m_source": "official",
+                  "source_distance": 311,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 5,
+              "handicap_index": 9,
+              "tees": [
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 462,
+                  "distance_m_source": "official",
+                  "source_distance": 462,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 451,
+                  "distance_m_source": "official",
+                  "source_distance": 451,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 392,
+                  "distance_m_source": "official",
+                  "source_distance": 392,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루티",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 455,
+                  "distance_m_source": "official",
+                  "source_distance": 455,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트티",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 444,
+                  "distance_m_source": "official",
+                  "source_distance": 444,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 385,
+                  "distance_m_source": "official",
+                  "source_distance": 385,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
