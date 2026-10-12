@@ -94,6 +94,7 @@ for (const course of corrections) {
         teeCodes.add(teeKey)
         if (!tee.display_name?.trim() || !tee.tee_color?.trim()) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티 이름과 색상이 필요합니다.`)
         if (!Number.isInteger(tee.distance_m) || tee.distance_m < 1 || tee.distance_m > 800) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티 거리는 1~800m 정수여야 합니다.`)
+        if (tee.source_unit != null && !['m', 'yd'].includes(tee.source_unit)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 원본 거리 단위는 m, yd 또는 미확정(null)이어야 합니다.`)
         if (tee.handicap_index != null && (!Number.isInteger(tee.handicap_index) || tee.handicap_index < 1 || tee.handicap_index > 18)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 그린 핸디캡 인덱스는 1~18이어야 합니다.`)
       }
     }
@@ -201,7 +202,7 @@ async function verifyCourse(correction, courseId) {
         tee_color: tee.tee_color,
         distance_m: tee.distance_m,
         source_distance: tee.source_distance ?? tee.distance_m,
-        source_unit: tee.source_unit ?? 'm',
+        source_unit: tee.source_unit ?? (tee.source_distance == null ? 'm' : null),
         green_code: tee.green_code ?? 'standard',
         green_name: tee.green_name ?? '기본 그린',
         handicap_index: tee.handicap_index ?? null,
@@ -303,7 +304,7 @@ for (const correction of corrections) {
       tee_color: tee.tee_color,
       distance_m: tee.distance_m,
       source_distance: tee.source_distance ?? tee.distance_m,
-      source_unit: tee.source_unit ?? 'm',
+      source_unit: tee.source_unit ?? (tee.source_distance == null ? 'm' : null),
       green_code: tee.green_code ?? 'standard',
       green_name: tee.green_name ?? '기본 그린',
       handicap_index: tee.handicap_index ?? null,
