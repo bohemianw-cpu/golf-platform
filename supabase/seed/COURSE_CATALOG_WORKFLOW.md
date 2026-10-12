@@ -467,8 +467,10 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-13 — 블루원상주·세종레이캐슬 공식 자료 재확인
 - 원격 DB를 다시 조회해 검수 완료 270곳, 미진행 241곳, 반려 5곳(총 516곳)을 확인했습니다. 지역별 미진행 수는 강원 55, 경기 141, 경북 1, 세종 1, 인천 10, 전남 1, 전북 3, 제주 28, 충남 1곳이며 부산·울산·경남은 0곳입니다.
 - 블루원상주 운영사 공식 [코스 제원](https://homepage-sj.blueone.com/club-introduction/information?type=0)에서 East·West 18홀·PAR72 및 총길이 6,737m를 재확인했습니다. 공식 [홀별 코스 정보](https://homepage-sj.blueone.com/club-introduction/information?type=1)와 공식 페이지 데이터 번들에서 각 홀 PAR·HDCP·공략 설명 및 홀 도면은 확인되지만 티별 홀 거리는 텍스트 데이터에 없습니다. 공식 과거 [2012년 가을 매거진](https://www.blueone.com/content/ebook/down.jsp?filename=2012_Blueone_Autumn.pdf)은 East 1번 354m 등 일부 홀만 제공하므로 전체 최신 티별 자료로 간주하지 않고 pending을 유지합니다.
+- 공식 홀 상세의 `홀영상 보기`를 열어 East 1번 영상도 확인했습니다. 영상은 홀 전경을 보여주지만 티별 거리 자막이나 거리 도면은 제공하지 않습니다. 일부 홀의 과거 단일 거리를 현재 전체 코스 자료로 확장하지 않습니다.
 - 대한골프협회 2024-05-03 [코스레이팅 현황](https://www.kgagolf.or.kr/infor/infor_data/AllRatings_20.pdf)은 East+West 조합의 티별 총길이(Black 7,369yd, Blue 6,941yd, White 및 WHITE(W) 각 6,480yd, Yellow 5,873yd, Red 5,133yd)를 확인해 운영사 전체 6,737m와 티 세트가 존재한다는 점을 교차 검증합니다. 이 KGA 문서는 18홀 합계만 제공하고 홀별 분배는 공개하지 않으므로, 홀 거리를 추정하거나 분할하지 않습니다.
 - 세종레이캐슬 운영사 공식 [이용안내](https://www.sjraycastle.com/Golf/Use/Info.aspx)에서 세종·레이·캐슬 27홀 및 18홀 기준 총거리 7,760yd를 확인했습니다. 공식 [코스 뷰](https://www.sjraycastle.com/Golf/Course/Sejong.aspx)에는 코스 사진이 있으나 검색 가능한 공식 텍스트에서 홀별 PAR·거리표는 확인되지 않아 pending을 유지합니다.
+- 운영사 공식 모바일 [코스 뷰](https://www.sjraycastle.com/Mobile/Golf/Course/Sejong.aspx)의 SEJONG 이미지도 직접 열어 확인했습니다. 이미지는 티별 거리와 PAR가 표시된 홀 도면이 아니라 코스 홍보 사진입니다. 대한골프협회 [회원사 안내](https://gclient.kgagolf.or.kr/client2/home/home)는 레이팅 신청 자료로 티별 거리·고도차를 요구한다고 설명하지만, 개별 홀 레이팅 결과나 세종레이캐슬 홀별 거리는 공개하지 않습니다. 따라서 총길이 7,760yd를 27홀 또는 18홀 코스에 임의 분배하지 않습니다.
 - 계룡산골프장 관련 과거 자료도 갱신했습니다. 공주시 2012년 최초 인가의 6홀 계획은 2017년 변경인가에서 9홀로 변경되어 현재 카탈로그의 홀 수와 일치합니다([공주시 고시 제2017-134호](https://www.gongju.go.kr/thumbnail/eBook/BOK_202004280136336430.pdf)). 홀별 PAR·거리와 운영사 공식 코스 자료는 여전히 확인되지 않습니다.
 - 조사한 세 후보 모두 현재 공식 자료만으로 홀별 PAR 및 거리 레코드를 완성할 수 없어 DB 변경은 하지 않았습니다. 다음에는 인접 미진행 후보 가운데 공식 홀별 자료가 확인되는 시설을 계속 조사합니다.
 
