@@ -69,7 +69,7 @@ export interface GolfCourseRoute {
   course_id: string
   route_code: string
   display_name: string
-  hole_count: 9 | 18
+  hole_count: number
   pars: number[]
   distances_m: number[]
   source_url?: string | null

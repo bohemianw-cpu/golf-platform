@@ -232,7 +232,7 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                     {selectedCourseRoutes.map((route) => {
                       const checked = routeIds.includes(route.id)
-                      const cannotAdd = !checked && (routeIds.length >= 2 || selectedHoleCount + route.hole_count > 18)
+                      const cannotAdd = !checked && selectedHoleCount + route.hole_count > 18
                       const canRepeat = checked && route.hole_count === 9 && selectedHoleCount === 9 && routeIds.filter((id) => id === route.id).length === 1
                       return <div key={route.id} style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
                         <label style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '11px', color: '#334155' }}>

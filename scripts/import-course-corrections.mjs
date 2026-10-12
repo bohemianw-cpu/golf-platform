@@ -93,7 +93,7 @@ for (const course of corrections) {
   for (const route of routes) {
     if (!route.route_code || routeCodes.has(route.route_code)) throw new Error(`${course.name}: route_code가 비어 있거나 중복됩니다.`)
     routeCodes.add(route.route_code)
-    if (![9, 18].includes(route.hole_count) || route.holes?.length !== route.hole_count) {
+    if (!Number.isInteger(route.hole_count) || route.hole_count < 1 || route.hole_count > 18 || route.holes?.length !== route.hole_count) {
       throw new Error(`${course.name}/${route.route_code}: holes에 1번부터 ${route.hole_count}번까지의 홀 자료가 필요합니다.`)
     }
     if (!sourceUrlAllowed(route.source_url, route)) throw new Error(`${course.name}/${route.route_code}: 공식 출처의 HTTPS URL이 필요합니다. HTTP 출처는 allow_insecure_source=true와 source_transport_note가 필요합니다.`)
