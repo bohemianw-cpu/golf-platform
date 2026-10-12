@@ -7,7 +7,7 @@
       "hole_count": 9,
       "review_notes": [
         "공식 홀별 상세 페이지에서 단위(m), PAR, BLUE/WHITE/YELLOW/RED 거리, HANDICAP을 확인했습니다.",
-        "EAST 2번과 5번의 RED 거리는 공식 표기상 각각 436/399m, 300/263m라 두 값을 RED 1·RED 2로 분리해 보존했습니다."
+        "EAST 2번과 5번은 공식 표기에서 RED 거리로 각각 436/399m, 300/263m를 함께 제공하므로 첫 값은 RED 티 거리로 두고 두 번째 값도 선택 불가능한 추가 공식 거리로 보존했습니다."
       ],
       "source_url": "https://inseoul27.co.kr/m21.php",
       "primary_tee_code": "blue",
@@ -102,18 +102,18 @@
               "source_unit": "m",
               "tee_color": "#ef4444",
               "source_distance": 436,
-              "tee_code": "red1",
-              "display_name": "RED 1"
+              "tee_code": "red",
+              "display_name": "RED"
             },
             {
               "distance_m": 399,
               "distance_m_source": "official",
-              "tee_selection_available": true,
+              "tee_selection_available": false,
               "source_unit": "m",
               "tee_color": "#ef4444",
               "source_distance": 399,
-              "tee_code": "red2",
-              "display_name": "RED 2"
+              "tee_code": "red_alternate",
+              "display_name": "RED (추가 공식 거리)"
             }
           ],
           "handicap_index": 1
@@ -253,18 +253,18 @@
               "source_unit": "m",
               "tee_color": "#ef4444",
               "source_distance": 300,
-              "tee_code": "red1",
-              "display_name": "RED 1"
+              "tee_code": "red",
+              "display_name": "RED"
             },
             {
               "distance_m": 263,
               "distance_m_source": "official",
-              "tee_selection_available": true,
+              "tee_selection_available": false,
               "source_unit": "m",
               "tee_color": "#ef4444",
               "source_distance": 263,
-              "tee_code": "red2",
-              "display_name": "RED 2"
+              "tee_code": "red_alternate",
+              "display_name": "RED (추가 공식 거리)"
             }
           ],
           "handicap_index": 2
@@ -465,7 +465,7 @@
       "hole_count": 9,
       "review_notes": [
         "공식 홀별 상세 페이지에서 단위(m), PAR, BLUE/WHITE/YELLOW/RED 거리, HANDICAP을 확인했습니다.",
-        "EAST 2번과 5번의 RED 거리는 공식 표기상 각각 436/399m, 300/263m라 두 값을 RED 1·RED 2로 분리해 보존했습니다."
+        "EAST 2번과 5번은 공식 표기에서 RED 거리로 각각 436/399m, 300/263m를 함께 제공하므로 첫 값은 RED 티 거리로 두고 두 번째 값도 선택 불가능한 추가 공식 거리로 보존했습니다."
       ],
       "source_url": "https://inseoul27.co.kr/m22.php",
       "primary_tee_code": "blue",
@@ -903,7 +903,7 @@
       "hole_count": 9,
       "review_notes": [
         "공식 홀별 상세 페이지에서 단위(m), PAR, BLUE/WHITE/YELLOW/RED 거리, HANDICAP을 확인했습니다.",
-        "EAST 2번과 5번의 RED 거리는 공식 표기상 각각 436/399m, 300/263m라 두 값을 RED 1·RED 2로 분리해 보존했습니다."
+        "EAST 2번과 5번은 공식 표기에서 RED 거리로 각각 436/399m, 300/263m를 함께 제공하므로 첫 값은 RED 티 거리로 두고 두 번째 값도 선택 불가능한 추가 공식 거리로 보존했습니다."
       ],
       "source_url": "https://inseoul27.co.kr/m23.php",
       "primary_tee_code": "blue",
@@ -1351,7 +1351,7 @@
     "address": "서울특별시 강서구 오쇠동 1-2번지",
     "review_notes": [
       "운영사 공식 홈페이지의 EAST·WEST·SOUTH 코스별 1~9번 홀 상세 페이지에서 PAR, 핸디캡, BLUE/WHITE/YELLOW/RED 거리 및 거리 단위(m)를 확인했습니다.",
-      "EAST 2번 및 5번 RED 거리의 두 공식 값은 각각 RED 1·RED 2로 모두 보존했습니다. 티 이름은 원문 색상명을 기준으로 표기했습니다.",
+      "EAST 2번 및 5번은 공식 페이지가 RED 아래 두 거리(436/399m, 300/263m)를 함께 표기합니다. 첫 값은 RED 티 선택에 사용하고, 두 번째 값은 선택 불가능한 추가 공식 거리로 별도 보존했습니다.",
       "공식 출처: https://inseoul27.co.kr/m21.php, /m22.php, /m23.php 및 각 코스 m21_view.php?hole=1~9, m22_view.php?hole=1~9, m23_view.php?hole=1~9 (2026-10-13 확인)."
     ]
   },

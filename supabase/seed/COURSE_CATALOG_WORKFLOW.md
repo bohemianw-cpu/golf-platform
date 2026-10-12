@@ -444,3 +444,16 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - A 코스는 PAR36·Black 합계 3,175m, B 코스는 PAR36·Black 합계 3,235m로 코스소개 공식 합계와 홀별 Black 거리 합이 일치합니다. B 코스 6번 홀은 공식 페이지의 White 1·2 및 Yellow 1·2를 서로 다른 티로 보존했습니다. HDCP는 공식 페이지에 없어 입력하지 않았습니다.
 - 자료: `route52-cc-2026-official-verified.json`. 원격 DB와 seed를 대조해 구장 1개, 코스 2개, 홀 18개, 티 거리 92행, 구장·코스·홀·티 불일치 0건을 확인했습니다.
 - 반영 후 원격 전체 카탈로그: 검수 완료 267곳, 미진행 244곳, 반려 5곳(총 516곳).
+
+### 2026-10-13 — 인서울27GC 및 다음 근거리 후보 재조사
+- 인서울27GC 운영사 공식 EAST·WEST·SOUTH 페이지에서 코스별 9홀 PAR·HDCP와 BLUE/WHITE/YELLOW/RED 거리, 거리 단위(m)를 확인해 저장했습니다. EAST 2번과 5번은 공식 표기가 RED 거리로 각각 436/399m, 300/263m를 함께 제공합니다. 첫 값은 라운딩에서 선택 가능한 RED 티로, 두 번째는 거리 손실 없이 보존한 선택 불가 추가 공식 거리로 분리했습니다. 따라서 RED 티가 9홀 전체 선택지로 정상 노출됩니다.
+- 원격 DB 대조 결과 기대 110행·실제 110행, PAR·HDCP·거리·단위·거리 출처·티 선택 메타데이터 불일치 0건입니다. EAST·WEST·SOUTH 각 9홀·PAR36, 총 27홀로 구장과 코스를 verified 처리했습니다. 공식 출처: [EAST](https://inseoul27.co.kr/m21.php), [WEST](https://inseoul27.co.kr/m22.php), [SOUTH](https://inseoul27.co.kr/m23.php). 자료: `inseoul27-gc-2026-official-verified.json`.
+- 세종레이캐슬 운영사 공식 [세종](https://www.sjraycastle.com/Golf/Course/Sejong.aspx)·[레이](https://www.sjraycastle.com/Golf/Course/Ray.aspx)·[캐슬](https://www.sjraycastle.com/Golf/Course/Castle.aspx) 페이지를 다시 확인했습니다. 페이지는 코스 사진과 코스명만 제공하며 홀별 PAR·티 거리를 게시하지 않아 pending 유지.
+- 블루원상주CC 공식 [코스 정보](https://sj.blueone.com/club-introduction/information?type=1)는 홀별 PAR·HDCP·공략 설명은 제공하지만 티별 거리는 공개하지 않아 pending 유지. 순창CC 공식 도메인(`sunchangcc.co.kr`)도 현재 골프장 정보와 무관한 페이지를 반환해 홀별 자료 출처로 쓸 수 없습니다. 금과골프장은 MCST 등록이 6홀이지만 공개된 홀별 거리 자료의 운영사 공식 출처를 확인하지 못해 보류했습니다.
+- 원격 전체 카탈로그 최신 집계: 검수 완료 268곳, 미진행 243곳, 반려 5곳(총 516곳). 부산·울산·경남 pending은 0곳입니다. 다음 작업은 가장 가까운 미진행 시설의 공식 홀별 PAR·티 거리 자료를 계속 탐색하는 것입니다.
+
+### 2026-10-13 — 인천그랜드CC
+- 운영사 공식 [코스 안내](https://www.incheongrand.cc/pagesite/course/intro.asp)와 OUT [홀별 공략](https://www.incheongrand.cc/pagesite/course/one/hole_01.asp)·IN [홀별 공략](https://www.incheongrand.cc/pagesite/course/two/hole_01.asp) 18개 페이지에서 PAR·HDCP·REGULAR/LADIES 거리를 확인했습니다. 안내표에 METER 단위와 코스별 티 합계가 게시되어 있습니다.
+- OUT은 PAR37·REGULAR 3,100m·LADIES 2,523m, IN은 PAR35·REGULAR 2,669m·LADIES 2,215m로 홀별 합계와 공식 합계가 일치합니다. 전체는 18홀·PAR72이며, 총거리 REGULAR 5,769m·LADIES 4,738m입니다. 원문 티 분류명은 REGULAR/LADIES입니다.
+- 원격 DB와 seed 대조 결과 36개 티 거리 행, 홀별 PAR·HDCP, 티 이름·거리·출처 메타데이터 불일치 0건입니다. 자료: `incheon-grand-cc-2026-official-verified.json`.
+- 원격 전체 카탈로그 최신 집계: 검수 완료 269곳, 미진행 242곳, 반려 5곳(총 516곳). 부산·울산·경남 pending은 0곳입니다.
