@@ -1,0 +1,1088 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "포세븐금강CC",
+      "name": "포세븐금강CC",
+      "region": "전북",
+      "address": "전북특별자치도 익산시 웅포면 강변로 130",
+      "hole_count": 18,
+      "verification_status": "verified",
+      "aliases": [
+        "웅포CC"
+      ],
+      "review_notes": [
+        "운영사 공식 코스 상세표에서 서·동 각 9홀 PAR와 Black/Blue/White/Yellow/Red 미터 거리 90행을 반영했습니다. 두 코스 모두 PAR36이며 티별 홀 거리 합계가 공식 코스 전체안내의 Total과 일치합니다. 공식 페이지에 HDCP는 게시되지 않았습니다.",
+        "동일 주소·18홀로 중복 등록된 기존 웅포CC 레코드를 이 공식 명칭의 별칭으로 연결하고, 기록 및 코스 경로가 없는 중복 레코드는 별도 보존 처리했습니다."
+      ],
+      "routes": [
+        {
+          "route_code": "west",
+          "display_name": "서코스",
+          "hole_count": 9,
+          "primary_tee_code": "white",
+          "verification_status": "verified",
+          "source_url": "https://www.fourseven.co.kr/course/west",
+          "source_data_url": "https://www.fourseven.co.kr/course/intro",
+          "review_notes": [
+            "운영사 공식 코스 페이지의 PAR 및 Black/Blue/White/Yellow/Red 티별 미터 거리를 반영했습니다. 각 티 홀별 거리 합계가 공식 전체 코스안내 표의 합계와 일치합니다.",
+            "운영사 공식 페이지에 HDCP는 게시되지 않아 미기록입니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 413,
+                  "distance_m_source": "official",
+                  "source_distance": 413,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 401,
+                  "distance_m_source": "official",
+                  "source_distance": 401,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 363,
+                  "distance_m_source": "official",
+                  "source_distance": 363,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 341,
+                  "distance_m_source": "official",
+                  "source_distance": 341,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 310,
+                  "distance_m_source": "official",
+                  "source_distance": 310,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 391,
+                  "distance_m_source": "official",
+                  "source_distance": 391,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 381,
+                  "distance_m_source": "official",
+                  "source_distance": 381,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 348,
+                  "distance_m_source": "official",
+                  "source_distance": 348,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 326,
+                  "distance_m_source": "official",
+                  "source_distance": 326,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 299,
+                  "distance_m_source": "official",
+                  "source_distance": 299,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 5,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 564,
+                  "distance_m_source": "official",
+                  "source_distance": 564,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 546,
+                  "distance_m_source": "official",
+                  "source_distance": 546,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 489,
+                  "distance_m_source": "official",
+                  "source_distance": 489,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 461,
+                  "distance_m_source": "official",
+                  "source_distance": 461,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 432,
+                  "distance_m_source": "official",
+                  "source_distance": 432,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 3,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 189,
+                  "distance_m_source": "official",
+                  "source_distance": 189,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 174,
+                  "distance_m_source": "official",
+                  "source_distance": 174,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 159,
+                  "distance_m_source": "official",
+                  "source_distance": 159,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 159,
+                  "distance_m_source": "official",
+                  "source_distance": 159,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 132,
+                  "distance_m_source": "official",
+                  "source_distance": 132,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 403,
+                  "distance_m_source": "official",
+                  "source_distance": 403,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 364,
+                  "distance_m_source": "official",
+                  "source_distance": 364,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 319,
+                  "distance_m_source": "official",
+                  "source_distance": 319,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 287,
+                  "distance_m_source": "official",
+                  "source_distance": 287,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 235,
+                  "distance_m_source": "official",
+                  "source_distance": 235,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 453,
+                  "distance_m_source": "official",
+                  "source_distance": 453,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 435,
+                  "distance_m_source": "official",
+                  "source_distance": 435,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 401,
+                  "distance_m_source": "official",
+                  "source_distance": 401,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 387,
+                  "distance_m_source": "official",
+                  "source_distance": 387,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 366,
+                  "distance_m_source": "official",
+                  "source_distance": 366,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 462,
+                  "distance_m_source": "official",
+                  "source_distance": 462,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 441,
+                  "distance_m_source": "official",
+                  "source_distance": 441,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 402,
+                  "distance_m_source": "official",
+                  "source_distance": 402,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 365,
+                  "distance_m_source": "official",
+                  "source_distance": 365,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 342,
+                  "distance_m_source": "official",
+                  "source_distance": 342,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 152,
+                  "distance_m_source": "official",
+                  "source_distance": 152,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 142,
+                  "distance_m_source": "official",
+                  "source_distance": 142,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 130,
+                  "distance_m_source": "official",
+                  "source_distance": 130,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 99,
+                  "distance_m_source": "official",
+                  "source_distance": 99,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 89,
+                  "distance_m_source": "official",
+                  "source_distance": 89,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 5,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 532,
+                  "distance_m_source": "official",
+                  "source_distance": 532,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 516,
+                  "distance_m_source": "official",
+                  "source_distance": 516,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 483,
+                  "distance_m_source": "official",
+                  "source_distance": 483,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 443,
+                  "distance_m_source": "official",
+                  "source_distance": 443,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 400,
+                  "distance_m_source": "official",
+                  "source_distance": 400,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "east",
+          "display_name": "동코스",
+          "hole_count": 9,
+          "primary_tee_code": "white",
+          "verification_status": "verified",
+          "source_url": "https://www.fourseven.co.kr/course/east",
+          "source_data_url": "https://www.fourseven.co.kr/course/intro",
+          "review_notes": [
+            "운영사 공식 코스 페이지의 PAR 및 Black/Blue/White/Yellow/Red 티별 미터 거리를 반영했습니다. 각 티 홀별 거리 합계가 공식 전체 코스안내 표의 합계와 일치합니다.",
+            "운영사 공식 페이지에 HDCP는 게시되지 않아 미기록입니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 5,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 555,
+                  "distance_m_source": "official",
+                  "source_distance": 555,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 548,
+                  "distance_m_source": "official",
+                  "source_distance": 548,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 448,
+                  "distance_m_source": "official",
+                  "source_distance": 448,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 428,
+                  "distance_m_source": "official",
+                  "source_distance": 428,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 386,
+                  "distance_m_source": "official",
+                  "source_distance": 386,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 403,
+                  "distance_m_source": "official",
+                  "source_distance": 403,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 377,
+                  "distance_m_source": "official",
+                  "source_distance": 377,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 343,
+                  "distance_m_source": "official",
+                  "source_distance": 343,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 320,
+                  "distance_m_source": "official",
+                  "source_distance": 320,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 296,
+                  "distance_m_source": "official",
+                  "source_distance": 296,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 427,
+                  "distance_m_source": "official",
+                  "source_distance": 427,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 404,
+                  "distance_m_source": "official",
+                  "source_distance": 404,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 365,
+                  "distance_m_source": "official",
+                  "source_distance": 365,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 340,
+                  "distance_m_source": "official",
+                  "source_distance": 340,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 317,
+                  "distance_m_source": "official",
+                  "source_distance": 317,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 468,
+                  "distance_m_source": "official",
+                  "source_distance": 468,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 444,
+                  "distance_m_source": "official",
+                  "source_distance": 444,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 407,
+                  "distance_m_source": "official",
+                  "source_distance": 407,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 384,
+                  "distance_m_source": "official",
+                  "source_distance": 384,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 356,
+                  "distance_m_source": "official",
+                  "source_distance": 356,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 3,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 207,
+                  "distance_m_source": "official",
+                  "source_distance": 207,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 192,
+                  "distance_m_source": "official",
+                  "source_distance": 192,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 158,
+                  "distance_m_source": "official",
+                  "source_distance": 158,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 145,
+                  "distance_m_source": "official",
+                  "source_distance": 145,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 131,
+                  "distance_m_source": "official",
+                  "source_distance": 131,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 402,
+                  "distance_m_source": "official",
+                  "source_distance": 402,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 314,
+                  "distance_m_source": "official",
+                  "source_distance": 314,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 284,
+                  "distance_m_source": "official",
+                  "source_distance": 284,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 284,
+                  "distance_m_source": "official",
+                  "source_distance": 284,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 241,
+                  "distance_m_source": "official",
+                  "source_distance": 241,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 452,
+                  "distance_m_source": "official",
+                  "source_distance": 452,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 426,
+                  "distance_m_source": "official",
+                  "source_distance": 426,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 391,
+                  "distance_m_source": "official",
+                  "source_distance": 391,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 376,
+                  "distance_m_source": "official",
+                  "source_distance": 376,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 338,
+                  "distance_m_source": "official",
+                  "source_distance": 338,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 195,
+                  "distance_m_source": "official",
+                  "source_distance": 195,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 188,
+                  "distance_m_source": "official",
+                  "source_distance": 188,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 174,
+                  "distance_m_source": "official",
+                  "source_distance": 174,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 157,
+                  "distance_m_source": "official",
+                  "source_distance": 157,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 130,
+                  "distance_m_source": "official",
+                  "source_distance": 130,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 5,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "distance_m": 501,
+                  "distance_m_source": "official",
+                  "source_distance": 501,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#2563eb",
+                  "distance_m": 488,
+                  "distance_m_source": "official",
+                  "source_distance": 488,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 473,
+                  "distance_m_source": "official",
+                  "source_distance": 473,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "distance_m": 453,
+                  "distance_m_source": "official",
+                  "source_distance": 453,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Red",
+                  "tee_color": "#ef4444",
+                  "distance_m": 433,
+                  "distance_m_source": "official",
+                  "source_distance": 433,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "match_name": "웅포CC",
+      "name": "웅포CC",
+      "region": "전북",
+      "hole_count": 18,
+      "verification_status": "rejected",
+      "review_notes": [
+        "중복 MCST 레코드: 공식 포세븐 금강 컨트리클럽의 주소 및 18홀 규모가 이 레코드와 동일하며, 이 레코드에는 코스 경로나 라운드가 없습니다. 포세븐금강CC 레코드를 정식 코스 카탈로그로 사용하고 웅포CC는 검색 별칭으로 연결했습니다."
+      ]
+    }
+  ]
+}
