@@ -6,11 +6,11 @@
       "name": "동래베네스트골프클럽",
       "region": "부산",
       "hole_count": 18,
-      "verification_status": "pending",
+      "verification_status": "verified",
       "review_notes": [
         "공식 개별 홀 페이지 1~18의 파, HCP, Blue/White 좌·우 거리(m)를 전사함. 좌·우는 공식 표기 그대로 보존.",
         "공식 코스 전체표는 18홀 PAR72, Blue-left 기준 6,077m(표 하단 합계 6,089m로 표시)라고 서로 다른 수치를 함께 표기함.",
-        "공식 전체표의 18번 Blue-left는 434m이나 개별 18번 홀 페이지에는 441m로 표시되어 검수 보류. 공식 전체표의 홀별 거리 합 1~9=3,059m, 10~18=3,030m와 개별 페이지 전사값도 이 불일치가 해결되기 전까지 pending 유지.",
+        "공식 전체표의 18번 Blue-left는 434m이나 개별 18번 홀 페이지에는 441m로 표시됩니다. 사용자 지침에 따라 공식 개별 홀 페이지의 441m를 저장하고, 전체표와의 7m 차이는 이력 메모에 보존한 채 검수 완료했습니다. 공식 전체표의 1~9 합계 3,059m 및 10~18 합계 3,030m와도 별도 차이가 있어 모두 참고 메모로 남깁니다.",
         "공식 페이지에서 티는 Blue/White, 각 티별 좌/우 구성으로 표기되며 Black/Red/Gold 자료는 확인되지 않음. 좌/우 구성의 의미를 임의로 확장하지 않음."
       ],
       "routes": [
@@ -19,7 +19,7 @@
           "display_name": "OUT",
           "hole_count": 9,
           "primary_tee_code": "white",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "source_url": "https://www.benestgolf.com/reve/pc/dr-course/main.do",
           "par_source_url": "https://www.benestgolf.com/reve/pc/dr-course/main.do",
           "review_notes": [
@@ -493,12 +493,12 @@
           "display_name": "IN",
           "hole_count": 9,
           "primary_tee_code": "white",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "source_url": "https://www.benestgolf.com/reve/pc/dr-course/main.do",
           "par_source_url": "https://www.benestgolf.com/reve/pc/dr-course/main.do",
           "review_notes": [
             "공식 코스 전체표에서 홀 10~18을 IN으로 명시. 개별 홀 상세는 /reve/pc/dr-course/cs10.do ~ cs18.do.",
-            "공식 전체표의 10~18 Blue-left 합계는 3,030m이나 개별 페이지 전사값은 3,037m. 개별 18번 Blue-left가 전체표와 7m 차이나며, 이 차이로 검수 보류."
+            "공식 전체표의 10~18 Blue-left 합계는 3,030m이나 개별 페이지 전사값 합은 3,037m입니다. 홀별 원자료를 기준으로 저장하고 전체표와 7m 차이는 참고 메모로 보존합니다."
           ],
           "holes": [
             {
