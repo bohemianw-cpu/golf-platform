@@ -62,7 +62,7 @@ node scripts/import-mcst-courses.mjs --input 'supabase/seed/mcst-courses-2024-12
 node scripts/import-course-corrections.mjs --input 'supabase/seed/<verified-course>.json' --check
 ```
 
-2026-10-13 원격 Supabase 카탈로그는 총 516곳이며, 검수 완료 243곳, 미진행 268곳, 반려 5곳입니다. 이 수치는 현재 DB의 `golf_courses.verification_status` 집계입니다. 구장별 자료 출처와 반영 이력은 [코스 카탈로그 작업 기록](supabase/seed/COURSE_CATALOG_WORKFLOW.md), 재현 가능한 코스 보정 자료는 `supabase/seed/`의 JSON 파일을 확인하세요. MCST 목록은 시설 검색 후보이며, 공식 홀별 파·티 거리를 보증하지 않습니다.
+2026-10-13 원격 Supabase 카탈로그는 총 516곳이며, 검수 완료 245곳, 미진행 266곳, 반려 5곳입니다. 이 수치는 현재 DB의 `golf_courses.verification_status` 집계입니다. 구장별 자료 출처와 반영 이력은 [코스 카탈로그 작업 기록](supabase/seed/COURSE_CATALOG_WORKFLOW.md), 재현 가능한 코스 보정 자료는 `supabase/seed/`의 JSON 파일을 확인하세요. MCST 목록은 시설 검색 후보이며, 공식 홀별 파·티 거리를 보증하지 않습니다.
 
 ## 데이터 공개와 비교
 
