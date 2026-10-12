@@ -63,3 +63,4 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ## 최근 공식 자료 반영
 
 - 나주힐스CC: 공식 9홀 페이지의 PAR·HDCP·블랙/블루/화이트/레드 거리(m)를 반영했습니다. 일부 홀에 게시되지 않은 티는 저장하지 않았습니다. 자료 파일: `naju-hills-2026-official-verified.json`; 출처: [코스 전체](https://najuhills.com/course-full/), [1번 홀](https://najuhills.com/course-01/) ~ [9번 홀](https://najuhills.com/course-09/) (2026-10-12 확인).
+- 일산 스프링힐스CC: 공식 9홀 상세 페이지의 PAR·HDCP·CHAMPION/REGULAR/LADY 거리(yd)를 입력하고 `1 yd = 0.9144 m`로 홀별 반올림 환산했습니다. Lady 1번은 코스 개요표 325 yd와 상세 페이지 326 yd가 달라 구장·코스를 `pending`으로 유지합니다. 자료 파일: `spring-hills-2026-official-review.json`; 출처: [코스 개요](https://www.springhills.co.kr/course/courseIntro.asp), [1번 홀](https://www.springhills.co.kr/course/h1.asp) ~ [9번 홀](https://www.springhills.co.kr/course/h9.asp), [공식 야드 단위 표기](https://www.springhills.co.kr/mobile/course/course01.asp) (2026-10-12 확인).

@@ -1,0 +1,41 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "name": "일산스프링힐스 컨트리클럽",
+      "match_name": "일산스프링힐스 컨트리클럽",
+      "region": "경기",
+      "hole_count": 9,
+      "supports_screen": false,
+      "verification_status": "pending",
+      "review_notes": [
+        "MCST 경기 일산스프링힐스 컨트리클럽(9홀, 경기도 고양시 일산동구 산황로 108)과 공식 스프링힐스CC 홈페이지의 시설명·주소·9홀 안내를 대조했습니다.",
+        "공식 홀별 공략도는 티별 거리를 yard로 표기하며, 홀별 상세 페이지를 원문대로 기록했습니다. 개요표는 Lady 1번을 325로 표기하지만 홀별 상세 페이지는 326으로 표기하고, 개요표 합계도 2,693으로 상세값 합계 2,694와 1야드 차이가 있어 검수 대기로 유지합니다. 출처: https://www.springhills.co.kr/course/courseIntro.asp 및 https://www.springhills.co.kr/course/h1.asp ~ h9.asp (2026-10-12 확인)."
+      ],
+      "routes": [
+        {
+          "route_code": "course",
+          "display_name": "스프링힐스 코스",
+          "hole_count": 9,
+          "primary_tee_code": "regular",
+          "verification_status": "pending",
+          "source_url": "https://www.springhills.co.kr/course/courseIntro.asp",
+          "review_notes": [
+            "각 홀 상세 페이지의 PAR, HDCP, CHAMPION/REGULAR/LADY 값을 전사했습니다. 단위는 공식 모바일 홀 공략도(https://www.springhills.co.kr/mobile/course/course01.asp)에 명시된 yard를 사용하고 미터 환산은 1 yd = 0.9144 m, 홀별 반올림으로 기록합니다. 코스 개요 표의 Lady 1번 325 yd 및 합계 2,693 yd와 상세 페이지 326 yd 및 합계 2,694 yd의 차이를 운영자 확인 대상으로 남겼습니다. Champion/Regular/Lady는 공식 명칭을 유지했으며 티 색은 공식 지정이 없어 중립색으로 설정했습니다."
+          ],
+          "holes": [
+            { "hole_number": 1, "par": 4, "handicap_index": 3, "tees": [{ "tee_code": "champion", "display_name": "CHAMPION", "tee_color": "#64748b", "distance_m": 354, "source_distance": 387, "source_unit": "yd" }, { "tee_code": "regular", "display_name": "REGULAR", "tee_color": "#64748b", "distance_m": 325, "source_distance": 355, "source_unit": "yd" }, { "tee_code": "lady", "display_name": "LADY", "tee_color": "#64748b", "distance_m": 298, "source_distance": 326, "source_unit": "yd" }] },
+            { "hole_number": 2, "par": 4, "handicap_index": 1, "tees": [{ "tee_code": "champion", "display_name": "CHAMPION", "tee_color": "#64748b", "distance_m": 389, "source_distance": 425, "source_unit": "yd" }, { "tee_code": "regular", "display_name": "REGULAR", "tee_color": "#64748b", "distance_m": 377, "source_distance": 412, "source_unit": "yd" }, { "tee_code": "lady", "display_name": "LADY", "tee_color": "#64748b", "distance_m": 333, "source_distance": 364, "source_unit": "yd" }] },
+            { "hole_number": 3, "par": 4, "handicap_index": 6, "tees": [{ "tee_code": "champion", "display_name": "CHAMPION", "tee_color": "#64748b", "distance_m": 353, "source_distance": 386, "source_unit": "yd" }, { "tee_code": "regular", "display_name": "REGULAR", "tee_color": "#64748b", "distance_m": 314, "source_distance": 343, "source_unit": "yd" }, { "tee_code": "lady", "display_name": "LADY", "tee_color": "#64748b", "distance_m": 290, "source_distance": 317, "source_unit": "yd" }] },
+            { "hole_number": 4, "par": 3, "handicap_index": 4, "tees": [{ "tee_code": "champion", "display_name": "CHAMPION", "tee_color": "#64748b", "distance_m": 157, "source_distance": 172, "source_unit": "yd" }, { "tee_code": "regular", "display_name": "REGULAR", "tee_color": "#64748b", "distance_m": 140, "source_distance": 153, "source_unit": "yd" }, { "tee_code": "lady", "display_name": "LADY", "tee_color": "#64748b", "distance_m": 123, "source_distance": 134, "source_unit": "yd" }] },
+            { "hole_number": 5, "par": 5, "handicap_index": 2, "tees": [{ "tee_code": "champion", "display_name": "CHAMPION", "tee_color": "#64748b", "distance_m": 441, "source_distance": 482, "source_unit": "yd" }, { "tee_code": "regular", "display_name": "REGULAR", "tee_color": "#64748b", "distance_m": 433, "source_distance": 473, "source_unit": "yd" }, { "tee_code": "lady", "display_name": "LADY", "tee_color": "#64748b", "distance_m": 403, "source_distance": 441, "source_unit": "yd" }] },
+            { "hole_number": 6, "par": 5, "handicap_index": 5, "tees": [{ "tee_code": "champion", "display_name": "CHAMPION", "tee_color": "#64748b", "distance_m": 475, "source_distance": 520, "source_unit": "yd" }, { "tee_code": "regular", "display_name": "REGULAR", "tee_color": "#64748b", "distance_m": 443, "source_distance": 485, "source_unit": "yd" }, { "tee_code": "lady", "display_name": "LADY", "tee_color": "#64748b", "distance_m": 404, "source_distance": 442, "source_unit": "yd" }] },
+            { "hole_number": 7, "par": 4, "handicap_index": 7, "tees": [{ "tee_code": "champion", "display_name": "CHAMPION", "tee_color": "#64748b", "distance_m": 326, "source_distance": 357, "source_unit": "yd" }, { "tee_code": "regular", "display_name": "REGULAR", "tee_color": "#64748b", "distance_m": 295, "source_distance": 323, "source_unit": "yd" }, { "tee_code": "lady", "display_name": "LADY", "tee_color": "#64748b", "distance_m": 251, "source_distance": 275, "source_unit": "yd" }] },
+            { "hole_number": 8, "par": 3, "handicap_index": 9, "tees": [{ "tee_code": "champion", "display_name": "CHAMPION", "tee_color": "#64748b", "distance_m": 112, "source_distance": 122, "source_unit": "yd" }, { "tee_code": "regular", "display_name": "REGULAR", "tee_color": "#64748b", "distance_m": 112, "source_distance": 122, "source_unit": "yd" }, { "tee_code": "lady", "display_name": "LADY", "tee_color": "#64748b", "distance_m": 93, "source_distance": 102, "source_unit": "yd" }] },
+            { "hole_number": 9, "par": 4, "handicap_index": 8, "tees": [{ "tee_code": "champion", "display_name": "CHAMPION", "tee_color": "#64748b", "distance_m": 324, "source_distance": 354, "source_unit": "yd" }, { "tee_code": "regular", "display_name": "REGULAR", "tee_color": "#64748b", "distance_m": 304, "source_distance": 332, "source_unit": "yd" }, { "tee_code": "lady", "display_name": "LADY", "tee_color": "#64748b", "distance_m": 268, "source_distance": 293, "source_unit": "yd" }] }
+          ]
+        }
+      ]
+    }
+  ]
+}
