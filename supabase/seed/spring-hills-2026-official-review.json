@@ -7,10 +7,10 @@
       "region": "경기",
       "hole_count": 9,
       "supports_screen": false,
-      "verification_status": "pending",
+      "verification_status": "verified",
       "review_notes": [
         "MCST 경기 일산스프링힐스 컨트리클럽(9홀, 경기도 고양시 일산동구 산황로 108)과 공식 스프링힐스CC 홈페이지의 시설명·주소·9홀 안내를 대조했습니다.",
-        "공식 홀별 공략도는 티별 거리를 yard로 표기하며, 홀별 상세 페이지를 원문대로 기록했습니다. 개요표는 Lady 1번을 325로 표기하지만 홀별 상세 페이지는 326으로 표기하고, 개요표 합계도 2,693으로 상세값 합계 2,694와 1야드 차이가 있어 검수 대기로 유지합니다. 출처: https://www.springhills.co.kr/course/courseIntro.asp 및 https://www.springhills.co.kr/course/h1.asp ~ h9.asp (2026-10-12 확인)."
+        "공식 홀별 공략 페이지 1~9의 PAR·HDCP·CHAMPION/REGULAR/LADY 거리를 기준으로 저장했습니다. 공식 모바일 공략도에서 단위 yard를 확인했고 상세 페이지 티별 합계는 CHAMPION 3,205yd, REGULAR 2,998yd, LADY 2,694yd입니다. 개요표는 CHAMPION 2번을 452yd(상세 페이지 425yd), LADY 1번을 325yd(상세 페이지 326yd)로 달리 표기하며 Lady 합계도 2,693/2,694yd로 1yd 차이가 있습니다. 홀별 상세 페이지와 해당 티별 합계를 함께 만족하는 상세값을 채택하고 개요표 차이는 관리자 검수 메모로 보존합니다. 출처: https://www.springhills.co.kr/course/courseIntro.asp, https://www.springhills.co.kr/course/h1.asp ~ h9.asp, https://www.springhills.co.kr/mobile/course/course01.asp (2026-10-12 확인)."
       ],
       "routes": [
         {
@@ -18,10 +18,11 @@
           "display_name": "스프링힐스 코스",
           "hole_count": 9,
           "primary_tee_code": "regular",
-          "verification_status": "pending",
-          "source_url": "https://www.springhills.co.kr/course/courseIntro.asp",
+          "verification_status": "verified",
+          "source_url": "https://www.springhills.co.kr/course/h1.asp",
+          "source_data_url": "https://www.springhills.co.kr/mobile/course/course01.asp",
           "review_notes": [
-            "각 홀 상세 페이지의 PAR, HDCP, CHAMPION/REGULAR/LADY 값을 전사했습니다. 단위는 공식 모바일 홀 공략도(https://www.springhills.co.kr/mobile/course/course01.asp)에 명시된 yard를 사용하고 미터 환산은 1 yd = 0.9144 m, 홀별 반올림으로 기록합니다. 코스 개요 표의 Lady 1번 325 yd 및 합계 2,693 yd와 상세 페이지 326 yd 및 합계 2,694 yd의 차이를 운영자 확인 대상으로 남겼습니다. Champion/Regular/Lady는 공식 명칭을 유지했으며 티 색은 공식 지정이 없어 중립색으로 설정했습니다."
+            "각 홀 상세 페이지(https://www.springhills.co.kr/course/h1.asp ~ h9.asp)의 PAR, HDCP, CHAMPION/REGULAR/LADY 값을 전사했습니다. 단위는 공식 모바일 홀 공략도(https://www.springhills.co.kr/mobile/course/course01.asp)에 명시된 yard를 사용하고 미터 환산은 1 yd = 0.9144 m, 홀별 반올림으로 기록합니다. 상세값 합계는 CHAMPION 3,205yd, REGULAR 2,998yd, LADY 2,694yd입니다. 코스 개요는 CHAMPION 2번을 452yd(상세 425yd), LADY 1번을 325yd(상세 326yd)로 다르게 표기하고 LADY 총계도 2,693/2,694yd로 달라, 각 상세 홀 페이지와 상세 합계를 함께 만족하는 값을 채택해 차이를 검수 메모에 남깁니다. Champion/Regular/Lady는 공식 명칭을 유지했으며 티 색은 공식 지정이 없어 중립색으로 설정했습니다."
           ],
           "holes": [
             { "hole_number": 1, "par": 4, "handicap_index": 3, "tees": [{ "tee_code": "champion", "display_name": "CHAMPION", "tee_color": "#64748b", "distance_m": 354, "source_distance": 387, "source_unit": "yd" }, { "tee_code": "regular", "display_name": "REGULAR", "tee_color": "#64748b", "distance_m": 325, "source_distance": 355, "source_unit": "yd" }, { "tee_code": "lady", "display_name": "LADY", "tee_color": "#64748b", "distance_m": 298, "source_distance": 326, "source_unit": "yd" }] },
