@@ -20,6 +20,9 @@ for (const course of corrections) {
   if (course.hole_count != null && (!Number.isInteger(course.hole_count) || course.hole_count < 1 || course.hole_count > 72)) {
     throw new Error(`${course.name}: hole_count는 1~72 사이 정수여야 합니다.`)
   }
+  if (course.review_notes != null && (!Array.isArray(course.review_notes) || course.review_notes.some((note) => typeof note !== 'string' || !note.trim()))) {
+    throw new Error(`${course.name}: review_notes는 비어 있지 않은 문자열 배열이어야 합니다.`)
+  }
   const routes = course.routes ?? []
   const routeCodes = new Set()
   for (const route of routes) {
@@ -29,6 +32,9 @@ for (const course of corrections) {
       throw new Error(`${course.name}/${route.route_code}: holes에 1번부터 ${route.hole_count}번까지의 홀 자료가 필요합니다.`)
     }
     if (!/^https:\/\//i.test(route.source_url ?? '')) throw new Error(`${course.name}/${route.route_code}: 공식 출처의 HTTPS URL이 필요합니다.`)
+    if (route.review_notes != null && (!Array.isArray(route.review_notes) || route.review_notes.some((note) => typeof note !== 'string' || !note.trim()))) {
+      throw new Error(`${course.name}/${route.route_code}: review_notes는 비어 있지 않은 문자열 배열이어야 합니다.`)
+    }
     const holeNumbers = new Set()
     for (const hole of route.holes) {
       if (!Number.isInteger(hole.hole_number) || hole.hole_number < 1 || hole.hole_number > route.hole_count || holeNumbers.has(hole.hole_number)) {
@@ -86,7 +92,7 @@ function routeDistances(route) {
 
 async function verifyCourse(correction, courseId) {
   const { data: course, error: courseError } = await supabase.from('golf_courses')
-    .select('name,normalized_name,address,aliases,venue_kind,supports_field,supports_screen,hole_count,verification_status')
+    .select('name,normalized_name,address,aliases,venue_kind,supports_field,supports_screen,hole_count,verification_status,review_notes')
     .eq('id', courseId).single()
   if (courseError) throw courseError
   const expectedCourse = {
@@ -100,12 +106,13 @@ async function verifyCourse(correction, courseId) {
     verification_status: correction.verification_status ?? 'verified',
   }
   if (correction.hole_count != null) expectedCourse.hole_count = correction.hole_count
+  if (correction.review_notes != null) expectedCourse.review_notes = correction.review_notes
   for (const [key, expected] of Object.entries(expectedCourse)) {
     if (!sameValue(course[key], expected)) throw new Error(`${correction.name}: DB ${key} 불일치 (DB=${JSON.stringify(course[key])}, seed=${JSON.stringify(expected)})`)
   }
 
   const { data: routeRows, error: routeError } = await supabase.from('golf_course_routes')
-    .select('id,route_code,display_name,hole_count,pars,distances_m,source_name,source_url,source_checked_at,verification_status')
+    .select('id,route_code,display_name,hole_count,pars,distances_m,source_name,source_url,source_checked_at,verification_status,review_notes')
     .eq('course_id', courseId)
   if (routeError) throw routeError
   const expectedRoutes = correction.routes ?? []
@@ -124,6 +131,7 @@ async function verifyCourse(correction, courseId) {
       source_url: expectedRoute.source_url,
       verification_status: expectedRoute.verification_status ?? 'verified',
     }
+    if (expectedRoute.review_notes != null) expectedValues.review_notes = expectedRoute.review_notes
     for (const [key, expected] of Object.entries(expectedValues)) {
       if (!sameValue(savedRoute[key], expected)) throw new Error(`${correction.name}/${expectedRoute.route_code}: DB ${key} 불일치 (DB=${JSON.stringify(savedRoute[key])}, seed=${JSON.stringify(expected)})`)
     }
@@ -196,6 +204,7 @@ for (const correction of corrections) {
     verification_status: correction.verification_status ?? 'verified',
   }
   if (correction.hole_count != null) courseUpdate.hole_count = correction.hole_count
+  if (correction.review_notes != null) courseUpdate.review_notes = correction.review_notes
   if (typeof correction.address === 'string') courseUpdate.address = correction.address
   if (Array.isArray(correction.aliases)) courseUpdate.aliases = correction.aliases
   if (typeof correction.supports_screen === 'boolean') courseUpdate.supports_screen = correction.supports_screen
@@ -214,6 +223,7 @@ for (const correction of corrections) {
     source_url: route.source_url,
     source_checked_at: new Date().toISOString(),
     verification_status: route.verification_status ?? 'verified',
+    ...(route.review_notes != null ? { review_notes: route.review_notes } : {}),
   }))
   if (!routes.length) continue
   const { data: savedRoutes, error: routesError } = await supabase.from('golf_course_routes')
