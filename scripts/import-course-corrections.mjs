@@ -122,17 +122,14 @@ for (const course of corrections) {
       }
       if (!Array.isArray(hole.tees) || hole.tees.length === 0) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 실제 확인된 티 자료가 하나 이상 필요합니다.`)
       const teeCodes = new Set()
-      const parsByGreen = new Map()
       for (const tee of hole.tees) {
         const greenCode = tee.green_code ?? 'standard'
         const teeKey = `${tee.tee_code}:${greenCode}`
         if (!/^[a-z0-9_-]+$/i.test(tee.tee_code ?? '') || !/^[a-z0-9_-]+$/i.test(greenCode) || teeCodes.has(teeKey)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티·그린 코드가 비었거나 중복되었습니다.`)
         teeCodes.add(teeKey)
         if (!tee.display_name?.trim() || !tee.tee_color?.trim()) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티 이름과 색상이 필요합니다.`)
+        // Some official scorecards publish a par per tee group; keep that selected-tee override.
         if (tee.par != null && (!Number.isInteger(tee.par) || tee.par < 3 || tee.par > 6)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티·그린별 파는 3~6이어야 합니다.`)
-        const greenPars = parsByGreen.get(greenCode) ?? []
-        greenPars.push(tee.par ?? null)
-        parsByGreen.set(greenCode, greenPars)
         if (!Number.isInteger(tee.distance_m) || tee.distance_m < 1 || tee.distance_m > 800) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티 거리는 1~800m 정수여야 합니다.`)
         const distanceMSource = tee.distance_m_source ?? 'converted'
         if (!['official', 'converted'].includes(distanceMSource)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: distance_m_source는 official 또는 converted여야 합니다.`)
@@ -147,12 +144,6 @@ for (const course of corrections) {
           }
         }
         if (tee.handicap_index != null && (!Number.isInteger(tee.handicap_index) || tee.handicap_index < 1 || tee.handicap_index > 18)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 그린 핸디캡 인덱스는 1~18이어야 합니다.`)
-      }
-      for (const [greenCode, greenPars] of parsByGreen) {
-        const explicitPars = greenPars.filter((par) => par != null)
-        if (explicitPars.length > 0 && (explicitPars.length !== greenPars.length || explicitPars.some((par) => par !== explicitPars[0]))) {
-          throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀 ${greenCode}: 같은 그린 구성의 모든 티에 동일한 par override가 있어야 합니다.`)
-        }
       }
     }
     if (route.official_tee_totals_m != null) {
