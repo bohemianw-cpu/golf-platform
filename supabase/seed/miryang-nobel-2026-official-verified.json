@@ -1,0 +1,322 @@
+{
+  "courses": [
+    {
+      "match_name": "밀양노벨CC",
+      "name": "밀양노벨CC",
+      "region": "경남",
+      "address": "경상남도 밀양시 단장면 단장로 944",
+      "hole_count": 18,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "공식 코스안내에서 LAKE/HILL 9홀의 홀별 PAR와 단일 공식 거리를 저장했습니다. 공식 자료에 티 색상별 거리표는 공개되어 있지 않아 색상별 거리는 만들지 않았습니다.",
+        "기존 카탈로그 주소(단장로 946)와 홈페이지 주소(단장로 944)가 달라 공식 홈페이지 주소로 갱신했습니다.",
+        "공식 홈페이지는 18홀 골프장임을 명시합니다. 홀별 자료는 각 코스공략 페이지에 표기된 거리(m)입니다."
+      ],
+      "routes": [
+        {
+          "route_code": "LAKE",
+          "display_name": "LAKE 코스",
+          "hole_count": 9,
+          "primary_tee_code": "official_regular",
+          "verification_status": "verified",
+          "source_url": "https://www.miryangnobelcc.co.kr/Miryang_nobel/mobile/course.asp",
+          "source_data_url": "https://www.miryangnobelcc.co.kr/Miryang_nobel/mobile/course.asp",
+          "review_notes": [
+            "공식 모바일 코스공략 페이지에 홀별 PAR와 거리(m)가 있습니다. 공식 페이지는 티 색상별 거리를 구분하지 않아 원문 값은 색상 미표기 기준 티로 저장했습니다. 색상별로 추정 복제하지 않았습니다.",
+            "공식 홈페이지의 7번 홀 공략 설명에는 레귤러 티가 언급되지만 표 전체가 같은 티를 뜻하는지 별도 확인이 없어 티 색상은 표시하지 않습니다.",
+            "공식 출처: https://www.miryangnobelcc.co.kr/Miryang_nobel/mobile/course.asp (2026-10-12 확인)."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 305,
+                  "distance_m_source": "official",
+                  "source_distance": 305,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 330,
+                  "distance_m_source": "official",
+                  "source_distance": 330,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 455,
+                  "distance_m_source": "official",
+                  "source_distance": 455,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 200,
+                  "distance_m_source": "official",
+                  "source_distance": 200,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 350,
+                  "distance_m_source": "official",
+                  "source_distance": 350,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 165,
+                  "distance_m_source": "official",
+                  "source_distance": 165,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 400,
+                  "distance_m_source": "official",
+                  "source_distance": 400,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 490,
+                  "distance_m_source": "official",
+                  "source_distance": 490,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 340,
+                  "distance_m_source": "official",
+                  "source_distance": 340,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "HILL",
+          "display_name": "HILL 코스",
+          "hole_count": 9,
+          "primary_tee_code": "official_regular",
+          "verification_status": "verified",
+          "source_url": "https://www.miryangnobelcc.co.kr/Miryang_nobel/mobile/course.asp",
+          "source_data_url": "https://www.miryangnobelcc.co.kr/Miryang_nobel/mobile/course.asp",
+          "review_notes": [
+            "공식 모바일 코스공략 페이지에 홀별 PAR와 거리(m)가 있습니다. 공식 페이지는 티 색상별 거리를 구분하지 않아 원문 값은 색상 미표기 기준 티로 저장했습니다. 색상별로 추정 복제하지 않았습니다.",
+            "공식 홈페이지의 7번 홀 공략 설명에는 레귤러 티가 언급되지만 표 전체가 같은 티를 뜻하는지 별도 확인이 없어 티 색상은 표시하지 않습니다.",
+            "공식 출처: https://www.miryangnobelcc.co.kr/Miryang_nobel/mobile/course.asp (2026-10-12 확인)."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 285,
+                  "distance_m_source": "official",
+                  "source_distance": 285,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 360,
+                  "distance_m_source": "official",
+                  "source_distance": 360,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 450,
+                  "distance_m_source": "official",
+                  "source_distance": 450,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 165,
+                  "distance_m_source": "official",
+                  "source_distance": 165,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 490,
+                  "distance_m_source": "official",
+                  "source_distance": 490,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 135,
+                  "distance_m_source": "official",
+                  "source_distance": 135,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 290,
+                  "distance_m_source": "official",
+                  "source_distance": 290,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 305,
+                  "distance_m_source": "official",
+                  "source_distance": 305,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official_regular",
+                  "display_name": "기준 티(색상 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 360,
+                  "distance_m_source": "official",
+                  "source_distance": 360,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
