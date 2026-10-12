@@ -100,7 +100,18 @@ for (const course of corrections) {
         teeCodes.add(teeKey)
         if (!tee.display_name?.trim() || !tee.tee_color?.trim()) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티 이름과 색상이 필요합니다.`)
         if (!Number.isInteger(tee.distance_m) || tee.distance_m < 1 || tee.distance_m > 800) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티 거리는 1~800m 정수여야 합니다.`)
+        const distanceMSource = tee.distance_m_source ?? 'converted'
+        if (!['official', 'converted'].includes(distanceMSource)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: distance_m_source는 official 또는 converted여야 합니다.`)
         if (tee.source_unit != null && !['m', 'yd'].includes(tee.source_unit)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 원본 거리 단위는 m, yd 또는 미확정(null)이어야 합니다.`)
+        if (tee.source_distance != null && (!Number.isInteger(tee.source_distance) || tee.source_distance < 1 || tee.source_distance > 1200)) {
+          throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 원본 티 거리는 1~1,200 사이 정수여야 합니다.`)
+        }
+        if (tee.source_distance != null && tee.source_unit != null) {
+          const expectedDistanceM = tee.source_unit === 'yd' ? Math.round(tee.source_distance * 0.9144) : tee.source_distance
+          if (distanceMSource === 'converted' && tee.distance_m !== expectedDistanceM) {
+            throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀 ${tee.display_name}: 원거리 ${tee.source_distance}${tee.source_unit}의 환산값은 ${expectedDistanceM}m인데 distance_m=${tee.distance_m}m입니다.`)
+          }
+        }
         if (tee.handicap_index != null && (!Number.isInteger(tee.handicap_index) || tee.handicap_index < 1 || tee.handicap_index > 18)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 그린 핸디캡 인덱스는 1~18이어야 합니다.`)
       }
     }
@@ -216,7 +227,7 @@ async function verifyCourse(correction, courseId) {
     if (holeError) throw holeError
     if ((holeRows ?? []).length !== expectedRoute.holes.length) throw new Error(`${correction.name}/${expectedRoute.route_code}: 홀 수 불일치 (DB=${holeRows?.length ?? 0}, seed=${expectedRoute.holes.length})`)
     const { data: teeRows, error: teeError } = await supabase.from('golf_course_hole_tees')
-      .select('id,hole_id,tee_code,display_name,tee_color,distance_m,source_distance,source_unit,green_code,green_name,handicap_index')
+      .select('id,hole_id,tee_code,display_name,tee_color,distance_m,distance_m_source,source_distance,source_unit,green_code,green_name,handicap_index')
       .in('hole_id', (holeRows ?? []).map((hole) => hole.id))
     if (teeError) throw teeError
     const teesByHole = new Map()
@@ -232,14 +243,15 @@ async function verifyCourse(correction, courseId) {
         display_name: tee.display_name,
         tee_color: tee.tee_color,
         distance_m: tee.distance_m,
+        distance_m_source: tee.distance_m_source ?? 'converted',
         source_distance: tee.source_distance ?? tee.distance_m,
         source_unit: tee.source_unit ?? (tee.source_distance == null ? 'm' : null),
         green_code: tee.green_code ?? 'standard',
         green_name: tee.green_name ?? '기본 그린',
         handicap_index: tee.handicap_index ?? null,
       })).sort((a, b) => `${a.tee_code}:${a.green_code}`.localeCompare(`${b.tee_code}:${b.green_code}`))
-      const comparableActual = actualTees.map(({ tee_code, display_name, tee_color, distance_m, source_distance, source_unit, green_code, green_name, handicap_index }) => ({
-        tee_code, display_name, tee_color, distance_m, source_distance, source_unit, green_code, green_name, handicap_index: handicap_index ?? null,
+      const comparableActual = actualTees.map(({ tee_code, display_name, tee_color, distance_m, distance_m_source, source_distance, source_unit, green_code, green_name, handicap_index }) => ({
+        tee_code, display_name, tee_color, distance_m, distance_m_source, source_distance, source_unit, green_code, green_name, handicap_index: handicap_index ?? null,
       }))
       if (!sameValue(comparableActual, expectedTees)) {
         throw new Error(`${correction.name}/${expectedRoute.route_code}/${expectedHole.hole_number}홀: DB 티 구성이 seed와 다릅니다 (DB=${JSON.stringify(comparableActual)}, seed=${JSON.stringify(expectedTees)})`)
@@ -340,6 +352,7 @@ for (const correction of corrections) {
       display_name: tee.display_name,
       tee_color: tee.tee_color,
       distance_m: tee.distance_m,
+      distance_m_source: tee.distance_m_source ?? 'converted',
       source_distance: tee.source_distance ?? tee.distance_m,
       source_unit: tee.source_unit ?? (tee.source_distance == null ? 'm' : null),
       green_code: tee.green_code ?? 'standard',
