@@ -296,7 +296,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 2026-10-13 남부권 미진행 구장 재조사(상태 변경 없음):
 - 순창 디케이레저: MCST 주소는 순창읍 금산로 152입니다. 순창군 공식 2025-11-12 분묘개장 공고에서 주식회사 디케이레저가 같은 주소를 사업자 주소로 기재하고 확장 부지 분묘 이장을 공고한 것을 확인했습니다. 공식 인허가 자료는 순창 로제비앙CC 18홀 조성 계획을 확인하지만, 현행 공식 홀별 제원·운영 여부는 확인되지 않았습니다. `sunchangcc.co.kr` 도메인은 현재 골프장과 무관한 콘텐츠를 보여 공식 제원 출처로 사용할 수 없습니다. 기존 9홀 데이터와 계획 중인 18홀 데이터를 섞지 않고 pending을 유지합니다. 출처: [순창군 공식 분묘개장 공고](https://www.sunchang.go.kr/board/view.sunchang?boardId=BBS_0000017&dataSid=711308&menuCd=DOM_000000103003008000), [전북도보 계획 결정](https://www.jeonbuk.go.kr/upload_data/board_data/BBS_0000017/168984899702692.pdf).
-- 금과골프장: MCST 주소의 시설을 공식 운영 중인 홀별 PAR·티 거리 자료로 연결하지 못했습니다. 순창군 도시계획 자료는 골프장 사업의 존재만 확인하고 홀별 제원은 싣지 않습니다. 비공식 디렉터리 사이에서도 6홀·9홀 표기가 달라 pending을 유지합니다. 출처: [토지이음 사업 고시](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?chrgorg=&enddt=&geul_yn=Y&gihyung_yn=&gosino=&mobile_yn=&pageNo=17690&prj_cat_cd=&prj_nm=&selSggCd=&select2=&select_3=&seq=223789&silsi_yn=&startdt=&zonenm=), [6홀 표기](https://didim-golf.vercel.app/course/%EC%A0%84%EB%B6%81-%EA%B8%88%EA%B3%BC), [9홀 표기](https://golfjoin.co.kr/golf-courses/geumgwagolfjang).
+- 금과골프장: DB/MCST 등록은 6홀입니다. 전라북도 고시 제2004-325호는 금과골프장 도시계획시설사업의 존재를 확인해 주지만, 현재 운영 코스의 홀별 PAR·거리·티 정보는 싣지 않습니다. 비공식 디렉터리 사이에서도 6홀·9홀 표기가 달라 이를 근거로 값을 추정하지 않고 pending을 유지합니다. 출처: [토지이음 사업 고시](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?chrgorg=&enddt=&geul_yn=Y&gihyung_yn=&gosino=&mobile_yn=&pageNo=17690&prj_cat_cd=&prj_nm=&selSggCd=&select2=&select_3=&seq=223789&silsi_yn=&startdt=&zonenm=), 비공식 자료 간 홀 수 비교: [6홀 표기](https://didim-golf.vercel.app/course/%EC%A0%84%EB%B6%81-%EA%B8%88%EA%B3%BC), [9홀 표기](https://golfjoin.co.kr/golf-courses/geumgwagolfjang).
 - 라운딩 UI 구조 확장 후 원격 카탈로그에서 검수 완료된 9홀 미만 경로 7개를 다시 조회했습니다: 힐스카이CC 6홀 경로 4개, 광양CC 6홀, 고창CC 3홀, 상떼힐CC 6홀. 이 경로들은 이제 실제 홀 수로 기록할 수 있고 동일 코스를 반복해 최대 18홀까지 구성할 수 있습니다. 광양CC의 별도 자동 전·후반 반복 규칙은 사용자의 요청대로 현재 전체 코스 자료 작업을 마친 뒤 적용할 후속 항목으로 유지합니다.
 
 2026-10-13 천안상록CC 공식 자료 반영 후 원격 전체 카탈로그: 검수 완료 233개, 미진행 280개, 반려 3개(총 516개). 부산·울산·경남 pending 0개. 남부권 잔여 pending은 경북 1개, 전남 1개, 전북 3개입니다.
@@ -475,3 +475,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 원격 pending 목록에서 `디케이레저`(전북 순창군 순창읍 금산로 152, 9홀)를 재확인했습니다. 국토교통부 토지이음에 순창군이 직접 등록한 [공고 제2026-951호](https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?chrgorg=&enddt=&gosino=&mobile_yn=&pageNo=2&selSggCd=&select2=&select_3=&seq=5678&startdt=&zonenm=)는 같은 순화리 산11-4 일원의 `로제비앙 G.C 순창` 대중형 18홀 조성사업에 따른 관리계획 변경안 주민열람 공고입니다(공고일 2026-09-30, 열람기간 2026-09-30~10-14).
 - 순창군 2025-1068호 안전점검 수행기관 지정 공고의 공개 사본에는 사업명이 대중제 18홀 조성공사이고 공사기간이 2025-08-27~2027-03-31로 기재되어 있습니다([공고문 사본](https://www.bidpro.co.kr/n0_ipchal/konggo/svc/konggo_view.asp?num=2987851)). 따라서 기존 9홀 레코드와 확장 완료 후 18홀 코스를 동일한 현재 운영 상태로 혼합하지 않습니다.
 - 운영사 공식 9홀 코스의 최신 PAR·티별 거리는 아직 확보하지 못했고, 확장 18홀의 계획 변경 절차도 진행 중이므로 DB는 변경하지 않고 pending 상태를 유지합니다. 추후 운영사 공식 코스표와 실제 개장 상태를 확인한 뒤 기존 코스 유지·교체 여부를 반영합니다.
+
+### 2026-10-13 — 금과골프장 공식 사업 자료 재확인
+- DB/MCST의 6홀 항목과 일치하는 주소의 금과골프장 도시계획시설사업은 전라북도 고시 제2004-325호에서 확인됩니다. 고시 자료는 사업 및 위치를 입증하지만, 현재 운영 중인 6개 홀의 PAR·티별 거리 자료나 코스가 현재도 같은 구성인지까지는 확인하지 못했습니다.
+- 현재 운영사 공식 코스 페이지나 거리표를 찾지 못했고, 외부 디렉터리의 6홀·9홀 표기는 서로 달라 참고 수준으로만 기록했습니다. 제3자 수치로 홀 정보를 채우지 않고 pending을 유지합니다.
