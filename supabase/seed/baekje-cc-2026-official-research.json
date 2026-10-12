@@ -1,0 +1,45 @@
+{
+  "schema": "course-research/1",
+  "venue": "백제CC",
+  "region": "충남",
+  "venue_status": "pending",
+  "research_status": "partial",
+  "notes": [
+    "공식 사비코스 홀 페이지의 지도 이미지에서 PAR와 색상별 티 거리를 화면 판독했습니다. 공식 거리는 m 단위로 표시됩니다.",
+    "사비코스 9홀은 확인 완료했습니다. 웅진·한성 코스 데이터는 아직 미수집이므로 구장 전체 상태는 pending으로 유지합니다.",
+    "공식 이미지에서 HDCP는 확인되지 않아 값을 입력하지 않았습니다. 티 색상 순서는 Red, Yellow, White, Blue, Black입니다."
+  ],
+  "source_url_pattern": "https://www.baekjecc.com/pagesite/course/one/hole{hole:02d}.asp",
+  "routes": [
+    {
+      "route_code": "sabi",
+      "display_name": "사비코스",
+      "hole_count": 9,
+      "status": "official_source_reviewed",
+      "official_tee_totals_m": { "red": 2465, "yellow": 2515, "white": 2780, "blue": 3040, "black": 3265 },
+      "holes": [
+        { "hole_number": 1, "par": 4, "tees_m": { "red": 295, "yellow": 295, "white": 335, "blue": 360, "black": 380 } },
+        { "hole_number": 2, "par": 5, "tees_m": { "red": 420, "yellow": 420, "white": 450, "blue": 475, "black": 495 } },
+        { "hole_number": 3, "par": 4, "tees_m": { "red": 300, "yellow": 300, "white": 330, "blue": 360, "black": 380 } },
+        { "hole_number": 4, "par": 3, "tees_m": { "red": 95, "yellow": 95, "white": 120, "blue": 145, "black": 170 } },
+        { "hole_number": 5, "par": 4, "tees_m": { "red": 300, "yellow": 325, "white": 350, "blue": 375, "black": 400 } },
+        { "hole_number": 6, "par": 4, "tees_m": { "red": 250, "yellow": 250, "white": 275, "blue": 310, "black": 350 } },
+        { "hole_number": 7, "par": 4, "tees_m": { "red": 295, "yellow": 305, "white": 330, "blue": 360, "black": 380 } },
+        { "hole_number": 8, "par": 3, "tees_m": { "red": 115, "yellow": 130, "white": 155, "blue": 180, "black": 210 } },
+        { "hole_number": 9, "par": 5, "tees_m": { "red": 395, "yellow": 395, "white": 435, "blue": 475, "black": 500 } }
+      ]
+    }
+  ],
+  "sources": [
+    "https://www.baekjecc.com/pagesite/course/one/hole01.asp",
+    "https://www.baekjecc.com/pagesite/course/one/hole02.asp",
+    "https://www.baekjecc.com/pagesite/course/one/hole03.asp",
+    "https://www.baekjecc.com/pagesite/course/one/hole04.asp",
+    "https://www.baekjecc.com/pagesite/course/one/hole05.asp",
+    "https://www.baekjecc.com/pagesite/course/one/hole06.asp",
+    "https://www.baekjecc.com/pagesite/course/one/hole07.asp",
+    "https://www.baekjecc.com/pagesite/course/one/hole08.asp",
+    "https://www.baekjecc.com/pagesite/course/one/hole09.asp"
+  ],
+  "checked_at": "2026-10-13"
+}
