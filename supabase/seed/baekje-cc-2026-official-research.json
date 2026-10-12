@@ -2,12 +2,12 @@
   "schema": "course-research/1",
   "venue": "백제CC",
   "region": "충남",
-  "venue_status": "pending",
-  "research_status": "partial",
+  "venue_status": "verified",
+  "research_status": "complete",
   "notes": [
     "공식 사비코스 홀 페이지의 지도 이미지에서 PAR와 색상별 티 거리를 화면 판독했습니다. 공식 거리는 m 단위로 표시됩니다.",
-    "사비코스 9홀은 확인 완료했습니다. 웅진·한성 코스 데이터는 아직 미수집이므로 구장 전체 상태는 pending으로 유지합니다.",
-    "공식 이미지에서 HDCP는 확인되지 않아 값을 입력하지 않았습니다. 티 색상 순서는 Red, Yellow, White, Blue, Black입니다."
+    "사비·웅진·한성코스의 27개 홀을 모두 공식 지도 이미지에서 확인했습니다. 3개 경로 각각 9홀이며 공식 파와 표시된 티별 m 거리를 저장했습니다.",
+    "공식 이미지에서 HDCP는 확인되지 않아 입력하지 않았습니다. 티 색상 순서는 Red, Yellow, White, Blue, Black입니다."
   ],
   "source_url_pattern": "https://www.baekjecc.com/pagesite/course/one/hole{hole:02d}.asp",
   "routes": [
@@ -15,18 +15,330 @@
       "route_code": "sabi",
       "display_name": "사비코스",
       "hole_count": 9,
-      "status": "official_source_reviewed",
-      "official_tee_totals_m": { "red": 2465, "yellow": 2515, "white": 2780, "blue": 3040, "black": 3265 },
+      "status": "saved_and_verified",
+      "official_tee_totals_m": {
+        "red": 2465,
+        "yellow": 2515,
+        "white": 2780,
+        "blue": 3040,
+        "black": 3265
+      },
       "holes": [
-        { "hole_number": 1, "par": 4, "tees_m": { "red": 295, "yellow": 295, "white": 335, "blue": 360, "black": 380 } },
-        { "hole_number": 2, "par": 5, "tees_m": { "red": 420, "yellow": 420, "white": 450, "blue": 475, "black": 495 } },
-        { "hole_number": 3, "par": 4, "tees_m": { "red": 300, "yellow": 300, "white": 330, "blue": 360, "black": 380 } },
-        { "hole_number": 4, "par": 3, "tees_m": { "red": 95, "yellow": 95, "white": 120, "blue": 145, "black": 170 } },
-        { "hole_number": 5, "par": 4, "tees_m": { "red": 300, "yellow": 325, "white": 350, "blue": 375, "black": 400 } },
-        { "hole_number": 6, "par": 4, "tees_m": { "red": 250, "yellow": 250, "white": 275, "blue": 310, "black": 350 } },
-        { "hole_number": 7, "par": 4, "tees_m": { "red": 295, "yellow": 305, "white": 330, "blue": 360, "black": 380 } },
-        { "hole_number": 8, "par": 3, "tees_m": { "red": 115, "yellow": 130, "white": 155, "blue": 180, "black": 210 } },
-        { "hole_number": 9, "par": 5, "tees_m": { "red": 395, "yellow": 395, "white": 435, "blue": 475, "black": 500 } }
+        {
+          "hole_number": 1,
+          "par": 4,
+          "tees_m": {
+            "red": 295,
+            "yellow": 295,
+            "white": 335,
+            "blue": 360,
+            "black": 380
+          }
+        },
+        {
+          "hole_number": 2,
+          "par": 5,
+          "tees_m": {
+            "red": 420,
+            "yellow": 420,
+            "white": 450,
+            "blue": 475,
+            "black": 495
+          }
+        },
+        {
+          "hole_number": 3,
+          "par": 4,
+          "tees_m": {
+            "red": 300,
+            "yellow": 300,
+            "white": 330,
+            "blue": 360,
+            "black": 380
+          }
+        },
+        {
+          "hole_number": 4,
+          "par": 3,
+          "tees_m": {
+            "red": 95,
+            "yellow": 95,
+            "white": 120,
+            "blue": 145,
+            "black": 170
+          }
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "tees_m": {
+            "red": 300,
+            "yellow": 325,
+            "white": 350,
+            "blue": 375,
+            "black": 400
+          }
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "tees_m": {
+            "red": 250,
+            "yellow": 250,
+            "white": 275,
+            "blue": 310,
+            "black": 350
+          }
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "tees_m": {
+            "red": 295,
+            "yellow": 305,
+            "white": 330,
+            "blue": 360,
+            "black": 380
+          }
+        },
+        {
+          "hole_number": 8,
+          "par": 3,
+          "tees_m": {
+            "red": 115,
+            "yellow": 130,
+            "white": 155,
+            "blue": 180,
+            "black": 210
+          }
+        },
+        {
+          "hole_number": 9,
+          "par": 5,
+          "tees_m": {
+            "red": 395,
+            "yellow": 395,
+            "white": 435,
+            "blue": 475,
+            "black": 500
+          }
+        }
+      ],
+      "note": "원격 DB에 9홀과 45개 티 거리를 저장했고 읽기 대조했습니다."
+    },
+    {
+      "route_code": "ungjin",
+      "display_name": "웅진코스",
+      "hole_count": 9,
+      "status": "saved_and_verified",
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "tees_m": {
+            "red": 305,
+            "yellow": 335,
+            "white": 370,
+            "blue": 390,
+            "black": 410
+          }
+        },
+        {
+          "hole_number": 2,
+          "par": 3,
+          "tees_m": {
+            "red": 85,
+            "yellow": 110,
+            "white": 135,
+            "blue": 145,
+            "black": 160
+          }
+        },
+        {
+          "hole_number": 3,
+          "par": 4,
+          "tees_m": {
+            "red": 265,
+            "yellow": 285,
+            "white": 315,
+            "blue": 340,
+            "black": 365
+          }
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "tees_m": {
+            "red": 285,
+            "yellow": 285,
+            "white": 310,
+            "blue": 335,
+            "black": 357
+          }
+        },
+        {
+          "hole_number": 5,
+          "par": 5,
+          "tees_m": {
+            "red": 410,
+            "yellow": 445,
+            "white": 480,
+            "blue": 510,
+            "black": 530
+          }
+        },
+        {
+          "hole_number": 6,
+          "par": 3,
+          "tees_m": {
+            "red": 145,
+            "yellow": 160,
+            "white": 175,
+            "blue": 190,
+            "black": 207
+          }
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "tees_m": {
+            "red": 310,
+            "yellow": 345,
+            "white": 370,
+            "blue": 390,
+            "black": 410
+          }
+        },
+        {
+          "hole_number": 8,
+          "par": 5,
+          "tees_m": {
+            "red": 420,
+            "yellow": 445,
+            "white": 470,
+            "blue": 505,
+            "black": 525
+          }
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "tees_m": {
+            "red": 290,
+            "yellow": 310,
+            "white": 335,
+            "blue": 355,
+            "black": 375
+          }
+        }
+      ]
+    },
+    {
+      "route_code": "hanseong",
+      "display_name": "한성코스",
+      "hole_count": 9,
+      "status": "saved_and_verified",
+      "source_url_pattern": "https://www.baekjecc.com/pagesite/course/three/hole{hole:02d}.asp",
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "tees_m": {
+            "red": 274,
+            "yellow": 295,
+            "white": 316,
+            "blue": 333,
+            "black": 350
+          }
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "tees_m": {
+            "red": 253,
+            "yellow": 331,
+            "white": 351,
+            "blue": 360,
+            "black": 385
+          }
+        },
+        {
+          "hole_number": 3,
+          "par": 3,
+          "tees_m": {
+            "red": 113,
+            "yellow": 113,
+            "white": 134,
+            "blue": 146,
+            "black": 170
+          }
+        },
+        {
+          "hole_number": 4,
+          "par": 5,
+          "tees_m": {
+            "red": 397,
+            "yellow": 423,
+            "white": 454,
+            "blue": 488,
+            "black": 520
+          }
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "tees_m": {
+            "red": 271,
+            "yellow": 297,
+            "white": 315,
+            "blue": 335,
+            "black": 355
+          }
+        },
+        {
+          "hole_number": 6,
+          "par": 3,
+          "tees_m": {
+            "red": 109,
+            "yellow": 109,
+            "white": 127,
+            "blue": 144,
+            "black": 162
+          }
+        },
+        {
+          "hole_number": 7,
+          "par": 5,
+          "tees_m": {
+            "red": 431,
+            "yellow": 431,
+            "white": 485,
+            "blue": 518,
+            "black": 550
+          }
+        },
+        {
+          "hole_number": 8,
+          "par": 4,
+          "tees_m": {
+            "red": 221,
+            "yellow": 298,
+            "white": 317,
+            "blue": 338,
+            "black": 363
+          }
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "tees_m": {
+            "red": 242,
+            "yellow": 270,
+            "white": 296,
+            "blue": 308,
+            "black": 360
+          }
+        }
       ]
     }
   ],
@@ -39,7 +351,25 @@
     "https://www.baekjecc.com/pagesite/course/one/hole06.asp",
     "https://www.baekjecc.com/pagesite/course/one/hole07.asp",
     "https://www.baekjecc.com/pagesite/course/one/hole08.asp",
-    "https://www.baekjecc.com/pagesite/course/one/hole09.asp"
+    "https://www.baekjecc.com/pagesite/course/one/hole09.asp",
+    "https://www.baekjecc.com/pagesite/course/two/hole01.asp",
+    "https://www.baekjecc.com/pagesite/course/two/hole02.asp",
+    "https://www.baekjecc.com/pagesite/course/two/hole03.asp",
+    "https://www.baekjecc.com/pagesite/course/two/hole04.asp",
+    "https://www.baekjecc.com/pagesite/course/two/hole05.asp",
+    "https://www.baekjecc.com/pagesite/course/two/hole06.asp",
+    "https://www.baekjecc.com/pagesite/course/two/hole07.asp",
+    "https://www.baekjecc.com/pagesite/course/two/hole08.asp",
+    "https://www.baekjecc.com/pagesite/course/two/hole09.asp",
+    "https://www.baekjecc.com/pagesite/course/three/hole01.asp",
+    "https://www.baekjecc.com/pagesite/course/three/hole02.asp",
+    "https://www.baekjecc.com/pagesite/course/three/hole03.asp",
+    "https://www.baekjecc.com/pagesite/course/three/hole04.asp",
+    "https://www.baekjecc.com/pagesite/course/three/hole05.asp",
+    "https://www.baekjecc.com/pagesite/course/three/hole06.asp",
+    "https://www.baekjecc.com/pagesite/course/three/hole07.asp",
+    "https://www.baekjecc.com/pagesite/course/three/hole08.asp",
+    "https://www.baekjecc.com/pagesite/course/three/hole09.asp"
   ],
   "checked_at": "2026-10-13"
 }
