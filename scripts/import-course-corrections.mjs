@@ -269,6 +269,9 @@ async function verifyCourse(correction, courseId) {
       .select('id,hole_number,par,handicap_index').eq('route_id', savedRoute.id).order('hole_number')
     if (holeError) throw holeError
     if ((holeRows ?? []).length !== expectedRoute.holes.length) throw new Error(`${correction.name}/${expectedRoute.route_code}: 홀 수 불일치 (DB=${holeRows?.length ?? 0}, seed=${expectedRoute.holes.length})`)
+    const expectedHoleNumbers = expectedRoute.holes.map((hole) => hole.hole_number).sort((a, b) => a - b)
+    const actualHoleNumbers = (holeRows ?? []).map((hole) => hole.hole_number).sort((a, b) => a - b)
+    if (!sameValue(actualHoleNumbers, expectedHoleNumbers)) throw new Error(`${correction.name}/${expectedRoute.route_code}: DB 홀 번호 구성이 seed와 다릅니다 (DB=${JSON.stringify(actualHoleNumbers)}, seed=${JSON.stringify(expectedHoleNumbers)})`)
     const { data: teeRows, error: teeError } = await supabase.from('golf_course_hole_tees')
       .select('id,hole_id,tee_code,display_name,tee_color,distance_m,distance_m_source,source_distance,source_unit,green_code,green_name,handicap_index,par')
       .in('hole_id', (holeRows ?? []).map((hole) => hole.id))
@@ -417,6 +420,16 @@ for (const sourceCorrection of corrections) {
         .delete().in('id', staleRows.map((tee) => tee.id)) : { error: null }
       if (staleTeesError) throw staleTeesError
     }
+
+    // Remove holes omitted by the authoritative correction. Tee rows cascade on delete.
+    const expectedHoleNumbers = new Set(route.holes.map((hole) => hole.hole_number))
+    const { data: currentHoles, error: currentHolesError } = await supabase.from('golf_course_holes')
+      .select('id,hole_number').eq('route_id', savedRoute.id)
+    if (currentHolesError) throw currentHolesError
+    const staleHoles = (currentHoles ?? []).filter((hole) => !expectedHoleNumbers.has(hole.hole_number))
+    const { error: staleHolesError } = staleHoles.length ? await supabase.from('golf_course_holes')
+      .delete().in('id', staleHoles.map((hole) => hole.id)) : { error: null }
+    if (staleHolesError) throw staleHolesError
   }
 
   // Publish routes first; the venue remains hidden until every child write succeeds.
