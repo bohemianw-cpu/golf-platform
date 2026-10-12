@@ -194,3 +194,5 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 
 - 티 선택 정책: 실제 티 색상·명칭별 거리가 공식 자료에 공개된 행은 `tee_selection_available: true`(기본값)로 둡니다. 공식 단일 기준 거리처럼 티 위치가 공개되지 않은 행은 `false`로 저장합니다. 전체 선택 코스에 기준 거리만 있으면 티를 특정하지 않고 라운드를 기록하며, 선택 가능한 티가 있는 코스는 티 선택을 필수로 유지합니다.
+
+- 파인힐스CC(전남 순천): 운영사 공식 파인·레이크·힐스 각 9홀 상세의 PAR·HDCP 및 실제 게시된 티별 미터 거리를 저장했습니다. 세 경로 모두 PAR36, 총 27홀·116개 공식 티 거리 행이며, 홀별로 있는 티만 반영했습니다(골드 티는 일부 홀에만 표시). 레이크코스 공식 개요 전장 3,131m와 홀 상세 블랙티 합계 3,139m의 8m 차이는 원문 홀별 값을 보존하고 검수 메모에 남겼습니다. 구장 공식 주소 표기로 갱신했습니다. 자료: `pinehills-2026-official-verified.json`; 출처: [공식 코스개요](https://www.pinehills.co.kr/pinehills/pagesite/course/intro.asp), [파인코스](https://www.pinehills.co.kr/pinehills/pagesite/course/one/hole01.asp), [레이크코스](https://www.pinehills.co.kr/pinehills/pagesite/course/two/hole01.asp), [힐스코스](https://www.pinehills.co.kr/pinehills/pagesite/course/three/hole01.asp) 및 각 1~9홀 상세 (2026-10-13 확인).
