@@ -393,3 +393,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 각 홀 이미지의 색상 범례와 원격 DB를 대조했습니다. Lake·Mountain 코스의 PAR·HDCP·티별 거리 배열, 레이아웃 상태, 티 행 수가 모두 일치합니다. 공식 이미지에 없는 티는 보충하지 않았습니다.
 - 반영 후 원격 카탈로그: 총 516곳 — 검수 완료 260, 미진행 251, 반려 5. 지역별 미진행은 강원 55, 경기 142, 경북 1, 서울 1, 세종 1, 인천 12, 전남 1, 전북 3, 제주 28, 충남 6, 충북 1곳입니다. 부산·울산·경남 pending은 0곳입니다.
 - 자료: `arista-cc-2026-official-verified.json` (2026-10-13 확인).
+
+### 2026-10-13 — 서산수골프앤리조트
+- 운영사 공식 [코스 공략 페이지](https://www.seosansoo.co.kr/course/tip)와 [서산 코스 홀 API](https://seosansoocc-hp-api.holeinonecloud.com/api/v1/hole/course/7), [산수 코스 홀 API](https://seosansoocc-hp-api.holeinonecloud.com/api/v1/hole/course/8)를 확인했습니다. 공식 구장 설정의 거리 단위는 METER이며, 서산·산수 각 9홀의 홀별 PAR·HDCP와 Black/Blue/White/Yellow/Red 거리 90건을 반영했습니다.
+- 두 코스 모두 PAR36이며 원격 DB에서 각 9홀·45 티 행, 홀별 PAR·HDCP, 티별 거리 배열이 공식 API 원문과 일치하는 것을 확인했습니다. API에 공개된 색상 티만 저장했습니다.
+- 반영 후 원격 카탈로그: 총 516곳 — 검수 완료 261, 미진행 250, 반려 5. 지역별 미진행은 강원 55, 경기 142, 경북 1, 서울 1, 세종 1, 인천 12, 전남 1, 전북 3, 제주 28, 충남 5, 충북 1곳입니다. 부산·울산·경남 pending은 0곳입니다.
+- 자료: `seosansoo-golf-resort-2026-official-verified.json` (2026-10-13 확인).
