@@ -1,0 +1,713 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "파나시아 GC",
+      "name": "파나시아GC",
+      "region": "충남",
+      "address": "당진시 신평면 계명길 33",
+      "hole_count": 18,
+      "verification_status": "verified",
+      "review_notes": [
+        "운영사 공식 코스 제원표에 좌측 Red Course와 우측 White Course 각 9홀의 PAR·HDCP·Back/Regular/Ladies 티 거리가 게시되어 있어 총 18홀로 등록했습니다. 공식 거리는 yd 단위이며 각 홀 값을 1 yd = 0.9144 m로 환산해 가장 가까운 1m로 저장했습니다. 티 색상은 공식 표에 없어 중립 색상을 사용했습니다."
+      ],
+      "routes": [
+        {
+          "route_code": "red",
+          "display_name": "Red Course",
+          "hole_count": 9,
+          "primary_tee_code": "regular",
+          "verification_status": "verified",
+          "source_url": "https://www.panaceagc.com/course/course_main.asp",
+          "par_source_url": "https://www.panaceagc.com/course/course_main.asp",
+          "review_notes": [
+            "공식 Red Course 제원표의 거리 단위는 yd입니다. 각 홀의 Back/Regular/Ladies 티 거리를 미터로 환산해 저장했으며 표에 없는 티 색상은 중립색으로 표시했습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 5,
+              "handicap_index": 15,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 493,
+                  "distance_m_source": "converted",
+                  "source_distance": 539,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 463,
+                  "distance_m_source": "converted",
+                  "source_distance": 506,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 405,
+                  "distance_m_source": "converted",
+                  "source_distance": 443,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "handicap_index": 9,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 345,
+                  "distance_m_source": "converted",
+                  "source_distance": 377,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 319,
+                  "distance_m_source": "converted",
+                  "source_distance": 349,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 233,
+                  "distance_m_source": "converted",
+                  "source_distance": 255,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "handicap_index": 1,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 384,
+                  "distance_m_source": "converted",
+                  "source_distance": 420,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 362,
+                  "distance_m_source": "converted",
+                  "source_distance": 396,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 310,
+                  "distance_m_source": "converted",
+                  "source_distance": 339,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 3,
+              "handicap_index": 5,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 189,
+                  "distance_m_source": "converted",
+                  "source_distance": 207,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 167,
+                  "distance_m_source": "converted",
+                  "source_distance": 183,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 117,
+                  "distance_m_source": "converted",
+                  "source_distance": 128,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "handicap_index": 17,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 346,
+                  "distance_m_source": "converted",
+                  "source_distance": 378,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 321,
+                  "distance_m_source": "converted",
+                  "source_distance": 351,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 277,
+                  "distance_m_source": "converted",
+                  "source_distance": 303,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 5,
+              "handicap_index": 6,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 461,
+                  "distance_m_source": "converted",
+                  "source_distance": 504,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 438,
+                  "distance_m_source": "converted",
+                  "source_distance": 479,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 382,
+                  "distance_m_source": "converted",
+                  "source_distance": 418,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 3,
+              "handicap_index": 14,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 174,
+                  "distance_m_source": "converted",
+                  "source_distance": 190,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 159,
+                  "distance_m_source": "converted",
+                  "source_distance": 174,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 130,
+                  "distance_m_source": "converted",
+                  "source_distance": 142,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "handicap_index": 10,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 329,
+                  "distance_m_source": "converted",
+                  "source_distance": 360,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 308,
+                  "distance_m_source": "converted",
+                  "source_distance": 337,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 262,
+                  "distance_m_source": "converted",
+                  "source_distance": 287,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "handicap_index": 12,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 334,
+                  "distance_m_source": "converted",
+                  "source_distance": 365,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 313,
+                  "distance_m_source": "converted",
+                  "source_distance": 342,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 247,
+                  "distance_m_source": "converted",
+                  "source_distance": 270,
+                  "source_unit": "yd"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "white",
+          "display_name": "White Course",
+          "hole_count": 9,
+          "primary_tee_code": "regular",
+          "verification_status": "verified",
+          "source_url": "https://www.panaceagc.com/course/course_main.asp",
+          "par_source_url": "https://www.panaceagc.com/course/course_main.asp",
+          "review_notes": [
+            "공식 White Course 제원표의 거리 단위는 yd입니다. 각 홀의 Back/Regular/Ladies 티 거리를 미터로 환산해 저장했으며 표에 없는 티 색상은 중립색으로 표시했습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 5,
+              "handicap_index": 7,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 508,
+                  "distance_m_source": "converted",
+                  "source_distance": 556,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 478,
+                  "distance_m_source": "converted",
+                  "source_distance": 523,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 420,
+                  "distance_m_source": "converted",
+                  "source_distance": 459,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "handicap_index": 18,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 322,
+                  "distance_m_source": "converted",
+                  "source_distance": 352,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 296,
+                  "distance_m_source": "converted",
+                  "source_distance": 324,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 210,
+                  "distance_m_source": "converted",
+                  "source_distance": 230,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "handicap_index": 8,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 371,
+                  "distance_m_source": "converted",
+                  "source_distance": 406,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 349,
+                  "distance_m_source": "converted",
+                  "source_distance": 382,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 297,
+                  "distance_m_source": "converted",
+                  "source_distance": 325,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 3,
+              "handicap_index": 13,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 204,
+                  "distance_m_source": "converted",
+                  "source_distance": 223,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 183,
+                  "distance_m_source": "converted",
+                  "source_distance": 200,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 131,
+                  "distance_m_source": "converted",
+                  "source_distance": 143,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "handicap_index": 3,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 327,
+                  "distance_m_source": "converted",
+                  "source_distance": 358,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 302,
+                  "distance_m_source": "converted",
+                  "source_distance": 330,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 258,
+                  "distance_m_source": "converted",
+                  "source_distance": 282,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 5,
+              "handicap_index": 16,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 435,
+                  "distance_m_source": "converted",
+                  "source_distance": 476,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 412,
+                  "distance_m_source": "converted",
+                  "source_distance": 451,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 356,
+                  "distance_m_source": "converted",
+                  "source_distance": 389,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 3,
+              "handicap_index": 11,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 179,
+                  "distance_m_source": "converted",
+                  "source_distance": 196,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 165,
+                  "distance_m_source": "converted",
+                  "source_distance": 180,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 137,
+                  "distance_m_source": "converted",
+                  "source_distance": 150,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "handicap_index": 2,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 355,
+                  "distance_m_source": "converted",
+                  "source_distance": 388,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 334,
+                  "distance_m_source": "converted",
+                  "source_distance": 365,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 288,
+                  "distance_m_source": "converted",
+                  "source_distance": 315,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "handicap_index": 4,
+              "tees": [
+                {
+                  "tee_code": "back",
+                  "display_name": "Back Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 355,
+                  "distance_m_source": "converted",
+                  "source_distance": 388,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 335,
+                  "distance_m_source": "converted",
+                  "source_distance": 366,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies Tee",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m": 269,
+                  "distance_m_source": "converted",
+                  "source_distance": 294,
+                  "source_unit": "yd"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
