@@ -53,6 +53,12 @@ interface Draft {
 // 웨지가 추천(그린 온 예상)될 때 샷 후 남은 거리의 기본값 (m)
 const WEDGE_GREEN_REMAINING = 5
 
+function preferredGreen(variants: GolfCourseTee[]): GolfCourseTee | undefined {
+  return variants.find((tee) => tee.green_code === 'standard')
+    ?? variants.find((tee) => tee.green_code === 'left')
+    ?? [...variants].sort((a, b) => a.green_code.localeCompare(b.green_code))[0]
+}
+
 function readDraft(userId: string): Draft | null {
   try {
     const raw = localStorage.getItem(DRAFT_KEY)
@@ -654,11 +660,11 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
       const restoredGreenCodes = teeVariants.map((variants, index) => {
         const oldRecord = persistedHoles.find((hole) => hole.hole_number === index + 1)
         const savedCode = oldRecord && 'green_code' in oldRecord ? oldRecord.green_code : null
-        return variants.find((tee) => tee.green_code === savedCode)?.green_code ?? variants.find((tee) => tee.green_code === 'standard')?.green_code ?? variants[0]?.green_code ?? 'standard'
+        return variants.find((tee) => tee.green_code === savedCode)?.green_code ?? preferredGreen(variants)?.green_code ?? 'standard'
       })
       const restoredGreenNames = teeVariants.map((variants, index) => variants.find((tee) => tee.green_code === restoredGreenCodes[index])?.green_name ?? '기본 그린')
       const routeDistancesForRound = savedTeeAvailableOnAllHoles
-        ? teeVariants.map((variants, index) => variants.find((tee) => tee.green_code === restoredGreenCodes[index])?.distance_m ?? variants[0]?.distance_m ?? 0)
+        ? teeVariants.map((variants, index) => variants.find((tee) => tee.green_code === restoredGreenCodes[index])?.distance_m ?? preferredGreen(variants)?.distance_m ?? 0)
         : routeRows.flatMap((route) => route.distances_m)
       const hasFullRouteLayout = [9, 18].includes(routePars.length) && routeDistancesForRound.length === routePars.length &&
         routeDistancesForRound.every((distance) => distance > 0 && distance <= 800)
@@ -825,7 +831,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
     const variantsByHole = selectedTeeCode ? routes.flatMap((route) => route.holes?.length === route.hole_count
       ? route.holes.map((hole) => hole.tees.filter((tee) => tee.tee_code === selectedTeeCode))
       : []) : []
-    const selectedGreens = variantsByHole.map((variants) => variants.find((tee) => tee.green_code === 'standard') ?? variants[0])
+    const selectedGreens = variantsByHole.map(preferredGreen)
     const greenCodesForRoutes = selectedGreens.map((tee) => tee?.green_code ?? 'standard')
     const greenNamesForRoutes = selectedGreens.map((tee) => tee?.green_name ?? '기본 그린')
     const distances = selectedGreens.map((tee) => tee?.distance_m ?? 0)
@@ -844,7 +850,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
     const configuredPars = routes.flatMap((route) => route.holes?.length === route.hole_count
       ? route.holes.map((hole) => {
         const variants = hole.tees.filter((tee) => tee.tee_code === selectedTeeCode)
-        const selected = variants.find((tee) => tee.green_code === 'standard') ?? variants[0]
+        const selected = preferredGreen(variants)
         return selected?.par ?? hole.par
       })
       : route.pars)
