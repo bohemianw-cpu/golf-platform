@@ -368,3 +368,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 2026-10-13 젠스필드CC 공식 자료 반영 후 원격 전체 카탈로그: 검수 완료 256개, 미진행 255개, 반려 5개(총 516개). 충북 미진행은 레인보우힐스·아난티 중앙·킹스데일 3개입니다.
 - 젠스필드CC(충북 음성): 운영사 공식 드래곤·힐 홀 상세 HTML의 PAR·HDCP와 Black/White/Red 티별 거리(m)를 저장했습니다. 각 9홀 PAR36, 총 18홀·54개 티 행이며 공식 원문 HTML과 seed·원격 DB의 PAR/HDCP/티별 거리 대조 차이는 0건입니다. 드래곤 티별 합계는 3,353/2,962/2,321m, 힐은 3,305/2,880/2,315m입니다. 공식 코스 개요 총전장 6,646m와 Black 홀별 합계 6,658m 사이의 12m 차이, 제목 이미지 거리와 Black 티 목록이 다른 4개 홀(드래곤 6·7, 힐 15·17)은 특이사항으로 기록하고 티별 목록 원문을 보존했습니다. 드래곤 1번은 제목 이미지 alt가 HOLE 2로 중복 표기되지만 nav 순서와 본문 설명이 첫 홀을 가리켜 1번으로 매핑했습니다. 공식 주소도 반영했습니다. 운영사 공식 홈페이지는 HTTP에서만 응답하고 HTTPS는 SSL 연결 오류를 반환해 HTTP 원문 URL을 출처로 기록했습니다. 자료: `zensfield-cc-2026-official-verified.json`; 출처: [공식 코스 제원 개요](http://www.zensfield.com/pagesite/course/intro.asp), [드래곤 1번 상세](http://www.zensfield.com/pagesite/course/one/hole01.asp) 및 hole01~hole09, [힐 10번 상세](http://www.zensfield.com/pagesite/course/two/hole01.asp) 및 hole01~hole09 (2026-10-13 확인).
+
+### 2026-10-13 — 아난티 중앙GC
+- 충북 아난티 중앙GC 공식 마운틴·레이크·스카이 코스 페이지의 27홀 PAR 및 실제 공개된 Red/Yellow/White/Blue 거리(m) 148건을 seed와 원격 DB에 반영했습니다. 좌·우 그린이 표시된 홀은 위치별로 나누고, 공식 값이 없는 티 색상은 보충하지 않았습니다. [마운틴](https://ananti.kr/ko/joongang/JOAN0101), [레이크](https://ananti.kr/ko/joongang/JOAN0102), [스카이](https://ananti.kr/ko/joongang/JOAN0103).
+- 원격 DB와 seed 대조 결과 PAR·티 거리/색상/그린 위치 불일치 0건, 누락 0건, 예상 외 0건입니다. 코스별 PAR 합계는 마운틴 35, 레이크 36, 스카이 36입니다. 마운틴 9번은 공식 페이지 제목이 PAR 3이나 본문 설명은 PAR 4라서 제목값(PAR 3)을 저장하고 검수 메모에 차이를 남겼습니다. 핸디캡은 공식 페이지에서 찾지 못해 미입력입니다.
+- 반영 후 원격 카탈로그: 총 516곳 — 검수 완료 257, pending 254, 반려 5. 충북 pending은 레인보우힐스CC와 킹스데일GC 2곳입니다.
+- 자료: `ananti-jungang-gc-2026-official-verified.json` (2026-10-13 확인).
