@@ -1,0 +1,445 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "name": "자유로컨트리클럽",
+      "match_name": "자유로컨트리클럽",
+      "region": "경기",
+      "hole_count": 27,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "MCST 경기 자유로컨트리클럽 27홀 시설을 자유로CC 공식 사이트의 3개 코스(대한·민국·통일)와 홀 수 및 코스 명칭으로 대조했습니다. 주소는 기초 목록 값을 유지하고, 공식 코스 페이지에 명시된 길이 단위와 코스별 총계로 홀별 파·거리 자료를 검증했습니다.",
+        "공식 페이지는 각 코스당 한 가지 거리값만 제공하고 티 이름/색상은 구분하지 않습니다. 공개된 값만 '공식 기준 거리'로 등록했습니다. 출처: https://www.jayurocc.com/Mobile/View?ID=course01 (2026-10-12 확인)."
+      ],
+      "routes": [
+        {
+          "route_code": "daehan",
+          "display_name": "대한 코스",
+          "hole_count": 9,
+          "primary_tee_code": "official",
+          "verification_status": "verified",
+          "source_url": "https://www.jayurocc.com/Mobile/View?ID=course01",
+          "official_tee_totals_m": {
+            "official": 3353
+          },
+          "review_notes": [
+            "공식 코스소개 표가 [단위:m]로 표시한 대한 코스 1~9번 홀의 PAR와 거리 한 세트를 입력했습니다. 코스에 공개된 별도 티 이름/색상은 없어 공식 기준 거리 한 종류로만 보존했습니다. 홀별 합계 3353m, PAR 36가 공식 요약과 일치합니다. 출처: https://www.jayurocc.com/Mobile/View?ID=course01 (2026-10-12 확인)."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 528,
+                  "source_distance": 528,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 367,
+                  "source_distance": 367,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 185,
+                  "source_distance": 185,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 319,
+                  "source_distance": 319,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 409,
+                  "source_distance": 409,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 168,
+                  "source_distance": 168,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 414,
+                  "source_distance": 414,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 534,
+                  "source_distance": 534,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 429,
+                  "source_distance": 429,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "minguk",
+          "display_name": "민국 코스",
+          "hole_count": 9,
+          "primary_tee_code": "official",
+          "verification_status": "verified",
+          "source_url": "https://www.jayurocc.com/Mobile/View?ID=course01",
+          "official_tee_totals_m": {
+            "official": 3311
+          },
+          "review_notes": [
+            "공식 코스소개 표가 [단위:m]로 표시한 민국 코스 1~9번 홀의 PAR와 거리 한 세트를 입력했습니다. 코스에 공개된 별도 티 이름/색상은 없어 공식 기준 거리 한 종류로만 보존했습니다. 홀별 합계 3311m, PAR 36가 공식 요약과 일치합니다. 출처: https://www.jayurocc.com/Mobile/View?ID=course01 (2026-10-12 확인)."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 344,
+                  "source_distance": 344,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 489,
+                  "source_distance": 489,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 185,
+                  "source_distance": 185,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 402,
+                  "source_distance": 402,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 416,
+                  "source_distance": 416,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 400,
+                  "source_distance": 400,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 208,
+                  "source_distance": 208,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 460,
+                  "source_distance": 460,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 407,
+                  "source_distance": 407,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "tongil",
+          "display_name": "통일 코스",
+          "hole_count": 9,
+          "primary_tee_code": "official",
+          "verification_status": "verified",
+          "source_url": "https://www.jayurocc.com/Mobile/View?ID=course01",
+          "official_tee_totals_m": {
+            "official": 3300
+          },
+          "review_notes": [
+            "공식 코스소개 표가 [단위:m]로 표시한 통일 코스 1~9번 홀의 PAR와 거리 한 세트를 입력했습니다. 코스에 공개된 별도 티 이름/색상은 없어 공식 기준 거리 한 종류로만 보존했습니다. 홀별 합계 3300m, PAR 36가 공식 요약과 일치합니다. 출처: https://www.jayurocc.com/Mobile/View?ID=course01 (2026-10-12 확인)."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 494,
+                  "source_distance": 494,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 404,
+                  "source_distance": 404,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 173,
+                  "source_distance": 173,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 552,
+                  "source_distance": 552,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 425,
+                  "source_distance": 425,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 318,
+                  "source_distance": 318,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 205,
+                  "source_distance": 205,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 348,
+                  "source_distance": 348,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 381,
+                  "source_distance": 381,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
