@@ -11,9 +11,10 @@
       "verification_status": "pending",
       "supports_screen": false,
       "review_notes": [
-        "MCST 카탈로그는 18홀로 등록되어 있으나 공식 홈페이지는 36홀(12,860m) 및 4개 9홀 코스로 표기합니다.",
-        "공식 코스표 M 행은 홀 지도 골드티 합계와 일치하지만 클럽특징 코스개요 Gold/Lake 전장은 지도 합계와 각각 44m, 42m 다릅니다.",
-        "공식 티 지도는 골드·흰색·회색·빨강 마커를 보여줍니다. 일부 홀에 흰색 마커가 여러 개이며 별도 이름이 없어 흰색 A/B/C는 지도상 거리 순서로 임시 구분했습니다."
+        "MCST 카탈로그는 18홀로 등록되어 있으나 현재 공식 홈페이지는 36홀(12,860m) 및 4개 9홀 코스로 표기합니다.",
+        "현재 공식 코스 페이지(2026 사이트)의 Gold/Lake/Hill/Valley 기준 전장은 각각 3,182m/3,275m/3,330m/3,071m입니다. 저장된 홀별 골드티 합계는 3,140m/3,317m/3,330m/3,071m로, 회원제 Gold와 Lake는 각각 42m 차이가 납니다.",
+        "KGA 2024 코스레이팅은 Gold+Lake GOLD 7,061yd, Hill+Valley GOLD 6,999yd입니다. 홀별 골드티 합계는 Hill+Valley 합계와 일치하고 Gold+Lake 합계도 KGA와 약 5yd 차이로 근접하지만, 합산 자료로 각 회원제 코스 전장의 불일치를 설명할 수 없어 코스별 검수 상태는 대기로 둡니다.",
+        "공식 티 지도는 골드·흰색·회색·빨강 마커를 보여줍니다. 일부 홀에 흰색 마커가 여러 개이며 별도 이름이 없어 흰색 A/B/C는 지도상 거리 순서로 임시 구분했습니다. 홀별로 공통되지 않는 흰색 세트는 라운드 티 선택에 노출하지 않습니다."
       ],
       "routes": [
         {
@@ -21,18 +22,18 @@
           "display_name": "Gold (회원제)",
           "hole_count": 9,
           "primary_tee_code": "gold",
-          "source_url": "https://www.goldlakecc.co.kr/course/course01.asp",
-          "source_image_pattern": "https://www.goldlakecc.co.kr/images/course/goidNN.jpg",
+          "source_url": "https://www.goldlake.co.kr/course/course01",
+          "source_image_pattern": "https://www.goldlake.co.kr/images/course/gNN.jpg",
           "verification_status": "pending",
-          "official_course_overview_distance_m": 3184,
+          "official_course_overview_distance_m": 3182,
           "review_notes": [
-            "클럽특징 공식 코스개요는 3,184m, 홀 지도 골드티 합계는 3,140m입니다."
+            "현재 공식 코스개요는 3,182m, 홀 지도 골드티 합계는 3,140m로 42m 차이가 있어 검수 대기입니다."
           ],
           "holes": [
             {
               "hole_number": 1,
               "par": 5,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid01.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/g01.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -84,7 +85,7 @@
             {
               "hole_number": 2,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid02.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/g02.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -127,7 +128,7 @@
             {
               "hole_number": 3,
               "par": 3,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid03.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/g03.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -179,7 +180,7 @@
             {
               "hole_number": 4,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid04.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/g04.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -231,7 +232,7 @@
             {
               "hole_number": 5,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid05.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/g05.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -274,7 +275,7 @@
             {
               "hole_number": 6,
               "par": 5,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid06.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/g06.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -326,7 +327,7 @@
             {
               "hole_number": 7,
               "par": 3,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid07.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/g07.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -369,7 +370,7 @@
             {
               "hole_number": 8,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid08.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/g08.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -412,7 +413,7 @@
             {
               "hole_number": 9,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid09.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/g09.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -459,18 +460,18 @@
           "display_name": "Lake (회원제)",
           "hole_count": 9,
           "primary_tee_code": "gold",
-          "source_url": "https://www.goldlakecc.co.kr/course/course01.asp",
-          "source_image_pattern": "https://www.goldlakecc.co.kr/images/course/lakeNN.jpg",
+          "source_url": "https://www.goldlake.co.kr/course/course02",
+          "source_image_pattern": "https://www.goldlake.co.kr/images/course/lNN.jpg",
           "verification_status": "pending",
           "official_course_overview_distance_m": 3275,
           "review_notes": [
-            "클럽특징 공식 코스개요는 3,275m, 홀 지도 골드티 합계는 3,317m입니다."
+            "현재 공식 코스개요는 3,275m, 홀 지도 골드티 합계는 3,317m로 42m 차이가 있어 검수 대기입니다."
           ],
           "holes": [
             {
               "hole_number": 1,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake01.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/l01.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -531,7 +532,7 @@
             {
               "hole_number": 2,
               "par": 3,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake02.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/l02.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -583,7 +584,7 @@
             {
               "hole_number": 3,
               "par": 5,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake03.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/l03.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -626,7 +627,7 @@
             {
               "hole_number": 4,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake04.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/l04.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -669,7 +670,7 @@
             {
               "hole_number": 5,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake05.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/l05.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -712,7 +713,7 @@
             {
               "hole_number": 6,
               "par": 3,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake06.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/l06.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -755,7 +756,7 @@
             {
               "hole_number": 7,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake07.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/l07.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -807,7 +808,7 @@
             {
               "hole_number": 8,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake08.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/l08.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -850,7 +851,7 @@
             {
               "hole_number": 9,
               "par": 5,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake09.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/l09.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -906,15 +907,15 @@
           "display_name": "Hill (대중제)",
           "hole_count": 9,
           "primary_tee_code": "gold",
-          "source_url": "https://www.goldlakecc.co.kr/course/course01.asp",
-          "source_image_pattern": "https://www.goldlakecc.co.kr/images/course/hillNN.jpg",
+          "source_url": "https://www.goldlake.co.kr/course/course03",
+          "source_image_pattern": "https://www.goldlake.co.kr/images/course/hNN.jpg",
           "verification_status": "pending",
           "official_course_overview_distance_m": 3330,
           "holes": [
             {
               "hole_number": 1,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill01.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/h01.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -966,7 +967,7 @@
             {
               "hole_number": 2,
               "par": 5,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill02.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/h02.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -1018,7 +1019,7 @@
             {
               "hole_number": 3,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill03.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/h03.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -1061,7 +1062,7 @@
             {
               "hole_number": 4,
               "par": 3,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill04.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/h04.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -1113,7 +1114,7 @@
             {
               "hole_number": 5,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill05.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/h05.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -1156,7 +1157,7 @@
             {
               "hole_number": 6,
               "par": 5,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill06.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/h06.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -1208,7 +1209,7 @@
             {
               "hole_number": 7,
               "par": 3,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill07.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/h07.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -1251,7 +1252,7 @@
             {
               "hole_number": 8,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill08.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/h08.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -1294,7 +1295,7 @@
             {
               "hole_number": 9,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill09.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/h09.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -1334,6 +1335,9 @@
                 }
               ]
             }
+          ],
+          "review_notes": [
+            "현재 공식 코스개요와 홀 지도 골드티 합계가 모두 3,330m입니다. 다만 흰색 티의 지도상 위치별 명칭이 없어 흰색 A/B 구분은 임시이며 검수 대기입니다."
           ]
         },
         {
@@ -1341,15 +1345,15 @@
           "display_name": "Valley (대중제)",
           "hole_count": 9,
           "primary_tee_code": "gold",
-          "source_url": "https://www.goldlakecc.co.kr/course/course01.asp",
-          "source_image_pattern": "https://www.goldlakecc.co.kr/images/course/valleyNN.jpg",
+          "source_url": "https://www.goldlake.co.kr/course/course04",
+          "source_image_pattern": "https://www.goldlake.co.kr/images/course/vNN.jpg",
           "verification_status": "pending",
           "official_course_overview_distance_m": 3071,
           "holes": [
             {
               "hole_number": 1,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley01.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/v01.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -1401,7 +1405,7 @@
             {
               "hole_number": 2,
               "par": 3,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley02.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/v02.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -1444,7 +1448,7 @@
             {
               "hole_number": 3,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley03.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/v03.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -1487,7 +1491,7 @@
             {
               "hole_number": 4,
               "par": 5,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley04.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/v04.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -1530,7 +1534,7 @@
             {
               "hole_number": 5,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley05.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/v05.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -1573,7 +1577,7 @@
             {
               "hole_number": 6,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley06.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/v06.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -1616,7 +1620,7 @@
             {
               "hole_number": 7,
               "par": 4,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley07.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/v07.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -1668,7 +1672,7 @@
             {
               "hole_number": 8,
               "par": 3,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley08.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/v08.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -1711,7 +1715,7 @@
             {
               "hole_number": 9,
               "par": 5,
-              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley09.jpg",
+              "source_image_url": "https://www.goldlake.co.kr/images/course/v09.jpg",
               "tees": [
                 {
                   "tee_code": "gold",
@@ -1751,6 +1755,9 @@
                 }
               ]
             }
+          ],
+          "review_notes": [
+            "현재 공식 코스개요와 홀 지도 골드티 합계가 모두 3,071m입니다. 다만 흰색 티의 지도상 위치별 명칭이 없어 흰색 A/B 구분은 임시이며 검수 대기입니다."
           ]
         }
       ]
