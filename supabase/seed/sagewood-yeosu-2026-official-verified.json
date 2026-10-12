@@ -1,0 +1,529 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "match_name": "세이지우드 여수경도",
+    "name": "세이지우드 여수경도",
+    "region": "전남",
+    "address": "전남광주통합특별시 여수시 대경도길 111",
+    "aliases": [
+      "세이지우드CC 여수경도",
+      "세이지우드 여수경도CC",
+      "Sagewood Yeosu Gyeongdo"
+    ],
+    "hole_count": 27,
+    "supports_screen": false,
+    "verification_status": "verified",
+    "review_notes": [
+      "운영사 공식 상세 페이지는 티별 거리를 분리하지 않고 홀별 기준 거리 하나만 공개합니다. 거리 선택형 티를 만들지 않고 확인 가능한 공식 기준 거리로만 저장했습니다.",
+      "공식 개요는 27홀 총 전장 9,706m를 표시하지만 각 홀 상세의 기준 거리를 합하면 9,006m로 700m 차이가 납니다. 세부 페이지에 게시된 홀별 값을 그대로 보존하고 차이를 기록했습니다.",
+      "공식 코스 개요는 금오도·오동도·돌산도 3개 코스, 총 27홀 PAR108로 안내합니다."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "GEUMODO",
+      "display_name": "금오도코스",
+      "hole_count": 9,
+      "primary_tee_code": "official_reference",
+      "verification_status": "verified",
+      "source_url": "https://www.sagewood.co.kr/yeosu/golf/geumodo",
+      "par_source_url": "https://www.sagewood.co.kr/yeosu/golf/geumodo",
+      "review_notes": [
+        "운영사 공식 상세 페이지는 티별 거리를 분리하지 않고 홀별 기준 거리 하나만 공개합니다. 거리 선택형 티를 만들지 않고 확인 가능한 공식 기준 거리로만 저장했습니다.",
+        "공식 개요는 27홀 총 전장 9,706m를 표시하지만 각 홀 상세의 기준 거리를 합하면 9,006m로 700m 차이가 납니다. 세부 페이지에 게시된 홀별 값을 그대로 보존하고 차이를 기록했습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "handicap_index": 6,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 366,
+              "distance_m_source": "official",
+              "source_distance": 366,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "handicap_index": 1,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 382,
+              "distance_m_source": "official",
+              "source_distance": 382,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 3,
+          "handicap_index": 8,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 116,
+              "distance_m_source": "official",
+              "source_distance": 116,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "handicap_index": 7,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 352,
+              "distance_m_source": "official",
+              "source_distance": 352,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 5,
+          "handicap_index": 3,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 486,
+              "distance_m_source": "official",
+              "source_distance": 486,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "handicap_index": 5,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 323,
+              "distance_m_source": "official",
+              "source_distance": 323,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 3,
+          "handicap_index": 9,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 112,
+              "distance_m_source": "official",
+              "source_distance": 112,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 5,
+          "handicap_index": 2,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 456,
+              "distance_m_source": "official",
+              "source_distance": 456,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "handicap_index": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 359,
+              "distance_m_source": "official",
+              "source_distance": 359,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route_code": "ODONGDO",
+      "display_name": "오동도코스",
+      "hole_count": 9,
+      "primary_tee_code": "official_reference",
+      "verification_status": "verified",
+      "source_url": "https://www.sagewood.co.kr/yeosu/golf/odongdo",
+      "par_source_url": "https://www.sagewood.co.kr/yeosu/golf/odongdo",
+      "review_notes": [
+        "운영사 공식 상세 페이지는 티별 거리를 분리하지 않고 홀별 기준 거리 하나만 공개합니다. 거리 선택형 티를 만들지 않고 확인 가능한 공식 기준 거리로만 저장했습니다.",
+        "공식 개요는 27홀 총 전장 9,706m를 표시하지만 각 홀 상세의 기준 거리를 합하면 9,006m로 700m 차이가 납니다. 세부 페이지에 게시된 홀별 값을 그대로 보존하고 차이를 기록했습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "handicap_index": 9,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 354,
+              "distance_m_source": "official",
+              "source_distance": 354,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 3,
+          "handicap_index": 6,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 142,
+              "distance_m_source": "official",
+              "source_distance": 142,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 5,
+          "handicap_index": 2,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 492,
+              "distance_m_source": "official",
+              "source_distance": 492,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "handicap_index": 7,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 335,
+              "distance_m_source": "official",
+              "source_distance": 335,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "handicap_index": 5,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 290,
+              "distance_m_source": "official",
+              "source_distance": 290,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 5,
+          "handicap_index": 1,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 487,
+              "distance_m_source": "official",
+              "source_distance": 487,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "handicap_index": 3,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 374,
+              "distance_m_source": "official",
+              "source_distance": 374,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 4,
+          "handicap_index": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 321,
+              "distance_m_source": "official",
+              "source_distance": 321,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 3,
+          "handicap_index": 8,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 143,
+              "distance_m_source": "official",
+              "source_distance": 143,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route_code": "DOLSANDO",
+      "display_name": "돌산도코스",
+      "hole_count": 9,
+      "primary_tee_code": "official_reference",
+      "verification_status": "verified",
+      "source_url": "https://www.sagewood.co.kr/yeosu/golf/dolsando",
+      "par_source_url": "https://www.sagewood.co.kr/yeosu/golf/dolsando",
+      "review_notes": [
+        "운영사 공식 상세 페이지는 티별 거리를 분리하지 않고 홀별 기준 거리 하나만 공개합니다. 거리 선택형 티를 만들지 않고 확인 가능한 공식 기준 거리로만 저장했습니다.",
+        "공식 개요는 27홀 총 전장 9,706m를 표시하지만 각 홀 상세의 기준 거리를 합하면 9,006m로 700m 차이가 납니다. 세부 페이지에 게시된 홀별 값을 그대로 보존하고 차이를 기록했습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "handicap_index": 5,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 346,
+              "distance_m_source": "official",
+              "source_distance": 346,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "handicap_index": 9,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 316,
+              "distance_m_source": "official",
+              "source_distance": 316,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 4,
+          "handicap_index": 8,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 318,
+              "distance_m_source": "official",
+              "source_distance": 318,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 3,
+          "handicap_index": 6,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 142,
+              "distance_m_source": "official",
+              "source_distance": 142,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "handicap_index": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 355,
+              "distance_m_source": "official",
+              "source_distance": 355,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 5,
+          "handicap_index": 1,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 559,
+              "distance_m_source": "official",
+              "source_distance": 559,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 3,
+          "handicap_index": 7,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 145,
+              "distance_m_source": "official",
+              "source_distance": 145,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 4,
+          "handicap_index": 3,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 423,
+              "distance_m_source": "official",
+              "source_distance": 423,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 5,
+          "handicap_index": 2,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "tee_selection_available": false,
+              "display_name": "공식 기준 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 512,
+              "distance_m_source": "official",
+              "source_distance": 512,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
