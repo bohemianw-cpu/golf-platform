@@ -98,6 +98,26 @@ for (const course of corrections) {
         if (tee.handicap_index != null && (!Number.isInteger(tee.handicap_index) || tee.handicap_index < 1 || tee.handicap_index > 18)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 그린 핸디캡 인덱스는 1~18이어야 합니다.`)
       }
     }
+    if (route.official_tee_totals_m != null) {
+      if (!route.official_tee_totals_m || typeof route.official_tee_totals_m !== 'object' || Array.isArray(route.official_tee_totals_m)) {
+        throw new Error(`${course.name}/${route.route_code}: official_tee_totals_m은 티 코드별 공식 합계 객체여야 합니다.`)
+      }
+      for (const [teeCode, officialTotal] of Object.entries(route.official_tee_totals_m)) {
+        if (!/^[a-z0-9_-]+$/i.test(teeCode) || !Number.isInteger(officialTotal) || officialTotal < 1) {
+          throw new Error(`${course.name}/${route.route_code}: ${teeCode} 공식 합계가 올바르지 않습니다.`)
+        }
+        const distances = route.holes.map((hole) => hole.tees.find((tee) => tee.tee_code === teeCode)?.distance_m)
+        if (distances.some((distance) => distance == null)) {
+          throw new Error(`${course.name}/${route.route_code}: 공식 ${teeCode} 합계가 있지만 일부 홀에 해당 티가 없습니다.`)
+        }
+        const holeTotal = distances.reduce((sum, distance) => sum + distance, 0)
+        if (holeTotal !== officialTotal) {
+          const message = `${course.name}/${route.route_code}: ${teeCode} 홀별 합계 ${holeTotal}m와 공식 합계 ${officialTotal}m가 다릅니다.`
+          if ((route.verification_status ?? course.verification_status) === 'verified') throw new Error(`${message} 차이를 해결하기 전 verified로 적재할 수 없습니다.`)
+          console.warn(`검수 대기: ${message}`)
+        }
+      }
+    }
     if (holeNumbers.size !== route.hole_count) throw new Error(`${course.name}/${route.route_code}: 모든 홀 번호를 채워야 합니다.`)
     if (route.primary_tee_code && route.holes.some((hole) => !hole.tees.some((tee) => tee.tee_code === route.primary_tee_code))) {
       throw new Error(`${course.name}/${route.route_code}: primary_tee_code가 모든 홀에 등록되어야 합니다.`)
