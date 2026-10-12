@@ -11,6 +11,11 @@ if (!inputPath) throw new Error('사용법: node scripts/import-course-correctio
 if (checkOnly && args.has('apply')) throw new Error('--check와 --apply는 함께 사용할 수 없습니다.')
 
 function normalizeName(value) { return value.normalize('NFKC').replace(/[\s·ㆍ()（）.,_-]/g, '').toLocaleLowerCase('ko-KR') }
+function routeReviewNotes(route) {
+  const notes = [...(route.review_notes ?? [])]
+  if (route.official_tee_total_tolerance_note?.trim()) notes.push(`공식 티 합계 검수: ${route.official_tee_total_tolerance_note.trim()}`)
+  return notes
+}
 const source = JSON.parse(await readFile(inputPath, 'utf8'))
 function normalizeSourceReview(review) {
   if (review.schema !== 'course-source-review/1') return null
@@ -81,6 +86,13 @@ for (const course of corrections) {
     if (route.review_notes != null && (!Array.isArray(route.review_notes) || route.review_notes.some((note) => typeof note !== 'string' || !note.trim()))) {
       throw new Error(`${course.name}/${route.route_code}: review_notes는 비어 있지 않은 문자열 배열이어야 합니다.`)
     }
+    const officialTotalTolerance = route.official_tee_total_tolerance_m ?? 0
+    if (!Number.isInteger(officialTotalTolerance) || officialTotalTolerance < 0 || officialTotalTolerance > 3) {
+      throw new Error(`${course.name}/${route.route_code}: 공식 티 합계 허용 차이는 0~3m 정수여야 합니다.`)
+    }
+    if (officialTotalTolerance > 0 && !route.official_tee_total_tolerance_note?.trim()) {
+      throw new Error(`${course.name}/${route.route_code}: 공식 합계 허용 차이를 쓰려면 검수 근거를 입력해야 합니다.`)
+    }
     const holeNumbers = new Set()
     for (const hole of route.holes) {
       if (!Number.isInteger(hole.hole_number) || hole.hole_number < 1 || hole.hole_number > route.hole_count || holeNumbers.has(hole.hole_number)) {
@@ -130,8 +142,13 @@ for (const course of corrections) {
         const holeTotal = distances.reduce((sum, distance) => sum + distance, 0)
         if (holeTotal !== officialTotal) {
           const message = `${course.name}/${route.route_code}: ${teeCode} 홀별 합계 ${holeTotal}m와 공식 합계 ${officialTotal}m가 다릅니다.`
-          if ((route.verification_status ?? course.verification_status) === 'verified') throw new Error(`${message} 차이를 해결하기 전 verified로 적재할 수 없습니다.`)
-          console.warn(`검수 대기: ${message}`)
+          const difference = Math.abs(holeTotal - officialTotal)
+          if (difference > officialTotalTolerance) {
+            if ((route.verification_status ?? course.verification_status) === 'verified') throw new Error(`${message} 허용 차이 ${officialTotalTolerance}m를 초과합니다.`)
+            console.warn(`검수 대기: ${message}`)
+          } else if (officialTotalTolerance > 0 && !route.official_tee_total_tolerance_note?.trim()) {
+            throw new Error(`${message} 허용 차이를 설명하는 검수 근거가 필요합니다.`)
+          }
         }
       }
     }
@@ -216,7 +233,7 @@ async function verifyCourse(correction, courseId) {
       expectedValues.verification_status = expectedRoute.verification_status ?? correction.verification_status
     }
     if (Object.hasOwn(expectedRoute, 'source_data_url')) expectedValues.source_data_url = expectedRoute.source_data_url
-    if (expectedRoute.review_notes != null) expectedValues.review_notes = expectedRoute.review_notes
+    if (expectedRoute.review_notes != null || expectedRoute.official_tee_total_tolerance_note != null) expectedValues.review_notes = routeReviewNotes(expectedRoute)
     for (const [key, expected] of Object.entries(expectedValues)) {
       if (!sameValue(savedRoute[key], expected)) throw new Error(`${correction.name}/${expectedRoute.route_code}: DB ${key} 불일치 (DB=${JSON.stringify(savedRoute[key])}, seed=${JSON.stringify(expected)})`)
     }
@@ -322,7 +339,7 @@ for (const correction of corrections) {
     source_data_url: Object.hasOwn(route, 'source_data_url')
       ? route.source_data_url
       : existingRouteSources?.find((savedRoute) => savedRoute.route_code === route.route_code)?.source_data_url ?? null,
-    ...(route.review_notes != null ? { review_notes: route.review_notes } : {}),
+    ...(route.review_notes != null || route.official_tee_total_tolerance_note != null ? { review_notes: routeReviewNotes(route) } : {}),
   }))
   const { data: savedRoutes, error: routesError } = routes.length
     ? await supabase.from('golf_course_routes')
