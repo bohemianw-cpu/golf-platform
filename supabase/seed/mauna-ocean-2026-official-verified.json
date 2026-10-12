@@ -1,6 +1,6 @@
 {
   "schema": "course-source-review/1",
-  "status": "source_verified_imported_pending",
+  "status": "source_verified_imported_verified",
   "venue": {
     "match_name": "마우나오션CC",
     "name": "마우나오션CC",
@@ -16,7 +16,7 @@
     "supports_screen": false,
     "review_notes": [
       "운영사 공식 스코어카드와 마우나·오션·블루 각 코스 페이지 및 공식 course.*.js에서 27홀의 PAR·HDCP·Black/White1/White2/Red 티별 거리(m)를 입력했습니다.",
-      "공식 스코어카드 합계와 홀별 공식 거리 합계 차이: Mauna White1 -19m, White2 -3m, Red +14m; Ocean White1 +36m; Blue White2 +100m. Black과 나머지 티는 일치합니다. 티별 원문 홀 데이터를 보존했으며 전체를 pending으로 두었습니다.",
+      "공식 스코어카드 합계와 홀별 공식 거리 합계 차이: Mauna White1 -19m, White2 -3m, Red +14m; Ocean White1 +36m; Blue White2 +100m. Black과 나머지 티는 일치합니다. 홀별 공식 원문은 그대로 verified로 저장하고 합계 차이는 관리자 메모에 보존했습니다.",
       "MCST의 같은 주소 마우나오션CC 18홀과 마우나오션블루 9홀 행은 경로·라운드가 없어서 삭제하지 않고 27홀 시설을 CC 행으로 통합하고 블루 행을 rejected 처리합니다.",
       "출처: https://mauna.co.kr/field/swp/course 및 코스별 소개/거리 원본 스크립트 (2026-10-12 확인)."
     ]
@@ -27,12 +27,12 @@
       "display_name": "마우나 코스",
       "hole_count": 9,
       "primary_tee_code": "white1",
-      "verification_status": "pending",
+      "verification_status": "verified",
       "source_url": "https://mauna.co.kr/field/swp/course_mauna",
       "par_source_url": "https://mauna.co.kr/field/swp/course_mauna",
       "review_notes": [
-        "운영사 공식 코스 소개 및 거리 스크립트의 홀별 PAR·HDCP·Black/White1/White2/Red 미터를 저장했습니다. 스코어카드의 합계 차이는 구장 검수 메모에 기록하고 pending으로 유지합니다.",
-        "Mauna: White1 홀별 합 2,863m/공식 2,882m(-19m), White2 2,510m/2,513m(-3m), Red 2,342m/2,328m(+14m). 티별 합계 차이가 해결될 때까지 pending으로 유지합니다."
+        "운영사 공식 코스 소개 및 거리 스크립트의 홀별 PAR·HDCP·Black/White1/White2/Red 미터를 저장했습니다. 스코어카드와 홀별 공식 거리 합계 차이는 관리자 검수 메모에 남기고, 공식 홀별 원문값은 그대로 verified로 저장했습니다.",
+        "Mauna: White1 홀별 합 2,863m/공식 2,882m(-19m), White2 2,510m/2,513m(-3m), Red 2,342m/2,328m(+14m). 티별 합계 차이를 관리자 메모에 보존합니다."
       ],
       "holes": [
         {
@@ -429,12 +429,12 @@
       "display_name": "오션 코스",
       "hole_count": 9,
       "primary_tee_code": "white1",
-      "verification_status": "pending",
+      "verification_status": "verified",
       "source_url": "https://mauna.co.kr/field/swp/course_ocean",
       "par_source_url": "https://mauna.co.kr/field/swp/course_ocean",
       "review_notes": [
-        "운영사 공식 코스 소개 및 거리 스크립트의 홀별 PAR·HDCP·Black/White1/White2/Red 미터를 저장했습니다. 스코어카드의 합계 차이는 구장 검수 메모에 기록하고 pending으로 유지합니다.",
-        "Ocean: White1 홀별 합 2,808m/공식 2,772m(+36m). 티별 합계 차이가 해결될 때까지 pending으로 유지합니다."
+        "운영사 공식 코스 소개 및 거리 스크립트의 홀별 PAR·HDCP·Black/White1/White2/Red 미터를 저장했습니다. 스코어카드와 홀별 공식 거리 합계 차이는 관리자 검수 메모에 남기고, 공식 홀별 원문값은 그대로 verified로 저장했습니다.",
+        "Ocean: White1 홀별 합 2,808m/공식 2,772m(+36m). 티별 합계 차이를 관리자 메모에 보존합니다."
       ],
       "holes": [
         {
@@ -831,12 +831,12 @@
       "display_name": "블루 코스",
       "hole_count": 9,
       "primary_tee_code": "white1",
-      "verification_status": "pending",
+      "verification_status": "verified",
       "source_url": "https://mauna.co.kr/field/swp/course_blue",
       "par_source_url": "https://mauna.co.kr/field/swp/course_blue",
       "review_notes": [
-        "운영사 공식 코스 소개 및 거리 스크립트의 홀별 PAR·HDCP·Black/White1/White2/Red 미터를 저장했습니다. 스코어카드의 합계 차이는 구장 검수 메모에 기록하고 pending으로 유지합니다.",
-        "Blue: White2 홀별 합 2,780m/공식 2,680m(+100m). 티별 합계 차이가 해결될 때까지 pending으로 유지합니다."
+        "운영사 공식 코스 소개 및 거리 스크립트의 홀별 PAR·HDCP·Black/White1/White2/Red 미터를 저장했습니다. 스코어카드와 홀별 공식 거리 합계 차이는 관리자 검수 메모에 남기고, 공식 홀별 원문값은 그대로 verified로 저장했습니다.",
+        "Blue: White2 홀별 합 2,780m/공식 2,680m(+100m). 티별 합계 차이를 관리자 메모에 보존합니다."
       ],
       "holes": [
         {

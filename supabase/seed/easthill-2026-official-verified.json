@@ -1,0 +1,322 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "match_name": "이스트힐CC",
+    "name": "이스트힐CC",
+    "region": "경북",
+    "address": "경상북도 경주시 양남면 외남로 1377",
+    "aliases": [
+      "이스트힐 컨트리클럽",
+      "East Hill Country Club",
+      "EASTHILL CC"
+    ],
+    "hole_count": 18,
+    "supports_screen": false,
+    "review_notes": [
+      "운영사 공식 코스소개 페이지에서 Lake·Valley 각 9홀의 PAR와 METER 거리를 확인해 저장했습니다. 두 경로 모두 PAR36, 총 18홀입니다.",
+      "공식 페이지는 홀별 티 색상/티 종류를 표시하지 않아 거리를 특정 티로 추정하지 않았습니다. 공식 METER 값을 티 미표기 거리로 기록했습니다.",
+      "공식 출처: https://www.easthills.co.kr/Course/Intro.aspx (2026-10-12 확인)."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "LAKE",
+      "display_name": "레이크코스",
+      "hole_count": 9,
+      "primary_tee_code": "official",
+      "verification_status": "verified",
+      "source_url": "https://www.easthills.co.kr/Course/Intro.aspx",
+      "par_source_url": "https://www.easthills.co.kr/Course/Intro.aspx",
+      "review_notes": [
+        "운영사 공식 코스소개 표의 홀별 PAR와 METER 거리를 그대로 저장했습니다. 티별 거리는 공개되지 않아 중립적인 공식 거리(티 미표기)로 등록했습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 324,
+              "distance_m_source": "official",
+              "source_distance": 324,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 211,
+              "distance_m_source": "official",
+              "source_distance": 211,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 517,
+              "distance_m_source": "official",
+              "source_distance": 517,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 409,
+              "distance_m_source": "official",
+              "source_distance": 409,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 344,
+              "distance_m_source": "official",
+              "source_distance": 344,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 326,
+              "distance_m_source": "official",
+              "source_distance": 326,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 146,
+              "distance_m_source": "official",
+              "source_distance": 146,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 390,
+              "distance_m_source": "official",
+              "source_distance": 390,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 568,
+              "distance_m_source": "official",
+              "source_distance": 568,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route_code": "VALLEY",
+      "display_name": "밸리코스",
+      "hole_count": 9,
+      "primary_tee_code": "official",
+      "verification_status": "verified",
+      "source_url": "https://www.easthills.co.kr/Course/Intro.aspx",
+      "par_source_url": "https://www.easthills.co.kr/Course/Intro.aspx",
+      "review_notes": [
+        "운영사 공식 코스소개 표의 홀별 PAR와 METER 거리를 그대로 저장했습니다. 티별 거리는 공개되지 않아 중립적인 공식 거리(티 미표기)로 등록했습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 350,
+              "distance_m_source": "official",
+              "source_distance": 350,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 170,
+              "distance_m_source": "official",
+              "source_distance": 170,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 290,
+              "distance_m_source": "official",
+              "source_distance": 290,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 356,
+              "distance_m_source": "official",
+              "source_distance": 356,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 344,
+              "distance_m_source": "official",
+              "source_distance": 344,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 554,
+              "distance_m_source": "official",
+              "source_distance": 554,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 323,
+              "distance_m_source": "official",
+              "source_distance": 323,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 188,
+              "distance_m_source": "official",
+              "source_distance": 188,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 563,
+              "distance_m_source": "official",
+              "source_distance": 563,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

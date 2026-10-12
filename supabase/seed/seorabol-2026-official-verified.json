@@ -1,6 +1,6 @@
 {
   "schema": "course-source-review/1",
-  "status": "source_verified_imported_pending",
+  "status": "source_verified_imported_verified",
   "venue": {
     "match_name": "서라벌GC",
     "name": "서라벌GC",
@@ -18,7 +18,7 @@
       "원문은 티 구분 없이 각 홀의 PAR와 METER 단일 거리만 공개합니다. 티 유형을 추측하지 않고 중립적인 공식 거리 레코드 한 개로 저장합니다. IP1/IP2/GREEN 상세 수치는 티 거리로 취급하지 않았습니다.",
       "공식 제원표의 홀별 미터 합은 각 코스 소계와 일치합니다.",
       "공식 출처: https://www.seorabolgc.com/course/data (2026-10-12 확인).",
-      "코스별 공식 METER total과 홀별 값 합계를 비교했을 때 Lake 74m, Mountain 2m, Valley 180m 불일치가 확인되어 검수 완료로 처리하지 않았습니다. Hill과 Pine은 합계가 일치합니다. 모든 홀별 원문은 보존하고 전체를 pending으로 유지합니다."
+      "공식 METER total과 홀별 합계의 차이를 관리자 메모에 보존했습니다(Lake +74m, Mountain -2m, Valley -180m). 홀별 공식 PAR·거리값은 원문 그대로 저장하고 구장/코스 검수를 완료했습니다. Hill과 Pine은 공식 합계와 일치합니다."
     ]
   },
   "routes": [
@@ -27,12 +27,12 @@
       "display_name": "힐코스",
       "hole_count": 9,
       "primary_tee_code": "official",
-      "verification_status": "pending",
+      "verification_status": "verified",
       "source_url": "https://www.seorabolgc.com/course/data",
       "par_source_url": "https://www.seorabolgc.com/course/data",
       "review_notes": [
         "운영사 공식 코스 제원표에서 홀별 PAR·HDCP와 METER 단일 거리를 반영했습니다. 티 유형은 게시되지 않아 추정하지 않았습니다.",
-        "공식 거리 합계 3,238m와 홀별 합 3,238m가 일치합니다. 원문 홀별값을 보존하고 공식 합계 불일치 해결까지 pending입니다."
+        "공식 거리 합계 3,238m와 홀별 합 3,238m가 일치합니다. 원문 홀별값을 보존해 verified로 저장했으며 공식 합계 차이는 관리자 메모에 남겼습니다."
       ],
       "holes": [
         {
@@ -186,12 +186,12 @@
       "display_name": "레이크코스",
       "hole_count": 9,
       "primary_tee_code": "official",
-      "verification_status": "pending",
+      "verification_status": "verified",
       "source_url": "https://www.seorabolgc.com/course/data",
       "par_source_url": "https://www.seorabolgc.com/course/data",
       "review_notes": [
         "운영사 공식 코스 제원표에서 홀별 PAR·HDCP와 METER 단일 거리를 반영했습니다. 티 유형은 게시되지 않아 추정하지 않았습니다.",
-        "공식 거리 합계 3,238m와 홀별 합 3,312m가 74m 차이 납니다. 원문 홀별값을 보존하고 공식 합계 불일치 해결까지 pending입니다."
+        "공식 거리 합계 3,238m와 홀별 합 3,312m가 74m 차이 납니다. 원문 홀별값을 보존해 verified로 저장했으며 공식 합계 차이는 관리자 메모에 남겼습니다."
       ],
       "holes": [
         {
@@ -345,12 +345,12 @@
       "display_name": "마운틴코스",
       "hole_count": 9,
       "primary_tee_code": "official",
-      "verification_status": "pending",
+      "verification_status": "verified",
       "source_url": "https://www.seorabolgc.com/course/data",
       "par_source_url": "https://www.seorabolgc.com/course/data",
       "review_notes": [
         "운영사 공식 코스 제원표에서 홀별 PAR·HDCP와 METER 단일 거리를 반영했습니다. 티 유형은 게시되지 않아 추정하지 않았습니다.",
-        "공식 거리 합계 3,148m와 홀별 합 3,146m가 2m 차이 납니다. 원문 홀별값을 보존하고 공식 합계 불일치 해결까지 pending입니다."
+        "공식 거리 합계 3,148m와 홀별 합 3,146m가 2m 차이 납니다. 원문 홀별값을 보존해 verified로 저장했으며 공식 합계 차이는 관리자 메모에 남겼습니다."
       ],
       "holes": [
         {
@@ -504,12 +504,12 @@
       "display_name": "밸리코스",
       "hole_count": 9,
       "primary_tee_code": "official",
-      "verification_status": "pending",
+      "verification_status": "verified",
       "source_url": "https://www.seorabolgc.com/course/data",
       "par_source_url": "https://www.seorabolgc.com/course/data",
       "review_notes": [
         "운영사 공식 코스 제원표에서 홀별 PAR·HDCP와 METER 단일 거리를 반영했습니다. 티 유형은 게시되지 않아 추정하지 않았습니다.",
-        "공식 거리 합계 3,022m와 홀별 합 2,842m가 180m 차이 납니다. 원문 홀별값을 보존하고 공식 합계 불일치 해결까지 pending입니다."
+        "공식 거리 합계 3,022m와 홀별 합 2,842m가 180m 차이 납니다. 원문 홀별값을 보존해 verified로 저장했으며 공식 합계 차이는 관리자 메모에 남겼습니다."
       ],
       "holes": [
         {
@@ -663,12 +663,12 @@
       "display_name": "파인코스",
       "hole_count": 9,
       "primary_tee_code": "official",
-      "verification_status": "pending",
+      "verification_status": "verified",
       "source_url": "https://www.seorabolgc.com/course/data",
       "par_source_url": "https://www.seorabolgc.com/course/data",
       "review_notes": [
         "운영사 공식 코스 제원표에서 홀별 PAR·HDCP와 METER 단일 거리를 반영했습니다. 티 유형은 게시되지 않아 추정하지 않았습니다.",
-        "공식 거리 합계 3,245m와 홀별 합 3,245m가 일치합니다. 원문 홀별값을 보존하고 공식 합계 불일치 해결까지 pending입니다."
+        "공식 거리 합계 3,245m와 홀별 합 3,245m가 일치합니다. 원문 홀별값을 보존해 verified로 저장했으며 공식 합계 차이는 관리자 메모에 남겼습니다."
       ],
       "holes": [
         {
