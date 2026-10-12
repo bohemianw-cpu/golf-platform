@@ -199,7 +199,7 @@ for (const course of corrections) {
 }
 
 console.log(`관리자 보정 자료: 구장 ${corrections.length}개, 레이아웃 ${corrections.reduce((sum, course) => sum + (course.routes?.length ?? 0), 0)}개`)
-if (!args.has('apply') && !checkOnly) {
+if (!args.has('apply')) {
   console.log('DB에는 저장하지 않았습니다. 출처와 수치를 확인한 뒤 --apply로 실행하세요.')
   process.exit(0)
 }
