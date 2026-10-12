@@ -13,6 +13,7 @@ export interface GolfCourseOption {
   supports_field: boolean
   supports_screen: boolean
   hole_count: number | null
+  aliases?: string[]
 }
 
 export type GolfRouteOption = GolfCourseRoute
@@ -105,33 +106,41 @@ function formatTeeDistance(tee: GolfCourseTee): string {
 
 export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locked, searchOpen, onSearchOpenChange, searchQuery, onSearchQueryChange, onCourseSelect, onCourseResolved, onRoutesChange }: Props) {
   const supabase = useMemo(() => createClient(), [])
-  const [courses, setCourses] = useState<GolfCourseOption[]>([])
+  const [catalog, setCatalog] = useState<GolfCourseOption[]>([])
+  const [catalogLoaded, setCatalogLoaded] = useState(false)
   const [selectedCourse, setSelectedCourse] = useState<GolfCourseOption | null>(null)
   const [routes, setRoutes] = useState<GolfRouteOption[]>([])
   const [routesForCourseId, setRoutesForCourseId] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const [catalogError, setCatalogError] = useState(false)
+  const search = normalizeCourseSearch(searchQuery)
+  const courses = useMemo(() => catalog.filter((course) => {
+    if (!search) return false
+    return [course.name, ...(course.aliases ?? [])]
+      .some((name) => normalizeCourseSearch(name).includes(search))
+  }), [catalog, search])
 
   useEffect(() => {
-    const search = normalizeCourseSearch(searchQuery)
-    if (search.length < 1) return
+    if (search.length < 1 || catalogLoaded) return
     let cancelled = false
     const timer = window.setTimeout(async () => {
       setLoading(true)
       const { data, error } = await supabase
         .from('golf_courses')
-        .select('id,name,region,venue_kind,supports_field,supports_screen,hole_count')
+        .select('id,name,region,venue_kind,supports_field,supports_screen,hole_count,aliases')
         .eq('verification_status', 'verified')
-        .ilike('normalized_name', `%${search}%`)
         .order('name')
         .range(0, 999)
       if (cancelled) return
       setLoading(false)
       setCatalogError(!!error)
-      setCourses((data ?? []) as GolfCourseOption[])
+      if (error) return
+      const items = (data ?? []) as GolfCourseOption[]
+      setCatalog(items)
+      setCatalogLoaded(true)
     }, 250)
     return () => { cancelled = true; window.clearTimeout(timer) }
-  }, [searchQuery, supabase])
+  }, [catalogLoaded, search, supabase])
 
   useEffect(() => {
     if (!courseId) return
@@ -190,7 +199,7 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
     if (!courseId) return
     let cancelled = false
     void supabase.from('golf_courses')
-      .select('id,name,region,venue_kind,supports_field,supports_screen,hole_count')
+      .select('id,name,region,venue_kind,supports_field,supports_screen,hole_count,aliases')
       .eq('id', courseId).maybeSingle()
       .then(({ data }) => {
         if (cancelled || !data) return
