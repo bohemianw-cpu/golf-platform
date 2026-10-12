@@ -236,3 +236,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-13 · 김제스파힐스CC
 
 공식 코스 API에서 스파·힐스 각 9홀의 PAR36과 BLUE/WHITE/YELLOW/RED 티별 미터 거리를 반영하고 원격 DB에서 구장·경로 검수를 완료했습니다. 각 코스 36개 티 행이며 티별 합계는 스파 3,131/2,939/2,726/2,472m, 힐스 3,034/2,862/2,726/2,445m로 공식 API 총계와 일치합니다. 스파 1·2번의 반복 거리와 힐스의 일부 동일·비단조 티 거리는 공식 게시값대로 보존했습니다. 자료 파일: `gimje-spa-hills-2026-official-verified.json`; 출처: [공식 코스 페이지](https://www.spahillscc.co.kr/course/intro), [스파코스 API](https://spahillscc-hp-api.holeinonecloud.com/api/v1/hole/course/3), [힐스코스 API](https://spahillscc-hp-api.holeinonecloud.com/api/v1/hole/course/4) (2026-10-13 확인).
+
+### 2026-10-13 · 군산CC (공식 72홀 부분 카탈로그)
+
+현행 공식 홈페이지 API의 8개 코스(토너먼트-OUT/IN, 전주, 익산, 김제, 정읍, 부안, 남원)의 9홀 PAR·HDCP와 Black/Blue/White/Yellow/Red 미터 거리 360행을 저장하고 원격 DB에서 경로별 9홀·45티 행을 확인했습니다. 공식 소개와 API의 Black 홀별 합계가 익산 3,524/3,395m, 김제 3,382/3,542m, 정읍 3,469/3,477m로 달라 홀별 API 데이터를 기준으로 기록했습니다. 김제의 PAR37과 정읍 3번 PAR7·1,004m도 원문값입니다. 현행 클럽 소개는 81홀을 안내하지만 코스 API 목록은 72홀만 제공해, 미노출 9홀은 추정하지 않고 부분 카탈로그로 남겼습니다. 이를 지원하도록 관리자 importer의 구장 전체 홀 수 제한을 144로 늘리고, 공식 PAR 7 및 2,000m 거리 범위까지 importer와 DB를 확장했습니다. 원격 검수 집계: 완료 213, 미진행 302, 반려 1 (총 516). 자료: `gunsan-cc-2026-official-partial-verified.json`; 출처: [공식 클럽 소개](https://www.gunsancc.net/main/intro), [공식 코스 페이지](https://www.gunsancc.net/main/golf), [공식 코스 데이터 API](https://www.gunsancc.net/api/golf/v2/tenant/website/init) (2026-10-13 확인).

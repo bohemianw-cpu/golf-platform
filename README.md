@@ -54,7 +54,7 @@ node scripts/import-mcst-courses.mjs --input 'supabase/seed/mcst-courses-2024-12
 node scripts/import-mcst-courses.mjs --input 'supabase/seed/mcst-courses-2024-12-31.csv' --apply
 ```
 
-검수 자료는 `courses[].routes[].holes[]`에 홀 번호, 파, 선택값인 핸디캡 인덱스, 실제 확인된 `tees[]`를 넣습니다. 각 티는 `tee_code`, `display_name`, `tee_color`, `distance_m`를 갖습니다. 기본 그린은 `green_code: "standard"`, `green_name: "기본 그린"`으로 처리하며, 복수 그린은 같은 티 코드로 그린별 행을 추가하고 `green_code`/`green_name`을 지정합니다. DB는 홀·티·그린 조합으로 거리를 저장합니다. 각 9홀 코스에는 공식 `source_url`이 필요합니다. 구장 전체 `hole_count`를 제공하면 1~72 범위와 레이아웃 홀 수 합계를 검사하고 해당 메타데이터도 저장합니다. 자료가 없는 블랙티는 행을 만들지 않습니다. `supabase/seed/`의 이든·감포 JSON은 공식 페이지를 대조한 검수 자료입니다. 검수 importer는 기본 미리보기이며 저장에만 `--apply`가 필요합니다.
+검수 자료는 `courses[].routes[].holes[]`에 홀 번호, 파, 선택값인 핸디캡 인덱스, 실제 확인된 `tees[]`를 넣습니다. 각 티는 `tee_code`, `display_name`, `tee_color`, `distance_m`를 갖습니다. 기본 그린은 `green_code: "standard"`, `green_name: "기본 그린"`으로 처리하며, 복수 그린은 같은 티 코드로 그린별 행을 추가하고 `green_code`/`green_name`을 지정합니다. DB는 홀·티·그린 조합으로 거리를 저장합니다. 각 9홀 코스에는 공식 `source_url`이 필요합니다. 구장 전체 `hole_count`를 제공하면 1~144 범위와 레이아웃 홀 수 합계를 검사하고 해당 메타데이터도 저장합니다. 81홀 군산CC처럼 공식 시설 홀 수와 현재 확인 가능한 레이아웃 수가 다르면 `allow_partial_routes`와 미공개 자료 메모를 명시합니다. 자료가 없는 블랙티는 행을 만들지 않습니다. `supabase/seed/`의 이든·감포 JSON은 공식 페이지를 대조한 검수 자료입니다. 검수 importer는 기본 미리보기이며 저장에만 `--apply`가 필요합니다.
 
 실제 적재 스크립트는 프로젝트 URL과 서버 전용 `SUPABASE_SECRET_KEY`를 환경변수로 읽습니다. `--check`는 seed와 DB의 구장·코스·홀·티·그린 행을 비교하고, 누락·추가·거리 불일치를 오류로 표시합니다. 키는 브라우저·저장소·채팅에 넣지 마세요. 구형 `SUPABASE_SERVICE_ROLE_KEY`도 호환을 위해 읽습니다.
 

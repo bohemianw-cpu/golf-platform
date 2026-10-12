@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises'
 import { normalizeCourseName, normalizeCourseSearch } from '../utils/course-name.js'
 
 const args = new Map()
+const MAX_COURSE_HOLE_COUNT = 144
 for (let index = 2; index < process.argv.length; index += 1) {
   if (process.argv[index].startsWith('--')) args.set(process.argv[index].slice(2), process.argv[index + 1] ?? '')
 }
@@ -86,8 +87,8 @@ for (const course of corrections) {
   if (args.has('apply') && course.verification_status == null) {
     throw new Error(`${course.name}: 적용 전에 구장의 verification_status를 명시하세요. 상태를 생략한 기존 파일은 읽기 검사만 가능합니다.`)
   }
-  if (course.hole_count != null && (!Number.isInteger(course.hole_count) || course.hole_count < 1 || course.hole_count > 72)) {
-    throw new Error(`${course.name}: hole_count는 1~72 사이 정수여야 합니다.`)
+  if (course.hole_count != null && (!Number.isInteger(course.hole_count) || course.hole_count < 1 || course.hole_count > MAX_COURSE_HOLE_COUNT)) {
+    throw new Error(`${course.name}: hole_count는 1~${MAX_COURSE_HOLE_COUNT} 사이 정수여야 합니다.`)
   }
   if (course.review_notes != null && (!Array.isArray(course.review_notes) || course.review_notes.some((note) => typeof note !== 'string' || !note.trim()))) {
     throw new Error(`${course.name}: review_notes는 비어 있지 않은 문자열 배열이어야 합니다.`)
@@ -120,7 +121,7 @@ for (const course of corrections) {
         throw new Error(`${course.name}/${route.route_code}: 홀 번호가 범위를 벗어나거나 중복되었습니다.`)
       }
       holeNumbers.add(hole.hole_number)
-      if (!Number.isInteger(hole.par) || hole.par < 3 || hole.par > 6) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 파는 3~6이어야 합니다.`)
+      if (!Number.isInteger(hole.par) || hole.par < 3 || hole.par > 7) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 파는 3~7이어야 합니다.`)
       if (hole.handicap_index != null && (!Number.isInteger(hole.handicap_index) || hole.handicap_index < 1 || hole.handicap_index > 18)) {
         throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 핸디캡 인덱스는 1~18이어야 합니다.`)
       }
@@ -134,8 +135,8 @@ for (const course of corrections) {
         if (!tee.display_name?.trim() || !tee.tee_color?.trim()) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티 이름과 색상이 필요합니다.`)
         if (tee.tee_selection_available != null && typeof tee.tee_selection_available !== 'boolean') throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: tee_selection_available은 boolean이어야 합니다.`)
         // Some official scorecards publish a par per tee group; keep that selected-tee override.
-        if (tee.par != null && (!Number.isInteger(tee.par) || tee.par < 3 || tee.par > 6)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티·그린별 파는 3~6이어야 합니다.`)
-        if (!Number.isInteger(tee.distance_m) || tee.distance_m < 1 || tee.distance_m > 800) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티 거리는 1~800m 정수여야 합니다.`)
+        if (tee.par != null && (!Number.isInteger(tee.par) || tee.par < 3 || tee.par > 7)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티·그린별 파는 3~7이어야 합니다.`)
+        if (!Number.isInteger(tee.distance_m) || tee.distance_m < 1 || tee.distance_m > 2000) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티 거리는 1~2,000m 정수여야 합니다.`)
         const distanceMSource = tee.distance_m_source ?? 'converted'
         if (!['official', 'converted'].includes(distanceMSource)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: distance_m_source는 official 또는 converted여야 합니다.`)
         if (tee.source_unit != null && !['m', 'yd'].includes(tee.source_unit)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 원본 거리 단위는 m, yd 또는 미확정(null)이어야 합니다.`)
