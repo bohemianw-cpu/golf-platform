@@ -335,3 +335,6 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 에콜리안정선골프장(강원): 공식 Blue/White/Red 거리(m)를 반영했고 8번 홀 PAR를 5로 확정해 구장과 코스를 verified 처리했습니다. 8번 홀 검수 메모는 제거했습니다. 3번 홀 제목 PAR3와 본문 PAR4의 독립적인 충돌은 확인을 위해 메모에 남겼습니다. 자료: `ecolian-jeongseon-2026-official-review.json`; 출처: [공식 코스제원](https://www.ecolian.or.kr/cotents/course/courseInfo.do?coDiv=105), [공식 홀 공략](https://www.ecolian.or.kr/cotents/course/courseAttack.do?coDiv=105).
 
 2026-10-13 에딘버러CC·광양CC·에콜리안정선골프장 반영 후 원격 전체 카탈로그: 검수 완료 245개, 미진행 266개, 반려 5개(총 516개). 부산·울산·경남 pending 0개이며 충남 pending 11개입니다. 다음에는 충남의 공식 거리가 명확한 구장을 우선 조사합니다.
+- 프린세스GC(충남 공주): 운영사 공식 [코스 소개](https://www.princessgc.co.kr/course/strategy)와 [홀 공략](https://www.princessgc.co.kr/course/strategy)에서 EAST·WEST 각 9홀의 PAR·HDCP·Blue/White/Red 티를 반영해 18홀·54티 행을 저장했습니다. 현행 운영사 표에는 단위가 없어 KGA 공식 코스레이팅의 프린세스 Pine+Valley 길이(야드)를 단위 판단의 보조 근거로 삼되, 코스명·티 합계가 다르므로 동일 레이아웃으로 보지는 않고 현재 운영사 홀별 표를 데이터 기준으로 유지했습니다. East 9번 Red 354yd가 White 320yd보다 길지만 공식 소개 표와 상세가 일치해 원문을 저장하고 메모했습니다. 자료: `princess-gc-2026-official-verified.json`; 단위 참고: [KGA 2024 코스레이팅 현황](https://www.kgagolf.or.kr/infor/infor_data/AllRatings_24.pdf) (2026-10-13 확인).
+
+2026-10-13 프린세스GC 자료 반영 후 원격 전체 카탈로그: 검수 완료 246개, 미진행 265개, 반려 5개(총 516개). 부산·울산·경남 pending 0개이며 충남 pending은 10개입니다. 다음에는 충남의 공식 파·거리와 단위가 확인되는 구장을 우선 조사합니다.
