@@ -1,0 +1,656 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "match_name": "플라밍고CC",
+    "name": "플라밍고CC",
+    "region": "충남",
+    "address": "당진시 석문면 산단8로 299",
+    "aliases": [
+      "플라밍고 컨트리클럽",
+      "Flamingo CC"
+    ],
+    "hole_count": 36,
+    "supports_screen": false,
+    "verification_status": "verified",
+    "review_notes": [
+      "MCST 항목은 30홀로 되어 있으나 운영사 공식 코스안내는 링크스·파크·듄스·리버 4개 코스, 각 9홀 총 36홀로 명시합니다. 최신 공식 운영 코스 수에 맞춰 36홀로 정리했습니다.",
+      "운영사 공식 자료에서 각 코스의 홀별 PAR와 미터 거리를 확인했습니다. 링크스·파크·듄스·리버는 각각 PAR36이고, 링크스 2번은 공식 PAR6·705m입니다. 티별 색상 거리는 게시되지 않아 단일 공식 기준거리로 보관하고 티 선택을 비활성화했습니다.",
+      "공식 출처: https://www.clublonge.com/Club/flamingo/Course (2026-10-13 확인)."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "links",
+      "display_name": "링크스 코스",
+      "hole_count": 9,
+      "primary_tee_code": "official_reference",
+      "verification_status": "verified",
+      "source_url": "https://www.clublonge.com/Club/flamingo/Course",
+      "par_source_url": "https://www.clublonge.com/Club/flamingo/Course",
+      "review_notes": [
+        "운영사 공식 코스안내의 코스별 홀 PAR 및 단일 공식 기준거리(m)를 반영했습니다. 티 색상별 거리는 제공되지 않아 선택 가능한 티로 가장하지 않고 공식 기준거리로 저장했습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 327,
+              "distance_m_source": "official",
+              "source_distance": 327,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 6,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 705,
+              "distance_m_source": "official",
+              "source_distance": 705,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 378,
+              "distance_m_source": "official",
+              "source_distance": 378,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 251,
+              "distance_m_source": "official",
+              "source_distance": 251,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 391,
+              "distance_m_source": "official",
+              "source_distance": 391,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 384,
+              "distance_m_source": "official",
+              "source_distance": 384,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 359,
+              "distance_m_source": "official",
+              "source_distance": 359,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 201,
+              "distance_m_source": "official",
+              "source_distance": 201,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 420,
+              "distance_m_source": "official",
+              "source_distance": 420,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route_code": "park",
+      "display_name": "파크 코스",
+      "hole_count": 9,
+      "primary_tee_code": "official_reference",
+      "verification_status": "verified",
+      "source_url": "https://www.clublonge.com/Club/flamingo/Course",
+      "par_source_url": "https://www.clublonge.com/Club/flamingo/Course",
+      "review_notes": [
+        "운영사 공식 코스안내의 코스별 홀 PAR 및 단일 공식 기준거리(m)를 반영했습니다. 티 색상별 거리는 제공되지 않아 선택 가능한 티로 가장하지 않고 공식 기준거리로 저장했습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 485,
+              "distance_m_source": "official",
+              "source_distance": 485,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 343,
+              "distance_m_source": "official",
+              "source_distance": 343,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 375,
+              "distance_m_source": "official",
+              "source_distance": 375,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 170,
+              "distance_m_source": "official",
+              "source_distance": 170,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 390,
+              "distance_m_source": "official",
+              "source_distance": 390,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 355,
+              "distance_m_source": "official",
+              "source_distance": 355,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 435,
+              "distance_m_source": "official",
+              "source_distance": 435,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 210,
+              "distance_m_source": "official",
+              "source_distance": 210,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 527,
+              "distance_m_source": "official",
+              "source_distance": 527,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route_code": "dunes",
+      "display_name": "듄스 코스",
+      "hole_count": 9,
+      "primary_tee_code": "official_reference",
+      "verification_status": "verified",
+      "source_url": "https://www.clublonge.com/Club/flamingo/Course",
+      "par_source_url": "https://www.clublonge.com/Club/flamingo/Course",
+      "review_notes": [
+        "운영사 공식 코스안내의 코스별 홀 PAR 및 단일 공식 기준거리(m)를 반영했습니다. 티 색상별 거리는 제공되지 않아 선택 가능한 티로 가장하지 않고 공식 기준거리로 저장했습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 365,
+              "distance_m_source": "official",
+              "source_distance": 365,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 160,
+              "distance_m_source": "official",
+              "source_distance": 160,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 367,
+              "distance_m_source": "official",
+              "source_distance": 367,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 187,
+              "distance_m_source": "official",
+              "source_distance": 187,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 423,
+              "distance_m_source": "official",
+              "source_distance": 423,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 494,
+              "distance_m_source": "official",
+              "source_distance": 494,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 360,
+              "distance_m_source": "official",
+              "source_distance": 360,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 509,
+              "distance_m_source": "official",
+              "source_distance": 509,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 362,
+              "distance_m_source": "official",
+              "source_distance": 362,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route_code": "river",
+      "display_name": "리버 코스",
+      "hole_count": 9,
+      "primary_tee_code": "official_reference",
+      "verification_status": "verified",
+      "source_url": "https://www.clublonge.com/Club/flamingo/Course",
+      "par_source_url": "https://www.clublonge.com/Club/flamingo/Course",
+      "review_notes": [
+        "운영사 공식 코스안내의 코스별 홀 PAR 및 단일 공식 기준거리(m)를 반영했습니다. 티 색상별 거리는 제공되지 않아 선택 가능한 티로 가장하지 않고 공식 기준거리로 저장했습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 332,
+              "distance_m_source": "official",
+              "source_distance": 332,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 191,
+              "distance_m_source": "official",
+              "source_distance": 191,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 510,
+              "distance_m_source": "official",
+              "source_distance": 510,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 403,
+              "distance_m_source": "official",
+              "source_distance": 403,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 367,
+              "distance_m_source": "official",
+              "source_distance": 367,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 503,
+              "distance_m_source": "official",
+              "source_distance": 503,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 359,
+              "distance_m_source": "official",
+              "source_distance": 359,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 190,
+              "distance_m_source": "official",
+              "source_distance": 190,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리",
+              "tee_color": "#0f766e",
+              "tee_selection_available": false,
+              "distance_m": 345,
+              "distance_m_source": "official",
+              "source_distance": 345,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
