@@ -1,0 +1,347 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "match_name": "유니밸리CC",
+    "name": "고령유니밸리CC",
+    "region": "경북",
+    "address": "경상북도 고령군 대가야읍 일량로 588",
+    "aliases": [
+      "유니밸리CC",
+      "고령유니밸리",
+      "고령컨트리클럽 유니밸리",
+      "UNIVALLEY COUNTRY CLUB"
+    ],
+    "hole_count": 9,
+    "supports_screen": false,
+    "review_notes": [
+      "MCST pending 레코드 유니밸리CC의 주소가 운영사 공식 사이트 주소와 일치해 기존 구장 레코드를 사용합니다.",
+      "공식 코스 공략 이미지 9장의 홀 머리글에서 각 홀 PAR와 HDCP, 티별 거리를 확인했습니다. 전체 PAR36입니다."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "UNI",
+      "display_name": "유니",
+      "hole_count": 9,
+      "primary_tee_code": "rt",
+      "verification_status": "verified",
+      "source_url": "https://www.univalley.co.kr/course/strategy",
+      "source_data_url": "https://erpimage.smartscore.kr/smartscore_erp_homepage/388w4/course/p_h_01.jpg",
+      "par_source_url": "https://www.univalley.co.kr/course/strategy",
+      "review_notes": [
+        "공식 코스 공략 화면에 연결된 현재 홀 도면 1~9의 머리글에서 PAR·HDCP 및 B/T·R/T·L/T 홀별 미터 거리를 확인해 저장했습니다. 5번 홀 설명에도 B/T·R/T 185M, L/T 103M로 단위를 명시합니다.",
+        "공식 페이지 번들에 포함된 별도 정적 거리/파 객체는 현재 홀 도면 머리글과 상충하므로 사용하지 않았습니다. B/T·R/T·L/T는 공식 표기를 보존했고 색상은 공식 범례에서 확인되지 않아 중립 색상으로 저장합니다. 홀별 합계는 B/T 2,703m, R/T 2,579m, L/T 2,254m이며 운영사 공식 합계 표는 확인되지 않았습니다.",
+        "공식 코스 전략 페이지와 홀 도면 이미지 1~9: https://www.univalley.co.kr/course/strategy 및 https://erpimage.smartscore.kr/smartscore_erp_homepage/388w4/course/p_h_01.jpg ~ p_h_09.jpg (2026-10-12 확인)."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "handicap_index": 2,
+          "tees": [
+            {
+              "tee_code": "bt",
+              "display_name": "B/T",
+              "tee_color": "#64748b",
+              "distance_m": 276,
+              "distance_m_source": "official",
+              "source_distance": 276,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "rt",
+              "display_name": "R/T",
+              "tee_color": "#64748b",
+              "distance_m": 276,
+              "distance_m_source": "official",
+              "source_distance": 276,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lt",
+              "display_name": "L/T",
+              "tee_color": "#64748b",
+              "distance_m": 217,
+              "distance_m_source": "official",
+              "source_distance": 217,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "handicap_index": 3,
+          "tees": [
+            {
+              "tee_code": "bt",
+              "display_name": "B/T",
+              "tee_color": "#64748b",
+              "distance_m": 380,
+              "distance_m_source": "official",
+              "source_distance": 380,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "rt",
+              "display_name": "R/T",
+              "tee_color": "#64748b",
+              "distance_m": 361,
+              "distance_m_source": "official",
+              "source_distance": 361,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lt",
+              "display_name": "L/T",
+              "tee_color": "#64748b",
+              "distance_m": 334,
+              "distance_m_source": "official",
+              "source_distance": 334,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 5,
+          "handicap_index": 1,
+          "tees": [
+            {
+              "tee_code": "bt",
+              "display_name": "B/T",
+              "tee_color": "#64748b",
+              "distance_m": 416,
+              "distance_m_source": "official",
+              "source_distance": 416,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "rt",
+              "display_name": "R/T",
+              "tee_color": "#64748b",
+              "distance_m": 392,
+              "distance_m_source": "official",
+              "source_distance": 392,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lt",
+              "display_name": "L/T",
+              "tee_color": "#64748b",
+              "distance_m": 369,
+              "distance_m_source": "official",
+              "source_distance": 369,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "handicap_index": 6,
+          "tees": [
+            {
+              "tee_code": "bt",
+              "display_name": "B/T",
+              "tee_color": "#64748b",
+              "distance_m": 260,
+              "distance_m_source": "official",
+              "source_distance": 260,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "rt",
+              "display_name": "R/T",
+              "tee_color": "#64748b",
+              "distance_m": 260,
+              "distance_m_source": "official",
+              "source_distance": 260,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lt",
+              "display_name": "L/T",
+              "tee_color": "#64748b",
+              "distance_m": 217,
+              "distance_m_source": "official",
+              "source_distance": 217,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 3,
+          "handicap_index": 9,
+          "tees": [
+            {
+              "tee_code": "bt",
+              "display_name": "B/T",
+              "tee_color": "#64748b",
+              "distance_m": 185,
+              "distance_m_source": "official",
+              "source_distance": 185,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "rt",
+              "display_name": "R/T",
+              "tee_color": "#64748b",
+              "distance_m": 185,
+              "distance_m_source": "official",
+              "source_distance": 185,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lt",
+              "display_name": "L/T",
+              "tee_color": "#64748b",
+              "distance_m": 103,
+              "distance_m_source": "official",
+              "source_distance": 103,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 5,
+          "handicap_index": 4,
+          "tees": [
+            {
+              "tee_code": "bt",
+              "display_name": "B/T",
+              "tee_color": "#64748b",
+              "distance_m": 433,
+              "distance_m_source": "official",
+              "source_distance": 433,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "rt",
+              "display_name": "R/T",
+              "tee_color": "#64748b",
+              "distance_m": 404,
+              "distance_m_source": "official",
+              "source_distance": 404,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lt",
+              "display_name": "L/T",
+              "tee_color": "#64748b",
+              "distance_m": 369,
+              "distance_m_source": "official",
+              "source_distance": 369,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "handicap_index": 7,
+          "tees": [
+            {
+              "tee_code": "bt",
+              "display_name": "B/T",
+              "tee_color": "#64748b",
+              "distance_m": 316,
+              "distance_m_source": "official",
+              "source_distance": 316,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "rt",
+              "display_name": "R/T",
+              "tee_color": "#64748b",
+              "distance_m": 316,
+              "distance_m_source": "official",
+              "source_distance": 316,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lt",
+              "display_name": "L/T",
+              "tee_color": "#64748b",
+              "distance_m": 260,
+              "distance_m_source": "official",
+              "source_distance": 260,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 4,
+          "handicap_index": 5,
+          "tees": [
+            {
+              "tee_code": "bt",
+              "display_name": "B/T",
+              "tee_color": "#64748b",
+              "distance_m": 287,
+              "distance_m_source": "official",
+              "source_distance": 287,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "rt",
+              "display_name": "R/T",
+              "tee_color": "#64748b",
+              "distance_m": 264,
+              "distance_m_source": "official",
+              "source_distance": 264,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lt",
+              "display_name": "L/T",
+              "tee_color": "#64748b",
+              "distance_m": 264,
+              "distance_m_source": "official",
+              "source_distance": 264,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 3,
+          "handicap_index": 8,
+          "tees": [
+            {
+              "tee_code": "bt",
+              "display_name": "B/T",
+              "tee_color": "#64748b",
+              "distance_m": 150,
+              "distance_m_source": "official",
+              "source_distance": 150,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "rt",
+              "display_name": "R/T",
+              "tee_color": "#64748b",
+              "distance_m": 121,
+              "distance_m_source": "official",
+              "source_distance": 121,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lt",
+              "display_name": "L/T",
+              "tee_color": "#64748b",
+              "distance_m": 121,
+              "distance_m_source": "official",
+              "source_distance": 121,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
