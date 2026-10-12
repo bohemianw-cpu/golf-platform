@@ -1,0 +1,985 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "무주덕유산CC",
+      "name": "무주덕유산CC",
+      "region": "전북",
+      "address": "전북특별자치도 무주군 설천면 만선로 185",
+      "hole_count": 18,
+      "verification_status": "verified",
+      "review_notes": [
+        "운영사 공식 홈페이지 18홀 코스 자료에서 OUT/IN 각 9홀의 PAR·HDCP 및 홀별 색상 티 거리를 반영했습니다. 지도에서 색상으로 표시된 72개 거리는 선택 가능하게 저장하고, T로만 표시된 13개 거리는 티명을 추정하지 않고 선택 불가 기준값으로 보존했습니다.",
+        "공식 소개 페이지의 전체 길이 6,737m(7,367yd)와 홀별 지도 색상 티 거리 합계(베이지 5,964m, 블루 5,668m, 화이트 5,241m, 레드 4,725m)가 일치하지 않습니다. 공식 홀 지도별 값을 저장하고 차이를 메모했습니다."
+      ],
+      "routes": [
+        {
+          "route_code": "out",
+          "display_name": "OUT",
+          "hole_count": 9,
+          "primary_tee_code": "white",
+          "verification_status": "verified",
+          "source_url": "https://www.mdysresort.com/golf/18hole_course.asp",
+          "source_data_url": "https://www.mdysresort.com/golf/18hole_course.asp",
+          "par_source_url": "https://www.mdysresort.com/golf/18hole_course.asp",
+          "official_tee_totals_m": {
+            "gold": 3101,
+            "blue": 2945,
+            "white": 2723,
+            "red": 2414
+          },
+          "review_notes": [
+            "운영사 공식 18홀 코스의 홀 지도 이미지에 표시된 색상별 미터 거리와 PAR·HDCP를 반영했습니다. 색상별 거리는 베이지/블루/화이트/레드 순으로, 지도에 T만 표시된 티명 미표기 거리는 티 종류를 추정하지 않고 선택 불가 기준 행으로 보존했습니다.",
+            "공식 코스 개요의 전체 길이 6,737m(7,367yd)는 홀별 지도 색상 티 합계와 일치하지 않습니다. 홀별 원문 지도값을 저장하고 차이를 기록했습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 5,
+              "handicap_index": 8,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_01.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 500,
+                  "distance_m_source": "official",
+                  "source_distance": 500,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 476,
+                  "distance_m_source": "official",
+                  "source_distance": 476,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 446,
+                  "distance_m_source": "official",
+                  "source_distance": 446,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 413,
+                  "distance_m_source": "official",
+                  "source_distance": 413,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "official_t1",
+                  "display_name": "티명 미표기 T 1",
+                  "tee_color": "#94a3b8",
+                  "distance_m": 365,
+                  "distance_m_source": "official",
+                  "source_distance": 365,
+                  "source_unit": "m",
+                  "tee_selection_available": false
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "handicap_index": 6,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_02.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 360,
+                  "distance_m_source": "official",
+                  "source_distance": 360,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 345,
+                  "distance_m_source": "official",
+                  "source_distance": 345,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 321,
+                  "distance_m_source": "official",
+                  "source_distance": 321,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 261,
+                  "distance_m_source": "official",
+                  "source_distance": 261,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "handicap_index": 10,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_03.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 130,
+                  "distance_m_source": "official",
+                  "source_distance": 130,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 114,
+                  "distance_m_source": "official",
+                  "source_distance": 114,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 114,
+                  "distance_m_source": "official",
+                  "source_distance": 114,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 84,
+                  "distance_m_source": "official",
+                  "source_distance": 84,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "handicap_index": 9,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_04.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 299,
+                  "distance_m_source": "official",
+                  "source_distance": 299,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 290,
+                  "distance_m_source": "official",
+                  "source_distance": 290,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 275,
+                  "distance_m_source": "official",
+                  "source_distance": 275,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 226,
+                  "distance_m_source": "official",
+                  "source_distance": 226,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 3,
+              "handicap_index": 3,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_05.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 180,
+                  "distance_m_source": "official",
+                  "source_distance": 180,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 155,
+                  "distance_m_source": "official",
+                  "source_distance": 155,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 130,
+                  "distance_m_source": "official",
+                  "source_distance": 130,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 114,
+                  "distance_m_source": "official",
+                  "source_distance": 114,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "official_t1",
+                  "display_name": "티명 미표기 T 1",
+                  "tee_color": "#94a3b8",
+                  "distance_m": 86,
+                  "distance_m_source": "official",
+                  "source_distance": 86,
+                  "source_unit": "m",
+                  "tee_selection_available": false
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "handicap_index": 2,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_06.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 398,
+                  "distance_m_source": "official",
+                  "source_distance": 398,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 382,
+                  "distance_m_source": "official",
+                  "source_distance": 382,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 352,
+                  "distance_m_source": "official",
+                  "source_distance": 352,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 326,
+                  "distance_m_source": "official",
+                  "source_distance": 326,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "official_t1",
+                  "display_name": "티명 미표기 T 1",
+                  "tee_color": "#94a3b8",
+                  "distance_m": 262,
+                  "distance_m_source": "official",
+                  "source_distance": 262,
+                  "source_unit": "m",
+                  "tee_selection_available": false
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 5,
+              "handicap_index": 4,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_07.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 500,
+                  "distance_m_source": "official",
+                  "source_distance": 500,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 484,
+                  "distance_m_source": "official",
+                  "source_distance": 484,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 431,
+                  "distance_m_source": "official",
+                  "source_distance": 431,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 398,
+                  "distance_m_source": "official",
+                  "source_distance": 398,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "handicap_index": 7,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_08.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 385,
+                  "distance_m_source": "official",
+                  "source_distance": 385,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 368,
+                  "distance_m_source": "official",
+                  "source_distance": 368,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 345,
+                  "distance_m_source": "official",
+                  "source_distance": 345,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 324,
+                  "distance_m_source": "official",
+                  "source_distance": 324,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "official_t1",
+                  "display_name": "티명 미표기 T 1",
+                  "tee_color": "#94a3b8",
+                  "distance_m": 280,
+                  "distance_m_source": "official",
+                  "source_distance": 280,
+                  "source_unit": "m",
+                  "tee_selection_available": false
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "handicap_index": 11,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_09.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 349,
+                  "distance_m_source": "official",
+                  "source_distance": 349,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 331,
+                  "distance_m_source": "official",
+                  "source_distance": 331,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 309,
+                  "distance_m_source": "official",
+                  "source_distance": 309,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 268,
+                  "distance_m_source": "official",
+                  "source_distance": 268,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "official_t1",
+                  "display_name": "티명 미표기 T 1",
+                  "tee_color": "#94a3b8",
+                  "distance_m": 246,
+                  "distance_m_source": "official",
+                  "source_distance": 246,
+                  "source_unit": "m",
+                  "tee_selection_available": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "in",
+          "display_name": "IN",
+          "hole_count": 9,
+          "primary_tee_code": "white",
+          "verification_status": "verified",
+          "source_url": "https://www.mdysresort.com/golf/18hole_course.asp",
+          "source_data_url": "https://www.mdysresort.com/golf/18hole_course.asp",
+          "par_source_url": "https://www.mdysresort.com/golf/18hole_course.asp",
+          "official_tee_totals_m": {
+            "gold": 2863,
+            "blue": 2723,
+            "white": 2518,
+            "red": 2311
+          },
+          "review_notes": [
+            "운영사 공식 18홀 코스의 홀 지도 이미지에 표시된 색상별 미터 거리와 PAR·HDCP를 반영했습니다. 색상별 거리는 베이지/블루/화이트/레드 순으로, 지도에 T만 표시된 티명 미표기 거리는 티 종류를 추정하지 않고 선택 불가 기준 행으로 보존했습니다.",
+            "공식 코스 개요의 전체 길이 6,737m(7,367yd)는 홀별 지도 색상 티 합계와 일치하지 않습니다. 홀별 원문 지도값을 저장하고 차이를 기록했습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "handicap_index": 1,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_10.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 391,
+                  "distance_m_source": "official",
+                  "source_distance": 391,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 368,
+                  "distance_m_source": "official",
+                  "source_distance": 368,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 337,
+                  "distance_m_source": "official",
+                  "source_distance": 337,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 295,
+                  "distance_m_source": "official",
+                  "source_distance": 295,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 5,
+              "handicap_index": 14,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_11.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 442,
+                  "distance_m_source": "official",
+                  "source_distance": 442,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 430,
+                  "distance_m_source": "official",
+                  "source_distance": 430,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 395,
+                  "distance_m_source": "official",
+                  "source_distance": 395,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 358,
+                  "distance_m_source": "official",
+                  "source_distance": 358,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "handicap_index": 13,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_12.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 322,
+                  "distance_m_source": "official",
+                  "source_distance": 322,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 296,
+                  "distance_m_source": "official",
+                  "source_distance": 296,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 273,
+                  "distance_m_source": "official",
+                  "source_distance": 273,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 248,
+                  "distance_m_source": "official",
+                  "source_distance": 248,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "handicap_index": 15,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_13.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 333,
+                  "distance_m_source": "official",
+                  "source_distance": 333,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 315,
+                  "distance_m_source": "official",
+                  "source_distance": 315,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 291,
+                  "distance_m_source": "official",
+                  "source_distance": 291,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 283,
+                  "distance_m_source": "official",
+                  "source_distance": 283,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "official_t1",
+                  "display_name": "티명 미표기 T 1",
+                  "tee_color": "#94a3b8",
+                  "distance_m": 345,
+                  "distance_m_source": "official",
+                  "source_distance": 345,
+                  "source_unit": "m",
+                  "tee_selection_available": false
+                },
+                {
+                  "tee_code": "official_t2",
+                  "display_name": "티명 미표기 T 2",
+                  "tee_color": "#94a3b8",
+                  "distance_m": 276,
+                  "distance_m_source": "official",
+                  "source_distance": 276,
+                  "source_unit": "m",
+                  "tee_selection_available": false
+                },
+                {
+                  "tee_code": "official_t3",
+                  "display_name": "티명 미표기 T 3",
+                  "tee_color": "#94a3b8",
+                  "distance_m": 256,
+                  "distance_m_source": "official",
+                  "source_distance": 256,
+                  "source_unit": "m",
+                  "tee_selection_available": false
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "handicap_index": 16,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_14.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 299,
+                  "distance_m_source": "official",
+                  "source_distance": 299,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 281,
+                  "distance_m_source": "official",
+                  "source_distance": 281,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 261,
+                  "distance_m_source": "official",
+                  "source_distance": 261,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 247,
+                  "distance_m_source": "official",
+                  "source_distance": 247,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 3,
+              "handicap_index": 12,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_15.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 135,
+                  "distance_m_source": "official",
+                  "source_distance": 135,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 132,
+                  "distance_m_source": "official",
+                  "source_distance": 132,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 115,
+                  "distance_m_source": "official",
+                  "source_distance": 115,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 89,
+                  "distance_m_source": "official",
+                  "source_distance": 89,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "handicap_index": 5,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_16.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 377,
+                  "distance_m_source": "official",
+                  "source_distance": 377,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 364,
+                  "distance_m_source": "official",
+                  "source_distance": 364,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 347,
+                  "distance_m_source": "official",
+                  "source_distance": 347,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 331,
+                  "distance_m_source": "official",
+                  "source_distance": 331,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "official_t1",
+                  "display_name": "티명 미표기 T 1",
+                  "tee_color": "#94a3b8",
+                  "distance_m": 321,
+                  "distance_m_source": "official",
+                  "source_distance": 321,
+                  "source_unit": "m",
+                  "tee_selection_available": false
+                },
+                {
+                  "tee_code": "official_t2",
+                  "display_name": "티명 미표기 T 2",
+                  "tee_color": "#94a3b8",
+                  "distance_m": 287,
+                  "distance_m_source": "official",
+                  "source_distance": 287,
+                  "source_unit": "m",
+                  "tee_selection_available": false
+                },
+                {
+                  "tee_code": "official_t3",
+                  "display_name": "티명 미표기 T 3",
+                  "tee_color": "#94a3b8",
+                  "distance_m": 257,
+                  "distance_m_source": "official",
+                  "source_distance": 257,
+                  "source_unit": "m",
+                  "tee_selection_available": false
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "handicap_index": 17,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_17.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 126,
+                  "distance_m_source": "official",
+                  "source_distance": 126,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 117,
+                  "distance_m_source": "official",
+                  "source_distance": 117,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 107,
+                  "distance_m_source": "official",
+                  "source_distance": 107,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 98,
+                  "distance_m_source": "official",
+                  "source_distance": 98,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 5,
+              "handicap_index": 18,
+              "source_url": "https://www.mdysresort.com/images/contents/golf/hole_map_18.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "베이지 티",
+                  "tee_color": "#d6b887",
+                  "distance_m": 438,
+                  "distance_m_source": "official",
+                  "source_distance": 438,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루 티",
+                  "tee_color": "#2563eb",
+                  "distance_m": 420,
+                  "distance_m_source": "official",
+                  "source_distance": 420,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트 티",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 392,
+                  "distance_m_source": "official",
+                  "source_distance": 392,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드 티",
+                  "tee_color": "#ef4444",
+                  "distance_m": 362,
+                  "distance_m_source": "official",
+                  "source_distance": 362,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "official_t1",
+                  "display_name": "티명 미표기 T 1",
+                  "tee_color": "#94a3b8",
+                  "distance_m": 460,
+                  "distance_m_source": "official",
+                  "source_distance": 460,
+                  "source_unit": "m",
+                  "tee_selection_available": false
+                },
+                {
+                  "tee_code": "official_t2",
+                  "display_name": "티명 미표기 T 2",
+                  "tee_color": "#94a3b8",
+                  "distance_m": 437,
+                  "distance_m_source": "official",
+                  "source_distance": 437,
+                  "source_unit": "m",
+                  "tee_selection_available": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
