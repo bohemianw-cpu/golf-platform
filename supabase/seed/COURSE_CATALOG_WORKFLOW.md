@@ -109,7 +109,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 ## 재개 지점
 
-2026-10-12 재개 지점: 마스터피스CC, 고령오펠GC, 고령유니밸리CC, 아델스코트CC, 팔공CC, 시엘GC, 골프존카운티 청통의 공식 자료를 DB·seed에 반영하고 검수 완료했습니다. 다음 후보는 영천·경주권 인근의 미검수 경북 구장 중 부산에서 가까우며 공식 홀별 제원을 확인할 수 있는 곳입니다. 부산·울산·경남 구장은 현재 DB 상태상 적재 완료입니다.
+2026-10-12 재개 지점: 마스터피스CC, 고령오펠GC, 고령유니밸리CC, 아델스코트CC, 팔공CC, 시엘GC, 골프존카운티 청통, 마우나오션CC 블루의 공식 자료를 DB·seed에 반영하고 검수 완료했습니다. 다음 후보는 경주권 인근의 미검수 경북 구장 중 부산에서 가까우며 공식 홀별 제원을 확인할 수 있는 곳입니다. 부산·울산·경남 구장은 현재 DB 상태상 적재 완료입니다.
 - 보문GC(경주): 경상북도문화관광공사 공식 코스소개에서 OUT·IN 각 9홀의 PAR·HANDICAP과 Blue/White/Red 미터 거리를 반영했습니다. 두 코스 모두 PAR36이며 티별 홀 거리 합계가 공식 Total과 일치해 검수 완료했습니다. 블랙티는 공식 표에 없어 등록하지 않았습니다. 자료 파일: `bomun-2026-official-verified.json`; 출처: [공식 코스소개](https://golf.gtc.co.kr/content/course-info.asp) (2026-10-12 확인).
 - 우리GC(경주 양남): 공식 코스제원표의 9홀 PAR·HDCP와 C.T/R.T/L.T 미터 거리를 저장했습니다. PAR36, 티별 홀 합계 C.T 3,044m / R.T 2,785m / L.T 2,521m가 공식 Total과 일치합니다. 자료 파일: `woori-2026-official-verified.json`; 출처: [우리GC 공식 코스제원](https://www.urigolfclub.co.kr/Course/Intro), [홀별 코스안내](https://www.urigolfclub.co.kr/Mobile/Course/Course) (2026-10-12 확인).
 - 이스트힐CC(경주 양남): 공식 코스소개 표의 Lake·Valley 각 9홀 PAR와 METER 거리 18개를 저장했습니다. 두 경로 모두 PAR36입니다. 티별 거리는 공개되지 않아 티 미표기 공식 거리로 기록했습니다. 자료 파일: `easthill-2026-official-verified.json`; 출처: [이스트힐 공식 코스소개](https://www.easthills.co.kr/Course/Intro.aspx) (2026-10-12 확인).
@@ -137,6 +137,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 - 팔공CC(대구): 운영사 공식 페이지에서 파72·18홀, 동봉(OUT)·서봉(IN) 각 9홀 PAR와 Blue/White/Red 미터 거리 54행을 저장했습니다. 동봉 7번은 PAR4·HDCP13이며, 서봉 원문 11·12·15번(앱 경로 2·3·6번)은 PAR4·5·4로 공식 홀별 페이지에서 확인했습니다. 두 경로 모두 PAR36, 구장과 경로를 verified로 전환했습니다. 티별 홀 거리 합은 OUT Blue/White/Red 2,743/2,632/2,239m, IN 3,143/2,999/2,664m이며 공식 합계표는 찾지 못해 임의 보정하지 않았습니다. 자료 파일: `palgong-cc-2026-official-verified.json`; 출처: [공식 코스개요](https://www.palgong-cc.co.kr/html/course.asp), [동봉](https://www.palgong-cc.co.kr/html/course_out.asp), [서봉](https://www.palgong-cc.co.kr/html/course_in.asp) (2026-10-12 확인).
 - 골프존카운티 청통(영천): 운영사 공식 홀 상세에서 청통(OUT)·팔공(IN) 각 9홀의 PAR·HDCP와 Blue/White/Red 티별 m 거리 54행을 저장했습니다. 두 경로 PAR는 37·35로 합계 72입니다. MCST 주소 청통로 733과 운영사 공식 소개 주소 은해사로 49-77이 달라 현행 공식 소개 주소를 사용하고 차이를 관리자 메모에 기록했습니다. 운영사 코스 소개 총전장 6,450m와 홀별 거리 합(Blue/White/Red 6,004/5,586/4,625m)의 차이도 메모에 남기고 공식 홀별 값을 보존했습니다. 자료 파일: `golfzoncounty-cheongtong-2026-official-verified.json`; 출처: [공식 골프장 소개](https://www.golfzoncounty.com/golfclub/intro?golfclubSeq=58), [코스 개요](https://www.golfzoncounty.com/golfclub/course?golfclubSeq=58), [청통 코스](https://www.golfzoncounty.com/golfclub/courseDtl?golfclubSeq=58&courseSeq=42), [팔공 코스](https://www.golfzoncounty.com/golfclub/courseDtl?golfclubSeq=58&courseSeq=43) (2026-10-12 확인).
+- 마우나오션CC 블루(경주): 운영사 공식 페이지에서 별도 퍼블릭 Blue 9홀의 PAR36·HDCP와 Black/White1/White2/Red 미터 거리를 36행 저장했습니다. White2 홀별 합계 2,780m가 공식 Total 2,680m와 100m 차이가 있어 원문 홀별 값을 보존하고 관리자 메모에 기록했습니다. 스코어카드 거리는 그린 센터 기준입니다. 자료 파일: `mauna-ocean-blue-2026-official-verified.json`; 출처: [공식 스코어카드](https://mauna.co.kr/field/swp/course), [Blue 코스 홀별 상세](https://mauna.co.kr/field/swp/course_blue), [시설 개요](https://mauna.co.kr/field/swp/use_membership) (2026-10-12 확인).
 - 시엘GC(영천): 운영사 공식 코스소개 표에서 9개 홀 PAR·HDCP와 Blue/White/Red 미터 거리를 저장했습니다. PAR36, 27개 거리 행입니다. Blue 2,532m와 White 2,321m는 홀별 합과 일치하지만 Red의 공식 Total 2,190m와 홀별 원문 합 2,155m는 35m 차이가 있어 원문 홀별 값을 보존하고 검수 메모에 남겼습니다. 구장과 CIEL 경로는 verified입니다. 자료 파일: `ciel-gc-2026-official-verified.json`; 출처: [공식 코스소개](https://www.cielgolf.com/html/course/course01.asp) (2026-10-12 확인).
 
 - 마스터피스CC(고령): 운영사 공식 코스제원표에서 PIECE·MASTER 각 9홀의 PAR·HDCP와 Blue/White/Yellow/Red 미터 거리를 반영했습니다. MASTER 원문 홀 10~18은 앱 경로 1~9로 매핑했습니다. MASTER Yellow 홀별 합계 2,753m와 공식 Total 2,758m가 5m 차이나 원문 홀별 값을 유지하고 관리자 검수 메모에 기록했습니다. 두 경로 모두 PAR36이며 18홀·72개 티 거리 행을 저장하고 구장과 경로를 verified로 전환했습니다. 자료 파일: `masterpiece-2026-official-verified.json`; 출처: [공식 코스제원표](https://www.masterpiecegc.com/Course/CourseInfo.aspx) (2026-10-12 확인).
@@ -146,4 +147,4 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 ## 재개 지점
 
-2026-10-12: 골프존카운티 청통까지 구장·코스 데이터를 verified로 반영했습니다. 다음에는 미검수 경북 구장 중 부산에서 가까운 후보를 골라 공식 홀별 자료를 확인하고, PAR·거리·단위가 충분하면 같은 흐름으로 적재합니다.
+2026-10-12: 마우나오션CC 블루까지 구장·코스 데이터를 verified로 반영했습니다. 다음에는 경주·영천권 인근의 미검수 경북 구장 중 부산에서 가까운 후보를 골라 공식 홀별 자료를 확인하고, PAR·거리·단위가 충분하면 같은 흐름으로 적재합니다.
