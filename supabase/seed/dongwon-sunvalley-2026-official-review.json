@@ -10,7 +10,7 @@
       "supports_screen": false,
       "verification_status": "verified",
       "review_notes": [
-        "공식 홈페이지가 썬코스(1~9홀)와 밸리코스(10~18홀)를 각각 9홀로 공개합니다. 썬코스 자료는 미터 표와 합계가 일치해 검증 완료했습니다. 밸리코스 16번 홀 거리 표에 공식 미터/야드/합계 간 불일치가 있어 해당 레이아웃만 검수 대기 중입니다.",
+        "공식 홈페이지가 썬코스(1~9홀)와 밸리코스(10~18홀)를 각각 9홀로 공개합니다. 공식 미터·야드 표와 각 티 합계를 대조했고 밸리코스 16번 홀의 미터 표 오기를 야드 표 및 공식 코스 합계로 교정해 양 코스 레이아웃을 검증했습니다.",
         "출처: https://www.sunvalley.co.kr/dongwon/golf/course_intro (2026-10-12 확인)"
       ],
       "routes": [
@@ -419,10 +419,10 @@
           "display_name": "밸리코스",
           "hole_count": 9,
           "primary_tee_code": "rt",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "source_url": "https://www.sunvalley.co.kr/dongwon/golf/course_intro",
           "review_notes": [
-            "공식 홈페이지 미터 표의 16번 홀(R.T 289m, F.T 256m)은 224/207/171야드 표와 코스 합계(3,048/2,727m)에 서로 맞지 않습니다. 원문 기재값을 그대로 보존했으며 관리자 재확인 전까지 선택 목록에서 제외하기 위해 검수 대기 상태로 둡니다."
+            "공식 홈페이지의 16번 홀 미터 표는 R.T/F.T를 289/256m로 표기하지만 같은 페이지의 야드 표는 207/171yd이며 공식 티 합계도 3,048/2,727m입니다. 야드 표를 미터로 환산해 R.T/F.T를 189/156m로 교정했습니다. 교정 후 네 티의 홀별 합계가 공식 미터 코스 합계와 일치합니다."
           ],
           "holes": [
             {
@@ -701,18 +701,18 @@
                   "tee_code": "rt",
                   "display_name": "R.T",
                   "tee_color": "#64748b",
-                  "distance_m": 289,
-                  "source_distance": 289,
-                  "source_unit": "m",
+                  "distance_m": 189,
+                  "source_distance": 207,
+                  "source_unit": "yd",
                   "handicap_index": null
                 },
                 {
                   "tee_code": "ft",
                   "display_name": "F.T",
                   "tee_color": "#64748b",
-                  "distance_m": 256,
-                  "source_distance": 256,
-                  "source_unit": "m",
+                  "distance_m": 156,
+                  "source_distance": 171,
+                  "source_unit": "yd",
                   "handicap_index": null
                 },
                 {
