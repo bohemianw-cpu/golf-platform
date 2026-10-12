@@ -1,0 +1,40 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "name": "에콜리안영광골프장",
+      "match_name": "에콜리안영광골프장",
+      "region": "전남",
+      "address": "영광군 영광읍 월현로 1길 40",
+      "hole_count": 9,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "에콜리안 공식 코스 제원 및 공략 페이지에서 영광 9홀의 파, 티별 좌·우 그린 거리를 대조했습니다. 공식 파 합계는 36이며, 코스 자료에서 제공하는 블루·화이트·레드 티만 저장했습니다.",
+        "공식 출처: https://www.ecolian.or.kr/cotents/course/courseInfo.do?coDiv=105 및 https://www.ecolian.or.kr/cotents/course/courseAttack.do?coDiv=105 (2026-10-12 확인)"
+      ],
+      "routes": [
+        {
+          "route_code": "YEONGGWANG",
+          "display_name": "영광",
+          "hole_count": 9,
+          "primary_tee_code": "blue",
+          "verification_status": "verified",
+          "source_url": "https://www.ecolian.or.kr/cotents/course/courseInfo.do?coDiv=105",
+          "review_notes": ["홀별 PAR 및 블루·화이트·레드 티의 좌/우 그린 거리를 공식 코스 제원과 공략 페이지에서 교차 확인했습니다."],
+          "holes": [
+            {"hole_number":1,"par":4,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":380,"green_code":"left","green_name":"좌그린"},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":370,"green_code":"right","green_name":"우그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":353,"green_code":"left","green_name":"좌그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":344,"green_code":"right","green_name":"우그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":296,"green_code":"left","green_name":"좌그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":285,"green_code":"right","green_name":"우그린"}]},
+            {"hole_number":2,"par":4,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":276,"green_code":"left","green_name":"좌그린"},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":313,"green_code":"right","green_name":"우그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":265,"green_code":"left","green_name":"좌그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":303,"green_code":"right","green_name":"우그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":210,"green_code":"left","green_name":"좌그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":248,"green_code":"right","green_name":"우그린"}]},
+            {"hole_number":3,"par":3,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":173,"green_code":"left","green_name":"좌그린"},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":196,"green_code":"right","green_name":"우그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":143,"green_code":"left","green_name":"좌그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":165,"green_code":"right","green_name":"우그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":98,"green_code":"left","green_name":"좌그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":120,"green_code":"right","green_name":"우그린"}]},
+            {"hole_number":4,"par":4,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":288,"green_code":"left","green_name":"좌그린"},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":259,"green_code":"right","green_name":"우그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":272,"green_code":"left","green_name":"좌그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":243,"green_code":"right","green_name":"우그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":212,"green_code":"left","green_name":"좌그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":185,"green_code":"right","green_name":"우그린"}]},
+            {"hole_number":5,"par":5,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":443,"green_code":"left","green_name":"좌그린"},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":431,"green_code":"right","green_name":"우그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":436,"green_code":"left","green_name":"좌그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":423,"green_code":"right","green_name":"우그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":330,"green_code":"left","green_name":"좌그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":315,"green_code":"right","green_name":"우그린"}]},
+            {"hole_number":6,"par":3,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":140,"green_code":"left","green_name":"좌그린"},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":145,"green_code":"right","green_name":"우그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":116,"green_code":"left","green_name":"좌그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":122,"green_code":"right","green_name":"우그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":95,"green_code":"left","green_name":"좌그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":104,"green_code":"right","green_name":"우그린"}]},
+            {"hole_number":7,"par":4,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":303,"green_code":"left","green_name":"좌그린"},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":315,"green_code":"right","green_name":"우그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":283,"green_code":"left","green_name":"좌그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":296,"green_code":"right","green_name":"우그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":225,"green_code":"left","green_name":"좌그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":236,"green_code":"right","green_name":"우그린"}]},
+            {"hole_number":8,"par":4,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":296,"green_code":"left","green_name":"좌그린"},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":315,"green_code":"right","green_name":"우그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":276,"green_code":"left","green_name":"좌그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":290,"green_code":"right","green_name":"우그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":265,"green_code":"left","green_name":"좌그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":280,"green_code":"right","green_name":"우그린"}]},
+            {"hole_number":9,"par":5,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":426,"green_code":"left","green_name":"좌그린"},{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":412,"green_code":"right","green_name":"우그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":416,"green_code":"left","green_name":"좌그린"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":402,"green_code":"right","green_name":"우그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":374,"green_code":"left","green_name":"좌그린"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":364,"green_code":"right","green_name":"우그린"}]}
+          ]
+        }
+      ]
+    }
+  ]
+}

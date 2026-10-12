@@ -1,0 +1,44 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "name": "에콜리안정선골프장",
+      "match_name": "에콜리안정선골프장",
+      "region": "강원",
+      "address": "정선군 신동읍 새골길 112-49",
+      "hole_count": 9,
+      "supports_screen": false,
+      "verification_status": "pending",
+      "review_notes": [
+        "공식 코스 제원 및 공략 페이지에서 9홀의 Blue/White/Red 티 거리를 확인했습니다. 다만 PAR 정보가 서로 맞지 않아 공개 검수 대기입니다.",
+        "충돌 근거: 공식 공략 페이지는 3번 홀 제목을 'Par 3 / HDCP 8'로 표기하지만 같은 홀 설명은 파4라고 서술합니다. 코스제원 페이지의 행은 'HDCP'로 표시되면서 4,3,4,4,5,3,4,5,4를 제공해 파처럼 보이는 값과도 충돌합니다. 8번 홀은 공략 페이지 표기가 'Par 56'으로 붙어 있습니다. 각 홀 PAR의 공식 확정 전까지 검증 완료로 전환하지 않습니다.",
+        "공식 출처: https://www.ecolian.or.kr/cotents/course/courseInfo.do?coDiv=105 및 https://www.ecolian.or.kr/cotents/course/courseAttack.do?coDiv=105 (2026-10-12 확인)"
+      ],
+      "routes": [
+        {
+          "route_code": "JEONGSEON",
+          "display_name": "정선",
+          "hole_count": 9,
+          "primary_tee_code": "blue",
+          "verification_status": "pending",
+          "source_url": "https://www.ecolian.or.kr/cotents/course/courseInfo.do?coDiv=105",
+          "review_notes": [
+            "공식 코스제원 페이지의 각 홀 Blue/White/Red 거리를 옮겼습니다. 6번 홀 공략 페이지에는 출처에서 이름이 확인되지 않는 추가 거리 99m도 있어 특정 티로 추정하지 않았습니다.",
+            "홀 PAR 출처 충돌로 관리자 재확인이 필요합니다. 임시 par 값은 공개되지 않으며 검증 상태는 pending입니다."
+          ],
+          "holes": [
+            {"hole_number":1,"par":4,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":300},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":262},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":216}]},
+            {"hole_number":2,"par":3,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":165},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":129},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":98}]},
+            {"hole_number":3,"par":3,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":285},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":261},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":229}]},
+            {"hole_number":4,"par":4,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":330},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":288},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":225}]},
+            {"hole_number":5,"par":5,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":535},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":495},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":442}]},
+            {"hole_number":6,"par":3,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":172},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":134},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":125}]},
+            {"hole_number":7,"par":4,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":290},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":290},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":218}]},
+            {"hole_number":8,"par":5,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":500},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":401},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":372}]},
+            {"hole_number":9,"par":4,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":350},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":312},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":278}]}
+          ]
+        }
+      ]
+    }
+  ]
+}
