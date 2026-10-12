@@ -1,0 +1,1492 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "name": "화순CC",
+      "match_name": "화순CC",
+      "aliases": [
+        "화순컨트리클럽",
+        "화순 C.C.",
+        "Hwasun Country Club"
+      ],
+      "region": "전남",
+      "address": "전남 화순군 도곡면 천태로 1000-151",
+      "hole_count": 27,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "운영사 공식 스코어카드의 SPRING/SUMMER/AUTUMN 각 9홀, 총 27홀 PAR·HDCP 및 Tournament/Champion/Regular/Front/Ladies 티별 거리(m)를 등록했습니다.",
+        "스프링 Ladies의 홀별 값 합산과 표기 Total이 10m 다릅니다. 출처값을 유지하고 코스 검수 메모에 표시했습니다. I.P 열은 개별 티가 아닌 별도 거리 표기라 선택 티에서 제외했습니다."
+      ],
+      "routes": [
+        {
+          "route_code": "SPRING",
+          "display_name": "스프링코스",
+          "hole_count": 9,
+          "primary_tee_code": "regular",
+          "source_url": "https://hwasuncc.co.kr/course/score.asp",
+          "par_source_url": "https://hwasuncc.co.kr/course/score.asp",
+          "verification_status": "verified",
+          "review_notes": [
+            "운영사 공식 스코어카드의 PAR·HDCP와 Tournament/Champion/Regular/Front/Ladies 티별 원거리(m)를 옮겼습니다. 티별 총계는 공식 표를 보존했습니다. Ladies 홀별 합산은 2,565m로 공식 총계 2,555m와 10m 차이가 있어 홀별 수치와 공식 총계를 함께 메모합니다. I.P 값은 별도 표기이며 티 거리가 아니므로 제외했습니다."
+          ],
+          "official_tee_totals_m": {
+            "tournament": 3344,
+            "champion": 3159,
+            "regular": 3025,
+            "front": 2867,
+            "ladies": 2555
+          },
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "handicap_index": 7,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 378,
+                  "distance_m_source": "official",
+                  "source_distance": 378,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 362,
+                  "distance_m_source": "official",
+                  "source_distance": 362,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 345,
+                  "distance_m_source": "official",
+                  "source_distance": 345,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 331,
+                  "distance_m_source": "official",
+                  "source_distance": 331,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 321,
+                  "distance_m_source": "official",
+                  "source_distance": 321,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 5,
+              "handicap_index": 2,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 516,
+                  "distance_m_source": "official",
+                  "source_distance": 516,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 488,
+                  "distance_m_source": "official",
+                  "source_distance": 488,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 472,
+                  "distance_m_source": "official",
+                  "source_distance": 472,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 462,
+                  "distance_m_source": "official",
+                  "source_distance": 462,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 323,
+                  "distance_m_source": "official",
+                  "source_distance": 323,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "handicap_index": 9,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 202,
+                  "distance_m_source": "official",
+                  "source_distance": 202,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 178,
+                  "distance_m_source": "official",
+                  "source_distance": 178,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 150,
+                  "distance_m_source": "official",
+                  "source_distance": 150,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 122,
+                  "distance_m_source": "official",
+                  "source_distance": 122,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 107,
+                  "distance_m_source": "official",
+                  "source_distance": 107,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "handicap_index": 3,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 418,
+                  "distance_m_source": "official",
+                  "source_distance": 418,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 385,
+                  "distance_m_source": "official",
+                  "source_distance": 385,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 370,
+                  "distance_m_source": "official",
+                  "source_distance": 370,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 348,
+                  "distance_m_source": "official",
+                  "source_distance": 348,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 323,
+                  "distance_m_source": "official",
+                  "source_distance": 323,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 3,
+              "handicap_index": 6,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 172,
+                  "distance_m_source": "official",
+                  "source_distance": 172,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 149,
+                  "distance_m_source": "official",
+                  "source_distance": 149,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 142,
+                  "distance_m_source": "official",
+                  "source_distance": 142,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 121,
+                  "distance_m_source": "official",
+                  "source_distance": 121,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 105,
+                  "distance_m_source": "official",
+                  "source_distance": 105,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "handicap_index": 1,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 388,
+                  "distance_m_source": "official",
+                  "source_distance": 388,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 373,
+                  "distance_m_source": "official",
+                  "source_distance": 373,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 366,
+                  "distance_m_source": "official",
+                  "source_distance": 366,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 353,
+                  "distance_m_source": "official",
+                  "source_distance": 353,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 344,
+                  "distance_m_source": "official",
+                  "source_distance": 344,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "handicap_index": 5,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 374,
+                  "distance_m_source": "official",
+                  "source_distance": 374,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 358,
+                  "distance_m_source": "official",
+                  "source_distance": 358,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 343,
+                  "distance_m_source": "official",
+                  "source_distance": 343,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 328,
+                  "distance_m_source": "official",
+                  "source_distance": 328,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 293,
+                  "distance_m_source": "official",
+                  "source_distance": 293,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "handicap_index": 4,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 406,
+                  "distance_m_source": "official",
+                  "source_distance": 406,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 386,
+                  "distance_m_source": "official",
+                  "source_distance": 386,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 371,
+                  "distance_m_source": "official",
+                  "source_distance": 371,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 353,
+                  "distance_m_source": "official",
+                  "source_distance": 353,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 319,
+                  "distance_m_source": "official",
+                  "source_distance": 319,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 5,
+              "handicap_index": 8,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 490,
+                  "distance_m_source": "official",
+                  "source_distance": 490,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 480,
+                  "distance_m_source": "official",
+                  "source_distance": 480,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 466,
+                  "distance_m_source": "official",
+                  "source_distance": 466,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 449,
+                  "distance_m_source": "official",
+                  "source_distance": 449,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 430,
+                  "distance_m_source": "official",
+                  "source_distance": 430,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "SUMMER",
+          "display_name": "서머코스",
+          "hole_count": 9,
+          "primary_tee_code": "regular",
+          "source_url": "https://hwasuncc.co.kr/course/score.asp",
+          "par_source_url": "https://hwasuncc.co.kr/course/score.asp",
+          "verification_status": "verified",
+          "review_notes": [
+            "운영사 공식 스코어카드의 PAR·HDCP와 Tournament/Champion/Regular/Front/Ladies 티별 원거리(m)를 옮겼습니다. 티별 총계는 공식 표를 보존했습니다. I.P 값은 별도 표기이며 티 거리가 아니므로 제외했습니다."
+          ],
+          "official_tee_totals_m": {
+            "tournament": 3162,
+            "champion": 3040,
+            "regular": 2852,
+            "front": 2703,
+            "ladies": 2422
+          },
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "handicap_index": 4,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 362,
+                  "distance_m_source": "official",
+                  "source_distance": 362,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 350,
+                  "distance_m_source": "official",
+                  "source_distance": 350,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 332,
+                  "distance_m_source": "official",
+                  "source_distance": 332,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 314,
+                  "distance_m_source": "official",
+                  "source_distance": 314,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 282,
+                  "distance_m_source": "official",
+                  "source_distance": 282,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "handicap_index": 2,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 392,
+                  "distance_m_source": "official",
+                  "source_distance": 392,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 382,
+                  "distance_m_source": "official",
+                  "source_distance": 382,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 367,
+                  "distance_m_source": "official",
+                  "source_distance": 367,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 342,
+                  "distance_m_source": "official",
+                  "source_distance": 342,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 298,
+                  "distance_m_source": "official",
+                  "source_distance": 298,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "handicap_index": 6,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 350,
+                  "distance_m_source": "official",
+                  "source_distance": 350,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 338,
+                  "distance_m_source": "official",
+                  "source_distance": 338,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 317,
+                  "distance_m_source": "official",
+                  "source_distance": 317,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 305,
+                  "distance_m_source": "official",
+                  "source_distance": 305,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 272,
+                  "distance_m_source": "official",
+                  "source_distance": 272,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 3,
+              "handicap_index": 5,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 175,
+                  "distance_m_source": "official",
+                  "source_distance": 175,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 169,
+                  "distance_m_source": "official",
+                  "source_distance": 169,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 131,
+                  "distance_m_source": "official",
+                  "source_distance": 131,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 120,
+                  "distance_m_source": "official",
+                  "source_distance": 120,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 104,
+                  "distance_m_source": "official",
+                  "source_distance": 104,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 5,
+              "handicap_index": 9,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 490,
+                  "distance_m_source": "official",
+                  "source_distance": 490,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 475,
+                  "distance_m_source": "official",
+                  "source_distance": 475,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 447,
+                  "distance_m_source": "official",
+                  "source_distance": 447,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 430,
+                  "distance_m_source": "official",
+                  "source_distance": 430,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 395,
+                  "distance_m_source": "official",
+                  "source_distance": 395,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "handicap_index": 7,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 355,
+                  "distance_m_source": "official",
+                  "source_distance": 355,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 341,
+                  "distance_m_source": "official",
+                  "source_distance": 341,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 329,
+                  "distance_m_source": "official",
+                  "source_distance": 329,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 313,
+                  "distance_m_source": "official",
+                  "source_distance": 313,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 274,
+                  "distance_m_source": "official",
+                  "source_distance": 274,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 3,
+              "handicap_index": 3,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 194,
+                  "distance_m_source": "official",
+                  "source_distance": 194,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 171,
+                  "distance_m_source": "official",
+                  "source_distance": 171,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 152,
+                  "distance_m_source": "official",
+                  "source_distance": 152,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 133,
+                  "distance_m_source": "official",
+                  "source_distance": 133,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 115,
+                  "distance_m_source": "official",
+                  "source_distance": 115,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 5,
+              "handicap_index": 8,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 448,
+                  "distance_m_source": "official",
+                  "source_distance": 448,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 435,
+                  "distance_m_source": "official",
+                  "source_distance": 435,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 416,
+                  "distance_m_source": "official",
+                  "source_distance": 416,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 404,
+                  "distance_m_source": "official",
+                  "source_distance": 404,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 376,
+                  "distance_m_source": "official",
+                  "source_distance": 376,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "handicap_index": 1,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 396,
+                  "distance_m_source": "official",
+                  "source_distance": 396,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 379,
+                  "distance_m_source": "official",
+                  "source_distance": 379,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 361,
+                  "distance_m_source": "official",
+                  "source_distance": 361,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 342,
+                  "distance_m_source": "official",
+                  "source_distance": 342,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 306,
+                  "distance_m_source": "official",
+                  "source_distance": 306,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "AUTUMN",
+          "display_name": "어텀코스",
+          "hole_count": 9,
+          "primary_tee_code": "regular",
+          "source_url": "https://hwasuncc.co.kr/course/score.asp",
+          "par_source_url": "https://hwasuncc.co.kr/course/score.asp",
+          "verification_status": "verified",
+          "review_notes": [
+            "운영사 공식 스코어카드의 PAR·HDCP와 Tournament/Champion/Regular/Front/Ladies 티별 원거리(m)를 옮겼습니다. 티별 총계는 공식 표를 보존했습니다. I.P 값은 별도 표기이며 티 거리가 아니므로 제외했습니다."
+          ],
+          "official_tee_totals_m": {
+            "tournament": 3063,
+            "champion": 2898,
+            "regular": 2740,
+            "front": 2614,
+            "ladies": 2398
+          },
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 5,
+              "handicap_index": 7,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 488,
+                  "distance_m_source": "official",
+                  "source_distance": 488,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 474,
+                  "distance_m_source": "official",
+                  "source_distance": 474,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 450,
+                  "distance_m_source": "official",
+                  "source_distance": 450,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 424,
+                  "distance_m_source": "official",
+                  "source_distance": 424,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 417,
+                  "distance_m_source": "official",
+                  "source_distance": 417,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "handicap_index": 4,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 336,
+                  "distance_m_source": "official",
+                  "source_distance": 336,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 323,
+                  "distance_m_source": "official",
+                  "source_distance": 323,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 308,
+                  "distance_m_source": "official",
+                  "source_distance": 308,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 282,
+                  "distance_m_source": "official",
+                  "source_distance": 282,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 273,
+                  "distance_m_source": "official",
+                  "source_distance": 273,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "handicap_index": 1,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 390,
+                  "distance_m_source": "official",
+                  "source_distance": 390,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 365,
+                  "distance_m_source": "official",
+                  "source_distance": 365,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 346,
+                  "distance_m_source": "official",
+                  "source_distance": 346,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 339,
+                  "distance_m_source": "official",
+                  "source_distance": 339,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 312,
+                  "distance_m_source": "official",
+                  "source_distance": 312,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "handicap_index": 5,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 368,
+                  "distance_m_source": "official",
+                  "source_distance": 368,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 346,
+                  "distance_m_source": "official",
+                  "source_distance": 346,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 322,
+                  "distance_m_source": "official",
+                  "source_distance": 322,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 309,
+                  "distance_m_source": "official",
+                  "source_distance": 309,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 286,
+                  "distance_m_source": "official",
+                  "source_distance": 286,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 3,
+              "handicap_index": 3,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 161,
+                  "distance_m_source": "official",
+                  "source_distance": 161,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 147,
+                  "distance_m_source": "official",
+                  "source_distance": 147,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 128,
+                  "distance_m_source": "official",
+                  "source_distance": 128,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 122,
+                  "distance_m_source": "official",
+                  "source_distance": 122,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 98,
+                  "distance_m_source": "official",
+                  "source_distance": 98,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "handicap_index": 9,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 312,
+                  "distance_m_source": "official",
+                  "source_distance": 312,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 290,
+                  "distance_m_source": "official",
+                  "source_distance": 290,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 272,
+                  "distance_m_source": "official",
+                  "source_distance": 272,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 257,
+                  "distance_m_source": "official",
+                  "source_distance": 257,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 231,
+                  "distance_m_source": "official",
+                  "source_distance": 231,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 5,
+              "handicap_index": 6,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 508,
+                  "distance_m_source": "official",
+                  "source_distance": 508,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 491,
+                  "distance_m_source": "official",
+                  "source_distance": 491,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 478,
+                  "distance_m_source": "official",
+                  "source_distance": 478,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 463,
+                  "distance_m_source": "official",
+                  "source_distance": 463,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 395,
+                  "distance_m_source": "official",
+                  "source_distance": 395,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "handicap_index": 8,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 160,
+                  "distance_m_source": "official",
+                  "source_distance": 160,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 140,
+                  "distance_m_source": "official",
+                  "source_distance": 140,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 128,
+                  "distance_m_source": "official",
+                  "source_distance": 128,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 126,
+                  "distance_m_source": "official",
+                  "source_distance": 126,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 109,
+                  "distance_m_source": "official",
+                  "source_distance": 109,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "handicap_index": 2,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 340,
+                  "distance_m_source": "official",
+                  "source_distance": 340,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 322,
+                  "distance_m_source": "official",
+                  "source_distance": 322,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 308,
+                  "distance_m_source": "official",
+                  "source_distance": 308,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 292,
+                  "distance_m_source": "official",
+                  "source_distance": 292,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 277,
+                  "distance_m_source": "official",
+                  "source_distance": 277,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
