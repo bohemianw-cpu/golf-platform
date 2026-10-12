@@ -1,0 +1,352 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "의령친환경골프장",
+      "name": "의령친환경골프장",
+      "region": "경남",
+      "address": "경상남도 의령군 의령읍 남강로 417",
+      "aliases": [
+        "의령친환경 골프장",
+        "의령군 친환경 골프장"
+      ],
+      "hole_count": 9,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "의령친환경골프장 공식 코스개요와 9개 홀 상세 페이지에서 PAR·HDCP 및 Champion/Regular/Lady 티별 미터 거리를 입력했습니다. 공식 거리표 합계는 Champion 2,891m, Regular 2,679m, Lady 2,421m이며 모두 홀별 상세값의 합과 일치합니다.",
+        "공식 안내에는 의병코스는 1번 홀부터, 토요애코스는 8번 홀부터 출발한다고 적혀 있고, 별도 9홀 배열은 게시하지 않습니다. 이 자료에서는 동일한 9개 홀 경로를 한 레이아웃으로 저장하고 두 출발 지점을 메모로 보존했습니다.",
+        "개별 홀 상세 HDCP는 1번·4번에 1, 8번·9번에 2가 중복 표기되어 있어 원문값을 그대로 저장했습니다. 홀별 점수 통계나 핸디캡 보정에 사용할 때 원문 중복을 고려해야 합니다.",
+        "공식 원문: https://xn--289a6cv80bnhpdlav75a4vlwrc.kr/Course/View 및 /Course/hole/hole01.html ~ hole09.html (2026-10-12 확인)."
+      ],
+      "routes": [
+        {
+          "route_code": "UIRYEONG",
+          "display_name": "의병·토요애 (9홀)",
+          "hole_count": 9,
+          "primary_tee_code": "regular",
+          "verification_status": "verified",
+          "source_url": "https://xn--289a6cv80bnhpdlav75a4vlwrc.kr/Course/View",
+          "par_source_url": "https://xn--289a6cv80bnhpdlav75a4vlwrc.kr/Course/hole/hole01.html",
+          "official_tee_totals_m": {
+            "champion": 2891,
+            "regular": 2679,
+            "lady": 2421
+          },
+          "review_notes": [
+            "공식 코스개요 및 홀 상세의 PAR·HDCP·Champion/Regular/Lady 거리를 반영했습니다. 의병코스는 1번, 토요애코스는 8번부터 출발한다는 안내를 보존했습니다.",
+            "공식 홀 상세의 HDCP가 1번/4번 및 8번/9번에서 중복되어 원문 그대로 기록했습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "handicap_index": 1,
+              "tees": [
+                {
+                  "tee_code": "champion",
+                  "display_name": "챔피언",
+                  "tee_color": "#1f2937",
+                  "distance_m": 322,
+                  "distance_m_source": "official",
+                  "source_distance": 322,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "레귤러",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 285,
+                  "distance_m_source": "official",
+                  "source_distance": 285,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ec4899",
+                  "distance_m": 267,
+                  "distance_m_source": "official",
+                  "source_distance": 267,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 3,
+              "handicap_index": 5,
+              "tees": [
+                {
+                  "tee_code": "champion",
+                  "display_name": "챔피언",
+                  "tee_color": "#1f2937",
+                  "distance_m": 125,
+                  "distance_m_source": "official",
+                  "source_distance": 125,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "레귤러",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 125,
+                  "distance_m_source": "official",
+                  "source_distance": 125,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ec4899",
+                  "distance_m": 110,
+                  "distance_m_source": "official",
+                  "source_distance": 110,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 5,
+              "handicap_index": 9,
+              "tees": [
+                {
+                  "tee_code": "champion",
+                  "display_name": "챔피언",
+                  "tee_color": "#1f2937",
+                  "distance_m": 514,
+                  "distance_m_source": "official",
+                  "source_distance": 514,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "레귤러",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 483,
+                  "distance_m_source": "official",
+                  "source_distance": 483,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ec4899",
+                  "distance_m": 452,
+                  "distance_m_source": "official",
+                  "source_distance": 452,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "handicap_index": 1,
+              "tees": [
+                {
+                  "tee_code": "champion",
+                  "display_name": "챔피언",
+                  "tee_color": "#1f2937",
+                  "distance_m": 340,
+                  "distance_m_source": "official",
+                  "source_distance": 340,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "레귤러",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 312,
+                  "distance_m_source": "official",
+                  "source_distance": 312,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ec4899",
+                  "distance_m": 279,
+                  "distance_m_source": "official",
+                  "source_distance": 279,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 3,
+              "handicap_index": 7,
+              "tees": [
+                {
+                  "tee_code": "champion",
+                  "display_name": "챔피언",
+                  "tee_color": "#1f2937",
+                  "distance_m": 126,
+                  "distance_m_source": "official",
+                  "source_distance": 126,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "레귤러",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 126,
+                  "distance_m_source": "official",
+                  "source_distance": 126,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ec4899",
+                  "distance_m": 101,
+                  "distance_m_source": "official",
+                  "source_distance": 101,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "handicap_index": 3,
+              "tees": [
+                {
+                  "tee_code": "champion",
+                  "display_name": "챔피언",
+                  "tee_color": "#1f2937",
+                  "distance_m": 291,
+                  "distance_m_source": "official",
+                  "source_distance": 291,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "레귤러",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 267,
+                  "distance_m_source": "official",
+                  "source_distance": 267,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ec4899",
+                  "distance_m": 230,
+                  "distance_m_source": "official",
+                  "source_distance": 230,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 5,
+              "handicap_index": 6,
+              "tees": [
+                {
+                  "tee_code": "champion",
+                  "display_name": "챔피언",
+                  "tee_color": "#1f2937",
+                  "distance_m": 512,
+                  "distance_m_source": "official",
+                  "source_distance": 512,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "레귤러",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 470,
+                  "distance_m_source": "official",
+                  "source_distance": 470,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ec4899",
+                  "distance_m": 441,
+                  "distance_m_source": "official",
+                  "source_distance": 441,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "handicap_index": 2,
+              "tees": [
+                {
+                  "tee_code": "champion",
+                  "display_name": "챔피언",
+                  "tee_color": "#1f2937",
+                  "distance_m": 333,
+                  "distance_m_source": "official",
+                  "source_distance": 333,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "레귤러",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 312,
+                  "distance_m_source": "official",
+                  "source_distance": 312,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ec4899",
+                  "distance_m": 277,
+                  "distance_m_source": "official",
+                  "source_distance": 277,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "handicap_index": 2,
+              "tees": [
+                {
+                  "tee_code": "champion",
+                  "display_name": "챔피언",
+                  "tee_color": "#1f2937",
+                  "distance_m": 328,
+                  "distance_m_source": "official",
+                  "source_distance": 328,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "레귤러",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 299,
+                  "distance_m_source": "official",
+                  "source_distance": 299,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ec4899",
+                  "distance_m": 264,
+                  "distance_m_source": "official",
+                  "source_distance": 264,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
