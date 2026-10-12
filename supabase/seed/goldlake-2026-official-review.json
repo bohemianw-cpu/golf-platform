@@ -1,0 +1,1759 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "name": "골드레이크CC",
+      "match_name": "골드레이크CC",
+      "region": "전남",
+      "address": "전남 나주시 남평읍 나주호로 442-129",
+      "aliases": [],
+      "hole_count": 36,
+      "verification_status": "pending",
+      "supports_screen": false,
+      "review_notes": [
+        "MCST 카탈로그는 18홀로 등록되어 있으나 공식 홈페이지는 36홀(12,860m) 및 4개 9홀 코스로 표기합니다.",
+        "공식 코스표 M 행은 홀 지도 골드티 합계와 일치하지만 클럽특징 코스개요 Gold/Lake 전장은 지도 합계와 각각 44m, 42m 다릅니다.",
+        "공식 티 지도는 골드·흰색·회색·빨강 마커를 보여줍니다. 일부 홀에 흰색 마커가 여러 개이며 별도 이름이 없어 흰색 A/B/C는 지도상 거리 순서로 임시 구분했습니다."
+      ],
+      "routes": [
+        {
+          "route_code": "GOLD",
+          "display_name": "Gold (회원제)",
+          "hole_count": 9,
+          "primary_tee_code": "gold",
+          "source_url": "https://www.goldlakecc.co.kr/course/course01.asp",
+          "source_image_pattern": "https://www.goldlakecc.co.kr/images/course/goidNN.jpg",
+          "verification_status": "pending",
+          "official_course_overview_distance_m": 3184,
+          "review_notes": [
+            "클럽특징 공식 코스개요는 3,184m, 홀 지도 골드티 합계는 3,140m입니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 5,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid01.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 520,
+                  "source_distance": 520,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 502,
+                  "source_distance": 502,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_b",
+                  "display_name": "화이트티 B",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 B (거리 순)",
+                  "distance_m": 479,
+                  "source_distance": 479,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 464,
+                  "source_distance": 464,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 436,
+                  "source_distance": 436,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid02.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 330,
+                  "source_distance": 330,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 319,
+                  "source_distance": 319,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 309,
+                  "source_distance": 309,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 274,
+                  "source_distance": 274,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid03.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 210,
+                  "source_distance": 210,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 191,
+                  "source_distance": 191,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_b",
+                  "display_name": "화이트티 B",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 B (거리 순)",
+                  "distance_m": 175,
+                  "source_distance": 175,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 163,
+                  "source_distance": 163,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 119,
+                  "source_distance": 119,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid04.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 400,
+                  "source_distance": 400,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 379,
+                  "source_distance": 379,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_b",
+                  "display_name": "화이트티 B",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 B (거리 순)",
+                  "distance_m": 351,
+                  "source_distance": 351,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 319,
+                  "source_distance": 319,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 279,
+                  "source_distance": 279,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid05.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 365,
+                  "source_distance": 365,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 345,
+                  "source_distance": 345,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 327,
+                  "source_distance": 327,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 293,
+                  "source_distance": 293,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 5,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid06.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 505,
+                  "source_distance": 505,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 486,
+                  "source_distance": 486,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_b",
+                  "display_name": "화이트티 B",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 B (거리 순)",
+                  "distance_m": 465,
+                  "source_distance": 465,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 451,
+                  "source_distance": 451,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 358,
+                  "source_distance": 358,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 3,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid07.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 140,
+                  "source_distance": 140,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 130,
+                  "source_distance": 130,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 112,
+                  "source_distance": 112,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 95,
+                  "source_distance": 95,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid08.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 340,
+                  "source_distance": 340,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 320,
+                  "source_distance": 320,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 304,
+                  "source_distance": 304,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 276,
+                  "source_distance": 276,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/goid09.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 330,
+                  "source_distance": 330,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 307,
+                  "source_distance": 307,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 292,
+                  "source_distance": 292,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 266,
+                  "source_distance": 266,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "LAKE",
+          "display_name": "Lake (회원제)",
+          "hole_count": 9,
+          "primary_tee_code": "gold",
+          "source_url": "https://www.goldlakecc.co.kr/course/course01.asp",
+          "source_image_pattern": "https://www.goldlakecc.co.kr/images/course/lakeNN.jpg",
+          "verification_status": "pending",
+          "official_course_overview_distance_m": 3275,
+          "review_notes": [
+            "클럽특징 공식 코스개요는 3,275m, 홀 지도 골드티 합계는 3,317m입니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake01.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 420,
+                  "source_distance": 420,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 410,
+                  "source_distance": 410,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_b",
+                  "display_name": "화이트티 B",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 B (거리 순)",
+                  "distance_m": 392,
+                  "source_distance": 392,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_c",
+                  "display_name": "화이트티 C",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 C (거리 순)",
+                  "distance_m": 376,
+                  "source_distance": 376,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 348,
+                  "source_distance": 348,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 325,
+                  "source_distance": 325,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 3,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake02.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 200,
+                  "source_distance": 200,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 188,
+                  "source_distance": 188,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_b",
+                  "display_name": "화이트티 B",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 B (거리 순)",
+                  "distance_m": 174,
+                  "source_distance": 174,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 147,
+                  "source_distance": 147,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 120,
+                  "source_distance": 120,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 5,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake03.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 490,
+                  "source_distance": 490,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 463,
+                  "source_distance": 463,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 441,
+                  "source_distance": 441,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 407,
+                  "source_distance": 407,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake04.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 335,
+                  "source_distance": 335,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 312,
+                  "source_distance": 312,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 294,
+                  "source_distance": 294,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 266,
+                  "source_distance": 266,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake05.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 372,
+                  "source_distance": 372,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 352,
+                  "source_distance": 352,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 338,
+                  "source_distance": 338,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 297,
+                  "source_distance": 297,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 3,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake06.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 175,
+                  "source_distance": 175,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 155,
+                  "source_distance": 155,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 143,
+                  "source_distance": 143,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 120,
+                  "source_distance": 120,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake07.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 380,
+                  "source_distance": 380,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 364,
+                  "source_distance": 364,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_b",
+                  "display_name": "화이트티 B",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 B (거리 순)",
+                  "distance_m": 349,
+                  "source_distance": 349,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 341,
+                  "source_distance": 341,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 307,
+                  "source_distance": 307,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake08.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 430,
+                  "source_distance": 430,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 408,
+                  "source_distance": 408,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 376,
+                  "source_distance": 376,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 379,
+                  "source_distance": 379,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 5,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/lake09.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 515,
+                  "source_distance": 515,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 503,
+                  "source_distance": 503,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_b",
+                  "display_name": "화이트티 B",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 B (거리 순)",
+                  "distance_m": 484,
+                  "source_distance": 484,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 447,
+                  "source_distance": 447,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 396,
+                  "source_distance": 396,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "HILL",
+          "display_name": "Hill (대중제)",
+          "hole_count": 9,
+          "primary_tee_code": "gold",
+          "source_url": "https://www.goldlakecc.co.kr/course/course01.asp",
+          "source_image_pattern": "https://www.goldlakecc.co.kr/images/course/hillNN.jpg",
+          "verification_status": "pending",
+          "official_course_overview_distance_m": 3330,
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill01.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 400,
+                  "source_distance": 400,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 375,
+                  "source_distance": 375,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_b",
+                  "display_name": "화이트티 B",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 B (거리 순)",
+                  "distance_m": 352,
+                  "source_distance": 352,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 335,
+                  "source_distance": 335,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 311,
+                  "source_distance": 311,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 5,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill02.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 566,
+                  "source_distance": 566,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 545,
+                  "source_distance": 545,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_b",
+                  "display_name": "화이트티 B",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 B (거리 순)",
+                  "distance_m": 518,
+                  "source_distance": 518,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 502,
+                  "source_distance": 502,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 457,
+                  "source_distance": 457,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill03.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 407,
+                  "source_distance": 407,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 391,
+                  "source_distance": 391,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 367,
+                  "source_distance": 367,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 323,
+                  "source_distance": 323,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 3,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill04.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 195,
+                  "source_distance": 195,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 179,
+                  "source_distance": 179,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_b",
+                  "display_name": "화이트티 B",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 B (거리 순)",
+                  "distance_m": 163,
+                  "source_distance": 163,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 142,
+                  "source_distance": 142,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 119,
+                  "source_distance": 119,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill05.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 353,
+                  "source_distance": 353,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 324,
+                  "source_distance": 324,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 304,
+                  "source_distance": 304,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 278,
+                  "source_distance": 278,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 5,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill06.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 521,
+                  "source_distance": 521,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 500,
+                  "source_distance": 500,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_b",
+                  "display_name": "화이트티 B",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 B (거리 순)",
+                  "distance_m": 455,
+                  "source_distance": 455,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 447,
+                  "source_distance": 447,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 419,
+                  "source_distance": 419,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 3,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill07.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 168,
+                  "source_distance": 168,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 144,
+                  "source_distance": 144,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 122,
+                  "source_distance": 122,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 108,
+                  "source_distance": 108,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill08.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 368,
+                  "source_distance": 368,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 346,
+                  "source_distance": 346,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 321,
+                  "source_distance": 321,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 293,
+                  "source_distance": 293,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/hill09.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 352,
+                  "source_distance": 352,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 329,
+                  "source_distance": 329,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 304,
+                  "source_distance": 304,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 274,
+                  "source_distance": 274,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "VALLEY",
+          "display_name": "Valley (대중제)",
+          "hole_count": 9,
+          "primary_tee_code": "gold",
+          "source_url": "https://www.goldlakecc.co.kr/course/course01.asp",
+          "source_image_pattern": "https://www.goldlakecc.co.kr/images/course/valleyNN.jpg",
+          "verification_status": "pending",
+          "official_course_overview_distance_m": 3071,
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley01.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 364,
+                  "source_distance": 364,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 344,
+                  "source_distance": 344,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_b",
+                  "display_name": "화이트티 B",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 B (거리 순)",
+                  "distance_m": 322,
+                  "source_distance": 322,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 311,
+                  "source_distance": 311,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 293,
+                  "source_distance": 293,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 3,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley02.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 157,
+                  "source_distance": 157,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 140,
+                  "source_distance": 140,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 125,
+                  "source_distance": 125,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 109,
+                  "source_distance": 109,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley03.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 377,
+                  "source_distance": 377,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 350,
+                  "source_distance": 350,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 325,
+                  "source_distance": 325,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 288,
+                  "source_distance": 288,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 5,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley04.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 500,
+                  "source_distance": 500,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 476,
+                  "source_distance": 476,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 455,
+                  "source_distance": 455,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 399,
+                  "source_distance": 399,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley05.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 346,
+                  "source_distance": 346,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 321,
+                  "source_distance": 321,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 298,
+                  "source_distance": 298,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 275,
+                  "source_distance": 275,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley06.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 321,
+                  "source_distance": 321,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 298,
+                  "source_distance": 298,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 276,
+                  "source_distance": 276,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 240,
+                  "source_distance": 240,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley07.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 361,
+                  "source_distance": 361,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 340,
+                  "source_distance": 340,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_b",
+                  "display_name": "화이트티 B",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 B (거리 순)",
+                  "distance_m": 327,
+                  "source_distance": 327,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 305,
+                  "source_distance": 305,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 283,
+                  "source_distance": 283,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley08.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 153,
+                  "source_distance": 153,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 133,
+                  "source_distance": 133,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 115,
+                  "source_distance": 115,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 99,
+                  "source_distance": 99,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 5,
+              "source_image_url": "https://www.goldlakecc.co.kr/images/course/valley09.jpg",
+              "tees": [
+                {
+                  "tee_code": "gold",
+                  "display_name": "골드티",
+                  "tee_color": "#c9a227",
+                  "source_tee_label": "골드 마커",
+                  "distance_m": 492,
+                  "source_distance": 492,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white_a",
+                  "display_name": "화이트티 A",
+                  "tee_color": "#f8fafc",
+                  "source_tee_label": "흰색 마커 A (거리 순)",
+                  "distance_m": 472,
+                  "source_distance": 472,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "gray",
+                  "display_name": "그레이티",
+                  "tee_color": "#9ca3af",
+                  "source_tee_label": "회색 마커",
+                  "distance_m": 450,
+                  "source_distance": 450,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "레드티",
+                  "tee_color": "#ef4444",
+                  "source_tee_label": "빨강 마커",
+                  "distance_m": 420,
+                  "source_distance": 420,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
