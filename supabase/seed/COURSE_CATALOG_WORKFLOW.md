@@ -51,7 +51,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 구장명과 주소가 공식 홈페이지 및 MCST 레코드와 같은 시설을 가리키는지 확인합니다. 이름이 비슷한 회원제/대중제 시설은 각각 식별합니다.
 - 18홀 이상 구장은 사용자가 실제 라운드에서 선택하는 코스 조합별로 9홀 구간을 나눕니다. 9홀 코스는 독립 경로로 입력합니다.
 - 파는 각 홀별 공식 표를 옮기고 9홀 합계가 공식값과 맞는지 확인합니다.
-- 공식 티별 총거리가 공개되어 있으면 각 티 총거리와 홀별 거리 합이 같은지 importer로 확인합니다. 차이가 있으면 원문 수치와 차이를 기록하고 검수 완료로 전환하지 않습니다.
+- 공식 티별 총거리가 공개되어 있으면 합계는 오류 탐지용으로 대조하고, 공식 홀별 파·거리·단위가 충분히 명확하면 합계 차이만으로 적재나 검수를 막지 않습니다. 값 차이나 표기 이상은 원문과 함께 `review_notes`에 남깁니다.
 - 거리는 공식 표의 원 단위(`source_distance`, `source_unit`)와 미터 환산값(`distance_m`)을 함께 보존합니다. 반올림을 포함한 환산 규칙을 검수 메모에 기록합니다.
 - 공식 원표가 야드와 미터를 함께 제공하면 `distance_m`에는 표의 공식 미터값을 그대로 저장하고, `source_distance`/`source_unit`에는 공식 야드값을 보존합니다. 두 게시값이 수학적 환산과 다를 수 있으므로 이 경우 단순 환산 차이만으로 원자료 오류로 판정하지 말고, 두 값과 공식 합계·표의 티 배치를 대조해 검수 메모에 남깁니다.
 - 공식 자료가 티 위치를 나누지 않고 홀마다 거리 한 값만 공개하면 `official` 단일 티로 저장하고, 티 명칭이나 색상을 추정하지 않습니다. 공식 자료에 티 이름이 있으면 그 이름을 그대로 사용합니다.
@@ -66,6 +66,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 ## 최근 공식 자료 반영
 
+- 해운대비치골프앤리조트: 공식 코스소개 및 홀별 상세 페이지의 마운틴 1~9번, 오션 10~18번 PAR·HDCP·단일 공식 거리를 반영했습니다. 티별 거리는 게시되지 않아 티 색상을 추정하지 않았고, 공식 OUT 3,273m / IN 3,331m 총계와 홀별 합이 일치합니다. 마운틴 1·9번 HDCP가 모두 7로 게시된 특이사항은 공식 표기 그대로 메모했습니다. 자료 파일: `haeundae-beach-2026-official-verified.json`; 출처: [코스 소개](https://www.haeundaebeachcc.co.kr/course/course.do), [마운틴 1~9번 홀](https://www.haeundaebeachcc.co.kr/course/mountain01.do) ~ `mountain09.do`, [오션 10~18번 홀](https://www.haeundaebeachcc.co.kr/course/ocean01.do) ~ `ocean09.do` (2026-10-12 확인).
 - 하이스트CC: 공식 9홀 코스 페이지의 PAR·HDCP와 Blue/White/Yellow/Red 티별 거리를 반영했습니다. 홀 설명과 전체 전장 대조를 통해 홀별 숫자를 m로 저장했으며, Blue 9홀 합계와 소개 전장은 약 20yd 차이가 있어 공식 개별값과 차이를 메모에 보존했습니다. 8번 Red 티는 공식 표의 `-`대로 저장하지 않았습니다. 자료 파일: `highest-2026-official-verified.json`; 출처: [코스 안내](https://www.highestcc.co.kr/course), [클럽 소개와 전체 전장](https://www.highestcc.co.kr/intro/club) (2026-10-12 확인).
 - 해라CC: 공식 9홀 도면의 파·빨강/노랑 티 거리(m)를 등록하고, 일부 홀에서 제공되는 흰색/빨간색 홀컵 위치별 거리도 별도 구성으로 보존했습니다. 일부 홀은 빨강 티 거리만 공개되어 노랑 티를 추정하지 않았으며, 모든 홀의 핸디캡 인덱스가 공개되지는 않아 저장하지 않았습니다. 자료 파일: `haera-2026-official-verified.json`; 출처: [코스 안내](https://www.haeracc.co.kr/course), [1번 홀 도면](https://www.haeracc.co.kr/img/course/1.png?v=1) ~ [9번 홀 도면](https://www.haeracc.co.kr/img/course/9.png?v=1) (2026-10-12 확인).
 - 나주힐스CC: 공식 9홀 페이지의 PAR·HDCP·블랙/블루/화이트/레드 거리(m)를 반영했습니다. 일부 홀에 게시되지 않은 티는 저장하지 않았습니다. 자료 파일: `naju-hills-2026-official-verified.json`; 출처: [코스 전체](https://najuhills.com/course-full/), [1번 홀](https://najuhills.com/course-01/) ~ [9번 홀](https://najuhills.com/course-09/) (2026-10-12 확인).

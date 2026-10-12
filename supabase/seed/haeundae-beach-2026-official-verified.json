@@ -1,0 +1,67 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "해운대비치골프앤리조트",
+      "name": "해운대비치골프앤리조트",
+      "region": "부산",
+      "address": "부산광역시 기장군 기장읍 대변로 74",
+      "hole_count": 18,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "공식 코스소개와 홀별 상세 페이지에서 마운틴 1~9번, 오션 10~18번의 PAR·HDCP·공식 미터 및 야드 거리를 확인했습니다. 티별 구분은 게시되지 않아 실제 티 색상을 추정하지 않고 홀별 공식 단일 거리로 저장합니다.",
+        "공식 개요표의 마운틴 OUT 총거리는 3,273m, 오션 IN 총거리는 3,331m이며 홀별 미터값 합과 일치합니다. 상세 페이지에 게시된 홀별 HDCP도 그대로 옮겼습니다. 마운틴 1번과 9번 모두 HDCP 7로 표시되는 특이사항은 공식 표기 그대로 유지했습니다.",
+        "출처: https://www.haeundaebeachcc.co.kr/course/course.do, https://www.haeundaebeachcc.co.kr/course/mountain01.do ~ mountain09.do, https://www.haeundaebeachcc.co.kr/course/ocean01.do ~ ocean09.do (2026-10-12 확인)."
+      ],
+      "routes": [
+        {
+          "route_code": "mountain",
+          "display_name": "마운틴 코스 (OUT)",
+          "hole_count": 9,
+          "primary_tee_code": "official",
+          "verification_status": "verified",
+          "source_url": "https://www.haeundaebeachcc.co.kr/course/mountain01.do",
+          "par_source_url": "https://www.haeundaebeachcc.co.kr/course/course.do",
+          "review_notes": [
+            "공식 1~9번 홀 상세 페이지의 홀별 거리는 M/YDS가 함께 표기되며, 공식 개요표 OUT 3,273m와 합계가 일치합니다. 티 색상별 거리는 없으므로 단일 공식 거리로 저장합니다. 1번과 9번의 HDCP가 모두 7로 게시되어 원문 그대로 반영했습니다."
+          ],
+          "holes": [
+            { "hole_number": 1, "par": 5, "handicap_index": 7, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 496, "distance_m_source": "official", "source_distance": 496, "source_unit": "m" }] },
+            { "hole_number": 2, "par": 4, "handicap_index": 14, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 348, "distance_m_source": "official", "source_distance": 348, "source_unit": "m" }] },
+            { "hole_number": 3, "par": 3, "handicap_index": 10, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 196, "distance_m_source": "official", "source_distance": 196, "source_unit": "m" }] },
+            { "hole_number": 4, "par": 5, "handicap_index": 6, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 549, "distance_m_source": "official", "source_distance": 549, "source_unit": "m" }] },
+            { "hole_number": 5, "par": 4, "handicap_index": 5, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 392, "distance_m_source": "official", "source_distance": 392, "source_unit": "m" }] },
+            { "hole_number": 6, "par": 4, "handicap_index": 2, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 387, "distance_m_source": "official", "source_distance": 387, "source_unit": "m" }] },
+            { "hole_number": 7, "par": 3, "handicap_index": 17, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 161, "distance_m_source": "official", "source_distance": 161, "source_unit": "m" }] },
+            { "hole_number": 8, "par": 4, "handicap_index": 9, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 399, "distance_m_source": "official", "source_distance": 399, "source_unit": "m" }] },
+            { "hole_number": 9, "par": 4, "handicap_index": 7, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 345, "distance_m_source": "official", "source_distance": 345, "source_unit": "m" }] }
+          ]
+        },
+        {
+          "route_code": "ocean",
+          "display_name": "오션 코스 (IN)",
+          "hole_count": 9,
+          "primary_tee_code": "official",
+          "verification_status": "verified",
+          "source_url": "https://www.haeundaebeachcc.co.kr/course/ocean01.do",
+          "par_source_url": "https://www.haeundaebeachcc.co.kr/course/course.do",
+          "review_notes": [
+            "공식 10~18번 홀 상세 페이지의 홀별 거리 M/YDS를 확인했습니다. 저장한 홀 번호는 코스별 1~9번으로 매핑했으며, 공식 개요표 IN 3,331m와 합계가 일치합니다. 티 색상별 거리는 없어 단일 공식 거리로 저장합니다."
+          ],
+          "holes": [
+            { "hole_number": 1, "par": 4, "handicap_index": 11, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 373, "distance_m_source": "official", "source_distance": 373, "source_unit": "m" }] },
+            { "hole_number": 2, "par": 3, "handicap_index": 16, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 201, "distance_m_source": "official", "source_distance": 201, "source_unit": "m" }] },
+            { "hole_number": 3, "par": 5, "handicap_index": 13, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 538, "distance_m_source": "official", "source_distance": 538, "source_unit": "m" }] },
+            { "hole_number": 4, "par": 4, "handicap_index": 18, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 344, "distance_m_source": "official", "source_distance": 344, "source_unit": "m" }] },
+            { "hole_number": 5, "par": 4, "handicap_index": 1, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 393, "distance_m_source": "official", "source_distance": 393, "source_unit": "m" }] },
+            { "hole_number": 6, "par": 3, "handicap_index": 12, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 207, "distance_m_source": "official", "source_distance": 207, "source_unit": "m" }] },
+            { "hole_number": 7, "par": 5, "handicap_index": 3, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 553, "distance_m_source": "official", "source_distance": 553, "source_unit": "m" }] },
+            { "hole_number": 8, "par": 4, "handicap_index": 8, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 381, "distance_m_source": "official", "source_distance": 381, "source_unit": "m" }] },
+            { "hole_number": 9, "par": 4, "handicap_index": 15, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 341, "distance_m_source": "official", "source_distance": 341, "source_unit": "m" }] }
+          ]
+        }
+      ]
+    }
+  ]
+}
