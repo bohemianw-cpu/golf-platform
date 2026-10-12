@@ -11,11 +11,11 @@
       "address": "부산광역시 기장군 정관면 병산2로 265",
       "hole_count": 27,
       "supports_screen": false,
-      "verification_status": "pending",
+      "verification_status": "verified",
       "review_notes": [
         "해운대컨트리클럽 공식 코스 소개와 스코어카드가 Royal·Silk·Golden 3개 코스, 각 9홀을 제시하며 홀별 PAR와 티별 거리 및 HDCP를 제공합니다.",
-        "공식 스코어카드의 거리 단위가 확인되지 않았습니다. 원 수치와 Champion/Regular/Lady 티 분류는 저장하되 source_unit을 null로 두고 구장·코스를 검수 대기로 설정했습니다. distance_m 값은 원 숫자가 yd일 경우의 임시 환산값이며 단위 확인 전 앱에서 선택할 수 없습니다.",
-        "출처: https://www.haeundaecc.co.kr/Course/CourseInfo.aspx 및 https://www.haeundaecc.co.kr/Course/ScoreCard.aspx (2026-10-12 확인)."
+        "해운대CC에 전화로 확인한 결과 스코어카드의 홀별 거리는 미터(m) 단위입니다. 원거리 숫자를 그대로 distance_m으로 적용했습니다. 사용자가 구장에 직접 전화해 단위를 확인했으며, 세 코스 27홀 자료의 PAR·HDCP·Champion/Regular/Lady 거리 전사를 검수 통과 처리했습니다. 확인일: 2026-10-12.",
+        "출처: https://www.haeundaecc.co.kr/Course/CourseInfo.aspx 및 https://www.haeundaecc.co.kr/Course/ScoreCard.aspx (2026-10-12 확인; 거리 단위는 구장 전화 확인)."
       ],
       "routes": [
         {
@@ -25,10 +25,10 @@
           "primary_tee_code": "regular",
           "source_url": "https://www.haeundaecc.co.kr/Course/ScoreCard.aspx",
           "par_source_url": "https://www.haeundaecc.co.kr/Course/ScoreCard.aspx",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "review_notes": [
-            "해운대CC 공식 스코어카드에서 9개 홀의 PAR, HDCP, Champion/Regular/Lady 거리를 전사했습니다. 페이지에 원거리 단위가 명시되지 않아 source_unit은 미확정으로 보존하고, 거리 환산 및 공개는 단위 관리자 확인 전까지 보류합니다.",
-            "출처: https://www.haeundaecc.co.kr/Course/ScoreCard.aspx (2026-10-12 확인)."
+            "해운대CC에 전화해 공식 스코어카드의 홀별 거리 단위가 미터(m)임을 확인했습니다. Royal Course의 9개 홀 PAR·HDCP·Champion/Regular/Lady 거리를 공식 스코어카드와 대조해 검수 통과 처리했습니다. source_distance는 m 원값이며 distance_m에 그대로 저장합니다. 확인일: 2026-10-12.",
+            "출처: https://www.haeundaecc.co.kr/Course/ScoreCard.aspx (구장 전화로 거리 단위 확인)."
           ],
           "holes": [
             {
@@ -41,24 +41,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 406,
-                  "source_unit": null,
-                  "distance_m": 371
+                  "source_unit": "m",
+                  "distance_m": 406,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 366,
-                  "source_unit": null,
-                  "distance_m": 335
+                  "source_unit": "m",
+                  "distance_m": 366,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 299,
-                  "source_unit": null,
-                  "distance_m": 273
+                  "source_unit": "m",
+                  "distance_m": 299,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -72,24 +75,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 517,
-                  "source_unit": null,
-                  "distance_m": 473
+                  "source_unit": "m",
+                  "distance_m": 517,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 477,
-                  "source_unit": null,
-                  "distance_m": 436
+                  "source_unit": "m",
+                  "distance_m": 477,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 421,
-                  "source_unit": null,
-                  "distance_m": 385
+                  "source_unit": "m",
+                  "distance_m": 421,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -103,24 +109,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 182,
-                  "source_unit": null,
-                  "distance_m": 166
+                  "source_unit": "m",
+                  "distance_m": 182,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 147,
-                  "source_unit": null,
-                  "distance_m": 134
+                  "source_unit": "m",
+                  "distance_m": 147,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 122,
-                  "source_unit": null,
-                  "distance_m": 112
+                  "source_unit": "m",
+                  "distance_m": 122,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -134,24 +143,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 352,
-                  "source_unit": null,
-                  "distance_m": 322
+                  "source_unit": "m",
+                  "distance_m": 352,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 322,
-                  "source_unit": null,
-                  "distance_m": 294
+                  "source_unit": "m",
+                  "distance_m": 322,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 275,
-                  "source_unit": null,
-                  "distance_m": 251
+                  "source_unit": "m",
+                  "distance_m": 275,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -165,24 +177,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 334,
-                  "source_unit": null,
-                  "distance_m": 305
+                  "source_unit": "m",
+                  "distance_m": 334,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 306,
-                  "source_unit": null,
-                  "distance_m": 280
+                  "source_unit": "m",
+                  "distance_m": 306,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 266,
-                  "source_unit": null,
-                  "distance_m": 243
+                  "source_unit": "m",
+                  "distance_m": 266,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -196,24 +211,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 533,
-                  "source_unit": null,
-                  "distance_m": 487
+                  "source_unit": "m",
+                  "distance_m": 533,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 510,
-                  "source_unit": null,
-                  "distance_m": 466
+                  "source_unit": "m",
+                  "distance_m": 510,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 450,
-                  "source_unit": null,
-                  "distance_m": 411
+                  "source_unit": "m",
+                  "distance_m": 450,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -227,24 +245,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 435,
-                  "source_unit": null,
-                  "distance_m": 398
+                  "source_unit": "m",
+                  "distance_m": 435,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 402,
-                  "source_unit": null,
-                  "distance_m": 368
+                  "source_unit": "m",
+                  "distance_m": 402,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 349,
-                  "source_unit": null,
-                  "distance_m": 319
+                  "source_unit": "m",
+                  "distance_m": 349,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -258,24 +279,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 364,
-                  "source_unit": null,
-                  "distance_m": 333
+                  "source_unit": "m",
+                  "distance_m": 364,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 332,
-                  "source_unit": null,
-                  "distance_m": 304
+                  "source_unit": "m",
+                  "distance_m": 332,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 297,
-                  "source_unit": null,
-                  "distance_m": 272
+                  "source_unit": "m",
+                  "distance_m": 297,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -289,24 +313,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 210,
-                  "source_unit": null,
-                  "distance_m": 192
+                  "source_unit": "m",
+                  "distance_m": 210,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 160,
-                  "source_unit": null,
-                  "distance_m": 146
+                  "source_unit": "m",
+                  "distance_m": 160,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 113,
-                  "source_unit": null,
-                  "distance_m": 103
+                  "source_unit": "m",
+                  "distance_m": 113,
+                  "distance_m_source": "official"
                 }
               ]
             }
@@ -319,10 +346,10 @@
           "primary_tee_code": "regular",
           "source_url": "https://www.haeundaecc.co.kr/Course/ScoreCard.aspx",
           "par_source_url": "https://www.haeundaecc.co.kr/Course/ScoreCard.aspx",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "review_notes": [
-            "해운대CC 공식 스코어카드에서 9개 홀의 PAR, HDCP, Champion/Regular/Lady 거리를 전사했습니다. 페이지에 원거리 단위가 명시되지 않아 source_unit은 미확정으로 보존하고, 거리 환산 및 공개는 단위 관리자 확인 전까지 보류합니다.",
-            "출처: https://www.haeundaecc.co.kr/Course/ScoreCard.aspx (2026-10-12 확인)."
+            "해운대CC에 전화해 공식 스코어카드의 홀별 거리 단위가 미터(m)임을 확인했습니다. Silk Course의 9개 홀 PAR·HDCP·Champion/Regular/Lady 거리를 공식 스코어카드와 대조해 검수 통과 처리했습니다. source_distance는 m 원값이며 distance_m에 그대로 저장합니다. 확인일: 2026-10-12.",
+            "출처: https://www.haeundaecc.co.kr/Course/ScoreCard.aspx (구장 전화로 거리 단위 확인)."
           ],
           "holes": [
             {
@@ -335,24 +362,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 360,
-                  "source_unit": null,
-                  "distance_m": 329
+                  "source_unit": "m",
+                  "distance_m": 360,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 332,
-                  "source_unit": null,
-                  "distance_m": 304
+                  "source_unit": "m",
+                  "distance_m": 332,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 227,
-                  "source_unit": null,
-                  "distance_m": 208
+                  "source_unit": "m",
+                  "distance_m": 227,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -366,24 +396,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 200,
-                  "source_unit": null,
-                  "distance_m": 183
+                  "source_unit": "m",
+                  "distance_m": 200,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 147,
-                  "source_unit": null,
-                  "distance_m": 134
+                  "source_unit": "m",
+                  "distance_m": 147,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 121,
-                  "source_unit": null,
-                  "distance_m": 111
+                  "source_unit": "m",
+                  "distance_m": 121,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -397,24 +430,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 359,
-                  "source_unit": null,
-                  "distance_m": 328
+                  "source_unit": "m",
+                  "distance_m": 359,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 331,
-                  "source_unit": null,
-                  "distance_m": 303
+                  "source_unit": "m",
+                  "distance_m": 331,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 267,
-                  "source_unit": null,
-                  "distance_m": 244
+                  "source_unit": "m",
+                  "distance_m": 267,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -428,24 +464,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 325,
-                  "source_unit": null,
-                  "distance_m": 297
+                  "source_unit": "m",
+                  "distance_m": 325,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 296,
-                  "source_unit": null,
-                  "distance_m": 271
+                  "source_unit": "m",
+                  "distance_m": 296,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 263,
-                  "source_unit": null,
-                  "distance_m": 240
+                  "source_unit": "m",
+                  "distance_m": 263,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -459,24 +498,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 409,
-                  "source_unit": null,
-                  "distance_m": 374
+                  "source_unit": "m",
+                  "distance_m": 409,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 372,
-                  "source_unit": null,
-                  "distance_m": 340
+                  "source_unit": "m",
+                  "distance_m": 372,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 300,
-                  "source_unit": null,
-                  "distance_m": 274
+                  "source_unit": "m",
+                  "distance_m": 300,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -490,24 +532,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 475,
-                  "source_unit": null,
-                  "distance_m": 434
+                  "source_unit": "m",
+                  "distance_m": 475,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 448,
-                  "source_unit": null,
-                  "distance_m": 410
+                  "source_unit": "m",
+                  "distance_m": 448,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 389,
-                  "source_unit": null,
-                  "distance_m": 356
+                  "source_unit": "m",
+                  "distance_m": 389,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -521,24 +566,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 410,
-                  "source_unit": null,
-                  "distance_m": 375
+                  "source_unit": "m",
+                  "distance_m": 410,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 370,
-                  "source_unit": null,
-                  "distance_m": 338
+                  "source_unit": "m",
+                  "distance_m": 370,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 309,
-                  "source_unit": null,
-                  "distance_m": 283
+                  "source_unit": "m",
+                  "distance_m": 309,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -552,24 +600,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 225,
-                  "source_unit": null,
-                  "distance_m": 206
+                  "source_unit": "m",
+                  "distance_m": 225,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 182,
-                  "source_unit": null,
-                  "distance_m": 166
+                  "source_unit": "m",
+                  "distance_m": 182,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 128,
-                  "source_unit": null,
-                  "distance_m": 117
+                  "source_unit": "m",
+                  "distance_m": 128,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -583,24 +634,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 530,
-                  "source_unit": null,
-                  "distance_m": 485
+                  "source_unit": "m",
+                  "distance_m": 530,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 498,
-                  "source_unit": null,
-                  "distance_m": 455
+                  "source_unit": "m",
+                  "distance_m": 498,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 442,
-                  "source_unit": null,
-                  "distance_m": 404
+                  "source_unit": "m",
+                  "distance_m": 442,
+                  "distance_m_source": "official"
                 }
               ]
             }
@@ -613,10 +667,10 @@
           "primary_tee_code": "regular",
           "source_url": "https://www.haeundaecc.co.kr/Course/ScoreCard.aspx",
           "par_source_url": "https://www.haeundaecc.co.kr/Course/ScoreCard.aspx",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "review_notes": [
-            "해운대CC 공식 스코어카드에서 9개 홀의 PAR, HDCP, Champion/Regular/Lady 거리를 전사했습니다. 페이지에 원거리 단위가 명시되지 않아 source_unit은 미확정으로 보존하고, 거리 환산 및 공개는 단위 관리자 확인 전까지 보류합니다.",
-            "출처: https://www.haeundaecc.co.kr/Course/ScoreCard.aspx (2026-10-12 확인)."
+            "해운대CC에 전화해 공식 스코어카드의 홀별 거리 단위가 미터(m)임을 확인했습니다. Golden Course의 9개 홀 PAR·HDCP·Champion/Regular/Lady 거리를 공식 스코어카드와 대조해 검수 통과 처리했습니다. source_distance는 m 원값이며 distance_m에 그대로 저장합니다. 확인일: 2026-10-12.",
+            "출처: https://www.haeundaecc.co.kr/Course/ScoreCard.aspx (구장 전화로 거리 단위 확인)."
           ],
           "holes": [
             {
@@ -629,24 +683,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 503,
-                  "source_unit": null,
-                  "distance_m": 460
+                  "source_unit": "m",
+                  "distance_m": 503,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 479,
-                  "source_unit": null,
-                  "distance_m": 438
+                  "source_unit": "m",
+                  "distance_m": 479,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 429,
-                  "source_unit": null,
-                  "distance_m": 392
+                  "source_unit": "m",
+                  "distance_m": 429,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -660,24 +717,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 220,
-                  "source_unit": null,
-                  "distance_m": 201
+                  "source_unit": "m",
+                  "distance_m": 220,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 173,
-                  "source_unit": null,
-                  "distance_m": 158
+                  "source_unit": "m",
+                  "distance_m": 173,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 146,
-                  "source_unit": null,
-                  "distance_m": 134
+                  "source_unit": "m",
+                  "distance_m": 146,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -691,24 +751,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 410,
-                  "source_unit": null,
-                  "distance_m": 375
+                  "source_unit": "m",
+                  "distance_m": 410,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 378,
-                  "source_unit": null,
-                  "distance_m": 346
+                  "source_unit": "m",
+                  "distance_m": 378,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 318,
-                  "source_unit": null,
-                  "distance_m": 291
+                  "source_unit": "m",
+                  "distance_m": 318,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -722,24 +785,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 480,
-                  "source_unit": null,
-                  "distance_m": 439
+                  "source_unit": "m",
+                  "distance_m": 480,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 451,
-                  "source_unit": null,
-                  "distance_m": 412
+                  "source_unit": "m",
+                  "distance_m": 451,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 390,
-                  "source_unit": null,
-                  "distance_m": 357
+                  "source_unit": "m",
+                  "distance_m": 390,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -753,24 +819,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 360,
-                  "source_unit": null,
-                  "distance_m": 329
+                  "source_unit": "m",
+                  "distance_m": 360,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 331,
-                  "source_unit": null,
-                  "distance_m": 303
+                  "source_unit": "m",
+                  "distance_m": 331,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 294,
-                  "source_unit": null,
-                  "distance_m": 269
+                  "source_unit": "m",
+                  "distance_m": 294,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -784,24 +853,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 405,
-                  "source_unit": null,
-                  "distance_m": 370
+                  "source_unit": "m",
+                  "distance_m": 405,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 378,
-                  "source_unit": null,
-                  "distance_m": 346
+                  "source_unit": "m",
+                  "distance_m": 378,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 305,
-                  "source_unit": null,
-                  "distance_m": 279
+                  "source_unit": "m",
+                  "distance_m": 305,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -815,24 +887,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 185,
-                  "source_unit": null,
-                  "distance_m": 169
+                  "source_unit": "m",
+                  "distance_m": 185,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 155,
-                  "source_unit": null,
-                  "distance_m": 142
+                  "source_unit": "m",
+                  "distance_m": 155,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 114,
-                  "source_unit": null,
-                  "distance_m": 104
+                  "source_unit": "m",
+                  "distance_m": 114,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -846,24 +921,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 360,
-                  "source_unit": null,
-                  "distance_m": 329
+                  "source_unit": "m",
+                  "distance_m": 360,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 333,
-                  "source_unit": null,
-                  "distance_m": 304
+                  "source_unit": "m",
+                  "distance_m": 333,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 313,
-                  "source_unit": null,
-                  "distance_m": 286
+                  "source_unit": "m",
+                  "distance_m": 313,
+                  "distance_m_source": "official"
                 }
               ]
             },
@@ -877,24 +955,27 @@
                   "display_name": "Champion",
                   "tee_color": "#64748b",
                   "source_distance": 405,
-                  "source_unit": null,
-                  "distance_m": 370
+                  "source_unit": "m",
+                  "distance_m": 405,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "regular",
                   "display_name": "Regular",
                   "tee_color": "#64748b",
                   "source_distance": 378,
-                  "source_unit": null,
-                  "distance_m": 346
+                  "source_unit": "m",
+                  "distance_m": 378,
+                  "distance_m_source": "official"
                 },
                 {
                   "tee_code": "lady",
                   "display_name": "Lady",
                   "tee_color": "#64748b",
                   "source_distance": 310,
-                  "source_unit": null,
-                  "distance_m": 283
+                  "source_unit": "m",
+                  "distance_m": 310,
+                  "distance_m_source": "official"
                 }
               ]
             }
