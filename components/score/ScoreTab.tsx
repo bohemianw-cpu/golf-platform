@@ -66,7 +66,7 @@ export default function ScoreTab() {
   const modeSupported = !selectedCatalogCourse || (round.playMode === 'field'
     ? selectedCatalogCourse.supports_field
     : selectedCatalogCourse.supports_screen)
-  const hasCompleteCourseLayout = [9, 18].includes(round.routeDistances.length)
+  const hasCompleteCourseLayout = round.routeDistances.length >= 1 && round.routeDistances.length <= 18
   const diffText = completedHoles.length === 0 || totalDiff === 0 ? '0' : totalDiff > 0 ? `+${totalDiff}` : `${totalDiff}`
   const previousHole = completedHoles.find((h) => h.holeNumber === currentHole - 1)
 
@@ -277,7 +277,7 @@ export default function ScoreTab() {
         <ShotInputCard round={round} clubs={clubs} />
       ) : (
         <div role="status" style={{ padding: '24px 16px', marginBottom: '16px', border: '1px dashed #94a3b8', borderRadius: '12px', background: '#fff', textAlign: 'center', color: '#475569', fontSize: '13px' }}>
-          {!round.playMode ? '라운드 방식을 선택하면 스코어와 샷을 입력할 수 있습니다.' : !modeSupported ? '선택한 구장이 지원하는 필드/스크린 방식을 확인해 주세요.' : '검증된 코스의 9홀 또는 18홀 코스와 티를 선택하면 스코어를 입력할 수 있습니다.'}
+          {!round.playMode ? '라운드 방식을 선택하면 스코어와 샷을 입력할 수 있습니다.' : !modeSupported ? '선택한 구장이 지원하는 필드/스크린 방식을 확인해 주세요.' : '검증된 코스 레이아웃과 티를 선택하면 스코어를 입력할 수 있습니다.'}
         </div>
       )}
 

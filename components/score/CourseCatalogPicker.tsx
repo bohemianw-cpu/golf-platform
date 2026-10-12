@@ -34,7 +34,7 @@ interface Props {
 
 function completeTeeOptions(routes: GolfRouteOption[], totalHoles: number): GolfCourseTee[] {
   const holes = routes.flatMap((route) => route.holes ?? [])
-  if (![9, 18].includes(totalHoles) || holes.length !== totalHoles || routes.some((route) => route.holes?.length !== route.hole_count)) return []
+  if (totalHoles < 1 || totalHoles > 18 || holes.length !== totalHoles || routes.some((route) => route.holes?.length !== route.hole_count)) return []
   const firstHoleTees = holes[0]?.tees ?? []
   return firstHoleTees
     .filter((tee) => tee.tee_selection_available !== false)
@@ -44,7 +44,7 @@ function completeTeeOptions(routes: GolfRouteOption[], totalHoles: number): Golf
 
 function hasCompleteReferenceDistances(routes: GolfRouteOption[], totalHoles: number): boolean {
   const holes = routes.flatMap((route) => route.holes ?? [])
-  return [9, 18].includes(totalHoles)
+  return totalHoles >= 1 && totalHoles <= 18
     && holes.length === totalHoles
     && routes.every((route) => route.holes?.length === route.hole_count)
     && holes.every((hole) => hole.tees.some((tee) => tee.tee_selection_available === false))
@@ -217,7 +217,7 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
   const teeOptions = completeTeeOptions(selectedRoutes, selectedHoleCount)
   const hasReferenceDistance = hasCompleteReferenceDistances(selectedRoutes, selectedHoleCount)
   const selectedTee = teeOptions.find((tee) => tee.tee_code === teeCode) ?? null
-  const selectedLayoutIsValid = [9, 18].includes(selectedHoleCount) && (teeOptions.length > 0 ? !!selectedTee : hasReferenceDistance)
+  const selectedLayoutIsValid = selectedHoleCount >= 1 && selectedHoleCount <= 18 && (teeOptions.length > 0 ? !!selectedTee : hasReferenceDistance)
 
   return (
     <section aria-label="골프장과 코스 검색" style={{ marginTop: searchOpen || (courseId && selectedCourse) ? '10px' : 0 }}>
@@ -252,34 +252,41 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
                   <legend style={{ padding: '0 3px', fontSize: '10px', fontWeight: 700, color: '#166534' }}>오늘 플레이할 코스와 티 선택</legend>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                     {selectedCourseRoutes.map((route) => {
-                      const checked = routeIds.includes(route.id)
+                      const routeUseCount = routeIds.filter((id) => id === route.id).length
+                      const checked = routeUseCount > 0
                       const cannotAdd = !checked && selectedHoleCount + route.hole_count > 18
-                      const canRepeat = checked && route.hole_count === 9 && selectedHoleCount === 9 && routeIds.filter((id) => id === route.id).length === 1
+                      const canRepeat = checked && selectedHoleCount + route.hole_count <= 18
                       return <div key={route.id} style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
                         <label style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '11px', color: '#334155' }}>
                           <input type="checkbox" checked={checked} disabled={locked || cannotAdd} onChange={() => {
                             const next = [...selectedRoutes]
-                            if (checked) next.splice(next.findIndex((item) => item.id === route.id), 1)
+                            if (checked) {
+                              const remaining = next.filter((item) => item.id !== route.id)
+                              const options = completeTeeOptions(remaining, remaining.reduce((sum, item) => sum + item.hole_count, 0))
+                              const retained = options.find((item) => item.tee_code === teeCode) ?? null
+                              onRoutesChange(remaining, retained?.tee_code ?? null, retained?.display_name ?? null)
+                              return
+                            }
                             else next.push(route)
                             const options = completeTeeOptions(next, next.reduce((sum, item) => sum + item.hole_count, 0))
                             const retained = options.find((item) => item.tee_code === teeCode) ?? null
                             onRoutesChange(next, retained?.tee_code ?? null, retained?.display_name ?? null)
                           }} aria-label={`${route.display_name} ${route.hole_count}홀 코스`} />
-                          {route.display_name} ({route.hole_count}홀)
+                          {route.display_name} ({route.hole_count}홀{routeUseCount > 1 ? ` · ${routeUseCount}회 선택` : ''})
                         </label>
-                        {canRepeat && <button type="button" disabled={locked} onClick={() => {
+                        {canRepeat && <button type="button" disabled={locked} aria-label={`${route.display_name} 코스 ${route.hole_count}홀 추가 반복`} onClick={() => {
                           const next = [...selectedRoutes, route]
-                          const options = completeTeeOptions(next, 18)
+                          const options = completeTeeOptions(next, next.reduce((sum, item) => sum + item.hole_count, 0))
                           const retained = options.find((item) => item.tee_code === teeCode) ?? null
                           onRoutesChange(next, retained?.tee_code ?? null, retained?.display_name ?? null)
-                        }} style={{ padding: '3px 6px', border: '1px solid #bbf7d0', borderRadius: '5px', background: '#f0fdf4', color: '#166534', fontSize: '10px', cursor: locked ? 'not-allowed' : 'pointer' }}>+9홀 반복</button>}
+                        }} style={{ padding: '3px 6px', border: '1px solid #bbf7d0', borderRadius: '5px', background: '#f0fdf4', color: '#166534', fontSize: '10px', cursor: locked ? 'not-allowed' : 'pointer' }}>+{route.hole_count}홀 반복</button>}
                       </div>
                     })}
                   </div>
                   <div style={{ marginTop: '5px', fontSize: '10px', color: '#64748b' }}>
                     선택 순서: {selectedRoutes.length ? selectedRoutes.map((route) => route.display_name).join(' → ') : '미선택'}
                   </div>
-                  {[9, 18].includes(selectedHoleCount) && (teeOptions.length > 0 ? (
+                  {selectedHoleCount > 0 && selectedHoleCount <= 18 && (teeOptions.length > 0 ? (
                     <fieldset style={{ margin: '8px 0 0', padding: '6px 8px', border: '1px solid #cbd5e1', borderRadius: '6px' }}>
                       <legend style={{ fontSize: '10px', fontWeight: 700 }}>이번 라운드 티 위치 (필수)</legend>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
@@ -294,12 +301,12 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
                     ? <p role="status" style={{ margin: '6px 0 0', fontSize: '10px', color: '#475569' }}>공식 기준 거리는 있으나 티 위치는 공개되지 않았습니다. 기준 거리로 기록하며 티 위치는 선택하지 않습니다.</p>
                     : <p role="status" style={{ margin: '6px 0 0', fontSize: '10px', color: '#b45309' }}>선택한 {selectedHoleCount}홀 전체에 공통 티별 거리 자료가 없습니다.</p>)}
                   <div role="status" style={{ marginTop: '5px', fontSize: '10px', color: selectedLayoutIsValid ? '#15803d' : '#b45309' }}>
-                    {selectedLayoutIsValid ? `${selectedHoleCount}홀 파·거리 확인 완료 · ${selectedTee?.display_name ?? '공식 기준 거리 (티 미표기)'}` : selectedHoleCount < 9 ? `${selectedHoleCount}/9홀 선택 · 코스를 선택해 주세요.` : selectedHoleCount === 9 ? '9홀 라운드를 기록하거나 다른 9홀 코스를 추가할 수 있습니다.' : selectedHoleCount < 18 ? `${selectedHoleCount}/18홀 선택 · 나머지 코스를 선택해 주세요.` : teeOptions.length > 0 ? '기록을 시작하기 전에 티 위치를 선택해 주세요.' : '선택한 홀 전체에 거리 자료가 확인된 코스를 선택해 주세요.'}
+                    {selectedLayoutIsValid ? `${selectedHoleCount}홀 파·거리 확인 완료 · ${selectedTee?.display_name ?? '공식 기준 거리 (티 미표기)'}` : selectedHoleCount === 0 ? '기록할 코스를 선택해 주세요.' : selectedHoleCount > 18 ? '라운드 기록은 최대 18홀까지 선택할 수 있습니다.' : teeOptions.length > 0 ? '기록을 시작하기 전에 티 위치를 선택해 주세요.' : hasReferenceDistance ? '선택한 홀 전체에 공통 티별 거리 자료가 없습니다.' : '선택한 홀 전체에 확인된 파·거리 자료가 있는 코스를 선택해 주세요.'}
                   </div>
                 </fieldset>
                 {selectedRoutes.map((route, index) => <RouteDistancePreview key={`${route.id}-${index}`} route={route} />)}
                 </>
-              ) : <p style={{ margin: '6px 0 0', fontSize: '11px', color: '#64748b' }}>검증된 9홀 코스 정보가 아직 등록되지 않았습니다.</p>}
+              ) : <p style={{ margin: '6px 0 0', fontSize: '11px', color: '#64748b' }}>검증된 코스 레이아웃이 아직 등록되지 않았습니다.</p>}
         </div>
       )}
     </section>

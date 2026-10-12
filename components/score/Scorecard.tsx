@@ -76,15 +76,17 @@ function HalfTable({
 }
 
 export default function Scorecard({ holePars, completedHoles, routeNames = [] }: Props) {
-  const isNineHoleRound = holePars.length === 9
+  const firstHalf = Array.from({ length: Math.min(holePars.length, 9) }, (_, index) => index + 1)
+  const secondHalf = Array.from({ length: Math.max(holePars.length - 9, 0) }, (_, index) => index + 10)
+  const isShortRound = holePars.length <= 9
   return (
     <div style={{ backgroundColor: '#ffffff', borderRadius: '12px', border: '1px solid #e2e8f0', padding: '16px', overflowX: 'auto' }}>
       <h3 style={{ margin: '0 0 12px', fontSize: '15px', fontWeight: 'bold', color: '#1e293b' }}>📋 실시간 라운드 스코어카드</h3>
-      {isNineHoleRound
-        ? <HalfTable title={routeNames[0] || '코스'} holes={[1, 2, 3, 4, 5, 6, 7, 8, 9]} holePars={holePars} completedHoles={completedHoles} />
+      {isShortRound
+        ? <HalfTable title={routeNames[0] || '코스'} holes={firstHalf} holePars={holePars} completedHoles={completedHoles} />
         : <>
-          <HalfTable title={routeNames[0] || '전반'} holes={[1, 2, 3, 4, 5, 6, 7, 8, 9]} holePars={holePars} completedHoles={completedHoles} />
-          <HalfTable title={routeNames[1] || '후반'} holes={[10, 11, 12, 13, 14, 15, 16, 17, 18]} holePars={holePars} completedHoles={completedHoles} />
+          <HalfTable title={routeNames[0] || '전반'} holes={firstHalf} holePars={holePars} completedHoles={completedHoles} />
+          <HalfTable title={routeNames[1] || '후반'} holes={secondHalf} holePars={holePars} completedHoles={completedHoles} />
         </>}
     </div>
   )
