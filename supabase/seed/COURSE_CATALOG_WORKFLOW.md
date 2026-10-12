@@ -324,3 +324,6 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 2026-10-13 마론CC 공식 자료 반영 후 원격 전체 카탈로그: 검수 완료 239개, 미진행 273개, 반려 4개(총 516개). 충남 pending 17개. 부산·울산·경남 pending 0개.
 - 마론CC(충남 천안): 운영사 공식 [Dream Course](https://www.maronnewday.com/html/course02.asp)와 [Vision Course](https://www.maronnewday.com/html/course03.asp) 홀별 페이지에서 PAR와 단일 공식 미터 거리 18홀을 반영했습니다. Dream·Vision은 각 PAR36이며 공식 코스 개요 합계 3,245m·3,285m와 홀별 거리 합계가 일치합니다. 티별 거리·티 이름과 HDCP는 공개되지 않아 각 홀의 공식 거리만 선택 불가 상태로 저장했습니다. 자료: maron-cc-2026-official-verified.json (2026-10-13 확인).
+- 골드리버CC(충남 공주): 운영사 공식 [코스 안내도](http://www.goldrivercc.com/new/sub2/menu1.php)에서 A코스 6홀(PAR24), B코스 6홀(PAR24), 별도 이벤트홀(PAR3)의 파와 White/Red 티별 거리(m)를 반영했습니다. 공식 표의 남자/여자 열은 각 홀 지도에 표시된 White/Red 거리와 일치하며, 세 레이아웃 13홀·26개 티 행을 DB에 저장하고 대조해 구장 및 경로를 verified 처리했습니다. 표 합계는 A White/Red 1,841/1,638m, B 1,748/1,692m, 이벤트홀 95/95m입니다. MCST의 9홀 및 주소(신정말길 67-133) 표기를 운영사 자료에 맞춰 13개 게시 홀과 공식 주소 `충청남도 공주시 의당면 신성말길 67-38`로 갱신했습니다. 주소 출처: [공식 오시는 길](http://www.goldrivercc.com/new/sub1/menu4.php). 공식 코스 페이지는 HTTP로 제공되어 importer의 transport note로 기록했습니다. 자료: `goldriver-cc-2026-official-verified.json` (2026-10-13 확인).
+
+2026-10-13 골드리버CC 자료 반영 후 원격 전체 카탈로그: 검수 완료 242개, 미진행 269개, 반려 5개(총 516개). 부산·울산·경남에는 pending 구장이 없으므로 다음 작업은 잔여 충남·충북의 공식 자료 확인을 우선합니다.
