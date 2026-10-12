@@ -457,3 +457,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - OUT은 PAR37·REGULAR 3,100m·LADIES 2,523m, IN은 PAR35·REGULAR 2,669m·LADIES 2,215m로 홀별 합계와 공식 합계가 일치합니다. 전체는 18홀·PAR72이며, 총거리 REGULAR 5,769m·LADIES 4,738m입니다. 원문 티 분류명은 REGULAR/LADIES입니다.
 - 원격 DB와 seed 대조 결과 36개 티 거리 행, 홀별 PAR·HDCP, 티 이름·거리·출처 메타데이터 불일치 0건입니다. 자료: `incheon-grand-cc-2026-official-verified.json`.
 - 원격 전체 카탈로그 최신 집계: 검수 완료 269곳, 미진행 242곳, 반려 5곳(총 516곳). 부산·울산·경남 pending은 0곳입니다.
+
+### 2026-10-13 — 오렌지듄스 영종GC
+- 운영사 공식 [코스공략 페이지](https://www.orangedunesyj.com/course-strategy/courses/EAST/holes/1)와 [WEST 코스공략 페이지](https://www.orangedunesyj.com/course-strategy/courses/WEST/holes/1), 페이지에서 사용하는 공식 데이터 스크립트(`/js/chunk-74c370b0.98d4198a.js`)에서 East·West 각 9홀 PAR·HDCP 및 Black/Blue/White/Red 미터 거리를 반영했습니다. 각 코스 PAR36, 총 18홀입니다.
+- 공략 페이지는 각 홀에 티 미표기 기준 거리를 별도로 보여주므로 선택 불가한 `official_reference` 행으로 보존했습니다. 같은 색상의 추가 거리도 EAST 5·8·9번, WEST 7·8번에 게시된 원문값 그대로 보조 행으로 저장하고 티 선택은 비활성화했습니다. 공개되지 않은 Black 티는 만들지 않았습니다.
+- 원격 DB와 seed 대조 결과 코스 2개·홀 18개·티 거리 91행, 홀 PAR·HDCP와 티 이름·색상·거리·출처·선택 메타데이터 불일치 0건입니다. 구장과 두 코스 모두 verified입니다. 자료: `orange-dunes-yeongjong-2026-official-verified.json`.
+- 원격 전체 카탈로그 최신 집계: 검수 완료 270곳, 미진행 241곳, 반려 5곳(총 516곳). 부산·울산·경남 pending은 0곳입니다.
