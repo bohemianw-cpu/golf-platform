@@ -1,0 +1,186 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "name": "창평CC",
+      "match_name": "창평CC",
+      "aliases": [
+        "창평컨트리클럽",
+        "Changpyeong Country Club",
+        "Changpyeong CC"
+      ],
+      "region": "전남",
+      "address": "전라남도 담양군 창평면 오산길 100(오강리)",
+      "hole_count": 9,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "운영사 공식 스코어카드에서 Hole No별 M·yds·PAR가 모두 공개되어 M 값과 PAR를 저장했습니다. 홀별 기준 거리 9개를 저장하되, 운영사가 티별 거리나 티 이름을 게시하지 않아 tee_selection_available=false로 하여 사용자 티 선택 자료로 오인되지 않게 했습니다.",
+        "공식 홀별 거리 합계 2,974m / 3,252yd와 PAR36이 공식 표기 및 홀별 합과 일치합니다. HDCP는 공식 자료에서 확인되지 않아 입력하지 않았습니다."
+      ],
+      "routes": [
+        {
+          "route_code": "COURSE",
+          "display_name": "창평코스",
+          "hole_count": 9,
+          "primary_tee_code": "official",
+          "source_url": "https://www.cppc.co.kr/course/index03.asp",
+          "par_source_url": "https://www.cppc.co.kr/course/index03.asp",
+          "verification_status": "verified",
+          "official_tee_totals_m": {
+            "official": 2974
+          },
+          "review_notes": [
+            "운영사 공식 스코어카드가 M·yds 열을 명시하고 있어 M 값으로 저장했습니다. 티별 구분은 공개하지 않아 해당 거리 행은 선택 불가한 공식 기준값으로 처리했습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 440,
+                  "distance_m_source": "official",
+                  "source_distance": 440,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 362,
+                  "distance_m_source": "official",
+                  "source_distance": 362,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 142,
+                  "distance_m_source": "official",
+                  "source_distance": 142,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 335,
+                  "distance_m_source": "official",
+                  "source_distance": 335,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 360,
+                  "distance_m_source": "official",
+                  "source_distance": 360,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 330,
+                  "distance_m_source": "official",
+                  "source_distance": 330,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 495,
+                  "distance_m_source": "official",
+                  "source_distance": 495,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 160,
+                  "distance_m_source": "official",
+                  "source_distance": 160,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준 거리",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 350,
+                  "distance_m_source": "official",
+                  "source_distance": 350,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
