@@ -13,7 +13,8 @@
       "review_notes": [
         "공식 홈페이지 코스 개요에서 9홀 파36, Blue·White·Gold·Red 티 거리 합계를 확인했습니다.",
         "1번 홀 상세 Tee Box 표의 Red 값 465는 코스 개요 및 다른 공식 표와 다릅니다. 개요의 433을 채택하면 Red 9홀 합계가 공식 총계 2,562와 일치합니다. 이 불일치를 검수 메모로 남기고 개별 표의 값을 보정했습니다.",
-        "공식 코스 페이지의 홀별 거리 단위 표기는 확인되지 않아 원단위 확정 전까지 검수 대기합니다. 출처: https://www.goyangcc.com/club/course (2026-10-12 확인)."
+        "공식 코스 페이지의 홀별 거리 단위 표기는 확인되지 않아 원단위 확정 전까지 검수 대기합니다. 출처: https://www.goyangcc.com/club/course (2026-10-12 확인).",
+        "공식 홈페이지의 홀별 Tee Box 및 코스 개요 수치를 원 단위 미확정 상태로 보존했습니다. source_distance는 공식 페이지 숫자 그대로이고 source_unit은 null입니다. distance_m은 원 수치가 yd라고 가정했을 때만의 임시 반올림 환산값이며 검증된 미터 값이 아니므로, 단위 확인 전까지 검수 대기 상태입니다."
       ],
       "routes": [
         {
@@ -23,17 +24,12 @@
           "primary_tee_code": "blue",
           "source_url": "https://www.goyangcc.com/club/course",
           "source_image_pattern": "https://www.goyangcc.com/pc/images/course/{hole}hole.png",
-          "official_course_overview_distance_yd": {
-            "blue": 3195,
-            "white": 2965,
-            "gold": 2775,
-            "red": 2562
-          },
           "verification_status": "pending",
           "review_notes": [
             "공식 홈페이지 코스 개요에서 9홀 파36, Blue·White·Gold·Red 티 거리 합계를 확인했습니다.",
             "1번 홀 상세 Tee Box 표의 Red 값 465는 코스 개요 및 다른 공식 표와 다릅니다. 개요의 433을 채택하면 Red 9홀 합계가 공식 총계 2,562와 일치합니다. 이 불일치를 검수 메모로 남기고 개별 표의 값을 보정했습니다.",
-            "공식 코스 페이지의 홀별 거리 단위 표기는 확인되지 않아 원단위 확정 전까지 검수 대기합니다. 출처: https://www.goyangcc.com/club/course (2026-10-12 확인)."
+            "공식 코스 페이지의 홀별 거리 단위 표기는 확인되지 않아 원단위 확정 전까지 검수 대기합니다. 출처: https://www.goyangcc.com/club/course (2026-10-12 확인).",
+            "공식 홈페이지의 홀별 Tee Box 및 코스 개요 수치를 원 단위 미확정 상태로 보존했습니다. source_distance는 공식 페이지 숫자 그대로이고 source_unit은 null입니다. distance_m은 원 수치가 yd라고 가정했을 때만의 임시 반올림 환산값이며 검증된 미터 값이 아니므로, 단위 확인 전까지 검수 대기 상태입니다."
           ],
           "holes": [
             {
@@ -47,7 +43,7 @@
                   "tee_color": "#2563eb",
                   "distance_m": 494,
                   "source_distance": 540,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "white",
@@ -55,7 +51,7 @@
                   "tee_color": "#f8fafc",
                   "distance_m": 465,
                   "source_distance": 509,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "gold",
@@ -63,7 +59,7 @@
                   "tee_color": "#d4af37",
                   "distance_m": 425,
                   "source_distance": 465,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "red",
@@ -71,7 +67,7 @@
                   "tee_color": "#ef4444",
                   "distance_m": 396,
                   "source_distance": 433,
-      "source_unit": null
+                  "source_unit": null
                 }
               ]
             },
@@ -86,7 +82,7 @@
                   "tee_color": "#2563eb",
                   "distance_m": 130,
                   "source_distance": 142,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "white",
@@ -94,7 +90,7 @@
                   "tee_color": "#f8fafc",
                   "distance_m": 122,
                   "source_distance": 133,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "gold",
@@ -102,7 +98,7 @@
                   "tee_color": "#d4af37",
                   "distance_m": 117,
                   "source_distance": 128,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "red",
@@ -110,7 +106,7 @@
                   "tee_color": "#ef4444",
                   "distance_m": 111,
                   "source_distance": 121,
-                  "source_unit": "yd"
+                  "source_unit": null
                 }
               ]
             },
@@ -125,7 +121,7 @@
                   "tee_color": "#2563eb",
                   "distance_m": 302,
                   "source_distance": 330,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "white",
@@ -133,7 +129,7 @@
                   "tee_color": "#f8fafc",
                   "distance_m": 275,
                   "source_distance": 301,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "gold",
@@ -141,7 +137,7 @@
                   "tee_color": "#d4af37",
                   "distance_m": 260,
                   "source_distance": 284,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "red",
@@ -149,7 +145,7 @@
                   "tee_color": "#ef4444",
                   "distance_m": 248,
                   "source_distance": 271,
-                  "source_unit": "yd"
+                  "source_unit": null
                 }
               ]
             },
@@ -164,7 +160,7 @@
                   "tee_color": "#2563eb",
                   "distance_m": 497,
                   "source_distance": 544,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "white",
@@ -172,7 +168,7 @@
                   "tee_color": "#f8fafc",
                   "distance_m": 462,
                   "source_distance": 505,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "gold",
@@ -180,7 +176,7 @@
                   "tee_color": "#d4af37",
                   "distance_m": 418,
                   "source_distance": 457,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "red",
@@ -188,7 +184,7 @@
                   "tee_color": "#ef4444",
                   "distance_m": 378,
                   "source_distance": 413,
-                  "source_unit": "yd"
+                  "source_unit": null
                 }
               ]
             },
@@ -203,7 +199,7 @@
                   "tee_color": "#2563eb",
                   "distance_m": 165,
                   "source_distance": 180,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "white",
@@ -211,7 +207,7 @@
                   "tee_color": "#f8fafc",
                   "distance_m": 144,
                   "source_distance": 157,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "gold",
@@ -219,7 +215,7 @@
                   "tee_color": "#d4af37",
                   "distance_m": 132,
                   "source_distance": 144,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "red",
@@ -227,7 +223,7 @@
                   "tee_color": "#ef4444",
                   "distance_m": 116,
                   "source_distance": 127,
-                  "source_unit": "yd"
+                  "source_unit": null
                 }
               ]
             },
@@ -242,7 +238,7 @@
                   "tee_color": "#2563eb",
                   "distance_m": 323,
                   "source_distance": 353,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "white",
@@ -250,7 +246,7 @@
                   "tee_color": "#f8fafc",
                   "distance_m": 304,
                   "source_distance": 332,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "gold",
@@ -258,7 +254,7 @@
                   "tee_color": "#d4af37",
                   "distance_m": 288,
                   "source_distance": 315,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "red",
@@ -266,7 +262,7 @@
                   "tee_color": "#ef4444",
                   "distance_m": 279,
                   "source_distance": 305,
-                  "source_unit": "yd"
+                  "source_unit": null
                 }
               ]
             },
@@ -281,7 +277,7 @@
                   "tee_color": "#2563eb",
                   "distance_m": 169,
                   "source_distance": 185,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "white",
@@ -289,7 +285,7 @@
                   "tee_color": "#f8fafc",
                   "distance_m": 148,
                   "source_distance": 162,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "gold",
@@ -297,7 +293,7 @@
                   "tee_color": "#d4af37",
                   "distance_m": 140,
                   "source_distance": 153,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "red",
@@ -305,7 +301,7 @@
                   "tee_color": "#ef4444",
                   "distance_m": 123,
                   "source_distance": 135,
-                  "source_unit": "yd"
+                  "source_unit": null
                 }
               ]
             },
@@ -320,7 +316,7 @@
                   "tee_color": "#2563eb",
                   "distance_m": 360,
                   "source_distance": 394,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "white",
@@ -328,7 +324,7 @@
                   "tee_color": "#f8fafc",
                   "distance_m": 345,
                   "source_distance": 377,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "gold",
@@ -336,7 +332,7 @@
                   "tee_color": "#d4af37",
                   "distance_m": 330,
                   "source_distance": 361,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "red",
@@ -344,7 +340,7 @@
                   "tee_color": "#ef4444",
                   "distance_m": 304,
                   "source_distance": 332,
-                  "source_unit": "yd"
+                  "source_unit": null
                 }
               ]
             },
@@ -359,7 +355,7 @@
                   "tee_color": "#2563eb",
                   "distance_m": 482,
                   "source_distance": 527,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "white",
@@ -367,7 +363,7 @@
                   "tee_color": "#f8fafc",
                   "distance_m": 447,
                   "source_distance": 489,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "gold",
@@ -375,7 +371,7 @@
                   "tee_color": "#d4af37",
                   "distance_m": 428,
                   "source_distance": 468,
-                  "source_unit": "yd"
+                  "source_unit": null
                 },
                 {
                   "tee_code": "red",
@@ -383,11 +379,17 @@
                   "tee_color": "#ef4444",
                   "distance_m": 389,
                   "source_distance": 425,
-                  "source_unit": "yd"
+                  "source_unit": null
                 }
               ]
             }
-          ]
+          ],
+          "official_course_overview_distance_values": {
+            "blue": 3195,
+            "white": 2965,
+            "gold": 2775,
+            "red": 2562
+          }
         }
       ]
     }
