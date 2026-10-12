@@ -1,21 +1,23 @@
 {
   "schema": "course-source-review/1",
-  "status": "source_verified_imported_verified",
+  "status": "source_review_pending",
   "venue": {
     "name": "에콜리안 제천",
     "match_name": "에콜리안제천",
     "region": "충북",
     "address": "충청북도 제천시 송학주천로 102",
     "hole_count": 9,
-    "official_url": "https://www.ecolian.or.kr/cotents/course/courseInfo.do?coDiv=105"
+    "official_url": "https://www.ecolian.or.kr/cotents/course/courseInfo.do?coDiv=101",
+    "review_notes": ["공식 코스 제원표는 8번 홀 좌그린 레드티를 270m로 표시하지만 공식 홀 공략 페이지는 370m로 표시합니다. 현재 거리 270m는 코스 제원표 값이나 양쪽 공식 자료가 충돌하므로 구장과 코스는 검수 대기 상태입니다."]
   },
   "routes": [
     {
       "route_code": "JECHON",
       "display_name": "제천",
       "hole_count": 9,
-      "source_url": "https://www.ecolian.or.kr/cotents/course/courseInfo.do?coDiv=105",
-      "par_source_url": "https://www.ecolian.or.kr/cotents/course/courseAttack.do?coDiv=105",
+      "review_notes": ["8번 홀 좌그린 레드티 거리 충돌: 코스 제원표 270m, 홀 공략 페이지 370m. 제원표의 270m를 임시 보존했으며 공식 자료 확인 전 공개하지 않습니다."],
+      "source_url": "https://www.ecolian.or.kr/cotents/course/courseInfo.do?coDiv=101",
+      "par_source_url": "https://www.ecolian.or.kr/cotents/course/courseAttack.do?coDiv=101",
       "holes": [
         {"hole_number":1,"name":"의림지","par":5,"handicap_index":5,"greens":[{"green_code":"left","display_name":"좌그린","tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":444},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":423},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":328}]},{"green_code":"right","display_name":"우그린","tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":473},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":452},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":357}]}]},
         {"hole_number":2,"name":"박달재","par":4,"handicap_index":4,"greens":[{"green_code":"left","display_name":"좌그린","tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":339},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":320},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":247}]},{"green_code":"right","display_name":"우그린","tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":316},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":297},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":224}]}]},
