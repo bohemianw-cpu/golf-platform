@@ -69,5 +69,6 @@ export interface GolfCourseRoute {
   pars: number[]
   distances_m: number[]
   source_url?: string | null
+  source_data_url?: string | null
   holes?: GolfCourseHole[]
 }

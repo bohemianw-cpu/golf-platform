@@ -32,6 +32,7 @@ for (const course of corrections) {
       throw new Error(`${course.name}/${route.route_code}: holes에 1번부터 ${route.hole_count}번까지의 홀 자료가 필요합니다.`)
     }
     if (!/^https:\/\//i.test(route.source_url ?? '')) throw new Error(`${course.name}/${route.route_code}: 공식 출처의 HTTPS URL이 필요합니다.`)
+    if (route.source_data_url != null && !/^https:\/\//i.test(route.source_data_url)) throw new Error(`${course.name}/${route.route_code}: 공식 원자료 URL은 HTTPS여야 합니다.`)
     if (route.review_notes != null && (!Array.isArray(route.review_notes) || route.review_notes.some((note) => typeof note !== 'string' || !note.trim()))) {
       throw new Error(`${course.name}/${route.route_code}: review_notes는 비어 있지 않은 문자열 배열이어야 합니다.`)
     }
@@ -113,7 +114,7 @@ async function verifyCourse(correction, courseId) {
   }
 
   const { data: routeRows, error: routeError } = await supabase.from('golf_course_routes')
-    .select('id,route_code,display_name,hole_count,pars,distances_m,source_name,source_url,source_checked_at,verification_status,review_notes')
+    .select('id,route_code,display_name,hole_count,pars,distances_m,source_name,source_url,source_data_url,source_checked_at,verification_status,review_notes')
     .eq('course_id', courseId)
   if (routeError) throw routeError
   const expectedRoutes = correction.routes ?? []
@@ -132,6 +133,7 @@ async function verifyCourse(correction, courseId) {
       source_url: expectedRoute.source_url,
       verification_status: expectedRoute.verification_status ?? 'verified',
     }
+    if (Object.hasOwn(expectedRoute, 'source_data_url')) expectedValues.source_data_url = expectedRoute.source_data_url
     if (expectedRoute.review_notes != null) expectedValues.review_notes = expectedRoute.review_notes
     for (const [key, expected] of Object.entries(expectedValues)) {
       if (!sameValue(savedRoute[key], expected)) throw new Error(`${correction.name}/${expectedRoute.route_code}: DB ${key} 불일치 (DB=${JSON.stringify(savedRoute[key])}, seed=${JSON.stringify(expected)})`)
@@ -214,6 +216,10 @@ for (const correction of corrections) {
   const { error: updateError } = await supabase.from('golf_courses').update(courseUpdate).eq('id', courseId)
   if (updateError) throw updateError
 
+  const { data: existingRouteSources, error: existingRouteSourcesError } = await supabase.from('golf_course_routes')
+    .select('route_code,source_data_url')
+    .eq('course_id', courseId)
+  if (existingRouteSourcesError) throw existingRouteSourcesError
   const routes = (correction.routes ?? []).map((route) => ({
     course_id: courseId,
     route_code: route.route_code,
@@ -225,6 +231,9 @@ for (const correction of corrections) {
     source_url: route.source_url,
     source_checked_at: new Date().toISOString(),
     verification_status: route.verification_status ?? 'verified',
+    source_data_url: Object.hasOwn(route, 'source_data_url')
+      ? route.source_data_url
+      : existingRouteSources?.find((savedRoute) => savedRoute.route_code === route.route_code)?.source_data_url ?? null,
     ...(route.review_notes != null ? { review_notes: route.review_notes } : {}),
   }))
   if (!routes.length) continue

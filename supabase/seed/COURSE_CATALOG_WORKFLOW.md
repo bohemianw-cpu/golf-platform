@@ -3,7 +3,7 @@
 ## 데이터 단계
 
 1. `mcst-courses-YYYY-MM-DD.csv`는 체육시설 기초 목록입니다. 이 자료는 구장 식별 정보와 홀 수만 적재하며, `pending` 상태로 저장됩니다. 코스명만으로 홀별 거리나 티 구성을 추정하지 않습니다.
-2. 공식 홈페이지에서 코스명, 9홀별 파, 티 이름, 거리, 단위를 확인해 `*-official-review.json`을 작성합니다. 각 9홀 코스는 별도 `routes` 항목으로 저장하고, 실제 자료에 없는 티 행은 만들지 않습니다.
+2. 공식 홈페이지에서 코스명, 9홀별 파, 티 이름, 거리, 단위를 확인해 `*-official-review.json`을 작성합니다. 각 9홀 코스는 별도 `routes` 항목으로 저장하고, 실제 자료에 없는 티 행은 만들지 않습니다. `source_url`에는 사람이 확인할 공식 코스 페이지를, 자료가 JSON·JS 등으로 별도 제공되면 `source_data_url`에도 원자료 URL을 기록합니다.
 3. 공식 요약 전장과 홀별 거리 합계, 홀 수, 티별 제공 여부를 대조합니다. 자료끼리 충돌하거나 단위가 확인되지 않으면 `review_notes`에 근거를 적고 구장과 코스를 `pending`으로 유지합니다.
 4. 담당자가 출처와 모든 홀 값을 검토한 뒤에만 해당 구장과 각 코스의 `verification_status`를 `verified`로 바꿉니다. 앱 검색은 구장과 코스가 모두 `verified`인 데이터만 노출합니다.
 
@@ -32,7 +32,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-official-review.json --apply
 ```
 
-DB에 저장한 뒤 같은 파일에 `--check`를 실행하면 구장, 코스, 홀, 티 데이터가 파일과 같은지 비교합니다.
+DB에 저장한 뒤 같은 파일에 `--check`를 실행하면 구장, 코스, 홀, 티 데이터와 기록한 원자료 URL이 파일과 같은지 비교합니다.
 
 ```powershell
 node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-official-review.json --check
