@@ -12,7 +12,42 @@ if (checkOnly && args.has('apply')) throw new Error('--check와 --apply는 함�
 
 function normalizeName(value) { return value.normalize('NFKC').replace(/[\s·ㆍ()（）.,_-]/g, '').toLocaleLowerCase('ko-KR') }
 const source = JSON.parse(await readFile(inputPath, 'utf8'))
-const corrections = Array.isArray(source) ? source : source.courses
+function normalizeSourceReview(review) {
+  if (review.schema !== 'course-source-review/1') return null
+  if (!review.venue || !Array.isArray(review.routes)) throw new Error('course-source-review/1에는 venue와 routes가 필요합니다.')
+  const verified = review.status === 'source_verified_imported_verified'
+  for (const route of review.routes) {
+    if (route.par_source_url != null && !/^https:\/\//i.test(route.par_source_url)) {
+      throw new Error(`${review.venue.name}/${route.route_code}: 홀별 파 출처 URL은 HTTPS여야 합니다.`)
+    }
+  }
+  return [{
+    ...review.venue,
+    verification_status: verified ? 'verified' : 'pending',
+    review_notes: [`원본 검수 파일: ${review.schema} · ${review.status ?? '상태 미지정'}`],
+    routes: review.routes.map((route) => ({
+      ...route,
+      primary_tee_code: route.primary_tee_code ?? 'white',
+      verification_status: verified ? 'verified' : 'pending',
+      review_notes: [
+        ...(route.par_source_url ? [`홀별 파 출처: ${route.par_source_url}`] : []),
+      ],
+      holes: route.holes.map((hole) => ({
+        hole_number: hole.hole_number,
+        par: hole.par,
+        handicap_index: hole.handicap_index,
+        tees: Array.isArray(hole.greens)
+          ? hole.greens.flatMap((green) => green.tees.map((tee) => ({
+            ...tee,
+            green_code: green.green_code,
+            green_name: green.display_name,
+          })))
+          : hole.tees,
+      })),
+    })),
+  }]
+}
+const corrections = Array.isArray(source) ? source : source.courses ?? normalizeSourceReview(source)
 if (!Array.isArray(corrections) || corrections.length === 0) throw new Error('JSON에는 courses 배열이 필요합니다.')
 
 for (const course of corrections) {

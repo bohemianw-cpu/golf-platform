@@ -20,7 +20,7 @@ node scripts/import-mcst-courses.mjs --input supabase/seed/mcst-courses-2024-12-
 
 ## 공식 코스 자료 적재와 확인
 
-보정 파일은 `supabase/seed/` 아래에 둡니다. 구조 검사는 파일만 읽으며 DB를 변경하지 않습니다.
+보정 파일은 `supabase/seed/` 아래에 둡니다. 구조 검사는 파일만 읽으며 DB를 변경하지 않습니다. 기존 `course-source-review/1` 자료도 같은 importer에서 처리하며, 좌·우 그린별 티 거리를 별도 티 행으로 펼쳐 저장합니다. `par_source_url`은 라우트 검수 메모에 보존합니다. 출처 검수 상태가 명시적으로 완료된 경우에만 verified로 적용합니다.
 
 ```powershell
 node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-official-review.json
