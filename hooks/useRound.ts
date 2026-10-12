@@ -830,10 +830,10 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
     const greenNamesForRoutes = selectedGreens.map((tee) => tee?.green_name ?? '기본 그린')
     const distances = selectedGreens.map((tee) => tee?.distance_m ?? 0)
     const validCourseLayout = [9, 18].includes(pars.length) && distances.length === pars.length &&
-      pars.every((par) => par >= 3 && par <= 5) && distances.every((distance) => distance > 0 && distance <= 800)
+      pars.every((par) => par >= 3 && par <= 6) && distances.every((distance) => distance > 0 && distance <= 800)
     setRouteHoles(routes.flatMap((route) => route.holes ?? []))
     if (!validCourseLayout) {
-      const hasValidPars = [9, 18].includes(pars.length) && pars.every((par) => par >= 3 && par <= 5)
+      const hasValidPars = [9, 18].includes(pars.length) && pars.every((par) => par >= 3 && par <= 6)
       setHolePars(hasValidPars ? pars : INITIAL_HOLE_PARS)
       setRouteDistances([])
       setGreenCodes([])

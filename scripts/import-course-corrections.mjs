@@ -100,7 +100,7 @@ for (const course of corrections) {
         throw new Error(`${course.name}/${route.route_code}: 홀 번호가 범위를 벗어나거나 중복되었습니다.`)
       }
       holeNumbers.add(hole.hole_number)
-      if (!Number.isInteger(hole.par) || hole.par < 3 || hole.par > 5) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 파는 3~5여야 합니다.`)
+      if (!Number.isInteger(hole.par) || hole.par < 3 || hole.par > 6) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 파는 3~6이어야 합니다.`)
       if (hole.handicap_index != null && (!Number.isInteger(hole.handicap_index) || hole.handicap_index < 1 || hole.handicap_index > 18)) {
         throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 핸디캡 인덱스는 1~18이어야 합니다.`)
       }
@@ -113,7 +113,7 @@ for (const course of corrections) {
         if (!/^[a-z0-9_-]+$/i.test(tee.tee_code ?? '') || !/^[a-z0-9_-]+$/i.test(greenCode) || teeCodes.has(teeKey)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티·그린 코드가 비었거나 중복되었습니다.`)
         teeCodes.add(teeKey)
         if (!tee.display_name?.trim() || !tee.tee_color?.trim()) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티 이름과 색상이 필요합니다.`)
-        if (tee.par != null && (!Number.isInteger(tee.par) || tee.par < 3 || tee.par > 5)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티·그린별 파는 3~5여야 합니다.`)
+        if (tee.par != null && (!Number.isInteger(tee.par) || tee.par < 3 || tee.par > 6)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티·그린별 파는 3~6이어야 합니다.`)
         const greenPars = parsByGreen.get(greenCode) ?? []
         greenPars.push(tee.par ?? null)
         parsByGreen.set(greenCode, greenPars)
