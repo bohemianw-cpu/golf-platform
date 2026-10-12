@@ -47,6 +47,9 @@ export interface GolfCourseTee {
   display_name: string
   tee_color: string
   distance_m: number
+  distance_m_source?: 'official' | 'converted'
+  source_distance?: number | null
+  source_unit?: 'm' | 'yd' | null
   green_code: string
   green_name: string
 }

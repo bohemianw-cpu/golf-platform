@@ -623,7 +623,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
         const courseHoles = (holeData ?? []) as { id: string; route_id: string; hole_number: number; par: number; handicap_index: number | null }[]
         const { data: teeData, error: courseTeesError } = courseHoles.length
           ? await supabase.from('golf_course_hole_tees')
-            .select('hole_id,tee_code,display_name,tee_color,distance_m,green_code,green_name')
+            .select('hole_id,tee_code,display_name,tee_color,distance_m,distance_m_source,source_distance,source_unit,green_code,green_name')
             .in('hole_id', courseHoles.map((hole) => hole.id))
           : { data: [], error: null }
         if (courseTeesError) throw courseTeesError
@@ -632,6 +632,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
           const row = tee as GolfCourseTee & { hole_id: string }
           teesByHole.set(row.hole_id, [...(teesByHole.get(row.hole_id) ?? []), {
             tee_code: row.tee_code, display_name: row.display_name, tee_color: row.tee_color, distance_m: row.distance_m,
+            distance_m_source: row.distance_m_source, source_distance: row.source_distance, source_unit: row.source_unit,
             green_code: row.green_code ?? 'standard', green_name: row.green_name ?? '기본 그린',
           }])
         }
