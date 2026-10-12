@@ -419,3 +419,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 원격 DB와 seed 대조 결과 코스 1개, 홀 9개, 공식 기준 거리 9개가 일치하며 모든 티 선택이 비활성화되어 있습니다. 구장과 코스는 verified입니다.
 - 반영 후 원격 카탈로그: 총 516곳 — 검수 완료 264, 미진행 247, 반려 5. 지역별 미진행은 강원 55, 경기 142, 경북 1, 서울 1, 세종 1, 인천 12, 전남 1, 전북 3, 제주 28, 충남 3곳입니다. 부산·울산·경남 pending은 0곳입니다.
 - 자료: `sn-golf-resort-2026-official-verified.json` (2026-10-13 확인).
+### 2026-10-13 — SG아름다운골프&리조트
+- 충남 아산의 미진행 27홀 항목을 운영사 공식 [코스 개요](https://www.arumdaunresort.com/html/course01.asp) 및 [힐](https://www.arumdaunresort.com/html/course02.asp)·[레이크](https://www.arumdaunresort.com/html/course03.asp)·[락](https://www.arumdaunresort.com/html/course04.asp) 홀 상세와 대조했습니다. 세 코스를 각각 9홀로 구성하고 홀별 PAR·Black/Blue/White/Yellow/Red 티 거리(m) 135행을 반영했습니다. 코스별 PAR는 모두 36입니다. 운영사 코스 개요에는 홀별 값은 있으나 티별 총합은 게시되지 않아 합계를 근거로 임의 보정하지 않았습니다. HDCP는 공식 상세가 명시한 락 3번 2, 락 7번 1만 입력했습니다.
+- 주소를 운영사 공식 표기 `충청남도 아산시 영인면 영인산로 440`으로 보정했습니다. 원격 DB 대조 결과 코스 3개·홀 27개·티 거리 135행, seed 대비 PAR·HDCP·티명·색상·거리 불일치 0건입니다. 구장과 3개 코스를 verified 처리했습니다.
+- 자료: `sg-arumdaun-golf-resort-2026-official-verified.json` (2026-10-13 확인).
+
+2026-10-13 SG아름다운골프&리조트 반영 후 원격 전체 카탈로그: 검수 완료 265개, 미진행 246개, 반려 5개(총 516개). 미진행 지역별: 강원 55, 경기 142, 경북 1, 서울 1, 세종 1, 인천 12, 전남 1, 전북 3, 제주 28, 충남 2개. 부산·울산·경남 pending은 0개입니다. 다음 작업은 인접 경북·세종·충남의 공식 홀별 자료를 확인하며, 블루원 상주는 코스 공략도에서 티별 전장이 확인되지 않아 추정 입력하지 않고 추가 공식 자료를 찾습니다.
