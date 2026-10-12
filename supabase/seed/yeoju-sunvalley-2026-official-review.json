@@ -1,0 +1,518 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "name": "여주썬밸리 컨트리클럽",
+      "match_name": "여주썬밸리 컨트리클럽",
+      "region": "경기",
+      "hole_count": 9,
+      "supports_screen": false,
+      "verification_status": "pending",
+      "review_notes": [
+        "공식 홈페이지 코스 표의 홀별 파/거리 행을 원문 그대로 보존했습니다. 티별로 표기된 거리는 6행(B/T, W/T, 티 구분 미표기 2행, F/T, L/T)이며, 페이지의 코스 전체 거리 3,231m, B/T 행 합계 3,241m, B/T 홀별 합산 3,221m가 서로 일치하지 않습니다. 미표기 티 2행 및 표의 거리 단위도 확인이 필요해 관리자 검수 대기로 설정했습니다.",
+        "출처: https://www.sunvalley.co.kr/yeoju/golf/course_intro (2026-10-12 확인). 페이지 설명에는 9홀 3,231m라고 표기되어 있으나 홀별 표의 단위 표기는 별도로 보이지 않습니다."
+      ],
+      "routes": [
+        {
+          "route_code": "YEOJU_SUN",
+          "display_name": "썬코스",
+          "hole_count": 9,
+          "primary_tee_code": "wt",
+          "verification_status": "pending",
+          "source_url": "https://www.sunvalley.co.kr/yeoju/golf/course_intro",
+          "review_notes": [
+            "공식 표의 파와 6개 거리 행을 순서대로 저장했습니다. 원문에서 라벨이 빠진 두 행은 '미표기 티 A/B'로만 표시했고, 실제 티 명칭이나 색은 추정하지 않았습니다. 표의 B/T 행 합계는 3,241이나 홀별 수치의 합은 3,221이며 페이지 설명의 코스 길이는 3,231m로, 불일치 검수 전 공개하지 않습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "bt",
+                  "display_name": "B/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 422,
+                  "source_distance": 422,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "wt",
+                  "display_name": "W/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 419,
+                  "source_distance": 419,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_1",
+                  "display_name": "미표기 티 A",
+                  "tee_color": "#64748b",
+                  "distance_m": 419,
+                  "source_distance": 419,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_2",
+                  "display_name": "미표기 티 B",
+                  "tee_color": "#64748b",
+                  "distance_m": 419,
+                  "source_distance": 419,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ft",
+                  "display_name": "F/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 399,
+                  "source_distance": 399,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lt",
+                  "display_name": "L/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 372,
+                  "source_distance": 372,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "bt",
+                  "display_name": "B/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 425,
+                  "source_distance": 425,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "wt",
+                  "display_name": "W/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 406,
+                  "source_distance": 406,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_1",
+                  "display_name": "미표기 티 A",
+                  "tee_color": "#64748b",
+                  "distance_m": 386,
+                  "source_distance": 386,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_2",
+                  "display_name": "미표기 티 B",
+                  "tee_color": "#64748b",
+                  "distance_m": 386,
+                  "source_distance": 386,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ft",
+                  "display_name": "F/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 363,
+                  "source_distance": 363,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lt",
+                  "display_name": "L/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 344,
+                  "source_distance": 344,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "bt",
+                  "display_name": "B/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 148,
+                  "source_distance": 148,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "wt",
+                  "display_name": "W/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 134,
+                  "source_distance": 134,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_1",
+                  "display_name": "미표기 티 A",
+                  "tee_color": "#64748b",
+                  "distance_m": 134,
+                  "source_distance": 134,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_2",
+                  "display_name": "미표기 티 B",
+                  "tee_color": "#64748b",
+                  "distance_m": 134,
+                  "source_distance": 134,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ft",
+                  "display_name": "F/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 115,
+                  "source_distance": 115,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lt",
+                  "display_name": "L/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 115,
+                  "source_distance": 115,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "bt",
+                  "display_name": "B/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 372,
+                  "source_distance": 372,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "wt",
+                  "display_name": "W/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 347,
+                  "source_distance": 347,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_1",
+                  "display_name": "미표기 티 A",
+                  "tee_color": "#64748b",
+                  "distance_m": 347,
+                  "source_distance": 347,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_2",
+                  "display_name": "미표기 티 B",
+                  "tee_color": "#64748b",
+                  "distance_m": 347,
+                  "source_distance": 347,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ft",
+                  "display_name": "F/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 314,
+                  "source_distance": 314,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lt",
+                  "display_name": "L/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 286,
+                  "source_distance": 286,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "bt",
+                  "display_name": "B/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 445,
+                  "source_distance": 445,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "wt",
+                  "display_name": "W/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 419,
+                  "source_distance": 419,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_1",
+                  "display_name": "미표기 티 A",
+                  "tee_color": "#64748b",
+                  "distance_m": 419,
+                  "source_distance": 419,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_2",
+                  "display_name": "미표기 티 B",
+                  "tee_color": "#64748b",
+                  "distance_m": 419,
+                  "source_distance": 419,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ft",
+                  "display_name": "F/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 386,
+                  "source_distance": 386,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lt",
+                  "display_name": "L/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 362,
+                  "source_distance": 362,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "bt",
+                  "display_name": "B/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 497,
+                  "source_distance": 497,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "wt",
+                  "display_name": "W/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 473,
+                  "source_distance": 473,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_1",
+                  "display_name": "미표기 티 A",
+                  "tee_color": "#64748b",
+                  "distance_m": 443,
+                  "source_distance": 443,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_2",
+                  "display_name": "미표기 티 B",
+                  "tee_color": "#64748b",
+                  "distance_m": 414,
+                  "source_distance": 414,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ft",
+                  "display_name": "F/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 379,
+                  "source_distance": 379,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lt",
+                  "display_name": "L/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 318,
+                  "source_distance": 318,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "bt",
+                  "display_name": "B/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 163,
+                  "source_distance": 163,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "wt",
+                  "display_name": "W/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 146,
+                  "source_distance": 146,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_1",
+                  "display_name": "미표기 티 A",
+                  "tee_color": "#64748b",
+                  "distance_m": 146,
+                  "source_distance": 146,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_2",
+                  "display_name": "미표기 티 B",
+                  "tee_color": "#64748b",
+                  "distance_m": 146,
+                  "source_distance": 146,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ft",
+                  "display_name": "F/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 122,
+                  "source_distance": 122,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lt",
+                  "display_name": "L/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 122,
+                  "source_distance": 122,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "bt",
+                  "display_name": "B/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 389,
+                  "source_distance": 389,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "wt",
+                  "display_name": "W/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 360,
+                  "source_distance": 360,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_1",
+                  "display_name": "미표기 티 A",
+                  "tee_color": "#64748b",
+                  "distance_m": 360,
+                  "source_distance": 360,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_2",
+                  "display_name": "미표기 티 B",
+                  "tee_color": "#64748b",
+                  "distance_m": 360,
+                  "source_distance": 360,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ft",
+                  "display_name": "F/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 331,
+                  "source_distance": 331,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lt",
+                  "display_name": "L/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 293,
+                  "source_distance": 293,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "bt",
+                  "display_name": "B/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 360,
+                  "source_distance": 360,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "wt",
+                  "display_name": "W/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 335,
+                  "source_distance": 335,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_1",
+                  "display_name": "미표기 티 A",
+                  "tee_color": "#64748b",
+                  "distance_m": 299,
+                  "source_distance": 299,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "unlabeled_2",
+                  "display_name": "미표기 티 B",
+                  "tee_color": "#64748b",
+                  "distance_m": 299,
+                  "source_distance": 299,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ft",
+                  "display_name": "F/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 261,
+                  "source_distance": 261,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lt",
+                  "display_name": "L/T",
+                  "tee_color": "#64748b",
+                  "distance_m": 216,
+                  "source_distance": 216,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
