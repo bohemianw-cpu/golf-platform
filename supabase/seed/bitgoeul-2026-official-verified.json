@@ -1,0 +1,186 @@
+{
+  "courses": [
+    {
+      "region": "광주",
+      "match_name": "빛고을CC",
+      "routes": [
+        {
+          "primary_tee_code": "L",
+          "par_source_url": "https://www.bitgoeulcc.co.kr/web/course/attack.do",
+          "route_code": "BITGOEUL",
+          "hole_count": 9,
+          "verification_status": "verified",
+          "source_url": "https://www.bitgoeulcc.co.kr/web/course/attack.do",
+          "holes": [
+            {
+              "handicap_index": 3,
+              "par": 4,
+              "hole_number": 1,
+              "tees": [
+                {
+                  "display_name": "L (공식 표기)",
+                  "source_distance": 334,
+                  "distance_m": 334,
+                  "tee_code": "L",
+                  "source_unit": "m",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m_source": "official"
+                }
+              ]
+            },
+            {
+              "handicap_index": 1,
+              "par": 5,
+              "hole_number": 2,
+              "tees": [
+                {
+                  "display_name": "L (공식 표기)",
+                  "source_distance": 513,
+                  "distance_m": 513,
+                  "tee_code": "L",
+                  "source_unit": "m",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m_source": "official"
+                }
+              ]
+            },
+            {
+              "handicap_index": 8,
+              "par": 3,
+              "hole_number": 3,
+              "tees": [
+                {
+                  "display_name": "L (공식 표기)",
+                  "source_distance": 120,
+                  "distance_m": 120,
+                  "tee_code": "L",
+                  "source_unit": "m",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m_source": "official"
+                }
+              ]
+            },
+            {
+              "handicap_index": 2,
+              "par": 4,
+              "hole_number": 4,
+              "tees": [
+                {
+                  "display_name": "L (공식 표기)",
+                  "source_distance": 334,
+                  "distance_m": 334,
+                  "tee_code": "L",
+                  "source_unit": "m",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m_source": "official"
+                }
+              ]
+            },
+            {
+              "handicap_index": 9,
+              "par": 5,
+              "hole_number": 5,
+              "tees": [
+                {
+                  "display_name": "L (공식 표기)",
+                  "source_distance": 363,
+                  "distance_m": 363,
+                  "tee_code": "L",
+                  "source_unit": "m",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m_source": "official"
+                }
+              ]
+            },
+            {
+              "handicap_index": 6,
+              "par": 4,
+              "hole_number": 6,
+              "tees": [
+                {
+                  "display_name": "L (공식 표기)",
+                  "source_distance": 278,
+                  "distance_m": 278,
+                  "tee_code": "L",
+                  "source_unit": "m",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m_source": "official"
+                }
+              ]
+            },
+            {
+              "handicap_index": 5,
+              "par": 3,
+              "hole_number": 7,
+              "tees": [
+                {
+                  "display_name": "L (공식 표기)",
+                  "source_distance": 134,
+                  "distance_m": 134,
+                  "tee_code": "L",
+                  "source_unit": "m",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m_source": "official"
+                }
+              ]
+            },
+            {
+              "handicap_index": 4,
+              "par": 4,
+              "hole_number": 8,
+              "tees": [
+                {
+                  "display_name": "L (공식 표기)",
+                  "source_distance": 289,
+                  "distance_m": 289,
+                  "tee_code": "L",
+                  "source_unit": "m",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m_source": "official"
+                }
+              ]
+            },
+            {
+              "handicap_index": 7,
+              "par": 4,
+              "hole_number": 9,
+              "tees": [
+                {
+                  "display_name": "L (공식 표기)",
+                  "source_distance": 371,
+                  "distance_m": 371,
+                  "tee_code": "L",
+                  "source_unit": "m",
+                  "tee_color": "#64748b",
+                  "tee_selection_available": true,
+                  "distance_m_source": "official"
+                }
+              ]
+            }
+          ],
+          "review_notes": [
+            "공식 코스공략 페이지의 9개 홀별 L 거리(m)·PAR·HC를 원문 코드 그대로 입력했습니다. 공식 페이지에서 확인되는 티 표기는 L 1종이며 다른 티별 거리는 게시되지 않아 별도 티 데이터는 추가하지 않았습니다."
+          ],
+          "display_name": "빛고을 코스"
+        }
+      ],
+      "hole_count": 9,
+      "verification_status": "verified",
+      "supports_screen": false,
+      "name": "빛고을CC",
+      "review_notes": [
+        "운영사 공식 코스공략 페이지의 9홀 데이터를 반영했습니다. 총 PAR36, L 티 공식 거리 합 2,736m입니다."
+      ],
+      "address": "광주광역시 남구 효우로 153(노대동)"
+    }
+  ],
+  "schema": "course-corrections/1"
+}
