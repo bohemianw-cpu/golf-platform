@@ -39,6 +39,48 @@ function completeTeeOptions(routes: GolfRouteOption[], totalHoles: number): Golf
     .filter((tee, index, all) => all.findIndex((candidate) => candidate.tee_code === tee.tee_code) === index)
 }
 
+function RouteDistancePreview({ route }: { route: GolfRouteOption }) {
+  const holes = route.holes ?? []
+  const tees = holes.flatMap((hole) => hole.tees)
+    .filter((tee, index, all) => all.findIndex((candidate) => candidate.tee_code === tee.tee_code) === index)
+  const parTotal = holes.reduce((sum, hole) => sum + hole.par, 0)
+
+  return (
+    <details open style={{ marginTop: '8px', border: '1px solid #e2e8f0', borderRadius: '7px', background: '#fff' }}>
+      <summary style={{ padding: '8px', fontSize: '11px', fontWeight: 700, color: '#334155', cursor: 'pointer' }}>
+        {route.display_name} 홀별 정보 · {holes.length}홀 · Par {parTotal}
+      </summary>
+      <div style={{ overflowX: 'auto', padding: '0 6px 6px' }}>
+        <table aria-label={`${route.display_name} 홀별 파와 티 거리`} style={{ width: '100%', minWidth: '360px', borderCollapse: 'collapse', fontSize: '10px', textAlign: 'center' }}>
+          <thead>
+            <tr style={{ background: '#f8fafc', color: '#475569' }}>
+              <th scope="col" style={{ padding: '6px', borderBottom: '1px solid #e2e8f0' }}>홀</th>
+              <th scope="col" style={{ padding: '6px', borderBottom: '1px solid #e2e8f0' }}>Par</th>
+              {tees.map((tee) => <th key={tee.tee_code} scope="col" style={{ padding: '6px', borderBottom: '1px solid #e2e8f0', whiteSpace: 'nowrap' }}>
+                <span aria-hidden="true" style={{ display: 'inline-block', width: 8, height: 8, marginRight: 4, border: '1px solid #94a3b8', borderRadius: '50%', background: tee.tee_color, verticalAlign: '-1px' }} />{tee.display_name}
+              </th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {holes.map((hole) => <tr key={hole.id}>
+              <th scope="row" style={{ padding: '6px', borderBottom: '1px solid #f1f5f9', color: '#334155' }}>{hole.hole_number}</th>
+              <td style={{ padding: '6px', borderBottom: '1px solid #f1f5f9', fontWeight: 700 }}>{hole.par}</td>
+              {tees.map((tee) => {
+                const variants = hole.tees.filter((item) => item.tee_code === tee.tee_code)
+                return <td key={tee.tee_code} style={{ padding: '6px', borderBottom: '1px solid #f1f5f9', color: variants.length ? '#0f172a' : '#94a3b8', whiteSpace: 'nowrap' }}>
+                  {variants.length ? variants.map((item) => variants.length > 1 || item.green_code !== 'standard'
+                    ? `${item.green_name} ${item.distance_m}m`
+                    : `${item.distance_m}m`).join(' · ') : '미제공'}
+                </td>
+              })}
+            </tr>)}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  )
+}
+
 export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locked, searchOpen, onSearchOpenChange, searchQuery, onSearchQueryChange, onCourseSelect, onCourseResolved, onRoutesChange }: Props) {
   const supabase = useMemo(() => createClient(), [])
   const [courses, setCourses] = useState<GolfCourseOption[]>([])
@@ -171,6 +213,7 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
           {routesLoading ? <p role="status" style={{ margin: '6px 0 0', fontSize: '11px', color: '#64748b' }}>코스 정보를 불러오는 중…</p>
             : catalogError ? <p role="alert" style={{ margin: '6px 0 0', fontSize: '11px', color: '#b91c1c' }}>코스 레이아웃을 불러오지 못했습니다.</p>
               : selectedCourseRoutes.length > 0 ? (
+                <>
                 <fieldset style={{ margin: '8px 0 0', padding: '7px 8px', border: '1px solid #bbf7d0', borderRadius: '6px', background: '#fff' }}>
                   <legend style={{ padding: '0 3px', fontSize: '10px', fontWeight: 700, color: '#166534' }}>오늘 플레이할 코스와 티 선택</legend>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -218,6 +261,8 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
                     {selectedLayoutIsValid ? `${selectedHoleCount}홀 파·거리 확인 완료 · ${selectedTee.display_name}` : selectedHoleCount < 9 ? `${selectedHoleCount}/9홀 선택 · 코스를 선택해 주세요.` : selectedHoleCount === 9 ? '9홀 라운드를 기록하거나 다른 9홀 코스를 추가할 수 있습니다.' : selectedHoleCount < 18 ? `${selectedHoleCount}/18홀 선택 · 나머지 코스를 선택해 주세요.` : teeOptions.length > 0 ? '기록을 시작하기 전에 티 위치를 선택해 주세요.' : '선택한 홀 전체에 티별 거리 자료가 확인된 코스를 선택해 주세요.'}
                   </div>
                 </fieldset>
+                {selectedRoutes.map((route, index) => <RouteDistancePreview key={`${route.id}-${index}`} route={route} />)}
+                </>
               ) : <p style={{ margin: '6px 0 0', fontSize: '11px', color: '#64748b' }}>검증된 9홀 코스 정보가 아직 등록되지 않았습니다.</p>}
         </div>
       )}
