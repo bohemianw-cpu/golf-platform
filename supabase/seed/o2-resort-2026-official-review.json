@@ -9,6 +9,9 @@
       "hole_count": 27,
       "verification_status": "pending",
       "supports_screen": false,
+      "review_notes": [
+        "공식 코스 개요(ccGuide.jsp)는 각 코스 전장을 3,018yd, 4,265yd, 3,237yd로 표기합니다. 홀별 코스 페이지 티 거리 합계와 차이가 있어 공식 자료 간 대조가 끝날 때까지 검수 대기합니다."
+      ],
       "routes": [
         {
           "route_code": "HAMBAEK",
@@ -16,7 +19,11 @@
           "hole_count": 9,
           "primary_tee_code": "o2_rt",
           "source_url": "https://www.o2resort.com/GLF/mountainCourse.jsp",
+          "official_course_overview_distance_yd": 3018,
           "verification_status": "pending",
+          "review_notes": [
+            "공식 개요 전장은 3,018yd입니다. 홀별 티 표 합계는 C/T 3,235yd, R/T 3,027yd, F/T 2,785yd, L/T 2,420yd로, R/T 합계도 개요보다 9yd 깁니다."
+          ],
           "holes": [
             {"hole_number":1,"par":4,"tees":[{"tee_code":"o2_ct","display_name":"C/T","tee_color":"#f97316","distance_m":302,"source_distance":330,"source_unit":"yd"},{"tee_code":"o2_rt","display_name":"R/T","tee_color":"#f97316","distance_m":276,"source_distance":302,"source_unit":"yd"},{"tee_code":"o2_ft","display_name":"F/T","tee_color":"#f97316","distance_m":256,"source_distance":280,"source_unit":"yd"},{"tee_code":"o2_lt","display_name":"L/T","tee_color":"#f97316","distance_m":192,"source_distance":210,"source_unit":"yd"}]},
             {"hole_number":2,"par":4,"tees":[{"tee_code":"o2_ct","display_name":"C/T","tee_color":"#f97316","distance_m":315,"source_distance":345,"source_unit":"yd"},{"tee_code":"o2_rt","display_name":"R/T","tee_color":"#f97316","distance_m":315,"source_distance":345,"source_unit":"yd"},{"tee_code":"o2_ft","display_name":"F/T","tee_color":"#f97316","distance_m":283,"source_distance":310,"source_unit":"yd"},{"tee_code":"o2_lt","display_name":"L/T","tee_color":"#f97316","distance_m":256,"source_distance":280,"source_unit":"yd"}]},
@@ -35,7 +42,11 @@
           "hole_count": 9,
           "primary_tee_code": "o2_rt",
           "source_url": "https://www.o2resort.com/GLF/skyCourse.jsp",
+          "official_course_overview_distance_yd": 4265,
           "verification_status": "pending",
+          "review_notes": [
+            "공식 개요 전장은 4,265yd입니다. 홀별 티 표 합계는 C/T 3,380yd, R/T 3,150yd, F/T 2,835yd, L/T 2,435yd로 개요 전장과 큰 차이가 있습니다."
+          ],
           "holes": [
             {"hole_number":1,"par":5,"tees":[{"tee_code":"o2_ct","display_name":"C/T","tee_color":"#f97316","distance_m":466,"source_distance":510,"source_unit":"yd"},{"tee_code":"o2_rt","display_name":"R/T","tee_color":"#f97316","distance_m":430,"source_distance":470,"source_unit":"yd"},{"tee_code":"o2_ft","display_name":"F/T","tee_color":"#f97316","distance_m":407,"source_distance":445,"source_unit":"yd"},{"tee_code":"o2_lt","display_name":"L/T","tee_color":"#f97316","distance_m":357,"source_distance":390,"source_unit":"yd"}]},
             {"hole_number":2,"par":3,"tees":[{"tee_code":"o2_ct","display_name":"C/T","tee_color":"#f97316","distance_m":165,"source_distance":180,"source_unit":"yd"},{"tee_code":"o2_rt","display_name":"R/T","tee_color":"#f97316","distance_m":165,"source_distance":180,"source_unit":"yd"},{"tee_code":"o2_ft","display_name":"F/T","tee_color":"#f97316","distance_m":128,"source_distance":140,"source_unit":"yd"},{"tee_code":"o2_lt","display_name":"L/T","tee_color":"#f97316","distance_m":96,"source_distance":105,"source_unit":"yd"}]},
@@ -54,7 +65,11 @@
           "hole_count": 9,
           "primary_tee_code": "o2_rt",
           "source_url": "https://www.o2resort.com/GLF/hillCourse.jsp",
+          "official_course_overview_distance_yd": 3237,
           "verification_status": "pending",
+          "review_notes": [
+            "공식 개요 전장은 3,237yd입니다. 홀별 티 표 합계는 C/T 3,065yd, R/T 2,693yd, F/T 1,990yd, L/T 1,906yd로, 어느 티 합계와도 일치하지 않습니다."
+          ],
           "holes": [
             {"hole_number":1,"par":5,"tees":[{"tee_code":"o2_ct","display_name":"C/T","tee_color":"#f97316","distance_m":446,"source_distance":488,"source_unit":"yd"},{"tee_code":"o2_rt","display_name":"R/T","tee_color":"#f97316","distance_m":402,"source_distance":440,"source_unit":"yd"},{"tee_code":"o2_ft","display_name":"F/T","tee_color":"#f97316","distance_m":366,"source_distance":400,"source_unit":"yd"},{"tee_code":"o2_lt","display_name":"L/T","tee_color":"#f97316","distance_m":251,"source_distance":275,"source_unit":"yd"}]},
             {"hole_number":2,"par":5,"tees":[{"tee_code":"o2_ct","display_name":"C/T","tee_color":"#f97316","distance_m":454,"source_distance":497,"source_unit":"yd"},{"tee_code":"o2_rt","display_name":"R/T","tee_color":"#f97316","distance_m":421,"source_distance":460,"source_unit":"yd"},{"tee_code":"o2_ft","display_name":"F/T","tee_color":"#f97316","distance_m":402,"source_distance":440,"source_unit":"yd"},{"tee_code":"o2_lt","display_name":"L/T","tee_color":"#f97316","distance_m":304,"source_distance":332,"source_unit":"yd"}]},
