@@ -1,0 +1,52 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "마이다스 구미 골프아카데미",
+      "name": "가산CC",
+      "region": "경북",
+      "address": "경상북도 칠곡군 가산면 학하2길 54-171",
+      "aliases": [
+        "마이다스 구미 골프아카데미",
+        "마이다스 구미",
+        "구미 마이다스CC",
+        "가산 컨트리클럽",
+        "Gasan Country Club"
+      ],
+      "hole_count": 9,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "운영사 공식 공지에 따르면 2025년 8월 8일부터 기존 마이다스 구미 골프장을 대원엔비텍 가산CC가 운영합니다. MCST 기존 레코드와 공식 현재 주소가 일치해 기존 레코드 ID를 유지하고 현 명칭으로 갱신했습니다.",
+        "공식 홀 상세는 각 홀 PAR와 거리(m)를 공개하지만 티별 거리 구분 및 HDCP는 공개하지 않습니다. 공개된 기준 거리를 ‘공식 기준’으로 보존하고 티 색상 또는 종류는 임의로 붙이지 않았습니다. 공식 홀별 거리 합은 3,254m입니다.",
+        "공식 출처: https://www.gasancc.com/Board/Details/25?page=1 및 https://www.gasancc.com/Club/CourseInfo (각 홀 상세 HoleInfoPartial?hole=1~9, 2026-10-12 확인)."
+      ],
+      "routes": [
+        {
+          "route_code": "MAIN",
+          "display_name": "가산 코스",
+          "hole_count": 9,
+          "primary_tee_code": "official_reference",
+          "verification_status": "verified",
+          "source_url": "https://www.gasancc.com/Club/CourseInfo",
+          "par_source_url": "https://www.gasancc.com/Club/CourseInfo",
+          "source_data_url": "https://www.gasancc.com/Club/HoleInfoPartial?hole=1",
+          "review_notes": [
+            "운영사 공식 1~9번 홀 상세의 PAR와 미터 단위 기준 거리 9개를 저장했습니다. 공식 자료에는 티별 분리 거리와 HDCP가 없어, 공개된 기준 거리를 특정 티로 해석하지 않았습니다."
+          ],
+          "holes": [
+            { "hole_number": 1, "par": 5, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 506, "distance_m_source": "official", "source_distance": 506, "source_unit": "m" }] },
+            { "hole_number": 2, "par": 4, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 389, "distance_m_source": "official", "source_distance": 389, "source_unit": "m" }] },
+            { "hole_number": 3, "par": 3, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 176, "distance_m_source": "official", "source_distance": 176, "source_unit": "m" }] },
+            { "hole_number": 4, "par": 4, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 401, "distance_m_source": "official", "source_distance": 401, "source_unit": "m" }] },
+            { "hole_number": 5, "par": 4, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 380, "distance_m_source": "official", "source_distance": 380, "source_unit": "m" }] },
+            { "hole_number": 6, "par": 3, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 162, "distance_m_source": "official", "source_distance": 162, "source_unit": "m" }] },
+            { "hole_number": 7, "par": 5, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 470, "distance_m_source": "official", "source_distance": 470, "source_unit": "m" }] },
+            { "hole_number": 8, "par": 4, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 390, "distance_m_source": "official", "source_distance": 390, "source_unit": "m" }] },
+            { "hole_number": 9, "par": 4, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 380, "distance_m_source": "official", "source_distance": 380, "source_unit": "m" }] }
+          ]
+        }
+      ]
+    }
+  ]
+}
