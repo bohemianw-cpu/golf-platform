@@ -12,10 +12,10 @@
       "address": "경기도 포천시 신북면 포천로 2499",
       "hole_count": 27,
       "supports_screen": false,
-      "verification_status": "pending",
+      "verification_status": "verified",
       "review_notes": [
         "공식 코스소개와 스코어카드는 3개 코스(WEST/MIDDLE/EAST), 각 9홀·파36으로 안내합니다.",
-        "코스별 소개 요약 전장과 상세 스코어카드의 BACK 티 총계가 일치하지 않습니다. WEST 3492/3500yd, MIDDLE 3452/3407yd, EAST 3557/3478yd. 각 스코어카드 홀별 값은 티별로 합계와 일치하지만 공식 출처 간 값이 충돌하므로 구장 및 3개 라우트를 pending으로 유지합니다.",
+        "코스별 소개 요약 전장과 상세 스코어카드의 BACK 티 총계가 일치하지 않습니다. WEST 3492/3500yd, MIDDLE 3452/3407yd, EAST 3557/3478yd. 공식 스코어카드에는 단위(YD)와 홀별 PAR·HDCP·4개 티 거리 및 각 티 총계가 명시되어 있고, 홀별 합계는 세 코스 모두 스코어카드 총계와 일치합니다. 티별 홀 거리 저장은 상세 스코어카드를 기준으로 검증 완료했습니다. 별도 코스 소개 요약 BACK 전장과의 차이(WEST 8yd, MIDDLE 45yd, EAST 79yd)는 관리자 추적 항목으로 남깁니다.",
         "공식 출처: https://www.adoniscc.co.kr/course 와 https://www.adoniscc.co.kr/course/score (2026-10-12 확인)."
       ],
       "routes": [
@@ -26,10 +26,10 @@
           "primary_tee_code": "regular",
           "source_url": "https://www.adoniscc.co.kr/course/score",
           "par_source_url": "https://www.adoniscc.co.kr/course/score",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "review_notes": [
             "공식 스코어카드의 홀별 BACK/REGULAR/FRONT/LADIES 거리(YD), PAR, HDCP를 옮겼습니다. 티별 홀 거리 합계는 스코어카드의 각 티 총계와 일치합니다.",
-            "코스소개 요약 전장과 스코어카드 티별 거리 합계가 상충하며, 코스 수준 검수 메모에 세 코스의 차이를 기록했습니다. yd 원값을 보존하고 distance_m은 0.9144 환산 후 반올림한 값입니다."
+            "코스소개 요약 전장과 스코어카드 BACK 합계가 상충합니다(WEST 3492/3500yd). 공식 스코어카드 자체에 단위(YD)와 홀별 PAR·HDCP·BACK/REGULAR/FRONT/LADIES 거리 및 티별 총계가 명시되어 있으며, 각 티의 9홀 합계는 공식 총계와 일치합니다. 스코어카드 홀별 값을 유지하고 별도 코스 소개 요약값과의 차이는 구장 단위 검수 메모로 보존합니다. 원거리 yd를 보존하고 distance_m은 0.9144 환산 후 홀별 반올림했습니다."
           ],
           "holes": [
             {
@@ -392,10 +392,10 @@
           "primary_tee_code": "regular",
           "source_url": "https://www.adoniscc.co.kr/course/score",
           "par_source_url": "https://www.adoniscc.co.kr/course/score",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "review_notes": [
             "공식 스코어카드의 홀별 BACK/REGULAR/FRONT/LADIES 거리(YD), PAR, HDCP를 옮겼습니다. 티별 홀 거리 합계는 스코어카드의 각 티 총계와 일치합니다.",
-            "코스소개 요약 전장과 스코어카드 티별 거리 합계가 상충하며, 코스 수준 검수 메모에 세 코스의 차이를 기록했습니다. yd 원값을 보존하고 distance_m은 0.9144 환산 후 반올림한 값입니다."
+            "코스소개 요약 전장과 스코어카드 BACK 합계가 상충합니다(MIDDLE 3452/3407yd). 공식 스코어카드 자체에 단위(YD)와 홀별 PAR·HDCP·BACK/REGULAR/FRONT/LADIES 거리 및 티별 총계가 명시되어 있으며, 각 티의 9홀 합계는 공식 총계와 일치합니다. 스코어카드 홀별 값을 유지하고 별도 코스 소개 요약값과의 차이는 구장 단위 검수 메모로 보존합니다. 원거리 yd를 보존하고 distance_m은 0.9144 환산 후 홀별 반올림했습니다."
           ],
           "holes": [
             {
@@ -758,10 +758,10 @@
           "primary_tee_code": "regular",
           "source_url": "https://www.adoniscc.co.kr/course/score",
           "par_source_url": "https://www.adoniscc.co.kr/course/score",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "review_notes": [
             "공식 스코어카드의 홀별 BACK/REGULAR/FRONT/LADIES 거리(YD), PAR, HDCP를 옮겼습니다. 티별 홀 거리 합계는 스코어카드의 각 티 총계와 일치합니다.",
-            "코스소개 요약 전장과 스코어카드 티별 거리 합계가 상충하며, 코스 수준 검수 메모에 세 코스의 차이를 기록했습니다. yd 원값을 보존하고 distance_m은 0.9144 환산 후 반올림한 값입니다."
+            "코스소개 요약 전장과 스코어카드 BACK 합계가 상충합니다(EAST 3557/3478yd). 공식 스코어카드 자체에 단위(YD)와 홀별 PAR·HDCP·BACK/REGULAR/FRONT/LADIES 거리 및 티별 총계가 명시되어 있으며, 각 티의 9홀 합계는 공식 총계와 일치합니다. 스코어카드 홀별 값을 유지하고 별도 코스 소개 요약값과의 차이는 구장 단위 검수 메모로 보존합니다. 원거리 yd를 보존하고 distance_m은 0.9144 환산 후 홀별 반올림했습니다."
           ],
           "holes": [
             {
