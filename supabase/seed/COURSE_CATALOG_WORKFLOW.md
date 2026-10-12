@@ -244,3 +244,4 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-13 · 동전주 써미트CC
 
 공식 코스 제원표에서 M·S·K 각 9홀 PAR36 및 Red/Yellow/White/Blue 티별 거리 108행을 저장하고 원격 DB의 27홀·3경로·108개 티 행을 seed와 행 단위 대조해 일치함을 확인했습니다. 공식 코스개요 길이는 M/S/K 3,010/3,072/3,113m이나 Blue 홀별 합은 2,986/3,100/3,184m로 차이가 있어, 홀별 제원표 값을 보존하고 경로별 메모에 남겼습니다. HDCP는 공식 제원표에 공개되지 않았습니다. 자료 파일: `summit-cc-2026-official-verified.json`; 출처: [공식 코스 제원](https://www.summitcc.co.kr/course/course_info) (2026-10-13 확인).
+- 고창CC(전북): 공식 코스 제원에서 Beach·Blue 각 9홀과 Sky 3홀(총 21홀)의 PAR 및 handicap, 좌·우 그린별 Blue/White/Yellow/Red 거리(m)를 저장했습니다. Sky는 공식 자료에 handicap이 공개되지 않아 비워 두었습니다. 168개 티·그린 거리 행을 DB에 적재한 뒤 seed와 홀/티 행을 전수 비교해 불일치 0건을 확인했습니다. 자료 파일: `gochang-cc-2026-official-verified.json`; 출처: [공식 코스 소개](https://www.gochangcc.co.kr/mobile/course.asp) (2026-10-13 확인).
