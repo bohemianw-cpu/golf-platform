@@ -438,3 +438,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 세종레이캐슬골프&리조트: 운영사 공식 [세종](https://www.sjraycastle.com/Golf/Course/Sejong.aspx)·[레이](https://www.sjraycastle.com/Golf/Course/Ray.aspx)·[캐슬](https://www.sjraycastle.com/Golf/Course/Castle.aspx) 페이지는 코스 이미지 위주이며 PAR·홀별 거리표를 공개하지 않아 pending 유지.
 - 계룡산골프장: 공주시 공식 2012년 공고에는 시설 규모가 6홀로 기재되어 현재 카탈로그의 9홀과 차이가 있습니다([공주시보](https://www.gongju.go.kr/thumbnail/eBook/BOK_202004270152040200.pdf)). 최신 운영사 원문에서 코스 식별·홀 구성 및 홀별 PAR/거리를 확인하기 전까지 pending 유지.
 - 이 조사 시점 원격 카탈로그 상태: 검수 완료 266곳, 미진행 245곳, 반려 5곳(총 516곳). 위 미진행 항목의 불충분한 공식 자료 때문에 이번 조사에서는 DB 상태를 변경하지 않았습니다.
+
+### 2026-10-13 — ROUTE52CC
+- 운영사 공식 [코스소개](https://www.route52cc.com/course/courseIntro.asp)의 Meter 기준표 및 [홀별 공략 페이지](https://www.route52cc.com/course/course01.asp)~course18.asp를 대조했습니다. A·B 각 9홀의 PAR와 Black/Blue/White/Yellow/Red 티별 거리 18홀을 반영했습니다.
+- A 코스는 PAR36·Black 합계 3,175m, B 코스는 PAR36·Black 합계 3,235m로 코스소개 공식 합계와 홀별 Black 거리 합이 일치합니다. B 코스 6번 홀은 공식 페이지의 White 1·2 및 Yellow 1·2를 서로 다른 티로 보존했습니다. HDCP는 공식 페이지에 없어 입력하지 않았습니다.
+- 자료: `route52-cc-2026-official-verified.json`. 원격 DB와 seed를 대조해 구장 1개, 코스 2개, 홀 18개, 티 거리 92행, 구장·코스·홀·티 불일치 0건을 확인했습니다.
+- 반영 후 원격 전체 카탈로그: 검수 완료 267곳, 미진행 244곳, 반려 5곳(총 516곳).
