@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 import { createHash } from 'node:crypto'
 import { readFile, writeFile } from 'node:fs/promises'
+import { normalizeCourseName, normalizeCourseSearch } from '../utils/course-name.js'
 
 const args = new Map()
 for (let index = 2; index < process.argv.length; index += 1) {
@@ -32,7 +33,7 @@ function parseCsv(source) {
 }
 
 function normalizeHeader(value) { return value.replace(/^\uFEFF/, '').replace(/[\s_()-]/g, '').toLowerCase() }
-function normalizeName(value) { return value.normalize('NFKC').replace(/[\s·ㆍ()（）.,_-]/g, '').toLocaleLowerCase('ko-KR') }
+function normalizeName(value) { return normalizeCourseSearch(value) }
 function regionFromAddress(address) {
   const first = address.trim().split(/\s+/)[0] ?? ''
   return first.replace(/(특별자치도|특별자치시|특별시|광역시|도)$/u, '') || null
@@ -61,8 +62,9 @@ const sourceName = 'MCST 전국 골프장 현황'
 const coursesByKey = new Map()
 
 for (const row of rows) {
-  const name = cellAt(row, nameColumn)
-  if (!name) continue
+  const sourceCourseName = cellAt(row, nameColumn)
+  if (!sourceCourseName) continue
+  const name = normalizeCourseName(sourceCourseName)
   const address = cellAt(row, addressColumn) || null
   const region = cellAt(row, regionColumn) || (address ? regionFromAddress(address) : null)
   const parsedHoles = Number.parseInt(cellAt(row, holesColumn).replace(/[^0-9]/g, ''), 10)

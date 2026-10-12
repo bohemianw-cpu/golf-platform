@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 import { readFile } from 'node:fs/promises'
+import { normalizeCourseName, normalizeCourseSearch } from '../utils/course-name.js'
 
 const args = new Map()
 for (let index = 2; index < process.argv.length; index += 1) {
@@ -10,7 +11,7 @@ const checkOnly = args.has('check')
 if (!inputPath) throw new Error('사용법: node scripts/import-course-corrections.mjs --input <JSON> [--check | --apply]')
 if (checkOnly && args.has('apply')) throw new Error('--check와 --apply는 함께 사용할 수 없습니다.')
 
-function normalizeName(value) { return value.normalize('NFKC').replace(/[\s·ㆍ()（）.,_-]/g, '').toLocaleLowerCase('ko-KR') }
+function normalizeName(value) { return normalizeCourseSearch(value) }
 function routeReviewNotes(route) {
   const notes = [...(route.review_notes ?? [])]
   if (route.official_tee_total_tolerance_note?.trim()) notes.push(`공식 티 합계 검수: ${route.official_tee_total_tolerance_note.trim()}`)
@@ -189,6 +190,10 @@ function sameValue(actual, expected) {
   return JSON.stringify(actual) === JSON.stringify(expected)
 }
 
+function normalizeCorrection(correction) {
+  return { ...correction, name: normalizeCourseName(correction.name) }
+}
+
 function routeDistances(route) {
   const primaryTeeCode = route.primary_tee_code ?? 'white'
   return route.holes.map((hole) => hole.tees.find((tee) => tee.tee_code === primaryTeeCode)?.distance_m ?? hole.tees[0].distance_m)
@@ -284,7 +289,8 @@ async function verifyCourse(correction, courseId) {
   console.log(`일치 확인: ${correction.name} · 코스 ${expectedRoutes.length}개 · 홀 ${expectedRoutes.reduce((sum, route) => sum + route.holes.length, 0)}개 · 티 ${expectedRoutes.reduce((sum, route) => sum + route.holes.reduce((holeSum, hole) => holeSum + hole.tees.length, 0), 0)}개`)
 }
 
-for (const correction of corrections) {
+for (const sourceCorrection of corrections) {
+  const correction = normalizeCorrection(sourceCorrection)
   const normalizedName = normalizeName(correction.name)
   const matchName = normalizeName(correction.match_name ?? correction.name)
   let query = supabase.from('golf_courses').select('id').eq('normalized_name', matchName)

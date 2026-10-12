@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import { createClient } from '@/utils/supabase/client'
+import { normalizeCourseSearch } from '@/utils/course-name'
 import type { GolfCourseHole, GolfCourseRoute, GolfCourseTee } from '@/types/golf'
 
 export interface GolfCourseOption {
@@ -101,7 +102,7 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
   const [catalogError, setCatalogError] = useState(false)
 
   useEffect(() => {
-    const search = searchQuery.trim()
+    const search = normalizeCourseSearch(searchQuery)
     if (search.length < 1) return
     let cancelled = false
     const timer = window.setTimeout(async () => {
@@ -110,7 +111,7 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
         .from('golf_courses')
         .select('id,name,region,venue_kind,supports_field,supports_screen,hole_count')
         .eq('verification_status', 'verified')
-        .ilike('name', `%${search}%`)
+        .ilike('normalized_name', `%${search}%`)
         .order('name')
         .range(0, 999)
       if (cancelled) return

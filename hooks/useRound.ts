@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { createClient } from '@/utils/supabase/client'
+import { normalizeCourseName } from '@/utils/course-name'
 import type { ClubItem, BallLie, ShotRecord, HoleRecord, GolfCourseRoute, GolfCourseTee } from '@/types/golf'
 import { INITIAL_HOLE_PARS } from '@/utils/golf/clubs'
 import {
@@ -347,7 +348,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
       if (roundIdRef.current) return roundIdRef.current
       if (!roundPromiseRef.current) {
         roundPromiseRef.current = (async () => {
-          const name = metaRef.current.club.trim() || '골프장 미지정'
+          const name = normalizeCourseName(metaRef.current.club.trim()) || '골프장 미지정'
           const { data: profile, error: profileError } = await supabase
             .from('profiles')
             .select('skill_group')
@@ -360,7 +361,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
               user_id: userId,
               club_name: name,
               golf_club: name,
-              course_name: metaRef.current.course,
+              course_name: normalizeCourseName(metaRef.current.course),
               play_mode: metaRef.current.playMode,
               course_id: metaRef.current.courseId,
               route_ids: metaRef.current.routeIds,
@@ -416,13 +417,13 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
             if (error) throw error
           }
 
-          const name = metaRef.current.club.trim() || '골프장 미지정'
+          const name = normalizeCourseName(metaRef.current.club.trim()) || '골프장 미지정'
           const { error: updateError } = await supabase
             .from('rounds')
             .update({
               club_name: name,
               golf_club: name,
-              course_name: metaRef.current.course,
+              course_name: normalizeCourseName(metaRef.current.course),
               play_mode: metaRef.current.playMode,
               course_id: metaRef.current.courseId,
               route_ids: metaRef.current.routeIds,
