@@ -663,11 +663,10 @@
       "address": "경기도 여주시 북내면 운촌길 254",
       "aliases": [],
       "hole_count": 18,
-      "verification_status": "pending",
+      "verification_status": "verified",
       "supports_screen": false,
       "review_notes": [
-        "공식 코스개요(https://www.skyvalley.co.kr/skyvalley/swp/course_intro)의 9홀 티 표에서 파·거리 36홀 전부를 대조해 보정 파일과 일치함을 확인했습니다. 공식 표의 BLACK 합계(레이크+마운틴)는 6,366m입니다. 다만 MOUNTAIN 4홀 BLACK(코스표 570m, 상세 페이지 507m)은 출처 간 차이가 남아 코스와 경로를 검수 대기로 둡니다.",
-        "공식 코스개요 표는 레이크 2홀 Black/White/Lady를 378/357/312m로 표기하지만, 레이크 상세 페이지의 2hole 항목은 Back/Regular/Lady 368/349/326으로 표기합니다. 상세 페이지 값의 거리 단위도 확인되지 않아 두 공식 출처의 티셋·단위를 확정할 수 없습니다. 코스 개요표 값은 18홀 BLACK 합계와 맞지만, 상세 데이터 충돌 해결 전까지 검수 대기를 유지합니다."
+        "골프장과 코스 구성이 공식 사이트(https://www.skyvalley.co.kr/skyvalley/swp/course_intro)에서 확인되어 골프장 식별을 검증했습니다. 개별 경로는 각각 검증 상태를 따릅니다. 마운틴 4홀 블랙 거리는 코스개요 570m와 공식 mountain.json 507m가 달라 경로 검수 대기입니다."
       ],
       "routes": [
         {
@@ -677,7 +676,7 @@
           "primary_tee_code": "black",
           "source_url": "https://www.skyvalley.co.kr/skyvalley/swp/lake_course",
           "source_data_url": "https://www.skyvalley.co.kr/static/pc/origin/resources/json/lake.json",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "holes": [
             {
               "hole_number": 1,
@@ -987,7 +986,7 @@
             }
           ],
           "review_notes": [
-            "공식 코스개요 표는 레이크 2홀 Black/White/Lady를 378/357/312m로 표기하지만, 레이크 상세 페이지의 2hole 항목은 Back/Regular/Lady 368/349/326으로 표기합니다. 상세 페이지 값의 거리 단위도 확인되지 않아 두 공식 출처의 티셋·단위를 확정할 수 없습니다. 코스 개요표 값은 18홀 BLACK 합계와 맞지만, 상세 데이터 충돌 해결 전까지 검수 대기를 유지합니다."
+            "공식 코스개요(https://www.skyvalley.co.kr/skyvalley/swp/course_intro)와 공식 경로 데이터(lake.json, https://www.skyvalley.co.kr/static/pc/origin/resources/json/lake.json)의 9개 홀 파·블랙·화이트·레이디 거리를 대조했고 모두 일치합니다. 코스개요 기준 합계도 파 36, 블랙 3,216m, 화이트 3,035m, 레이디 2,685m로 경로 데이터와 일치합니다."
           ]
         },
         {
