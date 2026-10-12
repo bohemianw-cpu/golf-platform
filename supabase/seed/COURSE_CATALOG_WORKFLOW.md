@@ -406,3 +406,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 원격 DB 검수 결과 코스 1개, 홀 9개, 티 행 36개이며 PAR/거리/티별 데이터가 seed와 일치합니다. 구장과 코스 모두 verified입니다.
 - 반영 후 원격 카탈로그: 총 516곳 — 검수 완료 262, 미진행 249, 반려 5. 지역별 미진행은 강원 55, 경기 142, 경북 1, 서울 1, 세종 1, 인천 12, 전남 1, 전북 3, 제주 28, 충남 4, 충북 1곳입니다. 부산·울산·경남 pending은 0곳입니다.
 - 자료: `the-hill-cc-2026-official-verified.json` (2026-10-13 확인).
+
+### 2026-10-13 — 킹스데일CC
+- 운영사 공식 웹사이트에서 사용하는 [Lake 공식 홀 API](https://kingsdalegc-hp-api.holeinonecloud.com/api/v1/hole/course/52)와 [Hill 공식 홀 API](https://kingsdalegc-hp-api.holeinonecloud.com/api/v1/hole/course/53), 코스 메타데이터 API를 대조해 각 9홀 PAR와 Black/Blue/White/Silver/Red 티 거리(m)를 입력했습니다. 공식 METER 합계와 홀별 거리 합은 두 코스 모두 일치합니다.
+- Lake·Hill 각 PAR36, 총 18홀·90개 티 행을 원격 DB와 seed로 대조해 코스·홀·티별 거리 불일치 0건을 확인했습니다. API의 handicap 필드는 모든 홀에서 0으로 반환되어 미공개 값으로 보고 저장하지 않았습니다.
+- 반영 후 원격 카탈로그: 총 516곳 — 검수 완료 263, 미진행 248, 반려 5. 지역별 미진행은 강원 55, 경기 142, 경북 1, 서울 1, 세종 1, 인천 12, 전남 1, 전북 3, 제주 28, 충남 4곳입니다. 부산·울산·경남 pending은 0곳입니다.
+- 자료: `kingsdale-gc-2026-official-verified.json` (2026-10-13 확인).
