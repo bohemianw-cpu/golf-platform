@@ -1,0 +1,1065 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "name": "솔라시도CC",
+      "match_name": "솔라시도CC",
+      "region": "전남",
+      "address": "전라남도 해남군 산이면 산이로 2247",
+      "hole_count": 18,
+      "supports_screen": false,
+      "aliases": [
+        "솔라시도컨트리클럽",
+        "솔라시도골프앤빌리지"
+      ],
+      "verification_status": "verified",
+      "review_notes": [
+        "운영사 공식 홈페이지에서 솔라·시도 각 9홀, 18홀 PAR72를 확인했습니다. 코스 전경 안내도는 전체 6,490m(7,098yd)로 표기합니다. 공식 홀 거리도에 게시된 모든 티별 m 값을 반영했으며 공식 이미지에 없는 티나 HDCP는 추정하지 않았습니다."
+      ],
+      "routes": [
+        {
+          "route_code": "sola",
+          "display_name": "솔라 코스",
+          "hole_count": 9,
+          "primary_tee_code": "white",
+          "source_url": "https://www.solaseadocc.com/sub/solaCourse.asp",
+          "verification_status": "verified",
+          "review_notes": [
+            "운영사 공식 솔라코스 홀별 거리도 이미지 1~9에 표시된 PAR와 레드·옐로우·화이트·블루·블랙 티의 미터 거리를 반영했습니다. 각 홀 거리도: https://www.solaseadocc.com/assets/images/sub/solacourse/sola1_img.png ~ sola9_img.png. 9홀 PAR 합계 36, 블랙 티 홀별 합계 3,227m는 공식 코스 안내 합계와 일치합니다. 공식 도면에 HDCP는 별도 표기되지 않아 입력하지 않았습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "red",
+                  "display_name": "레드",
+                  "tee_color": "#dc2626",
+                  "distance_m": 258,
+                  "distance_m_source": "official",
+                  "source_distance": 258,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 305,
+                  "distance_m_source": "official",
+                  "source_distance": 305,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 330,
+                  "distance_m_source": "official",
+                  "source_distance": 330,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 345,
+                  "distance_m_source": "official",
+                  "source_distance": 345,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 380,
+                  "distance_m_source": "official",
+                  "source_distance": 380,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 5,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "red",
+                  "display_name": "레드",
+                  "tee_color": "#dc2626",
+                  "distance_m": 391,
+                  "distance_m_source": "official",
+                  "source_distance": 391,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 429,
+                  "distance_m_source": "official",
+                  "source_distance": 429,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 472,
+                  "distance_m_source": "official",
+                  "source_distance": 472,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 505,
+                  "distance_m_source": "official",
+                  "source_distance": 505,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 545,
+                  "distance_m_source": "official",
+                  "source_distance": 545,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "red",
+                  "display_name": "레드",
+                  "tee_color": "#dc2626",
+                  "distance_m": 88,
+                  "distance_m_source": "official",
+                  "source_distance": 88,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 108,
+                  "distance_m_source": "official",
+                  "source_distance": 108,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 120,
+                  "distance_m_source": "official",
+                  "source_distance": 120,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 135,
+                  "distance_m_source": "official",
+                  "source_distance": 135,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 150,
+                  "distance_m_source": "official",
+                  "source_distance": 150,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "red",
+                  "display_name": "레드",
+                  "tee_color": "#dc2626",
+                  "distance_m": 220,
+                  "distance_m_source": "official",
+                  "source_distance": 220,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 279,
+                  "distance_m_source": "official",
+                  "source_distance": 279,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 302,
+                  "distance_m_source": "official",
+                  "source_distance": 302,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 318,
+                  "distance_m_source": "official",
+                  "source_distance": 318,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 350,
+                  "distance_m_source": "official",
+                  "source_distance": 350,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "red",
+                  "display_name": "레드",
+                  "tee_color": "#dc2626",
+                  "distance_m": 263,
+                  "distance_m_source": "official",
+                  "source_distance": 263,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 291,
+                  "distance_m_source": "official",
+                  "source_distance": 291,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 321,
+                  "distance_m_source": "official",
+                  "source_distance": 321,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 339,
+                  "distance_m_source": "official",
+                  "source_distance": 339,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 361,
+                  "distance_m_source": "official",
+                  "source_distance": 361,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 5,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "red",
+                  "display_name": "레드",
+                  "tee_color": "#dc2626",
+                  "distance_m": 373,
+                  "distance_m_source": "official",
+                  "source_distance": 373,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 420,
+                  "distance_m_source": "official",
+                  "source_distance": 420,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 444,
+                  "distance_m_source": "official",
+                  "source_distance": 444,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 461,
+                  "distance_m_source": "official",
+                  "source_distance": 461,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 500,
+                  "distance_m_source": "official",
+                  "source_distance": 500,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 3,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "red",
+                  "display_name": "레드",
+                  "tee_color": "#dc2626",
+                  "distance_m": 98,
+                  "distance_m_source": "official",
+                  "source_distance": 98,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 121,
+                  "distance_m_source": "official",
+                  "source_distance": 121,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 140,
+                  "distance_m_source": "official",
+                  "source_distance": 140,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 155,
+                  "distance_m_source": "official",
+                  "source_distance": 155,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 175,
+                  "distance_m_source": "official",
+                  "source_distance": 175,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "red",
+                  "display_name": "레드",
+                  "tee_color": "#dc2626",
+                  "distance_m": 239,
+                  "distance_m_source": "official",
+                  "source_distance": 239,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 283,
+                  "distance_m_source": "official",
+                  "source_distance": 283,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 312,
+                  "distance_m_source": "official",
+                  "source_distance": 312,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 326,
+                  "distance_m_source": "official",
+                  "source_distance": 326,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 356,
+                  "distance_m_source": "official",
+                  "source_distance": 356,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "red",
+                  "display_name": "레드",
+                  "tee_color": "#dc2626",
+                  "distance_m": 284,
+                  "distance_m_source": "official",
+                  "source_distance": 284,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 320,
+                  "distance_m_source": "official",
+                  "source_distance": 320,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 351,
+                  "distance_m_source": "official",
+                  "source_distance": 351,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 370,
+                  "distance_m_source": "official",
+                  "source_distance": 370,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 410,
+                  "distance_m_source": "official",
+                  "source_distance": 410,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "seado",
+          "display_name": "시도 코스",
+          "hole_count": 9,
+          "primary_tee_code": "white",
+          "source_url": "https://www.solaseadocc.com/sub/seadoCourse.asp",
+          "verification_status": "verified",
+          "review_notes": [
+            "운영사 공식 시도코스 홀별 거리도 이미지 1~9의 PAR와 레드·옐로우·화이트·블루·블랙 티 미터값을 반영했습니다. 각 홀 거리도: https://www.solaseadocc.com/assets/images/sub/seadocourse/seado1_img.png ~ seado9_img.png. 9홀 PAR 합계 36, 블랙 티 홀별 합계 3,263m는 공식 코스 안내 합계와 일치합니다. 2번 홀 도면에는 레드 티가 없으므로 생성하지 않았습니다. 같은 도면의 화이트 395m는 다른 티 거리보다 긴 원문 표기이며, 보정하지 않고 공식값으로 보존했습니다. 공식 도면에 HDCP는 별도 표기되지 않아 입력하지 않았습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 5,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "red",
+                  "display_name": "레드",
+                  "tee_color": "#dc2626",
+                  "distance_m": 380,
+                  "distance_m_source": "official",
+                  "source_distance": 380,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 429,
+                  "distance_m_source": "official",
+                  "source_distance": 429,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 458,
+                  "distance_m_source": "official",
+                  "source_distance": 458,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 479,
+                  "distance_m_source": "official",
+                  "source_distance": 479,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 515,
+                  "distance_m_source": "official",
+                  "source_distance": 515,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 267,
+                  "distance_m_source": "official",
+                  "source_distance": 267,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 395,
+                  "distance_m_source": "official",
+                  "source_distance": 395,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 312,
+                  "distance_m_source": "official",
+                  "source_distance": 312,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 345,
+                  "distance_m_source": "official",
+                  "source_distance": 345,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "red",
+                  "display_name": "레드",
+                  "tee_color": "#dc2626",
+                  "distance_m": 123,
+                  "distance_m_source": "official",
+                  "source_distance": 123,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 156,
+                  "distance_m_source": "official",
+                  "source_distance": 156,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 165,
+                  "distance_m_source": "official",
+                  "source_distance": 165,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 183,
+                  "distance_m_source": "official",
+                  "source_distance": 183,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 215,
+                  "distance_m_source": "official",
+                  "source_distance": 215,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "red",
+                  "display_name": "레드",
+                  "tee_color": "#dc2626",
+                  "distance_m": 253,
+                  "distance_m_source": "official",
+                  "source_distance": 253,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 300,
+                  "distance_m_source": "official",
+                  "source_distance": 300,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 324,
+                  "distance_m_source": "official",
+                  "source_distance": 324,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 341,
+                  "distance_m_source": "official",
+                  "source_distance": 341,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 370,
+                  "distance_m_source": "official",
+                  "source_distance": 370,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "red",
+                  "display_name": "레드",
+                  "tee_color": "#dc2626",
+                  "distance_m": 258,
+                  "distance_m_source": "official",
+                  "source_distance": 258,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 304,
+                  "distance_m_source": "official",
+                  "source_distance": 304,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 328,
+                  "distance_m_source": "official",
+                  "source_distance": 328,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 347,
+                  "distance_m_source": "official",
+                  "source_distance": 347,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 375,
+                  "distance_m_source": "official",
+                  "source_distance": 375,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "red",
+                  "display_name": "레드",
+                  "tee_color": "#dc2626",
+                  "distance_m": 256,
+                  "distance_m_source": "official",
+                  "source_distance": 256,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 297,
+                  "distance_m_source": "official",
+                  "source_distance": 297,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 313,
+                  "distance_m_source": "official",
+                  "source_distance": 313,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 321,
+                  "distance_m_source": "official",
+                  "source_distance": 321,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 354,
+                  "distance_m_source": "official",
+                  "source_distance": 354,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 3,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "red",
+                  "display_name": "레드",
+                  "tee_color": "#dc2626",
+                  "distance_m": 95,
+                  "distance_m_source": "official",
+                  "source_distance": 95,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 114,
+                  "distance_m_source": "official",
+                  "source_distance": 114,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 129,
+                  "distance_m_source": "official",
+                  "source_distance": 129,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 141,
+                  "distance_m_source": "official",
+                  "source_distance": 141,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 164,
+                  "distance_m_source": "official",
+                  "source_distance": 164,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 5,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "red",
+                  "display_name": "레드",
+                  "tee_color": "#dc2626",
+                  "distance_m": 372,
+                  "distance_m_source": "official",
+                  "source_distance": 372,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 428,
+                  "distance_m_source": "official",
+                  "source_distance": 428,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 455,
+                  "distance_m_source": "official",
+                  "source_distance": 455,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 490,
+                  "distance_m_source": "official",
+                  "source_distance": 490,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 530,
+                  "distance_m_source": "official",
+                  "source_distance": 530,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "handicap_index": null,
+              "tees": [
+                {
+                  "tee_code": "red",
+                  "display_name": "레드",
+                  "tee_color": "#dc2626",
+                  "distance_m": 288,
+                  "distance_m_source": "official",
+                  "source_distance": 288,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "옐로우",
+                  "tee_color": "#facc15",
+                  "distance_m": 324,
+                  "distance_m_source": "official",
+                  "source_distance": 324,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "distance_m": 355,
+                  "distance_m_source": "official",
+                  "source_distance": 355,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "블루",
+                  "tee_color": "#2563eb",
+                  "distance_m": 375,
+                  "distance_m_source": "official",
+                  "source_distance": 375,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "distance_m": 395,
+                  "distance_m_source": "official",
+                  "source_distance": 395,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
