@@ -36,7 +36,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-official-review.json --apply
 ```
 
-DB에 저장한 뒤 같은 파일에 `--check`를 실행하면 구장, 코스, 홀, 티 데이터와 기록한 원자료 URL이 파일과 같은지 비교합니다.
+`--check`는 DB를 변경하지 않고 구장, 코스, 홀, 티 데이터와 기록한 원자료 URL을 파일과 대조합니다. `--apply`는 저장을 마친 뒤 같은 대조를 자동으로 실행합니다.
 
 ```powershell
 node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-official-review.json --check
@@ -224,3 +224,4 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 빛고을CC(광주): 운영사 공식 코스공략 페이지의 9개 홀별 L 거리(m)·PAR·HC를 원문 코드 그대로 반영했습니다. 티 표기는 페이지에서 확인되는 L만 저장했고, 다른 티 거리는 게시되지 않아 추가하지 않았습니다. 총 PAR36·L 거리 2,736m로 홀 합계를 대조했으며 구장과 경로를 검수 완료로 등록했습니다. 자료: `bitgoeul-2026-official-verified.json`; 출처: [공식 코스소개](https://www.bitgoeulcc.co.kr/web/course/outline.do), [공식 코스공략도](https://www.bitgoeulcc.co.kr/web/course/attack.do) (2026-10-13 확인).
 - 어등산CC(광주): 운영사 공식 코스 제원표의 어등·송정·하남 각 9홀 PAR·HDCP와 C.T/R.T/W.T/S.T/L.T 거리(m)를 원문 티 코드 그대로 반영했습니다. 총 27홀·PAR108·135개 티 거리 행입니다. 3개 코스 각각의 모든 티별 홀 거리 합이 공식 전장과 일치합니다. 구장과 세 경로를 검수 완료로 등록했습니다. 자료: `eodeungsan-2026-official-verified.json`; 출처: [공식 코스 제원표](https://www.eodeungsancc.com/course-introduction), [어등](https://www.eodeungsancc.com/course-introduction/ed-course), [송정](https://www.eodeungsancc.com/course-introduction/sj-course), [하남](https://www.eodeungsancc.com/course-introduction/hn-course) (2026-10-13 확인).
 - OKCC(전북 완주): 운영사 공식 코스 제원표에서 9홀의 PAR·HDCP 및 B/T(Blue)·W/T(White)·G/T(Gold)·R/T(Red) 티별 미터 거리를 반영했습니다. 총 PAR36·36개 티 거리 행이며, 네 티별 합계 3,002m·2,707m·2,511m·2,321m가 공식 전장과 일치합니다. 구장과 경로를 검수 완료로 등록했습니다. 자료: `okcc-2026-official-verified.json`; 출처: [공식 코스 제원표](https://okcc.co.kr/html/course/course_01.asp), [공식 홀별 코스 안내](https://okcc.co.kr/mobile/course.asp) (2026-10-13 확인).
+- 남원상록골프장(전북 남원): 운영사 공식 코스공략도 데이터의 몽룡·춘향 각 9홀 PAR·HDCP와 B.T/R.T/F.T/L.T 거리(m) 72개를 반영했습니다. 두 코스 모두 PAR36입니다. 몽룡 티 합계는 3,360m·3,175m·2,872m·2,366m, 춘향은 3,306m·3,145m·2,998m·2,523m입니다. 공식 코스소개는 양 코스를 각각 3,222m로 표시하고, 공무원연금공단은 몽룡 3,364m·춘향 3,306m로 안내해 출처 간 차이가 있어 상세 홀별 표를 기준으로 저장하고 메모했습니다. 티 색상은 공식 표에 없어 중립색을 사용했습니다. 자료: `namwon-sangrok-2026-official-verified.json`; 출처: [공식 코스공략도](https://www.sangnokresort.co.kr/M060602), [공식 코스소개](https://www.sangnokresort.co.kr/M060601), [공무원연금공단 안내](https://www.geps.or.kr/bizInformation_welfareFacilitiesBiz_namwonGolf) (2026-10-13 확인).

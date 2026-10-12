@@ -199,8 +199,8 @@ for (const course of corrections) {
 }
 
 console.log(`관리자 보정 자료: 구장 ${corrections.length}개, 레이아웃 ${corrections.reduce((sum, course) => sum + (course.routes?.length ?? 0), 0)}개`)
-if (!args.has('apply')) {
-  console.log('DB에는 저장하지 않았습니다. 출처와 수치를 확인한 뒤 --apply로 실행하세요.')
+if (!args.has('apply') && !checkOnly) {
+  console.log('DB에는 저장하지 않았습니다. 출처와 수치를 확인한 뒤 --apply로 실행하세요. 저장 결과를 대조하려면 --check를 사용하세요.')
   process.exit(0)
 }
 
@@ -455,5 +455,8 @@ for (const sourceCorrection of corrections) {
       .update({ verification_status: correction.verification_status }).eq('id', courseId)
     if (publishCourseError) throw publishCourseError
   }
+  await verifyCourse(correction, courseId)
 }
-console.log('보정 자료를 적용했습니다. 홀별 파·티 거리와 출처 URL을 저장한 뒤 명시된 검수 상태를 반영했습니다.')
+console.log(checkOnly
+  ? 'DB와 보정 자료가 일치합니다.'
+  : '보정 자료를 적용하고 DB와 대조했습니다.')
