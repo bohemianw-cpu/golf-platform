@@ -387,3 +387,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 파인·스톤 코스의 PAR 합계는 각각 36입니다. 원격 DB와 원문 대조 결과 코스 2개, 홀 18개, 티별 거리 72건이 모두 일치하고, HDCP 및 PAR도 전 홀 일치합니다. 공식 페이지에 존재하는 티만 등록했으며 파인 7번 Blue/White 153m, 스톤 3번 Blue/White 156m도 별개 티의 동일한 공식 수치로 보존했습니다.
 - 반영 후 원격 카탈로그: 총 516곳 — 검수 완료 259, 미진행 252, 반려 5. 지역별 미진행은 강원 55, 경기 142, 경북 1, 서울 1, 세종 1, 인천 12, 전남 1, 전북 3, 제주 28, 충남 7, 충북 1곳입니다. 부산·울산·경남 pending은 0곳입니다.
 - 자료: `pinestone-cc-2026-official-verified.json` (2026-10-13 확인).
+
+### 2026-10-13 — 아리스타CC
+- 운영사 공식 [Lake 코스](https://www.aristacc.co.kr/course/course_strategy)와 [Mountain 코스](https://www.aristacc.co.kr/course/course_strategy02)의 홀별 PAR·HDCP를 확인하고, 각 공식 홀 이미지에 표시된 Black/Blue/White/Red 티 거리(m)를 저장했습니다. 코스별 9홀, PAR36이며 총 18홀·72개 티 거리입니다.
+- 각 홀 이미지의 색상 범례와 원격 DB를 대조했습니다. Lake·Mountain 코스의 PAR·HDCP·티별 거리 배열, 레이아웃 상태, 티 행 수가 모두 일치합니다. 공식 이미지에 없는 티는 보충하지 않았습니다.
+- 반영 후 원격 카탈로그: 총 516곳 — 검수 완료 260, 미진행 251, 반려 5. 지역별 미진행은 강원 55, 경기 142, 경북 1, 서울 1, 세종 1, 인천 12, 전남 1, 전북 3, 제주 28, 충남 6, 충북 1곳입니다. 부산·울산·경남 pending은 0곳입니다.
+- 자료: `arista-cc-2026-official-verified.json` (2026-10-13 확인).
