@@ -12,8 +12,22 @@ if (!inputPath) throw new Error('사용법: node scripts/import-course-correctio
 if (checkOnly && args.has('apply')) throw new Error('--check와 --apply는 함께 사용할 수 없습니다.')
 
 function normalizeName(value) { return normalizeCourseSearch(value) }
+function sourceUrlAllowed(value, route = {}) {
+  if (typeof value !== 'string' || !value.trim()) return false
+  try {
+    const url = new URL(value)
+    if (url.protocol === 'https:') return true
+    return url.protocol === 'http:'
+      && route.allow_insecure_source === true
+      && typeof route.source_transport_note === 'string'
+      && route.source_transport_note.trim().length > 0
+  } catch {
+    return false
+  }
+}
 function routeReviewNotes(route) {
   const notes = [...(route.review_notes ?? [])]
+  if (route.source_transport_note?.trim()) notes.push(`공식 출처 연결 방식: ${route.source_transport_note.trim()}`)
   if (route.official_tee_total_tolerance_note?.trim()) notes.push(`공식 티 합계 검수: ${route.official_tee_total_tolerance_note.trim()}`)
   return notes
 }
@@ -23,8 +37,8 @@ function normalizeSourceReview(review) {
   if (!review.venue || !Array.isArray(review.routes)) throw new Error('course-source-review/1에는 venue와 routes가 필요합니다.')
   const verified = review.status === 'source_verified_imported_verified'
   for (const route of review.routes) {
-    if (route.par_source_url != null && !/^https:\/\//i.test(route.par_source_url)) {
-      throw new Error(`${review.venue.name}/${route.route_code}: 홀별 파 출처 URL은 HTTPS여야 합니다.`)
+    if (route.par_source_url != null && !sourceUrlAllowed(route.par_source_url, route)) {
+      throw new Error(`${review.venue.name}/${route.route_code}: 홀별 파 출처 URL은 HTTPS여야 합니다. HTTP 출처는 allow_insecure_source=true와 source_transport_note가 필요합니다.`)
     }
   }
   return [{
@@ -82,8 +96,10 @@ for (const course of corrections) {
     if (![9, 18].includes(route.hole_count) || route.holes?.length !== route.hole_count) {
       throw new Error(`${course.name}/${route.route_code}: holes에 1번부터 ${route.hole_count}번까지의 홀 자료가 필요합니다.`)
     }
-    if (!/^https:\/\//i.test(route.source_url ?? '')) throw new Error(`${course.name}/${route.route_code}: 공식 출처의 HTTPS URL이 필요합니다.`)
-    if (route.source_data_url != null && !/^https:\/\//i.test(route.source_data_url)) throw new Error(`${course.name}/${route.route_code}: 공식 원자료 URL은 HTTPS여야 합니다.`)
+    if (!sourceUrlAllowed(route.source_url, route)) throw new Error(`${course.name}/${route.route_code}: 공식 출처의 HTTPS URL이 필요합니다. HTTP 출처는 allow_insecure_source=true와 source_transport_note가 필요합니다.`)
+    if (route.source_data_url != null && !sourceUrlAllowed(route.source_data_url, route)) throw new Error(`${course.name}/${route.route_code}: 공식 원자료 URL은 HTTPS여야 합니다. HTTP 출처는 allow_insecure_source=true와 source_transport_note가 필요합니다.`)
+    if (route.allow_insecure_source != null && typeof route.allow_insecure_source !== 'boolean') throw new Error(`${course.name}/${route.route_code}: allow_insecure_source는 boolean이어야 합니다.`)
+    if (route.source_transport_note != null && (typeof route.source_transport_note !== 'string' || !route.source_transport_note.trim())) throw new Error(`${course.name}/${route.route_code}: source_transport_note는 비어 있지 않은 문자열이어야 합니다.`)
     if (route.review_notes != null && (!Array.isArray(route.review_notes) || route.review_notes.some((note) => typeof note !== 'string' || !note.trim()))) {
       throw new Error(`${course.name}/${route.route_code}: review_notes는 비어 있지 않은 문자열 배열이어야 합니다.`)
     }
