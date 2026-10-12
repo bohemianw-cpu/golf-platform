@@ -1,0 +1,176 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "match_name": "냉천CC",
+    "name": "냉천CC",
+    "region": "대구",
+    "address": "대구광역시 달성군 가창면 가창로 1037-9",
+    "aliases": [
+      "냉천컨트리클럽",
+      "Naengcheon Country Club"
+    ],
+    "hole_count": 9,
+    "supports_screen": false,
+    "review_notes": [
+      "냉천CC 공식 홀별 페이지(01~09.aspx)에 게시된 PAR와 단일 거리(m)를 그대로 반영했습니다. 공식 홀별 PAR 합은 34, 거리 합은 2,367m입니다. 티 구분은 페이지에 표기되지 않아 중립적인 티 미표기 거리로 저장했습니다.",
+      "일부 비공식 자료에서 PAR35 및 총거리 2,312m 등 다른 수치를 찾았으나, 운영사 공식 홀별 페이지 수치와 달라 적재값으로 사용하지 않았습니다. 공식 홀별 원문값을 보존하고 차이를 관리자 메모에 기록했습니다.",
+      "공식 출처: https://nc-golf.co.kr/Course/View.aspx 및 https://nc-golf.co.kr/Course/Strategy.aspx (각 홀 상세: https://nc-golf.co.kr/Course/Hole/01.aspx ~ /09.aspx, 2026-10-12 확인)."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "COURSE",
+      "display_name": "코스",
+      "hole_count": 9,
+      "primary_tee_code": "official",
+      "verification_status": "verified",
+      "source_url": "https://nc-golf.co.kr/Course/View.aspx",
+      "par_source_url": "https://nc-golf.co.kr/Course/Strategy.aspx",
+      "official_tee_totals_m": {
+        "official": 2367
+      },
+      "review_notes": [
+        "공식 홀별 상세 페이지에서 PAR·거리(m)를 각각 확인했습니다. 단일 거리는 티를 특정하지 않아 ‘공식 거리 (티 미표기)’로 저장했습니다.",
+        "홀별 합계는 PAR34 / 2,367m입니다. 공식 사이트의 각 홀 상세값을 사용했으며, 비공식 자료의 PAR35 / 2,312m와 차이가 있어 관리자 메모에 기록했습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 431,
+              "distance_m_source": "official",
+              "source_distance": 431,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 125,
+              "distance_m_source": "official",
+              "source_distance": 125,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 310,
+              "distance_m_source": "official",
+              "source_distance": 310,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 133,
+              "distance_m_source": "official",
+              "source_distance": 133,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 350,
+              "distance_m_source": "official",
+              "source_distance": 350,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 275,
+              "distance_m_source": "official",
+              "source_distance": 275,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 260,
+              "distance_m_source": "official",
+              "source_distance": 260,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 310,
+              "distance_m_source": "official",
+              "source_distance": 310,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "distance_m": 173,
+              "distance_m_source": "official",
+              "source_distance": 173,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
