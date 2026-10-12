@@ -15,7 +15,7 @@
       "verification_status": "pending",
       "review_notes": [
         "고성노벨컨트리클럽 공식 코스안내의 가야·충무·공룡 코스 스코어카드에서 파, HDCP, 4개 티의 홀별 거리 및 코스 합계를 전사했습니다. 공식 거리는 m로 표기됩니다.",
-        "티 아이콘 이미지 픽셀 색상을 확인해 행 순서를 파랑·흰색·빨강·검정으로 대응했습니다. 데이터는 관리자 검수 전이므로 pending 상태입니다. 확인일: 2026-10-12."
+        "공식 페이지의 거리 단위 m, 파·HDCP 및 티 색상 아이콘을 확인했습니다. 가야·공룡 코스는 홀별 자료와 티 합계가 일치해 verified 처리했습니다. 충무 코스는 블루티 홀별 합계가 3,113m인데 공식 합계는 3,140m로 27m 차이가 있어 구장 전체는 pending입니다. 확인일: 2026-10-12."
       ],
       "routes": [
         {
@@ -26,7 +26,7 @@
           "official_tee_totals_m": { "blue": 3132, "white": 2922, "red": 2628, "black": 3329 },
           "source_url": "https://www.nobelcc.co.kr/html/course/course_01.asp",
           "par_source_url": "https://www.nobelcc.co.kr/html/course/course_01.asp",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "review_notes": [
             "공식 스코어카드의 파·HDCP와 4색 티 행을 전사했습니다. 각 홀의 전략 페이지도 대조 자료로 확인했습니다.",
             "공식 티별 합계(블루/화이트/레드/블랙): 3,132/2,922/2,628/3,329m."
@@ -761,7 +761,7 @@
           "official_tee_totals_m": { "blue": 3156, "white": 3005, "red": 2795, "black": 3335 },
           "source_url": "https://www.nobelcc.co.kr/html/course/course_01.asp",
           "par_source_url": "https://www.nobelcc.co.kr/html/course/course_01.asp",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "review_notes": [
             "공식 스코어카드의 파·HDCP와 4색 티 행을 전사했습니다.",
             "공식 티별 합계(블루/화이트/레드/블랙): 3,156/3,005/2,795/3,335m."
