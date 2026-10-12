@@ -55,6 +55,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 공식 자료가 티 위치를 나누지 않고 홀마다 거리 한 값만 공개하면 `official` 단일 티로 저장하고, 티 명칭이나 색상을 추정하지 않습니다. 공식 자료에 티 이름이 있으면 그 이름을 그대로 사용합니다.
 - 일부 홀에 특정 티가 없으면 해당 티를 추정하거나 복제하지 않습니다. 라운딩 화면은 선택한 모든 홀에 존재하는 티만 제안합니다. 따라서 Black 티가 하나라도 확인되지 않으면 해당 코스 조합의 Black 티 선택지는 나타나지 않습니다.
 - 좌/우 그린처럼 홀에서 실제로 선택하는 그린 종류에 따라 거리가 달라지는 경우 `green_code`와 `green_name`으로 각 값을 구분합니다.
+- 실제 운영에서 그린/레이아웃에 따라 홀의 파도 달라지면 해당 티 행에 선택 구성의 `par`를 저장합니다. 같은 홀·그린 구성에 속한 모든 티는 같은 par override를 가져야 하며, 라운드 화면은 구성을 바꿀 때 par와 거리를 함께 바꾸고 확정 스코어의 파를 라운드 기록에 남깁니다.
 - 공식 자료끼리 값이 다르거나 단위·시설 매핑이 불분명하면 값을 덮어 쓰지 말고 두 원문 값을 `review_notes`에 남긴 뒤 `pending`으로 둡니다.
 
 ## 현재 웹 관리자 기능
@@ -66,3 +67,4 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 나주힐스CC: 공식 9홀 페이지의 PAR·HDCP·블랙/블루/화이트/레드 거리(m)를 반영했습니다. 일부 홀에 게시되지 않은 티는 저장하지 않았습니다. 자료 파일: `naju-hills-2026-official-verified.json`; 출처: [코스 전체](https://najuhills.com/course-full/), [1번 홀](https://najuhills.com/course-01/) ~ [9번 홀](https://najuhills.com/course-09/) (2026-10-12 확인).
 - 일산 스프링힐스CC: 공식 9홀 상세 페이지의 PAR·HDCP·CHAMPION/REGULAR/LADY 거리(yd)를 입력하고 `1 yd = 0.9144 m`로 홀별 반올림 환산했습니다. Lady 1번은 코스 개요표 325 yd와 상세 페이지 326 yd가 달라 구장·코스를 `pending`으로 유지합니다. 자료 파일: `spring-hills-2026-official-review.json`; 출처: [코스 개요](https://www.springhills.co.kr/course/courseIntro.asp), [1번 홀](https://www.springhills.co.kr/course/h1.asp) ~ [9번 홀](https://www.springhills.co.kr/course/h9.asp), [공식 야드 단위 표기](https://www.springhills.co.kr/mobile/course/course01.asp) (2026-10-12 확인).
 - 광산CC: 공식 로컬룰에서 거리가 미터임과 OUT은 좌측 말뚝·좌그린, IN은 우측 말뚝·우그린임을 확인했습니다. 6번 홀 화이트 좌그린 거리가 코스 제원표 254m와 공략 페이지 265m로 달라 `pending`을 유지합니다. 자료 파일: `gwangsan-2026-official-review.json`; 출처: [코스 제원](https://www.gwangsancc.kr/cotents/course/courseInfo.do), [코스 공략](https://www.gwangsancc.kr/cotents/course/courseAttack.do), [로컬룰](https://www.gwangsancc.kr/cotents/guide/rule.do) (2026-10-12 확인).
+- 기장동원로얄CC: 공식 홀별 9홀 페이지의 파와 좌·우 그린 티별 거리(m)를 입력했습니다. 8번 홀은 좌 Par3/좌 Par4/우 Par5로 운영되어 티·그린 구성별 par override를 적용합니다. 코스 루틴표의 티 행/합계가 홀별 페이지의 값과 일치하지 않아 `pending`으로 적재합니다. 자료 파일: `gijang-dongwon-royal-2026-official-review.json`; 출처: [공식 코스 루틴](https://dongwongolf.co.kr/_mobile/PageSite/course/routine.asp), [1번 홀](https://dongwongolf.co.kr/_mobile/PageSite/course/one/hole01.asp) ~ [9번 홀](https://dongwongolf.co.kr/_mobile/PageSite/course/one/hole09.asp) (2026-10-12 확인).

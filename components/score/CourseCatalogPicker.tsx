@@ -64,7 +64,11 @@ function RouteDistancePreview({ route }: { route: GolfRouteOption }) {
           <tbody>
             {holes.map((hole) => <tr key={hole.id}>
               <th scope="row" style={{ padding: '6px', borderBottom: '1px solid #f1f5f9', color: '#334155' }}>{hole.hole_number}</th>
-              <td style={{ padding: '6px', borderBottom: '1px solid #f1f5f9', fontWeight: 700 }}>{hole.par}</td>
+              <td style={{ padding: '6px', borderBottom: '1px solid #f1f5f9', fontWeight: 700 }}>
+                {[...new Set(hole.tees.map((item) => item.par).filter((par): par is number => par != null))].length > 0
+                  ? [...new Set(hole.tees.map((item) => item.par).filter((par): par is number => par != null))].sort().join('/')
+                  : hole.par}
+              </td>
               {tees.map((tee) => {
                 const variants = hole.tees.filter((item) => item.tee_code === tee.tee_code)
                 return <td key={tee.tee_code} style={{ padding: '6px', borderBottom: '1px solid #f1f5f9', color: variants.length ? '#0f172a' : '#94a3b8', whiteSpace: 'nowrap' }}>
@@ -143,7 +147,7 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
       const holeRows = (holeData ?? []) as Omit<GolfCourseHole, 'tees'>[]
       const { data: teeData, error: teeError } = holeRows.length
         ? await supabase.from('golf_course_hole_tees')
-          .select('hole_id,tee_code,display_name,tee_color,distance_m,distance_m_source,source_distance,source_unit,green_code,green_name')
+          .select('hole_id,tee_code,display_name,tee_color,distance_m,distance_m_source,source_distance,source_unit,green_code,green_name,par')
           .in('hole_id', holeRows.map((hole) => hole.id))
         : { data: [], error: null }
       if (teeError) throw teeError
@@ -154,6 +158,7 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
           tee_code: row.tee_code, display_name: row.display_name, tee_color: row.tee_color, distance_m: row.distance_m,
           distance_m_source: row.distance_m_source, source_distance: row.source_distance, source_unit: row.source_unit,
           green_code: row.green_code ?? 'standard', green_name: row.green_name ?? '기본 그린',
+          par: row.par ?? null,
         }])
       }
       const holesByRoute = new Map<string, GolfCourseHole[]>()

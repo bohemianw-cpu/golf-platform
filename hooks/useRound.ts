@@ -840,11 +840,18 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
       prepareHole(1, hasValidPars ? pars : INITIAL_HOLE_PARS, [], [])
       return false
     }
-    setHolePars(pars)
+    const configuredPars = routes.flatMap((route) => route.holes?.length === route.hole_count
+      ? route.holes.map((hole) => {
+        const variants = hole.tees.filter((tee) => tee.tee_code === selectedTeeCode)
+        const selected = variants.find((tee) => tee.green_code === 'standard') ?? variants[0]
+        return selected?.par ?? hole.par
+      })
+      : route.pars)
+    setHolePars(configuredPars)
     setRouteDistances(distances)
     setGreenCodes(greenCodesForRoutes)
     setGreenNames(greenNamesForRoutes)
-    prepareHole(1, pars, [], distances)
+    prepareHole(1, configuredPars, [], distances)
     return true
   }, [currentRoundId, completedHoles.length, currentShots.length, prepareHole])
 
@@ -853,15 +860,17 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
     return hole?.tees.filter((tee) => tee.tee_code === teeCode) ?? []
   }, [routeHoles, currentHole, teeCode])
 
-  const changeGreen = useCallback((greenCode: string, greenName: string, distance: number) => {
+  const changeGreen = useCallback((greenCode: string, greenName: string, distance: number, par?: number | null) => {
     if (currentShots.length > 0 || completedHoles.some((hole) => hole.holeNumber === currentHole)) return
     setGreenCodes((previous) => previous.map((value, index) => index === currentHole - 1 ? greenCode : value))
     setGreenNames((previous) => previous.map((value, index) => index === currentHole - 1 ? greenName : value))
+    const basePar = routeHoles?.[currentHole - 1]?.par
+    setHolePars((previous) => previous.map((value, index) => index === currentHole - 1 ? (par ?? basePar ?? value) : value))
     const safeDistance = clamp(Math.round(distance), 0, 800)
     setRouteDistances((previous) => previous.map((value, index) => index === currentHole - 1 ? safeDistance : value))
     setHoleDistance(safeDistance)
     setRemainingDistance(roundTo10(safeDistance - expectedDistance(selectedClub)))
-  }, [currentShots.length, completedHoles, currentHole, expectedDistance, selectedClub])
+  }, [currentShots.length, completedHoles, currentHole, expectedDistance, selectedClub, routeHoles])
 
   const changeHoleDistance = (raw: number) => {
     const val = clamp(Math.round(raw), 0, 800)

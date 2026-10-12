@@ -248,7 +248,7 @@ export default function ScoreTab() {
           <legend style={{ padding: '0 4px', fontSize: '11px', fontWeight: 700, color: '#1d4ed8' }}>현재 홀 그린 선택</legend>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
             {round.currentGreenOptions.map((green) => <label key={green.green_code} style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '12px', color: '#1e3a8a' }}>
-              <input type="radio" name={`green-hole-${currentHole}`} checked={round.currentGreenCode === green.green_code} disabled={currentShots.length > 0 || completedHoles.some((hole) => hole.holeNumber === currentHole)} onChange={() => round.changeGreen(green.green_code, green.green_name, green.distance_m)} />
+              <input type="radio" name={`green-hole-${currentHole}`} checked={round.currentGreenCode === green.green_code} disabled={currentShots.length > 0 || completedHoles.some((hole) => hole.holeNumber === currentHole)} onChange={() => round.changeGreen(green.green_code, green.green_name, green.distance_m, green.par)} />
               {green.green_name} · {green.distance_m}m
             </label>)}
           </div>

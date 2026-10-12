@@ -52,6 +52,7 @@ export interface GolfCourseTee {
   source_unit?: 'm' | 'yd' | null
   green_code: string
   green_name: string
+  par?: number | null
 }
 
 export interface GolfCourseHole {
