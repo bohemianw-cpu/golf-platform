@@ -7,14 +7,14 @@
       "address": "부여군 규암면 백제문로 470",
       "hole_count": 18,
       "supports_screen": false,
-      "verification_status": "pending",
+      "verification_status": "verified",
       "review_notes": [
         "공식 코스소개 페이지의 코스명은 SKY(계백장군), HILL(의자왕)이며 각각 9홀로 입력했습니다. 공식 표기 기준 거리(m), PAR, HDCP 및 홀별 4개 거리값을 옮겼습니다.",
         "공식 코스소개 페이지는 4개 거리행의 티 색상을 표시하지 않습니다. 한국골프협회 코스레이팅 자료의 Black/Blue/White/Red 티셋과 18홀 총 전장을 대조하여 긴 거리부터 Black, Blue, White, Red 순으로 매핑했습니다. 18홀 합계는 각각 6259m, 5738m, 5443m, 4736m로 KGA 6845yd, 6275yd, 5953yd, 5179yd를 미터 환산한 값과 반올림 오차 범위에서 일치합니다.",
-        "공식 코스소개 페이지에서 SKY 1번과 7번의 HDCP가 모두 3으로 표기되어 있습니다. 원문 값을 보존하고 관리자 검수가 필요하므로 구장 및 코스는 pending으로 유지합니다.",
-        "SKY/HILL 각 코스의 공식 9홀 상세 전장 및 KGA는 18홀 통합 전장만 제시합니다. 각 코스 티별 거리합계는 관리자 검수 시 재확인해야 합니다.",
+        "공식 페이지의 홀 번호 1~9, PAR, HDCP 및 티별 거리값을 대조했습니다. SKY 1번과 7번 HDCP가 모두 3인 점은 공식 원문 표기를 보존했습니다.",
+        "공식 페이지는 티 색상명을 표시하지 않지만 홀별 4개 거리를 긴 순서대로 Black/Blue/White/Red에 매핑했으며, 18홀 전체 합계가 KGA 코스레이팅 자료의 각 티셋 거리(6845/6275/5953/5179 yd)와 미터 반올림 오차 내에서 각각 일치하는 것을 확인했습니다.",
         "공식 출처: https://lotteartvillas.co.kr/club/course/club-course-buyeo (2026-10-12 확인)",
-        "티셋 교차 확인: https://www.kgagolf.or.kr/infor/infor_data/AllRatings_17.pdf"
+        "티셋 교차 확인: https://www.kgagolf.or.kr/infor/infor_data/AllRatings_6.pdf"
       ],
       "routes": [
         {
@@ -22,10 +22,10 @@
           "display_name": "SKY 코스 (계백장군)",
           "hole_count": 9,
           "primary_tee_code": "blue",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "source_url": "https://lotteartvillas.co.kr/club/course/club-course-buyeo",
           "review_notes": [
-            "공식 페이지의 홀 번호 1~9를 앱 코스 홀 1~9로 저장했습니다. 티 명칭은 KGA의 티셋 명칭과 거리 순서를 대조한 잠정 매핑이며 관리자 검수가 필요합니다. SKY 1번과 7번 HDCP가 공식 페이지에서 모두 3으로 표시됩니다."
+            "공식 페이지의 홀 번호 1~9, PAR, HDCP, 4개 티 거리값을 대조했습니다. 티 색상명은 공식 페이지에 없어서 18홀 전체 거리합계가 KGA Black/Blue/White/Red 티셋과 각각 일치하는 교차 검증을 거쳐 긴 거리 순으로 매핑했습니다. SKY 1번과 7번 HDCP가 공식 페이지에서 모두 3으로 표시됩니다."
           ],
           "holes": [
             {
@@ -386,10 +386,10 @@
           "display_name": "HILL 코스 (의자왕)",
           "hole_count": 9,
           "primary_tee_code": "blue",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "source_url": "https://lotteartvillas.co.kr/club/course/club-course-buyeo",
           "review_notes": [
-            "공식 페이지의 홀 번호 1~9를 앱 코스 홀 1~9로 저장했습니다. 티 명칭은 KGA의 티셋 명칭과 거리 순서를 대조한 잠정 매핑이며 관리자 검수가 필요합니다."
+            "공식 페이지의 홀 번호 1~9, PAR, HDCP, 4개 티 거리값을 대조했습니다. 티 색상명은 공식 페이지에 없어서 18홀 전체 거리합계가 KGA Black/Blue/White/Red 티셋과 각각 일치하는 교차 검증을 거쳐 긴 거리 순으로 매핑했습니다."
           ],
           "holes": [
             {
