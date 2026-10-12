@@ -12,6 +12,10 @@ if (!inputPath) throw new Error('사용법: node scripts/import-course-correctio
 if (checkOnly && args.has('apply')) throw new Error('--check와 --apply는 함께 사용할 수 없습니다.')
 
 function normalizeName(value) { return normalizeCourseSearch(value) }
+function isTeeSelectable(tee) {
+  if (typeof tee.tee_selection_available === 'boolean') return tee.tee_selection_available
+  return !['official', 'official_reference'].includes(tee.tee_code)
+}
 function sourceUrlAllowed(value, route = {}) {
   if (typeof value !== 'string' || !value.trim()) return false
   try {
@@ -291,7 +295,7 @@ async function verifyCourse(correction, courseId) {
         tee_code: tee.tee_code,
         display_name: tee.display_name,
         tee_color: tee.tee_color,
-        tee_selection_available: tee.tee_selection_available ?? true,
+        tee_selection_available: isTeeSelectable(tee),
         distance_m: tee.distance_m,
         distance_m_source: tee.distance_m_source ?? 'converted',
         source_distance: tee.source_distance ?? tee.distance_m,
@@ -403,7 +407,7 @@ for (const sourceCorrection of corrections) {
       tee_code: tee.tee_code,
       display_name: tee.display_name,
       tee_color: tee.tee_color,
-      tee_selection_available: tee.tee_selection_available ?? true,
+      tee_selection_available: isTeeSelectable(tee),
       distance_m: tee.distance_m,
       distance_m_source: tee.distance_m_source ?? 'converted',
       source_distance: tee.source_distance ?? tee.distance_m,

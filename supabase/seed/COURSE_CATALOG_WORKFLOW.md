@@ -54,7 +54,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 공식 티별 총거리가 공개되어 있으면 합계는 오류 탐지용으로 대조하고, 공식 홀별 파·거리·단위가 충분히 명확하면 합계 차이만으로 적재나 검수를 막지 않습니다. 값 차이나 표기 이상은 원문과 함께 `review_notes`에 남깁니다.
 - 거리는 공식 표의 원 단위(`source_distance`, `source_unit`)와 미터 환산값(`distance_m`)을 함께 보존합니다. 반올림을 포함한 환산 규칙을 검수 메모에 기록합니다.
 - 공식 원표가 야드와 미터를 함께 제공하면 `distance_m`에는 표의 공식 미터값을 그대로 저장하고, `source_distance`/`source_unit`에는 공식 야드값을 보존합니다. 두 게시값이 수학적 환산과 다를 수 있으므로 이 경우 단순 환산 차이만으로 원자료 오류로 판정하지 말고, 두 값과 공식 합계·표의 티 배치를 대조해 검수 메모에 남깁니다.
-- 공식 자료가 티 위치를 나누지 않고 홀마다 거리 한 값만 공개하면 `official` 단일 티로 저장하고, 티 명칭이나 색상을 추정하지 않습니다. 공식 자료에 티 이름이 있으면 그 이름을 그대로 사용합니다.
+- 공식 자료가 티 위치를 나누지 않고 홀마다 거리 한 값만 공개하면 `official` 기준 거리로 저장하고 `tee_selection_available: false`로 설정합니다. 이 거리는 해당 라운드의 기준 거리로 활용하되 실제 티 위치로 표시하거나 티 선택지를 만들지 않습니다. `official` 및 `official_reference` 행은 importer에서 명시값이 없더라도 자동으로 선택 불가 처리합니다. 공식 자료에 실제 티 이름이 있으면 그 이름과 거리를 저장하고 선택 가능한 티로 표시합니다.
 - 일부 홀에 특정 티가 없으면 해당 티를 추정하거나 복제하지 않습니다. 라운딩 화면은 선택한 모든 홀에 존재하는 티만 제안합니다. 따라서 Black 티가 하나라도 확인되지 않으면 해당 코스 조합의 Black 티 선택지는 나타나지 않습니다.
 - 좌/우 그린처럼 홀에서 실제로 선택하는 그린 종류에 따라 거리가 달라지는 경우 `green_code`와 `green_name`으로 각 값을 구분합니다.
 - 새 라운드의 초기 그린은 `standard`를 우선하고, 없으면 `left`, 그 외에는 코드 정렬 순서로 선택합니다. 저장된 라운드는 홀별 그린 선택을 복원하며, 사용자는 첫 샷 전에 해당 홀의 다른 그린으로 바꿀 수 있습니다.
@@ -187,7 +187,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 시그너스CC(충주): 공식 코스개요와 Silk·Ramie·Cotton 상세 페이지에서 세 경로 각 9홀의 PAR 및 단일 기준 거리(m)를 확인해 반영했습니다. 각 경로 PAR36, 27홀·27개 거리 행이며, 공식 사이트에서 티 이름/티별 구분은 공개하지 않아 `공식 거리 (티 미표기)` 하나만 기록했습니다. 이전 MCST 18홀 수를 공식 27홀로 정정했습니다. 자료: `cygnus-cc-2026-official-verified.json`; 출처: [공식 코스개요](https://www.cygnuscc.com/sub/cos.asp), [Silk](https://www.cygnuscc.com/sub/silk.asp), [Ramie](https://www.cygnuscc.com/sub/ramie.asp), [Cotton](https://www.cygnuscc.com/sub/cotton.asp) (2026-10-13 확인). DB 조회로 세 경로 PAR36, 거리합 3,110/3,380/2,960m, 총 27개 티 행 및 verified 상태를 확인했습니다. 다음은 킹스데일GC 공식 코스자료를 재확인합니다.
 - 킹즈락CC(충북 제천): 현재 운영사 공식 코스안내 페이지의 South·East·West 각 9홀 PAR 및 미터/야드 단일 기준 거리를 저장했습니다. 각 경로 PAR36, 총 27홀·27개 공식 기준 거리 행이며 티 색상/티별 분리는 원문에 없어 추정하지 않았습니다. 거리 합은 South 3,312m, East 3,290m, West 3,273m로 공식 합계와 일치하며 DB 조회에서 verified를 확인했습니다. seed: `kingz-rock-cc-2026-official-verified.json`; 출처: [공식 코스안내](https://www.kingsrockcc.com/course) (2026-10-13 확인).
 - 킹스데일GC(충주): 기존 공식 코스 URL은 검색 색인에서만 노출되고 현재 브라우저 접속 시 404, 일반 페이지 요청은 403을 반환해 현행 홀별 파·거리 자료를 검증할 수 없습니다. 2015년 코스공략도 PPTX 게시물은 검색 결과로 확인되나 공식 게시판 자체가 현재 403이며 파일을 열지 못했습니다. 공식 자료에 다시 접근 가능할 때까지 pending 유지.
-- 다음 재개 지점: 대호단양CC 공식 코스 상세 자료 확인. 코스개요의 전장/18홀 규모와 각 홀 PAR는 확인됐지만 현재 홀 상세 접근성 트리에는 티별 거리 정보가 노출되지 않아 거리 레코드는 만들지 않고 추가 공식 자료를 찾습니다.
+- 대호단양CC(충북 단양): 공식 코스 개요는 18홀 PAR72·6,609m와 Mountain 3,545yd/Lake 3,683yd 합계를 공개합니다. 18개 공식 홀 상세 HTML을 확인했으며 각 페이지에는 PAR와 홀 영상(`/video/course/hole_1.mp4` 등)만 있고 티별 거리는 없습니다. 전체 9홀별 거리표나 별도 공식 스코어카드도 찾지 못해 거리를 나눠 추정하지 않고 pending 상태를 유지합니다. 출처: [공식 코스 개요](https://www.daehocc.co.kr/pagesite/course/intro.asp), [Mountain 1번](https://www.daehocc.co.kr/pagesite/course/one/hole01.asp), [Lake 1번](https://www.daehocc.co.kr/pagesite/course/two/hole01.asp) (2026-10-13 확인). 다음은 인근 지역이 아닌 다른 pending 구장 중 공식 자료가 충분한 곳을 우선 탐색하되, 부산·경남·울산 pending 목록을 먼저 재확인합니다.
 
 
 - 티 선택 정책: 실제 티 색상·명칭별 거리가 공식 자료에 공개된 행은 `tee_selection_available: true`(기본값)로 둡니다. 공식 단일 기준 거리처럼 티 위치가 공개되지 않은 행은 `false`로 저장합니다. 전체 선택 코스에 기준 거리만 있으면 티를 특정하지 않고 라운드를 기록하며, 선택 가능한 티가 있는 코스는 티 선택을 필수로 유지합니다.
