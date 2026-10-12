@@ -24,12 +24,16 @@ function normalizeSourceReview(review) {
   return [{
     ...review.venue,
     verification_status: verified ? 'verified' : 'pending',
-    review_notes: [`원본 검수 파일: ${review.schema} · ${review.status ?? '상태 미지정'}`],
+    review_notes: [
+      ...(review.venue.review_notes ?? []),
+      `원본 검수 파일: ${review.schema} · ${review.status ?? '상태 미지정'}`,
+    ],
     routes: review.routes.map((route) => ({
       ...route,
       primary_tee_code: route.primary_tee_code ?? 'white',
       verification_status: verified ? 'verified' : 'pending',
       review_notes: [
+        ...(route.review_notes ?? []),
         ...(route.par_source_url ? [`홀별 파 출처: ${route.par_source_url}`] : []),
       ],
       holes: route.holes.map((hole) => ({
