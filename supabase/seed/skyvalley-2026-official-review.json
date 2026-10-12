@@ -8,10 +8,10 @@
       "address": "경기도 여주시 북내면 운촌길 254",
       "aliases": [],
       "hole_count": 18,
-      "verification_status": "pending",
+      "verification_status": "verified",
       "supports_screen": false,
       "review_notes": [
-        "공식 코스개요(https://www.skyvalley.co.kr/skyvalley/swp/course_intro)의 9홀 티 표에서 파·거리 36홀 전부를 대조해 보정 파일과 일치함을 확인했습니다. 공식 표의 BLACK 합계(스카이+밸리)는 6,253m입니다. 다만 SKY 1홀 LADY(코스표 320m, 상세 페이지 326m)와 VALLEY 3홀 WHITE(코스표 161m, 상세 데이터 160m)는 출처 간 차이가 남아 코스와 경로를 검수 대기로 둡니다."
+        "공식 코스개요(https://www.skyvalley.co.kr/skyvalley/swp/course_intro)의 현재 홀별 표와 각 9홀 코스의 파·티별 합계를 대조했습니다. 세부 JSON 자료는 2021-02-04 기록으로, SKY 1홀 LADY(현재 코스개요 320m, JSON 326m)와 VALLEY 3홀 WHITE(현재 코스개요 161m, JSON 160m)에서 차이가 납니다. 최신 코스개요의 수치는 각각 공식 표의 총계와 일치하여 현재 기준으로 채택했으며, 출처 시점 차이를 기록했습니다."
       ],
       "routes": [
         {
@@ -21,9 +21,9 @@
           "primary_tee_code": "black",
           "source_url": "https://www.skyvalley.co.kr/skyvalley/swp/sky_course",
           "source_data_url": "https://www.skyvalley.co.kr/static/pc/origin/resources/json/sky.json",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "review_notes": [
-            "공식 코스개요 표의 SKY 1홀 LADY는 320m이나, 공식 상세 페이지는 326m로 다릅니다. 현재 보정값은 코스개요 표 기준이며 차이 확인 전 검수 대기합니다."
+            "공식 코스개요(https://www.skyvalley.co.kr/skyvalley/swp/course_intro)에서 9개 홀의 파와 블랙·화이트·레이디 거리를 확인했습니다. 공식 상세 JSON(2021-02-04)은 1홀 LADY를 326m로 기록하지만 현재 코스개요는 320m이며, 코스개요의 레이디 합계 2,736m와 일치하는 현재 표 값을 채택했습니다."
           ],
           "holes": [
             {
@@ -341,9 +341,9 @@
           "primary_tee_code": "black",
           "source_url": "https://www.skyvalley.co.kr/skyvalley/swp/valley_course",
           "source_data_url": "https://www.skyvalley.co.kr/static/pc/origin/resources/json/valley.json",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "review_notes": [
-            "공식 코스개요 표의 VALLEY 3홀 WHITE는 161m이나, 공식 상세 데이터는 160m로 다릅니다. 현재 보정값은 코스개요 표 기준이며 차이 확인 전 검수 대기합니다."
+            "공식 코스개요(https://www.skyvalley.co.kr/skyvalley/swp/course_intro)에서 9개 홀의 파와 블랙·화이트·레이디 거리를 확인했습니다. 공식 상세 JSON(2021-02-04)은 3홀 WHITE를 160m로 기록하지만 현재 코스개요는 161m이며, 코스개요의 화이트 합계 2,984m와 일치하는 현재 표 값을 채택했습니다."
           ],
           "holes": [
             {
