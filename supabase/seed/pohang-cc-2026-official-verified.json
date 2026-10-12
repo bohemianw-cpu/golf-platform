@@ -1,0 +1,348 @@
+{
+  "status": "source_verified_imported_verified",
+  "schema": "course-source-review/1",
+  "venue": {
+    "review_notes": [
+      "운영사 공식 페이지가 포항CC 18홀을 동해·태백 두 개 9홀 코스로 안내하며 주소는 동해대로2751번길 126입니다. MCST 주소 뒷번호 123과 달라 공식 현행 주소로 보정했습니다.",
+      "티별 거리는 공식 세부 페이지에 게시되지 않아 추정하지 않았습니다. 홀별 공식 파·HDCP·미터 거리는 각 라우트의 원자료에서 가져왔습니다.",
+      "공식 출처: https://pohangcc.com/swp/courseSea, https://pohangcc.com/swp/courseMountain; 코스 개요: https://pohangcc.com/swp/clubFacilities (2026-10-12 확인)."
+    ],
+    "region": "경북",
+    "address": "경상북도 포항시 북구 송라면 동해대로2751번길 126",
+    "name": "포항CC",
+    "match_name": "포항CC",
+    "aliases": [
+      "포항컨트리클럽",
+      "Pohang Country Club"
+    ],
+    "hole_count": 18,
+    "supports_screen": false
+  },
+  "routes": [
+    {
+      "verification_status": "verified",
+      "holes": [
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 385,
+              "source_distance": 385,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 13,
+          "par": 4,
+          "hole_number": 1
+        },
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 350,
+              "source_distance": 350,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 17,
+          "par": 4,
+          "hole_number": 2
+        },
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 570,
+              "source_distance": 570,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 3,
+          "par": 5,
+          "hole_number": 3
+        },
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 375,
+              "source_distance": 375,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 11,
+          "par": 4,
+          "hole_number": 4
+        },
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 380,
+              "source_distance": 380,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 7,
+          "par": 4,
+          "hole_number": 5
+        },
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 170,
+              "source_distance": 170,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 9,
+          "par": 3,
+          "hole_number": 6
+        },
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 565,
+              "source_distance": 565,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 1,
+          "par": 5,
+          "hole_number": 7
+        },
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 200,
+              "source_distance": 200,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 5,
+          "par": 3,
+          "hole_number": 8
+        },
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 350,
+              "source_distance": 350,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 15,
+          "par": 4,
+          "hole_number": 9
+        }
+      ],
+      "primary_tee_code": "official",
+      "source_data_url": "https://pohangcc.com/static/pc/js/custom/course.sea.js?ver=2",
+      "par_source_url": "https://pohangcc.com/swp/courseSea",
+      "official_tee_totals_m": {
+        "official": 3345
+      },
+      "hole_count": 9,
+      "review_notes": [
+        "운영사 공식 홀별 상세 화면과 원자료에서 PAR·HDCP·미터 거리 9개를 확인했습니다. 홀별 티 구분은 공식 페이지에 없으므로 거리 행을 티 미표기로 저장했습니다."
+      ],
+      "route_code": "DONGHAE",
+      "source_url": "https://pohangcc.com/swp/courseSea",
+      "display_name": "동해 코스"
+    },
+    {
+      "verification_status": "verified",
+      "holes": [
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 375,
+              "source_distance": 375,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 12,
+          "par": 4,
+          "hole_number": 1
+        },
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 240,
+              "source_distance": 240,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 8,
+          "par": 3,
+          "hole_number": 2
+        },
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 325,
+              "source_distance": 325,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 18,
+          "par": 4,
+          "hole_number": 3
+        },
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 345,
+              "source_distance": 345,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 16,
+          "par": 4,
+          "hole_number": 4
+        },
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 180,
+              "source_distance": 180,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 10,
+          "par": 3,
+          "hole_number": 5
+        },
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 515,
+              "source_distance": 515,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 4,
+          "par": 5,
+          "hole_number": 6
+        },
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 370,
+              "source_distance": 370,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 14,
+          "par": 4,
+          "hole_number": 7
+        },
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 410,
+              "source_distance": 410,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 2,
+          "par": 4,
+          "hole_number": 8
+        },
+        {
+          "tees": [
+            {
+              "distance_m_source": "official",
+              "distance_m": 560,
+              "source_distance": 560,
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_code": "official",
+              "source_unit": "m",
+              "tee_color": "#6b7280"
+            }
+          ],
+          "handicap_index": 6,
+          "par": 5,
+          "hole_number": 9
+        }
+      ],
+      "primary_tee_code": "official",
+      "source_data_url": "https://pohangcc.com/static/pc/js/custom/course.mountain.js?ver=2",
+      "par_source_url": "https://pohangcc.com/swp/courseMountain",
+      "official_tee_totals_m": {
+        "official": 3335
+      },
+      "hole_count": 9,
+      "review_notes": [
+        "운영사 공식 홀별 상세 화면과 원자료에서 PAR·HDCP·미터 거리 9개를 확인했습니다. 홀별 티 구분은 공식 페이지에 없으므로 거리 행을 티 미표기로 저장했습니다.",
+        "공식 클럽 안내의 태백 전장은 3,335m이나 공식 홀별 상세 거리 합은 3,320m로 15m 차이입니다. 원문 홀별 값을 유지하고 참고 메모에 기록했습니다."
+      ],
+      "route_code": "TAEBAEK",
+      "source_url": "https://pohangcc.com/swp/courseMountain",
+      "display_name": "태백 코스"
+    }
+  ]
+}
