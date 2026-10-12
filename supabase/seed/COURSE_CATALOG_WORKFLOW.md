@@ -436,7 +436,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-13 — 인접 지역 미진행 구장 재조사 메모
 - 블루원상주골프리조트: 운영사 공식 [코스 안내](https://homepage-sj.blueone.com/club-introduction/information?type=1)에서 East/West 홀별 PAR·HDCP와 공략 설명은 확인되지만 공개 페이지에 홀별 티 거리표는 없습니다. 공식 과거 간행물에는 일부 홀 거리만 있어 전체 코스 입력 기준으로 부족하므로 pending 유지.
 - 세종레이캐슬골프&리조트: 운영사 공식 [세종](https://www.sjraycastle.com/Golf/Course/Sejong.aspx)·[레이](https://www.sjraycastle.com/Golf/Course/Ray.aspx)·[캐슬](https://www.sjraycastle.com/Golf/Course/Castle.aspx) 페이지는 코스 이미지 위주이며 PAR·홀별 거리표를 공개하지 않아 pending 유지.
-- 계룡산골프장: 공주시 공식 2012년 공고에는 시설 규모가 6홀로 기재되어 현재 카탈로그의 9홀과 차이가 있습니다([공주시보](https://www.gongju.go.kr/thumbnail/eBook/BOK_202004270152040200.pdf)). 최신 운영사 원문에서 코스 식별·홀 구성 및 홀별 PAR/거리를 확인하기 전까지 pending 유지.
+- 계룡산골프장: 공주시의 2012년 최초 인가 공고는 6홀 계획을 기재했지만, 이후 2017년 변경인가에서 9홀로 변경되었습니다([2012년 최초 인가](https://www.gongju.go.kr/thumbnail/eBook/BOK_202004270202094330.pdf), [공주시 고시 제2017-134호](https://www.gongju.go.kr/thumbnail/eBook/BOK_202004280136336430.pdf)). 따라서 카탈로그의 9홀과 최초 계획의 차이는 변경인가로 설명됩니다. 다만 공식 운영사 코스 페이지나 홀별 PAR·티 거리는 확인되지 않아 pending 유지.
 - 이 조사 시점 원격 카탈로그 상태: 검수 완료 266곳, 미진행 245곳, 반려 5곳(총 516곳). 위 미진행 항목의 불충분한 공식 자료 때문에 이번 조사에서는 DB 상태를 변경하지 않았습니다.
 
 ### 2026-10-13 — ROUTE52CC
@@ -468,4 +468,5 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 원격 DB를 다시 조회해 검수 완료 270곳, 미진행 241곳, 반려 5곳(총 516곳)을 확인했습니다. 지역별 미진행 수는 강원 55, 경기 141, 경북 1, 세종 1, 인천 10, 전남 1, 전북 3, 제주 28, 충남 1곳이며 부산·울산·경남은 0곳입니다.
 - 블루원상주 운영사 공식 [코스 제원](https://homepage-sj.blueone.com/club-introduction/information?type=0)에서 East·West 18홀·PAR72 및 총길이 6,737m를 재확인했습니다. 공식 [홀별 코스 정보](https://homepage-sj.blueone.com/club-introduction/information?type=1)와 공식 페이지 데이터 번들에서 각 홀 PAR·HDCP·공략 설명 및 홀 도면은 확인되지만 티별 홀 거리는 텍스트 데이터에 없습니다. 공식 과거 [2012년 가을 매거진](https://www.blueone.com/content/ebook/down.jsp?filename=2012_Blueone_Autumn.pdf)은 East 1번 354m 등 일부 홀만 제공하므로 전체 최신 티별 자료로 간주하지 않고 pending을 유지합니다.
 - 세종레이캐슬 운영사 공식 [이용안내](https://www.sjraycastle.com/Golf/Use/Info.aspx)에서 세종·레이·캐슬 27홀 및 18홀 기준 총거리 7,760yd를 확인했습니다. 공식 [코스 뷰](https://www.sjraycastle.com/Golf/Course/Sejong.aspx)에는 코스 사진이 있으나 검색 가능한 공식 텍스트에서 홀별 PAR·거리표는 확인되지 않아 pending을 유지합니다.
-- 두 구장 모두 현재 공식 자료만으로 홀별 PAR 및 거리 레코드를 완성할 수 없어 DB 변경은 하지 않았습니다. 다음에는 인접 미진행 후보 가운데 공식 홀별 자료가 확인되는 시설을 계속 조사합니다.
+- 계룡산골프장 관련 과거 자료도 갱신했습니다. 공주시 2012년 최초 인가의 6홀 계획은 2017년 변경인가에서 9홀로 변경되어 현재 카탈로그의 홀 수와 일치합니다([공주시 고시 제2017-134호](https://www.gongju.go.kr/thumbnail/eBook/BOK_202004280136336430.pdf)). 홀별 PAR·거리와 운영사 공식 코스 자료는 여전히 확인되지 않습니다.
+- 조사한 세 후보 모두 현재 공식 자료만으로 홀별 PAR 및 거리 레코드를 완성할 수 없어 DB 변경은 하지 않았습니다. 다음에는 인접 미진행 후보 가운데 공식 홀별 자료가 확인되는 시설을 계속 조사합니다.
