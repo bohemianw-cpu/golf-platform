@@ -463,3 +463,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 공략 페이지는 각 홀에 티 미표기 기준 거리를 별도로 보여주므로 선택 불가한 `official_reference` 행으로 보존했습니다. 같은 색상의 추가 거리도 EAST 5·8·9번, WEST 7·8번에 게시된 원문값 그대로 보조 행으로 저장하고 티 선택은 비활성화했습니다. 공개되지 않은 Black 티는 만들지 않았습니다.
 - 원격 DB와 seed 대조 결과 코스 2개·홀 18개·티 거리 91행, 홀 PAR·HDCP와 티 이름·색상·거리·출처·선택 메타데이터 불일치 0건입니다. 구장과 두 코스 모두 verified입니다. 자료: `orange-dunes-yeongjong-2026-official-verified.json`.
 - 원격 전체 카탈로그 최신 집계: 검수 완료 270곳, 미진행 241곳, 반려 5곳(총 516곳). 부산·울산·경남 pending은 0곳입니다.
+
+### 2026-10-13 — 블루원상주·세종레이캐슬 공식 자료 재확인
+- 원격 DB를 다시 조회해 검수 완료 270곳, 미진행 241곳, 반려 5곳(총 516곳)을 확인했습니다. 지역별 미진행 수는 강원 55, 경기 141, 경북 1, 세종 1, 인천 10, 전남 1, 전북 3, 제주 28, 충남 1곳이며 부산·울산·경남은 0곳입니다.
+- 블루원상주 운영사 공식 [코스 제원](https://homepage-sj.blueone.com/club-introduction/information?type=0)에서 East·West 18홀·PAR72 및 총길이 6,737m를 재확인했습니다. 공식 [홀별 코스 정보](https://homepage-sj.blueone.com/club-introduction/information?type=1)와 공식 페이지 데이터 번들에서 각 홀 PAR·HDCP·공략 설명 및 홀 도면은 확인되지만 티별 홀 거리는 텍스트 데이터에 없습니다. 공식 과거 [2012년 가을 매거진](https://www.blueone.com/content/ebook/down.jsp?filename=2012_Blueone_Autumn.pdf)은 East 1번 354m 등 일부 홀만 제공하므로 전체 최신 티별 자료로 간주하지 않고 pending을 유지합니다.
+- 세종레이캐슬 운영사 공식 [이용안내](https://www.sjraycastle.com/Golf/Use/Info.aspx)에서 세종·레이·캐슬 27홀 및 18홀 기준 총거리 7,760yd를 확인했습니다. 공식 [코스 뷰](https://www.sjraycastle.com/Golf/Course/Sejong.aspx)에는 코스 사진이 있으나 검색 가능한 공식 텍스트에서 홀별 PAR·거리표는 확인되지 않아 pending을 유지합니다.
+- 두 구장 모두 현재 공식 자료만으로 홀별 PAR 및 거리 레코드를 완성할 수 없어 DB 변경은 하지 않았습니다. 다음에는 인접 미진행 후보 가운데 공식 홀별 자료가 확인되는 시설을 계속 조사합니다.
