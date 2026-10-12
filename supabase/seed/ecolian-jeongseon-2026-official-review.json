@@ -10,8 +10,8 @@
       "supports_screen": false,
       "verification_status": "pending",
       "review_notes": [
-        "공식 코스제원과 공략 페이지에서 9홀 Blue/White/Red 티 거리(m)를 확인했습니다. 공략 페이지의 3번 홀 제목은 Par 3로 표시되지만 같은 홀 설명은 파4라고 반복 설명하고, 코스 제원표의 파처럼 보이는 열과 나머지 상세 파를 합산하면 36입니다. 따라서 3번 홀 파를 4로 기록하되 제목 표기 충돌 때문에 관리자 검수 대기를 유지합니다.",
-        "코스제원 페이지의 행 제목은 HDCP이나 값 4,3,4,4,5,3,4,5,4는 합계 36으로 공식 공략 페이지의 홀별 파와 부합합니다. 3번 홀 제목(Par 3)과 본문(파4), 8번 홀 제목(Par 56)과 본문(파5)이 충돌합니다. 이 데이터는 파에 우선해석한 값이며 최종 관리자 검수가 필요합니다.",
+        "공식 코스제원과 공략 페이지에서 9홀 Blue/White/Red 티 거리(m)를 확인했습니다. 코스제원표 마지막 행은 파가 아니라 HDCP라고 명시되어 있어 파 근거로 사용할 수 없습니다. 공략 페이지에서 3번 홀 제목은 Par 3이나 본문은 파4라고 설명합니다. 8번 홀 제목도 Par 56으로 잘못 표기되어 있고 본문은 파5라고 설명합니다. 3번 홀 파가 확정되지 않아 전체 파 합계도 확정할 수 없으므로 검수 대기를 유지합니다.",
+        "정선 코스제원 표의 HDCP 값 4,3,4,4,5,3,4,5,4를 파로 복사하지 않습니다. 3번 홀의 Par 3 제목과 파4 본문이 충돌하며, 공식 페이지 내에서 이를 해소할 별도 파 합계나 제원은 확인되지 않았습니다. 거리 단위와 Blue/White/Red 값은 확인했지만, 홀별 파 검증 전까지 코스를 공개하지 않습니다.",
         "공식 출처: https://www.ecolian.or.kr/cotents/course/courseInfo.do?coDiv=105 및 https://www.ecolian.or.kr/cotents/course/courseAttack.do?coDiv=105 (2026-10-12 확인)"
       ],
       "routes": [
@@ -24,7 +24,7 @@
           "source_url": "https://www.ecolian.or.kr/cotents/course/courseInfo.do?coDiv=105",
           "review_notes": [
             "공식 코스제원 페이지의 각 홀 Blue/White/Red 거리를 옮겼습니다. 6번 홀 공략 페이지에는 출처에서 이름이 확인되지 않는 추가 거리 99m도 있어 특정 티로 추정하지 않았습니다.",
-            "공식 공략 페이지의 3번 홀 제목은 Par 3이나 설명 본문은 파4라고 반복 기재하고, 코스제원 파 열과 합계 36도 파4를 지지합니다. 파4로 저장하되 제목 충돌로 검수 대기합니다."
+            "코스제원표 마지막 행은 HDCP이며 파 자료가 아닙니다. 공략 페이지 3번 홀 제목은 Par 3, 설명 본문은 파4로 상충합니다. 파 값과 9홀 합계가 공식 자료만으로 확정되지 않아 현재 값은 검수용 기록이며 공개하지 않습니다."
           ],
           "holes": [
             {"hole_number":1,"par":4,"tees":[{"tee_code":"blue","display_name":"블루티","tee_color":"#2563eb","distance_m":300},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":262},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":216}]},
