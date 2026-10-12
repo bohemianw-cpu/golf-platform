@@ -240,3 +240,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-13 · 군산CC (공식 72홀 부분 카탈로그)
 
 현행 공식 홈페이지 API의 8개 코스(토너먼트-OUT/IN, 전주, 익산, 김제, 정읍, 부안, 남원)의 9홀 PAR·HDCP와 Black/Blue/White/Yellow/Red 미터 거리 360행을 저장하고 원격 DB에서 경로별 9홀·45티 행을 확인했습니다. 공식 소개와 API의 Black 홀별 합계가 익산 3,524/3,395m, 김제 3,382/3,542m, 정읍 3,469/3,477m로 달라 홀별 API 데이터를 기준으로 기록했습니다. 김제의 PAR37과 정읍 3번 PAR7·1,004m도 원문값입니다. 현행 클럽 소개는 81홀을 안내하지만 코스 API 목록은 72홀만 제공해, 미노출 9홀은 추정하지 않고 부분 카탈로그로 남겼습니다. 이를 지원하도록 관리자 importer의 구장 전체 홀 수 제한을 144로 늘리고, 공식 PAR 7 및 2,000m 거리 범위까지 importer와 DB를 확장했습니다. 원격 검수 집계: 완료 213, 미진행 302, 반려 1 (총 516). 자료: `gunsan-cc-2026-official-partial-verified.json`; 출처: [공식 클럽 소개](https://www.gunsancc.net/main/intro), [공식 코스 페이지](https://www.gunsancc.net/main/golf), [공식 코스 데이터 API](https://www.gunsancc.net/api/golf/v2/tenant/website/init) (2026-10-13 확인).
+
+### 2026-10-13 · 동전주 써미트CC
+
+공식 코스 제원표에서 M·S·K 각 9홀 PAR36 및 Red/Yellow/White/Blue 티별 거리 108행을 저장하고 원격 DB의 27홀·3경로·108개 티 행을 seed와 행 단위 대조해 일치함을 확인했습니다. 공식 코스개요 길이는 M/S/K 3,010/3,072/3,113m이나 Blue 홀별 합은 2,986/3,100/3,184m로 차이가 있어, 홀별 제원표 값을 보존하고 경로별 메모에 남겼습니다. HDCP는 공식 제원표에 공개되지 않았습니다. 자료 파일: `summit-cc-2026-official-verified.json`; 출처: [공식 코스 제원](https://www.summitcc.co.kr/course/course_info) (2026-10-13 확인).
