@@ -131,6 +131,12 @@ for (const course of corrections) {
         }
         if (tee.handicap_index != null && (!Number.isInteger(tee.handicap_index) || tee.handicap_index < 1 || tee.handicap_index > 18)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 그린 핸디캡 인덱스는 1~18이어야 합니다.`)
       }
+      for (const [greenCode, greenPars] of parsByGreen) {
+        const explicitPars = greenPars.filter((par) => par != null)
+        if (explicitPars.length > 0 && (explicitPars.length !== greenPars.length || explicitPars.some((par) => par !== explicitPars[0]))) {
+          throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀 ${greenCode}: 같은 그린 구성의 모든 티에 동일한 par override가 있어야 합니다.`)
+        }
+      }
     }
     if (route.official_tee_totals_m != null) {
       if (!route.official_tee_totals_m || typeof route.official_tee_totals_m !== 'object' || Array.isArray(route.official_tee_totals_m)) {
@@ -154,12 +160,6 @@ for (const course of corrections) {
           } else if (officialTotalTolerance > 0 && !route.official_tee_total_tolerance_note?.trim()) {
             throw new Error(`${message} 허용 차이를 설명하는 검수 근거가 필요합니다.`)
           }
-        }
-      }
-      for (const [greenCode, greenPars] of parsByGreen) {
-        const explicitPars = greenPars.filter((par) => par != null)
-        if (explicitPars.length > 0 && (explicitPars.length !== greenPars.length || explicitPars.some((par) => par !== explicitPars[0]))) {
-          throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀 ${greenCode}: 같은 그린 구성의 모든 티에 동일한 par override가 있어야 합니다.`)
         }
       }
     }

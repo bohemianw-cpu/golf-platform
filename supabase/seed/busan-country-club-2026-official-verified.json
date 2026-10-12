@@ -1,0 +1,64 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "부산컨트리클럽",
+      "name": "부산컨트리클럽",
+      "region": "부산",
+      "address": "부산광역시 금정구 중앙대로2327번길 112",
+      "hole_count": 18,
+      "verification_status": "verified",
+      "review_notes": [
+        "공식 코스 제원표에서 거리 단위 M(미터), 18홀 2개 코스, 홀별 파·HDCP·CHAMP TEE·REG TEE와 티별 합계를 확인.",
+        "공식 자료에 티 색상은 게시되지 않아 tee_color는 UI용 중립색으로 저장하며 실제 티마커 색상으로 해석하지 않음.",
+        "공식 홈페이지 코스별 표와 각 홀 상세 안내의 파·티 거리를 대조함."
+      ],
+      "routes": [
+        {
+          "route_code": "geumjeong",
+          "display_name": "금정 코스",
+          "hole_count": 9,
+          "primary_tee_code": "reg",
+          "verification_status": "verified",
+          "source_url": "https://www.bscc.co.kr/course/intro",
+          "par_source_url": "https://www.bscc.co.kr/course/intro",
+          "official_tee_totals_m": { "champ": 3066, "reg": 2948 },
+          "review_notes": ["공식 제원표의 미터 단위 홀 거리 합계와 CHAMP 3,066m, REG 2,948m를 각각 대조해 일치 확인."],
+          "holes": [
+            { "hole_number": 1, "par": 4, "handicap_index": 3, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 396, "distance_m_source": "official", "source_distance": 396, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 383, "distance_m_source": "official", "source_distance": 383, "source_unit": "m" }] },
+            { "hole_number": 2, "par": 3, "handicap_index": 7, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 151, "distance_m_source": "official", "source_distance": 151, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 141, "distance_m_source": "official", "source_distance": 141, "source_unit": "m" }] },
+            { "hole_number": 3, "par": 5, "handicap_index": 17, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 464, "distance_m_source": "official", "source_distance": 464, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 452, "distance_m_source": "official", "source_distance": 452, "source_unit": "m" }] },
+            { "hole_number": 4, "par": 4, "handicap_index": 1, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 412, "distance_m_source": "official", "source_distance": 412, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 398, "distance_m_source": "official", "source_distance": 398, "source_unit": "m" }] },
+            { "hole_number": 5, "par": 3, "handicap_index": 5, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 156, "distance_m_source": "official", "source_distance": 156, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 144, "distance_m_source": "official", "source_distance": 144, "source_unit": "m" }] },
+            { "hole_number": 6, "par": 4, "handicap_index": 12, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 322, "distance_m_source": "official", "source_distance": 322, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 311, "distance_m_source": "official", "source_distance": 311, "source_unit": "m" }] },
+            { "hole_number": 7, "par": 4, "handicap_index": 11, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 346, "distance_m_source": "official", "source_distance": 346, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 331, "distance_m_source": "official", "source_distance": 331, "source_unit": "m" }] },
+            { "hole_number": 8, "par": 5, "handicap_index": 15, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 504, "distance_m_source": "official", "source_distance": 504, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 485, "distance_m_source": "official", "source_distance": 485, "source_unit": "m" }] },
+            { "hole_number": 9, "par": 4, "handicap_index": 13, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 315, "distance_m_source": "official", "source_distance": 315, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 303, "distance_m_source": "official", "source_distance": 303, "source_unit": "m" }] }
+          ]
+        },
+        {
+          "route_code": "dongbaek",
+          "display_name": "동백 코스",
+          "hole_count": 9,
+          "primary_tee_code": "reg",
+          "verification_status": "verified",
+          "source_url": "https://www.bscc.co.kr/course/intro",
+          "par_source_url": "https://www.bscc.co.kr/course/intro",
+          "official_tee_totals_m": { "champ": 2932, "reg": 2799 },
+          "review_notes": ["공식 제원표의 미터 단위 홀 거리 합계와 CHAMP 2,932m, REG 2,799m를 각각 대조해 일치 확인."],
+          "holes": [
+            { "hole_number": 1, "par": 5, "handicap_index": 18, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 490, "distance_m_source": "official", "source_distance": 490, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 477, "distance_m_source": "official", "source_distance": 477, "source_unit": "m" }] },
+            { "hole_number": 2, "par": 4, "handicap_index": 9, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 320, "distance_m_source": "official", "source_distance": 320, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 309, "distance_m_source": "official", "source_distance": 309, "source_unit": "m" }] },
+            { "hole_number": 3, "par": 3, "handicap_index": 6, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 139, "distance_m_source": "official", "source_distance": 139, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 126, "distance_m_source": "official", "source_distance": 126, "source_unit": "m" }] },
+            { "hole_number": 4, "par": 4, "handicap_index": 14, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 309, "distance_m_source": "official", "source_distance": 309, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 292, "distance_m_source": "official", "source_distance": 292, "source_unit": "m" }] },
+            { "hole_number": 5, "par": 4, "handicap_index": 8, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 319, "distance_m_source": "official", "source_distance": 319, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 307, "distance_m_source": "official", "source_distance": 307, "source_unit": "m" }] },
+            { "hole_number": 6, "par": 4, "handicap_index": 10, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 330, "distance_m_source": "official", "source_distance": 330, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 317, "distance_m_source": "official", "source_distance": 317, "source_unit": "m" }] },
+            { "hole_number": 7, "par": 4, "handicap_index": 4, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 347, "distance_m_source": "official", "source_distance": 347, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 330, "distance_m_source": "official", "source_distance": 330, "source_unit": "m" }] },
+            { "hole_number": 8, "par": 3, "handicap_index": 2, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 184, "distance_m_source": "official", "source_distance": 184, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 170, "distance_m_source": "official", "source_distance": 170, "source_unit": "m" }] },
+            { "hole_number": 9, "par": 5, "handicap_index": 16, "tees": [{ "tee_code": "champ", "display_name": "CHAMP TEE", "tee_color": "#64748b", "distance_m": 494, "distance_m_source": "official", "source_distance": 494, "source_unit": "m" }, { "tee_code": "reg", "display_name": "REG TEE", "tee_color": "#64748b", "distance_m": 471, "distance_m_source": "official", "source_distance": 471, "source_unit": "m" }] }
+          ]
+        }
+      ]
+    }
+  ]
+}
