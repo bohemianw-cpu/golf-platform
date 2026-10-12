@@ -95,3 +95,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 진주CC: 공식 스코어카드에서 남강(OUT)·촉석(IN) 9홀별 PAR·HDCP 및 GOLD/BLUE/WHITE/RED 티별 미터 거리를 반영했습니다. 두 코스 모두 PAR36이며 티별 합계가 공식 합계와 일치합니다. 자료 파일: `jinju-cc-2026-official-verified.json`; 출처: [공식 스코어카드](https://www.chinjucc.co.kr/Course/ScoreCard.aspx) (2026-10-12 확인).
 - 서경타니CC: 공식 코스 페이지가 읽어오는 `Course.json`의 청룡·현무·주작·백호 PAR와 티 색상별 거리(m)를 저장했습니다. 4개 9홀 모두 PAR36입니다. 원문은 홀별 Tee_Color가 3~7개로 일정하지 않고 공식 개요의 홀당 4개 티 안내와 다릅니다. 모든 원문 항목을 색상별 순번으로 보존했으며, 반복 색상 항목은 해당 색상 순번을 이름에 표시했습니다. HDCP는 원문에 없어 비웠습니다. 자료 파일: `seogyeong-tani-2026-official-verified.json`; 출처: [공식 코스 개요](https://www.tanicc.co.kr/Mobile/?bct=01&mct=01), [공식 Course.json](https://www.tanicc.co.kr/js/Course.json) (2026-10-12 확인).
 - 통영동원로얄CC: 운영사 공식 제원표에서 한려(OUT)·미륵(IN) 각 9홀의 PAR·HDCP와 미터 거리를 입력했습니다. 두 경로 모두 PAR36이며 홀별 합계 3,248m / 3,286m가 공식 소계와 일치합니다. 티 색상별 거리는 공개되지 않아 티 미표기 공식 거리로 저장했습니다. 자료 파일: `tongyeong-dongwon-royal-2026-official-verified.json`; 출처: [운영사 공식 코스 제원](https://www.dongwonresort.co.kr/pagesite/golf/course/intro.asp) (2026-10-12 확인).
+- 거창CC: 거창군 공식 코스 표에서 9홀의 PAR·HDCP와 좌·우 그린별 블루·화이트·레드 티 거리(m)를 저장했습니다. 각 홀은 6개 티·그린 조합으로 총 54개 거리이며, PAR 합은 36입니다. 자료 파일: `geochang-cc-2026-official-verified.json`; 출처: [거창CC 공식 코스 소개](https://www.geochang.go.kr/golf/course/courseInfo) (2026-10-12 확인).
+
+## 재개 지점
+
+2026-10-12 현재 경남의 다음 미검수 후보는 의령 리온CC(27홀), 경남스카이뷰CC(18홀), 사우스케이프오너스클럽(18홀), 아난티남해CC/GC(중복 후보 레코드 각 9홀), 아델스코트CC(27홀)입니다. 부산권에서 가까운 경남 후보를 우선 조사하고, MCST 중복 구장 레코드는 공식 운영 시설 관계를 확인한 뒤 처리합니다. 다음 조사 후보는 의령 리온CC입니다.
