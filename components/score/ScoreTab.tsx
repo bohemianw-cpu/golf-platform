@@ -66,6 +66,7 @@ export default function ScoreTab() {
   const modeSupported = !selectedCatalogCourse || (round.playMode === 'field'
     ? selectedCatalogCourse.supports_field
     : selectedCatalogCourse.supports_screen)
+  const hasCompleteCourseLayout = [9, 18].includes(round.routeDistances.length)
   const diffText = completedHoles.length === 0 || totalDiff === 0 ? '0' : totalDiff > 0 ? `+${totalDiff}` : `${totalDiff}`
   const previousHole = completedHoles.find((h) => h.holeNumber === currentHole - 1)
 
@@ -242,7 +243,7 @@ export default function ScoreTab() {
         </div>
       </div>
 
-      {!isRoundComplete && round.playMode && round.routeDistances.length === 18 && round.currentGreenOptions.length > 1 && (
+      {!isRoundComplete && round.playMode && hasCompleteCourseLayout && round.currentGreenOptions.length > 1 && (
         <fieldset style={{ margin: '0 0 12px', padding: '8px 10px', border: '1px solid #93c5fd', borderRadius: '10px', background: '#eff6ff' }}>
           <legend style={{ padding: '0 4px', fontSize: '11px', fontWeight: 700, color: '#1d4ed8' }}>현재 홀 그린 선택</legend>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
@@ -265,18 +266,18 @@ export default function ScoreTab() {
               리포트 보기
             </button>
             <button onClick={round.undoPreviousHole} disabled={isSaving} style={{ padding: '10px 14px', backgroundColor: '#ffffff', color: '#475569', border: '1px solid #cbd5e1', borderRadius: '8px', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
-              18번 홀 수정
+              {completedHoles.length}번 홀 수정
             </button>
             <button onClick={round.startNewRound} style={{ padding: '10px 14px', backgroundColor: '#ffffff', color: '#047857', border: '1px solid #86efac', borderRadius: '8px', fontSize: '13px', fontWeight: 'bold', cursor: 'pointer' }}>
               새 라운드 시작
             </button>
           </div>
         </div>
-      ) : round.playMode && modeSupported && (!round.courseId || round.routeDistances.length === 18) ? (
+      ) : round.playMode && modeSupported && (!round.courseId || hasCompleteCourseLayout) ? (
         <ShotInputCard round={round} clubs={clubs} />
       ) : (
         <div role="status" style={{ padding: '24px 16px', marginBottom: '16px', border: '1px dashed #94a3b8', borderRadius: '12px', background: '#fff', textAlign: 'center', color: '#475569', fontSize: '13px' }}>
-          {!round.playMode ? '라운드 방식을 선택하면 스코어와 샷을 입력할 수 있습니다.' : !modeSupported ? '선택한 구장이 지원하는 필드/스크린 방식을 확인해 주세요.' : '검증된 코스 레이아웃 18홀을 선택하면 스코어를 입력할 수 있습니다.'}
+          {!round.playMode ? '라운드 방식을 선택하면 스코어와 샷을 입력할 수 있습니다.' : !modeSupported ? '선택한 구장이 지원하는 필드/스크린 방식을 확인해 주세요.' : '검증된 코스의 9홀 또는 18홀 코스와 티를 선택하면 스코어를 입력할 수 있습니다.'}
         </div>
       )}
 

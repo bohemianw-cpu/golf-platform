@@ -579,7 +579,8 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
         prepareHole(d.currentHole, d.holePars, d.completedHoles, d.routeDistances ?? [])
         setHoleDistance(d.holeDistance)
       }
-      if (d.completedHoles.length >= 18) {
+      const targetHoleCount = d.routeDistances?.length === 9 ? 9 : 18
+      if (d.completedHoles.length >= targetHoleCount) {
         setIsRoundComplete(true)
         void syncAndMaybeFinalize(d.completedHoles, true)
       } else if (d.completedHoles.length > 0) {
@@ -657,7 +658,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
       const routeDistancesForRound = savedTeeAvailableOnAllHoles
         ? teeVariants.map((variants, index) => variants.find((tee) => tee.green_code === restoredGreenCodes[index])?.distance_m ?? variants[0]?.distance_m ?? 0)
         : routeRows.flatMap((route) => route.distances_m)
-      const hasFullRouteLayout = routePars.length === 18 && routeDistancesForRound.length === 18 &&
+      const hasFullRouteLayout = [9, 18].includes(routePars.length) && routeDistancesForRound.length === routePars.length &&
         routeDistancesForRound.every((distance) => distance > 0 && distance <= 800)
       const pars = hasFullRouteLayout ? [...routePars] : [...INITIAL_HOLE_PARS]
       const eventsByHole = new Map<number, ShotRecord[]>()
@@ -705,7 +706,8 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
       setGreenNames(restoredGreenNames)
       setRouteHoles(routeRows.flatMap((route) => route.holes ?? []))
       setCompletedHoles(restored)
-      const next = restored.length ? Math.min(18, Math.max(...restored.map((h) => h.holeNumber)) + 1) : 1
+      const targetHoleCount = hasFullRouteLayout ? routePars.length : 18
+      const next = restored.length ? Math.min(targetHoleCount, Math.max(...restored.map((h) => h.holeNumber)) + 1) : 1
       prepareHole(next, pars, restored, hasFullRouteLayout ? routeDistancesForRound : [])
       const partialShots = eventsByHole.get(next) ?? []
       if (partialShots.length > 0) {
@@ -713,6 +715,10 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
         const last = partialShots[partialShots.length - 1]
         setHoleDistance((hasFullRouteLayout ? routeDistancesForRound[next - 1] : undefined) ?? defaultDistanceForPar(pars[next - 1] ?? 4))
         setNextInputs(last.distanceToPinAfter, last.ballLie, buildClubStats([...restored.flatMap((h) => h.shots), ...partialShots], isPutter), last.club)
+      }
+      if (restored.length >= targetHoleCount) {
+        setIsRoundComplete(true)
+        void syncAndMaybeFinalize(restored, true)
       }
     }
 
@@ -821,21 +827,22 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
     const greenCodesForRoutes = selectedGreens.map((tee) => tee?.green_code ?? 'standard')
     const greenNamesForRoutes = selectedGreens.map((tee) => tee?.green_name ?? '기본 그린')
     const distances = selectedGreens.map((tee) => tee?.distance_m ?? 0)
-    const valid18HoleLayout = pars.length === 18 && distances.length === 18 &&
+    const validCourseLayout = [9, 18].includes(pars.length) && distances.length === pars.length &&
       pars.every((par) => par >= 3 && par <= 5) && distances.every((distance) => distance > 0 && distance <= 800)
-    if (!valid18HoleLayout) {
-      setHolePars(pars.length === 18 && pars.every((par) => par >= 3 && par <= 5) ? pars : INITIAL_HOLE_PARS)
+    setRouteHoles(routes.flatMap((route) => route.holes ?? []))
+    if (!validCourseLayout) {
+      const hasValidPars = [9, 18].includes(pars.length) && pars.every((par) => par >= 3 && par <= 5)
+      setHolePars(hasValidPars ? pars : INITIAL_HOLE_PARS)
       setRouteDistances([])
       setGreenCodes([])
       setGreenNames([])
-      prepareHole(1, pars.length === 18 && pars.every((par) => par >= 3 && par <= 5) ? pars : INITIAL_HOLE_PARS, [], [])
+      prepareHole(1, hasValidPars ? pars : INITIAL_HOLE_PARS, [], [])
       return false
     }
     setHolePars(pars)
     setRouteDistances(distances)
     setGreenCodes(greenCodesForRoutes)
     setGreenNames(greenNamesForRoutes)
-    setRouteHoles(routes.flatMap((route) => route.holes ?? []))
     prepareHole(1, pars, [], distances)
     return true
   }, [currentRoundId, completedHoles.length, currentShots.length, prepareHole])
@@ -885,7 +892,8 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
     )
     setCompletedHoles(updated)
 
-    if (currentHole < 18) {
+    const targetHoleCount = [9, 18].includes(routeDistances.length) ? routeDistances.length : 18
+    if (currentHole < targetHoleCount) {
       prepareHole(currentHole + 1, holePars, updated)
       void syncHoles(updated)
     } else {

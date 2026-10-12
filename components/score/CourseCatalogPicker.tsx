@@ -32,7 +32,7 @@ interface Props {
 
 function completeTeeOptions(routes: GolfRouteOption[], totalHoles: number): GolfCourseTee[] {
   const holes = routes.flatMap((route) => route.holes ?? [])
-  if (totalHoles !== 18 || holes.length !== 18 || routes.some((route) => route.holes?.length !== route.hole_count)) return []
+  if (![9, 18].includes(totalHoles) || holes.length !== totalHoles || routes.some((route) => route.holes?.length !== route.hole_count)) return []
   const firstHoleTees = holes[0]?.tees ?? []
   return firstHoleTees
     .filter((tee) => holes.every((hole) => hole.tees.some((item) => item.tee_code === tee.tee_code)))
@@ -141,7 +141,7 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
   const selectedHoleCount = selectedRoutes.reduce((sum, route) => sum + route.hole_count, 0)
   const teeOptions = completeTeeOptions(selectedRoutes, selectedHoleCount)
   const selectedTee = teeOptions.find((tee) => tee.tee_code === teeCode) ?? null
-  const selectedLayoutIsValid = selectedHoleCount === 18 && teeOptions.length > 0 && !!selectedTee
+  const selectedLayoutIsValid = [9, 18].includes(selectedHoleCount) && teeOptions.length > 0 && !!selectedTee
 
   return (
     <section aria-label="골프장과 코스 검색" style={{ marginTop: searchOpen || (courseId && selectedCourse) ? '10px' : 0 }}>
@@ -181,7 +181,9 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
                       return <div key={route.id} style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
                         <label style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '11px', color: '#334155' }}>
                           <input type="checkbox" checked={checked} disabled={locked || cannotAdd} onChange={() => {
-                            const next = checked ? selectedRoutes.filter((item) => item.id !== route.id) : [...selectedRoutes, route]
+                            const next = [...selectedRoutes]
+                            if (checked) next.splice(next.findIndex((item) => item.id === route.id), 1)
+                            else next.push(route)
                             const options = completeTeeOptions(next, next.reduce((sum, item) => sum + item.hole_count, 0))
                             const retained = options.find((item) => item.tee_code === teeCode) ?? null
                             onRoutesChange(next, retained?.tee_code ?? null, retained?.display_name ?? null)
@@ -200,7 +202,7 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
                   <div style={{ marginTop: '5px', fontSize: '10px', color: '#64748b' }}>
                     선택 순서: {selectedRoutes.length ? selectedRoutes.map((route) => route.display_name).join(' → ') : '미선택'}
                   </div>
-                  {selectedHoleCount === 18 && (teeOptions.length > 0 ? (
+                  {[9, 18].includes(selectedHoleCount) && (teeOptions.length > 0 ? (
                     <fieldset style={{ margin: '8px 0 0', padding: '6px 8px', border: '1px solid #cbd5e1', borderRadius: '6px' }}>
                       <legend style={{ fontSize: '10px', fontWeight: 700 }}>이번 라운드 티 위치 (필수)</legend>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
@@ -211,12 +213,12 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
                         </label>)}
                       </div>
                     </fieldset>
-                  ) : <p role="status" style={{ margin: '6px 0 0', fontSize: '10px', color: '#b45309' }}>선택한 18홀 전체에 거리 자료가 있는 공통 티가 없습니다.</p>)}
+                  ) : <p role="status" style={{ margin: '6px 0 0', fontSize: '10px', color: '#b45309' }}>선택한 {selectedHoleCount}홀 전체에 거리 자료가 있는 공통 티가 없습니다.</p>)}
                   <div role="status" style={{ marginTop: '5px', fontSize: '10px', color: selectedLayoutIsValid ? '#15803d' : '#b45309' }}>
-                    {selectedLayoutIsValid ? `18홀 파·거리 확인 완료 · ${selectedTee.display_name}` : selectedHoleCount < 18 ? `${selectedHoleCount}/18홀 선택 · ${selectedHoleCount === 9 ? '다른 9홀 코스 또는 같은 코스 반복을 선택해 주세요.' : '18홀 코스 조합을 선택해 주세요.'}` : teeOptions.length > 0 ? '기록을 시작하기 전에 티 위치를 선택해 주세요.' : '티별 18홀 거리 자료가 확인된 코스만 기록할 수 있습니다.'}
+                    {selectedLayoutIsValid ? `${selectedHoleCount}홀 파·거리 확인 완료 · ${selectedTee.display_name}` : selectedHoleCount < 9 ? `${selectedHoleCount}/9홀 선택 · 코스를 선택해 주세요.` : selectedHoleCount === 9 ? '9홀 라운드를 기록하거나 다른 9홀 코스를 추가할 수 있습니다.' : selectedHoleCount < 18 ? `${selectedHoleCount}/18홀 선택 · 나머지 코스를 선택해 주세요.` : teeOptions.length > 0 ? '기록을 시작하기 전에 티 위치를 선택해 주세요.' : '선택한 홀 전체에 티별 거리 자료가 확인된 코스를 선택해 주세요.'}
                   </div>
                 </fieldset>
-              ) : <p style={{ margin: '6px 0 0', fontSize: '11px', color: '#64748b' }}>검증된 코스 레이아웃이 아직 등록되지 않았습니다.</p>}
+              ) : <p style={{ margin: '6px 0 0', fontSize: '11px', color: '#64748b' }}>검증된 9홀 코스 정보가 아직 등록되지 않았습니다.</p>}
         </div>
       )}
     </section>
