@@ -1,0 +1,2805 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "match_name": "레인보우힐스",
+    "name": "레인보우힐스CC",
+    "region": "충북",
+    "address": "충청북도 음성군 생극면 차생로 168",
+    "aliases": [
+      "레인보우힐스",
+      "레인보우힐스 컨트리클럽",
+      "Rainbow Hills Country Club",
+      "Rainbow Hills CC"
+    ],
+    "hole_count": 27,
+    "supports_screen": false,
+    "verification_status": "verified",
+    "review_notes": [
+      "운영사 공식 동·남·서 코스의 27개 홀 PAR 및 공식 거리표 이미지에 표시된 티별 거리(m)를 저장했습니다. 거리표는 Black/Blue/White/Pink로 표시되고 일부 홀에는 Yellow가 추가됩니다. 거리표의 A/B/C 그린행을 그대로 구분했으며, 일부 서코스 홀의 좌/우 영역은 동일 수치가 중복 표기되어 A/B/C 거리 행으로 정리했습니다. 공식 홀 상세 페이지에 핸디캡이 없어 미입력했습니다.",
+      "남코스 4번: 홀 상세 HTML 대체텍스트 PAR 3, 공식 거리표 이미지 PAR 4; 거리표 이미지 제목을 사용"
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "east",
+      "display_name": "동코스",
+      "hole_count": 9,
+      "primary_tee_code": "blue",
+      "verification_status": "verified",
+      "source_url": "https://www.rainbowhills.co.kr/pagesite/course/one/hole01.asp",
+      "source_data_url": "https://www.rainbowhills.co.kr/image/course/one/hole1_2.png",
+      "par_source_url": "https://www.rainbowhills.co.kr/pagesite/course/one/hole01.asp",
+      "source_images": [
+        "https://www.rainbowhills.co.kr/image/course/one/hole1_2.png",
+        "https://www.rainbowhills.co.kr/image/course/one/hole2_2.png",
+        "https://www.rainbowhills.co.kr/image/course/one/hole3_2.png",
+        "https://www.rainbowhills.co.kr/image/course/one/hole4_2.png",
+        "https://www.rainbowhills.co.kr/image/course/one/hole5_2.png",
+        "https://www.rainbowhills.co.kr/image/course/one/hole6_2.png",
+        "https://www.rainbowhills.co.kr/image/course/one/hole7_2.png",
+        "https://www.rainbowhills.co.kr/image/course/one/hole8_2.png",
+        "https://www.rainbowhills.co.kr/image/course/one/hole9_2.png"
+      ],
+      "review_notes": [
+        "운영사 공식 홀 상세 페이지의 홀 번호·PAR와 각 홀 거리표 이미지를 대조했습니다. 거리표에 표시된 Black/Blue/White/Pink 및 실제 표기된 Yellow 티만 m 단위로 반영하고, 없는 티 색상은 생성하지 않았습니다. 거리표의 A/B/C 행은 구분해 저장했습니다. 일부 서코스 홀의 좌/우 표기 블록은 동일 거리 반복이라 A/B/C 행만 한 번씩 기록했습니다. 거리표에 핸디캡 수치는 없어 미입력했습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 5,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 233,
+                  "distance_m_source": "official",
+                  "source_distance": 233,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 206,
+                  "distance_m_source": "official",
+                  "source_distance": 206,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 172,
+                  "distance_m_source": "official",
+                  "source_distance": 172,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 144,
+                  "distance_m_source": "official",
+                  "source_distance": 144,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 266,
+                  "distance_m_source": "official",
+                  "source_distance": 266,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 222,
+                  "distance_m_source": "official",
+                  "source_distance": 222,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 181,
+                  "distance_m_source": "official",
+                  "source_distance": 181,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 148,
+                  "distance_m_source": "official",
+                  "source_distance": 148,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/one/hole01.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/one/hole1_2.png"
+        },
+        {
+          "hole_number": 2,
+          "par": 3,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 100,
+                  "distance_m_source": "official",
+                  "source_distance": 100,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 80,
+                  "distance_m_source": "official",
+                  "source_distance": 80,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 67,
+                  "distance_m_source": "official",
+                  "source_distance": 67,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 57,
+                  "distance_m_source": "official",
+                  "source_distance": 57,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/one/hole02.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/one/hole2_2.png"
+        },
+        {
+          "hole_number": 3,
+          "par": 4,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 236,
+                  "distance_m_source": "official",
+                  "source_distance": 236,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 212,
+                  "distance_m_source": "official",
+                  "source_distance": 212,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 184,
+                  "distance_m_source": "official",
+                  "source_distance": 184,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 74,
+                  "distance_m_source": "official",
+                  "source_distance": 74,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 56,
+                  "distance_m_source": "official",
+                  "source_distance": 56,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 235,
+                  "distance_m_source": "official",
+                  "source_distance": 235,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 211,
+                  "distance_m_source": "official",
+                  "source_distance": 211,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 185,
+                  "distance_m_source": "official",
+                  "source_distance": 185,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 89,
+                  "distance_m_source": "official",
+                  "source_distance": 89,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 61,
+                  "distance_m_source": "official",
+                  "source_distance": 61,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "c",
+              "display_name": "C 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 241,
+                  "distance_m_source": "official",
+                  "source_distance": 241,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 220,
+                  "distance_m_source": "official",
+                  "source_distance": 220,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 189,
+                  "distance_m_source": "official",
+                  "source_distance": 189,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 85,
+                  "distance_m_source": "official",
+                  "source_distance": 85,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 82,
+                  "distance_m_source": "official",
+                  "source_distance": 82,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/one/hole03.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/one/hole3_2.png"
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 198,
+                  "distance_m_source": "official",
+                  "source_distance": 198,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 168,
+                  "distance_m_source": "official",
+                  "source_distance": 168,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 140,
+                  "distance_m_source": "official",
+                  "source_distance": 140,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 117,
+                  "distance_m_source": "official",
+                  "source_distance": 117,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 213,
+                  "distance_m_source": "official",
+                  "source_distance": 213,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 181,
+                  "distance_m_source": "official",
+                  "source_distance": 181,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 156,
+                  "distance_m_source": "official",
+                  "source_distance": 156,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 134,
+                  "distance_m_source": "official",
+                  "source_distance": 134,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "c",
+              "display_name": "C 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 257,
+                  "distance_m_source": "official",
+                  "source_distance": 257,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 226,
+                  "distance_m_source": "official",
+                  "source_distance": 226,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 198,
+                  "distance_m_source": "official",
+                  "source_distance": 198,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 176,
+                  "distance_m_source": "official",
+                  "source_distance": 176,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/one/hole04.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/one/hole4_2.png"
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 233,
+                  "distance_m_source": "official",
+                  "source_distance": 233,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 206,
+                  "distance_m_source": "official",
+                  "source_distance": 206,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 172,
+                  "distance_m_source": "official",
+                  "source_distance": 172,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 144,
+                  "distance_m_source": "official",
+                  "source_distance": 144,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 266,
+                  "distance_m_source": "official",
+                  "source_distance": 266,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 222,
+                  "distance_m_source": "official",
+                  "source_distance": 222,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 181,
+                  "distance_m_source": "official",
+                  "source_distance": 181,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 148,
+                  "distance_m_source": "official",
+                  "source_distance": 148,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/one/hole05.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/one/hole5_2.png"
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 214,
+                  "distance_m_source": "official",
+                  "source_distance": 214,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 186,
+                  "distance_m_source": "official",
+                  "source_distance": 186,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 137,
+                  "distance_m_source": "official",
+                  "source_distance": 137,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 110,
+                  "distance_m_source": "official",
+                  "source_distance": 110,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 242,
+                  "distance_m_source": "official",
+                  "source_distance": 242,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 213,
+                  "distance_m_source": "official",
+                  "source_distance": 213,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 166,
+                  "distance_m_source": "official",
+                  "source_distance": 166,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 139,
+                  "distance_m_source": "official",
+                  "source_distance": 139,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/one/hole06.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/one/hole6_2.png"
+        },
+        {
+          "hole_number": 7,
+          "par": 5,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 229,
+                  "distance_m_source": "official",
+                  "source_distance": 229,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 209,
+                  "distance_m_source": "official",
+                  "source_distance": 209,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 190,
+                  "distance_m_source": "official",
+                  "source_distance": 190,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 154,
+                  "distance_m_source": "official",
+                  "source_distance": 154,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 158,
+                  "distance_m_source": "official",
+                  "source_distance": 158,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 237,
+                  "distance_m_source": "official",
+                  "source_distance": 237,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 218,
+                  "distance_m_source": "official",
+                  "source_distance": 218,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 199,
+                  "distance_m_source": "official",
+                  "source_distance": 199,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 165,
+                  "distance_m_source": "official",
+                  "source_distance": 165,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 170,
+                  "distance_m_source": "official",
+                  "source_distance": 170,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/one/hole07.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/one/hole7_2.png"
+        },
+        {
+          "hole_number": 8,
+          "par": 3,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 124,
+                  "distance_m_source": "official",
+                  "source_distance": 124,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 110,
+                  "distance_m_source": "official",
+                  "source_distance": 110,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 95,
+                  "distance_m_source": "official",
+                  "source_distance": 95,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 83,
+                  "distance_m_source": "official",
+                  "source_distance": 83,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/one/hole08.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/one/hole8_2.png"
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 231,
+                  "distance_m_source": "official",
+                  "source_distance": 231,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 214,
+                  "distance_m_source": "official",
+                  "source_distance": 214,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 197,
+                  "distance_m_source": "official",
+                  "source_distance": 197,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 173,
+                  "distance_m_source": "official",
+                  "source_distance": 173,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 117,
+                  "distance_m_source": "official",
+                  "source_distance": 117,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 281,
+                  "distance_m_source": "official",
+                  "source_distance": 281,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 264,
+                  "distance_m_source": "official",
+                  "source_distance": 264,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 246,
+                  "distance_m_source": "official",
+                  "source_distance": 246,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 222,
+                  "distance_m_source": "official",
+                  "source_distance": 222,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 162,
+                  "distance_m_source": "official",
+                  "source_distance": 162,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/one/hole09.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/one/hole9_2.png"
+        }
+      ]
+    },
+    {
+      "route_code": "south",
+      "display_name": "남코스",
+      "hole_count": 9,
+      "primary_tee_code": "blue",
+      "verification_status": "verified",
+      "source_url": "https://www.rainbowhills.co.kr/pagesite/course/two/hole01.asp",
+      "source_data_url": "https://www.rainbowhills.co.kr/image/course/two/hole1_2.png",
+      "par_source_url": "https://www.rainbowhills.co.kr/pagesite/course/two/hole01.asp",
+      "source_images": [
+        "https://www.rainbowhills.co.kr/image/course/two/hole1_2.png",
+        "https://www.rainbowhills.co.kr/image/course/two/hole2_2.png",
+        "https://www.rainbowhills.co.kr/image/course/two/hole3_2.png",
+        "https://www.rainbowhills.co.kr/image/course/two/hole4_2.png",
+        "https://www.rainbowhills.co.kr/image/course/two/hole5_2.png",
+        "https://www.rainbowhills.co.kr/image/course/two/hole6_2.png",
+        "https://www.rainbowhills.co.kr/image/course/two/hole7_2.png",
+        "https://www.rainbowhills.co.kr/image/course/two/hole8_2.png",
+        "https://www.rainbowhills.co.kr/image/course/two/hole9_2.png"
+      ],
+      "review_notes": [
+        "운영사 공식 홀 상세 페이지의 홀 번호·PAR와 각 홀 거리표 이미지를 대조했습니다. 거리표에 표시된 Black/Blue/White/Pink 및 실제 표기된 Yellow 티만 m 단위로 반영하고, 없는 티 색상은 생성하지 않았습니다. 거리표의 A/B/C 행은 구분해 저장했습니다. 일부 서코스 홀의 좌/우 표기 블록은 동일 거리 반복이라 A/B/C 행만 한 번씩 기록했습니다. 거리표에 핸디캡 수치는 없어 미입력했습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 5,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 197,
+                  "distance_m_source": "official",
+                  "source_distance": 197,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 164,
+                  "distance_m_source": "official",
+                  "source_distance": 164,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 133,
+                  "distance_m_source": "official",
+                  "source_distance": 133,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 97,
+                  "distance_m_source": "official",
+                  "source_distance": 97,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 232,
+                  "distance_m_source": "official",
+                  "source_distance": 232,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 200,
+                  "distance_m_source": "official",
+                  "source_distance": 200,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 169,
+                  "distance_m_source": "official",
+                  "source_distance": 169,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 134,
+                  "distance_m_source": "official",
+                  "source_distance": 134,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/two/hole01.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/two/hole1_2.png"
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 220,
+                  "distance_m_source": "official",
+                  "source_distance": 220,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 183,
+                  "distance_m_source": "official",
+                  "source_distance": 183,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 157,
+                  "distance_m_source": "official",
+                  "source_distance": 157,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 133,
+                  "distance_m_source": "official",
+                  "source_distance": 133,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 258,
+                  "distance_m_source": "official",
+                  "source_distance": 258,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 214,
+                  "distance_m_source": "official",
+                  "source_distance": 214,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 185,
+                  "distance_m_source": "official",
+                  "source_distance": 185,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 157,
+                  "distance_m_source": "official",
+                  "source_distance": 157,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/two/hole02.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/two/hole2_2.png"
+        },
+        {
+          "hole_number": 3,
+          "par": 3,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 196,
+                  "distance_m_source": "official",
+                  "source_distance": 196,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 171,
+                  "distance_m_source": "official",
+                  "source_distance": 171,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 143,
+                  "distance_m_source": "official",
+                  "source_distance": 143,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 93,
+                  "distance_m_source": "official",
+                  "source_distance": 93,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/two/hole03.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/two/hole3_2.png"
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 214,
+                  "distance_m_source": "official",
+                  "source_distance": 214,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 188,
+                  "distance_m_source": "official",
+                  "source_distance": 188,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 143,
+                  "distance_m_source": "official",
+                  "source_distance": 143,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 116,
+                  "distance_m_source": "official",
+                  "source_distance": 116,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/two/hole04.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/two/hole4_2.png"
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 204,
+                  "distance_m_source": "official",
+                  "source_distance": 204,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 176,
+                  "distance_m_source": "official",
+                  "source_distance": 176,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 145,
+                  "distance_m_source": "official",
+                  "source_distance": 145,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 120,
+                  "distance_m_source": "official",
+                  "source_distance": 120,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 226,
+                  "distance_m_source": "official",
+                  "source_distance": 226,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 199,
+                  "distance_m_source": "official",
+                  "source_distance": 199,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 168,
+                  "distance_m_source": "official",
+                  "source_distance": 168,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 141,
+                  "distance_m_source": "official",
+                  "source_distance": 141,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/two/hole05.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/two/hole5_2.png"
+        },
+        {
+          "hole_number": 6,
+          "par": 3,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 118,
+                  "distance_m_source": "official",
+                  "source_distance": 118,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 111,
+                  "distance_m_source": "official",
+                  "source_distance": 111,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 83,
+                  "distance_m_source": "official",
+                  "source_distance": 83,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 70,
+                  "distance_m_source": "official",
+                  "source_distance": 70,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/two/hole06.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/two/hole6_2.png"
+        },
+        {
+          "hole_number": 7,
+          "par": 5,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 223,
+                  "distance_m_source": "official",
+                  "source_distance": 223,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 195,
+                  "distance_m_source": "official",
+                  "source_distance": 195,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 168,
+                  "distance_m_source": "official",
+                  "source_distance": 168,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 135,
+                  "distance_m_source": "official",
+                  "source_distance": 135,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 101,
+                  "distance_m_source": "official",
+                  "source_distance": 101,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 236,
+                  "distance_m_source": "official",
+                  "source_distance": 236,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 208,
+                  "distance_m_source": "official",
+                  "source_distance": 208,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 181,
+                  "distance_m_source": "official",
+                  "source_distance": 181,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 148,
+                  "distance_m_source": "official",
+                  "source_distance": 148,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 114,
+                  "distance_m_source": "official",
+                  "source_distance": 114,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/two/hole07.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/two/hole7_2.png"
+        },
+        {
+          "hole_number": 8,
+          "par": 4,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 200,
+                  "distance_m_source": "official",
+                  "source_distance": 200,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 174,
+                  "distance_m_source": "official",
+                  "source_distance": 174,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 147,
+                  "distance_m_source": "official",
+                  "source_distance": 147,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 119,
+                  "distance_m_source": "official",
+                  "source_distance": 119,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/two/hole08.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/two/hole8_2.png"
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 198,
+                  "distance_m_source": "official",
+                  "source_distance": 198,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 168,
+                  "distance_m_source": "official",
+                  "source_distance": 168,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 140,
+                  "distance_m_source": "official",
+                  "source_distance": 140,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 117,
+                  "distance_m_source": "official",
+                  "source_distance": 117,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 213,
+                  "distance_m_source": "official",
+                  "source_distance": 213,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 181,
+                  "distance_m_source": "official",
+                  "source_distance": 181,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 156,
+                  "distance_m_source": "official",
+                  "source_distance": 156,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 134,
+                  "distance_m_source": "official",
+                  "source_distance": 134,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "c",
+              "display_name": "C 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 257,
+                  "distance_m_source": "official",
+                  "source_distance": 257,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 226,
+                  "distance_m_source": "official",
+                  "source_distance": 226,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 198,
+                  "distance_m_source": "official",
+                  "source_distance": 198,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 176,
+                  "distance_m_source": "official",
+                  "source_distance": 176,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/two/hole09.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/two/hole9_2.png"
+        }
+      ]
+    },
+    {
+      "route_code": "west",
+      "display_name": "서코스",
+      "hole_count": 9,
+      "primary_tee_code": "blue",
+      "verification_status": "verified",
+      "source_url": "https://www.rainbowhills.co.kr/pagesite/course/three/hole01.asp",
+      "source_data_url": "https://www.rainbowhills.co.kr/image/course/three/hole1_2.png",
+      "par_source_url": "https://www.rainbowhills.co.kr/pagesite/course/three/hole01.asp",
+      "source_images": [
+        "https://www.rainbowhills.co.kr/image/course/three/hole1_2.png",
+        "https://www.rainbowhills.co.kr/image/course/three/hole2_2.png",
+        "https://www.rainbowhills.co.kr/image/course/three/hole3_2.png",
+        "https://www.rainbowhills.co.kr/image/course/three/hole4_2.png",
+        "https://www.rainbowhills.co.kr/image/course/three/hole5_2.png",
+        "https://www.rainbowhills.co.kr/image/course/three/hole6_2.png",
+        "https://www.rainbowhills.co.kr/image/course/three/hole7_2.png",
+        "https://www.rainbowhills.co.kr/image/course/three/hole8_2.png",
+        "https://www.rainbowhills.co.kr/image/course/three/hole9_2.png"
+      ],
+      "review_notes": [
+        "운영사 공식 홀 상세 페이지의 홀 번호·PAR와 각 홀 거리표 이미지를 대조했습니다. 거리표에 표시된 Black/Blue/White/Pink 및 실제 표기된 Yellow 티만 m 단위로 반영하고, 없는 티 색상은 생성하지 않았습니다. 거리표의 A/B/C 행은 구분해 저장했습니다. 일부 서코스 홀의 좌/우 표기 블록은 동일 거리 반복이라 A/B/C 행만 한 번씩 기록했습니다. 거리표에 핸디캡 수치는 없어 미입력했습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 236,
+                  "distance_m_source": "official",
+                  "source_distance": 236,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 213,
+                  "distance_m_source": "official",
+                  "source_distance": 213,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 191,
+                  "distance_m_source": "official",
+                  "source_distance": 191,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 170,
+                  "distance_m_source": "official",
+                  "source_distance": 170,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 258,
+                  "distance_m_source": "official",
+                  "source_distance": 258,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 236,
+                  "distance_m_source": "official",
+                  "source_distance": 236,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 214,
+                  "distance_m_source": "official",
+                  "source_distance": 214,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 193,
+                  "distance_m_source": "official",
+                  "source_distance": 193,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/three/hole01.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/three/hole1_2.png"
+        },
+        {
+          "hole_number": 2,
+          "par": 3,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 104,
+                  "distance_m_source": "official",
+                  "source_distance": 104,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 92,
+                  "distance_m_source": "official",
+                  "source_distance": 92,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 86,
+                  "distance_m_source": "official",
+                  "source_distance": 86,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 76,
+                  "distance_m_source": "official",
+                  "source_distance": 76,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 68,
+                  "distance_m_source": "official",
+                  "source_distance": 68,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 62,
+                  "distance_m_source": "official",
+                  "source_distance": 62,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 49,
+                  "distance_m_source": "official",
+                  "source_distance": 49,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 35,
+                  "distance_m_source": "official",
+                  "source_distance": 35,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/three/hole02.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/three/hole2_2.png"
+        },
+        {
+          "hole_number": 3,
+          "par": 4,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 210,
+                  "distance_m_source": "official",
+                  "source_distance": 210,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 180,
+                  "distance_m_source": "official",
+                  "source_distance": 180,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 145,
+                  "distance_m_source": "official",
+                  "source_distance": 145,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 98,
+                  "distance_m_source": "official",
+                  "source_distance": 98,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 240,
+                  "distance_m_source": "official",
+                  "source_distance": 240,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 210,
+                  "distance_m_source": "official",
+                  "source_distance": 210,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 176,
+                  "distance_m_source": "official",
+                  "source_distance": 176,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 127,
+                  "distance_m_source": "official",
+                  "source_distance": 127,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/three/hole03.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/three/hole3_2.png"
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 207,
+                  "distance_m_source": "official",
+                  "source_distance": 207,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 188,
+                  "distance_m_source": "official",
+                  "source_distance": 188,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 165,
+                  "distance_m_source": "official",
+                  "source_distance": 165,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 124,
+                  "distance_m_source": "official",
+                  "source_distance": 124,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 95,
+                  "distance_m_source": "official",
+                  "source_distance": 95,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 237,
+                  "distance_m_source": "official",
+                  "source_distance": 237,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 218,
+                  "distance_m_source": "official",
+                  "source_distance": 218,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 195,
+                  "distance_m_source": "official",
+                  "source_distance": 195,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 155,
+                  "distance_m_source": "official",
+                  "source_distance": 155,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 126,
+                  "distance_m_source": "official",
+                  "source_distance": 126,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/three/hole04.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/three/hole4_2.png"
+        },
+        {
+          "hole_number": 5,
+          "par": 5,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 195,
+                  "distance_m_source": "official",
+                  "source_distance": 195,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 163,
+                  "distance_m_source": "official",
+                  "source_distance": 163,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 137,
+                  "distance_m_source": "official",
+                  "source_distance": 137,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 111,
+                  "distance_m_source": "official",
+                  "source_distance": 111,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 235,
+                  "distance_m_source": "official",
+                  "source_distance": 235,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 204,
+                  "distance_m_source": "official",
+                  "source_distance": 204,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 177,
+                  "distance_m_source": "official",
+                  "source_distance": 177,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 153,
+                  "distance_m_source": "official",
+                  "source_distance": 153,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/three/hole05.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/three/hole5_2.png"
+        },
+        {
+          "hole_number": 6,
+          "par": 3,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 125,
+                  "distance_m_source": "official",
+                  "source_distance": 125,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 103,
+                  "distance_m_source": "official",
+                  "source_distance": 103,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 84,
+                  "distance_m_source": "official",
+                  "source_distance": 84,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 69,
+                  "distance_m_source": "official",
+                  "source_distance": 69,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/three/hole06.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/three/hole6_2.png"
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 229,
+                  "distance_m_source": "official",
+                  "source_distance": 229,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 215,
+                  "distance_m_source": "official",
+                  "source_distance": 215,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 193,
+                  "distance_m_source": "official",
+                  "source_distance": 193,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 180,
+                  "distance_m_source": "official",
+                  "source_distance": 180,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 64,
+                  "distance_m_source": "official",
+                  "source_distance": 64,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 236,
+                  "distance_m_source": "official",
+                  "source_distance": 236,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 222,
+                  "distance_m_source": "official",
+                  "source_distance": 222,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 202,
+                  "distance_m_source": "official",
+                  "source_distance": 202,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 187,
+                  "distance_m_source": "official",
+                  "source_distance": 187,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 168,
+                  "distance_m_source": "official",
+                  "source_distance": 168,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "c",
+              "display_name": "C 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 231,
+                  "distance_m_source": "official",
+                  "source_distance": 231,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 216,
+                  "distance_m_source": "official",
+                  "source_distance": 216,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 194,
+                  "distance_m_source": "official",
+                  "source_distance": 194,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "yellow",
+                  "display_name": "Yellow",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 184,
+                  "distance_m_source": "official",
+                  "source_distance": 184,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 172,
+                  "distance_m_source": "official",
+                  "source_distance": 172,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/three/hole07.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/three/hole7_2.png"
+        },
+        {
+          "hole_number": 8,
+          "par": 4,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 217,
+                  "distance_m_source": "official",
+                  "source_distance": 217,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 190,
+                  "distance_m_source": "official",
+                  "source_distance": 190,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 167,
+                  "distance_m_source": "official",
+                  "source_distance": 167,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 129,
+                  "distance_m_source": "official",
+                  "source_distance": 129,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 231,
+                  "distance_m_source": "official",
+                  "source_distance": 231,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 204,
+                  "distance_m_source": "official",
+                  "source_distance": 204,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 181,
+                  "distance_m_source": "official",
+                  "source_distance": 181,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 145,
+                  "distance_m_source": "official",
+                  "source_distance": 145,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/three/hole08.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/three/hole8_2.png"
+        },
+        {
+          "hole_number": 9,
+          "par": 5,
+          "greens": [
+            {
+              "green_code": "a",
+              "display_name": "A 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 255,
+                  "distance_m_source": "official",
+                  "source_distance": 255,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 228,
+                  "distance_m_source": "official",
+                  "source_distance": 228,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 200,
+                  "distance_m_source": "official",
+                  "source_distance": 200,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 177,
+                  "distance_m_source": "official",
+                  "source_distance": 177,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "green_code": "b",
+              "display_name": "B 그린",
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Black",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 301,
+                  "distance_m_source": "official",
+                  "source_distance": 301,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Blue",
+                  "tee_color": "#0284c7",
+                  "tee_selection_available": true,
+                  "distance_m": 273,
+                  "distance_m_source": "official",
+                  "source_distance": 273,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "White",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 245,
+                  "distance_m_source": "official",
+                  "source_distance": 245,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "pink",
+                  "display_name": "Pink",
+                  "tee_color": "#ec4899",
+                  "tee_selection_available": true,
+                  "distance_m": 223,
+                  "distance_m_source": "official",
+                  "source_distance": 223,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ],
+          "source_url": "https://www.rainbowhills.co.kr/pagesite/course/three/hole09.asp",
+          "source_data_url": "https://www.rainbowhills.co.kr/image/course/three/hole9_2.png"
+        }
+      ]
+    }
+  ]
+}

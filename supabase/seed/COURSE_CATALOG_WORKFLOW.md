@@ -374,3 +374,10 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 원격 DB와 seed 대조 결과 PAR·티 거리/색상/그린 위치 불일치 0건, 누락 0건, 예상 외 0건입니다. 코스별 PAR 합계는 마운틴 35, 레이크 36, 스카이 36입니다. 마운틴 9번은 공식 페이지 제목이 PAR 3이나 본문 설명은 PAR 4라서 제목값(PAR 3)을 저장하고 검수 메모에 차이를 남겼습니다. 핸디캡은 공식 페이지에서 찾지 못해 미입력입니다.
 - 반영 후 원격 카탈로그: 총 516곳 — 검수 완료 257, pending 254, 반려 5. 충북 pending은 레인보우힐스CC와 킹스데일GC 2곳입니다.
 - 자료: `ananti-jungang-gc-2026-official-verified.json` (2026-10-13 확인).
+
+### 2026-10-13 — 레인보우힐스CC
+- 충북 레인보우힐스CC 공식 동·남·서 코스의 27개 홀 PAR와 각 홀 거리표 이미지의 공개 티 거리(m)를 seed와 원격 DB에 반영했습니다. 티 행은 동 79·남 62·서 77, 총 218건입니다. 홀 상세 PAR는 거리표 이미지 제목을 기준으로 했으며 남코스 4번은 이미지 PAR4와 HTML alt PAR3가 달라 그 차이를 검수 메모에 남겼습니다. [코스 개요](https://www.rainbowhills.co.kr/pagesite/course/intro.asp), [동코스](https://www.rainbowhills.co.kr/pagesite/course/one/hole01.asp), [남코스](https://www.rainbowhills.co.kr/pagesite/course/two/hole01.asp), [서코스](https://www.rainbowhills.co.kr/pagesite/course/three/hole01.asp).
+- 거리표 행 A/B/C는 그린 구분으로 저장했고, Black/Blue/White/Pink 및 실제 표기된 홀의 Yellow만 기록했습니다. 일부 서코스는 좌·우 영역에 같은 값이 반복되어 같은 그린의 거리 행을 중복 저장하지 않았습니다. 홀 핸디캡은 공식 페이지에 공개되지 않아 미입력입니다.
+- 원격 DB와 seed 대조: 기대 218개·실제 218개, 누락 0·초과 0·티 값 불일치 0·PAR 불일치 0. 동·남·서 각 PAR36으로 검수 완료 처리했습니다. 골프장 명칭은 요청한 규칙에 따라 레인보우힐스CC로 정규화했습니다.
+- 반영 후 원격 카탈로그: 총 516곳 — 검수 완료 258, pending 253, 반려 5. 충북 pending은 킹스데일CC 1곳입니다.
+- 자료: `rainbow-hills-2026-official-verified.json` (2026-10-13 확인).
