@@ -278,3 +278,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 솔라시도CC(전남 해남): 운영사 공식 홈페이지 `https://www.solaseadocc.com/main/main.asp`의 연결이 시간초과되어 홀별 PAR·티 거리 원문을 읽지 못했습니다. 비공식 자료로 대체하지 않고 pending을 유지합니다 (2026-10-13 확인).
 
 2026-10-13 무주덕유산CC 반영 후 원격 전체 카탈로그: 검수 완료 229개, 미진행 285개, 반려 2개(총 516개). 부산·울산·경남 지역 pending 0개. 남부권 잔여 pending은 경북 1개, 전남 5개, 전북 3개입니다.
+- 나주CC(전남 나주): 운영사 공식 코스소개/공략 페이지의 홀별 표에서 1~9번 PAR와 미터 거리를 확인해 9홀·10개 기준 거리 행을 반영했습니다. PAR 합은 36입니다. 공식 자료에 티 구분은 없으며 1번 홀만 좌그린 390m·우그린 340m로 별도 표시되어 그린 변형으로 보존하고, 나머지 홀은 단일 티 미표기 거리로 저장했습니다. 티 선택은 비활성화했습니다. HTTP 공식 출처만 열려 이를 명시했고 구장 및 경로를 검수 완료했습니다. 자료: `naju-cc-2026-official-verified.json`; 출처: [공식 홀 1](http://www.najucc.com/2019/sub/201.php) ~ [공식 홀 9](http://www.najucc.com/2019/sub/209.php) (2026-10-13 확인).
+
+2026-10-13 나주CC 반영 후 원격 전체 카탈로그: 검수 완료 230개, 미진행 284개, 반려 2개(총 516개). 부산·울산·경남 지역 pending 0개. 남부권 잔여 pending은 경북 1개, 전남 4개, 전북 3개입니다.
+- MCST `cosmos 1`(전남 영암): 공식 Golfzon County 자료에서 영암45(45홀, 에프원로 121-1) 코스는 확인했으나, MCST `cosmos 1` 주소는 에프원로 121-4로 달라 동일 구장이라고 단정하지 않았습니다. DB에는 골프존카운티 영암45가 별도 검수 완료로 이미 존재하므로 해당 코스 데이터를 복제하지 않고 cosmos 1은 pending으로 유지합니다. 출처: [골프존카운티 영암45 공식 소개](https://www.golfzoncounty.com/golfclub/intro?golfclubSeq=59), [공식 코스 소개](https://www.golfzoncounty.com/golfclub/course?golfclubSeq=59) (2026-10-13 확인).

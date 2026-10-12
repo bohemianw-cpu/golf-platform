@@ -1,0 +1,46 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "name": "나주CC",
+      "match_name": "나주CC",
+      "region": "전남",
+      "hole_count": 9,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "운영사 공식 코스 페이지의 홀별 표에서 1~9번 PAR와 길이(m)를 확인했습니다. PAR 합은 36입니다. 공식 페이지에는 티 종류 구분이 없어 티 색상·종류를 추정하지 않고 모든 거리를 티 미표기 공식 기준으로 보존했습니다.",
+        "1번 홀만 좌그린 390m와 우그린 340m가 별도로 표시됩니다. 2~9번 홀은 공식 페이지에 단일 거리만 표시됩니다. 공식 페이지는 HTTP로만 열려 HTTP 출처를 그대로 기록했습니다. (2026-10-13 확인)."
+      ],
+      "routes": [
+        {
+          "route_code": "course",
+          "display_name": "나주CC 코스",
+          "hole_count": 9,
+          "primary_tee_code": "official",
+          "verification_status": "verified",
+          "source_url": "http://www.najucc.com/2019/sub/201.php",
+          "allow_insecure_source": true,
+          "source_transport_note": "운영사 공식 홈페이지는 HTTP 주소에서 열리며 HTTPS 연결은 실패했습니다.",
+          "review_notes": [
+            "홀별 공식 페이지: http://www.najucc.com/2019/sub/201.php ~ http://www.najucc.com/2019/sub/209.php. 표의 거리 열은 m, YDS 열은 참고 단위로 표시됩니다. 티 유형은 게시되지 않았습니다."
+          ],
+          "holes": [
+            { "hole_number": 1, "par": 4, "tees": [
+              { "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "tee_selection_available": false, "green_code": "left", "green_name": "좌그린", "distance_m": 390, "distance_m_source": "official", "source_distance": 390, "source_unit": "m" },
+              { "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "tee_selection_available": false, "green_code": "right", "green_name": "우그린", "distance_m": 340, "distance_m_source": "official", "source_distance": 340, "source_unit": "m" }
+            ] },
+            { "hole_number": 2, "par": 4, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 305, "distance_m_source": "official", "source_distance": 305, "source_unit": "m" }] },
+            { "hole_number": 3, "par": 4, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 300, "distance_m_source": "official", "source_distance": 300, "source_unit": "m" }] },
+            { "hole_number": 4, "par": 4, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 320, "distance_m_source": "official", "source_distance": 320, "source_unit": "m" }] },
+            { "hole_number": 5, "par": 3, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 145, "distance_m_source": "official", "source_distance": 145, "source_unit": "m" }] },
+            { "hole_number": 6, "par": 5, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 415, "distance_m_source": "official", "source_distance": 415, "source_unit": "m" }] },
+            { "hole_number": 7, "par": 3, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 140, "distance_m_source": "official", "source_distance": 140, "source_unit": "m" }] },
+            { "hole_number": 8, "par": 4, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 330, "distance_m_source": "official", "source_distance": 330, "source_unit": "m" }] },
+            { "hole_number": 9, "par": 5, "tees": [{ "tee_code": "official", "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 410, "distance_m_source": "official", "source_distance": 410, "source_unit": "m" }] }
+          ]
+        }
+      ]
+    }
+  ]
+}
