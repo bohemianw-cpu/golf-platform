@@ -1,6 +1,6 @@
 {
   "schema": "course-source-review/1",
-  "status": "source_verified_imported_pending",
+  "status": "source_verified_imported_verified",
   "venue": {
     "match_name": "팔공CC",
     "name": "팔공CC",
@@ -14,7 +14,7 @@
     "supports_screen": false,
     "review_notes": [
       "운영사 공식 코스개요에서 팔공CC가 파72·18홀이고 OUT/IN 각 9홀 구성임을 확인했습니다. 운영사 공식 홀별 페이지의 Blue/White/Red 미터 거리를 모두 저장했습니다.",
-      "운영사 공식 OUT 페이지는 1~6번·8~9번 홀의 PAR를 명시하고 7번은 생략합니다. IN 페이지는 1번·4~5번·7~9번 PAR를 명시하고 2~3번·6번은 생략합니다. 생략된 홀은 PAR36을 맞추기 위해 임시값으로 두었으므로 구장과 두 경로는 pending 상태를 유지합니다.",
+      "이전 적재에서 임시로 둔 PAR를 공식 홀별 페이지에서 확인했습니다. 동봉 7번은 PAR4·HDCP13, 서봉 11·12·15번(앱 경로 2·3·6번)은 각각 PAR4·PAR5·PAR4입니다. 동봉과 서봉 모두 PAR36이며 구장과 두 경로를 verified로 저장합니다.",
       "공식 OUT 페이지에서 Blue/White/Red 홀별 합은 2,743/2,632/2,239m, IN은 3,143/2,999/2,664m입니다. 공식 페이지에는 코스별 거리 합계가 표시되지 않습니다.",
       "공식 출처: https://www.palgong-cc.co.kr/html/course.asp, https://www.palgong-cc.co.kr/html/course_out.asp, https://www.palgong-cc.co.kr/html/course_in.asp (2026-10-12 확인)."
     ]
@@ -25,12 +25,12 @@
       "display_name": "동봉 (OUT)",
       "hole_count": 9,
       "primary_tee_code": "white",
-      "verification_status": "pending",
+      "verification_status": "verified",
       "source_url": "https://www.palgong-cc.co.kr/html/course_out.asp",
       "par_source_url": "https://www.palgong-cc.co.kr/html/course_out.asp",
       "review_notes": [
         "운영사 공식 홀별 페이지의 Blue/White/Red 미터 거리를 원문대로 입력했습니다. 거리 합은 Blue/White/Red 2,743/2,632/2,239m이며 페이지에는 코스별 거리 Total이 없습니다.",
-        "공식 페이지가 1~6번 및 8~9번 홀의 PAR를 명시합니다. 7번 홀 PAR는 페이지에 없어 PAR36 구성에 맞춘 임시 PAR4로 입력했습니다. PAR 공식 확인 전까지 검수 상태는 pending입니다."
+        "공식 홀별 페이지의 PAR를 저장했습니다. 7번 홀은 페이지에서 PAR4, HDCP13을 확인해 이전 임시값을 공식값으로 확인했습니다. 거리 합은 Blue/White/Red 2,743/2,632/2,239m이며 페이지에는 코스별 거리 Total이 없습니다."
       ],
       "holes": [
         {
@@ -346,12 +346,12 @@
       "display_name": "서봉 (IN)",
       "hole_count": 9,
       "primary_tee_code": "white",
-      "verification_status": "pending",
+      "verification_status": "verified",
       "source_url": "https://www.palgong-cc.co.kr/html/course_in.asp",
       "par_source_url": "https://www.palgong-cc.co.kr/html/course_in.asp",
       "review_notes": [
         "운영사 공식 홀별 페이지의 Blue/White/Red 미터 거리를 원문대로 입력했습니다. 거리 합은 Blue/White/Red 3,143/2,999/2,664m이며 페이지에는 코스별 거리 Total이 없습니다.",
-        "공식 페이지가 1번, 4~5번 및 7~9번 홀의 PAR를 명시합니다. 2·3·6번 홀 PAR는 페이지에 없어 PAR36 구성에 맞춘 임시값으로 입력했습니다. PAR 공식 확인 전까지 검수 상태는 pending입니다."
+        "공식 홀별 페이지의 PAR를 저장했습니다. 기존에 임시값으로 적재했던 2·3·6번은 원문 홀 11·12·15번에서 각각 PAR4·PAR5·PAR4임을 확인했습니다. 거리 합은 Blue/White/Red 3,143/2,999/2,664m이며 페이지에는 코스별 거리 Total이 없습니다."
       ],
       "holes": [
         {
