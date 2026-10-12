@@ -36,8 +36,17 @@ function completeTeeOptions(routes: GolfRouteOption[], totalHoles: number): Golf
   if (![9, 18].includes(totalHoles) || holes.length !== totalHoles || routes.some((route) => route.holes?.length !== route.hole_count)) return []
   const firstHoleTees = holes[0]?.tees ?? []
   return firstHoleTees
+    .filter((tee) => tee.tee_selection_available !== false)
     .filter((tee) => holes.every((hole) => hole.tees.some((item) => item.tee_code === tee.tee_code)))
     .filter((tee, index, all) => all.findIndex((candidate) => candidate.tee_code === tee.tee_code) === index)
+}
+
+function hasCompleteReferenceDistances(routes: GolfRouteOption[], totalHoles: number): boolean {
+  const holes = routes.flatMap((route) => route.holes ?? [])
+  return [9, 18].includes(totalHoles)
+    && holes.length === totalHoles
+    && routes.every((route) => route.holes?.length === route.hole_count)
+    && holes.every((hole) => hole.tees.some((tee) => tee.tee_selection_available === false))
 }
 
 function RouteDistancePreview({ route }: { route: GolfRouteOption }) {
@@ -58,7 +67,9 @@ function RouteDistancePreview({ route }: { route: GolfRouteOption }) {
               <th scope="col" style={{ padding: '6px', borderBottom: '1px solid #e2e8f0' }}>홀</th>
               <th scope="col" style={{ padding: '6px', borderBottom: '1px solid #e2e8f0' }}>Par</th>
               {tees.map((tee) => <th key={tee.tee_code} scope="col" style={{ padding: '6px', borderBottom: '1px solid #e2e8f0', whiteSpace: 'nowrap' }}>
-                <span aria-hidden="true" style={{ display: 'inline-block', width: 8, height: 8, marginRight: 4, border: '1px solid #94a3b8', borderRadius: '50%', background: tee.tee_color, verticalAlign: '-1px' }} />{tee.display_name}
+                {tee.tee_selection_available === false
+                  ? <span>{tee.display_name}</span>
+                  : <><span aria-hidden="true" style={{ display: 'inline-block', width: 8, height: 8, marginRight: 4, border: '1px solid #94a3b8', borderRadius: '50%', background: tee.tee_color, verticalAlign: '-1px' }} />{tee.display_name}</>}
               </th>)}
             </tr>
           </thead>
@@ -148,7 +159,7 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
       const holeRows = (holeData ?? []) as Omit<GolfCourseHole, 'tees'>[]
       const { data: teeData, error: teeError } = holeRows.length
         ? await supabase.from('golf_course_hole_tees')
-          .select('hole_id,tee_code,display_name,tee_color,distance_m,distance_m_source,source_distance,source_unit,green_code,green_name,par')
+          .select('hole_id,tee_code,display_name,tee_color,tee_selection_available,distance_m,distance_m_source,source_distance,source_unit,green_code,green_name,par')
           .in('hole_id', holeRows.map((hole) => hole.id))
         : { data: [], error: null }
       if (teeError) throw teeError
@@ -156,7 +167,7 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
       for (const tee of teeData ?? []) {
         const row = tee as GolfCourseTee & { hole_id: string }
         teesByHole.set(row.hole_id, [...(teesByHole.get(row.hole_id) ?? []), {
-          tee_code: row.tee_code, display_name: row.display_name, tee_color: row.tee_color, distance_m: row.distance_m,
+          tee_code: row.tee_code, display_name: row.display_name, tee_color: row.tee_color, tee_selection_available: row.tee_selection_available, distance_m: row.distance_m,
           distance_m_source: row.distance_m_source, source_distance: row.source_distance, source_unit: row.source_unit,
           green_code: row.green_code ?? 'standard', green_name: row.green_name ?? '기본 그린',
           par: row.par ?? null,
@@ -195,8 +206,9 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
   const selectedCourseRoutes = routesForCourseId === courseId ? routes.filter((route) => route.course_id === courseId) : []
   const selectedHoleCount = selectedRoutes.reduce((sum, route) => sum + route.hole_count, 0)
   const teeOptions = completeTeeOptions(selectedRoutes, selectedHoleCount)
+  const hasReferenceDistance = hasCompleteReferenceDistances(selectedRoutes, selectedHoleCount)
   const selectedTee = teeOptions.find((tee) => tee.tee_code === teeCode) ?? null
-  const selectedLayoutIsValid = [9, 18].includes(selectedHoleCount) && teeOptions.length > 0 && !!selectedTee
+  const selectedLayoutIsValid = [9, 18].includes(selectedHoleCount) && (teeOptions.length > 0 ? !!selectedTee : hasReferenceDistance)
 
   return (
     <section aria-label="골프장과 코스 검색" style={{ marginTop: searchOpen || (courseId && selectedCourse) ? '10px' : 0 }}>
@@ -269,9 +281,11 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
                         </label>)}
                       </div>
                     </fieldset>
-                  ) : <p role="status" style={{ margin: '6px 0 0', fontSize: '10px', color: '#b45309' }}>선택한 {selectedHoleCount}홀 전체에 거리 자료가 있는 공통 티가 없습니다.</p>)}
+                  ) : hasReferenceDistance
+                    ? <p role="status" style={{ margin: '6px 0 0', fontSize: '10px', color: '#475569' }}>공식 기준 거리는 있으나 티 위치는 공개되지 않았습니다. 기준 거리로 기록하며 티 위치는 선택하지 않습니다.</p>
+                    : <p role="status" style={{ margin: '6px 0 0', fontSize: '10px', color: '#b45309' }}>선택한 {selectedHoleCount}홀 전체에 공통 티별 거리 자료가 없습니다.</p>)}
                   <div role="status" style={{ marginTop: '5px', fontSize: '10px', color: selectedLayoutIsValid ? '#15803d' : '#b45309' }}>
-                    {selectedLayoutIsValid ? `${selectedHoleCount}홀 파·거리 확인 완료 · ${selectedTee.display_name}` : selectedHoleCount < 9 ? `${selectedHoleCount}/9홀 선택 · 코스를 선택해 주세요.` : selectedHoleCount === 9 ? '9홀 라운드를 기록하거나 다른 9홀 코스를 추가할 수 있습니다.' : selectedHoleCount < 18 ? `${selectedHoleCount}/18홀 선택 · 나머지 코스를 선택해 주세요.` : teeOptions.length > 0 ? '기록을 시작하기 전에 티 위치를 선택해 주세요.' : '선택한 홀 전체에 티별 거리 자료가 확인된 코스를 선택해 주세요.'}
+                    {selectedLayoutIsValid ? `${selectedHoleCount}홀 파·거리 확인 완료 · ${selectedTee?.display_name ?? '공식 기준 거리 (티 미표기)'}` : selectedHoleCount < 9 ? `${selectedHoleCount}/9홀 선택 · 코스를 선택해 주세요.` : selectedHoleCount === 9 ? '9홀 라운드를 기록하거나 다른 9홀 코스를 추가할 수 있습니다.' : selectedHoleCount < 18 ? `${selectedHoleCount}/18홀 선택 · 나머지 코스를 선택해 주세요.` : teeOptions.length > 0 ? '기록을 시작하기 전에 티 위치를 선택해 주세요.' : '선택한 홀 전체에 거리 자료가 확인된 코스를 선택해 주세요.'}
                   </div>
                 </fieldset>
                 {selectedRoutes.map((route, index) => <RouteDistancePreview key={`${route.id}-${index}`} route={route} />)}

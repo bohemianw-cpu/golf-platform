@@ -630,7 +630,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
         const courseHoles = (holeData ?? []) as { id: string; route_id: string; hole_number: number; par: number; handicap_index: number | null }[]
         const { data: teeData, error: courseTeesError } = courseHoles.length
           ? await supabase.from('golf_course_hole_tees')
-            .select('hole_id,tee_code,display_name,tee_color,distance_m,distance_m_source,source_distance,source_unit,green_code,green_name')
+            .select('hole_id,tee_code,display_name,tee_color,tee_selection_available,distance_m,distance_m_source,source_distance,source_unit,green_code,green_name')
             .in('hole_id', courseHoles.map((hole) => hole.id))
           : { data: [], error: null }
         if (courseTeesError) throw courseTeesError
@@ -638,7 +638,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
         for (const tee of teeData ?? []) {
           const row = tee as GolfCourseTee & { hole_id: string }
           teesByHole.set(row.hole_id, [...(teesByHole.get(row.hole_id) ?? []), {
-            tee_code: row.tee_code, display_name: row.display_name, tee_color: row.tee_color, distance_m: row.distance_m,
+            tee_code: row.tee_code, display_name: row.display_name, tee_color: row.tee_color, tee_selection_available: row.tee_selection_available, distance_m: row.distance_m,
             distance_m_source: row.distance_m_source, source_distance: row.source_distance, source_unit: row.source_unit,
             green_code: row.green_code ?? 'standard', green_name: row.green_name ?? '기본 그린',
           }])
@@ -651,10 +651,15 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
       }
       const routePars = routeRows.flatMap((route) => route.holes?.length === route.hole_count ? route.holes.map((hole) => hole.par) : route.pars)
       const savedTeeAvailableOnAllHoles = !!round.tee_code && routeRows.length > 0 && routeRows.every((route) =>
-        route.holes?.length === route.hole_count && route.holes.every((hole) => hole.tees.some((tee) => tee.tee_code === round.tee_code)),
+        route.holes?.length === route.hole_count && route.holes.every((hole) => hole.tees.some((tee) => tee.tee_code === round.tee_code && tee.tee_selection_available !== false)),
+      )
+      const savedReferenceAvailableOnAllHoles = !round.tee_code && routeRows.length > 0 && routeRows.every((route) =>
+        route.holes?.length === route.hole_count && route.holes.every((hole) => hole.tees.some((tee) => tee.tee_selection_available === false)),
       )
       const teeVariants = savedTeeAvailableOnAllHoles
         ? routeRows.flatMap((route) => route.holes!.map((hole) => hole.tees.filter((tee) => tee.tee_code === round.tee_code)))
+        : savedReferenceAvailableOnAllHoles
+          ? routeRows.flatMap((route) => route.holes!.map((hole) => hole.tees.filter((tee) => tee.tee_selection_available === false)))
         : []
       const persistedHoles = (holes ?? []) as HoleRow[]
       const restoredGreenCodes = teeVariants.map((variants, index) => {
@@ -828,9 +833,11 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
     setTeeCode(selectedTeeCode)
     setTeeName(selectedTeeName)
     const pars = routes.flatMap((route) => route.holes?.length === route.hole_count ? route.holes.map((hole) => hole.par) : route.pars)
-    const variantsByHole = selectedTeeCode ? routes.flatMap((route) => route.holes?.length === route.hole_count
-      ? route.holes.map((hole) => hole.tees.filter((tee) => tee.tee_code === selectedTeeCode))
-      : []) : []
+    const variantsByHole = routes.flatMap((route) => route.holes?.length === route.hole_count
+      ? route.holes.map((hole) => hole.tees.filter((tee) => selectedTeeCode
+        ? tee.tee_code === selectedTeeCode && tee.tee_selection_available !== false
+        : tee.tee_selection_available === false))
+      : [])
     const selectedGreens = variantsByHole.map(preferredGreen)
     const greenCodesForRoutes = selectedGreens.map((tee) => tee?.green_code ?? 'standard')
     const greenNamesForRoutes = selectedGreens.map((tee) => tee?.green_name ?? '기본 그린')
@@ -849,7 +856,9 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
     }
     const configuredPars = routes.flatMap((route) => route.holes?.length === route.hole_count
       ? route.holes.map((hole) => {
-        const variants = hole.tees.filter((tee) => tee.tee_code === selectedTeeCode)
+          const variants = hole.tees.filter((tee) => selectedTeeCode
+            ? tee.tee_code === selectedTeeCode && tee.tee_selection_available !== false
+            : tee.tee_selection_available === false)
         const selected = preferredGreen(variants)
         return selected?.par ?? hole.par
       })
@@ -864,7 +873,9 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
 
   const currentGreenOptions = useMemo(() => {
     const hole = routeHoles?.[currentHole - 1]
-    return hole?.tees.filter((tee) => tee.tee_code === teeCode) ?? []
+    return hole?.tees.filter((tee) => teeCode
+      ? tee.tee_code === teeCode && tee.tee_selection_available !== false
+      : tee.tee_selection_available === false) ?? []
   }, [routeHoles, currentHole, teeCode])
 
   const changeGreen = useCallback((greenCode: string, greenName: string, distance: number, par?: number | null) => {

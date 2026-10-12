@@ -46,6 +46,7 @@ export interface GolfCourseTee {
   tee_code: string
   display_name: string
   tee_color: string
+  tee_selection_available?: boolean
   distance_m: number
   distance_m_source?: 'official' | 'converted'
   source_distance?: number | null

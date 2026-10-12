@@ -128,6 +128,7 @@ for (const course of corrections) {
         if (!/^[a-z0-9_-]+$/i.test(tee.tee_code ?? '') || !/^[a-z0-9_-]+$/i.test(greenCode) || teeCodes.has(teeKey)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티·그린 코드가 비었거나 중복되었습니다.`)
         teeCodes.add(teeKey)
         if (!tee.display_name?.trim() || !tee.tee_color?.trim()) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티 이름과 색상이 필요합니다.`)
+        if (tee.tee_selection_available != null && typeof tee.tee_selection_available !== 'boolean') throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: tee_selection_available은 boolean이어야 합니다.`)
         // Some official scorecards publish a par per tee group; keep that selected-tee override.
         if (tee.par != null && (!Number.isInteger(tee.par) || tee.par < 3 || tee.par > 6)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티·그린별 파는 3~6이어야 합니다.`)
         if (!Number.isInteger(tee.distance_m) || tee.distance_m < 1 || tee.distance_m > 800) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 티 거리는 1~800m 정수여야 합니다.`)
@@ -275,7 +276,7 @@ async function verifyCourse(correction, courseId) {
     const actualHoleNumbers = (holeRows ?? []).map((hole) => hole.hole_number).sort((a, b) => a - b)
     if (!sameValue(actualHoleNumbers, expectedHoleNumbers)) throw new Error(`${correction.name}/${expectedRoute.route_code}: DB 홀 번호 구성이 seed와 다릅니다 (DB=${JSON.stringify(actualHoleNumbers)}, seed=${JSON.stringify(expectedHoleNumbers)})`)
     const { data: teeRows, error: teeError } = await supabase.from('golf_course_hole_tees')
-      .select('id,hole_id,tee_code,display_name,tee_color,distance_m,distance_m_source,source_distance,source_unit,green_code,green_name,handicap_index,par')
+      .select('id,hole_id,tee_code,display_name,tee_color,tee_selection_available,distance_m,distance_m_source,source_distance,source_unit,green_code,green_name,handicap_index,par')
       .in('hole_id', (holeRows ?? []).map((hole) => hole.id))
     if (teeError) throw teeError
     const teesByHole = new Map()
@@ -290,6 +291,7 @@ async function verifyCourse(correction, courseId) {
         tee_code: tee.tee_code,
         display_name: tee.display_name,
         tee_color: tee.tee_color,
+        tee_selection_available: tee.tee_selection_available ?? true,
         distance_m: tee.distance_m,
         distance_m_source: tee.distance_m_source ?? 'converted',
         source_distance: tee.source_distance ?? tee.distance_m,
@@ -299,8 +301,8 @@ async function verifyCourse(correction, courseId) {
         handicap_index: tee.handicap_index ?? null,
         par: tee.par ?? null,
       })).sort((a, b) => `${a.tee_code}:${a.green_code}`.localeCompare(`${b.tee_code}:${b.green_code}`))
-      const comparableActual = actualTees.map(({ tee_code, display_name, tee_color, distance_m, distance_m_source, source_distance, source_unit, green_code, green_name, handicap_index, par }) => ({
-        tee_code, display_name, tee_color, distance_m, distance_m_source, source_distance, source_unit, green_code, green_name, handicap_index: handicap_index ?? null, par: par ?? null,
+      const comparableActual = actualTees.map(({ tee_code, display_name, tee_color, tee_selection_available, distance_m, distance_m_source, source_distance, source_unit, green_code, green_name, handicap_index, par }) => ({
+        tee_code, display_name, tee_color, tee_selection_available, distance_m, distance_m_source, source_distance, source_unit, green_code, green_name, handicap_index: handicap_index ?? null, par: par ?? null,
       }))
       if (!sameValue(comparableActual, expectedTees)) {
         throw new Error(`${correction.name}/${expectedRoute.route_code}/${expectedHole.hole_number}홀: DB 티 구성이 seed와 다릅니다 (DB=${JSON.stringify(comparableActual)}, seed=${JSON.stringify(expectedTees)})`)
@@ -401,6 +403,7 @@ for (const sourceCorrection of corrections) {
       tee_code: tee.tee_code,
       display_name: tee.display_name,
       tee_color: tee.tee_color,
+      tee_selection_available: tee.tee_selection_available ?? true,
       distance_m: tee.distance_m,
       distance_m_source: tee.distance_m_source ?? 'converted',
       source_distance: tee.source_distance ?? tee.distance_m,

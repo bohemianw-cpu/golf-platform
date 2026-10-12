@@ -35,15 +35,15 @@
             "운영사 공식 1~9번 홀 상세의 PAR와 미터 단위 기준 거리 9개를 저장했습니다. 공식 자료에는 티별 분리 거리와 HDCP가 없어, 공개된 기준 거리를 특정 티로 해석하지 않았습니다."
           ],
           "holes": [
-            { "hole_number": 1, "par": 5, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 506, "distance_m_source": "official", "source_distance": 506, "source_unit": "m" }] },
-            { "hole_number": 2, "par": 4, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 389, "distance_m_source": "official", "source_distance": 389, "source_unit": "m" }] },
-            { "hole_number": 3, "par": 3, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 176, "distance_m_source": "official", "source_distance": 176, "source_unit": "m" }] },
-            { "hole_number": 4, "par": 4, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 401, "distance_m_source": "official", "source_distance": 401, "source_unit": "m" }] },
-            { "hole_number": 5, "par": 4, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 380, "distance_m_source": "official", "source_distance": 380, "source_unit": "m" }] },
-            { "hole_number": 6, "par": 3, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 162, "distance_m_source": "official", "source_distance": 162, "source_unit": "m" }] },
-            { "hole_number": 7, "par": 5, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 470, "distance_m_source": "official", "source_distance": 470, "source_unit": "m" }] },
-            { "hole_number": 8, "par": 4, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 390, "distance_m_source": "official", "source_distance": 390, "source_unit": "m" }] },
-            { "hole_number": 9, "par": 4, "tees": [{ "tee_code": "official_reference", "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 380, "distance_m_source": "official", "source_distance": 380, "source_unit": "m" }] }
+            { "hole_number": 1, "par": 5, "tees": [{ "tee_code": "official_reference", "tee_selection_available": false, "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 506, "distance_m_source": "official", "source_distance": 506, "source_unit": "m" }] },
+            { "hole_number": 2, "par": 4, "tees": [{ "tee_code": "official_reference", "tee_selection_available": false, "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 389, "distance_m_source": "official", "source_distance": 389, "source_unit": "m" }] },
+            { "hole_number": 3, "par": 3, "tees": [{ "tee_code": "official_reference", "tee_selection_available": false, "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 176, "distance_m_source": "official", "source_distance": 176, "source_unit": "m" }] },
+            { "hole_number": 4, "par": 4, "tees": [{ "tee_code": "official_reference", "tee_selection_available": false, "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 401, "distance_m_source": "official", "source_distance": 401, "source_unit": "m" }] },
+            { "hole_number": 5, "par": 4, "tees": [{ "tee_code": "official_reference", "tee_selection_available": false, "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 380, "distance_m_source": "official", "source_distance": 380, "source_unit": "m" }] },
+            { "hole_number": 6, "par": 3, "tees": [{ "tee_code": "official_reference", "tee_selection_available": false, "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 162, "distance_m_source": "official", "source_distance": 162, "source_unit": "m" }] },
+            { "hole_number": 7, "par": 5, "tees": [{ "tee_code": "official_reference", "tee_selection_available": false, "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 470, "distance_m_source": "official", "source_distance": 470, "source_unit": "m" }] },
+            { "hole_number": 8, "par": 4, "tees": [{ "tee_code": "official_reference", "tee_selection_available": false, "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 390, "distance_m_source": "official", "source_distance": 390, "source_unit": "m" }] },
+            { "hole_number": 9, "par": 4, "tees": [{ "tee_code": "official_reference", "tee_selection_available": false, "display_name": "공식 기준", "tee_color": "#64748b", "distance_m": 380, "distance_m_source": "official", "source_distance": 380, "source_unit": "m" }] }
           ]
         }
       ]
