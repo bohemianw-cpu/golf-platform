@@ -321,3 +321,6 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 계룡산골프장(충남 공주): MCST 후보는 9홀로 등록돼 있지만, 국방부 공식 [체력단련장 안내 자료](https://www.mnd.go.kr/user/mnd/upload/pblictn/PBLICTNEBOOK_202304070547354010.pdf)는 계룡대 체력단련장을 18홀로 열거합니다. 육군 공식 사이트 [armywelfaregolf.mil.kr](https://www.armywelfaregolf.mil.kr/)는 조사 시점에 응답하지 않았고 두 명칭이 같은 시설인지, 홀별 파·거리·티 제원이 무엇인지 공식 원문으로 확인되지 않았습니다. 다른 명칭이나 홀 수를 추정해 연결하지 않고 pending을 유지합니다. (2026-10-13 확인).
 
 2026-10-13 파나시아GC 공식 자료 반영 후 원격 전체 카탈로그: 검수 완료 238개, 미진행 274개, 반려 4개(총 516개). 부산·울산·경남 pending 0개. 남부권 잔여 pending은 경북 1개, 전남 1개, 전북 3개입니다.
+
+2026-10-13 마론CC 공식 자료 반영 후 원격 전체 카탈로그: 검수 완료 239개, 미진행 273개, 반려 4개(총 516개). 충남 pending 17개. 부산·울산·경남 pending 0개.
+- 마론CC(충남 천안): 운영사 공식 [Dream Course](https://www.maronnewday.com/html/course02.asp)와 [Vision Course](https://www.maronnewday.com/html/course03.asp) 홀별 페이지에서 PAR와 단일 공식 미터 거리 18홀을 반영했습니다. Dream·Vision은 각 PAR36이며 공식 코스 개요 합계 3,245m·3,285m와 홀별 거리 합계가 일치합니다. 티별 거리·티 이름과 HDCP는 공개되지 않아 각 홀의 공식 거리만 선택 불가 상태로 저장했습니다. 자료: maron-cc-2026-official-verified.json (2026-10-13 확인).
