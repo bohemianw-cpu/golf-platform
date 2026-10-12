@@ -1,0 +1,555 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "supports_screen": false,
+    "region": "충북",
+    "review_notes": [
+      "시그너스CC 공식 코스 소개는 Silk·Ramie·Cotton 세 코스를 안내하며 각 상세 페이지에서 9홀의 PAR와 단일 기준 거리(m)를 제공합니다. 원문에 티 이름이나 티별 분리 값이 없어 임의로 색상 티를 배정하지 않고 `공식 거리 (티 미표기)`로 저장했습니다. 세 코스 모두 PAR36입니다. 공식 주소: 충청북도 충주시 앙성면 중방곡길 57-44."
+    ],
+    "hole_count": 27,
+    "aliases": [
+      "시그너스CC",
+      "시그너스 컨트리 클럽",
+      "시그너스컨트리클럽",
+      "Cygnus Country Club"
+    ],
+    "address": "충청북도 충주시 앙성면 중방곡길 57-44",
+    "name": "시그너스CC",
+    "match_name": "시그너스CC"
+  },
+  "routes": [
+    {
+      "display_name": "실크 코스 (Silk)",
+      "source_data_url": "https://www.cygnuscc.com/sub/silk.asp",
+      "source_url": "https://www.cygnuscc.com/sub/silk.asp",
+      "hole_count": 9,
+      "verification_status": "verified",
+      "holes": [
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 490,
+              "green_name": "기본 그린",
+              "source_distance": 490,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 1,
+          "par": 5
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 380,
+              "green_name": "기본 그린",
+              "source_distance": 380,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 2,
+          "par": 4
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 325,
+              "green_name": "기본 그린",
+              "source_distance": 325,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 3,
+          "par": 4
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 165,
+              "green_name": "기본 그린",
+              "source_distance": 165,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 4,
+          "par": 3
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 500,
+              "green_name": "기본 그린",
+              "source_distance": 500,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 5,
+          "par": 5
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 360,
+              "green_name": "기본 그린",
+              "source_distance": 360,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 6,
+          "par": 4
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 140,
+              "green_name": "기본 그린",
+              "source_distance": 140,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 7,
+          "par": 3
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 345,
+              "green_name": "기본 그린",
+              "source_distance": 345,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 8,
+          "par": 4
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 405,
+              "green_name": "기본 그린",
+              "source_distance": 405,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 9,
+          "par": 4
+        }
+      ],
+      "review_notes": [
+        "공식 코스 상세의 홀 선택 버튼을 각각 눌러 1~9홀 PAR 및 단일 기준 거리(m)를 확인했습니다. 티별 구분은 게시되지 않아 중립적인 공식 거리 한 종류만 기록했습니다."
+      ],
+      "primary_tee_code": "official",
+      "route_code": "SILK",
+      "par_source_url": "https://www.cygnuscc.com/sub/silk.asp"
+    },
+    {
+      "display_name": "라미 코스 (Ramie)",
+      "source_data_url": "https://www.cygnuscc.com/sub/ramie.asp",
+      "source_url": "https://www.cygnuscc.com/sub/ramie.asp",
+      "hole_count": 9,
+      "verification_status": "verified",
+      "holes": [
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 355,
+              "green_name": "기본 그린",
+              "source_distance": 355,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 1,
+          "par": 4
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 510,
+              "green_name": "기본 그린",
+              "source_distance": 510,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 2,
+          "par": 5
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 200,
+              "green_name": "기본 그린",
+              "source_distance": 200,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 3,
+          "par": 3
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 390,
+              "green_name": "기본 그린",
+              "source_distance": 390,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 4,
+          "par": 4
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 425,
+              "green_name": "기본 그린",
+              "source_distance": 425,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 5,
+          "par": 4
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 160,
+              "green_name": "기본 그린",
+              "source_distance": 160,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 6,
+          "par": 3
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 535,
+              "green_name": "기본 그린",
+              "source_distance": 535,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 7,
+          "par": 5
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 430,
+              "green_name": "기본 그린",
+              "source_distance": 430,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 8,
+          "par": 4
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 375,
+              "green_name": "기본 그린",
+              "source_distance": 375,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 9,
+          "par": 4
+        }
+      ],
+      "review_notes": [
+        "공식 코스 상세의 홀 선택 버튼을 각각 눌러 1~9홀 PAR 및 단일 기준 거리(m)를 확인했습니다. 티별 구분은 게시되지 않아 중립적인 공식 거리 한 종류만 기록했습니다."
+      ],
+      "primary_tee_code": "official",
+      "route_code": "RAMIE",
+      "par_source_url": "https://www.cygnuscc.com/sub/ramie.asp"
+    },
+    {
+      "display_name": "코튼 코스 (Cotton)",
+      "source_data_url": "https://www.cygnuscc.com/sub/cotton.asp",
+      "source_url": "https://www.cygnuscc.com/sub/cotton.asp",
+      "hole_count": 9,
+      "verification_status": "verified",
+      "holes": [
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 345,
+              "green_name": "기본 그린",
+              "source_distance": 345,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 1,
+          "par": 4
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 450,
+              "green_name": "기본 그린",
+              "source_distance": 450,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 2,
+          "par": 5
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 365,
+              "green_name": "기본 그린",
+              "source_distance": 365,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 3,
+          "par": 4
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 470,
+              "green_name": "기본 그린",
+              "source_distance": 470,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 4,
+          "par": 5
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 170,
+              "green_name": "기본 그린",
+              "source_distance": 170,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 5,
+          "par": 3
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 300,
+              "green_name": "기본 그린",
+              "source_distance": 300,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 6,
+          "par": 4
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 375,
+              "green_name": "기본 그린",
+              "source_distance": 375,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 7,
+          "par": 4
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 170,
+              "green_name": "기본 그린",
+              "source_distance": 170,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 8,
+          "par": 3
+        },
+        {
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m_source": "official",
+              "display_name": "공식 거리 (티 미표기)",
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "distance_m": 315,
+              "green_name": "기본 그린",
+              "source_distance": 315,
+              "green_code": "standard"
+            }
+          ],
+          "handicap_index": null,
+          "hole_number": 9,
+          "par": 4
+        }
+      ],
+      "review_notes": [
+        "공식 코스 상세의 홀 선택 버튼을 각각 눌러 1~9홀 PAR 및 단일 기준 거리(m)를 확인했습니다. 티별 구분은 게시되지 않아 중립적인 공식 거리 한 종류만 기록했습니다."
+      ],
+      "primary_tee_code": "official",
+      "route_code": "COTTON",
+      "par_source_url": "https://www.cygnuscc.com/sub/cotton.asp"
+    }
+  ],
+  "status": "source_verified_imported_verified"
+}
