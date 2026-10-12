@@ -1,0 +1,1302 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "전주샹그릴라CC",
+      "name": "전주샹그릴라CC",
+      "region": "전북",
+      "address": "전라북도 임실군 신덕면 수지로 559-90(지장리 산7)",
+      "hole_count": 27,
+      "verification_status": "verified",
+      "review_notes": [
+        "운영사 공식 코스 개요 및 Lake·Dream·Angel 각 홀 공략 페이지의 PAR와 4개 순서형 미터 거리열을 반영했습니다. 공식 자료는 거리 열의 티 이름·색상을 밝히지 않아 미표기 티 1~4로 보존했습니다. 첫 번째 거리열의 9홀 합계는 각 코스 공식 길이와 일치합니다."
+      ],
+      "routes": [
+        {
+          "route_code": "lake",
+          "display_name": "Lake Course",
+          "hole_count": 9,
+          "primary_tee_code": "tee1",
+          "verification_status": "verified",
+          "source_url": "https://www.jeonjucc.co.kr/html/course/course01.asp",
+          "source_data_url": "https://www.jeonjucc.co.kr/html/course/course02.asp",
+          "review_notes": [
+            "공략 페이지는 홀별로 네 개의 거리값과 PAR를 게시하지만 티 이름과 색상은 표시하지 않습니다. 게시 순서를 보존해 선택 가능한 미표기 티 1~4로 저장하고 임의로 색상·티 이름을 부여하지 않았습니다. 첫 번째 거리열은 공식 코스 개요의 홀별 기준 거리와 일치합니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 384,
+                  "distance_m_source": "official",
+                  "source_distance": 384,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 361,
+                  "distance_m_source": "official",
+                  "source_distance": 361,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 310,
+                  "distance_m_source": "official",
+                  "source_distance": 310,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 281,
+                  "distance_m_source": "official",
+                  "source_distance": 281,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 157,
+                  "distance_m_source": "official",
+                  "source_distance": 157,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 149,
+                  "distance_m_source": "official",
+                  "source_distance": 149,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 135,
+                  "distance_m_source": "official",
+                  "source_distance": 135,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 121,
+                  "distance_m_source": "official",
+                  "source_distance": 121,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 351,
+                  "distance_m_source": "official",
+                  "source_distance": 351,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 338,
+                  "distance_m_source": "official",
+                  "source_distance": 338,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 319,
+                  "distance_m_source": "official",
+                  "source_distance": 319,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 298,
+                  "distance_m_source": "official",
+                  "source_distance": 298,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 338,
+                  "distance_m_source": "official",
+                  "source_distance": 338,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 322,
+                  "distance_m_source": "official",
+                  "source_distance": 322,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 274,
+                  "distance_m_source": "official",
+                  "source_distance": 274,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 248,
+                  "distance_m_source": "official",
+                  "source_distance": 248,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 203,
+                  "distance_m_source": "official",
+                  "source_distance": 203,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 176,
+                  "distance_m_source": "official",
+                  "source_distance": 176,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 153,
+                  "distance_m_source": "official",
+                  "source_distance": 153,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 119,
+                  "distance_m_source": "official",
+                  "source_distance": 119,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 534,
+                  "distance_m_source": "official",
+                  "source_distance": 534,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 492,
+                  "distance_m_source": "official",
+                  "source_distance": 492,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 452,
+                  "distance_m_source": "official",
+                  "source_distance": 452,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 421,
+                  "distance_m_source": "official",
+                  "source_distance": 421,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 338,
+                  "distance_m_source": "official",
+                  "source_distance": 338,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 312,
+                  "distance_m_source": "official",
+                  "source_distance": 312,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 294,
+                  "distance_m_source": "official",
+                  "source_distance": 294,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 259,
+                  "distance_m_source": "official",
+                  "source_distance": 259,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 410,
+                  "distance_m_source": "official",
+                  "source_distance": 410,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 387,
+                  "distance_m_source": "official",
+                  "source_distance": 387,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 356,
+                  "distance_m_source": "official",
+                  "source_distance": 356,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 300,
+                  "distance_m_source": "official",
+                  "source_distance": 300,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 507,
+                  "distance_m_source": "official",
+                  "source_distance": 507,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 481,
+                  "distance_m_source": "official",
+                  "source_distance": 481,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 454,
+                  "distance_m_source": "official",
+                  "source_distance": 454,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 427,
+                  "distance_m_source": "official",
+                  "source_distance": 427,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "dream",
+          "display_name": "Dream Course",
+          "hole_count": 9,
+          "primary_tee_code": "tee1",
+          "verification_status": "verified",
+          "source_url": "https://www.jeonjucc.co.kr/html/course/course01.asp",
+          "source_data_url": "https://www.jeonjucc.co.kr/html/course/course03.asp",
+          "review_notes": [
+            "공략 페이지는 홀별로 네 개의 거리값과 PAR를 게시하지만 티 이름과 색상은 표시하지 않습니다. 게시 순서를 보존해 선택 가능한 미표기 티 1~4로 저장하고 임의로 색상·티 이름을 부여하지 않았습니다. 첫 번째 거리열은 공식 코스 개요의 홀별 기준 거리와 일치합니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 373,
+                  "distance_m_source": "official",
+                  "source_distance": 373,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 352,
+                  "distance_m_source": "official",
+                  "source_distance": 352,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 329,
+                  "distance_m_source": "official",
+                  "source_distance": 329,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 311,
+                  "distance_m_source": "official",
+                  "source_distance": 311,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 529,
+                  "distance_m_source": "official",
+                  "source_distance": 529,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 520,
+                  "distance_m_source": "official",
+                  "source_distance": 520,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 503,
+                  "distance_m_source": "official",
+                  "source_distance": 503,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 478,
+                  "distance_m_source": "official",
+                  "source_distance": 478,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 152,
+                  "distance_m_source": "official",
+                  "source_distance": 152,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 133,
+                  "distance_m_source": "official",
+                  "source_distance": 133,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 111,
+                  "distance_m_source": "official",
+                  "source_distance": 111,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 105,
+                  "distance_m_source": "official",
+                  "source_distance": 105,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 378,
+                  "distance_m_source": "official",
+                  "source_distance": 378,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 354,
+                  "distance_m_source": "official",
+                  "source_distance": 354,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 333,
+                  "distance_m_source": "official",
+                  "source_distance": 333,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 311,
+                  "distance_m_source": "official",
+                  "source_distance": 311,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 501,
+                  "distance_m_source": "official",
+                  "source_distance": 501,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 458,
+                  "distance_m_source": "official",
+                  "source_distance": 458,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 433,
+                  "distance_m_source": "official",
+                  "source_distance": 433,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 408,
+                  "distance_m_source": "official",
+                  "source_distance": 408,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 181,
+                  "distance_m_source": "official",
+                  "source_distance": 181,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 157,
+                  "distance_m_source": "official",
+                  "source_distance": 157,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 133,
+                  "distance_m_source": "official",
+                  "source_distance": 133,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 133,
+                  "distance_m_source": "official",
+                  "source_distance": 133,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 369,
+                  "distance_m_source": "official",
+                  "source_distance": 369,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 345,
+                  "distance_m_source": "official",
+                  "source_distance": 345,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 326,
+                  "distance_m_source": "official",
+                  "source_distance": 326,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 291,
+                  "distance_m_source": "official",
+                  "source_distance": 291,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 135,
+                  "distance_m_source": "official",
+                  "source_distance": 135,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 123,
+                  "distance_m_source": "official",
+                  "source_distance": 123,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 108,
+                  "distance_m_source": "official",
+                  "source_distance": 108,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 96,
+                  "distance_m_source": "official",
+                  "source_distance": 96,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 531,
+                  "distance_m_source": "official",
+                  "source_distance": 531,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 496,
+                  "distance_m_source": "official",
+                  "source_distance": 496,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 458,
+                  "distance_m_source": "official",
+                  "source_distance": 458,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 432,
+                  "distance_m_source": "official",
+                  "source_distance": 432,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "angel",
+          "display_name": "Angel Course",
+          "hole_count": 9,
+          "primary_tee_code": "tee1",
+          "verification_status": "verified",
+          "source_url": "https://www.jeonjucc.co.kr/html/course/course01.asp",
+          "source_data_url": "https://www.jeonjucc.co.kr/html/course/course04.asp",
+          "review_notes": [
+            "공략 페이지는 홀별로 네 개의 거리값과 PAR를 게시하지만 티 이름과 색상은 표시하지 않습니다. 게시 순서를 보존해 선택 가능한 미표기 티 1~4로 저장하고 임의로 색상·티 이름을 부여하지 않았습니다. 첫 번째 거리열은 공식 코스 개요의 홀별 기준 거리와 일치합니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 372,
+                  "distance_m_source": "official",
+                  "source_distance": 372,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 348,
+                  "distance_m_source": "official",
+                  "source_distance": 348,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 327,
+                  "distance_m_source": "official",
+                  "source_distance": 327,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 304,
+                  "distance_m_source": "official",
+                  "source_distance": 304,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 528,
+                  "distance_m_source": "official",
+                  "source_distance": 528,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 472,
+                  "distance_m_source": "official",
+                  "source_distance": 472,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 447,
+                  "distance_m_source": "official",
+                  "source_distance": 447,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 416,
+                  "distance_m_source": "official",
+                  "source_distance": 416,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 350,
+                  "distance_m_source": "official",
+                  "source_distance": 350,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 311,
+                  "distance_m_source": "official",
+                  "source_distance": 311,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 305,
+                  "distance_m_source": "official",
+                  "source_distance": 305,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 281,
+                  "distance_m_source": "official",
+                  "source_distance": 281,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 346,
+                  "distance_m_source": "official",
+                  "source_distance": 346,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 330,
+                  "distance_m_source": "official",
+                  "source_distance": 330,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 306,
+                  "distance_m_source": "official",
+                  "source_distance": 306,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 282,
+                  "distance_m_source": "official",
+                  "source_distance": 282,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 191,
+                  "distance_m_source": "official",
+                  "source_distance": 191,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 167,
+                  "distance_m_source": "official",
+                  "source_distance": 167,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 143,
+                  "distance_m_source": "official",
+                  "source_distance": 143,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 104,
+                  "distance_m_source": "official",
+                  "source_distance": 104,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 334,
+                  "distance_m_source": "official",
+                  "source_distance": 334,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 310,
+                  "distance_m_source": "official",
+                  "source_distance": 310,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 281,
+                  "distance_m_source": "official",
+                  "source_distance": 281,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 243,
+                  "distance_m_source": "official",
+                  "source_distance": 243,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 579,
+                  "distance_m_source": "official",
+                  "source_distance": 579,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 529,
+                  "distance_m_source": "official",
+                  "source_distance": 529,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 502,
+                  "distance_m_source": "official",
+                  "source_distance": 502,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 486,
+                  "distance_m_source": "official",
+                  "source_distance": 486,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 156,
+                  "distance_m_source": "official",
+                  "source_distance": 156,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 138,
+                  "distance_m_source": "official",
+                  "source_distance": 138,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 118,
+                  "distance_m_source": "official",
+                  "source_distance": 118,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 103,
+                  "distance_m_source": "official",
+                  "source_distance": 103,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "tee1",
+                  "display_name": "미표기 티 1",
+                  "tee_color": "#64748b",
+                  "distance_m": 319,
+                  "distance_m_source": "official",
+                  "source_distance": 319,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee2",
+                  "display_name": "미표기 티 2",
+                  "tee_color": "#64748b",
+                  "distance_m": 300,
+                  "distance_m_source": "official",
+                  "source_distance": 300,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee3",
+                  "display_name": "미표기 티 3",
+                  "tee_color": "#64748b",
+                  "distance_m": 272,
+                  "distance_m_source": "official",
+                  "source_distance": 272,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                },
+                {
+                  "tee_code": "tee4",
+                  "display_name": "미표기 티 4",
+                  "tee_color": "#64748b",
+                  "distance_m": 239,
+                  "distance_m_source": "official",
+                  "source_distance": 239,
+                  "source_unit": "m",
+                  "tee_selection_available": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
