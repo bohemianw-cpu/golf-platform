@@ -1,0 +1,323 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "name": "티클라우드컨트리클럽",
+      "match_name": "티클라우드컨트리클럽",
+      "aliases": [
+        "티클라우드CC"
+      ],
+      "region": "경기",
+      "address": "경기도 동두천시 평화로 3202",
+      "hole_count": 18,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "티클라우드CC 공식 홈페이지의 코스 소개에 해밀·비체 2개 9홀 코스가 명시되어 있습니다. 각 홀의 PAR, HDCP 및 미터 거리 자료를 모두 대조했습니다.",
+        "공식 코스 정보에는 단일 거리만 제공됩니다. 확인되지 않은 티 위치나 색상은 생성하지 않고 공식 티 한 종류로 등록했습니다. 출처: https://www.teecloud.co.kr/new/course/course01.asp 및 https://www.teecloud.co.kr/new/course/course02.asp (2026-10-12 확인)."
+      ],
+      "routes": [
+        {
+          "route_code": "HAEMIL",
+          "display_name": "해밀코스",
+          "hole_count": 9,
+          "primary_tee_code": "official",
+          "source_url": "https://www.teecloud.co.kr/new/course/course01.asp",
+          "par_source_url": "https://www.teecloud.co.kr/new/course/course01.asp",
+          "verification_status": "verified",
+          "review_notes": [
+            "공식 홈페이지가 각 홀의 PAR, HDCP, 거리(m)를 명시합니다. 홀별 값만 전사했고 출처에 없는 추가 티 위치나 색상은 추정하지 않았습니다.",
+            "출처: https://www.teecloud.co.kr/new/course/course01.asp (2026-10-12 확인)."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "handicap_index": 12,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 310,
+                  "source_distance": 310,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "handicap_index": 7,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 352,
+                  "source_distance": 352,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 5,
+              "handicap_index": 14,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 478,
+                  "source_distance": 478,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 3,
+              "handicap_index": 17,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 180,
+                  "source_distance": 180,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "handicap_index": 9,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 330,
+                  "source_distance": 330,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 5,
+              "handicap_index": 11,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 534,
+                  "source_distance": 534,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "handicap_index": 2,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 364,
+                  "source_distance": 364,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "handicap_index": 8,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 222,
+                  "source_distance": 222,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "handicap_index": 1,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 390,
+                  "source_distance": 390,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "VICHE",
+          "display_name": "비체코스",
+          "hole_count": 9,
+          "primary_tee_code": "official",
+          "source_url": "https://www.teecloud.co.kr/new/course/course02.asp",
+          "par_source_url": "https://www.teecloud.co.kr/new/course/course02.asp",
+          "verification_status": "verified",
+          "review_notes": [
+            "공식 홈페이지가 각 홀의 PAR, HDCP, 거리(m)를 명시합니다. 홀별 값만 전사했고 출처에 없는 추가 티 위치나 색상은 추정하지 않았습니다.",
+            "출처: https://www.teecloud.co.kr/new/course/course02.asp (2026-10-12 확인)."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "handicap_index": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 410,
+                  "source_distance": 410,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 3,
+              "handicap_index": 18,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 158,
+                  "source_distance": 158,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "handicap_index": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 365,
+                  "source_distance": 365,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 5,
+              "handicap_index": 10,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 516,
+                  "source_distance": 516,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "handicap_index": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 375,
+                  "source_distance": 375,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "handicap_index": 6,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 355,
+                  "source_distance": 355,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 5,
+              "handicap_index": 13,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 458,
+                  "source_distance": 458,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "handicap_index": 15,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 170,
+                  "source_distance": 170,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "handicap_index": 16,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 티",
+                  "tee_color": "#64748b",
+                  "distance_m": 355,
+                  "source_distance": 355,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
