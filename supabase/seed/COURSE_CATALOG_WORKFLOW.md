@@ -108,8 +108,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 ## 재개 지점
 
-2026-10-12 재개 지점: 보문GC, 경주레전드GC, 마우나오션CC, 서라벌GC, 우리GC, 이스트힐CC의 공식 코스 자료를 DB/seed에 반영하고 verified로 확인했습니다. 마우나오션CC와 서라벌GC는 공식 총계와 홀별 합계 차이를 관리자 메모에 남겼습니다. 가든GC(경주)는 공식 홈페이지가 9홀·PAR34·총연장 2,029m까지만 공개해 홀별 자료가 없어 보류했습니다. 다음 조사 대상은 경주 안강의 선리치GC이며, 이어 천북의 힐스카이CC와 경산의 인터불고CC·대구CC를 부산에 가까운 순으로 진행합니다.
+2026-10-12 재개 지점: 보문GC, 경주레전드GC, 마우나오션CC, 서라벌GC, 우리GC, 이스트힐CC, 선리치GC의 공식 코스 자료를 DB/seed에 반영하고 verified로 확인했습니다. 마우나오션CC와 서라벌GC는 공식 총계와 홀별 합계 차이를 관리자 메모에 남겼습니다. 가든GC(경주)는 공식 홈페이지가 9홀·PAR34·총연장 2,029m까지만 공개해 홀별 자료가 없어 보류했습니다. 다음은 경주 천북의 힐스카이CC를 확인하고, 이어 경산의 인터불고CC·대구CC를 부산에 가까운 순으로 진행합니다.
 - 보문GC(경주): 경상북도문화관광공사 공식 코스소개에서 OUT·IN 각 9홀의 PAR·HANDICAP과 Blue/White/Red 미터 거리를 반영했습니다. 두 코스 모두 PAR36이며 티별 홀 거리 합계가 공식 Total과 일치해 검수 완료했습니다. 블랙티는 공식 표에 없어 등록하지 않았습니다. 자료 파일: `bomun-2026-official-verified.json`; 출처: [공식 코스소개](https://golf.gtc.co.kr/content/course-info.asp) (2026-10-12 확인).
 - 우리GC(경주 양남): 공식 코스제원표의 9홀 PAR·HDCP와 C.T/R.T/L.T 미터 거리를 저장했습니다. PAR36, 티별 홀 합계 C.T 3,044m / R.T 2,785m / L.T 2,521m가 공식 Total과 일치합니다. 자료 파일: `woori-2026-official-verified.json`; 출처: [우리GC 공식 코스제원](https://www.urigolfclub.co.kr/Course/Intro), [홀별 코스안내](https://www.urigolfclub.co.kr/Mobile/Course/Course) (2026-10-12 확인).
 - 이스트힐CC(경주 양남): 공식 코스소개 표의 Lake·Valley 각 9홀 PAR와 METER 거리 18개를 저장했습니다. 두 경로 모두 PAR36입니다. 티별 거리는 공개되지 않아 티 미표기 공식 거리로 기록했습니다. 자료 파일: `easthill-2026-official-verified.json`; 출처: [이스트힐 공식 코스소개](https://www.easthills.co.kr/Course/Intro.aspx) (2026-10-12 확인).
 - 가든GC(경주 코오롱호텔 가든 골프장): 공식 홈페이지에서 퍼블릭 9홀, PAR34, 코스 총연장 2,029m를 확인했으나 공개된 자료에 홀별 PAR와 홀별 거리가 없어 코스 데이터를 임의로 나누지 않고 자료 적재를 보류했습니다. 출처: [코오롱호텔 공식 골프 안내](https://kolonhotel.co.kr/golf) (2026-10-12 확인).
+- 선리치GC(경주 안강): 공식 코스제원표의 단일 거리(m)·HDCP와 1~9번 홀 공략 페이지의 PAR를 반영했습니다. PAR36이고 공식 홀별 거리 합계 3,060m가 코스제원 Total과 일치합니다. 티별 거리는 공개되지 않아 티 미표기 공식 거리로 저장했습니다. 자료 파일: `sunrich-2026-official-verified.json`; 출처: [공식 코스제원](https://www.sunrichgc.com/course), [1~9번 공식 홀 공략](https://www.sunrichgc.com/course/out/1) ~ out/9 (2026-10-12 확인).
