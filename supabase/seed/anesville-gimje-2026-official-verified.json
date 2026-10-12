@@ -1,0 +1,58 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [{
+    "match_name": "아네스빌CC",
+    "name": "아네스빌CC",
+    "region": "전북",
+    "address": "전북 김제시 황산면 서옥길 71",
+    "hole_count": 18,
+    "verification_status": "verified",
+    "review_notes": ["공식 홈페이지는 물리적으로 9홀을 다양한 티잉 구역과 일부 2그린으로 18홀처럼 운영한다고 안내합니다. 공식 제원표의 OUT/IN 각 9홀을 실제 라운드 선택 경로로 저장했으며 각 코스 PAR36입니다. MCST 고유 홀 수 9와 달리 앱 카탈로그의 hole_count는 선택 가능한 OUT+IN 라운드 18홀을 뜻합니다. 공식 표에 스트로크 인덱스는 없어 입력하지 않았습니다."],
+    "routes": [
+      {
+        "route_code": "out",
+        "display_name": "OUT 코스",
+        "hole_count": 9,
+        "primary_tee_code": "regular",
+        "verification_status": "verified",
+        "source_url": "https://www.anesville.co.kr/html/course01.asp",
+        "par_source_url": "https://www.anesville.co.kr/html/course01.asp",
+        "review_notes": ["공식 제원표의 OUT COURSE 단위 m, PAR 및 Champion/Regular/Ladies 홀별 거리를 저장했습니다. 티별 합계 3,143/2,876/2,404m와 공식 합계가 모두 일치합니다."],
+        "official_tee_totals_m": {"champion":3143,"regular":2876,"ladies":2404},
+        "holes": [
+          {"hole_number":1,"par":5,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":501,"distance_m_source":"official","source_distance":501,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":465,"distance_m_source":"official","source_distance":465,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":397,"distance_m_source":"official","source_distance":397,"source_unit":"m"}]},
+          {"hole_number":2,"par":5,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":408,"distance_m_source":"official","source_distance":408,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":384,"distance_m_source":"official","source_distance":384,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":324,"distance_m_source":"official","source_distance":324,"source_unit":"m"}]},
+          {"hole_number":3,"par":3,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":132,"distance_m_source":"official","source_distance":132,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":118,"distance_m_source":"official","source_distance":118,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":108,"distance_m_source":"official","source_distance":108,"source_unit":"m"}]},
+          {"hole_number":4,"par":4,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":357,"distance_m_source":"official","source_distance":357,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":325,"distance_m_source":"official","source_distance":325,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":257,"distance_m_source":"official","source_distance":257,"source_unit":"m"}]},
+          {"hole_number":5,"par":4,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":338,"distance_m_source":"official","source_distance":338,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":318,"distance_m_source":"official","source_distance":318,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":256,"distance_m_source":"official","source_distance":256,"source_unit":"m"}]},
+          {"hole_number":6,"par":4,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":369,"distance_m_source":"official","source_distance":369,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":343,"distance_m_source":"official","source_distance":343,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":293,"distance_m_source":"official","source_distance":293,"source_unit":"m"}]},
+          {"hole_number":7,"par":3,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":192,"distance_m_source":"official","source_distance":192,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":165,"distance_m_source":"official","source_distance":165,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":142,"distance_m_source":"official","source_distance":142,"source_unit":"m"}]},
+          {"hole_number":8,"par":4,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":342,"distance_m_source":"official","source_distance":342,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":317,"distance_m_source":"official","source_distance":317,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":241,"distance_m_source":"official","source_distance":241,"source_unit":"m"}]},
+          {"hole_number":9,"par":4,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":504,"distance_m_source":"official","source_distance":504,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":441,"distance_m_source":"official","source_distance":441,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":386,"distance_m_source":"official","source_distance":386,"source_unit":"m"}]}
+        ]
+      },
+      {
+        "route_code": "in",
+        "display_name": "IN 코스",
+        "hole_count": 9,
+        "primary_tee_code": "regular",
+        "verification_status": "verified",
+        "source_url": "https://www.anesville.co.kr/html/course01.asp",
+        "par_source_url": "https://www.anesville.co.kr/html/course01.asp",
+        "review_notes": ["공식 제원표의 IN COURSE 단위 m, PAR 및 Champion/Regular/Ladies 홀별 거리를 저장했습니다. 티별 합계 3,121/2,855/2,370m와 공식 합계가 모두 일치합니다."],
+        "official_tee_totals_m": {"champion":3121,"regular":2855,"ladies":2370},
+        "holes": [
+          {"hole_number":1,"par":5,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":501,"distance_m_source":"official","source_distance":501,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":465,"distance_m_source":"official","source_distance":465,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":397,"distance_m_source":"official","source_distance":397,"source_unit":"m"}]},
+          {"hole_number":2,"par":5,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":400,"distance_m_source":"official","source_distance":400,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":376,"distance_m_source":"official","source_distance":376,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":320,"distance_m_source":"official","source_distance":320,"source_unit":"m"}]},
+          {"hole_number":3,"par":3,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":132,"distance_m_source":"official","source_distance":132,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":118,"distance_m_source":"official","source_distance":118,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":108,"distance_m_source":"official","source_distance":108,"source_unit":"m"}]},
+          {"hole_number":4,"par":4,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":357,"distance_m_source":"official","source_distance":357,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":325,"distance_m_source":"official","source_distance":325,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":257,"distance_m_source":"official","source_distance":257,"source_unit":"m"}]},
+          {"hole_number":5,"par":4,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":363,"distance_m_source":"official","source_distance":363,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":340,"distance_m_source":"official","source_distance":340,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":258,"distance_m_source":"official","source_distance":258,"source_unit":"m"}]},
+          {"hole_number":6,"par":4,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":369,"distance_m_source":"official","source_distance":369,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":343,"distance_m_source":"official","source_distance":343,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":293,"distance_m_source":"official","source_distance":293,"source_unit":"m"}]},
+          {"hole_number":7,"par":3,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":153,"distance_m_source":"official","source_distance":153,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":130,"distance_m_source":"official","source_distance":130,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":110,"distance_m_source":"official","source_distance":110,"source_unit":"m"}]},
+          {"hole_number":8,"par":4,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":342,"distance_m_source":"official","source_distance":342,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":317,"distance_m_source":"official","source_distance":317,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":241,"distance_m_source":"official","source_distance":241,"source_unit":"m"}]},
+          {"hole_number":9,"par":4,"handicap_index":null,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":504,"distance_m_source":"official","source_distance":504,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#64748b","distance_m":441,"distance_m_source":"official","source_distance":441,"source_unit":"m"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#64748b","distance_m":386,"distance_m_source":"official","source_distance":386,"source_unit":"m"}]}
+        ]
+      }
+    ]
+  }]
+}

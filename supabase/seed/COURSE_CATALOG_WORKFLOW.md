@@ -67,6 +67,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 ## 최근 공식 자료 반영
 
+- 아네스빌CC(김제): 공식 코스제원표에서 OUT·IN 각 9홀의 PAR와 Champion/Regular/Ladies 티별 거리(m)를 저장했습니다. 두 경로의 티별 합계가 공식값과 일치합니다. 공식 사이트는 고유 9홀을 18홀처럼 운영한다고 설명하므로, `golf_courses.hole_count=18`은 물리적 고유 홀이 아니라 OUT+IN으로 선택 가능한 라운드 홀 수를 뜻합니다. 자료 파일: `anesville-gimje-2026-official-verified.json`; 출처: [공식 코스 제원표](https://www.anesville.co.kr/html/course01.asp) (2026-10-13 확인).
 - 장수골프리조트(전북): 공식 코스제원표의 사과·나무 각 9홀 PAR, 스트로크 인덱스, Black/Blue/White/Yellow/Red 티별 거리(m)를 저장했습니다. 두 코스의 5개 티별 홀 거리 합계가 공식 표의 총계와 모두 일치합니다. 나무코스 Yellow 1번 홀은 공식 게시값 309m를 그대로 보존했습니다. 자료 파일: `jangsu-golf-resort-2026-official-verified.json`; 출처: [공식 코스 제원표](https://www.jangsugolf.com/course/course01) (2026-10-13 확인).
 - 천지CC(함평): 공식 코스안내 1~9홀의 PAR와 단일 기준 거리(m)를 입력했습니다. 홀별 티 종류와 티별 거리는 공개되지 않아 공식 거리(티 미표기) 한 행만 저장하고 실제 티 선택은 비활성화했습니다. 공식 페이지의 HDCP 항목은 주석 처리되어 있어 입력하지 않았습니다. 자료 파일: `cheonji-hampyeong-2026-official-verified.json`; 출처: [1번 홀](https://www.hpnabicc.co.kr/html/golf_course/golf_course_02_01.asp) ~ [9번 홀](https://www.hpnabicc.co.kr/html/golf_course/golf_course_02_09.asp) (2026-10-13 확인).
 - 오르비스GC(울주): 공식 OUT·IN 표에서 각 9홀의 PAR와 홀별 거리를 저장했습니다. 홀별 티 이름은 공개되지 않아 중립적인 티 미표기 거리로 등록했습니다. IN 표는 거리 단위를 생략했으며 같은 공식 표의 OUT 행 구성과 합계 패턴을 근거로 첫 행을 m로 입력하고 해당 해석을 메모했습니다. 자료 파일: `orvis-ulsan-2026-official-verified.json`; 출처: [OUT 코스](https://orvis.club/swp/clubOut), [IN 코스](https://orvis.club/swp/clubIn) (2026-10-12 확인).
