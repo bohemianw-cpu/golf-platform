@@ -11,7 +11,7 @@
     "supports_screen": false,
     "review_notes": [
       "2025년 7월부터 광주광역시 광산구 직영 광산CC로 운영되는 공식 홈페이지에서 코스명, 홀별 파, HDCP, 좌·우 그린별 Black/White/Red 거리를 옮겼습니다. 에콜리안 광산 MCST 레코드를 현재 명칭으로 갱신합니다.",
-      "공식 코스 제원과 공략 페이지의 티 거리값에는 단위 표기(m/yd)가 없습니다. 코스 길이로 보아 미터로 추정해 distance_m에 입력했으나 공식 단위 근거가 없어 검수 대기합니다. 관리자 확인 전까지 검색 공개하지 않습니다.",
+      "광산CC 공식 로컬룰 페이지는 거리가 미터(M)로 표시된다고 명시하고 OUT은 좌측 말뚝·좌그린, IN은 우측 말뚝·우그린을 사용한다고 안내합니다. 다만 코스 제원표는 6번 홀 좌그린 화이트티를 254m, 코스 공략 페이지는 265m로 다르게 게시합니다. 해당 값 대조 전까지 구장 및 코스를 검수 대기 상태로 둡니다.",
       "공식 출처: https://www.gwangsancc.kr/cotents/course/courseInfo.do 및 https://www.gwangsancc.kr/cotents/course/courseAttack.do (2026-10-12 확인). 명칭 변경 출처: https://www.gwangsancc.kr/cotents/club/greeting.do"
     ]
   },
@@ -23,7 +23,7 @@
       "primary_tee_code": "white",
       "source_url": "https://www.gwangsancc.kr/cotents/course/courseInfo.do",
       "par_source_url": "https://www.gwangsancc.kr/cotents/course/courseAttack.do",
-      "review_notes": ["티 명칭과 좌·우 거리는 코스 제원표, 파와 HDCP 인덱스는 코스 공략 페이지에서 대조했습니다. 두 페이지 간 수치는 일치합니다. 단위만 명시적으로 확인되지 않았습니다."],
+      "review_notes": ["티 명칭·거리와 파·HDCP를 코스 제원표 및 공략 페이지에서 대조했습니다. 공식 로컬룰(https://www.gwangsancc.kr/cotents/guide/rule.do)은 거리 단위를 미터(M)로 명시하고 OUT은 좌측 말뚝·좌그린, IN은 우측 말뚝·우그린으로 안내합니다. 코스 제원표는 6번 홀 좌그린 화이트티 254m, 공략 페이지는 265m로 불일치하므로 현재 저장값 265m를 pending으로 보존합니다. 그 외 홀의 티 거리·파는 두 페이지 간 일치합니다."],
       "holes": [
         {"hole_number":1,"name":"영산강","par":5,"handicap_index":2,"greens":[{"green_code":"left","display_name":"좌그린","tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#111827","distance_m":480,"source_distance":480,"source_unit":"m"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":460,"source_distance":460,"source_unit":"m"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":412,"source_distance":412,"source_unit":"m"}]},{"green_code":"right","display_name":"우그린","tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#111827","distance_m":505,"source_distance":505,"source_unit":"m"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":485,"source_distance":485,"source_unit":"m"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":437,"source_distance":437,"source_unit":"m"}]}]},
         {"hole_number":2,"name":"극락강","par":4,"handicap_index":5,"greens":[{"green_code":"left","display_name":"좌그린","tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#111827","distance_m":345,"source_distance":345,"source_unit":"m"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":318,"source_distance":318,"source_unit":"m"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":263,"source_distance":263,"source_unit":"m"}]},{"green_code":"right","display_name":"우그린","tees":[{"tee_code":"black","display_name":"블랙티","tee_color":"#111827","distance_m":380,"source_distance":380,"source_unit":"m"},{"tee_code":"white","display_name":"화이트티","tee_color":"#f8fafc","distance_m":353,"source_distance":353,"source_unit":"m"},{"tee_code":"red","display_name":"레드티","tee_color":"#ef4444","distance_m":298,"source_distance":298,"source_unit":"m"}]}]},
