@@ -1,0 +1,46 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "전주월드컵골프장",
+      "name": "전주월드컵골프장",
+      "region": "전북",
+      "address": "전북특별자치도 전주시 덕진구 온고을로 672",
+      "hole_count": 9,
+      "verification_status": "verified",
+      "review_notes": [
+        "전주시설관리공단 공식 코스소개 기준 9홀 PAR36 골프장입니다. 9홀 한 개 경로로 저장합니다.",
+        "공식 거리표는 2·4·7번 홀의 좌/우, 9번 홀의 앞/뒤 거리를 함께 표기합니다. 정규·여성 티의 공식 총계와 일치하는 위치별 거리 조합을 기본 거리로 저장했습니다. 라운드 중 위치 대안 선택은 별도 기능으로 지원되지 않아 원문 대안 거리는 이 메모로 보존합니다."
+      ],
+      "routes": [
+        {
+          "route_code": "main",
+          "display_name": "월드컵 코스",
+          "hole_count": 9,
+          "primary_tee_code": "regular",
+          "verification_status": "verified",
+          "source_url": "https://www.jjss.or.kr/index.9is?contentUid=ff8080816c5f9de6016cc0f67e740608",
+          "par_source_url": "https://www.jjss.or.kr/index.9is?contentUid=ff8080816c5f9de6016cc0f67e740608",
+          "review_notes": [
+            "공식 표 단위 m. 홀별 PAR 합 36, Regular 티 합 2,340m, Lady 티 합 2,100m로 모두 공식 합계와 일치합니다."
+          ],
+          "official_tee_totals_m": {
+            "regular": 2340,
+            "ladies": 2100
+          },
+          "holes": [
+            {"hole_number":1,"par":4,"handicap_index":null,"tees":[{"tee_code":"regular","display_name":"Regular Tee","tee_color":"#64748b","distance_m":235,"distance_m_source":"official","source_distance":235,"source_unit":"m"},{"tee_code":"ladies","display_name":"Lady Tee","tee_color":"#ec4899","distance_m":200,"distance_m_source":"official","source_distance":200,"source_unit":"m"}]},
+            {"hole_number":2,"par":4,"handicap_index":null,"tees":[{"tee_code":"regular","display_name":"Regular Tee","tee_color":"#64748b","distance_m":255,"distance_m_source":"official","source_distance":255,"source_unit":"m"},{"tee_code":"ladies","display_name":"Lady Tee","tee_color":"#ec4899","distance_m":215,"distance_m_source":"official","source_distance":215,"source_unit":"m"}]},
+            {"hole_number":3,"par":4,"handicap_index":null,"tees":[{"tee_code":"regular","display_name":"Regular Tee","tee_color":"#64748b","distance_m":215,"distance_m_source":"official","source_distance":215,"source_unit":"m"},{"tee_code":"ladies","display_name":"Lady Tee","tee_color":"#ec4899","distance_m":215,"distance_m_source":"official","source_distance":215,"source_unit":"m"}]},
+            {"hole_number":4,"par":4,"handicap_index":null,"tees":[{"tee_code":"regular","display_name":"Regular Tee","tee_color":"#64748b","distance_m":260,"distance_m_source":"official","source_distance":260,"source_unit":"m"},{"tee_code":"ladies","display_name":"Lady Tee","tee_color":"#ec4899","distance_m":230,"distance_m_source":"official","source_distance":230,"source_unit":"m"}]},
+            {"hole_number":5,"par":5,"handicap_index":null,"tees":[{"tee_code":"regular","display_name":"Regular Tee","tee_color":"#64748b","distance_m":450,"distance_m_source":"official","source_distance":450,"source_unit":"m"},{"tee_code":"ladies","display_name":"Lady Tee","tee_color":"#ec4899","distance_m":395,"distance_m_source":"official","source_distance":395,"source_unit":"m"}]},
+            {"hole_number":6,"par":3,"handicap_index":null,"tees":[{"tee_code":"regular","display_name":"Regular Tee","tee_color":"#64748b","distance_m":110,"distance_m_source":"official","source_distance":110,"source_unit":"m"},{"tee_code":"ladies","display_name":"Lady Tee","tee_color":"#ec4899","distance_m":90,"distance_m_source":"official","source_distance":90,"source_unit":"m"}]},
+            {"hole_number":7,"par":4,"handicap_index":null,"tees":[{"tee_code":"regular","display_name":"Regular Tee","tee_color":"#64748b","distance_m":285,"distance_m_source":"official","source_distance":285,"source_unit":"m"},{"tee_code":"ladies","display_name":"Lady Tee","tee_color":"#ec4899","distance_m":270,"distance_m_source":"official","source_distance":270,"source_unit":"m"}]},
+            {"hole_number":8,"par":5,"handicap_index":null,"tees":[{"tee_code":"regular","display_name":"Regular Tee","tee_color":"#64748b","distance_m":410,"distance_m_source":"official","source_distance":410,"source_unit":"m"},{"tee_code":"ladies","display_name":"Lady Tee","tee_color":"#ec4899","distance_m":385,"distance_m_source":"official","source_distance":385,"source_unit":"m"}]},
+            {"hole_number":9,"par":3,"handicap_index":null,"tees":[{"tee_code":"regular","display_name":"Regular Tee","tee_color":"#64748b","distance_m":120,"distance_m_source":"official","source_distance":120,"source_unit":"m"},{"tee_code":"ladies","display_name":"Lady Tee","tee_color":"#ec4899","distance_m":100,"distance_m_source":"official","source_distance":100,"source_unit":"m"}]}
+          ]
+        }
+      ]
+    }
+  ]
+}
