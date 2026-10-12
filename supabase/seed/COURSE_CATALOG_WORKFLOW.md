@@ -109,7 +109,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 ## 재개 지점
 
-2026-10-12 재개 지점(갱신): 마스터피스CC, 고령오펠GC, 고령유니밸리CC, 아델스코트CC, 팔공CC, 시엘GC, 골프존카운티 청통, 마우나오션CC 블루, 영천오펠GC, 영천CC, 오션힐스포항CC, 오션비치CC, 포항CC, 이스턴CC, 세븐밸리CC의 공식 자료를 DB·seed에 반영하고 검수 완료했습니다. 다음 후보는 부산 인접 경북 구장인 파미힐스CC입니다. 부산·울산·경남 pending 구장은 없고, 경남 아난티남해CC는 DB에서 rejected 상태이므로 별도 원인 확인 대상으로 남깁니다.
+2026-10-12 재개 지점(갱신): 마스터피스CC, 고령오펠GC, 고령유니밸리CC, 아델스코트CC, 팔공CC, 시엘GC, 골프존카운티 청통, 마우나오션CC 블루, 영천오펠GC, 영천CC, 오션힐스포항CC, 오션비치CC, 포항CC, 이스턴CC, 세븐밸리CC, 파미힐스CC의 공식 자료를 DB·seed에 반영하고 검수 완료했습니다. 다음 후보는 구미·칠곡권의 마이다스 구미 골프아카데미입니다. 부산·울산·경남 pending 구장은 없고, 경남 아난티남해CC는 DB에서 rejected 상태이므로 별도 원인 확인 대상으로 남깁니다.
 - 보문GC(경주): 경상북도문화관광공사 공식 코스소개에서 OUT·IN 각 9홀의 PAR·HANDICAP과 Blue/White/Red 미터 거리를 반영했습니다. 두 코스 모두 PAR36이며 티별 홀 거리 합계가 공식 Total과 일치해 검수 완료했습니다. 블랙티는 공식 표에 없어 등록하지 않았습니다. 자료 파일: `bomun-2026-official-verified.json`; 출처: [공식 코스소개](https://golf.gtc.co.kr/content/course-info.asp) (2026-10-12 확인).
 - 우리GC(경주 양남): 공식 코스제원표의 9홀 PAR·HDCP와 C.T/R.T/L.T 미터 거리를 저장했습니다. PAR36, 티별 홀 합계 C.T 3,044m / R.T 2,785m / L.T 2,521m가 공식 Total과 일치합니다. 자료 파일: `woori-2026-official-verified.json`; 출처: [우리GC 공식 코스제원](https://www.urigolfclub.co.kr/Course/Intro), [홀별 코스안내](https://www.urigolfclub.co.kr/Mobile/Course/Course) (2026-10-12 확인).
 - 이스트힐CC(경주 양남): 공식 코스소개 표의 Lake·Valley 각 9홀 PAR와 METER 거리 18개를 저장했습니다. 두 경로 모두 PAR36입니다. 티별 거리는 공개되지 않아 티 미표기 공식 거리로 기록했습니다. 자료 파일: `easthill-2026-official-verified.json`; 출처: [이스트힐 공식 코스소개](https://www.easthills.co.kr/Course/Intro.aspx) (2026-10-12 확인).
@@ -152,6 +152,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 ## 재개 지점
 
-2026-10-12: 세븐밸리CC까지 구장·코스 데이터를 verified로 반영했습니다. 이스턴CC seed/DB의 Yellow 데이터 불일치도 수정해 공식값과 대조했습니다. 다음 후보는 부산에 가까운 칠곡의 파미힐스CC입니다. 공식 홀별 자료가 충분하면 PAR·거리·단위를 적재하고, 티 미표기 단일 거리만 있으면 티 구성을 추정하지 않습니다.
+2026-10-12: 파미힐스CC까지 구장·코스 데이터를 verified로 반영했습니다. 이스턴CC seed/DB의 Yellow 데이터 불일치도 수정해 공식값과 대조했습니다. 다음 후보는 구미·칠곡권의 마이다스 구미 골프아카데미입니다. 공식 홀별 자료가 충분하면 PAR·거리·단위를 적재하고, 티 미표기 단일 거리만 있으면 티 구성을 추정하지 않습니다.
 - 이스턴CC(포항 청하): 운영사 공식 코스제원표의 EASTERN 9홀 PAR·HDCP와 Blue/White Out/White In/Yellow/Red 미터 거리를 반영했습니다. 공식 표에서 White In은 7홀, Yellow는 1·5·6번 홀에만 거리값이 있어 게시된 값만 저장했습니다. Yellow 4번의 잘못된 455m 잔여 행을 DB에서 제거하고 홀별 결과를 공식표와 재대조했습니다. 자료 파일: `eastern-cc-2026-official-verified.json`; 출처: [이스턴CC 공식 코스제원](https://www.easterncc.co.kr/course/intro.asp) (2026-10-12 확인).
 - 세븐밸리CC(칠곡): 운영사 공식 코스소개 표의 세븐·밸리 각 9홀 PAR와 Blue/White(1)/White(2)/Ladies 티별 거리(m)를 반영했습니다. 각 코스에 36개 티 거리 행을 저장했고, 모든 티의 홀별 합계가 공식 Total과 일치합니다. 세븐 코스는 공식 PAR 합계가 37이므로 임의 수정 없이 보존했습니다. 자료 파일: `seven-valley-2026-official-verified.json`; 출처: [공식 코스소개](https://www.sevenvalley.co.kr/course/course_info), [공식 코스공략](https://www.sevenvalley.co.kr/course/course_strategy) (2026-10-12 확인).
+- 파미힐스CC(칠곡): 운영사 공식 남·동 코스 각 18홀의 PAR·Red/Yellow/White/Black 미터 거리를 OUT/IN 네 개의 9홀 경로로 분리했습니다. 36홀 전체 144개 티 거리 행을 저장했으며, 남·동 코스 제원표의 Regular/White 및 Lady/Red 전체 합계와 일치합니다. 공식 자료는 핸디캡 인덱스 전체표를 제공하지 않아 일부 홀 소개 문구만으로 HDCP를 추정하지 않았습니다. 자료 파일: `palmy-hills-2026-official-verified.json`; 출처: [남코스 홀별 정보](https://www.palmyhillscc.co.kr/course/course_info_south.asp), [동코스 홀별 정보](https://www.palmyhillscc.co.kr/course/course_info_east.asp), [남코스 제원](https://www.palmyhillscc.co.kr/course/course_specifications_south.asp), [동코스 제원](https://www.palmyhillscc.co.kr/course/course_specifications_east.asp) (2026-10-12 확인).
