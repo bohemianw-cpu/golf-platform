@@ -7,6 +7,8 @@
 3. 공식 요약 전장과 홀별 거리 합계, 홀 수, 티별 제공 여부를 대조합니다. 티별 공식 합계가 있으면 `official_tee_totals_m`에 기록합니다. importer는 홀별 합과 공식 합의 차이를 표시하고, 해당 코스를 `verified`로 적재하려 하면 차이를 해결하기 전에는 중단합니다. 자료끼리 충돌하거나 단위가 확인되지 않으면 `review_notes`에 근거를 적고 구장과 코스를 `pending`으로 유지합니다.
 4. 담당자가 출처와 모든 홀 값을 검토한 뒤에만 해당 구장과 각 코스의 `verification_status`를 `verified`로 바꿉니다. 앱 검색은 구장과 코스가 모두 `verified`인 데이터만 노출합니다.
 
+`course-corrections/1` 파일의 구장에는 `verification_status`를 반드시 명시합니다. 코스의 상태를 생략하면 구장 상태를 상속합니다. 상태가 없는 과거 파일은 읽기 검사와 `--check`만 가능하며, `--apply` 전에 상태를 명시해야 합니다. 파일명에 `verified`가 들어 있어도 검수 완료 상태로 취급하지 않습니다.
+
 ## MCST 기본 목록 적재
 
 PowerShell에서 Supabase 서버 전용 환경변수(`NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SECRET_KEY`)를 설정한 뒤 실행합니다. 키는 저장소나 CSV에 넣지 않습니다.
@@ -39,6 +41,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ```
 
 검토가 끝난 항목만 파일에서 `verification_status`를 `verified`로 변경하고 다시 `--apply`, `--check` 순서로 실행합니다. 변경한 자료와 출처 URL을 함께 커밋해 검수 이력을 남깁니다. 코스·티 보정은 동일한 코스 코드로 재실행해 갱신할 수 있습니다.
+
+적용을 시작하면 구장을 먼저 `pending`으로 숨기고 기존 코스도 `pending`으로 바꾼 다음 홀·티 데이터를 저장합니다. 모든 자식 데이터가 저장된 뒤에 명시된 코스 상태를 적용하고, 마지막에 구장 상태를 적용합니다. 도중에 오류가 발생하면 해당 구장은 `pending` 상태로 남으므로 원인을 수정한 뒤 같은 파일로 다시 적용하고 `--check`를 실행합니다. 이 과정은 여러 DB 요청으로 이루어져 전체가 단일 트랜잭션으로 묶이지는 않습니다. 동일 구장에 대한 보정 작업을 동시에 실행하지 마세요.
 
 ## 검수 기준
 

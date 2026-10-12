@@ -56,6 +56,12 @@ if (!Array.isArray(corrections) || corrections.length === 0) throw new Error('JS
 
 for (const course of corrections) {
   if (!course.name?.trim() || typeof course.region !== 'string') throw new Error('각 구장 보정에 name과 region이 필요합니다.')
+  if (course.verification_status != null && !['verified', 'rejected', 'pending'].includes(course.verification_status)) {
+    throw new Error(`${course.name}: 허용되지 않는 검수 상태입니다.`)
+  }
+  if (args.has('apply') && course.verification_status == null) {
+    throw new Error(`${course.name}: 적용 전에 구장의 verification_status를 명시하세요. 상태를 생략한 기존 파일은 읽기 검사만 가능합니다.`)
+  }
   if (course.hole_count != null && (!Number.isInteger(course.hole_count) || course.hole_count < 1 || course.hole_count > 72)) {
     throw new Error(`${course.name}: hole_count는 1~72 사이 정수여야 합니다.`)
   }
@@ -127,6 +133,9 @@ for (const course of corrections) {
     }
   }
   if (course.verification_status === 'verified' && routes.length === 0) throw new Error(`${course.name}: 검증 완료 구장에는 코스 레이아웃이 필요합니다.`)
+  if (course.verification_status === 'verified' && !routes.some((route) => (route.verification_status ?? course.verification_status) === 'verified')) {
+    throw new Error(`${course.name}: 검증 완료 구장에는 공개 가능한 코스가 하나 이상 필요합니다.`)
+  }
   if (course.hole_count != null && routes.length && routes.reduce((sum, route) => sum + route.hole_count, 0) !== course.hole_count) {
     throw new Error(`${course.name}: 코스 레이아웃 합계와 구장 hole_count가 일치하지 않습니다.`)
   }
@@ -165,8 +174,8 @@ async function verifyCourse(correction, courseId) {
     venue_kind: 'physical',
     supports_field: true,
     supports_screen: correction.supports_screen ?? course.supports_screen,
-    verification_status: correction.verification_status ?? 'verified',
   }
+  if (correction.verification_status != null) expectedCourse.verification_status = correction.verification_status
   if (correction.hole_count != null) expectedCourse.hole_count = correction.hole_count
   if (correction.review_notes != null) expectedCourse.review_notes = correction.review_notes
   for (const [key, expected] of Object.entries(expectedCourse)) {
@@ -191,7 +200,9 @@ async function verifyCourse(correction, courseId) {
       distances_m: routeDistances(expectedRoute),
       source_name: 'admin_curated',
       source_url: expectedRoute.source_url,
-      verification_status: expectedRoute.verification_status ?? 'verified',
+    }
+    if (expectedRoute.verification_status != null || correction.verification_status != null) {
+      expectedValues.verification_status = expectedRoute.verification_status ?? correction.verification_status
     }
     if (Object.hasOwn(expectedRoute, 'source_data_url')) expectedValues.source_data_url = expectedRoute.source_data_url
     if (expectedRoute.review_notes != null) expectedValues.review_notes = expectedRoute.review_notes
@@ -265,16 +276,21 @@ for (const correction of corrections) {
     normalized_name: normalizedName,
     venue_kind: 'physical',
     supports_field: true,
-    verification_status: correction.verification_status ?? 'verified',
+    // Hide the whole venue before changing any route, hole, or tee row.
+    verification_status: 'pending',
   }
   if (correction.hole_count != null) courseUpdate.hole_count = correction.hole_count
   if (correction.review_notes != null) courseUpdate.review_notes = correction.review_notes
   if (typeof correction.address === 'string') courseUpdate.address = correction.address
   if (Array.isArray(correction.aliases)) courseUpdate.aliases = correction.aliases
   if (typeof correction.supports_screen === 'boolean') courseUpdate.supports_screen = correction.supports_screen
-  if (!['verified', 'rejected', 'pending'].includes(courseUpdate.verification_status)) throw new Error('허용되지 않는 검수 상태입니다.')
   const { error: updateError } = await supabase.from('golf_courses').update(courseUpdate).eq('id', courseId)
   if (updateError) throw updateError
+
+  // Routes absent from the correction must not reappear when the venue is published.
+  const { error: hideRoutesError } = await supabase.from('golf_course_routes')
+    .update({ verification_status: 'pending' }).eq('course_id', courseId)
+  if (hideRoutesError) throw hideRoutesError
 
   const { data: existingRouteSources, error: existingRouteSourcesError } = await supabase.from('golf_course_routes')
     .select('route_code,source_data_url')
@@ -290,18 +306,19 @@ for (const correction of corrections) {
     source_name: 'admin_curated',
     source_url: route.source_url,
     source_checked_at: new Date().toISOString(),
-    verification_status: route.verification_status ?? 'verified',
+    verification_status: 'pending',
     source_data_url: Object.hasOwn(route, 'source_data_url')
       ? route.source_data_url
       : existingRouteSources?.find((savedRoute) => savedRoute.route_code === route.route_code)?.source_data_url ?? null,
     ...(route.review_notes != null ? { review_notes: route.review_notes } : {}),
   }))
-  if (!routes.length) continue
-  const { data: savedRoutes, error: routesError } = await supabase.from('golf_course_routes')
-    .upsert(routes, { onConflict: 'course_id,route_code' }).select('id,route_code')
+  const { data: savedRoutes, error: routesError } = routes.length
+    ? await supabase.from('golf_course_routes')
+      .upsert(routes, { onConflict: 'course_id,route_code' }).select('id,route_code')
+    : { data: [], error: null }
   if (routesError) throw routesError
 
-  for (const route of correction.routes) {
+  for (const route of correction.routes ?? []) {
     const savedRoute = savedRoutes?.find((row) => row.route_code === route.route_code)
     if (!savedRoute) throw new Error(`${correction.name}/${route.route_code}: 저장된 코스 ID를 확인하지 못했습니다.`)
     const holes = route.holes.map((hole) => ({
@@ -342,5 +359,20 @@ for (const correction of corrections) {
       if (staleTeesError) throw staleTeesError
     }
   }
+
+  // Publish routes first; the venue remains hidden until every child write succeeds.
+  for (const route of correction.routes ?? []) {
+    const targetStatus = route.verification_status ?? correction.verification_status
+    if (targetStatus === 'pending') continue
+    const savedRoute = savedRoutes?.find((row) => row.route_code === route.route_code)
+    const { error: publishRouteError } = await supabase.from('golf_course_routes')
+      .update({ verification_status: targetStatus }).eq('id', savedRoute.id)
+    if (publishRouteError) throw publishRouteError
+  }
+  if (correction.verification_status !== 'pending') {
+    const { error: publishCourseError } = await supabase.from('golf_courses')
+      .update({ verification_status: correction.verification_status }).eq('id', courseId)
+    if (publishCourseError) throw publishCourseError
+  }
 }
-console.log('보정 자료를 적용했습니다. 홀별 파·티 거리와 출처 URL을 저장했습니다. 티 데이터가 없는 코스는 선택에 표시되지 않습니다.')
+console.log('보정 자료를 적용했습니다. 홀별 파·티 거리와 출처 URL을 저장한 뒤 명시된 검수 상태를 반영했습니다.')

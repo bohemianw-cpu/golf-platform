@@ -1,0 +1,45 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "name": "고성컨트리클럽",
+      "match_name": "고성컨트리클럽",
+      "region": "경남",
+      "address": "고성군 고성읍 월평3길 250",
+      "hole_count": 9,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "MCST 기초 목록의 경남 고성컨트리클럽 9홀과 공식 홈페이지의 고성CC 9홀을 주소 및 공식 사이트 소재지로 대조했습니다.",
+        "공식 코스 소개의 홀별 대표 거리 합계는 2,842m입니다. 공식 홀별 B/T 거리 합계 2,842m와 일치하며 각 홀의 PAR 및 B/T·R/T·L/T 총거리를 공식 코스 공략도에서 확인했습니다. 출처: https://www.gosungcc.com/04course/courseIntro.asp 및 https://www.gosungcc.com/04course/p1.asp ~ p9.asp (2026-10-12 확인).",
+        "공식 표에는 티 색상이 없으므로 모든 티의 표시 색상은 중립색으로 지정했습니다. B/T를 블랙티로 바꾸어 표시하지 않습니다."
+      ],
+      "routes": [
+        {
+          "route_code": "course",
+          "display_name": "고성 코스",
+          "hole_count": 9,
+          "primary_tee_code": "regular",
+          "verification_status": "verified",
+          "source_url": "https://www.gosungcc.com/04course/p1.asp",
+          "official_tee_totals_m": { "back": 2842 },
+          "review_notes": [
+            "공식 코스 공략도 p1.asp부터 p9.asp까지의 각 홀 PAR 및 B/T·R/T·L/T 총거리 값을 전사했습니다. 코스 소개의 미터 표기와 B/T 홀별 거리 합계를 대조하여 이 표의 거리 단위를 m로 기록했습니다.",
+            "공식 코스 소개: https://www.gosungcc.com/04course/courseIntro.asp · 홀별 자료: https://www.gosungcc.com/04course/p1.asp ~ p9.asp (2026-10-12 확인). R/T와 L/T의 별도 공식 9홀 합계는 게시되어 있지 않아 홀별 합계만 계산했습니다."
+          ],
+          "holes": [
+            { "hole_number": 1, "par": 4, "tees": [{ "tee_code": "back", "display_name": "B/T", "tee_color": "#64748b", "distance_m": 265, "source_distance": 265, "source_unit": "m" }, { "tee_code": "regular", "display_name": "R/T", "tee_color": "#64748b", "distance_m": 250, "source_distance": 250, "source_unit": "m" }, { "tee_code": "ladies", "display_name": "L/T", "tee_color": "#64748b", "distance_m": 235, "source_distance": 235, "source_unit": "m" }] },
+            { "hole_number": 2, "par": 3, "tees": [{ "tee_code": "back", "display_name": "B/T", "tee_color": "#64748b", "distance_m": 167, "source_distance": 167, "source_unit": "m" }, { "tee_code": "regular", "display_name": "R/T", "tee_color": "#64748b", "distance_m": 137, "source_distance": 137, "source_unit": "m" }, { "tee_code": "ladies", "display_name": "L/T", "tee_color": "#64748b", "distance_m": 97, "source_distance": 97, "source_unit": "m" }] },
+            { "hole_number": 3, "par": 4, "tees": [{ "tee_code": "back", "display_name": "B/T", "tee_color": "#64748b", "distance_m": 237, "source_distance": 237, "source_unit": "m" }, { "tee_code": "regular", "display_name": "R/T", "tee_color": "#64748b", "distance_m": 210, "source_distance": 210, "source_unit": "m" }, { "tee_code": "ladies", "display_name": "L/T", "tee_color": "#64748b", "distance_m": 195, "source_distance": 195, "source_unit": "m" }] },
+            { "hole_number": 4, "par": 5, "tees": [{ "tee_code": "back", "display_name": "B/T", "tee_color": "#64748b", "distance_m": 462, "source_distance": 462, "source_unit": "m" }, { "tee_code": "regular", "display_name": "R/T", "tee_color": "#64748b", "distance_m": 447, "source_distance": 447, "source_unit": "m" }, { "tee_code": "ladies", "display_name": "L/T", "tee_color": "#64748b", "distance_m": 432, "source_distance": 432, "source_unit": "m" }] },
+            { "hole_number": 5, "par": 4, "tees": [{ "tee_code": "back", "display_name": "B/T", "tee_color": "#64748b", "distance_m": 332, "source_distance": 332, "source_unit": "m" }, { "tee_code": "regular", "display_name": "R/T", "tee_color": "#64748b", "distance_m": 317, "source_distance": 317, "source_unit": "m" }, { "tee_code": "ladies", "display_name": "L/T", "tee_color": "#64748b", "distance_m": 302, "source_distance": 302, "source_unit": "m" }] },
+            { "hole_number": 6, "par": 3, "tees": [{ "tee_code": "back", "display_name": "B/T", "tee_color": "#64748b", "distance_m": 180, "source_distance": 180, "source_unit": "m" }, { "tee_code": "regular", "display_name": "R/T", "tee_color": "#64748b", "distance_m": 150, "source_distance": 150, "source_unit": "m" }, { "tee_code": "ladies", "display_name": "L/T", "tee_color": "#64748b", "distance_m": 135, "source_distance": 135, "source_unit": "m" }] },
+            { "hole_number": 7, "par": 5, "tees": [{ "tee_code": "back", "display_name": "B/T", "tee_color": "#64748b", "distance_m": 495, "source_distance": 495, "source_unit": "m" }, { "tee_code": "regular", "display_name": "R/T", "tee_color": "#64748b", "distance_m": 480, "source_distance": 480, "source_unit": "m" }, { "tee_code": "ladies", "display_name": "L/T", "tee_color": "#64748b", "distance_m": 465, "source_distance": 465, "source_unit": "m" }] },
+            { "hole_number": 8, "par": 4, "tees": [{ "tee_code": "back", "display_name": "B/T", "tee_color": "#64748b", "distance_m": 374, "source_distance": 374, "source_unit": "m" }, { "tee_code": "regular", "display_name": "R/T", "tee_color": "#64748b", "distance_m": 359, "source_distance": 359, "source_unit": "m" }, { "tee_code": "ladies", "display_name": "L/T", "tee_color": "#64748b", "distance_m": 344, "source_distance": 344, "source_unit": "m" }] },
+            { "hole_number": 9, "par": 4, "tees": [{ "tee_code": "back", "display_name": "B/T", "tee_color": "#64748b", "distance_m": 330, "source_distance": 330, "source_unit": "m" }, { "tee_code": "regular", "display_name": "R/T", "tee_color": "#64748b", "distance_m": 310, "source_distance": 310, "source_unit": "m" }, { "tee_code": "ladies", "display_name": "L/T", "tee_color": "#64748b", "distance_m": 290, "source_distance": 290, "source_unit": "m" }] }
+          ]
+        }
+      ]
+    }
+  ]
+}
