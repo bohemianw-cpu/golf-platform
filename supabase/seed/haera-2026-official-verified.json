@@ -1,0 +1,72 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "name": "해라CC",
+      "match_name": "해라컨트리클럽",
+      "aliases": ["해라컨트리클럽", "해라CC"],
+      "region": "부산",
+      "address": "부산광역시 강서구 과학산단로306번길 77",
+      "hole_count": 9,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "해라CC 공식 코스 페이지는 단일 9홀 코스와 홀별 PAR를 제공합니다. 홀 도면 이미지에 표시된 미터(m) 거리를 반영했습니다. 빨간색·노란색 깃발 표시는 해당 티로, 흰색/빨간색 원 표시는 홀컵 위치별 거리로 기록했습니다. 도면에 나타나지 않은 티 거리는 추가하지 않았습니다. 핸디캡 인덱스 자료는 공식 페이지에서 확인되지 않아 비워 두었습니다.",
+        "출처: https://www.haeracc.co.kr/course 및 https://www.haeracc.co.kr/img/course/1.png?v=1 ~ /img/course/9.png?v=1 (2026-10-12 확인)."
+      ],
+      "routes": [
+        {
+          "route_code": "HAERA",
+          "display_name": "해라 코스",
+          "hole_count": 9,
+          "primary_tee_code": "red",
+          "source_url": "https://www.haeracc.co.kr/course",
+          "source_data_url": "https://www.haeracc.co.kr/img/course/1.png?v=1",
+          "verification_status": "verified",
+          "review_notes": [
+            "공식 도면의 tee flag 색상(red/yellow)과 pin 위치 표식(흰색/빨간색 원)을 구분해 기록했습니다. 홀컵 위치에 따라 거리가 다른 홀은 green_code로 각각 보존했습니다. 자료에 없는 yellow tee 값은 추정하지 않았습니다."
+          ],
+          "holes": [
+            { "hole_number": 1, "par": 4, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#dc2626", "distance_m": 243, "source_distance": 243, "source_unit": "m", "distance_m_source": "official" },
+              { "tee_code": "yellow", "display_name": "Yellow", "tee_color": "#eab308", "distance_m": 253, "source_distance": 253, "source_unit": "m", "distance_m_source": "official" }
+            ] },
+            { "hole_number": 2, "par": 4, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#dc2626", "distance_m": 227, "source_distance": 227, "source_unit": "m", "distance_m_source": "official" },
+              { "tee_code": "yellow", "display_name": "Yellow", "tee_color": "#eab308", "distance_m": 247, "source_distance": 247, "source_unit": "m", "distance_m_source": "official" }
+            ] },
+            { "hole_number": 3, "par": 4, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#dc2626", "distance_m": 212, "source_distance": 212, "source_unit": "m", "distance_m_source": "official" },
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#dc2626", "distance_m": 212, "source_distance": 212, "source_unit": "m", "distance_m_source": "official", "green_code": "red", "green_name": "빨간 홀컵 위치" }
+            ] },
+            { "hole_number": 4, "par": 5, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#dc2626", "distance_m": 282, "source_distance": 282, "source_unit": "m", "distance_m_source": "official" }
+            ] },
+            { "hole_number": 5, "par": 3, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#dc2626", "distance_m": 90, "source_distance": 90, "source_unit": "m", "distance_m_source": "official" },
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#dc2626", "distance_m": 85, "source_distance": 85, "source_unit": "m", "distance_m_source": "official", "green_code": "red", "green_name": "빨간 홀컵 위치" }
+            ] },
+            { "hole_number": 6, "par": 5, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#dc2626", "distance_m": 319, "source_distance": 319, "source_unit": "m", "distance_m_source": "official" },
+              { "tee_code": "yellow", "display_name": "Yellow", "tee_color": "#eab308", "distance_m": 339, "source_distance": 339, "source_unit": "m", "distance_m_source": "official" }
+            ] },
+            { "hole_number": 7, "par": 4, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#dc2626", "distance_m": 228, "source_distance": 228, "source_unit": "m", "distance_m_source": "official", "green_code": "red", "green_name": "빨간 홀컵 위치" },
+              { "tee_code": "yellow", "display_name": "Yellow", "tee_color": "#eab308", "distance_m": 242, "source_distance": 242, "source_unit": "m", "distance_m_source": "official", "green_code": "red", "green_name": "빨간 홀컵 위치" }
+            ] },
+            { "hole_number": 8, "par": 4, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#dc2626", "distance_m": 275, "source_distance": 275, "source_unit": "m", "distance_m_source": "official" },
+              { "tee_code": "yellow", "display_name": "Yellow", "tee_color": "#eab308", "distance_m": 290, "source_distance": 290, "source_unit": "m", "distance_m_source": "official" },
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#dc2626", "distance_m": 267, "source_distance": 267, "source_unit": "m", "distance_m_source": "official", "green_code": "red", "green_name": "빨간 홀컵 위치" },
+              { "tee_code": "yellow", "display_name": "Yellow", "tee_color": "#eab308", "distance_m": 282, "source_distance": 282, "source_unit": "m", "distance_m_source": "official", "green_code": "red", "green_name": "빨간 홀컵 위치" }
+            ] },
+            { "hole_number": 9, "par": 3, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#dc2626", "distance_m": 80, "source_distance": 80, "source_unit": "m", "distance_m_source": "official" },
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#dc2626", "distance_m": 70, "source_distance": 70, "source_unit": "m", "distance_m_source": "official", "green_code": "red", "green_name": "빨간 홀컵 위치" }
+            ] }
+          ]
+        }
+      ]
+    }
+  ]
+}
