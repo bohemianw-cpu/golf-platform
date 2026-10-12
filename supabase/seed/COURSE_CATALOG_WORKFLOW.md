@@ -66,6 +66,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 ## 최근 공식 자료 반영
 
+- 오르비스GC(울주): 공식 OUT·IN 표에서 각 9홀의 PAR와 홀별 거리를 저장했습니다. 홀별 티 이름은 공개되지 않아 중립적인 티 미표기 거리로 등록했습니다. IN 표는 거리 단위를 생략했으며 같은 공식 표의 OUT 행 구성과 합계 패턴을 근거로 첫 행을 m로 입력하고 해당 해석을 메모했습니다. 자료 파일: `orvis-ulsan-2026-official-verified.json`; 출처: [OUT 코스](https://orvis.club/swp/clubOut), [IN 코스](https://orvis.club/swp/clubIn) (2026-10-12 확인).
 - 골드그린GC(울주): 공식 METER 스코어카드와 9홀 상세 페이지에서 PAR·HDCP와 Blue/White/Red 거리를 저장했습니다. 9번 FRONT는 스코어카드 표에 380m로 적혀 있지만 상세 페이지 White 280m 및 공식 합계 2,658m와 일치하는 280m를 채택하고 원문 차이를 관리자 메모에 남겼습니다. 자료 파일: `goldgreen-ulsan-2026-official-verified.json`; 출처: [공식 스코어카드](https://www.goldgreen.co.kr/swp/course_score), [공식 코스 상세](https://www.goldgreen.co.kr/swp/out_course) (2026-10-12 확인).
 - 보라CC(울산): 공식 Edward·Henry·William 홀 도면 27장에서 PAR·HDCP와 Red/Yellow/White/Blue 티별 미터 거리를 입력했습니다. 공식 도면에 이름/색상이 표시된 네 티만 보존했으며 모든 코스가 PAR36입니다. 자료 파일: `bora-ulsan-2026-official-verified.json`; 출처: [코스 안내](https://www.boracc.com/course/course_main.asp), [Edward](https://www.boracc.com/course/Edward_course.asp), [Henry](https://www.boracc.com/course/Henry_course.asp), [William](https://www.boracc.com/course/William_course.asp) 및 각 코스 홀 도면 1~9 (2026-10-12 확인).
 - 울산CC: 공식 코스제원표의 동·남·서 3개 9홀 코스 PAR와 CHAMP/REG 거리를 저장했습니다. 공식 표에는 거리 단위 표기가 없어 m 해석을 검수 메모에 기록했습니다. 동코스 REG는 공식 소계 3,004m와 홀별 거리 합계 2,974m가 30m 차이나 홀별 게시값을 유지했습니다. 자료 파일: `ulsan-2026-official-verified.json`; 출처: [공식 코스제원](https://www.ulsancc.co.kr/cour/score.asp) (2026-10-12 확인).
