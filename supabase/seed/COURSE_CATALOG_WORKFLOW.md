@@ -282,3 +282,4 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 2026-10-13 나주CC 반영 후 원격 전체 카탈로그: 검수 완료 230개, 미진행 284개, 반려 2개(총 516개). 부산·울산·경남 지역 pending 0개. 남부권 잔여 pending은 경북 1개, 전남 4개, 전북 3개입니다.
 - MCST `cosmos 1`(전남 영암): 공식 Golfzon County 자료에서 영암45(45홀, 에프원로 121-1) 코스는 확인했으나, MCST `cosmos 1` 주소는 에프원로 121-4로 달라 동일 구장이라고 단정하지 않았습니다. DB에는 골프존카운티 영암45가 별도 검수 완료로 이미 존재하므로 해당 코스 데이터를 복제하지 않고 cosmos 1은 pending으로 유지합니다. 출처: [골프존카운티 영암45 공식 소개](https://www.golfzoncounty.com/golfclub/intro?golfclubSeq=59), [공식 코스 소개](https://www.golfzoncounty.com/golfclub/course?golfclubSeq=59) (2026-10-13 확인).
+- 디케이레저(전북 순창): MCST 기록은 `디케이레저`이며 현재 외부 디렉터리에서 순창CC로도 표시됩니다. 이번 공식 자료 검색에서 운영사 홀별 PAR·거리 원문을 찾지 못해 이름이나 홀 데이터를 임의로 갱신하지 않고 pending을 유지합니다. 운영 명칭은 공식 홈페이지/행정 자료로 추가 대조가 필요합니다 (2026-10-13 확인).
