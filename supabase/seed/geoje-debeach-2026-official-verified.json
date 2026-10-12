@@ -1,0 +1,322 @@
+{
+  "courses": [
+    {
+      "match_name": "거제드비치GC",
+      "name": "거제드비치GC",
+      "region": "경남",
+      "address": "경상남도 거제시 장목면 거제북로 1573",
+      "hole_count": 18,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "공식 코스개요의 OUT/IN 각 9홀별 파와 야드 거리를 저장했습니다. 티 색상/티 등급별 자료는 공식 페이지에서 제공되지 않아 하나의 색상 미구분 공식 거리로 보존했습니다.",
+        "공식 코스 개요의 OUT 거리 합계는 3,757yd, IN은 3,685yd이며 합계 7,442yd/Par72와 일치합니다.",
+        "출처: https://www.debeach.co.kr/course (2026-10-12 확인)."
+      ],
+      "routes": [
+        {
+          "route_code": "OUT",
+          "display_name": "OUT 코스",
+          "hole_count": 9,
+          "primary_tee_code": "official",
+          "verification_status": "verified",
+          "source_url": "https://www.debeach.co.kr/course",
+          "source_data_url": "https://www.debeach.co.kr/course",
+          "review_notes": [
+            "공식 코스 개요는 홀별 거리를 Yard 단위로 한 종류만 공개하며 티 색상/티 등급은 구분하지 않습니다. 원문 분류를 덧붙이지 않고 공식 표기(티 미구분)로 보존했습니다.",
+            "원문 코스 합계는 3757 yd / Par 36이며, 개별 홀 거리는 yd에서 m로 환산해 원자료 yd도 함께 저장합니다.",
+            "출처: https://www.debeach.co.kr/course (2026-10-12 확인)."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 425,
+                  "distance_m_source": "converted",
+                  "source_distance": 465,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 550,
+                  "distance_m_source": "converted",
+                  "source_distance": 602,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 411,
+                  "distance_m_source": "converted",
+                  "source_distance": 449,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 375,
+                  "distance_m_source": "converted",
+                  "source_distance": 410,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 405,
+                  "distance_m_source": "converted",
+                  "source_distance": 443,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 185,
+                  "distance_m_source": "converted",
+                  "source_distance": 202,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 525,
+                  "distance_m_source": "converted",
+                  "source_distance": 574,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 175,
+                  "distance_m_source": "converted",
+                  "source_distance": 191,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 385,
+                  "distance_m_source": "converted",
+                  "source_distance": 421,
+                  "source_unit": "yd"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "IN",
+          "display_name": "IN 코스",
+          "hole_count": 9,
+          "primary_tee_code": "official",
+          "verification_status": "verified",
+          "source_url": "https://www.debeach.co.kr/course",
+          "source_data_url": "https://www.debeach.co.kr/course",
+          "review_notes": [
+            "공식 코스 개요는 홀별 거리를 Yard 단위로 한 종류만 공개하며 티 색상/티 등급은 구분하지 않습니다. 원문 분류를 덧붙이지 않고 공식 표기(티 미구분)로 보존했습니다.",
+            "원문 코스 합계는 3685 yd / Par 36이며, 개별 홀 거리는 yd에서 m로 환산해 원자료 yd도 함께 저장합니다.",
+            "출처: https://www.debeach.co.kr/course (2026-10-12 확인)."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 345,
+                  "distance_m_source": "converted",
+                  "source_distance": 377,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 395,
+                  "distance_m_source": "converted",
+                  "source_distance": 432,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 535,
+                  "distance_m_source": "converted",
+                  "source_distance": 585,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 175,
+                  "distance_m_source": "converted",
+                  "source_distance": 191,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 330,
+                  "distance_m_source": "converted",
+                  "source_distance": 361,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 401,
+                  "distance_m_source": "converted",
+                  "source_distance": 438,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 420,
+                  "distance_m_source": "converted",
+                  "source_distance": 459,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 195,
+                  "distance_m_source": "converted",
+                  "source_distance": 213,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 표기(티 미구분)",
+                  "tee_color": "#64748b",
+                  "distance_m": 575,
+                  "distance_m_source": "converted",
+                  "source_distance": 629,
+                  "source_unit": "yd"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
