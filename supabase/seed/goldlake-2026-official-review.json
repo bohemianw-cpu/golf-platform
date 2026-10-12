@@ -8,12 +8,12 @@
       "address": "전남 나주시 남평읍 나주호로 442-129",
       "aliases": [],
       "hole_count": 36,
-      "verification_status": "pending",
+      "verification_status": "verified",
       "supports_screen": false,
       "review_notes": [
         "MCST 카탈로그는 18홀로 등록되어 있으나 현재 공식 홈페이지는 36홀(12,860m) 및 4개 9홀 코스로 표기합니다.",
         "현재 공식 코스 페이지(2026 사이트)의 Gold/Lake/Hill/Valley 기준 전장은 각각 3,182m/3,275m/3,330m/3,071m입니다. 저장된 홀별 골드티 합계는 3,140m/3,317m/3,330m/3,071m로, 회원제 Gold와 Lake는 각각 42m 차이가 납니다.",
-        "KGA 2024 코스레이팅은 Gold+Lake GOLD 7,061yd, Hill+Valley GOLD 6,999yd입니다. 홀별 골드티 합계는 Hill+Valley 합계와 일치하고 Gold+Lake 합계도 KGA와 약 5yd 차이로 근접하지만, 합산 자료로 각 회원제 코스 전장의 불일치를 설명할 수 없어 코스별 검수 상태는 대기로 둡니다.",
+        "KGA 2024 코스레이팅은 Gold+Lake GOLD 7,061yd, Hill+Valley GOLD 6,999yd입니다. 홀별 Gold+Lake 합계는 KGA와 약 5yd 차이, Hill+Valley 합계는 일치합니다. 코스 법인과 36홀 구성은 확인했으며 Gold/Lake 개별 전장 충돌은 해당 라우트의 검수 대기로 관리합니다.",
         "공식 티 지도는 골드·흰색·회색·빨강 마커를 보여줍니다. 일부 홀에 흰색 마커가 여러 개이며 별도 이름이 없어 흰색 A/B/C는 지도상 거리 순서로 임시 구분했습니다. 홀별로 공통되지 않는 흰색 세트는 라운드 티 선택에 노출하지 않습니다."
       ],
       "routes": [
@@ -1347,7 +1347,7 @@
           "primary_tee_code": "gold",
           "source_url": "https://www.goldlake.co.kr/course/course04",
           "source_image_pattern": "https://www.goldlake.co.kr/images/course/vNN.jpg",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "official_course_overview_distance_m": 3071,
           "holes": [
             {
@@ -1757,7 +1757,7 @@
             }
           ],
           "review_notes": [
-            "현재 공식 코스개요와 홀 지도 골드티 합계가 모두 3,071m입니다. 다만 흰색 티의 지도상 위치별 명칭이 없어 흰색 A/B 구분은 임시이며 검수 대기입니다."
+            "현재 공식 코스개요와 홀 지도 골드티 합계가 모두 3,071m입니다. 홀 1~9의 파와 색상별 거리 값을 공식 이미지와 대조했습니다. 홀별 흰색 티 개수가 다른 경우가 있어 공통된 화이트 A만 선택 가능하며, 블랙티는 제공되지 않습니다."
           ]
         }
       ]
