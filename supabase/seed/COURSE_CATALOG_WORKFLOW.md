@@ -109,7 +109,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 ## 재개 지점
 
-2026-10-12 재개 지점: 마스터피스CC, 고령오펠GC, 고령유니밸리CC, 아델스코트CC, 팔공CC의 공식 자료를 DB·seed에 반영하고 검수 완료했습니다. 다음 후보는 팔공CC 다음으로 부산에 가까운 미검수 경북 구장 중 공식 자료 확보가 가능한 곳을 선택합니다. 부산·울산·경남 구장은 현재 DB 상태상 적재 완료입니다.
+2026-10-12 재개 지점: 마스터피스CC, 고령오펠GC, 고령유니밸리CC, 아델스코트CC, 팔공CC, 시엘GC의 공식 자료를 DB·seed에 반영하고 검수 완료했습니다. 다음 후보는 시엘GC 인근의 미검수 경북 구장 중 부산에서 가까우며 공식 홀별 제원을 확인할 수 있는 곳입니다. 부산·울산·경남 구장은 현재 DB 상태상 적재 완료입니다.
 - 보문GC(경주): 경상북도문화관광공사 공식 코스소개에서 OUT·IN 각 9홀의 PAR·HANDICAP과 Blue/White/Red 미터 거리를 반영했습니다. 두 코스 모두 PAR36이며 티별 홀 거리 합계가 공식 Total과 일치해 검수 완료했습니다. 블랙티는 공식 표에 없어 등록하지 않았습니다. 자료 파일: `bomun-2026-official-verified.json`; 출처: [공식 코스소개](https://golf.gtc.co.kr/content/course-info.asp) (2026-10-12 확인).
 - 우리GC(경주 양남): 공식 코스제원표의 9홀 PAR·HDCP와 C.T/R.T/L.T 미터 거리를 저장했습니다. PAR36, 티별 홀 합계 C.T 3,044m / R.T 2,785m / L.T 2,521m가 공식 Total과 일치합니다. 자료 파일: `woori-2026-official-verified.json`; 출처: [우리GC 공식 코스제원](https://www.urigolfclub.co.kr/Course/Intro), [홀별 코스안내](https://www.urigolfclub.co.kr/Mobile/Course/Course) (2026-10-12 확인).
 - 이스트힐CC(경주 양남): 공식 코스소개 표의 Lake·Valley 각 9홀 PAR와 METER 거리 18개를 저장했습니다. 두 경로 모두 PAR36입니다. 티별 거리는 공개되지 않아 티 미표기 공식 거리로 기록했습니다. 자료 파일: `easthill-2026-official-verified.json`; 출처: [이스트힐 공식 코스소개](https://www.easthills.co.kr/Course/Intro.aspx) (2026-10-12 확인).
@@ -136,6 +136,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 칠곡아이위시CC(경북 칠곡): 공식 Valley 코스 전략표에서 9홀 PAR·HDCP와 Blue/White/Red 티별 미터 거리, 좌·우 그린 구분을 반영했습니다. 1·3·4·5·6번 홀은 좌/우 값을 분리했고, 2·7·8·9번은 티별 단일값만 공시되어 기본 그린으로 저장했습니다. PAR36이며 Blue L/R 2,852/2,764m, White 2,601/2,547m, Red 2,276/2,214m로 공식 합계와 일치합니다. 42개 티 거리 행을 저장하고 구장과 Valley 경로를 verified 처리했습니다. 자료 파일: `chilgok-iwish-2026-official-verified.json`; 출처: [공식 Valley 코스 전략/거리표](https://www.iwishcc.com/course/strategy), [공식 코스 소개](https://www.iwishcc.com/course/intro) (2026-10-12 확인).
 
 - 팔공CC(대구): 운영사 공식 페이지에서 파72·18홀, 동봉(OUT)·서봉(IN) 각 9홀 PAR와 Blue/White/Red 미터 거리 54행을 저장했습니다. 동봉 7번은 PAR4·HDCP13이며, 서봉 원문 11·12·15번(앱 경로 2·3·6번)은 PAR4·5·4로 공식 홀별 페이지에서 확인했습니다. 두 경로 모두 PAR36, 구장과 경로를 verified로 전환했습니다. 티별 홀 거리 합은 OUT Blue/White/Red 2,743/2,632/2,239m, IN 3,143/2,999/2,664m이며 공식 합계표는 찾지 못해 임의 보정하지 않았습니다. 자료 파일: `palgong-cc-2026-official-verified.json`; 출처: [공식 코스개요](https://www.palgong-cc.co.kr/html/course.asp), [동봉](https://www.palgong-cc.co.kr/html/course_out.asp), [서봉](https://www.palgong-cc.co.kr/html/course_in.asp) (2026-10-12 확인).
+- 시엘GC(영천): 운영사 공식 코스소개 표에서 9개 홀 PAR·HDCP와 Blue/White/Red 미터 거리를 저장했습니다. PAR36, 27개 거리 행입니다. Blue 2,532m와 White 2,321m는 홀별 합과 일치하지만 Red의 공식 Total 2,190m와 홀별 원문 합 2,155m는 35m 차이가 있어 원문 홀별 값을 보존하고 검수 메모에 남겼습니다. 구장과 CIEL 경로는 verified입니다. 자료 파일: `ciel-gc-2026-official-verified.json`; 출처: [공식 코스소개](https://www.cielgolf.com/html/course/course01.asp) (2026-10-12 확인).
 
 - 마스터피스CC(고령): 운영사 공식 코스제원표에서 PIECE·MASTER 각 9홀의 PAR·HDCP와 Blue/White/Yellow/Red 미터 거리를 반영했습니다. MASTER 원문 홀 10~18은 앱 경로 1~9로 매핑했습니다. MASTER Yellow 홀별 합계 2,753m와 공식 Total 2,758m가 5m 차이나 원문 홀별 값을 유지하고 관리자 검수 메모에 기록했습니다. 두 경로 모두 PAR36이며 18홀·72개 티 거리 행을 저장하고 구장과 경로를 verified로 전환했습니다. 자료 파일: `masterpiece-2026-official-verified.json`; 출처: [공식 코스제원표](https://www.masterpiecegc.com/Course/CourseInfo.aspx) (2026-10-12 확인).
 - 고령오펠GC(고령): MCST의 기존 `다산 샤인힐CC` pending 레코드와 운영사 공식 고령오펠 주소가 일치해 기존 ID를 보존하고 현 명칭 및 과거 별칭을 적용했습니다. 공식 푸르내(OUT)·미리내(IN) 각 9홀의 PAR·HDCP와 티별 m 거리 54행을 반영했습니다. 푸르내 Blue 3,138m, 미리내 Black 3,277m 홀별 합계가 운영사 코스개요 전장과 일치합니다. 미리내 원문 홀 10~18은 앱 경로 1~9로 매핑했습니다. 자료 파일: `goryeong-ophel-2026-official-verified.json`; 출처: [공식 코스개요](https://www.ophelgc.com/_Goryeong/Mobile/Club/ClubInfo.aspx), [푸르내 1~9번](https://www.ophelgc.com/_Goryeong/Mobile/course/course_p-01.html) ~ `course_p-09.html`, [미리내 10~18번](https://www.ophelgc.com/_Goryeong/course/course_yu-01.html) ~ `course_yu-09.html` (2026-10-12 확인).
@@ -144,4 +145,4 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 ## 재개 지점
 
-2026-10-12: 팔공CC까지 구장·코스 데이터를 verified로 반영했습니다. 다음에는 미검수 경북 구장의 주소를 기준으로 부산에서 가까운 후보를 골라 공식 9홀 자료를 확인하고, 충분한 자료가 있으면 같은 흐름으로 적재합니다.
+2026-10-12: 시엘GC까지 구장·코스 데이터를 verified로 반영했습니다. 다음에는 미검수 경북 구장의 주소를 기준으로 부산에서 가까운 후보를 골라 공식 홀별 자료를 확인하고, PAR·거리·단위가 충분하면 같은 흐름으로 적재합니다.

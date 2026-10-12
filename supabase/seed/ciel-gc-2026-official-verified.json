@@ -1,0 +1,44 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "match_name": "시엘GC",
+    "name": "시엘GC",
+    "region": "경북",
+    "address": "경북 영천시 청통면 청통로 334-41",
+    "aliases": ["시엘 골프클럽", "시엘골프클럽", "Ciel Golf Club"],
+    "hole_count": 9,
+    "supports_screen": false,
+    "review_notes": [
+      "운영사 공식 코스소개에 게시된 1~9번 홀 PAR·HDCP와 Blue/White/Red 홀별 거리를 저장했습니다. 원문이 거리 단위를 m라고 명시하고, 세 티별 합계도 표에 함께 게시되어 있어 각 값은 공식 m 원값 그대로입니다.",
+      "공식 PAR 합계는 36입니다. Blue 2,532m와 White 2,321m는 홀별 합계와 일치합니다. Red는 공식 Total 2,190m와 홀별 원문 합계 2,155m가 35m 차이나며, 홀별 공식 게시값을 그대로 보존하고 차이를 검수 메모에 남겼습니다.",
+      "공식 출처: https://www.cielgolf.com/html/course/course01.asp (2026-10-12 확인)."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "CIEL",
+      "display_name": "시엘코스",
+      "hole_count": 9,
+      "primary_tee_code": "white",
+      "verification_status": "verified",
+      "source_url": "https://www.cielgolf.com/html/course/course01.asp",
+      "par_source_url": "https://www.cielgolf.com/html/course/course01.asp",
+      "official_tee_totals_m": {"blue":2532,"white":2321,"red":2190},
+      "review_notes": [
+        "공식 코스소개의 거리 단위 설명과 Blue/White/Red 거리표에서 PAR·HDCP·미터 거리를 저장했습니다. Red 홀별 합계 2,155m는 공식 Total 2,190m와 35m 차이가 있어 홀별 원문을 보존했습니다."
+      ],
+      "holes": [
+        {"hole_number":1,"par":4,"handicap_index":9,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":302,"distance_m_source":"official","source_distance":302,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":265,"distance_m_source":"official","source_distance":265,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":240,"distance_m_source":"official","source_distance":240,"source_unit":"m"}]},
+        {"hole_number":2,"par":5,"handicap_index":1,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":500,"distance_m_source":"official","source_distance":500,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":450,"distance_m_source":"official","source_distance":450,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":395,"distance_m_source":"official","source_distance":395,"source_unit":"m"}]},
+        {"hole_number":3,"par":4,"handicap_index":3,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":270,"distance_m_source":"official","source_distance":270,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":262,"distance_m_source":"official","source_distance":262,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":262,"distance_m_source":"official","source_distance":262,"source_unit":"m"}]},
+        {"hole_number":4,"par":4,"handicap_index":2,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":250,"distance_m_source":"official","source_distance":250,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":230,"distance_m_source":"official","source_distance":230,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":215,"distance_m_source":"official","source_distance":215,"source_unit":"m"}]},
+        {"hole_number":5,"par":3,"handicap_index":7,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":167,"distance_m_source":"official","source_distance":167,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":150,"distance_m_source":"official","source_distance":150,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":150,"distance_m_source":"official","source_distance":150,"source_unit":"m"}]},
+        {"hole_number":6,"par":5,"handicap_index":4,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":405,"distance_m_source":"official","source_distance":405,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":393,"distance_m_source":"official","source_distance":393,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":375,"distance_m_source":"official","source_distance":375,"source_unit":"m"}]},
+        {"hole_number":7,"par":4,"handicap_index":8,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":230,"distance_m_source":"official","source_distance":230,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":205,"distance_m_source":"official","source_distance":205,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":170,"distance_m_source":"official","source_distance":170,"source_unit":"m"}]},
+        {"hole_number":8,"par":4,"handicap_index":6,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":235,"distance_m_source":"official","source_distance":235,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":208,"distance_m_source":"official","source_distance":208,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":208,"distance_m_source":"official","source_distance":208,"source_unit":"m"}]},
+        {"hole_number":9,"par":3,"handicap_index":5,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":173,"distance_m_source":"official","source_distance":173,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":158,"distance_m_source":"official","source_distance":158,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":140,"distance_m_source":"official","source_distance":140,"source_unit":"m"}]}
+      ]
+    }
+  ]
+}
