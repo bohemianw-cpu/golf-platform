@@ -11,7 +11,7 @@
       "verification_status": "pending",
       "review_notes": [
         "에코랜드 공식 사이트는 Wild, Beach Hills, Eco 3개 코스를 각각 9홀로 안내합니다. 코스별 표의 파 합계는 36입니다.",
-        "티 거리의 미터 단위는 공식 홀 공략 페이지의 BLUE/WHITE/GOLD/RED m 표기를 기준으로 했습니다. 코스 제원표·홀 공략 자료의 상이 값을 홀별 review_notes에 남겨, 담당자가 조정하기 전까지 구장과 라우트는 pending 상태입니다.",
+        "와일드 코스는 제원표와 9개 홀 공략 페이지의 파·핸디캡·BLUE/WHITE/GOLD/RED 거리가 모두 일치해 라우트를 verified로 기록했습니다. 비치힐스는 3번 홀 GOLD 거리 1m 충돌, 에코 코스는 7번 홀 파 및 5번 홀 티 열 불일치가 남아 구장 전체는 pending입니다.",
         "확인일: 2026-10-12. 공식 코스 제원: https://www.ecolandjeju.co.kr/view/viewLink.do?page=homepage%2FENG%2Fcourse%2Fcourse_spec"
       ],
       "routes": [
@@ -22,7 +22,7 @@
           "primary_tee_code": "white",
           "source_url": "https://www.ecolandjeju.co.kr/view/viewLink.do?page=mobile%2FKOR%2Fcourse%2Fstrategy_wild",
           "source_data_url": "https://www.ecolandjeju.co.kr/view/viewLink.do?page=homepage%2FENG%2Fcourse%2Fcourse_spec",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "review_notes": [
             "공식 코스 제원표의 BLUE/WHITE/GOLD/RED 거리와 PAR 합계는 각각 3,194/2,980/2,742/2,455m 및 파36으로 홀별 수치 합계와 일치합니다. 공식 공략 페이지에서 각 홀 HDCP 및 티별 m 단위를 대조했습니다.",
             "공식 코스 제원표의 티 합계: BLUE 3194m / WHITE 2980m / GOLD 2742m / RED 2455m / PAR 36. 홀별 핸디캡과 단위는 공식 홀 공략 페이지에서 확인했습니다. 상세 홀 페이지 값 합산: BLUE/WHITE/GOLD/RED 3194/2980/2742/2455m."
