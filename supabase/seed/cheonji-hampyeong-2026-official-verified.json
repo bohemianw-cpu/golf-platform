@@ -1,0 +1,41 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "천지CC",
+      "name": "천지CC",
+      "region": "전남",
+      "address": "전남 함평군 함장로 889-11",
+      "hole_count": 9,
+      "verification_status": "verified",
+      "review_notes": [
+        "함평천지CC 공식 코스안내의 1~9홀별 PAR와 길이(m)를 입력함. 공식 페이지에는 티 종류별 거리가 공개되지 않아 홀마다 ‘공식 거리 (티 미표기)’ 한 행만 저장하고 티 선택을 비활성화함. 공식 페이지의 HDCP 항목은 HTML 주석 처리되어 공개되지 않아 입력하지 않음."
+      ],
+      "routes": [
+        {
+          "route_code": "standard",
+          "display_name": "천지 코스",
+          "hole_count": 9,
+          "primary_tee_code": "official",
+          "verification_status": "verified",
+          "source_url": "https://www.hpnabicc.co.kr/html/golf_course/golf_course_02_01.asp",
+          "par_source_url": "https://www.hpnabicc.co.kr/html/golf_course/golf_course_02_01.asp",
+          "review_notes": [
+            "공식 각 홀 페이지에 PAR와 단일 거리(m)가 게시되어 모든 홀을 저장함. 이 코스자료는 함평천지CC의 공식 코스안내이며 DB MCST 식별명 ‘천지CC’ 주소와 일치함. 티별 거리는 게시되지 않아 추정하지 않음."
+          ],
+          "holes": [
+            { "hole_number": 1, "par": 5, "handicap_index": null, "tees": [{ "tee_code": "official", "tee_selection_available": false, "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 448, "distance_m_source": "official", "source_distance": 448, "source_unit": "m" }] },
+            { "hole_number": 2, "par": 3, "handicap_index": null, "tees": [{ "tee_code": "official", "tee_selection_available": false, "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 157, "distance_m_source": "official", "source_distance": 157, "source_unit": "m" }] },
+            { "hole_number": 3, "par": 4, "handicap_index": null, "tees": [{ "tee_code": "official", "tee_selection_available": false, "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 358, "distance_m_source": "official", "source_distance": 358, "source_unit": "m" }] },
+            { "hole_number": 4, "par": 4, "handicap_index": null, "tees": [{ "tee_code": "official", "tee_selection_available": false, "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 332, "distance_m_source": "official", "source_distance": 332, "source_unit": "m" }] },
+            { "hole_number": 5, "par": 4, "handicap_index": null, "tees": [{ "tee_code": "official", "tee_selection_available": false, "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 332, "distance_m_source": "official", "source_distance": 332, "source_unit": "m" }] },
+            { "hole_number": 6, "par": 3, "handicap_index": null, "tees": [{ "tee_code": "official", "tee_selection_available": false, "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 128, "distance_m_source": "official", "source_distance": 128, "source_unit": "m" }] },
+            { "hole_number": 7, "par": 4, "handicap_index": null, "tees": [{ "tee_code": "official", "tee_selection_available": false, "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 318, "distance_m_source": "official", "source_distance": 318, "source_unit": "m" }] },
+            { "hole_number": 8, "par": 4, "handicap_index": null, "tees": [{ "tee_code": "official", "tee_selection_available": false, "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 374, "distance_m_source": "official", "source_distance": 374, "source_unit": "m" }] },
+            { "hole_number": 9, "par": 5, "handicap_index": null, "tees": [{ "tee_code": "official", "tee_selection_available": false, "display_name": "공식 거리 (티 미표기)", "tee_color": "#64748b", "distance_m": 448, "distance_m_source": "official", "source_distance": 448, "source_unit": "m" }] }
+          ]
+        }
+      ]
+    }
+  ]
+}
