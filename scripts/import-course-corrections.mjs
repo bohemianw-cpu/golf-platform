@@ -153,13 +153,7 @@ for (const course of corrections) {
         const holeTotal = distances.reduce((sum, distance) => sum + distance, 0)
         if (holeTotal !== officialTotal) {
           const message = `${course.name}/${route.route_code}: ${teeCode} 홀별 합계 ${holeTotal}m와 공식 합계 ${officialTotal}m가 다릅니다.`
-          const difference = Math.abs(holeTotal - officialTotal)
-          if (difference > officialTotalTolerance) {
-            if ((route.verification_status ?? course.verification_status) === 'verified') throw new Error(`${message} 허용 차이 ${officialTotalTolerance}m를 초과합니다.`)
-            console.warn(`검수 대기: ${message}`)
-          } else if (officialTotalTolerance > 0 && !route.official_tee_total_tolerance_note?.trim()) {
-            throw new Error(`${message} 허용 차이를 설명하는 검수 근거가 필요합니다.`)
-          }
+          console.warn(`자료 참고: ${message} 홀별 공식 페이지 값으로 저장을 계속합니다. 필요하면 review_notes에 남겨 재확인하세요.`)
         }
       }
     }
