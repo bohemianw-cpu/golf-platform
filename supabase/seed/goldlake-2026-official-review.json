@@ -13,7 +13,7 @@
       "review_notes": [
         "MCST 카탈로그는 18홀로 등록되어 있으나 현재 공식 홈페이지는 36홀(12,860m) 및 4개 9홀 코스로 표기합니다.",
         "현재 공식 코스 페이지(2026 사이트)의 Gold/Lake/Hill/Valley 기준 전장은 각각 3,182m/3,275m/3,330m/3,071m입니다. 저장된 홀별 골드티 합계는 3,140m/3,317m/3,330m/3,071m로, 회원제 Gold와 Lake는 각각 42m 차이가 납니다.",
-        "KGA 2024 코스레이팅은 Gold+Lake GOLD 7,061yd, Hill+Valley GOLD 6,999yd입니다. 홀별 Gold+Lake 합계는 KGA와 약 5yd 차이, Hill+Valley 합계는 일치합니다. 코스 법인과 36홀 구성은 확인했으며 Gold/Lake 개별 전장 충돌은 해당 라우트의 검수 대기로 관리합니다.",
+        "KGA 2024 코스레이팅은 Gold+Lake GOLD 7,061yd, Hill+Valley GOLD 6,999yd입니다. 홀별 지도 합계는 Hill+Valley 6,401m로 KGA와 일치합니다. Gold/Lake는 개별 지도 거리 합계와 현재 홈페이지 코스개요가 각각 42m 차이나지만, 티 거리는 각 공식 홀 지도에서 확인한 값을 저장하고 코스개요 충돌은 별도 검수 메모로 보존합니다.",
         "공식 티 지도는 골드·흰색·회색·빨강 마커를 보여줍니다. 일부 홀에 흰색 마커가 여러 개이며 별도 이름이 없어 흰색 A/B/C는 지도상 거리 순서로 임시 구분했습니다. 홀별로 공통되지 않는 흰색 세트는 라운드 티 선택에 노출하지 않습니다."
       ],
       "routes": [
@@ -24,10 +24,10 @@
           "primary_tee_code": "gold",
           "source_url": "https://www.goldlake.co.kr/course/course01",
           "source_image_pattern": "https://www.goldlake.co.kr/images/course/gNN.jpg",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "official_course_overview_distance_m": 3182,
           "review_notes": [
-            "현재 공식 코스개요는 3,182m, 홀 지도 골드티 합계는 3,140m로 42m 차이가 있어 검수 대기입니다."
+            "홀 1~9 파와 티 색상별 거리를 현재 공식 이미지와 대조했습니다. 홀별 골드티 합계는 3,140m이며 현재 공식 코스개요(3,182m)와 42m 차이는 코스 요약값 검수 메모로 보존합니다. 일부 홀의 두 번째 흰색 티는 9홀 공통이 아니므로 선택에서 제외하며 블랙티는 제공되지 않습니다."
           ],
           "holes": [
             {
@@ -462,10 +462,10 @@
           "primary_tee_code": "gold",
           "source_url": "https://www.goldlake.co.kr/course/course02",
           "source_image_pattern": "https://www.goldlake.co.kr/images/course/lNN.jpg",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "official_course_overview_distance_m": 3275,
           "review_notes": [
-            "현재 공식 코스개요는 3,275m, 홀 지도 골드티 합계는 3,317m로 42m 차이가 있어 검수 대기입니다."
+            "홀 1~9 파와 티 색상별 거리를 현재 공식 이미지와 대조했습니다. 홀별 골드티 합계는 3,317m이며 현재 공식 코스개요(3,275m)와 42m 차이는 코스 요약값 검수 메모로 보존합니다. 일부 홀의 추가 흰색 티는 9홀 공통이 아니므로 선택에서 제외하며 블랙티는 제공되지 않습니다."
           ],
           "holes": [
             {
