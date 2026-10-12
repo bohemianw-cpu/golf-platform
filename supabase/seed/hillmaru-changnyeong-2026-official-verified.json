@@ -1,0 +1,635 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "힐마루CC",
+      "name": "동훈힐마루CC",
+      "region": "경남",
+      "address": "경상남도 창녕군 장마면 영산계성로 469-195",
+      "aliases": [
+        "힐마루CC",
+        "힐마루 컨트리클럽",
+        "동훈 힐마루 골프&온천리조트"
+      ],
+      "hole_count": 36,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "운영사 공식 코스제원표에 게시된 힐코스(대중제) 동·서 및 마루코스(회원제) 남·북 4개 9홀 경로를 등록했습니다. 공식 표의 거리 소계는 힐 동 3,110m, 힐 서 3,375m, 마루 남 3,385m, 마루 북 3,490m입니다.",
+        "홀별 표에는 PAR와 단일 미터 거리가 있고 티 종류별 거리는 구분되지 않아 `공식 거리 (티 미표기)`로 저장했습니다.",
+        "마루 북 10~18홀의 개별 공식 거리 합은 3,370m로 표 소계 3,490m와 120m 다릅니다. 개별 거리 원문값을 저장하고 소계 충돌을 검수 메모에 남겼습니다. 다른 경로의 개별 거리 합은 공식 소계와 일치합니다.",
+        "운영사 공식 자료: https://www.hillmaru.com/Club/CourseInfo.aspx 및 홀별 상세 https://www.hillmaru.com/Club/iframe/hill_01.html~hill_18.html, https://www.hillmaru.com/Club/iframe/maru_01.html~maru_18.html (2026-10-12 확인)."
+      ],
+      "routes": [
+        {
+          "route_code": "HILL_EAST",
+          "display_name": "힐코스 동 (1~9홀)",
+          "hole_count": 9,
+          "primary_tee_code": "official",
+          "verification_status": "verified",
+          "source_url": "https://www.hillmaru.com/Club/iframe/hill_01.html",
+          "par_source_url": "https://www.hillmaru.com/Club/CourseInfo.aspx",
+          "official_tee_totals_m": {
+            "official": 3110
+          },
+          "review_notes": [
+            "공식 코스제원표의 해당 9홀 PAR 및 단일 거리(m)를 저장했습니다. 자료에는 티별 표기가 없어 공식 거리 (티 미표기) 하나로 저장했습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 370,
+                  "distance_m_source": "official",
+                  "source_distance": 370,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 395,
+                  "distance_m_source": "official",
+                  "source_distance": 395,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 360,
+                  "distance_m_source": "official",
+                  "source_distance": 360,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 525,
+                  "distance_m_source": "official",
+                  "source_distance": 525,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 385,
+                  "distance_m_source": "official",
+                  "source_distance": 385,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 140,
+                  "distance_m_source": "official",
+                  "source_distance": 140,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 455,
+                  "distance_m_source": "official",
+                  "source_distance": 455,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 150,
+                  "distance_m_source": "official",
+                  "source_distance": 150,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 330,
+                  "distance_m_source": "official",
+                  "source_distance": 330,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "HILL_WEST",
+          "display_name": "힐코스 서 (10~18홀)",
+          "hole_count": 9,
+          "primary_tee_code": "official",
+          "verification_status": "verified",
+          "source_url": "https://www.hillmaru.com/Club/iframe/hill_10.html",
+          "par_source_url": "https://www.hillmaru.com/Club/CourseInfo.aspx",
+          "official_tee_totals_m": {
+            "official": 3375
+          },
+          "review_notes": [
+            "공식 코스제원표의 해당 9홀 PAR 및 단일 거리(m)를 저장했습니다. 자료에는 티별 표기가 없어 공식 거리 (티 미표기) 하나로 저장했습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 395,
+                  "distance_m_source": "official",
+                  "source_distance": 395,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 375,
+                  "distance_m_source": "official",
+                  "source_distance": 375,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 470,
+                  "distance_m_source": "official",
+                  "source_distance": 470,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 410,
+                  "distance_m_source": "official",
+                  "source_distance": 410,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 185,
+                  "distance_m_source": "official",
+                  "source_distance": 185,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 365,
+                  "distance_m_source": "official",
+                  "source_distance": 365,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 405,
+                  "distance_m_source": "official",
+                  "source_distance": 405,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 225,
+                  "distance_m_source": "official",
+                  "source_distance": 225,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 545,
+                  "distance_m_source": "official",
+                  "source_distance": 545,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "MARU_SOUTH",
+          "display_name": "마루코스 남 (1~9홀)",
+          "hole_count": 9,
+          "primary_tee_code": "official",
+          "verification_status": "verified",
+          "source_url": "https://www.hillmaru.com/Club/iframe/maru_01.html",
+          "par_source_url": "https://www.hillmaru.com/Club/CourseInfo.aspx",
+          "official_tee_totals_m": {
+            "official": 3385
+          },
+          "review_notes": [
+            "공식 코스제원표의 해당 9홀 PAR 및 단일 거리(m)를 저장했습니다. 자료에는 티별 표기가 없어 공식 거리 (티 미표기) 하나로 저장했습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 420,
+                  "distance_m_source": "official",
+                  "source_distance": 420,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 520,
+                  "distance_m_source": "official",
+                  "source_distance": 520,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 230,
+                  "distance_m_source": "official",
+                  "source_distance": 230,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 390,
+                  "distance_m_source": "official",
+                  "source_distance": 390,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 315,
+                  "distance_m_source": "official",
+                  "source_distance": 315,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 395,
+                  "distance_m_source": "official",
+                  "source_distance": 395,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 540,
+                  "distance_m_source": "official",
+                  "source_distance": 540,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 200,
+                  "distance_m_source": "official",
+                  "source_distance": 200,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 375,
+                  "distance_m_source": "official",
+                  "source_distance": 375,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "MARU_NORTH",
+          "display_name": "마루코스 북 (10~18홀)",
+          "hole_count": 9,
+          "primary_tee_code": "official",
+          "verification_status": "verified",
+          "source_url": "https://www.hillmaru.com/Club/iframe/maru_10.html",
+          "par_source_url": "https://www.hillmaru.com/Club/CourseInfo.aspx",
+          "official_tee_totals_m": {
+            "official": 3490
+          },
+          "review_notes": [
+            "공식 코스제원표의 해당 9홀 PAR 및 단일 거리(m)를 저장했습니다. 자료에는 티별 표기가 없어 공식 거리 (티 미표기) 하나로 저장했습니다. 홀별 거리 합은 3,370m이나 제원표 소계는 3,490m로 120m 차이가 있어 홀별 값을 보존하고 차이를 기록했습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 410,
+                  "distance_m_source": "official",
+                  "source_distance": 410,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 205,
+                  "distance_m_source": "official",
+                  "source_distance": 205,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 395,
+                  "distance_m_source": "official",
+                  "source_distance": 395,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 340,
+                  "distance_m_source": "official",
+                  "source_distance": 340,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 560,
+                  "distance_m_source": "official",
+                  "source_distance": 560,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 165,
+                  "distance_m_source": "official",
+                  "source_distance": 165,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 510,
+                  "distance_m_source": "official",
+                  "source_distance": 510,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 375,
+                  "distance_m_source": "official",
+                  "source_distance": 375,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 거리 (티 미표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 410,
+                  "distance_m_source": "official",
+                  "source_distance": 410,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
