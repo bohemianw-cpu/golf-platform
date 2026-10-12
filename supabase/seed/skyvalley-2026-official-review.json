@@ -996,9 +996,9 @@
           "primary_tee_code": "black",
           "source_url": "https://www.skyvalley.co.kr/skyvalley/swp/mountain_course",
           "source_data_url": "https://www.skyvalley.co.kr/static/pc/origin/resources/json/mountain.json",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "review_notes": [
-            "공식 코스개요 표의 MOUNTAIN 4홀 BLACK은 570m이나, 공식 상세 페이지는 507m로 다릅니다. 현재 보정값은 코스개요 표 기준이며 차이 확인 전 검수 대기합니다."
+            "최신 공식 코스개요(https://www.skyvalley.co.kr/skyvalley/swp/course_intro)의 9홀 파·티별 거리를 대조했습니다. 공식 상세 JSON(2021-02-04)은 4홀 BLACK 507m 및 블랙 합계 3,087m를 기록하지만, 최신 코스개요는 4홀 570m와 블랙 합계 3,150m를 명시하며 홀별 합계가 일치합니다. 현재 값은 최신 공식 코스개요 기준으로 검증했습니다."
           ],
           "holes": [
             {
