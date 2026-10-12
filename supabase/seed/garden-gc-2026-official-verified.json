@@ -1,0 +1,267 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "match_name": "가든GC",
+    "name": "가든GC",
+    "region": "경북",
+    "address": "경상북도 경주시 불국로 289-17",
+    "aliases": [
+      "경주 코오롱호텔 가든 골프장",
+      "코오롱호텔 가든골프",
+      "Garden Golf"
+    ],
+    "hole_count": 9,
+    "supports_screen": false,
+    "review_notes": [
+      "운영사 공식 코스 상세표의 9개 홀 PAR·HCP와 A(m)/M(m) 티 거리를 그대로 저장했습니다. A 합계는 2,042m, M 합계는 2,003m로 각 홀 합계와 일치합니다.",
+      "코오롱호텔 공식 안내 페이지는 총연장 2,029m로 표기해 운영사 상세표와 다릅니다. 상세 홀별 원문값을 유지하고 차이를 관리자 메모에 남겼습니다.",
+      "A/M은 공식 표기 그대로 보존했으며 티 색상이나 이용자 유형으로 의미를 추정하지 않았습니다. 출처: https://www.kolongolf.com/swp/club 및 https://www.kolonhotel.co.kr/golf (2026-10-12 확인)."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "COURSE",
+      "display_name": "코스",
+      "hole_count": 9,
+      "primary_tee_code": "a",
+      "verification_status": "verified",
+      "source_url": "https://www.kolongolf.com/swp/club",
+      "par_source_url": "https://www.kolongolf.com/swp/club",
+      "official_tee_totals_m": {
+        "a": 2042,
+        "m": 2003
+      },
+      "review_notes": [
+        "운영사 상세표의 A 총계 2,042m, M 총계 2,003m는 홀별 합계와 각각 일치합니다. 호텔 안내의 총연장 2,029m와 차이가 있습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 5,
+          "handicap_index": 2,
+          "tees": [
+            {
+              "tee_code": "a",
+              "display_name": "A 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 430,
+              "distance_m_source": "official",
+              "source_distance": 430,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "m",
+              "display_name": "M 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 428,
+              "distance_m_source": "official",
+              "source_distance": 428,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "handicap_index": 4,
+          "tees": [
+            {
+              "tee_code": "a",
+              "display_name": "A 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 270,
+              "distance_m_source": "official",
+              "source_distance": 270,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "m",
+              "display_name": "M 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 255,
+              "distance_m_source": "official",
+              "source_distance": 255,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 3,
+          "handicap_index": 9,
+          "tees": [
+            {
+              "tee_code": "a",
+              "display_name": "A 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 125,
+              "distance_m_source": "official",
+              "source_distance": 125,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "m",
+              "display_name": "M 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 120,
+              "distance_m_source": "official",
+              "source_distance": 120,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 3,
+          "handicap_index": 7,
+          "tees": [
+            {
+              "tee_code": "a",
+              "display_name": "A 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 59,
+              "distance_m_source": "official",
+              "source_distance": 59,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "m",
+              "display_name": "M 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 68,
+              "distance_m_source": "official",
+              "source_distance": 68,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 5,
+          "handicap_index": 3,
+          "tees": [
+            {
+              "tee_code": "a",
+              "display_name": "A 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 435,
+              "distance_m_source": "official",
+              "source_distance": 435,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "m",
+              "display_name": "M 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 430,
+              "distance_m_source": "official",
+              "source_distance": 430,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 3,
+          "handicap_index": 1,
+          "tees": [
+            {
+              "tee_code": "a",
+              "display_name": "A 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 130,
+              "distance_m_source": "official",
+              "source_distance": 130,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "m",
+              "display_name": "M 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 110,
+              "distance_m_source": "official",
+              "source_distance": 110,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 3,
+          "handicap_index": 8,
+          "tees": [
+            {
+              "tee_code": "a",
+              "display_name": "A 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 155,
+              "distance_m_source": "official",
+              "source_distance": 155,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "m",
+              "display_name": "M 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 153,
+              "distance_m_source": "official",
+              "source_distance": 153,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 4,
+          "handicap_index": 6,
+          "tees": [
+            {
+              "tee_code": "a",
+              "display_name": "A 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 233,
+              "distance_m_source": "official",
+              "source_distance": 233,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "m",
+              "display_name": "M 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 236,
+              "distance_m_source": "official",
+              "source_distance": 236,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "handicap_index": 5,
+          "tees": [
+            {
+              "tee_code": "a",
+              "display_name": "A 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 205,
+              "distance_m_source": "official",
+              "source_distance": 205,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "m",
+              "display_name": "M 티 (공식)",
+              "tee_color": "#64748b",
+              "distance_m": 203,
+              "distance_m_source": "official",
+              "source_distance": 203,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
