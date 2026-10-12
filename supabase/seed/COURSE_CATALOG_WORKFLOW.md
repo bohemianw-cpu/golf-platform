@@ -381,3 +381,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 원격 DB와 seed 대조: 기대 218개·실제 218개, 누락 0·초과 0·티 값 불일치 0·PAR 불일치 0. 동·남·서 각 PAR36으로 검수 완료 처리했습니다. 골프장 명칭은 요청한 규칙에 따라 레인보우힐스CC로 정규화했습니다.
 - 반영 후 원격 카탈로그: 총 516곳 — 검수 완료 258, pending 253, 반려 5. 충북 pending은 킹스데일CC 1곳입니다.
 - 자료: `rainbow-hills-2026-official-verified.json` (2026-10-13 확인).
+
+### 2026-10-13 — 파인스톤CC
+- 운영사 공식 [코스 공략 페이지](https://www.pinestonecc.com/course/tip)와 홈페이지가 사용하는 [공식 홀 데이터 API - 파인](https://www.pinestonecc.com/api/v1/hole/course/14), [공식 홀 데이터 API - 스톤](https://www.pinestonecc.com/api/v1/hole/course/15)에서 파인·스톤 각 9홀의 PAR·HDCP와 Black/Blue/White/Red 티별 거리를 확인해 반영했습니다. 홈페이지의 코스 거리 단위 설정은 METER이며, API의 meter 수치를 원문 그대로 저장했습니다.
+- 파인·스톤 코스의 PAR 합계는 각각 36입니다. 원격 DB와 원문 대조 결과 코스 2개, 홀 18개, 티별 거리 72건이 모두 일치하고, HDCP 및 PAR도 전 홀 일치합니다. 공식 페이지에 존재하는 티만 등록했으며 파인 7번 Blue/White 153m, 스톤 3번 Blue/White 156m도 별개 티의 동일한 공식 수치로 보존했습니다.
+- 반영 후 원격 카탈로그: 총 516곳 — 검수 완료 259, 미진행 252, 반려 5. 지역별 미진행은 강원 55, 경기 142, 경북 1, 서울 1, 세종 1, 인천 12, 전남 1, 전북 3, 제주 28, 충남 7, 충북 1곳입니다. 부산·울산·경남 pending은 0곳입니다.
+- 자료: `pinestone-cc-2026-official-verified.json` (2026-10-13 확인).
