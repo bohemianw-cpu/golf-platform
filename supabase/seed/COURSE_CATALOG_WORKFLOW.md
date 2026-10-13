@@ -1,3 +1,7 @@
+### 2026-10-14 — 양주 CC 서코스·동코스
+- 운영사 공식 [서코스 1번 홀](https://www.yangjucc.co.kr/course/one/hole01.asp)과 [동코스 1번 홀](https://www.yangjucc.co.kr/course/two/hole01.asp)을 포함한 홀별 도면에서 PAR·HDCP와 Black·Regular·Lady 티별 야드 거리를 입력했습니다. 원본 야드와 미터 환산값을 함께 보존했습니다. 자료: `yangju-cc-2026-official-verified.json`.
+- 원격 DB에서 2개 경로·18홀·54개 티 행을 확인했습니다. PAR·HDCP·티 거리와 원본 단위가 자료와 일치하고 구장·경로 검수 상태는 `verified`입니다. 카탈로그는 총 512곳: 검수 완료 423, 미진행 88, 반려 1입니다. 미진행은 경기 38, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC의 추가 확인은 별도 요청까지 보류합니다.
+
 ### 2026-10-14 — 플라자CC 용인 타이거·라이온
 - 운영사 공식 [타이거 1번 홀](https://www.plazacc.co.kr/plzcc/irsweb/golf2/course/yongin/tigerCourse_hole1.do?brch_cd=0400&ccg_hole=1&cors_cd=01)과 [라이온 1번 홀](https://www.plazacc.co.kr/plzcc/irsweb/golf2/course/yongin/lionCourse_hole1.do?brch_cd=0400&ccg_hole=1&cors_cd=02)을 포함한 전체 홀 상세 페이지에서 PAR 및 Back·Regular·Lady 거리를 m로 입력했습니다. 공식 페이지에 티 색상명은 없어 티 이름을 보존했습니다. 자료: `plaza-cc-yongin-2026-official-verified.json`.
 - 타이거 12번 홀 제목은 363m, 같은 페이지 티 정보 표의 Back Tee는 360m로 다르게 표시되어 티별 거리 표의 360m를 사용하고 메모했습니다. 원격 DB와 seed를 대조해 2개 경로·36홀·108개 티 행에서 불일치와 추가 행이 없음을 확인하고 `verified` 처리했습니다. 카탈로그는 총 512곳: 검수 완료 422, 미진행 89, 반려 1입니다.
