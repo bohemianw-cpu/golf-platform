@@ -260,7 +260,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 엘리체CC(전남 함평): 운영사 공식 코스 제원표에서 Imperial·Majesty·Palace 각 9홀 PAR·HDCP와 Champion/Regular/Lady 티별 미터 거리 81행을 반영했습니다. 세 코스 모두 PAR36이며 티별 홀 합계가 공식 TOTAL과 일치합니다. 티 색상은 공식 자료에 없어 화면 구분용 대표색을 사용했습니다. 코스공략 페이지와 제원표의 거리 차이(Imperial 9번 382/385m, Majesty 3번 175/172m, 4번 365/355m)는 티별 합계와 홀별 합계가 일치하는 제원표 기준으로 저장했습니다. 원격 DB와 seed의 구장·3경로·27홀·81티 행 전수 대조에서 불일치 0건을 확인했습니다. 자료: `elliche-cc-2026-official-verified.json`; 출처: [공식 코스 제원표](https://www.hpelichecc.co.kr/hampyeong/html/company/company04.asp), [공식 코스공략](https://www.hpelichecc.co.kr/hampyeong/html/course/course01.asp) (2026-10-13 확인).
 
 2026-10-13 현재 원격 카탈로그: 검수 완료 225개, 미진행 289개, 반려 2개(총 516개).
-- 포세븐금강CC(전북 익산): 운영사 공식 West·East 코스 상세표의 각 9홀 PAR 및 Black/Blue/White/Yellow/Red 미터 거리 90행을 반영했습니다. 각 경로 PAR36이며 홀별 티 거리 합계가 공식 전체 코스안내 Total과 일치합니다. 공식 페이지는 HDCP를 게시하지 않아 입력하지 않았습니다. 동일 주소·18홀의 기존 웅포CC 레코드는 경로와 라운드가 없음을 확인해 반려 상태로 보존하고 정식 구장 별칭으로 병합했습니다. DB/seed 전수 비교 결과 90행, 불일치 0건입니다. 자료: `fourseven-geumgang-2026-official-verified.json`; 출처: [공식 서코스](https://www.fourseven.co.kr/course/west), [공식 동코스](https://www.fourseven.co.kr/course/east), [공식 코스 전체 안내](https://www.fourseven.co.kr/course/intro) (2026-10-13 확인).
+- 포세븐금강CC(전북 익산): 운영사 공식 West·East 코스 상세표의 각 9홀 PAR 및 Black/Blue/White/Yellow/Red 미터 거리 90행을 반영했습니다. 각 경로 PAR36이며 홀별 티 거리 합계가 공식 전체 코스안내 Total과 일치합니다. 공식 페이지는 HDCP를 게시하지 않아 입력하지 않았습니다. 이후 사용자 제공 지도로 같은 주소의 웅포CC가 인접한 별도 시설임을 확인해 두 구장을 분리했습니다. 웅포CC는 독립 pending 레코드로 유지하며 포세븐의 별칭으로 연결하지 않습니다. DB/seed 전수 비교 결과 90행, 불일치 0건입니다. 자료: `fourseven-geumgang-2026-official-verified.json`; 출처: [공식 서코스](https://www.fourseven.co.kr/course/west), [공식 동코스](https://www.fourseven.co.kr/course/east), [공식 코스 전체 안내](https://www.fourseven.co.kr/course/intro) (2026-10-13 확인).
 - 에스페란사GC(전북 김제): 공식 홈페이지 `https://esperan.modoo.at/` 연결이 확인되지 않았고, 검색된 공개 자료에서 홀 수가 7·9·10으로 상충합니다. 공식 홀별 PAR·티 거리를 확인할 수 없어 입력하지 않고 pending으로 유지합니다 (2026-10-13 확인).
 - 케이밸리CC(전북 완주): 운영사 공식 홀별 공략도 1~9의 PAR와 Red/White/Blue/Black 미터 거리 36행을 저장했습니다. 각 티 홀별 합계는 Red 2,435m·White 2,643m·Blue 2,857m·Black 3,042m입니다. 공식 코스제원 요약표는 Red 2,435m·White 2,882m·Blue 3,057m·METER 3,034m로 상세값과 차이가 있어 직접 색상별 거리가 표시된 홀 상세를 기준으로 저장하고 메모했습니다. 원격 DB와 seed 비교는 36행, 불일치 0건입니다. 자료: `k-valley-cc-2026-official-verified.json`; 출처: [공식 코스제원 요약](https://www.kvalleycc.co.kr/mobile/course/courseIntro.asp), [공식 홀별 공략도 1~9](https://www.kvalleycc.co.kr/course/e1.asp)~`e9.asp` (2026-10-13 확인).
 - NEW 순창CC(기존 DB명 디케이레저): 공식 홈페이지로 등록된 `sunchangcc.co.kr`에 현재 골프장과 무관한 콘텐츠가 노출되고 공식 코스 자료를 확인하지 못했습니다. 제3자 스코어카드 수치만으로 거리를 확정하지 않고 pending으로 유지합니다 (2026-10-13 확인).
@@ -1044,7 +1044,14 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 현재 원격 카탈로그는 총 516곳: 검수 완료 364, 미진행 146, 반려 6입니다. 미진행은 경기 94, 강원 25, 제주 25, 인천 1, 충남 1곳입니다. 부산·경남·울산·대구·경북에는 미진행 구장이 없습니다.
 
 ### 2026-10-13 — 중복 MCST 구장 행을 canonical 구장으로 통합
-- 원격 DB의 rejected 6곳을 재검토했습니다. 로얄링스2→로얄링스CC, 솔라고CC2→솔라고CC, 아난티남해CC→아난티남해GC, 오시아노GC→파인비치골프링크스, 웅포CC→포세븐금강CC의 5개는 같은 시설을 가리키는 중복 MCST 행이었습니다. 모두 라운드 0건·경로 0개였고, MCST 명칭은 canonical 구장의 aliases에 이미 보존되어 있어 중복 행을 제거했습니다.
-- 코스모스CC는 사용자가 확인한 폐업 독립 시설이며 골프존카운티 영암45와 별개이므로 중복 통합에서 제외하고 rejected 상태로 유지했습니다. 이 결과 rejected는 6건에서 실제 폐업 1건으로 줄었습니다.
-- MCST 재적재 시 canonical 구장의 aliases와도 대조하도록 `scripts/import-mcst-courses.mjs`를 보완해, 통합된 별칭이 새 pending 중복 행으로 다시 생성되지 않게 했습니다. 중복 통합 내역 및 MCST 원본 ID는 `course-catalog-duplicate-merges-2026-10-13.json`에 보존합니다. 관련 코스 seed 파일도 중복 rejected 항목을 제거했습니다.
-- 원격 카탈로그는 총 511곳: 검수 완료 364, 미진행 146, 반려 1입니다. 미진행은 경기 94, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
+- 원격 DB의 rejected 6곳을 재검토했습니다. 로얄링스2→로얄링스CC, 솔라고CC2→솔라고CC, 아난티남해CC→아난티남해GC, 오시아노GC→파인비치골프링크스의 4개는 실제 중복 MCST 행이며 라운드 0건·경로 0개였습니다. MCST 명칭은 canonical 구장의 aliases에 보존하고 중복 행을 제거했습니다.
+- 웅포CC는 사용자가 제공한 지도로 포세븐금강CC와 인접한 별도 구장임을 확인했습니다. 같은 MCST 주소를 사용하지만 포세븐 별칭에서 제거하고 독립 `pending` 구장으로 복구했습니다. 코스 자료는 아직 수집되지 않았습니다.
+- 코스모스CC는 사용자가 확인한 폐업 독립 시설이며 골프존카운티 영암45와 별개이므로 중복 통합에서 제외하고 rejected 상태로 유지했습니다. MCST 재적재 시 aliases를 대조하도록 `scripts/import-mcst-courses.mjs`를 보완했습니다. 통합 내역과 원본 ID는 `course-catalog-duplicate-merges-2026-10-13.json`에 보존합니다.
+- 현재 원격 카탈로그는 총 512곳: 검수 완료 364, 미진행 147, 반려 1입니다. 미진행은 경기 94, 강원 25, 제주 25, 인천 1, 전북 1, 충남 1곳입니다.
+
+### 2026-10-13 — KCC 금강CC 동·서·남 코스 공식 자료
+- 운영사 공식 [코스 개요와 코스레이팅](https://kccgolf.co.kr/common/course/course.php), [회원제·비회원제 이용요금](https://kccgolf.co.kr/common/operation/operation03.php), [회사 연혁](https://kccgolf.co.kr/common/company/company01.php) 및 홀별 상세에서 동·서·남 각 9홀의 PAR·HDCP와 Black/Blue/White/Yellow/Red 거리를 확인했습니다. 상세 홀 페이지는 `course01.php`~`course01_9.php`(서), `course02.php`~`course02_9.php`(남), `course03.php`~`course03_9.php`(동)입니다. 공식 요금 페이지가 동코스를 비회원제 9홀로 지정해 대중제 카탈로그에 동코스를, 회원제 카탈로그에 서·남코스를 저장했습니다.
+- 홀별 표는 각 홀의 좌·우 그린별 거리를 모두 제공해 총 270개 티 행으로 저장했습니다. 공식 개요의 단일 코스 총거리와 Black 홀별 합이 일치하지 않는 값은 각 경로 메모에 남겼고, 공식 개별 홀 표의 수치를 유지했습니다.
+- 원격 DB 대조 결과 경로 3개·홀 27개·티 행 270개가 seed와 일치하고 PAR·HDCP·티 거리·그린·선택 상태 불일치 0건입니다. 금강CC(대중/회원) 두 레코드와 모든 경로를 verified로 확인했습니다. 자료 파일: `kumkang-cc-2026-official-verified.json`.
+- 사용자 지도 확인을 반영해 웅포CC는 포세븐금강CC와 다른 구장으로 분리했습니다. 웅포CC는 독립 pending 레코드로 복구했고 포세븐금강CC의 aliases에서 제외했습니다. 웅포CC 홀별 자료는 미수집입니다.
+- 원격 카탈로그는 총 512곳: 검수 완료 366, 미진행 145, 반려 1입니다. 미진행은 경기 92, 강원 25, 제주 25, 인천 1, 전북 1, 충남 1곳입니다.
