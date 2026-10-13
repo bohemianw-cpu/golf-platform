@@ -922,3 +922,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 공식 코스 소개에 기재된 티별 홀 합계를 홀별 값과 대조했습니다. 서원코스 BLUE/WHITE/GOLD/RED는 3,457/3,184/2,844/2,593yd, 밸리코스는 3,553/3,284/2,976/2,705yd로 전부 공식 합계와 일치합니다.
 - 원격 DB에서 `서원밸리CC` 및 SEOWON/VALLEY 경로를 `verified`로 반영했습니다. 관리자 적재기의 원격 `--check` 결과 코스 2개·홀 18개·티 72개 모두 seed와 일치했습니다.
 - 현재 카탈로그는 총 516곳: 검수 완료 341, 미진행 169, 반려 6입니다. 미진행 지역은 강원 39, 경기 102, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
+
+### 2026-10-13 — 서원힐스CC 공식 웨스트·사우스·이스트 코스
+- 운영사 공식 [코스제원](https://www.seowongolf.co.kr/hills/course/course-info) 및 [웨스트](https://www.seowongolf.co.kr/hills/course/west)·[사우스](https://www.seowongolf.co.kr/hills/course/south)·[이스트](https://www.seowongolf.co.kr/hills/course/east) 홀별 공략 페이지에서 세 경로 각 9홀의 PAR·HDCP와 BLACK/BLUE/WHITE/GOLD/RED 야드 거리를 반영했습니다. 전체 27홀·PAR108·135개 티 거리행입니다. 1yd=0.9144m로 가장 가까운 1m에 환산하고 야드 원문도 보존했습니다. 자료 파일: `seowon-hills-2026-official-verified.json`.
+- 각 경로 5개 티 홀별 합계는 공식 코스제원표와 모두 일치합니다. 다만 코스제원 상세 전장은 웨스트+사우스 Black 합계 7,066yd와 일치하지만 이스트 안내 전장 3,311yd는 이스트 홀별 Black 합계 3,523yd와 212yd 차이가 있어 해당 경로 관리자 메모에 남겼습니다. 홀별 공식 표와 상세 값을 유지했습니다.
+- 원격 DB에서 `서원힐스CC`와 WEST/SOUTH/EAST 경로를 `verified`로 반영했습니다. 관리자 적재기의 원격 `--check` 결과 코스 3개·홀 27개·티 135개가 seed와 모두 일치했습니다.
+- 현재 카탈로그는 총 516곳: 검수 완료 342, 미진행 168, 반려 6입니다. 미진행 지역은 강원 39, 경기 101, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
