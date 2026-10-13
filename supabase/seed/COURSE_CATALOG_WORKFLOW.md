@@ -1166,3 +1166,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [회원제 코스표](https://baliosgc.com/mcourse/m_guide_out.asp)에서 동·서·남 각 9홀의 PAR, 좌·우 그린별 HDCP 및 Back/Regular 티 거리를 반영했습니다. 공식 거리 단위는 m이며, 티는 Back/Regular 명칭만 있고 공식 색상 표기는 없어 두 티에 중립색 칩을 사용합니다. 동일 주소의 발리오스CC 비회원제와 구분된 회원제 27홀 자료입니다. 자료: `balios-membership-2026-official-verified.json`.
 - 원격 DB 대조 결과 3개 경로·27홀·108개 티/그린 행이며 PAR·그린·티·거리·HDCP 대조는 108/108 일치합니다. 동코스 Back 우그린의 홀별 합계는 3,171m로 공식 TOTAL 3,121m와 50m 차이가 있어 홀별 값을 유지하고 경로 검수 메모에 남겼습니다. 나머지 공식 티별 합계는 홀별 값과 일치합니다.
 - 원격 카탈로그는 총 512곳: 검수 완료 387, 미진행 124, 반려 1입니다. 웅포CC·광양CC 추가 확인은 사용자 지시에 따라 보류합니다.
+
+### 2026-10-13 — 신라CC 서·남·동 공식 코스 자료
+- 원더클럽 운영사 공식 [코스전경 및 제원](https://m.onetheclub.com/shilla/course) 표에서 서·남·동 각 9홀의 PAR·HDCP와 Blue/White/Gold/Red 티별 홀 거리를 반영했습니다. 원본 단위는 yd이며 각 거리의 미터값은 0.9144 환산 후 반올림했습니다. 공식 표에서 `-`로 표시한 Gold 거리는 입력하지 않았습니다. 자료: `shilla-cc-2026-official-verified.json`.
+- 원격 DB에서 구장·3개 코스 verified, 27홀·104개 티 행을 확인했습니다. JSON 원본과 DB를 홀·티·PAR·HDCP·거리·단위·표시명·색상까지 비교해 104/104 일치했습니다. 공식 표의 West Blue 홀별 합은 3,513yd, TOTAL은 3,533yd(20yd 차이)이고 East Blue는 3,470yd 대 3,467yd(3yd 차이)여서 홀별 값은 유지하고 코스 검수 메모에 기록했습니다. South의 티별 홀 합계는 TOTAL과 일치합니다.
+- 원격 카탈로그는 총 512곳: 검수 완료 388, 미진행 123, 반려 1입니다. 웅포CC·광양CC 관련 추가 확인은 사용자 지시에 따라 보류합니다.
