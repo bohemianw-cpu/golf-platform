@@ -1,5 +1,11 @@
 # 골프장 카탈로그 적재와 검수
 
+### 2026-10-14 — 리앤리CC 레이크·하이랜드·스카이 코스
+- 운영사 공식 [코스 제원표](https://www.leenleecc.co.kr/course/course02.asp)에서 27홀의 Black·Blue·White·Red 거리(m), PAR, HDCP를 반영했습니다. 공식 표의 세부 홀 데이터를 기준으로 저장했으며 별도 티 합계 컬럼은 적재 기준에서 제외했습니다.
+- 원문에 명시된 코스개요 거리와 세부 티별 홀 거리 합이 일부 다릅니다. 또 스카이 Black 4번홀은 표에서 1,436m로 표시되지만 Black 코스 합계 3,167m와 나머지 홀을 대조하면 436m여서 436m로 입력했습니다. 해당 근거와 레이크 Blue 합계 표기 오류를 코스 및 경로 관리자 메모에 남겼습니다.
+- 원격 DB에서 3개 경로·27홀·108개 티 거리 행과 티별 합계를 대조했습니다. 구장과 경로 3개를 `verified`로 설정했습니다. 자료: `leenlee-cc-2026-official-verified.json`.
+- 카탈로그는 총 512곳: 검수 완료 405, 미진행 106, 반려 1입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
 ### 2026-10-14 — 파인리즈CC 파인·리즈·레이크 코스
 - 운영사 공식 [파인코스](https://m.pineridge.co.kr/course/course_intro11.asp), [리즈코스](https://m.pineridge.co.kr/course/course_intro12.asp), [레이크코스](https://m.pineridge.co.kr/course/course_intro13.asp) 제원표의 27홀 PAR·HDCP·METER를 입력했습니다. 티별 색상과 거리는 공개되지 않아 홀마다 `official_reference` 기준거리만 저장하고 티 선택은 비활성화했습니다. 자료: `pine-ridge-2026-official-reference-verified.json`.
 - 홀별 합계는 파인 3,328m, 리즈 3,366m, 레이크 3,415m이며 세 코스 합계 10,109m·PAR108은 운영사 표기와 일치합니다. 원격 DB에서 3개 경로·27홀·27개 공식 기준거리 행을 확인했습니다.
