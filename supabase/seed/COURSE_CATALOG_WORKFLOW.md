@@ -519,3 +519,10 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스 안내](https://laviedor.com/mobile/courseInfo.asp)와 IN 1~9번 [홀 상세 페이지](https://www.laviedor.com/countryclub/cosrse_01.asp)~[9번 홀 상세](https://www.laviedor.com/countryclub/cosrse_09.asp)에서 PAR·HDCP·White/Red 티별 미터 거리를 대조했습니다. 개요표와 홀별 상세의 값이 9개 홀 모두 일치하며, PAR36·HDCP 7/9/8/2/1/6/3/4/5, White 총 2,523m·Red 총 2,354m입니다.
 - 공식 코스 상세의 명칭에 맞춰 9홀 경로를 `IN`으로 저장했습니다. `라비돌CC` 명칭과 검색 별칭을 적용했으며 원격 DB에서 구장·경로 1개·홀 9개·티 거리 18개 행을 seed와 세부 대조해 불일치 0건을 확인했습니다. 자료 파일: `laviedor-cc-2026-official-verified.json`.
 - 원격 전체 카탈로그: 총 516곳 — 검수 완료 275, 미진행 236, 반려 5. 미진행은 강원 55, 경기 136, 경북 1, 세종 1, 인천 10, 전남 1, 전북 3, 제주 28, 충남 1곳이며 부산·울산·경남은 0곳입니다.
+
+### 2026-10-13 — 뉴서울CC 공식 36홀 자료
+- 운영사 공식 [모바일 코스 안내](https://www.newseoulgolf.co.kr/mobile/)와 문화 [OUT 홀 상세](https://www.newseoulgolf.co.kr/mobile/course/culture_out_01.asp), 문화 [IN 홀 상세](https://www.newseoulgolf.co.kr/mobile/course/culture_in_10.asp), 예술 [OUT 홀 상세](https://www.newseoulgolf.co.kr/mobile/course/art_out_01.asp), 예술 [IN 홀 상세](https://www.newseoulgolf.co.kr/mobile/course/art_in_10.asp) 및 각 경로의 전체 홀 상세 페이지에서 PAR·HDCP와 Blue/White/Red 티별 좌·우 그린 미터 거리를 확인했습니다. 4개 경로는 각각 PAR36이며, 총 36홀·PAR144입니다.
+- IN 코스 원문 홀은 10~18번이므로 앱 경로 내 번호는 1~9로 정규화하고 원문 HDCP 인덱스는 유지했습니다. 티별 좌·우 그린을 별도의 선택 행으로 저장해 총 216개 티/그린 행이 생성됐습니다. 공식 상세 페이지의 홀별 값으로 홀 자료를 채우고, 각 홀에서 제공하지 않는 Black 티는 추가하지 않았습니다.
+- 운영사 코스 소개는 문화 18홀 총연장 6,471m, 예술 18홀 6,221m를 표기합니다. 홀 상세의 Blue 거리 합은 문화 좌/우 6,405/6,444m, 예술 좌/우 6,123/6,176m여서 총연장과 각각 차이가 있습니다. 세부 거리 데이터는 공식 홀 상세에 표시된 값을 저장하고 이 차이를 구장 검수 메모에 남겼습니다.
+- 기존 `뉴서울CC` pending 항목을 갱신했습니다. 관리자 seed 구조 검사를 통과했고 원격 DB의 구장·경로 4개·홀 36개·티/그린 216행을 필드별 대조해 불일치 0건을 확인했습니다. 자료 파일: `new-seoul-cc-2026-official-verified.json`.
+- 원격 전체 카탈로그: 총 516곳 — 검수 완료 276, 미진행 235, 반려 5. 미진행은 강원 55, 경기 135, 경북 1, 세종 1, 인천 10, 전남 1, 전북 3, 제주 28, 충남 1곳이며 부산·울산·경남은 0곳입니다.
