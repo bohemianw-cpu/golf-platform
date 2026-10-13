@@ -709,8 +709,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 원격 DB에서 Oak Hill·Birch Hill 2개 경로·18홀·54개 티 행을 읽기 전용 대조해 seed와 일치함을 확인했습니다. 자료 파일: `powell-ansung-2026-official-verified.json`.
 
 ### 2026-10-13 — 마에스트로CC 공식 Lake·Valley 코스 자료
-- 안성 MCST pending 레코드를 운영사 공식 [Lake 1번 홀](https://www.maestrocc.co.kr/pagesite/course/one/hole01.asp) 및 [Valley 10번 홀](https://www.maestrocc.co.kr/pagesite/course/two/hole01.asp) 페이지와 각 페이지의 홀 탭을 따라 전수 확인했습니다. Lake·Valley 각 9홀의 PAR·HDCP·Black/Blue/White/Red 거리를 m 단위로 저장했습니다. Valley 공식 번호 10–18은 앱 경로별 1–9번으로 정규화했습니다. 자료 파일: `maestro-cc-2026-official-verified.json`.
+- 안성 MCST pending 레코드를 운영사 공식 [Lake 1번 홀](https://www.maestrocc.co.kr/pagesite/course/one/hole01.asp) 및 [Valley 10번 홀](https://www.maestrocc.co.kr/pagesite/course/two/hole01.asp) 페이지와 각 페이지의 홀 탭을 따라 전수 확인했습니다. Lake·Valley 각 9홀의 PAR·HDCP·Black/Blue/White/Red 거리를 m 단위로 저장했습니다. Valley 공식 홀 번호 10–18과 경로 내 진행 순서 1–9를 각각 보존했습니다. 자료 파일: `maestro-cc-2026-official-verified.json`.
 - 관리자 적재기 구조 검증 및 원격 DB read-back이 통과했습니다. 구장·두 경로 `verified`, 18홀·72개 티 행이며 파·HDCP·티명·색상·거리·원문 단위·선택 가능 여부의 seed 대조 불일치는 0건입니다.
+- 후속 UI 점검에서 Valley의 원번호 10–18을 1–9로 저장하면 ScoreTab이 실제 홀 번호 대신 경로 순번을 표시함을 확인했습니다. 공식 번호를 seed·DB에서 10–18로 수정하고 전수 read-back을 다시 통과했습니다. `play_order`는 계속 경로 순서 1–9라 라운드 진행·홀별 파/거리 배열은 변하지 않습니다.
 - 반영 후 원격 전체 카탈로그는 총 516곳: 검수 완료 336, 미진행 174, 반려 6입니다. 미진행 지역은 강원 39, 경기 107, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
 
 ### 2026-10-13 — 베스트밸리GC 공식 코스 자료

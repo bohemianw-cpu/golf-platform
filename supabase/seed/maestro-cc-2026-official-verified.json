@@ -443,7 +443,7 @@
           "source_data_url": "https://www.maestrocc.co.kr/pagesite/course/two/hole01.asp",
           "verification_status": "verified",
           "review_notes": [
-            "운영사 공식 홀별 페이지의 원번호를 경로별 입력 번호 1–9로 정규화했습니다. 거리 단위는 공식 페이지 표기 m입니다. Valley 공식 페이지는 10–18번으로 표시합니다."
+            "운영사 공식 Valley 홀별 페이지 번호 10–18을 그대로 보존했습니다. play_order 1–9는 해당 경로에서의 플레이 순서를 나타내며, 거리는 공식 페이지 표기 m입니다."
           ],
           "hole_count": 9,
           "primary_tee_code": "white",
@@ -453,7 +453,7 @@
           "holes": [
             {
               "par": 5,
-              "hole_number": 1,
+              "hole_number": 10,
               "tees": [
                 {
                   "tee_code": "black",
@@ -500,7 +500,7 @@
             },
             {
               "par": 3,
-              "hole_number": 2,
+              "hole_number": 11,
               "tees": [
                 {
                   "tee_code": "black",
@@ -547,7 +547,7 @@
             },
             {
               "par": 4,
-              "hole_number": 3,
+              "hole_number": 12,
               "tees": [
                 {
                   "tee_code": "black",
@@ -594,7 +594,7 @@
             },
             {
               "par": 4,
-              "hole_number": 4,
+              "hole_number": 13,
               "tees": [
                 {
                   "tee_code": "black",
@@ -641,7 +641,7 @@
             },
             {
               "par": 4,
-              "hole_number": 5,
+              "hole_number": 14,
               "tees": [
                 {
                   "tee_code": "black",
@@ -688,7 +688,7 @@
             },
             {
               "par": 3,
-              "hole_number": 6,
+              "hole_number": 15,
               "tees": [
                 {
                   "tee_code": "black",
@@ -735,7 +735,7 @@
             },
             {
               "par": 4,
-              "hole_number": 7,
+              "hole_number": 16,
               "tees": [
                 {
                   "tee_code": "black",
@@ -782,7 +782,7 @@
             },
             {
               "par": 4,
-              "hole_number": 8,
+              "hole_number": 17,
               "tees": [
                 {
                   "tee_code": "black",
@@ -829,7 +829,7 @@
             },
             {
               "par": 5,
-              "hole_number": 9,
+              "hole_number": 18,
               "tees": [
                 {
                   "tee_code": "black",
@@ -884,7 +884,7 @@
       "match_name": "마에스트로 CC",
       "address": "경기도 안성시 양성면 안성맞춤대로 2134-36",
       "review_notes": [
-        "운영사 공식 자료에서 Lake/Valley 각 9홀의 PAR·HDCP와 Black/Blue/White/Red 티별 미터 거리를 반영했습니다. Valley 공식 홀 번호 10–18은 홀 순서에 따라 라운드 입력의 경로별 1–9번으로 정규화했습니다."
+        "운영사 공식 자료에서 Lake/Valley 각 9홀의 PAR·HDCP와 Black/Blue/White/Red 티별 미터 거리를 반영했습니다. Valley는 공식 물리 홀 번호 10–18과 경로 내 진행 순서 1–9를 각각 보존했습니다."
       ],
       "supports_screen": false,
       "aliases": [
