@@ -1,3 +1,7 @@
+### 2026-10-14 — 캐슬파인GC 밸리·레이크
+- 운영사 공식 [코스 제원표](https://www.castlepine.co.kr/pagesite/course/intro.asp)에서 밸리·레이크 18홀의 PAR·HDCP와 골드·블루·화이트·레드·옐로우 티별 야드 거리를 반영했습니다. 원본 야드 값과 미터 환산값을 보존했습니다. 자료: `castle-pine-2026-official-verified.json`.
+- 공식 표의 홀별 야드 합계는 두 코스의 티별 총계와 일치합니다. 원격 DB에서 2개 경로·18홀·90개 티 행을 확인했고 구장과 경로 모두 `verified`입니다.
+- 카탈로그는 총 512곳: 검수 완료 413, 미진행 98, 반려 1입니다. 미진행은 경기 48, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 작업은 별도 요청까지 보류합니다.
 ### 2026-10-14 — 비에이비스타CC 퍼블릭 BUONA·HOPARK
 - 운영사 공식 [BUONA 코스공략](https://www.bavista.co.kr/Public/Course/Info)과 [HOPARK 코스공략](https://www.bavista.co.kr/Public/Course/Info2)에서 각 9홀 PAR·HDCP와 White·Red 티별 거리를 입력했습니다. 자료: `bavista-public-2026-official-verified.json`.
 - 원격 DB에서 2개 경로·18홀·36개 티 거리 행을 seed와 대조해 누락 0건·불일치 0건을 확인하고 `verified`로 설정했습니다. 카탈로그는 총 512곳: 검수 완료 412, 미진행 99, 반려 1입니다. 미진행은 경기 49, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
