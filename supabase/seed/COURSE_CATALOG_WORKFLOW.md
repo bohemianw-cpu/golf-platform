@@ -728,3 +728,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - MCST `강화 선두리 골프장`은 동일 운영사와 선두리 사업 이력을 기준으로 현행 운영 명칭 `강화웰빙CC`로 갱신했으며 과거 이름은 검색 alias로 보존했습니다. 운영사 주소는 인천광역시 강화군 길상면 해안남로 392입니다. 공식 페이지에 3·4·5번 홀 미운영 공지가 있어 관리자 메모에 남겼습니다.
 - 원격 DB에서 구장·WELLBEING 경로 `verified`, 9홀·PAR36·36개 티 거리행을 확인했습니다. 시드와 DB의 거리 36행을 항목별 비교해 누락 0·불일치 0을 확인했습니다. 자료 파일: `ganghwa-wellbeing-cc-2026-official-verified.json`.
 - 현재 원격 카탈로그는 총 516곳: 검수 완료 307, 미진행 203, 반려 6입니다. 미진행 지역은 강원 48, 경기 121, 세종 1, 인천 4, 제주 28, 충남 1곳입니다.
+
+### 2026-10-13 — 베르힐CC 영종 공식 코스 자료
+- 운영사 공식 [코스정보](https://www.verthillccyj.com/course/courseInfo.asp)에서 Verthill·Sky·Ocean·Lake 각 9홀의 PAR와 Black/Blue/White/Red 미터 거리를 저장했습니다. 공식 표에 표시된 우·좌 그린은 별도 green variant로 보존하고, 원그린 홀은 단일 variant로 저장했습니다. 네 경로 PAR36·총 36홀·276개 티/그린 거리 행입니다. HDCP는 공개되지 않았습니다.
+- 현행 운영사 주소 인천광역시 영종구 한상중앙로 66과 `베르힐CC 영종` 공식 명칭을 반영했습니다. 구장 및 네 경로를 `verified`로 갱신했습니다.
+- 원격 DB에서 시드와 티 거리·색상·그린을 포함한 276개 행을 항목별 비교해 누락 0·불일치 0을 확인했습니다. ScoreTab의 [CourseCatalogPicker](../../components/score/CourseCatalogPicker.tsx)는 DB의 green variant를 읽고, [ScoreTab](../../components/score/ScoreTab.tsx)은 홀별 그린 선택을 지원합니다. 자료 파일: `verthill-yeongjong-2026-official-verified.json`.
+- 현재 원격 카탈로그는 총 516곳: 검수 완료 308, 미진행 202, 반려 6입니다. 미진행 지역은 강원 48, 경기 121, 세종 1, 인천 3, 제주 28, 충남 1곳입니다.
