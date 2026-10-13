@@ -1079,3 +1079,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 라싸GC 운영사 공식 [마운틴 코스](https://www.lassagc.com/course/mountain), [레이크 코스](https://www.lassagc.com/course/lake), [밸리 코스](https://www.lassagc.com/course/valley) 표에서 각 9홀 PAR와 Black/Blue/White/Gold/Red 티별 m 거리를 입력했습니다. HDCP는 공식 표에 없어 기록하지 않았습니다. 총 27홀·135개 거리 행이며 자료: `lassa-gc-2026-official-verified.json`.
 - 밸리 Gold 7번 거리는 공식 표에 384m, Gold 합계는 2,643m로 표시되어 홀별 합계 2,743m와 100m 차이가 납니다. 공식 홀별 값을 유지하고 차이를 구장 및 경로 검수 메모에 남겼습니다.
 - 원격 DB에서 마운틴·레이크·밸리 3경로, 27홀, 135개 티 행과 공식 합계를 대조했습니다. 세 경로와 구장은 verified입니다. 원격 카탈로그는 총 512곳: 검수 완료 371, 미진행 140, 반려 1입니다. 미진행은 경기 88, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
+
+### 2026-10-13 — 웅포CC 공식 코스 표 반영
+- 사용자가 안내한 [웅포컨트리클럽 공식 코스안내](https://www.bearportcc.co.kr/pagesite/course/intro.asp) 하단 표를 기준으로 OUT 1–9홀과 IN 10–18홀의 PAR·HDCP·Gold/Black/Blue/White/Yellow/Red 티별 m 거리를 반영했습니다. 표에 거리가 없는 Blue·Yellow 홀은 티별 미지원으로 두고, 추가 검수 메모 없이 공식 원문 표기대로 저장했습니다.
+- 웅포CC 독립 레코드의 두 경로에 총 18홀·92개 티 거리 행을 저장했습니다. 공식 전 홀 거리 합계가 제시된 Gold/Black/White/Red 공식 합계와 모두 일치하며, 원격 DB에서 각 9홀 경로와 합계 거리를 확인했습니다. 자료: `wungpo-cc-2026-official-verified.json`. 포세븐금강CC는 별도 구장으로 유지됩니다.
+- 기존 카탈로그 수는 유지됩니다: 총 512곳, 검수 완료 371, 미진행 140, 반려 1.
