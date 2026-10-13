@@ -873,3 +873,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 각 코스별로 공식 표의 9홀 티 합계(`m`)와 홀별 값의 합을 대조했습니다. Lake는 4개 티 모두 일치합니다. Valley는 Blue가 2,950/2,956m, Red가 2,517/2,510m로 각각 6m·7m 차이 나며, Mountain White는 2,743/2,746m로 3m 차이 납니다. 공식 홀별 값을 유지하고 합계 차이는 코스 검수 메모에 기록했습니다.
 - 원격 DB에서 `에덴블루 CC`와 LAKE/VALLEY/MOUNTAIN 경로 모두 `verified`, 각 경로 9홀·PAR36을 확인했습니다. 파일과 DB를 전수 대조해 티 행 108개, PAR·HDCP·티 이름·색상·거리·원단위·선택 가능 여부, 경로 PAR/기본 White 거리 배열의 누락·초과·불일치 0건입니다.
 - 현재 원격 카탈로그는 총 516곳: 검수 완료 333, 미진행 177, 반려 6입니다. 미진행 지역은 강원 39, 경기 110, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
+
+### 2026-10-13 — 윈체스트GC 안성 대중 코스 자료
+- 운영사 [공식 코스 안내](https://winchest.net/swp/course/course)에서 Romantic·Classic 각 9홀의 PAR와 Red/Gold/White/Blue/Black 티별 미터 거리를 반영했습니다. 두 코스 각각 PAR36, 총 18홀·90개 거리 행입니다. 공식 거리표에는 홀별 HDCP가 없어 추정하지 않고 비워 두었습니다. 자료 파일: `winchest-ansung-2026-official-verified.json`.
+- 각 경로의 5개 티 합계가 공식 합계와 모두 일치합니다. Classic의 Blue와 White는 공식 자료에서 거리가 동일해도 각 티 선택지로 보존했습니다.
+- 원격 DB에서 `윈체스트 GC 대중`과 ROMANTIC/CLASSIC 경로가 모두 `verified`, 각 9홀·PAR36으로 저장된 것을 확인했습니다. 파일과 DB의 90개 거리 행 및 코스·경로·홀·티 필드 대조에서 누락·초과·불일치 0건입니다.
+- 현재 원격 카탈로그는 총 516곳: 검수 완료 334, 미진행 176, 반려 6입니다. 미진행 지역은 강원 39, 경기 109, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
