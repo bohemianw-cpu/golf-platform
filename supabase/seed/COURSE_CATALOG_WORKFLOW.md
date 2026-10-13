@@ -1060,3 +1060,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 사용자가 제공한 [웅포컨트리클럽 공식 코스안내](https://www.bearportcc.co.kr/pagesite/course/intro.asp)의 하단 OUT·IN 표에서 각 9홀 PAR·HDCP와 Gold/Black/Blue/White/Yellow/Red 티 거리를 m 단위로 반영했습니다. 공식 표에 값이 없는 Blue·Yellow 홀은 빈 상태로 두었습니다. 코스별 PAR36이며, 별도 추가 검수 없이 공식 표를 기준으로 적재했습니다.
 - 독립 웅포CC 구장 레코드에 OUT·IN 2개 경로, 18홀, 티 거리 92행을 저장했습니다. seed와 원격 DB 비교 결과 경로 2개·홀 18개·티 행 92개, PAR·HDCP·티 정보 불일치 0건입니다. 자료: `ungpo-cc-2026-official-verified.json`. 포세븐금강CC와는 동일 주소지만 별도 구장으로 유지됩니다.
 - 현재 원격 카탈로그는 총 512곳: 검수 완료 367, 미진행 144, 반려 1입니다. 미진행은 경기 92, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
+
+### 2026-10-13 — 화성GC PINE 코스 공식 기준거리
+- 운영사 공식 [코스개요](https://www.hwaseonggc.com/course/intro.asp)와 [홀별 코스정보](https://www.hwaseonggc.com/course/course.asp)에서 PINE 9홀 PAR35와 홀별 야드 기준거리(487, 156, 410, 306, 419, 345, 471, 160, 352yd)를 반영했습니다. 공식 페이지는 티별 거리나 HDCP를 제공하지 않아 야드 원본을 보존한 미터 환산 기준거리만 저장하고, 티 선택과 HDCP 입력은 비활성/미기록으로 두었습니다. 홀별 야드 합은 공식 총거리 3,106yd와 일치합니다.
+- 원격 DB 대조 결과 구장 1개·경로 1개·홀 9개·공식 기준 티 행 9개가 seed와 일치하며 경로·홀·거리 불일치는 0건입니다. 자료: `hwaseong-gc-2026-official-verified.json`.
+- 현재 원격 카탈로그는 총 512곳: 검수 완료 368, 미진행 143, 반려 1입니다. 미진행은 경기 91, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
