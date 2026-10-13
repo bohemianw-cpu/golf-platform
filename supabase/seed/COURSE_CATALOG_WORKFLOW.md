@@ -1,5 +1,10 @@
 # 골프장 카탈로그 적재와 검수
 
+### 2026-10-14 — H1 CLUB Mountain·Lake 코스
+- 운영사 공식 [Mountain 코스](https://www.h1club.co.kr/html/course_mountain.asp), [Lake 코스](https://www.h1club.co.kr/html/course_lake.asp)와 각 홀의 공식 이미지에서 18홀 PAR와 Back·Regular·Front·Lady 티별 거리(m)를 입력했습니다. 좌·우 그린이 구분된 홀은 그린별 거리를 저장했고, 공식 코스 개요는 18홀·72파·6,408m를 안내합니다. 자료: `h1-club-2026-official-verified.json`.
+- 공식 홀 이미지는 대부분 HDCP를 표시하지 않습니다. Lake 7번 공략 설명에 명시된 HDCP 1만 반영하고 나머지 홀은 비워 두었습니다. 원격 DB에서 2개 경로·18홀·140개 티 행을 seed와 대조해 누락 0건·불일치 0건을 확인하고 `verified`로 설정했습니다.
+- 카탈로그는 총 512곳: 검수 완료 409, 미진행 102, 반려 1입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
 ### 2026-10-14 — 베뉴지CC G·NEW·HILL 코스
 - 운영사 공식 [코스공략도](https://www.venuegcc.com/Web/course/courseinfo.asp)와 [코스소개](https://www.venuegcc.com/Web/course/courseIntro.asp)에서 27홀 PAR·HDCP 및 Red·Yellow·White·Blue 티별 거리를 입력했습니다. 코스소개는 거리를 m 단위로 안내합니다. 자료: `venueg-cc-2026-official-verified.json`.
 - 공식 코스 요약 전장과 홀별 티 거리 합계가 일치하지 않아 홀별 게시값을 기준으로 저장했습니다. NEW 코스 블루티는 4번·9번 거리가 게시되지 않아 두 행은 만들지 않았습니다.

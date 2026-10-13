@@ -1,0 +1,1841 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "에이치원 클럽",
+      "name": "H1 CLUB",
+      "region": "경기",
+      "address": "경기도 이천시 호법면 장자터로 115",
+      "aliases": [
+        "에이치원 클럽",
+        "에이치원클럽",
+        "H1 Club",
+        "H1 CLUB",
+        "덕평CC"
+      ],
+      "hole_count": 18,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "운영사 공식 코스 개요는 18홀·72파·코스전장 6,408m이며 Mountain·Lake 각 9홀로 안내합니다. 두 코스 공식 홀 이미지의 PAR와 티별 거리값 140건을 좌·우 그린별로 입력했습니다. 홀별 이미지에는 HDCP가 표시되지 않아 Lake 7번에 코스공략 문장으로 명시된 HDCP 1 외에는 비워 두었습니다."
+      ],
+      "routes": [
+        {
+          "route_code": "MOUNTAIN",
+          "display_name": "Mountain 코스",
+          "hole_count": 9,
+          "primary_tee_code": "blue",
+          "verification_status": "verified",
+          "source_url": "https://www.h1club.co.kr/html/course_mountain.asp",
+          "review_notes": [
+            "운영사 공식 홀별 이미지에서 PAR와 Back·Regular·Front·Lady 티 미터 거리를 확인했습니다. 좌·우 그린이 구분된 홀은 거리값을 그린별로 저장했으며, 공식 자료에 표기되지 않은 HDCP는 임의로 입력하지 않았습니다. 공식 이미지 예: https://www.h1club.co.kr/images/n_M1.jpg ~ n_M9.jpg."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 332,
+                  "distance_m_source": "official",
+                  "source_distance": 332,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 304,
+                  "distance_m_source": "official",
+                  "source_distance": 304,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 264,
+                  "distance_m_source": "official",
+                  "source_distance": 264,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 246,
+                  "distance_m_source": "official",
+                  "source_distance": 246,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 352,
+                  "distance_m_source": "official",
+                  "source_distance": 352,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 324,
+                  "distance_m_source": "official",
+                  "source_distance": 324,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 284,
+                  "distance_m_source": "official",
+                  "source_distance": 284,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 266,
+                  "distance_m_source": "official",
+                  "source_distance": 266,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 344,
+                  "distance_m_source": "official",
+                  "source_distance": 344,
+                  "source_unit": "m",
+                  "green_code": "standard",
+                  "green_name": "표준 그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 312,
+                  "distance_m_source": "official",
+                  "source_distance": 312,
+                  "source_unit": "m",
+                  "green_code": "standard",
+                  "green_name": "표준 그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 279,
+                  "distance_m_source": "official",
+                  "source_distance": 279,
+                  "source_unit": "m",
+                  "green_code": "standard",
+                  "green_name": "표준 그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 252,
+                  "distance_m_source": "official",
+                  "source_distance": 252,
+                  "source_unit": "m",
+                  "green_code": "standard",
+                  "green_name": "표준 그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 354,
+                  "distance_m_source": "official",
+                  "source_distance": 354,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 334,
+                  "distance_m_source": "official",
+                  "source_distance": 334,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 292,
+                  "distance_m_source": "official",
+                  "source_distance": 292,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 270,
+                  "distance_m_source": "official",
+                  "source_distance": 270,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 354,
+                  "distance_m_source": "official",
+                  "source_distance": 354,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 334,
+                  "distance_m_source": "official",
+                  "source_distance": 334,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 292,
+                  "distance_m_source": "official",
+                  "source_distance": 292,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 270,
+                  "distance_m_source": "official",
+                  "source_distance": 270,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 304,
+                  "distance_m_source": "official",
+                  "source_distance": 304,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 282,
+                  "distance_m_source": "official",
+                  "source_distance": 282,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 252,
+                  "distance_m_source": "official",
+                  "source_distance": 252,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 242,
+                  "distance_m_source": "official",
+                  "source_distance": 242,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 314,
+                  "distance_m_source": "official",
+                  "source_distance": 314,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 292,
+                  "distance_m_source": "official",
+                  "source_distance": 292,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 272,
+                  "distance_m_source": "official",
+                  "source_distance": 272,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 252,
+                  "distance_m_source": "official",
+                  "source_distance": 252,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 171,
+                  "distance_m_source": "official",
+                  "source_distance": 171,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 147,
+                  "distance_m_source": "official",
+                  "source_distance": 147,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 135,
+                  "distance_m_source": "official",
+                  "source_distance": 135,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 110,
+                  "distance_m_source": "official",
+                  "source_distance": 110,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 166,
+                  "distance_m_source": "official",
+                  "source_distance": 166,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 142,
+                  "distance_m_source": "official",
+                  "source_distance": 142,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 130,
+                  "distance_m_source": "official",
+                  "source_distance": 130,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 105,
+                  "distance_m_source": "official",
+                  "source_distance": 105,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 489,
+                  "distance_m_source": "official",
+                  "source_distance": 489,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 456,
+                  "distance_m_source": "official",
+                  "source_distance": 456,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 410,
+                  "distance_m_source": "official",
+                  "source_distance": 410,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 306,
+                  "distance_m_source": "official",
+                  "source_distance": 306,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 494,
+                  "distance_m_source": "official",
+                  "source_distance": 494,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 461,
+                  "distance_m_source": "official",
+                  "source_distance": 461,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 415,
+                  "distance_m_source": "official",
+                  "source_distance": 415,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 311,
+                  "distance_m_source": "official",
+                  "source_distance": 311,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 366,
+                  "distance_m_source": "official",
+                  "source_distance": 366,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 337,
+                  "distance_m_source": "official",
+                  "source_distance": 337,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 277,
+                  "distance_m_source": "official",
+                  "source_distance": 277,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 228,
+                  "distance_m_source": "official",
+                  "source_distance": 228,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 386,
+                  "distance_m_source": "official",
+                  "source_distance": 386,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 357,
+                  "distance_m_source": "official",
+                  "source_distance": 357,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 297,
+                  "distance_m_source": "official",
+                  "source_distance": 297,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 248,
+                  "distance_m_source": "official",
+                  "source_distance": 248,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 187,
+                  "distance_m_source": "official",
+                  "source_distance": 187,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 162,
+                  "distance_m_source": "official",
+                  "source_distance": 162,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 127,
+                  "distance_m_source": "official",
+                  "source_distance": 127,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 107,
+                  "distance_m_source": "official",
+                  "source_distance": 107,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 183,
+                  "distance_m_source": "official",
+                  "source_distance": 183,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 158,
+                  "distance_m_source": "official",
+                  "source_distance": 158,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 123,
+                  "distance_m_source": "official",
+                  "source_distance": 123,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 103,
+                  "distance_m_source": "official",
+                  "source_distance": 103,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 513,
+                  "distance_m_source": "official",
+                  "source_distance": 513,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 486,
+                  "distance_m_source": "official",
+                  "source_distance": 486,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 427,
+                  "distance_m_source": "official",
+                  "source_distance": 427,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 400,
+                  "distance_m_source": "official",
+                  "source_distance": 400,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 503,
+                  "distance_m_source": "official",
+                  "source_distance": 503,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 476,
+                  "distance_m_source": "official",
+                  "source_distance": 476,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 417,
+                  "distance_m_source": "official",
+                  "source_distance": 417,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 390,
+                  "distance_m_source": "official",
+                  "source_distance": 390,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "LAKE",
+          "display_name": "Lake 코스",
+          "hole_count": 9,
+          "primary_tee_code": "blue",
+          "verification_status": "verified",
+          "source_url": "https://www.h1club.co.kr/html/course_lake.asp",
+          "review_notes": [
+            "운영사 공식 홀별 이미지에서 PAR와 Back·Regular·Front·Lady 티 미터 거리를 확인했습니다. 좌·우 그린이 구분된 홀은 거리값을 그린별로 저장했으며, 공식 자료에 표기되지 않은 HDCP는 임의로 입력하지 않았습니다. 공식 이미지 예: https://www.h1club.co.kr/images/n_L1.jpg ~ n_L9.jpg."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 386,
+                  "distance_m_source": "official",
+                  "source_distance": 386,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 358,
+                  "distance_m_source": "official",
+                  "source_distance": 358,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 320,
+                  "distance_m_source": "official",
+                  "source_distance": 320,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 304,
+                  "distance_m_source": "official",
+                  "source_distance": 304,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 386,
+                  "distance_m_source": "official",
+                  "source_distance": 386,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 358,
+                  "distance_m_source": "official",
+                  "source_distance": 358,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 320,
+                  "distance_m_source": "official",
+                  "source_distance": 320,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 304,
+                  "distance_m_source": "official",
+                  "source_distance": 304,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 504,
+                  "distance_m_source": "official",
+                  "source_distance": 504,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 480,
+                  "distance_m_source": "official",
+                  "source_distance": 480,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 444,
+                  "distance_m_source": "official",
+                  "source_distance": 444,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 396,
+                  "distance_m_source": "official",
+                  "source_distance": 396,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 514,
+                  "distance_m_source": "official",
+                  "source_distance": 514,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 490,
+                  "distance_m_source": "official",
+                  "source_distance": 490,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 454,
+                  "distance_m_source": "official",
+                  "source_distance": 454,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 406,
+                  "distance_m_source": "official",
+                  "source_distance": 406,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 324,
+                  "distance_m_source": "official",
+                  "source_distance": 324,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 304,
+                  "distance_m_source": "official",
+                  "source_distance": 304,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 269,
+                  "distance_m_source": "official",
+                  "source_distance": 269,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 249,
+                  "distance_m_source": "official",
+                  "source_distance": 249,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 355,
+                  "distance_m_source": "official",
+                  "source_distance": 355,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 335,
+                  "distance_m_source": "official",
+                  "source_distance": 335,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 300,
+                  "distance_m_source": "official",
+                  "source_distance": 300,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 280,
+                  "distance_m_source": "official",
+                  "source_distance": 280,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 364,
+                  "distance_m_source": "official",
+                  "source_distance": 364,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 343,
+                  "distance_m_source": "official",
+                  "source_distance": 343,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 323,
+                  "distance_m_source": "official",
+                  "source_distance": 323,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 287,
+                  "distance_m_source": "official",
+                  "source_distance": 287,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 364,
+                  "distance_m_source": "official",
+                  "source_distance": 364,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 343,
+                  "distance_m_source": "official",
+                  "source_distance": 343,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 323,
+                  "distance_m_source": "official",
+                  "source_distance": 323,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 287,
+                  "distance_m_source": "official",
+                  "source_distance": 287,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 186,
+                  "distance_m_source": "official",
+                  "source_distance": 186,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 160,
+                  "distance_m_source": "official",
+                  "source_distance": 160,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 135,
+                  "distance_m_source": "official",
+                  "source_distance": 135,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 125,
+                  "distance_m_source": "official",
+                  "source_distance": 125,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 176,
+                  "distance_m_source": "official",
+                  "source_distance": 176,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 150,
+                  "distance_m_source": "official",
+                  "source_distance": 150,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 125,
+                  "distance_m_source": "official",
+                  "source_distance": 125,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 115,
+                  "distance_m_source": "official",
+                  "source_distance": 115,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 331,
+                  "distance_m_source": "official",
+                  "source_distance": 331,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 320,
+                  "distance_m_source": "official",
+                  "source_distance": 320,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 265,
+                  "distance_m_source": "official",
+                  "source_distance": 265,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 246,
+                  "distance_m_source": "official",
+                  "source_distance": 246,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 346,
+                  "distance_m_source": "official",
+                  "source_distance": 346,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 335,
+                  "distance_m_source": "official",
+                  "source_distance": 335,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 280,
+                  "distance_m_source": "official",
+                  "source_distance": 280,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 261,
+                  "distance_m_source": "official",
+                  "source_distance": 261,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 607,
+                  "distance_m_source": "official",
+                  "source_distance": 607,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 550,
+                  "distance_m_source": "official",
+                  "source_distance": 550,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 488,
+                  "distance_m_source": "official",
+                  "source_distance": 488,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 452,
+                  "distance_m_source": "official",
+                  "source_distance": 452,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 587,
+                  "distance_m_source": "official",
+                  "source_distance": 587,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 530,
+                  "distance_m_source": "official",
+                  "source_distance": 530,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 468,
+                  "distance_m_source": "official",
+                  "source_distance": 468,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 432,
+                  "distance_m_source": "official",
+                  "source_distance": 432,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ],
+              "handicap_index": 1
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 185,
+                  "distance_m_source": "official",
+                  "source_distance": 185,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 144,
+                  "distance_m_source": "official",
+                  "source_distance": 144,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 109,
+                  "distance_m_source": "official",
+                  "source_distance": 109,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 94,
+                  "distance_m_source": "official",
+                  "source_distance": 94,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 200,
+                  "distance_m_source": "official",
+                  "source_distance": 200,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 159,
+                  "distance_m_source": "official",
+                  "source_distance": 159,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 124,
+                  "distance_m_source": "official",
+                  "source_distance": 124,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 109,
+                  "distance_m_source": "official",
+                  "source_distance": 109,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 334,
+                  "distance_m_source": "official",
+                  "source_distance": 334,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 303,
+                  "distance_m_source": "official",
+                  "source_distance": 303,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 283,
+                  "distance_m_source": "official",
+                  "source_distance": 283,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 256,
+                  "distance_m_source": "official",
+                  "source_distance": 256,
+                  "source_unit": "m",
+                  "green_code": "left",
+                  "green_name": "좌그린"
+                },
+                {
+                  "tee_code": "black",
+                  "display_name": "Back Tee",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 335,
+                  "distance_m_source": "official",
+                  "source_distance": 335,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "blue",
+                  "display_name": "Regular Tee",
+                  "tee_color": "#2563eb",
+                  "tee_selection_available": true,
+                  "distance_m": 304,
+                  "distance_m_source": "official",
+                  "source_distance": 304,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "Front Tee",
+                  "tee_color": "#e2e8f0",
+                  "tee_selection_available": true,
+                  "distance_m": 284,
+                  "distance_m_source": "official",
+                  "source_distance": 284,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                },
+                {
+                  "tee_code": "red",
+                  "display_name": "Lady Tee",
+                  "tee_color": "#dc2626",
+                  "tee_selection_available": true,
+                  "distance_m": 257,
+                  "distance_m_source": "official",
+                  "source_distance": 257,
+                  "source_unit": "m",
+                  "green_code": "right",
+                  "green_name": "우그린"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
