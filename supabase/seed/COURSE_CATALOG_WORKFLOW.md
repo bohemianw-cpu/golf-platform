@@ -1196,3 +1196,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [올림푸스](https://www.midasgolf.co.kr/IC/OlympusCourse), [타이탄](https://www.midasgolf.co.kr/IC/TitanCourse), [마이다스](https://www.midasgolf.co.kr/IC/MidasCourse) 페이지에서 각 9홀의 PAR·HDCP와 Blue/Gold/White/Green/Red 티별 미터 거리를 반영했습니다. 공식 명칭을 마이다스레이크 이천 골프앤리조트로 정리하고 기존 명칭은 별칭으로 보존했습니다. 자료: `midas-lake-icheon-2026-official-verified.json`.
 - 올림푸스 3번, 타이탄 4번·7번 홀은 표의 HDCP와 홀 설명 문구가 달라 공식 표 머리글 값을 적용하고 코스 메모에 차이를 남겼습니다. 원격 DB에서 3개 코스·27홀·135개 티 행을 확인했으며 seed 대비 상세 데이터 불일치는 0건입니다. Blue 기준 코스별 홀 거리 합은 올림푸스 3,288m, 타이탄 3,301m, 마이다스 3,296m입니다.
 - 원격 카탈로그는 총 512곳: 검수 완료 394, 미진행 117, 반려 1입니다. 미진행은 경기 66, 강원 25, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 마이다스밸리 청평 GC 밸리·마이다스 공식 코스 자료
+- 운영사 공식 [밸리 코스](https://www.midasgolf.co.kr/CP/ValleyCourse)와 [마이다스 코스](https://www.midasgolf.co.kr/CP/MidasCourse)에서 각 9홀의 PAR·HDCP와 Blue/Gold/White/Green/Red 티별 미터 거리를 반영했습니다. 공식 명칭은 마이다스밸리 청평 골프클럽이며 정규화 명칭 마이다스밸리 청평 GC로 저장했습니다. 자료: `midas-valley-cheongpyeong-2026-official-verified.json`.
+- 마이다스 코스 2번 홀은 공식 페이지에서 Lady Tee를 Par 6로 운영한다고 안내해 Red 티 PAR만 6으로 저장했고, 나머지 티는 홀 기본 PAR 5를 사용합니다. 원격 DB에서 2개 코스·18홀·90개 티 행을 대조해 PAR·HDCP·티·거리 불일치 0건을 확인했습니다.
+- 원격 카탈로그는 총 512곳: 검수 완료 395, 미진행 116, 반려 1입니다. 미진행은 경기 65, 강원 25, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
