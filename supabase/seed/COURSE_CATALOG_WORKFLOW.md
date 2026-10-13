@@ -1117,3 +1117,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스 안내](https://www.clublonge.com/Club/yangpyeong/Course)의 3개 코스 표에서 각 9홀 PAR·HDCP와 Champion/Regular/Front/Ladies 티별 미터 거리를 입력했습니다. 공식 티 명칭을 유지했으며 표에 색상 정보가 없어 UI 색상은 중립 색상으로 지정했습니다. 루나 티 합계 3,611/3,197/2,984/2,695m, 솔라 3,522/3,202/3,029/2,749m, 스텔라 3,363/2,969/2,813/2,584m가 각 홀 거리 합과 일치합니다. 자료: `yangpyeong-tpc-2026-official-verified.json`.
 - 원격 DB 대조 결과 양평TPC GC verified, 3개 경로·27홀·108개 티 자료이며 경로/PAR·HDCP/거리별 불일치는 0건입니다.
 - 원격 카탈로그는 총 512곳: 검수 완료 378, 미진행 133, 반려 1입니다. 미진행은 경기 81, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
+
+### 2026-10-13 — 푸른솔 GC 포천 마운틴·밸리·레이크 공식 코스 자료
+- 운영사 공식 [코스개요](https://www.purunsol.co.kr/Course/Info.aspx)에서 마운틴·밸리·레이크 각 9홀의 PAR와 BLACK·BLUE·WHITE·LADY 티별 미터 거리를 반영했습니다. 공식 표에 HDCP가 없어 저장하지 않았습니다. 자료: `purunsol-pocheon-2026-official-verified.json`.
+- 공식 합계와 홀별 거리 합은 마운틴에서 모두 일치합니다. 밸리 BLUE는 공식 합계 2,965m/홀별 합 2,966m, 레이크 BLACK은 3,317/3,318m, 레이크 WHITE는 2,804/2,803m로 각각 1m 차이가 있어 공식 홀별 값을 유지하고 해당 코스에 메모했습니다.
+- 원격 DB 대조 결과 구장 verified, 3개 경로·27홀·108개 티 자료이며 코스/PAR/HDCP/거리 행 불일치는 0건입니다.
+- 원격 카탈로그는 총 512곳: 검수 완료 379, 미진행 132, 반려 1입니다. 미진행은 경기 80, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
