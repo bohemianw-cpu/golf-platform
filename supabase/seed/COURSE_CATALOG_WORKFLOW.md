@@ -283,7 +283,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 나주CC(전남 나주): 운영사 공식 코스소개/공략 페이지의 홀별 표에서 1~9번 PAR와 미터 거리를 확인해 9홀·10개 기준 거리 행을 반영했습니다. PAR 합은 36입니다. 공식 자료에 티 구분은 없으며 1번 홀만 좌그린 390m·우그린 340m로 별도 표시되어 그린 변형으로 보존하고, 나머지 홀은 단일 티 미표기 거리로 저장했습니다. 티 선택은 비활성화했습니다. HTTP 공식 출처만 열려 이를 명시했고 구장 및 경로를 검수 완료했습니다. 자료: `naju-cc-2026-official-verified.json`; 출처: [공식 홀 1](http://www.najucc.com/2019/sub/201.php) ~ [공식 홀 9](http://www.najucc.com/2019/sub/209.php) (2026-10-13 확인).
 
 2026-10-13 나주CC 반영 후 원격 전체 카탈로그: 검수 완료 230개, 미진행 284개, 반려 2개(총 516개). 부산·울산·경남 지역 pending 0개. 남부권 잔여 pending은 경북 1개, 전남 4개, 전북 3개입니다.
-- MCST `cosmos 1`(전남 영암): 공식 Golfzon County 자료에서 영암45(45홀, 에프원로 121-1) 코스는 확인했으나, MCST `cosmos 1` 주소는 에프원로 121-4로 달라 동일 구장이라고 단정하지 않았습니다. DB에는 골프존카운티 영암45가 별도 검수 완료로 이미 존재하므로 해당 코스 데이터를 복제하지 않고 cosmos 1은 pending으로 유지합니다. 출처: [골프존카운티 영암45 공식 소개](https://www.golfzoncounty.com/golfclub/intro?golfclubSeq=59), [공식 코스 소개](https://www.golfzoncounty.com/golfclub/course?golfclubSeq=59) (2026-10-13 확인).
+- MCST `cosmos 1`(전남 영암): 사용자가 코스모스CC/코스모스링스CC는 폐업 상태이며 골프존카운티 영암45와 무관한 별도 시설이라고 확인했습니다. 두 MCST 주소도 121-4와 121-1로 다르며, `cosmos 1`에는 라운드 이력과 저장 경로가 없습니다. `코스모스CC`로 이름 및 과거 명칭 별칭을 정리하고 `rejected` 처리하며, 영암45의 verified 레코드는 별도로 유지합니다. 자료 파일: `cosmos-1-2026-user-confirmed-closed.json`. 출처: 사용자 확인(2026-10-13); 골프존카운티 영암45 공식 소개 및 코스 정보: [소개](https://www.golfzoncounty.com/golfclub/intro?golfclubSeq=59), [코스](https://www.golfzoncounty.com/golfclub/course?golfclubSeq=59).
 - 디케이레저(전북 순창): MCST 기록은 `디케이레저`이며 현재 외부 디렉터리에서 순창CC로도 표시됩니다. 이번 공식 자료 검색에서 운영사 홀별 PAR·거리 원문을 찾지 못해 이름이나 홀 데이터를 임의로 갱신하지 않고 pending을 유지합니다. 운영 명칭은 공식 홈페이지/행정 자료로 추가 대조가 필요합니다 (2026-10-13 확인).
 - 에스페란사GC(전북 김제): MCST 기본목록은 9홀로 기록하지만 전북도보 2014년 인허가 자료는 10홀, 현재 비공식 디렉터리는 7홀/28파로 표기해 홀 수가 충돌합니다. 과거 운영사 홈페이지 주소 `https://esperan.modoo.at/`는 네이버 modoo 종료 안내만 보여 현재 홀별 자료를 확인할 수 없습니다. 운영사 공식 홀별 PAR·거리 원문을 찾지 못해 추정 입력하지 않고 pending을 유지합니다. 출처: [전북도보 2014 인허가](https://www.jeonbuk.go.kr/upload_data/board_data/BBS_0000017/139475801308187.pdf), [운영사 구 홈페이지](https://esperan.modoo.at/), 홀 수 참고: [김캐디 디렉터리](https://kimcaddie.com/golfcourse/%EC%97%90%EC%8A%A4%ED%8E%98%EB%9E%80%EC%82%ACp-%EC%A0%84%EB%B6%81-%EA%B9%80%EC%A0%9C%EC%8B%9C-%EA%B8%88%EA%B5%AC%EB%A9%B4-%EB%82%99%EC%84%B1%EB%A6%AC-2-10) (2026-10-13 확인).
 
@@ -645,7 +645,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 ### 2026-10-13 — 사용자 검수 요청 목록 갱신
 - 사용자가 제공한 블루원 상주 골프리조트 야디지북과 금과골프장 홀 자료를 반영해 두 구장은 사용자 확인 대기에서 해제했습니다.
-- NEW 순창CC와 에스페란사GC는 사용자가 제공한 현행 코스 자료를 반영해 직접 확인 대기 목록에서 해제했습니다. `cosmos 1`은 MCST 주소와 골프존카운티 영암45 공식 주소가 달라 동일 구장인지 추가 확인이 필요합니다.
+- NEW 순창CC와 에스페란사GC는 사용자가 제공한 현행 코스 자료를 반영해 직접 확인 대기 목록에서 해제했습니다. `cosmos 1`은 코스모스CC/코스모스링스CC 폐업 시설로 별도 확인되어 영암45와 분리했습니다.
 - 원격 DB 재조회 기준 전체 카탈로그는 총 516곳 — 검수 완료 301, 미진행 210, 반려 5입니다. 미진행 210곳은 아직 검증된 경로 자료가 없습니다. 고성노벨CC 충무코스는 27m 합계 차이를 메모에 남기고 공개했습니다. 에이원CC WEST는 티 1행 누락을 메모에 남기고 공개했으며, 경로 단위 pending은 에코랜드 ECO 한 곳입니다.
 
 ### 2026-10-13 — 한림광릉CC 회원제·퍼블릭 공식 코스 자료 반영
@@ -698,3 +698,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-13 — 포웰CC 김해 스카이 3번 Yellow 거리 정정
 - 사용자가 확인한 스카이 3번 PAR3 Yellow Tee 138m를 관리자 seed와 원격 DB에 추가했습니다. 기존 홀 이미지의 `420m` 표기 때문에 누락했던 행을 138m로 정정했으며, 티 색상은 Yellow로 저장했습니다.
 - 해당 Yellow 행은 이 홀에만 확인되었으므로 라운드 전체 티 선택지는 되지 않습니다. ScoreTab은 모든 홀에 있는 동일 티만 완주 티 옵션으로 제공하며, 다른 티 행은 추정해 만들지 않았습니다. 자료 파일: `powel-gimhae-2026-official-verified.json`.
+
+### 2026-10-13 — 코스모스CC 폐업 및 영암45 별도 시설 확인
+- 사용자 확인에 따라 MCST `cosmos 1`을 `코스모스CC`로 정리하고 `코스모스링스CC`를 별칭으로 보존했습니다. 폐업 상태이므로 `rejected`로 제외했습니다. 원격 DB에서 해당 레코드는 라운드 0건·경로 0개였습니다.
+- 골프존카운티 영암45(에프원로 121-1)는 코스모스CC(에프원로 121-4)와 다른 시설입니다. 영암45 verified 레코드는 별도 유지하며 코스 자료를 복제하지 않았습니다. 적용 자료: `cosmos-1-2026-user-confirmed-closed.json`.
