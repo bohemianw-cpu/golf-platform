@@ -1206,3 +1206,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [레이크](https://www.rexfield.com/course/lake), [마운틴](https://www.rexfield.com/course/mountain), [밸리](https://www.rexfield.com/course/valley) 코스표에서 각 9홀의 PAR·HDCP 및 Blue/White/Red 야드 거리를 반영했습니다. 원본 야드를 보존하고 미터 거리는 0.9144 환산 후 반올림했습니다. 표에 없는 Black 티는 추가하지 않았습니다. 자료: `rexfield-membership-2026-official-verified.json`, `rexfield-public-2026-official-verified.json`.
 - 렉스필드의 회원제 18홀(레이크·마운틴)과 대중제 9홀(밸리)을 기존 두 카탈로그 항목에 각각 연결했습니다. KGA 코스레이팅도 회원제 코스 조합을 레이크+마운틴으로 표기합니다. 세 코스는 각각 PAR36이며 공식 티별 야드 합계와 홀별 입력 합계가 일치합니다.
 - 원격 DB 대조 결과 회원제 2경로·18홀·54개 티 행, 대중제 1경로·9홀·27개 티 행으로 총 81개 티 자료가 81/81 일치합니다. 원격 카탈로그는 총 512곳: 검수 완료 397, 미진행 114, 반려 1입니다. 미진행은 경기 63, 강원 25, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 검수는 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 비전힐스CC 동·서 공식 코스 자료
+- 운영사 공식 [동코스 홀별 페이지](https://www.visionhillscc.co.kr/course/east_course01.asp)와 [서코스 홀별 페이지](https://www.visionhillscc.co.kr/course/west_course01.asp)의 18개 홀 표에서 PAR·HDCP 및 Black/Blue/White/Red 티별 미터 거리를 입력했습니다. 자료: `vision-hills-2026-official-verified.json`.
+- 동·서 코스는 각각 PAR36이며 4개 티의 각 홀 값이 공식 홀별 표에 모두 있어, 누락 티를 추정하지 않았습니다. 원격 DB와 자료를 티별 PAR·HDCP·표시명·색상·거리·단위까지 대조해 72/72 행 일치를 확인했습니다.
+- 원격 카탈로그는 총 512곳: 검수 완료 398, 미진행 113, 반려 1입니다. 미진행은 경기 62, 강원 25, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 검수는 별도 요청까지 보류합니다.
