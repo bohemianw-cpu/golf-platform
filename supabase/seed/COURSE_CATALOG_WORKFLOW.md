@@ -1278,4 +1278,3 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-14 — 솔트베이GC OUT·IN 공식 코스 자료
 - 운영사 공식 [코스 정보](https://www.saltbay.co.kr/Course/CourseInfo)의 OUT·IN 표에서 18홀 PAR·HDCP 및 Black/Blue/White/Yellow/Red 티별 m 거리를 반영했습니다. 코스별 티 합계를 공식 표와 대조했고 모두 일치합니다. 자료: `saltbay-2026-official-verified.json`.
 - 원격 DB에서 2개 경로·18홀·90개 티 행을 대조해 90/90 일치, PAR·HDCP·거리 불일치 0건을 확인했습니다. 카탈로그는 총 512곳: 검수 완료 400, 미진행 111, 반려 1입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
-
