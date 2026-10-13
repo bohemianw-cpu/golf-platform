@@ -1,3 +1,7 @@
+### 2026-10-14 — 플라자CC 용인 타이거·라이온
+- 운영사 공식 [타이거 1번 홀](https://www.plazacc.co.kr/plzcc/irsweb/golf2/course/yongin/tigerCourse_hole1.do?brch_cd=0400&ccg_hole=1&cors_cd=01)과 [라이온 1번 홀](https://www.plazacc.co.kr/plzcc/irsweb/golf2/course/yongin/lionCourse_hole1.do?brch_cd=0400&ccg_hole=1&cors_cd=02)을 포함한 전체 홀 상세 페이지에서 PAR 및 Back·Regular·Lady 거리를 m로 입력했습니다. 공식 페이지에 티 색상명은 없어 티 이름을 보존했습니다. 자료: `plaza-cc-yongin-2026-official-verified.json`.
+- 타이거 12번 홀 제목은 363m, 같은 페이지 티 정보 표의 Back Tee는 360m로 다르게 표시되어 티별 거리 표의 360m를 사용하고 메모했습니다. 원격 DB와 seed를 대조해 2개 경로·36홀·108개 티 행에서 불일치와 추가 행이 없음을 확인하고 `verified` 처리했습니다. 카탈로그는 총 512곳: 검수 완료 422, 미진행 89, 반려 1입니다.
+
 ### 2026-10-14 — 포천아도니스 대중골프장 퍼블릭코스
 - 운영사 공식 [퍼블릭 스코어카드](https://www.adoniscc.co.kr/public/course/score)에서 9홀의 PAR·HDCP와 Back·Regular·Ladies 티별 거리를 m로 반영했습니다. 표에 티 색상은 없어 원래 이름을 유지했습니다. 자료: `pocheon-adonis-public-2026-official-verified.json`.
 - 원격 DB의 홀·티 데이터를 seed와 대조해 9홀·27개 티 행이 모두 일치(불일치·추가 행 0건)함을 확인하고 `verified` 처리했습니다. 카탈로그는 총 512곳: 검수 완료 421, 미진행 90, 반려 1입니다. 웅포CC·광양CC 확인은 별도 요청까지 보류합니다.
