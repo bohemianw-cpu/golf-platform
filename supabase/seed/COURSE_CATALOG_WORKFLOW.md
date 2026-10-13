@@ -579,3 +579,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - O2리조트 골프장에 함백·태백·백두 3개 경로(27홀·PAR108·티 행 104개), 별도 MCST 퍼블릭 항목에 백두 경로(9홀·PAR36·티 행 32개)를 verified 반영했습니다. 두 레코드는 총 136개 티 행이며, seed 정적 구조 검사를 통과했습니다. 원격 DB 재조회에서 구장·경로 상태, 홀 수, PAR 배열, 티 행 수, 함백 2·5번 원문 거리/환산 거리 및 중립 색상을 확인했습니다.
 - 자료: `o2-resort-2026-official-verified.json`, `o2-resort-public-2026-official-verified.json`; 홀 지도 출처: [함백 1번](https://www.o2resort.com/common/images2018/golf/mountainCourse/1.png) 및 같은 경로의 2~9.png, [태백 10번](https://www.o2resort.com/common/images2018/golf/skyCourse/10.png) 및 같은 경로의 11~18.png, [백두 1번](https://www.o2resort.com/common/images2018/golf/hillCourse/1.png) 및 같은 경로의 2~9.png (2026-10-13 확인).
 - 반영 후 원격 전체 카탈로그: 총 516곳 — 검수 완료 284, 미진행 227, 반려 5. 부산·울산·경남 pending은 0곳입니다.
+
+### 2026-10-13 — 블루원 용인CC 비회원제 동코스 자료 반영
+- 운영사 공식 [코스 제원 페이지](https://yi.blueone.com/club-introduction/information?type=0)와 페이지가 사용하는 [공식 데이터 번들](https://yi.blueone.com/chunks/CourseInformation-C7w_OWcW.js)의 East Course 표에서 비회원제 동코스 9홀의 PAR·HANDICAP 및 BLUE/WHITE/RED 티별 거리(m) 27행을 확인했습니다. 공개되지 않은 BLACK 티는 생성하지 않았습니다.
+- 각 홀별 값은 공식 원문대로 저장했습니다. BLUE·WHITE 홀별 합계 3,014m·2,828m는 표의 TOTAL과 일치하며, RED 홀별 합계 2,391m는 공식 TOTAL 2,441m와 50m 차이가 있습니다. 완전한 홀별 원문값을 기준으로 검수 완료하고 이 차이는 참고 메모에 보존했습니다.
+- 관리자 자료 `blueone-yongin-2026-official-verified.json` 구조 검사를 통과했습니다. 원격 DB에서 구장·경로 상태, 9홀 PAR 배열, HDCP, 거리와 티 행 27개를 대조했고 불일치가 없습니다.
+- 반영 후 원격 전체 카탈로그: 총 516곳 — 검수 완료 285, 미진행 226, 반려 5. 지역별 미진행은 강원 53, 경기 128, 경북 1, 세종 1, 인천 10, 전남 1, 전북 3, 제주 28, 충남 1곳입니다. 부산·울산·경남 pending은 0곳입니다.

@@ -763,10 +763,10 @@
       "address": "경기도 용인시 처인구 원삼면 보개원삼로 1534번길 40",
       "hole_count": 9,
       "supports_screen": false,
-      "verification_status": "pending",
+      "verification_status": "verified",
       "review_notes": [
         "MCST 비회원제 9홀 시설을 공식 블루원 용인CC의 동코스(대중형) 9홀에 매핑했습니다. 공식 총 전장 3,014m는 동코스 BLUE 합계와 같습니다.",
-        "동코스 RED 티의 공식 TOTAL 2,441m와 홀별 값의 합계 2,391m가 달라 검수 대기 중입니다. 공식 표에 없는 BLACK 티는 등록하지 않았습니다. 출처: https://yi.blueone.com/club-introduction/information?type=0 (2026-10-12 확인)."
+        "공식 홀별 표의 PAR·HANDICAP·BLUE/WHITE/RED 거리값이 모두 제공되어 홀별 원문을 저장하고 verified 처리합니다. RED 홀별 합계 2,391m와 공식 TOTAL 2,441m는 50m 차이가 있어 차이만 참고 메모로 보존합니다. 공식 표에 없는 BLACK 티는 등록하지 않았습니다. 출처: https://yi.blueone.com/club-introduction/information?type=0 (2026-10-13 확인)."
       ],
       "routes": [
         {
@@ -775,15 +775,16 @@
           "hole_count": 9,
           "primary_tee_code": "white",
           "source_url": "https://yi.blueone.com/club-introduction/information?type=0",
-          "verification_status": "pending",
+          "source_data_url": "https://yi.blueone.com/chunks/CourseInformation-C7w_OWcW.js",
+          "verification_status": "verified",
           "official_tee_totals_m": {
             "blue": 3014,
             "white": 2828,
             "red": 2441
           },
           "review_notes": [
-            "공식 동코스(대중형) 표의 9홀 PAR·HANDICAP·BLUE/WHITE/RED 거리(m)를 전사했습니다. BLACK 티 행이 없어 생성하지 않았습니다. 출처: https://yi.blueone.com/club-introduction/information?type=0 (2026-10-12 확인).",
-            "BLUE와 WHITE의 홀별 합계는 공식 TOTAL과 같습니다. RED의 홀별 합계 2,391m와 공식 TOTAL 2,441m가 50m 다릅니다. 어느 홀 값이 잘못되었는지 공식 자료만으로 판단할 수 없어 구장과 코스를 pending으로 둡니다."
+            "공식 동코스(대중형) 표의 9홀 PAR·HANDICAP·BLUE/WHITE/RED 거리(m)를 전사했습니다. BLACK 티 행이 없어 생성하지 않았습니다. 출처: https://yi.blueone.com/club-introduction/information?type=0 (2026-10-13 확인).",
+            "BLUE·WHITE 홀별 합계는 공식 TOTAL과 일치합니다. RED 홀별 원문 합계 2,391m와 공식 TOTAL 2,441m는 50m 차이가 있지만, 공식 홀별 표가 PAR·HDCP와 세 티의 거리값을 모두 제공하므로 홀별 값은 수정하지 않고 차이를 참고 메모로 보존해 verified 처리합니다."
           ],
           "holes": [
             {
