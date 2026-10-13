@@ -1,0 +1,339 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "match_name": "더스타휴 CC",
+    "name": "더스타휴 CC",
+    "region": "경기",
+    "address": "경기도 양평군 양동면 양동로 756",
+    "aliases": [
+      "더스타휴 골프&리조트"
+    ],
+    "hole_count": 18,
+    "supports_screen": false,
+    "verification_status": "verified",
+    "review_notes": [
+      "운영사 공식 코스표의 STAR·HUE 각 9홀 PAR와 m/yd 기준거리를 반영했습니다. 공식 페이지는 티 위치별 거리를 제공하지 않아 티별 자료로 표시하지 않고, 사용자 라운드 입력에 쓰는 공식 기준거리로만 저장했습니다."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "star",
+      "display_name": "스타 코스",
+      "hole_count": 9,
+      "primary_tee_code": "official_reference",
+      "verification_status": "verified",
+      "source_url": "https://www.thestarhue.com/scourse.asp",
+      "source_data_url": "https://www.thestarhue.com/scourse.asp",
+      "par_source_url": "https://www.thestarhue.com/scourse.asp",
+      "review_notes": [
+        "공식 코스표 기준: 원문 홀 번호 1–9, PAR36, 3333m / 3645yd. 티별 거리는 공식 자료에서 제공되지 않아 선택 불가한 공식 기준거리로 저장했습니다. 홀별 m 합계는 공식 OUT/IN 표기와 일치합니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 425,
+              "distance_m_source": "official",
+              "source_distance": 425,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 369,
+              "distance_m_source": "official",
+              "source_distance": 369,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 185,
+              "distance_m_source": "official",
+              "source_distance": 185,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 520,
+              "distance_m_source": "official",
+              "source_distance": 520,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 205,
+              "distance_m_source": "official",
+              "source_distance": 205,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 369,
+              "distance_m_source": "official",
+              "source_distance": 369,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 375,
+              "distance_m_source": "official",
+              "source_distance": 375,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 380,
+              "distance_m_source": "official",
+              "source_distance": 380,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 505,
+              "distance_m_source": "official",
+              "source_distance": 505,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route_code": "hue",
+      "display_name": "휴 코스",
+      "hole_count": 9,
+      "primary_tee_code": "official_reference",
+      "verification_status": "verified",
+      "source_url": "https://www.thestarhue.com/scourse.asp",
+      "source_data_url": "https://www.thestarhue.com/scourse.asp",
+      "par_source_url": "https://www.thestarhue.com/scourse.asp",
+      "review_notes": [
+        "공식 코스표 기준: 원문 홀 번호 10–18, PAR36, 3261m / 3566yd. 티별 거리는 공식 자료에서 제공되지 않아 선택 불가한 공식 기준거리로 저장했습니다. 홀별 m 합계는 공식 OUT/IN 표기와 일치합니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 517,
+              "distance_m_source": "official",
+              "source_distance": 517,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 410,
+              "distance_m_source": "official",
+              "source_distance": 410,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 495,
+              "distance_m_source": "official",
+              "source_distance": 495,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 390,
+              "distance_m_source": "official",
+              "source_distance": 390,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 172,
+              "distance_m_source": "official",
+              "source_distance": 172,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 337,
+              "distance_m_source": "official",
+              "source_distance": 337,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 167,
+              "distance_m_source": "official",
+              "source_distance": 167,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 360,
+              "distance_m_source": "official",
+              "source_distance": 360,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준 거리 (티 미표기)",
+              "tee_color": "#94a3b8",
+              "tee_selection_available": false,
+              "distance_m": 413,
+              "distance_m_source": "official",
+              "source_distance": 413,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
