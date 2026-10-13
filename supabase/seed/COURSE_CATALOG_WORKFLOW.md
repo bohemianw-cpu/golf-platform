@@ -1,5 +1,10 @@
 # 골프장 카탈로그 적재와 검수
 
+### 2026-10-14 — 파인리즈CC 파인·리즈·레이크 코스
+- 운영사 공식 [파인코스](https://m.pineridge.co.kr/course/course_intro11.asp), [리즈코스](https://m.pineridge.co.kr/course/course_intro12.asp), [레이크코스](https://m.pineridge.co.kr/course/course_intro13.asp) 제원표의 27홀 PAR·HDCP·METER를 입력했습니다. 티별 색상과 거리는 공개되지 않아 홀마다 `official_reference` 기준거리만 저장하고 티 선택은 비활성화했습니다. 자료: `pine-ridge-2026-official-reference-verified.json`.
+- 홀별 합계는 파인 3,328m, 리즈 3,366m, 레이크 3,415m이며 세 코스 합계 10,109m·PAR108은 운영사 표기와 일치합니다. 원격 DB에서 3개 경로·27홀·27개 공식 기준거리 행을 확인했습니다.
+- 카탈로그는 총 512곳: 검수 완료 404, 미진행 107, 반려 1입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
 ### 2026-10-14 — 파인크리크CC PINE·CREEK·VALLEY 코스
 - 운영사 공식 [코스 정보](https://www.pinecreek.co.kr/html_creek/course01.asp)에서 세 코스의 홀별 PAR·HDCP·미터 기준거리를 반영했습니다. 운영사 안내에 티잉 구역이 있지만 홀별 티 색상/티별 거리는 공개되지 않아 27홀 모두 `official_reference` 단일 거리로 저장하고 티 선택은 비활성화했습니다. 자료: `pine-creek-2026-official-reference-verified.json`.
 - 공식 코스별 합계와 홀별 합을 대조했고, 원격 DB에서 3개 경로·27홀을 확인해 모두 일치(불일치 0건)했습니다. 구장과 경로는 verified입니다.
