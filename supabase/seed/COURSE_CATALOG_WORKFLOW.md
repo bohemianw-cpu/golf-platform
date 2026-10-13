@@ -15,6 +15,11 @@
 - 카탈로그는 총 512곳: 검수 완료 410, 미진행 101, 반려 1입니다. 미진행은 경기 51, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
 # 골프장 카탈로그 적재와 검수
 
+### 2026-10-14 — 파주CC 동·서 코스
+- 운영사 공식 [코스 전경 및 제원](https://www.onetheclub.com/paju/course)에서 동·서 18홀 PAR·HDCP와 Champion·Back·Regular·Front·Lady 티별 m 거리를 반영했습니다. 자료: `paju-cc-2026-official-verified.json`.
+- 원격 DB와 seed의 파·HDCP·티 구분·색상 표시·거리·출처를 행 단위로 대조해 90개 티 행 모두 일치(누락·불일치 0건)했습니다. 구장과 2개 경로를 `verified`로 설정했습니다. 공식 표는 색을 명시하지 않아 앱 표시 색상은 티 종류에 맞춘 표준 팔레트로 연결했습니다.
+- 카탈로그는 총 512곳: 검수 완료 416, 미진행 95, 반려 1입니다. 미진행은 경기 45, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
 ### 2026-10-14 — 더 시에나 벨루토CC 벨라·루체 코스(구 세라지오GC)
 - 운영사 공식 [전체 코스 표](https://thesiena.co.kr/content/velluto_course_1), [벨라 홀 상세](https://thesiena.co.kr/content/velluto_course_3), [루체 홀 상세](https://thesiena.co.kr/content/velluto_course_2)에서 18홀 PAR·HDCP와 블루·화이트·옐로우·레드 티별 거리를 m 단위로 입력했습니다. 자료: `siena-velluto-2026-official-verified.json`.
 - 운영사 공식 소개는 더 시에나 벨루토CC가 구 세라지오GC라고 명시합니다. 기존 MCST 레코드를 현재 정식 명칭으로 갱신하고 세라지오 명칭을 검색 별칭으로 보존했습니다. 전체 표와 홀별 상세의 파·거리는 일치합니다.
