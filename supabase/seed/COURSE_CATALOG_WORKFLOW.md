@@ -15,6 +15,11 @@
 - 카탈로그는 총 512곳: 검수 완료 410, 미진행 101, 반려 1입니다. 미진행은 경기 51, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
 # 골프장 카탈로그 적재와 검수
 
+### 2026-10-14 — 타이거CC 가온·누리 코스
+- 운영사 공식 [코스 제원표](https://www.tigercc.co.kr/course/course.asp)와 [가온](https://www.tigercc.co.kr/course/course_gaon.asp)·[누리](https://www.tigercc.co.kr/course/course_nury.asp) 상세 페이지에서 18홀 PAR·HDCP 및 블루·화이트·옐로우·레이디 거리를 m로 입력했습니다. 가온 5번의 좌·우 그린별 티 거리를 구분해 저장했습니다. 자료: `tiger-cc-2026-official-verified.json`.
+- 누리 요약표와 상세 페이지는 10번·16번 블루 거리가 각각 525/515m·485/488m로 다르고, 공식 블루 총계도 홀별 합계와 72m 차이가 있습니다. 게시된 홀별 상세값을 저장했습니다. 가온 2번 옐로우는 요약표/상세가 302/303m로 1m 차이가 납니다.
+- 원격 DB에서 2개 경로·18홀·76개 티 행(가온 40, 누리 36)을 확인하고 모두 `verified`로 설정했습니다. 현재 카탈로그는 총 512곳: 검수 완료 414, 미진행 97, 반려 1입니다. 미진행은 경기 47, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 관련 확인 작업은 별도 요청까지 보류합니다.
+
 ### 2026-10-14 — H1 CLUB Mountain·Lake 코스
 - 운영사 공식 [Mountain 코스](https://www.h1club.co.kr/html/course_mountain.asp), [Lake 코스](https://www.h1club.co.kr/html/course_lake.asp)와 각 홀의 공식 이미지에서 18홀 PAR와 Back·Regular·Front·Lady 티별 거리(m)를 입력했습니다. 좌·우 그린이 구분된 홀은 그린별 거리를 저장했고, 공식 코스 개요는 18홀·72파·6,408m를 안내합니다. 자료: `h1-club-2026-official-verified.json`.
 - 공식 홀 이미지는 대부분 HDCP를 표시하지 않습니다. Lake 7번 공략 설명에 명시된 HDCP 1만 반영하고 나머지 홀은 비워 두었습니다. 원격 DB에서 2개 경로·18홀·140개 티 행을 seed와 대조해 누락 0건·불일치 0건을 확인하고 `verified`로 설정했습니다.
