@@ -1134,3 +1134,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 서서울CC 공식 [코스개요](https://www.seoseoul.co.kr/html/course/course_01.asp)와 [Lake 홀별 페이지](https://www.seoseoul.co.kr/html/course/course_02_01.asp), [Hill 홀별 페이지](https://www.seoseoul.co.kr/html/course/course_03_01.asp)를 확인해 각 9홀의 PAR·HDCP·Back/Regular/Lady 티별 미터 거리를 반영했습니다. 개요 표에 단위 m가 명시되어 있고, 각 홀 상세의 내용도 개요표와 일치합니다. 자료: `seoseoul-cc-2026-official-verified.json`.
 - 원격 DB 대조 결과 구장 verified, 2개 경로·18홀·54개 티 행입니다. Lake 합계는 PAR36 및 Back/Regular/Lady 2,952/2,795/2,414m, Hill은 PAR36 및 3,108/2,950/2,495m로 공식 합계와 일치합니다.
 - 원격 카탈로그는 총 512곳: 검수 완료 381, 미진행 130, 반려 1입니다.
+
+### 2026-10-13 — 아세코밸리GC 공식 코스 자료
+- 아세코밸리GC 공식 [코스소개](https://www.asecovalley.co.kr/course-guide)의 코스표에서 9홀 PAR·HDCP와 Black/Blue/Red 티별 거리를 반영했습니다. 공식 페이지의 단위 문구는 ㎡로 기재되어 있으나, 거리표의 홀 전장과 티별 총계(2,658/2,512/2,060)를 기준으로 m로 해석했습니다. 이 단위 표기 차이는 검수 메모로 남겼습니다. 자료: `aseco-valley-gc-2026-official-verified.json`.
+- 원격 DB 대조 결과 구장·경로 verified, PAR36·9홀·27개 티 행이며 티별 합계가 공식표와 일치합니다. 같은 검증 과정에서 서서울CC 두 경로의 레거시 `distances_m` 배열이 기본티(Regular) 대신 짧은 Lady 거리로 저장된 것을 발견해 Regular 기준으로 정정했습니다. 홀별 티 행 자체는 변경하지 않았습니다.
+- 원격 카탈로그는 총 512곳: 검수 완료 382, 미진행 129, 반려 1입니다.
