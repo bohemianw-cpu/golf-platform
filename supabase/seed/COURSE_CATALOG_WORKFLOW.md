@@ -1035,3 +1035,10 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 공식 [LEFT 코스공략](https://www.theban.co.kr/course/course_strategy) 1번 요약은 PAR4·320m로 되어 있으나 코스소개의 티 표에는 BLUE 366m·WHITE 351m·RED 324m로 게시되어 티 표 값을 저장하고 차이를 기록했습니다. 코스소개에 게시된 LEFT RED 합계 2,608m와 홀별 값 합 2,605m는 3m 차이가 있어 개별 홀 값을 유지했습니다.
 - seed와 원격 DB의 PAR·HDCP·티 코드·거리·선택 가능 상태를 대조해 54행 모두 일치하고 불일치 0건임을 확인했습니다. 기존 라운드 선택 UI는 여러 9홀 경로 및 각 경로에 공통인 티를 선택하므로 코드 변경은 필요하지 않습니다.
 - 현재 원격 카탈로그는 총 516곳: 검수 완료 362, 미진행 148, 반려 6입니다. 부산·경남·울산·대구·경북에는 미진행 구장이 없습니다.
+
+### 2026-10-13 — 블랙스톤 이천 공식 코스 자료 및 코스모스CC 관계 재확인
+- 운영사 공식 [코스 소개](https://www.blackstoneresort.com/ic/goToStatic?where=course&section=course), [회원제·대중형 안내](https://www.blackstoneresort.com/ic/aboutList?section=course)와 각 홀 상세 페이지에서 회원제 EAST·NORTH, 대중형 WEST의 PAR 및 티별 미터 거리를 확인했습니다. 27홀·141개 티 거리 행을 저장했으며 회원제 18홀과 대중형 9홀을 별도 카탈로그 구장에 연결했습니다. 일부 홀의 WHITE 티 두 거리는 짧은 위치와 긴 위치의 선택값으로 보존했습니다. 자료 파일: `blackstone-icheon-2026-official-verified.json`.
+- ScoreTab의 복수 WHITE 선택 안내를 `현재 홀 WHITE 티 위치 선택`으로 표시하도록 조정했습니다. 기존 라디오 선택 및 첫 샷 전 변경 제한을 그대로 사용합니다.
+- 원격 DB에서 seed와 전체 필드를 대조했습니다. 예상·저장 티 행은 각각 141개, 홀 27개, 경로 3개이며 대조 누락·불일치가 없습니다. 두 카탈로그 구장과 세 경로를 verified로 확인했습니다.
+- 사용자 확인을 다시 대조한 결과, 코스모스CC(별칭 코스모스링스CC)는 폐업 상태의 별도 레코드로 `rejected`·경로 0개이고, 골프존카운티 영암45는 다른 주소의 `verified` 레코드·경로 5개입니다. 두 구장의 코스 자료 연결은 없습니다.
+- 현재 원격 카탈로그는 총 516곳: 검수 완료 364, 미진행 146, 반려 6입니다. 미진행은 경기 94, 강원 25, 제주 25, 인천 1, 충남 1곳입니다. 부산·경남·울산·대구·경북에는 미진행 구장이 없습니다.
