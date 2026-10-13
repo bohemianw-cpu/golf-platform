@@ -7,11 +7,11 @@
       "region": "강원",
       "address": "태백시 서학로 861",
       "hole_count": 9,
-      "verification_status": "pending",
+      "verification_status": "verified",
       "supports_screen": false,
       "review_notes": [
         "공식 코스 페이지는 백두SKY를 퍼블릭골프장 코스로 안내합니다. MCST 카탈로그의 별도 9홀 퍼블릭 항목과 동일한 코스로 판단해 홀별 원자료를 연결했습니다.",
-        "공식 코스 개요(ccGuide.jsp)는 각 코스 전장을 3,018yd, 4,265yd, 3,237yd로 표기합니다. 홀별 코스 페이지 티 거리 합계와 차이가 있어 공식 자료 간 대조가 끝날 때까지 검수 대기합니다."
+        "운영사 공식 개요(ccGuide.jsp)는 백두 코스 총장을 3,237yd로 표기합니다. 공식 백두 홀별 거리도에는 PAR와 C/T·R/T·F/T·L/T의 Green 거리가 홀마다 게시되어 있어 이 상세값을 저장합니다. 홀별 상세 합계와 개요 총장의 차이는 원문 불일치로 기록하되, 공식 홀 상세가 완비되어 있으므로 verified 처리합니다."
       ],
       "routes": [
         {
@@ -21,10 +21,10 @@
           "primary_tee_code": "o2_rt",
           "source_url": "https://www.o2resort.com/GLF/hillCourse.jsp",
           "official_course_overview_distance_yd": 3237,
-          "verification_status": "pending",
+          "verification_status": "verified",
           "review_notes": [
             "공식 코스 페이지는 백두SKY를 퍼블릭골프장 코스로 안내합니다. MCST 카탈로그의 별도 9홀 퍼블릭 항목과 동일한 코스로 판단해 홀별 원자료를 연결했습니다.",
-            "공식 개요 전장은 3,237yd입니다. 홀별 티 표 합계는 C/T 3,065yd, R/T 2,693yd, F/T 1,990yd, L/T 1,906yd로, 어느 티 합계와도 일치하지 않습니다."
+            "공식 개요 총장은 3,237yd입니다. 홀별 상세 Green 거리의 합은 C/T 3,065yd, R/T 2,693yd, F/T 1,990yd, L/T 1,906yd입니다. 원문 총장 차이는 메모로 보존하고 홀별 공식 상세값을 기준으로 verified 처리합니다."
           ],
           "holes": [
             {
@@ -34,7 +34,7 @@
                 {
                   "tee_code": "o2_ct",
                   "display_name": "C/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 446,
                   "source_distance": 488,
                   "source_unit": "yd"
@@ -42,7 +42,7 @@
                 {
                   "tee_code": "o2_rt",
                   "display_name": "R/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 402,
                   "source_distance": 440,
                   "source_unit": "yd"
@@ -50,7 +50,7 @@
                 {
                   "tee_code": "o2_ft",
                   "display_name": "F/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 366,
                   "source_distance": 400,
                   "source_unit": "yd"
@@ -58,7 +58,7 @@
                 {
                   "tee_code": "o2_lt",
                   "display_name": "L/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 251,
                   "source_distance": 275,
                   "source_unit": "yd"
@@ -72,7 +72,7 @@
                 {
                   "tee_code": "o2_ct",
                   "display_name": "C/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 454,
                   "source_distance": 497,
                   "source_unit": "yd"
@@ -80,7 +80,7 @@
                 {
                   "tee_code": "o2_rt",
                   "display_name": "R/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 421,
                   "source_distance": 460,
                   "source_unit": "yd"
@@ -88,7 +88,7 @@
                 {
                   "tee_code": "o2_ft",
                   "display_name": "F/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 402,
                   "source_distance": 440,
                   "source_unit": "yd"
@@ -96,7 +96,7 @@
                 {
                   "tee_code": "o2_lt",
                   "display_name": "L/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 304,
                   "source_distance": 332,
                   "source_unit": "yd"
@@ -110,7 +110,7 @@
                 {
                   "tee_code": "o2_ct",
                   "display_name": "C/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 204,
                   "source_distance": 223,
                   "source_unit": "yd"
@@ -118,7 +118,7 @@
                 {
                   "tee_code": "o2_rt",
                   "display_name": "R/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 172,
                   "source_distance": 188,
                   "source_unit": "yd"
@@ -126,7 +126,7 @@
                 {
                   "tee_code": "o2_lt",
                   "display_name": "L/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 123,
                   "source_distance": 134,
                   "source_unit": "yd"
@@ -140,7 +140,7 @@
                 {
                   "tee_code": "o2_ct",
                   "display_name": "C/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 470,
                   "source_distance": 514,
                   "source_unit": "yd"
@@ -148,7 +148,7 @@
                 {
                   "tee_code": "o2_rt",
                   "display_name": "R/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 448,
                   "source_distance": 490,
                   "source_unit": "yd"
@@ -156,7 +156,7 @@
                 {
                   "tee_code": "o2_ft",
                   "display_name": "F/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 389,
                   "source_distance": 425,
                   "source_unit": "yd"
@@ -164,7 +164,7 @@
                 {
                   "tee_code": "o2_lt",
                   "display_name": "L/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 366,
                   "source_distance": 400,
                   "source_unit": "yd"
@@ -178,7 +178,7 @@
                 {
                   "tee_code": "o2_ct",
                   "display_name": "C/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 284,
                   "source_distance": 311,
                   "source_unit": "yd"
@@ -186,7 +186,7 @@
                 {
                   "tee_code": "o2_rt",
                   "display_name": "R/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 247,
                   "source_distance": 270,
                   "source_unit": "yd"
@@ -194,7 +194,7 @@
                 {
                   "tee_code": "o2_ft",
                   "display_name": "F/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 219,
                   "source_distance": 240,
                   "source_unit": "yd"
@@ -202,7 +202,7 @@
                 {
                   "tee_code": "o2_lt",
                   "display_name": "L/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 197,
                   "source_distance": 215,
                   "source_unit": "yd"
@@ -216,7 +216,7 @@
                 {
                   "tee_code": "o2_ct",
                   "display_name": "C/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 136,
                   "source_distance": 149,
                   "source_unit": "yd"
@@ -224,7 +224,7 @@
                 {
                   "tee_code": "o2_rt",
                   "display_name": "R/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 110,
                   "source_distance": 120,
                   "source_unit": "yd"
@@ -238,7 +238,7 @@
                 {
                   "tee_code": "o2_ct",
                   "display_name": "C/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 309,
                   "source_distance": 338,
                   "source_unit": "yd"
@@ -246,7 +246,7 @@
                 {
                   "tee_code": "o2_rt",
                   "display_name": "R/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 238,
                   "source_distance": 260,
                   "source_unit": "yd"
@@ -254,7 +254,7 @@
                 {
                   "tee_code": "o2_ft",
                   "display_name": "F/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 201,
                   "source_distance": 220,
                   "source_unit": "yd"
@@ -262,7 +262,7 @@
                 {
                   "tee_code": "o2_lt",
                   "display_name": "L/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 174,
                   "source_distance": 190,
                   "source_unit": "yd"
@@ -276,7 +276,7 @@
                 {
                   "tee_code": "o2_ct",
                   "display_name": "C/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 336,
                   "source_distance": 367,
                   "source_unit": "yd"
@@ -284,7 +284,7 @@
                 {
                   "tee_code": "o2_rt",
                   "display_name": "R/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 270,
                   "source_distance": 295,
                   "source_unit": "yd"
@@ -292,7 +292,7 @@
                 {
                   "tee_code": "o2_ft",
                   "display_name": "F/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 242,
                   "source_distance": 265,
                   "source_unit": "yd"
@@ -300,7 +300,7 @@
                 {
                   "tee_code": "o2_lt",
                   "display_name": "L/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 210,
                   "source_distance": 230,
                   "source_unit": "yd"
@@ -314,7 +314,7 @@
                 {
                   "tee_code": "o2_ct",
                   "display_name": "C/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 163,
                   "source_distance": 178,
                   "source_unit": "yd"
@@ -322,7 +322,7 @@
                 {
                   "tee_code": "o2_rt",
                   "display_name": "R/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 155,
                   "source_distance": 170,
                   "source_unit": "yd"
@@ -330,7 +330,7 @@
                 {
                   "tee_code": "o2_lt",
                   "display_name": "L/T",
-                  "tee_color": "#f97316",
+                  "tee_color": "#64748b",
                   "distance_m": 119,
                   "source_distance": 130,
                   "source_unit": "yd"

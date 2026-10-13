@@ -571,3 +571,11 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 공식 도면은 두 White 티의 별도 명칭을 제공하지 않아 행 순서에 따라 `White 1`·`White 2`로 구분했습니다. 각 홀에 실제 표시된 티만 저장했으며 누락된 행은 추정하지 않았습니다. Pinehill 6번은 투명 레이어 때문에 본문 표시에서 숫자가 묻히지만 원본 이미지에서 Red 104m, White 124m·134m, Blue 154m를 확인했습니다.
 - 네 경로 모두 PAR36이며 총 36홀·PAR144입니다. 관리자 seed 구조 검사를 통과했고 원격 DB에서 구장, 경로 4개, 홀 36개, 티 거리 140개를 주요 필드별 대조해 불일치 0건을 확인했습니다. 자료 파일: `rivieracc-2026-official-verified.json`; 출처: 공식 [코스 페이지](https://www.shinangolf.com/club/course/rivieracc) 및 페이지 내 홀별 지도 이미지 (2026-10-13 확인).
 - 적재 후 원격 전체 카탈로그: 총 516곳 — 검수 완료 282, 미진행 229, 반려 5. 미진행 지역별로 강원 55, 경기 129, 경북 1, 세종 1, 인천 10, 전남 1, 전북 3, 제주 28, 충남 1곳입니다. 부산·울산·경남 미진행은 0곳입니다.
+
+### 2026-10-13 — O2리조트 홀별 거리도 대조 및 반영
+- 운영사 공식 [코스 개요](https://www.o2resort.com/GLF/ccGuide.jsp) 및 [함백](https://www.o2resort.com/GLF/mountainCourse.jsp)·[태백](https://www.o2resort.com/GLF/skyCourse.jsp)·[백두](https://www.o2resort.com/GLF/hillCourse.jsp) 코스 페이지와 각 홀 지도에서 PAR 및 C/T·R/T·F/T·L/T의 `Green` 거리 열을 확인했습니다. 원문 단위는 코스 개요에 표기된 yds를 따르고 DB에는 원문값과 미터 환산값을 함께 보존했습니다. 거리 지도의 주황색은 코스 도면 표식 색일 뿐 티 색으로 제시되지 않아 네 티 색상은 중립값으로 저장했습니다.
+- 대조 중 함백 2번 C/T는 seed의 345yd가 아니라 공식 Green 열 395yd(361m)임을 확인했습니다. 함백 5번도 seed가 I.P. 값 180/150/130/110yd를 티 거리로 잘못 사용하고 있었습니다. 공식 Green 값 230/200/170/140yd(210/183/155/128m)로 바로잡았습니다. 다른 홀의 PAR와 공개된 티 행을 원본 지도와 대조했고, 자료에 없는 티 행은 추가하지 않았습니다.
+- 개요 총장(함백/태백/백두 3,018/4,265/3,237yd)과 홀별 Green 합계(함백 C/T·R/T·F/T·L/T 3,335/3,077/2,825/2,450yd, 태백 3,380/3,150/2,835/2,435yd, 백두 3,065/2,693/1,990/1,906yd)는 서로 맞지 않습니다. 공식 홀별 PAR와 티 행이 모두 확인되어 사용자 지침에 따라 홀별 상세를 저장 기준으로 삼고 총장 차이는 코스·경로 검수 메모에 남겨 세 경로를 verified 처리했습니다.
+- O2리조트 골프장에 함백·태백·백두 3개 경로(27홀·PAR108·티 행 104개), 별도 MCST 퍼블릭 항목에 백두 경로(9홀·PAR36·티 행 32개)를 verified 반영했습니다. 두 레코드는 총 136개 티 행이며, seed 정적 구조 검사를 통과했습니다. 원격 DB 재조회에서 구장·경로 상태, 홀 수, PAR 배열, 티 행 수, 함백 2·5번 원문 거리/환산 거리 및 중립 색상을 확인했습니다.
+- 자료: `o2-resort-2026-official-verified.json`, `o2-resort-public-2026-official-verified.json`; 홀 지도 출처: [함백 1번](https://www.o2resort.com/common/images2018/golf/mountainCourse/1.png) 및 같은 경로의 2~9.png, [태백 10번](https://www.o2resort.com/common/images2018/golf/skyCourse/10.png) 및 같은 경로의 11~18.png, [백두 1번](https://www.o2resort.com/common/images2018/golf/hillCourse/1.png) 및 같은 경로의 2~9.png (2026-10-13 확인).
+- 반영 후 원격 전체 카탈로그: 총 516곳 — 검수 완료 284, 미진행 227, 반려 5. 부산·울산·경남 pending은 0곳입니다.
