@@ -1161,3 +1161,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스표](https://www.thestarhue.com/scourse.asp)에서 STAR 1–9홀과 HUE 10–18홀의 PAR 및 공식 m/yd 기준거리를 반영했습니다. 코스별 PAR36이며 공식 전장은 STAR 3,333m/3,645yd, HUE 3,261m/3,566yd로 홀별 합과 일치합니다. 공식 자료에 티 위치별 차등 거리는 없어, 티 선택 불가한 `official_reference`로 저장했습니다. 자료: `the-star-hue-2026-official-reference.json`.
 - 원격 DB 대조 결과 구장·2개 경로 verified, 18홀·18개 기준거리 행이며 PAR·거리·티 선택 불가 상태가 18/18 일치합니다. 티별 거리 정보가 공식 제공되지 않는 점은 구장·경로 검수 메모에 명시했습니다.
 - 원격 카탈로그는 총 512곳: 검수 완료 386, 미진행 125, 반려 1입니다. 웅포CC·광양CC 추가 확인은 사용자 지시에 따라 보류합니다.
+
+### 2026-10-13 — 발리오스CC(회원제) 동·서·남 공식 코스 자료
+- 운영사 공식 [회원제 코스표](https://baliosgc.com/mcourse/m_guide_out.asp)에서 동·서·남 각 9홀의 PAR, 좌·우 그린별 HDCP 및 Back/Regular 티 거리를 반영했습니다. 공식 거리 단위는 m이며, 동일 주소의 발리오스CC 비회원제와 구분된 회원제 27홀 자료입니다. 자료: `balios-membership-2026-official-verified.json`.
+- 원격 DB 대조 결과 3개 경로·27홀·108개 티/그린 행이며 PAR·그린·티·거리·HDCP 대조는 108/108 일치합니다. 동코스 Back 우그린의 홀별 합계는 3,171m로 공식 TOTAL 3,121m와 50m 차이가 있어 홀별 값을 유지하고 경로 검수 메모에 남겼습니다. 나머지 공식 티별 합계는 홀별 값과 일치합니다.
+- 원격 카탈로그는 총 512곳: 검수 완료 387, 미진행 124, 반려 1입니다. 웅포CC·광양CC 추가 확인은 사용자 지시에 따라 보류합니다.
