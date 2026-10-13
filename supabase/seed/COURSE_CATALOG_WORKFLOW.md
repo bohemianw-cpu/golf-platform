@@ -794,3 +794,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 티별 9홀 합계는 C 3,337/3,132/2,916/2,648/2,242m, D 2,965/2,770/2,590/2,389/2,091m, E 3,062/2,857/2,652/2,350/2,148m로 공식 표 합계와 일치합니다. 공식 스코어카드에 HDCP와 색상 표기가 없어 핸디캡은 비우고 UI 티 색상은 중립색으로 저장했습니다.
 - 원격 DB에서 구장·C/D/E 경로 `verified`, 27홀·135개 티 행을 확인했고 시드와 DB의 거리·티·PAR·선택 상태를 전수 대조해 누락 0·불일치 0을 확인했습니다. 자료 파일: `bella45-masters-2026-official-verified.json`.
 - 현재 원격 카탈로그는 총 516곳: 검수 완료 318, 미진행 192, 반려 6입니다. 미진행 지역은 강원 43, 경기 121, 세종 1, 인천 1, 제주 25, 충남 1곳입니다. 다음 강원 미진행 대상은 `동강시스타 골프장`이며, 공식 이미지와 본문 간 파/HDCP 충돌이 해결될 때까지 보류 중입니다.
+
+### 2026-10-13 — 샤인데일CC 공식 27홀 자료
+- 운영사 공식 [샤인](https://www.shinedale.com/Course/ShineCourse.aspx)·[데일](https://www.shinedale.com/Course/DaleCourse.aspx)·[레이크](https://www.shinedale.com/Course/LakeCourse.aspx) 코스 페이지의 각 9홀 PAR와 Champion/Blue/White/Senior/Lady 미터 거리를 반영했습니다. 총 27홀·135개 선택 가능 티 거리 행이며 공식 페이지에 HDCP는 공개되지 않았습니다.
+- 운영 표기를 `샤인데일CC`로 정리하고 기존 MCST 명칭 `샤인데일골프&리조트`를 alias로 보존했습니다. 공식 페이지는 티 색상을 별도 지정하지 않아 중립색으로 표시했습니다. 자료 파일: `shinedale-cc-2026-official-verified.json`.
+- 원격 DB에서 구장 및 SHINE/DALE/LAKE 경로 `verified`, 각 9홀·PAR36·45개 티 거리 행을 확인했습니다. 시드와 DB의 135개 티 거리·PAR·표시명·선택 상태를 항목별 대조해 누락 0·불일치 0을 확인했습니다.
+- 현재 원격 카탈로그는 총 516곳: 검수 완료 319, 미진행 191, 반려 6입니다. 미진행 지역은 강원 42, 경기 121, 세종 1, 인천 1, 제주 25, 충남 1곳입니다. 동강시스타는 공식 페이지 이미지와 본문에서 PAR/HDCP가 충돌해 보류 중입니다.
