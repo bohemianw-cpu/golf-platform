@@ -667,3 +667,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스 소개](https://www.namchuncheon.co.kr/course/intro)와 [코스 공략](https://www.namchuncheon.co.kr/course/tip) 페이지가 사용하는 1st-party API에서 빅토리·챌린지 각 9홀의 PAR·HDCP 및 Black/Blue/White/Yellow/Red 티별 거리(m/yd 병기) 90개를 확인해 저장했습니다. 공식 API의 홀 번호는 각 경로에서 1~9번으로 표시됩니다.
 - 90개 m/yd 값쌍을 1yd=0.9144m로 반올림 대조한 결과 차이는 모두 1m 이내였습니다. 공식 미터값을 앱 거리로 사용하고 공식 야드값을 원거리로 보존했습니다. 각 코스 PAR36이며 홀별 합산(m)은 빅토리 Black/Blue/White/Yellow/Red 3,345/3,170/2,952/2,728/2,445, 챌린지 3,468/3,303/3,079/2,871/2,558입니다.
 - `namchuncheon-cc-2026-official-verified.json` 구조 검사를 통과했습니다. 원격 DB에서 경로 2개·홀 18개·선택 가능 티 90개, PAR·HDCP·티 이름·색상·미터·원문 야드·검수 상태를 seed와 대조해 불일치 0건을 확인했습니다. 반영 후 카탈로그는 516곳 — 검수 완료 299, 미진행 212, 반려 5입니다.
+
+### 2026-10-13 — 세종 레이캐슬 공식 코스 자료 재확인
+- 운영사 [COURSE VIEW](https://www.sjraycastle.com/Golf/Course/Sejong.aspx), [레이](https://www.sjraycastle.com/Golf/Course/Ray.aspx), [캐슬](https://www.sjraycastle.com/Golf/Course/Castle.aspx) 페이지의 HTML에는 세종·레이·캐슬 각 9홀 코스의 이미지 갤러리만 있고, 홀별 PAR·HDCP·티별 거리는 게시되지 않습니다. 공식 이용안내는 27홀 구장과 18홀 기준 총 전장 7,760yd만 안내합니다. 이는 홀별 제원으로 분배할 수 없으므로 MCST 자료의 구장 27홀 정보는 유지하고 검수 대기 상태를 유지합니다.
+- 공식 코스 페이지에 티별 홀 제원표나 별도 스코어카드 링크가 없어 현행 공개 자료만으로 전체 홀 자료를 확정하지 못했습니다. 추가 공식 제원표 확보 시 세 코스 각 9홀의 PAR·티별 거리를 보강합니다.
