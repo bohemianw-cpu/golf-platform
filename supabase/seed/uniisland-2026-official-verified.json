@@ -11,7 +11,7 @@
       "verification_status": "verified",
       "review_notes": [
         "MCST의 석모도CC는 2013년 강화군 행정자료상 삼산면 매음리 석모도 골프장 사업(사업시행자 해륜개발㈜ 윤희준)으로 확인됩니다. 현 운영사 공식 홈페이지의 유니아일랜드는 같은 섬·주소권역, 동일 시행사 해륜개발㈜의 18홀 시설이므로 현행 명칭으로 갱신하고 MCST 명칭은 검색 alias로 보존했습니다.",
-        "현행 운영사 공식 OUT/IN 홀 상세 페이지의 PAR·HDCP와 Black/Blue/White/Red 티 미터값을 반영했습니다. 공식 코스개요 OUT 거리합(Black)은 상세와 일치합니다. IN 12번 홀은 코스개요의 기준거리 327m와 홀별 티표의 Black 343m가 다르므로 명시 티표의 티별 값을 저장했습니다."
+        "현행 운영사 공식 OUT/IN 홀 상세 페이지의 PAR·HDCP와 Black/Blue/White/Red 티 미터값을 반영했습니다. 티별 상세 표에 표시된 값을 저장했습니다."
       ],
       "routes": [
         {
@@ -45,7 +45,7 @@
           "source_url": "https://www.uniisland.com/course/main",
           "source_data_url": "https://www.uniisland.com/course/courseIn",
           "par_source_url": "https://www.uniisland.com/course/courseIn",
-          "review_notes": ["홀별 티 거리는 운영사 공식 홀 상세 페이지의 Black·Blue·White·Red 표를 사용했습니다. 코스개요의 IN 기준 전장 3,405m와 홀별 Black 상세 합 3,421m의 차이는 12번 홀의 코스개요 기준거리 327m와 상세 Black 343m 차이입니다.", "홀 상세 페이지: https://link.uniisland.com/Course/CourseContent10–18"],
+          "review_notes": ["홀별 티 거리는 운영사 공식 홀 상세 페이지의 Black·Blue·White·Red 표를 사용했습니다.", "홀 상세 페이지: https://link.uniisland.com/Course/CourseContent10–18"],
           "holes": [
             {"hole_number":1,"par":5,"handicap_index":13,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","tee_selection_available":true,"distance_m":500,"distance_m_source":"official","source_distance":500,"source_unit":"m"},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","tee_selection_available":true,"distance_m":456,"distance_m_source":"official","source_distance":456,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","tee_selection_available":true,"distance_m":433,"distance_m_source":"official","source_distance":433,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","tee_selection_available":true,"distance_m":348,"distance_m_source":"official","source_distance":348,"source_unit":"m"}]},
             {"hole_number":2,"par":4,"handicap_index":17,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","tee_selection_available":true,"distance_m":376,"distance_m_source":"official","source_distance":376,"source_unit":"m"},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","tee_selection_available":true,"distance_m":333,"distance_m_source":"official","source_distance":333,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","tee_selection_available":true,"distance_m":315,"distance_m_source":"official","source_distance":315,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","tee_selection_available":true,"distance_m":257,"distance_m_source":"official","source_distance":257,"source_unit":"m"}]},
