@@ -1112,3 +1112,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스 안내](https://www.balioscc.com/mcourse/m_guide_out.asp)의 남코스 표에서 9홀 PAR·HDCP 및 Back/Regular 티별 미터 거리, L/R 그린 구분을 입력했습니다. 운영사 [이용요금 안내](https://www.baliosgc.com/balioscc/guide.asp)는 비회원제 9홀과 회원제 18홀을 별도 구분합니다. 동·서·남 3개 9홀 중 남코스를 비회원제 기록에 연결한 것은 이 공식 구성에 기반한 매핑입니다.
 - 9홀·36개 티/그린 거리 행을 저장했습니다. 공식 합계는 Back L/R 2,935/2,946m, Regular L/R 2,776/2,787m이며 DB에 저장된 합계와 일치합니다. 자료: `balios-cc-public-2026-official-verified.json`.
 - 원격 카탈로그는 총 512곳: 검수 완료 377, 미진행 134, 반려 1입니다. 미진행 지역은 경기 82, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
+
+### 2026-10-13 — 양평TPC GC 루나·솔라·스텔라 공식 코스 자료
+- 운영사 공식 [코스 안내](https://www.clublonge.com/Club/yangpyeong/Course)의 3개 코스 표에서 각 9홀 PAR·HDCP와 Champion/Regular/Front/Ladies 티별 미터 거리를 입력했습니다. 공식 티 명칭을 유지했으며 표에 색상 정보가 없어 UI 색상은 중립 색상으로 지정했습니다. 루나 티 합계 3,611/3,197/2,984/2,695m, 솔라 3,522/3,202/3,029/2,749m, 스텔라 3,363/2,969/2,813/2,584m가 각 홀 거리 합과 일치합니다. 자료: `yangpyeong-tpc-2026-official-verified.json`.
+- 원격 DB 대조 결과 양평TPC GC verified, 3개 경로·27홀·108개 티 자료이며 경로/PAR·HDCP/거리별 불일치는 0건입니다.
+- 원격 카탈로그는 총 512곳: 검수 완료 378, 미진행 133, 반려 1입니다. 미진행은 경기 81, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
