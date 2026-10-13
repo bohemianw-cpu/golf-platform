@@ -1176,3 +1176,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [East](https://www.theheavenresort.com/ISLANDRESORT/course_result_east_01.asp), [South](https://www.theheavenresort.com/ISLANDRESORT/course_result_south_01.asp), [West](https://www.theheavenresort.com/ISLANDRESORT/course_result_west_01.asp) 코스 페이지의 전체 코스표에서 27홀 PAR와 Black/Blue/White/Gold/Red 티별 야드 거리를 반영했습니다. 원본 yd값을 보존하고 미터 거리는 0.9144 환산 후 반올림했습니다. 공식 페이지에 HDCP가 없어 해당 값은 비워두었습니다. 자료: `the-heaven-cc-2026-official-verified.json`.
 - 원격 DB에서 구장·3개 코스 verified, 27홀·135개 티 행을 확인했습니다. JSON 원본과 DB의 홀·티·PAR·거리·단위·색상 대조 결과 135/135 일치합니다. South White 홀별 합계는 3,095yd인데 TOTAL 표기는 2,838yd입니다. West는 Black/Blue/White/Red가 홀별 합과 TOTAL 간 각각 3/2/2/9yd 차이이며 Gold는 일치합니다. 공식 홀별 거리를 유지하고 차이는 코스 메모에 남겼습니다.
 - 원격 카탈로그는 총 512곳: 검수 완료 389, 미진행 122, 반려 1입니다. 웅포CC·광양CC 관련 추가 확인은 사용자 지시에 따라 보류합니다.
+
+### 2026-10-13 — 사우스스프링스CC Lake·Mountain 공식 기준거리
+- 운영사 공식 [코스 안내](https://www.sscc.co.kr/course)와 해당 페이지가 불러오는 코스 데이터(https://www.sscc.co.kr/_nuxt/course.DoH2E808.js)에서 Lake·Mountain 각 9홀의 PAR와 단일 yd 기준거리를 반영했습니다. 티별 거리는 공식 제공되지 않아 18홀 모두 `official_reference`로 저장하고 티 선택을 비활성화했습니다. yd 원본을 보존하고 미터값은 환산·반올림했습니다. 자료: `south-springs-2026-official-reference.json`.
+- 원격 DB 대조 결과 2개 코스·18홀·18개 기준거리 행이 18/18 일치하며 선택 가능한 티는 0개입니다. 공식 소개의 전장(6,348yd / 코스개요 6,344m)과 현재 코스 페이지의 홀별 합계 7,226yd가 달라 홀별 값을 보존하고 구장·코스 검수 메모에 출처 차이를 기록했습니다.
+- 원격 카탈로그는 총 512곳: 검수 완료 390, 미진행 121, 반려 1입니다. 웅포CC·광양CC 관련 추가 확인은 사용자 지시에 따라 보류합니다.
