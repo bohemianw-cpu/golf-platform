@@ -597,3 +597,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - API의 `standardDistance`는 BLACK 값과 동일해 중복 티 행을 만들지 않았고, 전 홀 `brownTeeDistance`는 비어 있어 추가하지 않았습니다. PAR와 거리 외 HDCP는 API에서 제공하지 않아 추정하지 않았습니다. 공식 개요 전장 6,454m와 홀별 BLACK 거리 합 6,448m의 6m 차이는 원문값을 유지하고 메모했습니다.
 - seed 구조 검사를 통과했고 원격 DB에서 구장·경로 `verified`, 홀 18개, 티 거리 72개를 대조해 seed와 불일치 0건을 확인했습니다. 자료 파일: `oak-hills-2026-official-verified.json`.
 - 반영 후 원격 전체 카탈로그: 총 516곳 — 검수 완료 287, 미진행 224, 반려 5. 미진행 지역별: 강원 52, 경기 127, 경북 1, 세종 1, 인천 10, 전남 1, 전북 3, 제주 28, 충남 1곳. 부산·울산·경남 pending은 0곳입니다.
+
+### 2026-10-13 — 오크밸리CC 공식 36홀 자료 반영
+- 운영사 공식 [오크밸리 코스 페이지](https://ipark-golf.com/oakvalley/course)와 페이지에서 사용하는 [코스 상세 API](https://api.hdcgolf.com/api/v1/courses?idGolfCC=133)에서 오크·메이플·파인·체리 각 9홀의 PAR와 BLACK/BLUE/WHITE/BROWN/RED 티 거리(M/Y)를 확인했습니다. 4개 경로·36홀·180개 티 거리 행을 반영했습니다.
+- 공식 API의 `standardDistance`는 공백 정규화 후 BLACK과 동일해 중복 저장하지 않았습니다. 체리 9번 RED 원문이 `379M/414Y|`로 끝에 구분자가 붙어 있어 수치 379m를 보존하고 표기 특이사항을 검수 메모에 남겼습니다. 공식 개요 전장 13,005m와 홀별 BLACK 합 13,009m의 4m 차이도 원문을 유지했습니다. API에 HDCP는 없어 추정하지 않았습니다.
+- MCST의 `오크밸리회원제골프장`을 운영사 공식명 `오크밸리CC`로 갱신하고 기존 명칭은 검색 alias로 보존했습니다. 관리자 seed 구조 검사를 통과했고 원격 DB의 코스명·alias·구장 상태, 네 경로, PAR, 티명·거리·원문 단위·선택 가능 여부 180행을 seed와 대조해 불일치 0건을 확인했습니다. 자료 파일: `oak-valley-2026-official-verified.json`.
+- 반영 후 원격 전체 카탈로그: 총 516곳 — 검수 완료 288, 미진행 223, 반려 5. 미진행 지역별: 강원 51, 경기 127, 경북 1, 세종 1, 인천 10, 전남 1, 전북 3, 제주 28, 충남 1곳. 부산·울산·경남 pending은 0곳입니다.
