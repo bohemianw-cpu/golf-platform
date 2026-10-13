@@ -702,3 +702,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-13 — 코스모스CC 폐업 및 영암45 별도 시설 확인
 - 사용자 확인에 따라 MCST `cosmos 1`을 `코스모스CC`로 정리하고 `코스모스링스CC`를 별칭으로 보존했습니다. 폐업 상태이므로 `rejected`로 제외했습니다. 원격 DB에서 해당 레코드는 라운드 0건·경로 0개였습니다.
 - 골프존카운티 영암45(에프원로 121-1)는 코스모스CC(에프원로 121-4)와 다른 시설입니다. 영암45 verified 레코드는 별도 유지하며 코스 자료를 복제하지 않았습니다. 적용 자료: `cosmos-1-2026-user-confirmed-closed.json`.
+
+### 2026-10-13 — 베스트밸리GC 공식 코스 자료
+- 운영사 공식 코스 페이지의 PAR36·HDCP·Blue/White/Yellow/Red 홀별 미터 거리와 좌·우 그린별 상세값을 저장했습니다. 9홀·2그린·4티 조합으로 총 72개 티 거리행이며, 공식 단일 합계표와 그린 상세값 합계의 차이는 원문 상세값을 유지하고 검수 메모에 기록했습니다.
+- 원격 DB에서 구장·MAIN 경로 모두 `verified`, 9홀·72개 티 거리행을 확인했습니다. 자료 파일: `best-valley-gc-2026-official-verified.json`; 출처: [베스트밸리GC 공식 코스안내](https://www.bestvalleygc.com/Club/Course) (2026-10-13 확인).
