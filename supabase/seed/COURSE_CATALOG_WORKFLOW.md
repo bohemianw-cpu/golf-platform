@@ -5,6 +5,11 @@
 - 공식 합계 3,335m·PAR36와 홀별 합이 일치합니다. 원격 DB에서 1개 경로·9홀·9개 비선택 기준거리 행을 확인했고 구장/경로는 모두 verified입니다.
 - 카탈로그는 총 512곳: 검수 완료 401, 미진행 110, 반려 1입니다. 웅포CC·광양CC의 확인 작업은 사용자의 별도 요청까지 보류합니다.
 
+### 2026-10-14 — 아리지 골프장 햇님·달님·별님 코스
+- 운영사 공식 [코스 소개 표](https://www.ariji.co.kr/course-info/course-introduction)에서 3개 9홀 코스의 PAR와 Black/Blue/White/Yellow/Red 미터 거리를 입력했습니다. 각 코스의 홀별 상세는 [햇님](https://www.ariji.co.kr/course-info/sun-course), [달님](https://www.ariji.co.kr/course-info/moon-course), [별님](https://www.ariji.co.kr/course-info/star-course)입니다. 자료: `ariji-golf-course-2026-official-verified.json`.
+- 운영사 상세 페이지의 거리 값이 코스 소개 표와 여러 홀에서 달라, 앞서 사용자가 지정한 합계표 우선 기준에 따라 코스 소개 표를 적용하고 차이를 메모했습니다. 요약표의 티 합계와 홀별 합도 햇님 Blue +9m, 달님 Black +10m·Blue +5m·Yellow +5m·Red -3m, 별님 White +54m 차이를 기록했습니다.
+- 원격 DB에서 3개 경로·27홀·135개 티 행을 대조해 모두 일치(불일치 0건)했고 구장 및 경로를 verified 처리했습니다. 카탈로그는 총 512곳: 검수 완료 402, 미진행 109, 반려 1입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
 ## 데이터 단계
 
 구장 저장명은 공통 표기를 사용합니다. `컨트리클럽`/`Country Club`은 `CC`, `골프클럽`/`Golf Club`은 `GC`, 두 명칭이 결합된 `골프&컨트리클럽`/`Golf & Country Club`은 `GCC`로 저장합니다. MCST 및 관리자 보정 importer와 라운드 저장 경로가 이 표기를 적용하며, 검색어도 같은 규칙으로 바꿔 기존 명칭으로 검색해도 결과를 찾을 수 있습니다.
