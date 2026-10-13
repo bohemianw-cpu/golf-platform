@@ -1144,3 +1144,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 신원CC 공식 [코스소개](https://www.swcc.co.kr/swp/course)와 [솔로몬](https://www.swcc.co.kr/swp/course_solomon), [에벤에셀](https://www.swcc.co.kr/swp/course_ebenezer), [데이비드](https://www.swcc.co.kr/swp/course_david) 홀별 페이지 및 각 페이지가 사용하는 공식 거리 배열을 확인했습니다. 3개 코스 27홀의 PAR·HDCP와 Left/Right 그린별 Blue/White/Yellow/Red 거리를 저장했고, 공식 배열에 White 2가 표기된 홀은 별도 선택 가능한 티로 보존했습니다. 자료: `shinwon-cc-2026-official-verified.json`.
 - 홀별 상세 합계와 코스개요 Champion/Regular/Lady 합계가 여러 곳에서 다릅니다. Solomon은 Blue 3,166/3,168m 대 3,159m, White 2,989/2,991m 대 2,977m, Red 2,508/2,512m 대 2,496m입니다. Ebenezer는 Blue 3,078/3,073m 대 3,070m, White 2,908/2,903m 대 2,902m, Red 2,464/2,459m 대 2,373m입니다. David는 Blue 3,247/3,246m 대 3,238m, White 3,019/3,017m 대 3,008m, Red 2,563/2,561m 대 2,233m입니다. 공식 홀별 상세값을 유지하고 차이는 경로별 검수 메모에 기록했습니다.
 - 원격 DB에서 3개 경로 모두 PAR36·9홀을 확인했으며 홀·그린·티·거리·원본 단위 대조 불일치는 0건입니다. 총 27홀·220개 티/그린 행을 저장했습니다. 원격 카탈로그는 총 512곳: 검수 완료 383, 미진행 128, 반려 1입니다.
+
+### 2026-10-13 — 로제비앙GC 로제·비앙·네오 공식 코스 자료
+- 운영사 공식 [코스소개](https://www.logebiengc.com/html/course/course_01.asp) 및 [로제](https://www.logebiengc.com/html/course/course_02.asp), [비앙](https://www.logebiengc.com/html/course/course_02_02.asp), [네오](https://www.logebiengc.com/html/course/course_02_03.asp) 홀별 페이지에서 각 9홀의 PAR·HDCP와 Blue/White/White2/Red 티별 미터 거리를 반영했습니다. White/White1은 White 티로 통합했고 White2는 별도 선택 티로 유지했습니다. 홀별 Left/Right 그린 또는 단일 그린 표기를 보존했습니다. 공식 주소의 ‘오향길’을 반영했습니다. 자료: `logebien-gc-2026-official-verified.json`.
+- 원격 DB 대조 결과 구장·경로 verified, 3개 경로·27홀·164개 티/그린 행이며 홀·티별 데이터 불일치는 0건입니다. 공식 사이트에 없는 티 값은 추가하지 않았습니다.
+- ScoreTab의 코스 선택은 DB에서 받은 `tee_code`와 표시명을 동적으로 사용하고, 해당 티가 전 홀에서 제공되는 경우에만 선택지로 노출합니다. 따라서 White2 같은 추가 티 코드를 위해 UI 변경은 필요하지 않습니다.
+- 원격 카탈로그는 총 512곳: 검수 완료 384, 미진행 127, 반려 1입니다. 웅포CC·광양CC 추가 확인은 사용자 지시에 따라 보류합니다.
