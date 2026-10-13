@@ -734,3 +734,11 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 현행 운영사 주소 인천광역시 영종구 한상중앙로 66과 `베르힐CC 영종` 공식 명칭을 반영했습니다. 구장 및 네 경로를 `verified`로 갱신했습니다.
 - 원격 DB에서 시드와 티 거리·색상·그린을 포함한 276개 행을 항목별 비교해 누락 0·불일치 0을 확인했습니다. ScoreTab의 [CourseCatalogPicker](../../components/score/CourseCatalogPicker.tsx)는 DB의 green variant를 읽고, [ScoreTab](../../components/score/ScoreTab.tsx)은 홀별 그린 선택을 지원합니다. 자료 파일: `verthill-yeongjong-2026-official-verified.json`.
 - 현재 원격 카탈로그는 총 516곳: 검수 완료 308, 미진행 202, 반려 6입니다. 미진행 지역은 강원 48, 경기 121, 세종 1, 인천 3, 제주 28, 충남 1곳입니다.
+
+### 2026-10-13 — 유니아일랜드CC 공식 코스 자료 및 석모도CC 명칭 연결
+- 현행 운영사 공식 [코스개요](https://www.uniisland.com/course/main), [OUT 홀 상세](https://www.uniisland.com/course/courseOut), [IN 홀 상세](https://www.uniisland.com/course/courseIn)와 [1~18번 홀별 상세](https://link.uniisland.com/Course/CourseContent1)를 확인했습니다. OUT·IN 각 9홀의 PAR·HDCP와 Black/Blue/White/Red 미터 거리를 적재했습니다. 18홀·PAR72, 티 거리 72개입니다.
+- MCST `석모도CC`는 강화군 2013년 행정자료의 삼산면 매음리 석모도 골프장 사업으로 확인했습니다. 행정자료의 사업시행자는 해륜개발㈜ 윤희준이며 운영사 공식 주소도 같은 매음리 어류정길 권역이고 사업자도 해륜개발㈜입니다. 현행 구장명 `유니아일랜드CC`로 갱신하고 `석모도CC`를 검색 alias로 보존했습니다.
+- IN 12번은 코스개요 기준거리 327m와 상세 티 표 Black 343m가 다릅니다. 명시된 홀별 티별 값을 저장하고 차이를 관리자 메모에 남겼습니다. IN 경로는 라운드 데이터 구조에 맞춰 로컬 홀 1~9로 저장했습니다.
+- 원격 DB 검증: 구장 `verified`, OUT/IN 2개 경로, 18홀, 72개 티 행이며 seed와 필드별 비교 누락 0·불일치 0입니다. 앱에서 경로 선택 및 홀별 티 선택을 지원하므로 UI 변경은 필요하지 않았습니다. 자료 파일: `uniisland-2026-official-verified.json`.
+- 현재 원격 카탈로그는 총 516곳: 검수 완료 309, 미진행 201, 반려 6입니다. 미진행 지역은 강원 48, 경기 121, 세종 1, 인천 2, 제주 28, 충남 1곳.
+- 다음 인천 대상은 `베어즈베스트청라GC`, `잭 니클라우스 GC 코리아`입니다. 잭 니클라우스 현행 공식 홈페이지 API에서 코스 그룹(URBAN/LINKS)만 확인했고 홀별 거리 자료는 공개 응답에서 확인되지 않았습니다. 베어즈베스트 공식 도메인은 현재 HTTP 406을 반환하지만 2023년 보존된 공식 코스개요와 2019년 홀별 페이지 일부는 접근 가능합니다. 두 곳은 공식 자료 확보 범위에 따라 계속 진행합니다.
