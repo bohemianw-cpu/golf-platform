@@ -1,3 +1,7 @@
+### 2026-10-14 — 포천아도니스 대중골프장 퍼블릭코스
+- 운영사 공식 [퍼블릭 스코어카드](https://www.adoniscc.co.kr/public/course/score)에서 9홀의 PAR·HDCP와 Back·Regular·Ladies 티별 거리를 m로 반영했습니다. 표에 티 색상은 없어 원래 이름을 유지했습니다. 자료: `pocheon-adonis-public-2026-official-verified.json`.
+- 원격 DB의 홀·티 데이터를 seed와 대조해 9홀·27개 티 행이 모두 일치(불일치·추가 행 0건)함을 확인하고 `verified` 처리했습니다. 카탈로그는 총 512곳: 검수 완료 421, 미진행 90, 반려 1입니다. 웅포CC·광양CC 확인은 별도 요청까지 보류합니다.
+
 ### 2026-10-14 — 해슬리나인브릿지 CC 해슬리·PGA 코스
 - 운영사 공식 [코스 제원표](https://www.haesley.com/new/introduce/course/plan.asp)에서 두 9홀 코스의 PAR·Men/Ladies HDCP와 토너먼트·블랙·블루·화이트·옐로우·레드 티별 미터 거리를 반영했습니다. 자료: `haesley-nine-bridges-2026-official-verified.json`.
 - 현재 홀 데이터의 단일 HDCP 필드에는 Men Hcp를 저장하고, Ladies Hcp 9개 값은 코스별 검수 메모에 원순서대로 보존했습니다. 원격 DB와 seed의 2개 경로·18홀·108개 티 행을 대조해 불일치 0건으로 확인하고 `verified` 처리했습니다. 카탈로그는 총 512곳: 검수 완료 420, 미진행 91, 반려 1입니다. 웅포CC·광양CC 확인은 별도 요청까지 보류합니다.
