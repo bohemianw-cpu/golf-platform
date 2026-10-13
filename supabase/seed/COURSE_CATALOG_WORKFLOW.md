@@ -1344,3 +1344,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-14 — 솔트베이GC OUT·IN 공식 코스 자료
 - 운영사 공식 [코스 정보](https://www.saltbay.co.kr/Course/CourseInfo)의 OUT·IN 표에서 18홀 PAR·HDCP 및 Black/Blue/White/Yellow/Red 티별 m 거리를 반영했습니다. 코스별 티 합계를 공식 표와 대조했고 모두 일치합니다. 자료: `saltbay-2026-official-verified.json`.
 - 원격 DB에서 2개 경로·18홀·90개 티 행을 대조해 90/90 일치, PAR·HDCP·거리 불일치 0건을 확인했습니다. 카탈로그는 총 512곳: 검수 완료 400, 미진행 111, 반려 1입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 사이프러스 골프&리조트 서·북·동·남 공식 코스 자료
+- 운영사 공식 [코스제원](https://ns.cypress.co.kr/swp/course), [클럽소개](https://ns.cypress.co.kr/swp/club), [회원 안내](https://ns.cypress.co.kr/swp/member_join)에서 구장과 코스 구성을 대조했습니다. 서·북·동·남 각 9홀의 홀별 PAR·HDCP 및 Black/Blue/White/Gold/Red 티별 m 자료를 반영했습니다. 서·북은 회원제, 동·남은 대중형으로 운영되며 전체 36홀입니다. 자료: `cypress-golf-resort-2026-official-verified.json`.
+- 공식 홀별 표의 거리 합계는 각 코스의 표 소계와 일치합니다. 동 코스 홀별 PAR 합은 36인데 공식 소계는 35로 표기되어 홀별 값을 적용했습니다. 코스 소개와 회원 안내의 18홀 전장은 홀별 거리 합과 크게 달라, 출처 간 차이를 구장 메모에 남겼습니다.
+- 원격 DB와 seed를 대조해 verified 구장·4개 경로·36홀·180개 티가 모두 일치하고 누락·초과·필드 불일치는 0건임을 확인했습니다. 카탈로그는 총 512곳: 검수 완료 429, 미진행 82, 반려 1입니다. 웅포CC·광양CC 추가 검수는 별도 요청까지 보류합니다.
