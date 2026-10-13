@@ -656,3 +656,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스공략법](https://songdogolf.co.kr/_course/course02.php)에 나온 1~8번 홀의 PAR·HDCP와 좌·우 그린별 거리(m)를 저장했습니다. 티별 거리는 공개되지 않아 각 홀의 두 그린을 `left`·`right`로 나누고 티 선택 불가 공식 기준 거리로 등록했습니다. 8홀·PAR29, 기준거리 16행입니다.
 - 공식 페이지 카드 제목은 1~8번 순서지만, 코스 이미지의 alt 번호는 1, 3~9로 일부 다릅니다. 카드 제목 바로 아래에 PAR·HDCP·좌우 그린 거리가 묶여 표시되어 해당 순서를 기준으로 입력하고 불일치를 검수 메모에 남겼습니다. 실제 스코어카드 번호가 다르면 홀 번호 조정이 필요합니다.
 - `songdo-gc-2026-official-verified.json` 구조 검사를 통과했습니다. 원격 DB에서 8개 홀 PAR·HDCP, 16개 공식 미터 거리, 좌·우 그린 코드, 티 선택 불가와 코스·구장 `verified`를 확인했습니다. ScoreTab의 그린 선택 컴포넌트는 그린별 거리 변형을 이미 지원합니다. 반영 후 전체 카탈로그는 총 516곳 — 검수 완료 297, 미진행 214, 반려 5입니다.
+
+### 2026-10-13 — 오너스GC 공식 코스 자료 반영
+- 운영사 공식 [코스 제원표](https://www.ownersgc.co.kr/html/course/course_01.asp)와 [모바일 코스 제원표](https://www.ownersgc.co.kr/mobile/course_01.asp), 18개 홀별 공략 페이지의 PAR·HDCP·Black/Blue/White/Gold/Red 거리(m)를 대조해 Hill·Lake 각 9홀로 적재했습니다. Lake 코스 원홀 10~18은 앱 경로에서 1~9번으로 정규화했습니다.
+- 공식 개별 홀 페이지와 제원표의 값이 다른 Lake 13 White(제원표 165m, 모바일 표 195m, 상세 151m), Lake 14 Red(제원표 237m, 상세 195m), Lake 18 Red(제원표 255m, 상세 220m)는 이전에 정한 합계표 우선 기준으로 제원표의 홀별 값을 저장하고 검수 메모에 차이를 보존했습니다. Hill 티별 합계는 3,265/3,100/2,882/2,656/2,337m, Lake 합계는 3,262/3,066/2,897/2,704/2,320m입니다.
+- `owners-gc-2026-official-verified.json` 구조 검사를 통과했습니다. 원격 DB에서 2경로·18홀·90개 선택 가능 거리행, 각 경로 PAR36, White 기준거리 배열 및 구장·경로 `verified` 상태를 확인했습니다.
