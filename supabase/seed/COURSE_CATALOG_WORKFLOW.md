@@ -916,3 +916,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 원격 DB에서 `1·2·3 GC`와 MAIN 6홀 경로를 `verified`로 반영했습니다. 관리자 적재기의 원격 `--check` 결과 홀 6개·그린 기준거리 12행 모두 seed와 일치했습니다.
 - 강남300CC는 공식 페이지에서 OUT/IN 코스와 홀별 PAR는 확인했으나 티별 거리가 공개되지 않아 미진행으로 유지했습니다.
 - 현재 카탈로그는 총 516곳: 검수 완료 340, 미진행 170, 반려 6입니다. 미진행 지역은 강원 39, 경기 103, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
+
+### 2026-10-13 — 서원밸리CC 공식 서원·밸리 코스 자료
+- 운영사 공식 [코스 소개](https://www.seowongolf.co.kr/valley/course/info), [서원코스 홀별 공략](https://www.seowongolf.co.kr/valley/course/seowon), [밸리코스 홀별 공략](https://www.seowongolf.co.kr/valley/course/valley)에서 각 9홀의 PAR·HDCP와 BLUE/WHITE/GOLD/RED 티별 야드 거리를 반영했습니다. 두 경로 모두 PAR36이며 전체 18홀·72개 티 거리행입니다. 1yd=0.9144m로 가장 가까운 1m에 환산하고 원문 야드 값도 보존했습니다. 자료 파일: `seowon-valley-2026-official-verified.json`.
+- 공식 코스 소개에 기재된 티별 홀 합계를 홀별 값과 대조했습니다. 서원코스 BLUE/WHITE/GOLD/RED는 3,457/3,184/2,844/2,593yd, 밸리코스는 3,553/3,284/2,976/2,705yd로 전부 공식 합계와 일치합니다.
+- 원격 DB에서 `서원밸리CC` 및 SEOWON/VALLEY 경로를 `verified`로 반영했습니다. 관리자 적재기의 원격 `--check` 결과 코스 2개·홀 18개·티 72개 모두 seed와 일치했습니다.
+- 현재 카탈로그는 총 516곳: 검수 완료 341, 미진행 169, 반려 6입니다. 미진행 지역은 강원 39, 경기 102, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
