@@ -1354,3 +1354,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스 소개](https://www.springdale.co.kr/html/course/course_01.asp), [스프링 코스 홀별 페이지](https://www.springdale.co.kr/html/course/course_02_01.asp), [데일 코스 홀별 페이지](https://www.springdale.co.kr/html/course/course_03_01.asp)에서 18홀의 PAR·HDCP 및 Back/Blue/White/Gold/Red 티별 미터 거리를 반영했습니다. 자료: `springdale-2026-official-verified.json`.
 - 스프링 4번 홀 티별 표의 Red 거리는 254m이나 홀 설명 본문 기준 거리는 356m로 다릅니다. 공식 티별 표 값을 유지하고 경로 메모에 차이를 기록했습니다.
 - 원격 DB와 seed를 비교해 verified 구장·2개 경로·18홀·90개 티가 일치하고 누락·초과·필드 불일치가 0건임을 확인했습니다. 카탈로그는 총 512곳: 검수 완료 430, 미진행 81, 반려 1입니다. 웅포CC·광양CC 추가 검수는 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 해비치 컨트리클럽 서울 OUT·IN 공식 코스 자료
+- 운영사 공식 [코스맵](https://www.haevichi.com/ccseoul/ko/course-guide/course-map)의 OUT·IN 표에서 18홀 PAR·HDCP 및 Back/Regular/Lady 티별 yd 거리를 반영했습니다. 앱 검색명을 정식 명칭인 해비치 컨트리클럽 서울로 정리하고 기존 명칭은 별칭으로 보존했습니다. 원본 야드와 0.9144 환산 후 반올림한 미터를 모두 기록했습니다. 공식 티 이름에 색상은 표기되지 않아 앱 색상 팔레트를 연결했습니다. 자료: `haevichi-seoul-2026-official-verified.json`.
+- 원격 DB와 seed를 대조해 verified 구장·2개 경로·18홀·54개 티가 일치하고 누락·초과·필드 불일치가 0건임을 확인했습니다. 카탈로그는 총 512곳: 검수 완료 431, 미진행 80, 반려 1입니다. 웅포CC·광양CC 추가 검수는 별도 요청까지 보류합니다.
