@@ -1,0 +1,76 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "동서울레스피아",
+      "name": "동서울CC",
+      "region": "강원",
+      "address": "원주시 지정면 신평석화로 236",
+      "aliases": [
+        "동서울레스피아",
+        "동서울 컨트리클럽"
+      ],
+      "hole_count": 9,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "동서울CC 공식 코스소개 페이지에서 정규 9홀(Par 36)의 파·BACK/FRONT 티별 거리·HDCP를 확인해 반영했습니다. 공식 표는 BACK TEE 2,703m, FRONT TEE 2,479m로 총연장을 표시하지만, 1~9홀 거리의 합은 각각 2,588m와 2,389m로 공식 총연장과 일치하지 않습니다. 공식 홀별 값을 그대로 저장하고 총연장 불일치를 기록합니다.",
+        "공식 자료에는 별도 서비스홀 S(Par 3, BACK 130m, FRONT 120m, HDCP 10)가 함께 표시됩니다. 이 홀은 정규 9홀 경로에 포함되지 않아 라운딩 선택 경로에서는 제외하고 원자료 값은 이 메모에 보존합니다. 공식 표는 티 색상을 표시하지 않습니다.",
+        "출처: https://www.dongseoulcc.kr/course/course01 (2026-10-13 확인)."
+      ],
+      "routes": [
+        {
+          "route_code": "REGULAR",
+          "display_name": "정규 코스",
+          "hole_count": 9,
+          "primary_tee_code": "front",
+          "verification_status": "verified",
+          "source_url": "https://www.dongseoulcc.kr/course/course01",
+          "source_data_url": "https://www.dongseoulcc.kr/course/course01",
+          "par_source_url": "https://www.dongseoulcc.kr/course/course01",
+          "review_notes": [
+            "공식 코스제원 표의 정규 홀 1~9행을 사용했습니다. 모든 거리는 공식 표기 단위 m입니다. 표에는 티 색상 대신 BACK TEE와 FRONT TEE로 구분되어 있습니다."
+          ],
+          "holes": [
+            { "hole_number": 1, "par": 4, "handicap_index": 2, "tees": [
+              { "tee_code": "back", "display_name": "BACK TEE", "tee_color": "#64748b", "distance_m": 320, "distance_m_source": "official", "source_distance": 320, "source_unit": "m" },
+              { "tee_code": "front", "display_name": "FRONT TEE", "tee_color": "#64748b", "distance_m": 310, "distance_m_source": "official", "source_distance": 310, "source_unit": "m" }
+            ] },
+            { "hole_number": 2, "par": 4, "handicap_index": 1, "tees": [
+              { "tee_code": "back", "display_name": "BACK TEE", "tee_color": "#64748b", "distance_m": 315, "distance_m_source": "official", "source_distance": 315, "source_unit": "m" },
+              { "tee_code": "front", "display_name": "FRONT TEE", "tee_color": "#64748b", "distance_m": 254, "distance_m_source": "official", "source_distance": 254, "source_unit": "m" }
+            ] },
+            { "hole_number": 3, "par": 5, "handicap_index": 6, "tees": [
+              { "tee_code": "back", "display_name": "BACK TEE", "tee_color": "#64748b", "distance_m": 395, "distance_m_source": "official", "source_distance": 395, "source_unit": "m" },
+              { "tee_code": "front", "display_name": "FRONT TEE", "tee_color": "#64748b", "distance_m": 372, "distance_m_source": "official", "source_distance": 372, "source_unit": "m" }
+            ] },
+            { "hole_number": 4, "par": 3, "handicap_index": 8, "tees": [
+              { "tee_code": "back", "display_name": "BACK TEE", "tee_color": "#64748b", "distance_m": 255, "distance_m_source": "official", "source_distance": 255, "source_unit": "m" },
+              { "tee_code": "front", "display_name": "FRONT TEE", "tee_color": "#64748b", "distance_m": 250, "distance_m_source": "official", "source_distance": 250, "source_unit": "m" }
+            ] },
+            { "hole_number": 5, "par": 4, "handicap_index": 9, "tees": [
+              { "tee_code": "back", "display_name": "BACK TEE", "tee_color": "#64748b", "distance_m": 270, "distance_m_source": "official", "source_distance": 270, "source_unit": "m" },
+              { "tee_code": "front", "display_name": "FRONT TEE", "tee_color": "#64748b", "distance_m": 268, "distance_m_source": "official", "source_distance": 268, "source_unit": "m" }
+            ] },
+            { "hole_number": 6, "par": 3, "handicap_index": 3, "tees": [
+              { "tee_code": "back", "display_name": "BACK TEE", "tee_color": "#64748b", "distance_m": 155, "distance_m_source": "official", "source_distance": 155, "source_unit": "m" },
+              { "tee_code": "front", "display_name": "FRONT TEE", "tee_color": "#64748b", "distance_m": 135, "distance_m_source": "official", "source_distance": 135, "source_unit": "m" }
+            ] },
+            { "hole_number": 7, "par": 5, "handicap_index": 7, "tees": [
+              { "tee_code": "back", "display_name": "BACK TEE", "tee_color": "#64748b", "distance_m": 425, "distance_m_source": "official", "source_distance": 425, "source_unit": "m" },
+              { "tee_code": "front", "display_name": "FRONT TEE", "tee_color": "#64748b", "distance_m": 395, "distance_m_source": "official", "source_distance": 395, "source_unit": "m" }
+            ] },
+            { "hole_number": 8, "par": 4, "handicap_index": 5, "tees": [
+              { "tee_code": "back", "display_name": "BACK TEE", "tee_color": "#64748b", "distance_m": 207, "distance_m_source": "official", "source_distance": 207, "source_unit": "m" },
+              { "tee_code": "front", "display_name": "FRONT TEE", "tee_color": "#64748b", "distance_m": 175, "distance_m_source": "official", "source_distance": 175, "source_unit": "m" }
+            ] },
+            { "hole_number": 9, "par": 4, "handicap_index": 4, "tees": [
+              { "tee_code": "back", "display_name": "BACK TEE", "tee_color": "#64748b", "distance_m": 246, "distance_m_source": "official", "source_distance": 246, "source_unit": "m" },
+              { "tee_code": "front", "display_name": "FRONT TEE", "tee_color": "#64748b", "distance_m": 230, "distance_m_source": "official", "source_distance": 230, "source_unit": "m" }
+            ] }
+          ]
+        }
+      ]
+    }
+  ]
+}
