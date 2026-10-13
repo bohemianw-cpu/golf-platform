@@ -67,6 +67,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 ## 최근 공식 자료 반영
 
+- 은화삼CC(용인): 운영사 공식 스코어카드에서 WEST·EAST 각 9홀의 PAR·HDCP·Black/Blue/White/Orange/Red 티별 미터 거리를 반영했습니다. 홀별 공략 상세와 스코어카드가 다른 EAST 3번 Orange, 5번 Blue, 8번 Blue/White, 9번 Blue는 홀별 상세값을 우선했습니다. Orange는 EAST 4·8번 거리가 게시되지 않아 행을 만들지 않았습니다. EAST Blue/White/Red 홀별 합계와 공식 소계 차이, Orange 소계는 검수 메모에 기록했습니다. 두 그린을 운영하지만 그린별 티 거리는 공개되지 않아 그린 차이는 추정하지 않았습니다. 자료 파일: `eunhwasam-2026-official-verified.json`; 출처: [공식 스코어카드](https://ehscc.co.kr/Mobile/Course/ScoreCard), [WEST 1~9번 상세](https://ehscc.co.kr/Mobile/Course/CourseW?courseNo=1) ~ `CourseW?courseNo=9`, [EAST 1~9번 상세](https://ehscc.co.kr/Mobile/Course/CourseE?courseNo=1) ~ `CourseE?courseNo=9` (2026-10-13 확인).
 - 아네스빌CC(김제): 공식 코스제원표에서 OUT·IN 각 9홀의 PAR와 Champion/Regular/Ladies 티별 거리(m)를 저장했습니다. 두 경로의 티별 합계가 공식값과 일치합니다. 공식 사이트는 고유 9홀을 18홀처럼 운영한다고 설명하므로, `golf_courses.hole_count=18`은 물리적 고유 홀이 아니라 OUT+IN으로 선택 가능한 라운드 홀 수를 뜻합니다. 자료 파일: `anesville-gimje-2026-official-verified.json`; 출처: [공식 코스 제원표](https://www.anesville.co.kr/html/course01.asp) (2026-10-13 확인).
 - 장수골프리조트(전북): 공식 코스제원표의 사과·나무 각 9홀 PAR, 스트로크 인덱스, Black/Blue/White/Yellow/Red 티별 거리(m)를 저장했습니다. 두 코스의 5개 티별 홀 거리 합계가 공식 표의 총계와 모두 일치합니다. 나무코스 Yellow 1번 홀은 공식 게시값 309m를 그대로 보존했습니다. 자료 파일: `jangsu-golf-resort-2026-official-verified.json`; 출처: [공식 코스 제원표](https://www.jangsugolf.com/course/course01) (2026-10-13 확인).
 - 천지CC(함평): 공식 코스안내 1~9홀의 PAR와 단일 기준 거리(m)를 입력했습니다. 홀별 티 종류와 티별 거리는 공개되지 않아 공식 거리(티 미표기) 한 행만 저장하고 실제 티 선택은 비활성화했습니다. 공식 페이지의 HDCP 항목은 주석 처리되어 있어 입력하지 않았습니다. 자료 파일: `cheonji-hampyeong-2026-official-verified.json`; 출처: [1번 홀](https://www.hpnabicc.co.kr/html/golf_course/golf_course_02_01.asp) ~ [9번 홀](https://www.hpnabicc.co.kr/html/golf_course/golf_course_02_09.asp) (2026-10-13 확인).
@@ -545,3 +546,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - [공식 코스 안내](https://sj.blueone.com/club-introduction/information?type=1)와 공개된 [코스 정보 스크립트](https://sj.blueone.com/chunks/CourseInformation-DTxqQo2-.js)에서 East·West 각 9홀의 PAR·HDCP, 홀 이미지, 홀별 공식 영상 18개 경로를 확인했습니다. 공식 개요는 18홀·PAR72·총전장 6,737m입니다.
 - 텍스트 코스 안내에는 홀별 티 거리가 나타나지 않습니다. 영상 첫 프레임의 티 거리 표기를 확인하지 못해 PAR/HDCP만으로 verified 전환하거나 티 거리를 추정하지 않았습니다. 기존 `블루원상주골프리조트` pending 상태는 유지합니다. 다음 조사 시 공식 홀 영상 또는 운영사 스코어카드에서 BlueOne 자료와 직접 대조할 수 있을 때 진행합니다.
 - 이번 조사로 DB의 검수 상태와 데이터는 변경하지 않았습니다. 원격 집계는 총 516곳 — 검수 완료 278, 미진행 233, 반려 5입니다.
+
+### 2026-10-13 — 은화삼CC 공식 코스 데이터
+- 운영사 공식 스코어카드와 WEST·EAST 18개 홀 공략 상세를 대조해 각 코스의 PAR·HDCP·Black/Blue/White/Orange/Red 티 미터 거리를 반영했습니다. 두 코스 모두 PAR36입니다. 코스 소개의 투그린 시스템은 확인했으나 그린별 거리 분리가 공개되지 않아 거리를 복제하지 않았습니다.
+- EAST 공식 스코어카드와 상세 페이지가 3번 Orange(339/439m), 5번 Blue(162/167m), 8번 Blue·White(138/150m·123/138m), 9번 Blue(347/374m)에서 달라 홀별 상세값을 저장했습니다. Orange는 4·8번 상세 거리 없음으로 7개만 저장했습니다. 홀별 합계와 공식 소계의 차이는 EAST 검수 메모에 남겼습니다.
+- 원격 DB에 구장 verified, WEST/EAST 경로 2개, 홀 18개, 티 행 88개를 반영했습니다. seed 대비 구장 상태, 경로 상태, 홀 수, 티 행 수와 PAR·HDCP·티명·색상·거리·단위·출처값·선택가능 여부를 대조해 필드 불일치 0건을 확인했습니다. 자료 파일: `eunhwasam-2026-official-verified.json`.
+- 원격 카탈로그는 총 516곳 — 검수 완료 279, 미진행 232, 반려 5입니다. 미진행 가운데 부산·울산·경남은 0곳이며, 경북 1·세종 1·전남 1·전북 3·충남 1곳은 공식 홀별 자료를 추가로 찾아야 합니다.
