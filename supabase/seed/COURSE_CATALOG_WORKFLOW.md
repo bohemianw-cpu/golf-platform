@@ -836,3 +836,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 동강 코스는 9홀·PAR35·32개 티 거리 행, 영월 코스는 9홀·PAR37·40개 티 거리 행입니다. 그림에 색상 대신 `T` 기호만 표시된 항목은 그 표기를 유지했고 색상을 추정하지 않았습니다. 같은 홀에 `T` 항목이 둘인 경우 두 거리를 표시명에 붙여 선택 목록에서 구분했습니다.
 - 자료 파일: `donggang-cistar-2026-official-verified.json`. 관리자 적재기 구조 검증 후 원격 DB에 저장했습니다. 원격 DB는 `동강시스타CC` verified, 2개 경로·18홀·72개 티 행이며, 시드와 전수 비교 결과 홀·티 누락/초과 0건, PAR·HDCP·거리·색상·선택 상태 불일치 0건입니다.
 - 최신 원격 카탈로그는 총 516곳: 검수 완료 325, 미진행 185, 반려 6입니다. 미진행 지역은 강원 39, 경기 118, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
+
+### 2026-10-13 — 남부CC 공식 OUT·IN 코스 자료
+- 운영사 [코스 소개](https://www.namboocc.co.kr/course/courseIntro.do)에서 18홀 구성을 확인하고, [OUT 1번 홀](https://www.namboocc.co.kr/course/one/hole01.do)·[IN 10번 홀](https://www.namboocc.co.kr/course/two/hole01.do)에서 이어지는 각 공식 홀 페이지와 홀별 지도를 확인했습니다. OUT 1~9번과 IN 10~18번을 9홀씩 나눠 저장했습니다.
+- 각 홀 지도의 PAR·HDCP 및 Black/Blue/White/Tan/Red 색상 표식 거리(m)를 반영했습니다. 네 번째 티 이름은 페이지에 텍스트로 공개되지 않아 색상 그대로 `Tan`으로 표시했습니다. 두 코스 모두 PAR36·45개 티 거리 행이며, BLACK/BLUE/WHITE/TAN/RED 거리 합계는 OUT 3,217/3,048/2,804/2,640/2,489m, IN 3,263/3,117/2,981/2,810/2,595m입니다.
+- 자료 파일: `namboo-cc-2026-official-verified.json`. 관리자 적재기 구조 검증을 통과했고 원격 DB에 반영했습니다. `남부CC` verified, OUT/IN 2개 경로·18홀·90개 티 행이며 시드와 원격 DB의 홀/티 수, 진행순서, PAR·HDCP·티 색상·거리·원본 단위·선택 상태 전수 비교 불일치 0건입니다.
+- 최신 원격 카탈로그는 총 516곳: 검수 완료 326, 미진행 184, 반려 6입니다. 미진행 지역은 강원 39, 경기 117, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
