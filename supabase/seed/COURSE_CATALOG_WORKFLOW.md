@@ -837,6 +837,12 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 자료 파일: `donggang-cistar-2026-official-verified.json`. 관리자 적재기 구조 검증 후 원격 DB에 저장했습니다. 원격 DB는 `동강시스타CC` verified, 2개 경로·18홀·72개 티 행이며, 시드와 전수 비교 결과 홀·티 누락/초과 0건, PAR·HDCP·거리·색상·선택 상태 불일치 0건입니다.
 - 최신 원격 카탈로그는 총 516곳: 검수 완료 325, 미진행 185, 반려 6입니다. 미진행 지역은 강원 39, 경기 118, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
 
+### 2026-10-13 — 뉴코리아CC 공식 OUT·IN 자료
+- 공식 영문 홀별 페이지의 좌·우 그린별 Black/Gold/Blue/White/Red 야드 거리와 한국어 공식 모바일 홀별 페이지의 PAR·HDCP를 반영했습니다. OUT·IN 각 9홀, PAR36, 총 173개 티/그린 거리 행입니다. 영문 야드 값은 1 yd = 0.9144 m로 가장 가까운 1m에 환산했고 원본 야드도 보존했습니다. 자료 파일: `new-korea-2026-official-verified.json`.
+- IN 10번 영문 홀별 표에 OUT 표기와 OUT 9번 값이 반복되어 해당 표를 사용하지 않았습니다. 공식 영문 브로셔의 Black/Blue/Red 3개 값만 기본 그린으로 저장했으며 Gold/White는 추정하지 않았습니다. 브로셔·모바일 페이지·영문 홀별 표의 차이와 OUT 1번 모바일 페이지의 338m/418yd 불일치는 구장 관리자 검수 메모에 기록했습니다.
+- 원격 DB에서 뉴코리아CC와 OUT/IN 경로 `verified`, 18홀·PAR36씩·173개 티/그린 행을 확인했습니다. 원본 보정 파일과 DB 간 티 이름·색상·거리·원단위·그린·선택 상태·PAR·HDCP 대조 불일치 0건이며, 경로별 기본 Blue 거리 배열도 일치합니다.
+- 최신 원격 카탈로그는 총 516곳: 검수 완료 327, 미진행 183, 반려 6입니다. 미진행 지역은 강원 39, 경기 116, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
+
 ### 2026-10-13 — 남부CC 공식 OUT·IN 코스 자료
 - 운영사 [코스 소개](https://www.namboocc.co.kr/course/courseIntro.do)에서 18홀 구성을 확인하고, [OUT 1번 홀](https://www.namboocc.co.kr/course/one/hole01.do)·[IN 10번 홀](https://www.namboocc.co.kr/course/two/hole01.do)에서 이어지는 각 공식 홀 페이지와 홀별 지도를 확인했습니다. OUT 1~9번과 IN 10~18번을 9홀씩 나눠 저장했습니다.
 - 각 홀 지도의 PAR·HDCP 및 Black/Blue/White/Tan/Red 색상 표식 거리(m)를 반영했습니다. 네 번째 티 이름은 페이지에 텍스트로 공개되지 않아 색상 그대로 `Tan`으로 표시했습니다. 두 코스 모두 PAR36·45개 티 거리 행이며, BLACK/BLUE/WHITE/TAN/RED 거리 합계는 OUT 3,217/3,048/2,804/2,640/2,489m, IN 3,263/3,117/2,981/2,810/2,595m입니다.
