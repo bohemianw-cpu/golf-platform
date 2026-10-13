@@ -288,7 +288,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 2026-10-13 파인비치골프링크스 적재 후 원격 전체 카탈로그: 검수 완료 231개, 미진행 282개, 반려 3개(총 516개). 부산·울산·경남 pending 0개. 남부권 잔여 pending은 경북 1개, 전남 2개, 전북 3개입니다.
 - 파인비치골프링크스(전남 해남): 운영사 공식 [코스 소개](http://www.pinebeachcc.co.kr/course/intro.asp)와 [파인](http://www.pinebeachcc.co.kr/course/p.asp)·[비치](http://www.pinebeachcc.co.kr/course/b.asp)·[오시아노](http://www.pinebeachcc.co.kr/course/o.asp) 페이지에서 각 9홀, 총 27홀의 PAR·HDCP·블랙/블루/화이트/옐로우/레드 티 거리 135행을 반영했습니다. 공식 사이트는 HTTP 연결만 가능해 이를 출처 메모에 남겼습니다. 기존 MCST `파인비치골프링크스` 18홀과 `오시아노골프클럽` 9홀은 동일 주소이며 운영사 공식 사이트에서 한 27홀 시설의 세 경로로 확인되어 파인비치골프링크스 아래로 통합했습니다. 오시아노 명칭은 검색 별칭으로 보존하고, 사용 이력·경로가 없던 중복 레코드는 반려 처리했습니다. Oceano 5번 화이트 390m는 공식 원문 거리도에 표시된 값으로 저장했습니다. 자료: `pine-beach-2026-official-verified.json` (2026-10-13 확인).
-- 베이사이드GC(부산) — Park 코스 8번: 공식 Park 스크립트의 8번 배열 항목과 홀 공략 설명은 모두 `PAR 4 · HDCP 7 · 344m`이며, seed와 원격 DB도 동일합니다. 문맥상 앞 7번은 PAR3이고 뒤 9번은 PAR5이므로, 뒤 홀의 PAR5가 8번 주석에 섞이지 않도록 구분했습니다. 여수시티파크CC의 파크코스 8번 PAR5 주석도 별도 구장 자료입니다.
+- 베이사이드GC(부산) — Park 코스 8번은 `PAR 4 · HDCP 7 · 344m`입니다. 공식 Park 스크립트의 8번째 PAR/거리 항목과 8번 홀 공략 설명이 일치합니다. 바로 앞 Park 7번은 PAR3, 뒤 Park 9번은 PAR5입니다. 이 기록은 베이사이드GC Park 코스만을 대상으로 하며 다른 구장의 코스 주석이나 PAR 값은 적용하지 않습니다. seed 및 원격 DB의 홀 값은 모두 PAR4·HDCP7·344m이며 구장과 경로는 `verified`입니다.
 
 2026-10-13 솔라시도CC 공식 자료 반영 후 원격 전체 카탈로그: 검수 완료 232개, 미진행 281개, 반려 3개(총 516개). 부산·울산·경남 pending 0개. 남부권 잔여 pending은 경북 1개, 전남 1개, 전북 3개입니다.
 - 솔라시도CC(전남 해남): 운영사 공식 코스 안내도와 솔라·시도 홀별 거리도에서 각 9홀, 총 PAR72 및 레드·옐로우·화이트·블루·블랙 티 거리(m)를 확인해 18홀·89 티 행을 저장하고 검수 완료했습니다. 공식 전체 길이는 6,490m이며 두 코스 블랙 티 상세 합(3,227m+3,263m)과 일치합니다. 시도 2번은 공식 도면에 레드 티가 없어 해당 행을 만들지 않았습니다. 화이트 395m도 원문값으로 보존했습니다. 자료: `solaseado-cc-2026-official-verified.json`; 출처: [공식 전체 코스 안내](https://www.solaseadocc.com/sub/course.asp), [솔라 코스](https://www.solaseadocc.com/sub/solaCourse.asp), [시도 코스](https://www.solaseadocc.com/sub/seadoCourse.asp), [솔라 홀별 거리도](https://www.solaseadocc.com/assets/images/sub/solacourse/sola1_img.png), [시도 홀별 거리도](https://www.solaseadocc.com/assets/images/sub/seadocourse/seado2_img.png) (2026-10-13 확인).
@@ -492,7 +492,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 적재 뒤 원격 카탈로그는 검수 완료 271곳, 미진행 240곳, 반려 5곳(총 516곳)입니다. 지역별 미진행은 강원 55, 경기 140, 경북 1, 세종 1, 인천 10, 전남 1, 전북 3, 제주 28, 충남 1곳이며 부산·울산·경남은 0곳입니다.
 
 ### 2026-10-13 — 베이사이드GC Park 코스 8번 재확인 및 남부 pending 식별 조사
-- 베이사이드GC Park 코스 8번은 운영사 공식 [Park 스크립트](https://www.bayside.co.kr/static/pc/js/custom/park_course.js)의 여덟 번째 PAR/거리 배열값과 8번 홀 공략 설명에서 `PAR 4 · HDCP 7 · 344m`로 확인됩니다. 바로 앞 7번은 PAR3, 바로 뒤 9번은 PAR5입니다. 대화에 나온 PAR5는 별도 구장인 여수시티파크CC 파크코스 8번의 사용자 확인값이므로 베이사이드GC에 적용하지 않습니다. 원격 DB 확인 결과 seed 및 DB 모두 PAR4·HDCP7·344m이며, 구장과 경로는 `verified`, 별도 충돌 검수 메모는 없습니다.
+- 베이사이드GC Park 코스 8번은 운영사 공식 [Park 스크립트](https://www.bayside.co.kr/static/pc/js/custom/park_course.js)의 여덟 번째 PAR/거리 항목과 8번 홀 공략 설명에서 `PAR 4 · HDCP 7 · 344m`로 확인됩니다. 바로 앞 Park 7번은 PAR3, 뒤 Park 9번은 PAR5입니다. 이 기록은 베이사이드GC Park 코스만을 대상으로 하며 다른 구장의 코스 주석이나 PAR 값은 적용하지 않습니다. 원격 DB와 seed 모두 PAR4·HDCP7·344m이고 구장과 경로는 `verified`입니다.
 - 남부 인접 pending 7곳을 재확인했습니다. 전북 에스페란사GC는 2018년 전북 스포츠산업 연구 자료에 10홀·코스 길이 1,866m로 기재되어 현재 MCST 9홀과 다릅니다. 공식 운영사 홀별 자료를 찾지 못해 값을 보정하지 않았습니다.
 - 충남 `계룡산골프장`의 DB 주소는 계룡면 내흥리입니다. 검색 결과에는 별도 계룡산 골프클럽(왕흥장악로 583, 파3)과 계룡대 체력단련장이 함께 나타나 시설 혼동 가능성이 있습니다. 공식 운영사 자료로 동일 시설임을 확정할 수 없고 홀별 공식 자료도 찾지 못해 pending을 유지했습니다.
 - 전북 금과골프장도 공식 운영사 PAR·홀별 거리표를 찾지 못했습니다. 제3자 자료에 홀 길이가 있으나 공식 원천이 아니므로 DB에 입력하지 않았습니다. 다음 조사에서는 시설명·주소를 공식 운영 자료와 먼저 대조하고, 충분한 공식 홀 데이터가 확인될 때 적재합니다.
