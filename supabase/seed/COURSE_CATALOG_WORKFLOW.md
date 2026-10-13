@@ -895,3 +895,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 공식 소개의 전장 안내([코스 소개](https://www.ansungcc.co.kr/Course/Intro.aspx))와 스코어카드 합계 7,067(Back)·5,538(Ladies)를 대조해 표의 거리 단위를 yd로 판정했습니다. 1yd=0.9144m로 홀별 거리를 환산해 가장 가까운 1m로 저장하고 원문 야드 값도 보존했습니다. 색상 이름이 공개되지 않아 티 색상은 중립색으로 두었습니다.
 - 관리자 적재기 구조 검증 및 원격 DB read-back이 통과했습니다. 구장·OUT/IN 경로 `verified`, 18홀·72개 티 행이며 PAR·HDCP·티명·색상·환산 거리·원문 단위·선택 가능 여부의 seed 불일치는 0건입니다. 자료 파일: `anseong-cc-2026-official-verified.json`.
 - 현재 원격 카탈로그는 총 516곳: 검수 완료 337, 미진행 173, 반려 6입니다. 미진행 지역은 강원 39, 경기 106, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
+
+### 2026-10-13 — 한림안성CC 공식 9홀 티 자료
+- 안성시 양성면의 pending 레코드는 운영사 공식 [한림안성 홀별 코스 페이지](https://ansung.hanlimgolf.co.kr/html/course02.asp)와 MCST 주소가 일치합니다. 공식 페이지 제목에 따라 이름을 `한림안성CC`로 정리하고 기존 MCST명은 alias로 보존했습니다.
+- 1–9홀의 PAR·HDCP와 White 1·Red의 티별 거리를 확인했습니다. 모든 홀에 두 티 거리가 있고 공식 페이지에 m 및 yd가 같이 표기되어, 공식 m 수치로 저장했습니다. 총 PAR36·티 18행입니다. 공개되지 않은 다른 티는 추가하지 않았습니다. 자료 파일: `hanlim-anseong-cc-2026-official-verified.json`.
+- 관리자 적재기와 원격 DB 전수 대조가 통과했습니다. 구장·MAIN 경로 `verified`, 홀 9개·티 18개이며 PAR·HDCP·티명·색상·m 거리·원문 단위·선택 가능 여부 불일치는 0건입니다.
+- 현재 원격 카탈로그는 총 516곳: 검수 완료 338, 미진행 172, 반려 6입니다. 미진행 지역은 강원 39, 경기 105, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
