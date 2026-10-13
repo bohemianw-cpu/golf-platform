@@ -934,3 +934,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 거리행은 Aria 37개, Billy 40개, Charlotte 39개입니다. 일부 홀 지도에서 Red/Green/White/Blue 외에 다섯 번째 거리행이 보이지만 해당 행의 티 이름·색상은 공식 자료에서 특정할 수 없어 임의 색을 붙이지 않고 `Tee 4`로 구분해 보존했습니다. 범례에서 실제 거리값이 확인되므로 검수 대기 사유로 두지 않았습니다.
 - 관리자 적재기 구조 검사 및 원격 `--check`를 통과했습니다. DB와 seed 간 구장·코스·홀 27개·티 116개·PAR·HDCP·거리·원단위·티표시/선택 상태 대조 불일치 0건입니다.
 - 현재 원격 카탈로그는 총 516곳: 검수 완료 343, 미진행 167, 반려 6입니다. 미진행 지역은 강원 39, 경기 100, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
+
+### 2026-10-13 — 써닝포인트CC 공식 SUN·POINT 코스
+- 운영사 공식 [코스정보](https://www.sunningpoint.com/course/course-info.asp), [SUN 홀별 정보](https://www.sunningpoint.com/course/course-sun.asp), [POINT 홀별 정보](https://www.sunningpoint.com/course/course-point.asp)에서 두 경로 각 9홀의 PAR·HDCP 및 Black/Blue/White/Yellow/Red 티별 미터 거리를 반영했습니다. SUN은 공식 PAR37(9번 PAR6), POINT는 PAR36이며 18홀·90개 티 행입니다. 자료 파일: `sunningpoint-2026-official-verified.json`.
+- SUN 5번 White는 전체 표 텍스트에 341m로 표시되나 홀 상세 155m와 White 9홀 합계 3,020m가 일치해 155m를 저장했습니다. POINT Blue 1번은 홀 상세 333m이고 전체 표/홀별 합계는 3,122/3,132m로 10m 차이가 나 홀별 상세값을 우선 저장하고 메모했습니다. 나머지 티별 합계는 공식 표와 일치합니다.
+- PAR6를 포함한 공식 값은 현재 DB·ScoreTab·관리자 importer의 PAR 3~7 지원 범위에 들어가 별도 스키마/UI 변경 없이 저장할 수 있음을 확인했습니다. 관리자 보정 자료 구조 검사와 원격 `--check` 통과: 코스 2개·홀 18개·티 90개, seed/DB 불일치 0건.
+- 현재 원격 카탈로그는 총 516곳: 검수 완료 344, 미진행 166, 반려 6입니다. 미진행 지역은 강원 39, 경기 99, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
