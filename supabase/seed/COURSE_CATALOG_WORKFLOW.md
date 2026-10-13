@@ -1089,3 +1089,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [홀별 코스공략도](https://www.victoriagc.co.kr/04course/p1.asp) 및 [코스제원](https://victoriagc.co.kr/mobile/04course/course.asp)의 9홀 PAR·Blue/White/Yellow/Red 티별 m 거리를 반영했습니다. 코스제원 페이지는 티박스와 핀 위치 변경에 따른 전후반 공략 차이를 안내합니다. HDCP는 공식 페이지에 표기되지 않아 저장하지 않았습니다.
 - 원격 DB에서 구장·경로 verified, 9홀·36개 티 거리 행, PAR 배열과 티별 합계를 확인했습니다. 티별 합계는 Blue 3,028m, White 2,867m, Yellow 2,707m, Red 2,528m입니다. 자료: `victoria-gc-2026-official-verified.json`.
 - 원격 카탈로그: 총 512곳, 검수 완료 372, 미진행 139, 반려 1입니다. 미진행은 경기 87, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
+
+### 2026-10-13 — 송추CC WEST·EAST 공식 코스 자료
+- 송추CC 공식 [코스안내](https://www.songchoo.co.kr/course-introduction) 표에서 WEST·EAST 각 9홀의 PAR·HDCP와 Blue/White/Red 티별 미터 거리를 반영했습니다. 코스별 공식 티 합계와 홀별 합계가 일치합니다. 자료: `songchoo-cc-2026-official-verified.json`.
+- 원격 DB에서 구장 verified, 2개 경로·18홀·54개 티 거리 행과 PAR·HDCP·티별 합계를 확인했습니다. 카탈로그는 총 512곳: 검수 완료 373, 미진행 138, 반려 1입니다. 미진행은 경기 86, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
