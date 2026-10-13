@@ -903,3 +903,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 관리자 적재기와 원격 DB 전수 대조가 통과했습니다. 구장·MAIN 경로 `verified`, 홀 9개·티 18개이며 PAR·HDCP·티명·색상·m 거리·원문 단위·선택 가능 여부 불일치는 0건입니다.
 - 현재 원격 카탈로그는 총 516곳: 검수 완료 338, 미진행 172, 반려 6입니다. 미진행 지역은 강원 39, 경기 105, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
 - 파인크리크CC 공식 [코스정보](https://www.pinevalley.co.kr/html_creek/course01.asp)와 [홀별 코스공략](https://www.pinevalley.co.kr/html_creek/course02.asp)을 확인했습니다. 세 코스의 PAR·HDCP·홀 기준 METER/YARD는 게시하지만 홀별 티 위치·티별 거리는 제공하지 않아 해당 단일 거리를 티별 자료로 잘못 해석하지 않고 pending으로 유지합니다.
+
+### 2026-10-13 — 블루헤런GC 공식 West·East 코스 자료
+- 운영사 공식 [코스 소개](https://blueheron.co.kr/swp/course/outline)와 [West 1번 홀](https://blueheron.co.kr/swp/course/west/hole01), [East 1번 홀](https://blueheron.co.kr/swp/course/east/hole01)에서 각 경로 9홀의 PAR·HDCP 및 Blue/White/Gold/Red 티별 야드 거리를 확인했습니다. 18홀·PAR36씩·72개 티 거리행을 1yd=0.9144m로 환산하고 원문 야드 값도 보존했습니다. 자료 파일: `blue-heron-gc-2026-official-verified.json`.
+- West 코스 개요의 3,499yd와 Blue 홀별 거리 합계 3,472yd가 27yd 차이 나서, 홀별 공식 값을 적용하고 해당 차이를 경로 검수 메모에 남겼습니다. East Blue 홀별 합계는 개요의 3,541yd와 일치합니다.
+- 원격 DB에 블루헤런GC 및 WEST/EAST 경로를 `verified`로 반영했습니다. 관리자 적재기의 원격 `--check` 결과 코스 2개·홀 18개·티 72개 모두 seed와 일치했습니다.
+- 현재 카탈로그는 총 516곳: 검수 완료 339, 미진행 171, 반려 6입니다. 미진행 지역은 강원 39, 경기 104, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
