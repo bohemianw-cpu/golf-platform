@@ -1,0 +1,59 @@
+{
+  "courses": [
+    {
+      "match_name": "샴발라 CC",
+      "name": "샴발라 CC",
+      "region": "경기",
+      "address": "경기도 포천시 군내면 청군로 2856-93",
+      "aliases": ["샴발라CC", "샴발라 컨트리클럽"],
+      "hole_count": 18,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": ["운영사 공식 코스안내 및 홀별 공략 페이지의 PAR와 Blue·White·Red 티 미터 거리를 입력했습니다. 공식 페이지에 HDCP는 공개되어 있지 않아 입력하지 않았습니다."],
+      "routes": [
+        {
+          "route_code": "MOUNTAIN",
+          "display_name": "마운틴 코스",
+          "hole_count": 9,
+          "primary_tee_code": "white",
+          "verification_status": "verified",
+          "source_url": "https://www.shambhalacc.co.kr/mobile/course/courseIntro.asp",
+          "source_data_url": "https://www.shambhalacc.co.kr/course/m1.asp",
+          "review_notes": ["공식 코스안내는 1~9번 홀의 기준 전장을 3,325m로 표기하지만, 홀별 Blue 거리 합계는 3,277m입니다. 티별 상세값은 각 홀의 공식 공략 페이지를 기준으로 입력했습니다."],
+          "holes": [
+            {"hole_number":1,"par":4,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":377,"distance_m_source":"official","source_distance":377,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":308,"distance_m_source":"official","source_distance":308,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":278,"distance_m_source":"official","source_distance":278,"source_unit":"m"}]},
+            {"hole_number":2,"par":4,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":385,"distance_m_source":"official","source_distance":385,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":353,"distance_m_source":"official","source_distance":353,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":281,"distance_m_source":"official","source_distance":281,"source_unit":"m"}]},
+            {"hole_number":3,"par":5,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":488,"distance_m_source":"official","source_distance":488,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":446,"distance_m_source":"official","source_distance":446,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":367,"distance_m_source":"official","source_distance":367,"source_unit":"m"}]},
+            {"hole_number":4,"par":4,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":375,"distance_m_source":"official","source_distance":375,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":375,"distance_m_source":"official","source_distance":375,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":222,"distance_m_source":"official","source_distance":222,"source_unit":"m"}]},
+            {"hole_number":5,"par":4,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":390,"distance_m_source":"official","source_distance":390,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":371,"distance_m_source":"official","source_distance":371,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":316,"distance_m_source":"official","source_distance":316,"source_unit":"m"}]},
+            {"hole_number":6,"par":3,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":170,"distance_m_source":"official","source_distance":170,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":143,"distance_m_source":"official","source_distance":143,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":127,"distance_m_source":"official","source_distance":127,"source_unit":"m"}]},
+            {"hole_number":7,"par":4,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":400,"distance_m_source":"official","source_distance":400,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":371,"distance_m_source":"official","source_distance":371,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":300,"distance_m_source":"official","source_distance":300,"source_unit":"m"}]},
+            {"hole_number":8,"par":3,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":192,"distance_m_source":"official","source_distance":192,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":174,"distance_m_source":"official","source_distance":174,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":99,"distance_m_source":"official","source_distance":99,"source_unit":"m"}]},
+            {"hole_number":9,"par":5,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":500,"distance_m_source":"official","source_distance":500,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":453,"distance_m_source":"official","source_distance":453,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":386,"distance_m_source":"official","source_distance":386,"source_unit":"m"}]}
+          ]
+        },
+        {
+          "route_code": "LAKE",
+          "display_name": "레이크 코스",
+          "hole_count": 9,
+          "primary_tee_code": "white",
+          "verification_status": "verified",
+          "source_url": "https://www.shambhalacc.co.kr/mobile/course/courseIntro.asp",
+          "source_data_url": "https://www.shambhalacc.co.kr/course/l1.asp",
+          "review_notes": ["공식 코스안내는 10~18번 홀의 기준 전장을 3,180m로 표기하지만, 홀별 Blue 거리 합계는 3,205m입니다. 티별 상세값은 각 홀의 공식 공략 페이지를 기준으로 입력했습니다."],
+          "holes": [
+            {"hole_number":10,"par":4,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":400,"distance_m_source":"official","source_distance":400,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":344,"distance_m_source":"official","source_distance":344,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":295,"distance_m_source":"official","source_distance":295,"source_unit":"m"}]},
+            {"hole_number":11,"par":3,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":184,"distance_m_source":"official","source_distance":184,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":149,"distance_m_source":"official","source_distance":149,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":116,"distance_m_source":"official","source_distance":116,"source_unit":"m"}]},
+            {"hole_number":12,"par":5,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":500,"distance_m_source":"official","source_distance":500,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":447,"distance_m_source":"official","source_distance":447,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":366,"distance_m_source":"official","source_distance":366,"source_unit":"m"}]},
+            {"hole_number":13,"par":3,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":132,"distance_m_source":"official","source_distance":132,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":132,"distance_m_source":"official","source_distance":132,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":106,"distance_m_source":"official","source_distance":106,"source_unit":"m"}]},
+            {"hole_number":14,"par":4,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":340,"distance_m_source":"official","source_distance":340,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":340,"distance_m_source":"official","source_distance":340,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":191,"distance_m_source":"official","source_distance":191,"source_unit":"m"}]},
+            {"hole_number":15,"par":4,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":371,"distance_m_source":"official","source_distance":371,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":341,"distance_m_source":"official","source_distance":341,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":298,"distance_m_source":"official","source_distance":298,"source_unit":"m"}]},
+            {"hole_number":16,"par":5,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":540,"distance_m_source":"official","source_distance":540,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":470,"distance_m_source":"official","source_distance":470,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":430,"distance_m_source":"official","source_distance":430,"source_unit":"m"}]},
+            {"hole_number":17,"par":4,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":375,"distance_m_source":"official","source_distance":375,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":352,"distance_m_source":"official","source_distance":352,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":248,"distance_m_source":"official","source_distance":248,"source_unit":"m"}]},
+            {"hole_number":18,"par":4,"tees":[{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":363,"distance_m_source":"official","source_distance":363,"source_unit":"m"},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":342,"distance_m_source":"official","source_distance":342,"source_unit":"m"},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":289,"distance_m_source":"official","source_distance":289,"source_unit":"m"}]}
+          ]
+        }
+      ]
+    }
+  ]
+}

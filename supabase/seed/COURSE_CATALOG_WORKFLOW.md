@@ -1211,3 +1211,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [동코스 홀별 페이지](https://www.visionhillscc.co.kr/course/east_course01.asp)와 [서코스 홀별 페이지](https://www.visionhillscc.co.kr/course/west_course01.asp)의 18개 홀 표에서 PAR·HDCP 및 Black/Blue/White/Red 티별 미터 거리를 입력했습니다. 자료: `vision-hills-2026-official-verified.json`.
 - 동·서 코스는 각각 PAR36이며 4개 티의 각 홀 값이 공식 홀별 표에 모두 있어, 누락 티를 추정하지 않았습니다. 원격 DB와 자료를 티별 PAR·HDCP·표시명·색상·거리·단위까지 대조해 72/72 행 일치를 확인했습니다.
 - 원격 카탈로그는 총 512곳: 검수 완료 398, 미진행 113, 반려 1입니다. 미진행은 경기 62, 강원 25, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 검수는 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 샴발라CC 마운틴·레이크 공식 코스 자료
+- 운영사 공식 [코스 개요](https://www.shambhalacc.co.kr/mobile/course/courseIntro.asp)와 [마운틴 1~9번 홀](https://www.shambhalacc.co.kr/course/m1.asp), [레이크 10~18번 홀](https://www.shambhalacc.co.kr/course/l1.asp) 및 각 홀별 공략 페이지를 확인해 PAR와 Blue/White/Red 미터 거리를 반영했습니다. 공식 페이지에 HDCP 표기는 없어 저장하지 않았습니다. 자료: `shamballa-2026-official-verified.json`.
+- 두 코스는 각 PAR36입니다. 공식 개요의 기준 전장은 마운틴 3,325m·레이크 3,180m이고, 홀별 Blue 거리 합은 각각 3,277m·3,205m로 서로 차이가 있어 상세 티 거리는 각 홀 페이지 값을 우선 저장하고 차이를 검수 메모에 남겼습니다.
+- 원격 DB에서 2개 경로·18홀·54개 티 행을 대조해 54/54 일치, 불일치 0건을 확인했습니다. 카탈로그는 총 512곳: 검수 완료 399, 미진행 112, 반려 1입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
