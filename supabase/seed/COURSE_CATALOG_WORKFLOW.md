@@ -630,3 +630,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - GA KOREA 운영사 [골드CC 공식 코스정보](https://gakorea.com/gold/course/courseInfo.asp) 표에서 Champion OUT/IN, Master OUT/IN 4개 9홀 경로의 홀별 PAR·HDCP·Champion/Regular 티 거리를 확인했습니다. 각 경로의 두 티 거리 합은 공식 표기 합계와 모두 일치합니다.
 - 공식 표에는 거리 단위가 생략되어 있습니다. 표의 Champion OUT/IN 전체가 6,327, Master OUT/IN 전체가 6,037이며, 공개된 코스 전장 대조 자료도 각각 6,327m·6,037m로 설명하여 원문 숫자를 미터로 저장했습니다. 티 색은 공식 자료에 없어 화면에서 특정 색으로 오인되지 않도록 중립 색상으로 저장했습니다.
 - `gold-cc-2026-official-verified.json` 구조 검사를 통과했습니다. 원격 DB에서 검수 완료 4경로·36홀·72개 선택 가능 티 거리행, 각 경로 PAR36, Champion/Regular 합계 및 모든 홀별 배열 일치를 확인했습니다. 반영 후 전체 카탈로그는 총 516곳 — 검수 완료 291, 미진행 220, 반려 5입니다.
+
+### 2026-10-13 — 고양CC 공식 코스 데이터 반영
+- 운영사 [고양CC 공식 코스소개](https://www.goyangcc.com/club/course)의 1~9번 요약표에서 PAR와 Blue/White/Gold/Red 티별 거리를 입력했습니다. 공식 합계 Blue 3,195m, White 2,965m, Gold 2,775m, Red 2,562m와 홀별 합계가 네 티 모두 일치합니다. 핸디캡 인덱스는 공개되지 않아 입력하지 않았습니다.
+- 같은 공식 페이지의 1번홀 Red 상세값은 465이고 요약표는 433으로 다릅니다. Red 합계 2,562와 일치하는 요약표 433을 저장하고 차이를 구장·코스 검수 메모에 남겼습니다. 공식 코스 개요는 18홀 전장 6,344m를 별도 표기하며, 운영사 티 색을 그대로 사용했습니다.
+- `goyang-cc-2026-official-verified.json` 구조 검사를 통과했습니다. 원격 DB에서 코스 1개·홀 9개·티 거리 36행·PAR36과 seed의 홀별 파·핸디캡·티 이름·색·거리·선택 가능 여부·원문 단위를 대조해 36행 일치, 불일치 0건을 확인했습니다. 반영 후 전체 카탈로그는 총 516곳 — 검수 완료 292, 미진행 219, 반려 5입니다.
