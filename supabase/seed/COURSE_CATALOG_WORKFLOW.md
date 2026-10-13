@@ -1171,3 +1171,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 원더클럽 운영사 공식 [코스전경 및 제원](https://m.onetheclub.com/shilla/course) 표에서 서·남·동 각 9홀의 PAR·HDCP와 Blue/White/Gold/Red 티별 홀 거리를 반영했습니다. 원본 단위는 yd이며 각 거리의 미터값은 0.9144 환산 후 반올림했습니다. 공식 표에서 `-`로 표시한 Gold 거리는 입력하지 않았습니다. 자료: `shilla-cc-2026-official-verified.json`.
 - 원격 DB에서 구장·3개 코스 verified, 27홀·104개 티 행을 확인했습니다. JSON 원본과 DB를 홀·티·PAR·HDCP·거리·단위·표시명·색상까지 비교해 104/104 일치했습니다. 공식 표의 West Blue 홀별 합은 3,513yd, TOTAL은 3,533yd(20yd 차이)이고 East Blue는 3,470yd 대 3,467yd(3yd 차이)여서 홀별 값은 유지하고 코스 검수 메모에 기록했습니다. South의 티별 홀 합계는 TOTAL과 일치합니다.
 - 원격 카탈로그는 총 512곳: 검수 완료 388, 미진행 123, 반려 1입니다. 웅포CC·광양CC 관련 추가 확인은 사용자 지시에 따라 보류합니다.
+
+### 2026-10-13 — 더헤븐CC East·South·West 공식 코스 자료
+- 운영사 공식 [East](https://www.theheavenresort.com/ISLANDRESORT/course_result_east_01.asp), [South](https://www.theheavenresort.com/ISLANDRESORT/course_result_south_01.asp), [West](https://www.theheavenresort.com/ISLANDRESORT/course_result_west_01.asp) 코스 페이지의 전체 코스표에서 27홀 PAR와 Black/Blue/White/Gold/Red 티별 야드 거리를 반영했습니다. 원본 yd값을 보존하고 미터 거리는 0.9144 환산 후 반올림했습니다. 공식 페이지에 HDCP가 없어 해당 값은 비워두었습니다. 자료: `the-heaven-cc-2026-official-verified.json`.
+- 원격 DB에서 구장·3개 코스 verified, 27홀·135개 티 행을 확인했습니다. JSON 원본과 DB의 홀·티·PAR·거리·단위·색상 대조 결과 135/135 일치합니다. South White 홀별 합계는 3,095yd인데 TOTAL 표기는 2,838yd입니다. West는 Black/Blue/White/Red가 홀별 합과 TOTAL 간 각각 3/2/2/9yd 차이이며 Gold는 일치합니다. 공식 홀별 거리를 유지하고 차이는 코스 메모에 남겼습니다.
+- 원격 카탈로그는 총 512곳: 검수 완료 389, 미진행 122, 반려 1입니다. 웅포CC·광양CC 관련 추가 확인은 사용자 지시에 따라 보류합니다.
