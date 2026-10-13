@@ -1,0 +1,361 @@
+{
+  "courses": [
+    {
+      "supports_screen": false,
+      "aliases": [
+        "몽베르 CC(비회원제)",
+        "몽베르CC 남코스",
+        "Montvert CC Public",
+        "몽베르컨트리클럽 대중제"
+      ],
+      "routes": [
+        {
+          "primary_tee_code": "official",
+          "verification_status": "verified",
+          "holes": [
+            {
+              "handicap_index": 9,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 355,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 355,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 5,
+              "hole_number": 1
+            },
+            {
+              "handicap_index": 18,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 366,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 366,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 4,
+              "hole_number": 2
+            },
+            {
+              "handicap_index": 7,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 534,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 534,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 5,
+              "hole_number": 3
+            },
+            {
+              "handicap_index": 9,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 170,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 170,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 3,
+              "hole_number": 4
+            },
+            {
+              "handicap_index": 1,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 405,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 405,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 4,
+              "hole_number": 5
+            },
+            {
+              "handicap_index": 17,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 180,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 180,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 3,
+              "hole_number": 6
+            },
+            {
+              "handicap_index": 2,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 345,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 345,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 4,
+              "hole_number": 7
+            },
+            {
+              "handicap_index": 12,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 359,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 359,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 4,
+              "hole_number": 8
+            },
+            {
+              "handicap_index": 12,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 477,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 477,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 5,
+              "hole_number": 9
+            }
+          ],
+          "route_code": "one",
+          "display_name": "망무봉 OUT",
+          "source_data_url": "https://www.montvertcc.com/public/swp/courseData",
+          "source_url": "https://www.montvertcc.com/public/swp/course/one/hole01",
+          "review_notes": [
+            "공식 홀별 상세 페이지에서 PAR·HDCP와 미터 기준거리를 확인했습니다. 티 색깔별 거리는 공개되지 않아 공식 기준거리 단일 행으로 저장하고 티 선택은 비활성화합니다.",
+            "공식 코스 제원표는 OUT 1번을 PAR4로 표시하지만 홀 상세는 PAR5로 표시합니다. 홀 상세값(PAR5)을 기준으로 저장했습니다. 홀별 HDCP도 9번과 12번 값이 각각 중복 표시되어 상세 원문 그대로 반영했습니다."
+          ],
+          "hole_count": 9
+        },
+        {
+          "primary_tee_code": "official",
+          "verification_status": "verified",
+          "holes": [
+            {
+              "handicap_index": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 401,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 401,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 4,
+              "hole_number": 1
+            },
+            {
+              "handicap_index": 10,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 335,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 335,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 4,
+              "hole_number": 2
+            },
+            {
+              "handicap_index": 15,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 185,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 185,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 3,
+              "hole_number": 3
+            },
+            {
+              "handicap_index": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 403,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 403,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 5,
+              "hole_number": 4
+            },
+            {
+              "handicap_index": 13,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 350,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 350,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 4,
+              "hole_number": 5
+            },
+            {
+              "handicap_index": 14,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 493,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 493,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 5,
+              "hole_number": 6
+            },
+            {
+              "handicap_index": 16,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 188,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 188,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 3,
+              "hole_number": 7
+            },
+            {
+              "handicap_index": 8,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 365,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 365,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 4,
+              "hole_number": 8
+            },
+            {
+              "handicap_index": 6,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "distance_m_source": "official",
+                  "source_distance": 345,
+                  "tee_color": "#64748b",
+                  "tee_selection_available": false,
+                  "distance_m": 345,
+                  "source_unit": "m"
+                }
+              ],
+              "par": 4,
+              "hole_number": 9
+            }
+          ],
+          "route_code": "two",
+          "display_name": "망무봉 IN",
+          "source_data_url": "https://www.montvertcc.com/public/swp/courseData",
+          "source_url": "https://www.montvertcc.com/public/swp/course/two/hole01",
+          "review_notes": [
+            "공식 홀별 상세 페이지에서 PAR·HDCP와 미터 기준거리를 확인했습니다. 티 색깔별 거리는 공개되지 않아 공식 기준거리 단일 행으로 저장하고 티 선택은 비활성화합니다.",
+            "공식 코스 제원표와 홀 상세 거리의 차이: IN 2번 335/330m, 3번 185/181m, 4번 403/405m, 7번 188/191m(상세/제원표). 홀 상세값을 기준으로 저장했습니다."
+          ],
+          "hole_count": 9
+        }
+      ],
+      "hole_count": 18,
+      "address": "경기도 포천시 영북면 산정호수로 359-13",
+      "review_notes": [
+        "운영사 공식 공략 페이지에서 망무봉 OUT·IN 18홀의 PAR·HDCP와 기준 미터거리를 입력했습니다. 티 색깔별 거리 정보는 게시되지 않아 거리 선택 불가로 설정했습니다.",
+        "공식 코스 제원표와 상세 페이지가 일부 다르며, 홀별 상세 페이지 값을 우선 저장했습니다. 자세한 차이는 각 경로의 검수 메모에 기록했습니다."
+      ],
+      "match_name": "몽베르 CC(비회원제)",
+      "verification_status": "verified",
+      "name": "몽베르CC(비회원제)",
+      "region": "경기"
+    }
+  ]
+}
