@@ -110,20 +110,46 @@ const supabase = createClient(url, serviceKey, { auth: { persistSession: false, 
 let inserted = 0
 let refreshedPending = 0
 let keptVerified = 0
+let matchedCanonicalAlias = 0
 
 for (let offset = 0; offset < courses.length; offset += 100) {
   const batch = courses.slice(offset, offset + 100)
   const normalizedNames = [...new Set(batch.map((course) => course.normalized_name))]
-  const { data: existing, error: readError } = await supabase
-    .from('golf_courses').select('id,source_record_id,normalized_name,region,verification_status')
-    .in('normalized_name', normalizedNames)
+  const sourceNames = [...new Set(batch.map((course) => course.name))]
+  const [nameResult, aliasResult] = await Promise.all([
+    supabase.from('golf_courses')
+      .select('id,source_record_id,normalized_name,region,verification_status,aliases')
+      .in('normalized_name', normalizedNames),
+    supabase.from('golf_courses')
+      .select('id,source_record_id,normalized_name,region,verification_status,aliases')
+      .overlaps('aliases', sourceNames),
+  ])
+  const readError = nameResult.error ?? aliasResult.error
   if (readError) throw readError
-  const bySource = new Map((existing ?? []).map((course) => [course.source_record_id, course]))
-  const byNameAndRegion = new Map((existing ?? []).map((course) => [`${course.normalized_name}|${course.region ?? ''}`, course]))
+  const existing = [...new Map(
+    [...(nameResult.data ?? []), ...(aliasResult.data ?? [])].map((course) => [course.id, course]),
+  ).values()]
+  const bySource = new Map(existing.map((course) => [course.source_record_id, course]))
+  const byNameAndRegion = new Map(existing.map((course) => [`${course.normalized_name}|${course.region ?? ''}`, course]))
+  const byAliasAndRegion = new Map()
+  for (const course of existing) {
+    for (const alias of course.aliases ?? []) {
+      const key = `${normalizeName(alias)}|${course.region ?? ''}`
+      const matches = byAliasAndRegion.get(key) ?? []
+      matches.push(course)
+      byAliasAndRegion.set(key, matches)
+    }
+  }
   const additions = []
   for (const course of batch) {
-    const match = bySource.get(course.source_record_id) ?? byNameAndRegion.get(`${course.normalized_name}|${course.region ?? ''}`)
-    if (!match) { additions.push(course); continue }
+    const key = `${course.normalized_name}|${course.region ?? ''}`
+    const match = bySource.get(course.source_record_id) ?? byNameAndRegion.get(key)
+    if (!match) {
+      const aliasMatches = byAliasAndRegion.get(key) ?? []
+      if (aliasMatches.length === 1) { matchedCanonicalAlias += 1; continue }
+      additions.push(course)
+      continue
+    }
     if (match.verification_status === 'verified') { keptVerified += 1; continue }
     const { error: updateError } = await supabase.from('golf_courses').update(course).eq('id', match.id).eq('verification_status', 'pending')
     if (updateError) throw updateError
@@ -135,4 +161,4 @@ for (let offset = 0; offset < courses.length; offset += 100) {
     inserted += additions.length
   }
 }
-console.log(`완료: 신규 ${inserted}, pending 갱신 ${refreshedPending}, 검증 완료 보존 ${keptVerified}. 홀별 파·거리 코스는 별도 관리자 검수가 필요합니다.`)
+console.log(`완료: 신규 ${inserted}, pending 갱신 ${refreshedPending}, verified 보존 ${keptVerified}, canonical 별칭 연결 ${matchedCanonicalAlias}. 홀별 파·거리 코스는 별도 관리자 검수가 필요합니다.`)

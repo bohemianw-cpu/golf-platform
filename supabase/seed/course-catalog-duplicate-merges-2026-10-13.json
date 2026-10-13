@@ -1,0 +1,49 @@
+{
+  "schema": "course-catalog-duplicate-merges/1",
+  "merged_at": "2026-10-13",
+  "merges": [
+    {
+      "source_name": "로얄링스2",
+      "source_record_id": "53fcb40639b285ebbe344bbf7f68c462ab0ba9b39b97e0501bea1b528f87b29d",
+      "canonical_name": "로얄링스CC",
+      "canonical_id": "afb6ce60-18ff-41b9-9cbf-a3d10cf20058",
+      "reason": "같은 운영사의 Queens·Kings 36홀 시설에 대한 MCST 중복 항목이며 라운드와 경로가 없었습니다."
+    },
+    {
+      "source_name": "솔라고CC2",
+      "source_record_id": "19381889333285b841177b0678e766d722442b8c5230c101e3f7ab3c90eb5766",
+      "canonical_name": "솔라고CC",
+      "canonical_id": "b9f3f314-759f-48e4-bd64-72d367aa0819",
+      "reason": "공식 운영사의 단일 36홀 시설에 대한 MCST 중복 항목이며 라운드와 경로가 없었습니다."
+    },
+    {
+      "source_name": "아난티남해CC",
+      "source_record_id": "41012c04f0a7d7d4239e80bad45eddb03fa6245ff3fdca6a729c9e303d2fe92e",
+      "canonical_name": "아난티남해GC",
+      "canonical_id": "a4a152db-9f2d-4bfe-b0de-55758d1194d1",
+      "reason": "공식 단일 18홀 시설에 대한 이전 명칭 MCST 중복 항목이며 라운드와 경로가 없었습니다."
+    },
+    {
+      "source_name": "오시아노GC",
+      "source_record_id": "ef454934d37a7f7847b2eee32db8aec5ebecbe3fb521a2caa7ba1d8c429de845",
+      "canonical_name": "파인비치골프링크스",
+      "canonical_id": "0f898bc0-1b1e-4898-9fe2-c0300ef2b3b9",
+      "reason": "공식 단일 27홀 시설의 세 코스 중 하나를 별도 구장으로 수집한 MCST 중복 항목이며 라운드와 경로가 없었습니다."
+    },
+    {
+      "source_name": "웅포CC",
+      "source_record_id": "a34bcc030123c7c5048b403cb6f469e80ff625ccba7e9fb8d11ad83eab4ce5cb",
+      "canonical_name": "포세븐금강CC",
+      "canonical_id": "c72158dd-deeb-478a-8ce8-d00ce684bc36",
+      "reason": "같은 주소와 18홀인 운영사 공식 시설의 과거/MCST 명칭 중복 항목이며 라운드와 경로가 없었습니다."
+    }
+  ],
+  "excluded_from_merge": [
+    {
+      "name": "코스모스CC",
+      "source_record_id": "c26c6b715c9f151ae1b00a60001d702d032b00268cc3eaca4acf1c58f8dad57f",
+      "verification_status": "rejected",
+      "reason": "사용자 확인상 폐업한 독립 시설로 골프존카운티 영암45와 무관합니다. 중복 항목이 아니므로 rejected 레코드를 유지합니다."
+    }
+  ]
+}

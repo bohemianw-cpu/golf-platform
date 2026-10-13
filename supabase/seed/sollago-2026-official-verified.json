@@ -16,7 +16,7 @@
       "verification_status": "verified",
       "review_notes": [
         "운영사 공식 코스안내의 Sol-In, Sol-Out, Lago-In, Lago-Out 각 9홀 PAR 및 Black/Blue/White/Yellow/Red 미터 거리 180행을 저장했습니다. 각 코스의 티별 홀 합계가 원표의 합계와 일치합니다.",
-        "MCST에는 동일 주소의 솔라고CC1/솔라고CC2 두 pending 레코드가 있으나 공식 운영사 자료는 하나의 36홀 솔라고CC로 안내합니다. 라운드 이력 없는 첫 레코드를 canonical 레코드로 사용하고 두 번째 레코드는 중복으로 반려 처리합니다."
+        "MCST의 솔라고CC1/솔라고CC2 두 항목은 공식 운영사 자료의 단일 36홀 솔라고CC로 통합했습니다. 기존 솔라고CC2 MCST 행은 검색 별칭으로 보존하고 중복 카탈로그 레코드는 제거했습니다."
       ],
       "routes": [
         {
