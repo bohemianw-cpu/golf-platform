@@ -1093,3 +1093,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-13 — 송추CC WEST·EAST 공식 코스 자료
 - 송추CC 공식 [코스안내](https://www.songchoo.co.kr/course-introduction) 표에서 WEST·EAST 각 9홀의 PAR·HDCP와 Blue/White/Red 티별 미터 거리를 반영했습니다. 코스별 공식 티 합계와 홀별 합계가 일치합니다. 자료: `songchoo-cc-2026-official-verified.json`.
 - 원격 DB에서 구장 verified, 2개 경로·18홀·54개 티 거리 행과 PAR·HDCP·티별 합계를 확인했습니다. 카탈로그는 총 512곳: 검수 완료 373, 미진행 138, 반려 1입니다. 미진행은 경기 86, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
+
+### 2026-10-13 — 한양CC NEW·OLD 코스 공식 자료
+- 한양CC 공식 [코스공략도](https://www.seoulcc.co.kr/course/course.asp) 페이지가 지정한 NEW OUT, NEW IN, OLD OUT, OLD IN 4개 경로에서 각 9홀 PAR·HDCP와 Champion/Regular 미터 거리를 확인했습니다. 공식 [스코어보드](https://www.seoulcc.co.kr/course/score.asp)는 Champion(C.T.)/Regular(R.T.)/Ladies(L.T.) 세 티의 전체 36홀 거리와 PAR·HDCP를 제공해 L.T. 자료를 추가하고, 홀별 값을 스코어보드 표에 맞췄습니다.
+- 공식 두 자료가 다른 곳은 OLD OUT 6번 HDCP(코스공략도 15, 스코어보드 7)와 OLD IN 16번 Regular(코스공략도 209m, 스코어보드 309m)입니다. 스코어보드의 각 18홀 PAR 72 및 티 총계(NEW C.T./R.T./L.T. 6,475/6,108/5,790m, OLD 5,934/5,689/5,333m)에 맞는 값을 사용했고, 해당 두 차이를 경로 검수 메모에 기록했습니다. 자료: `hanyang-cc-2026-official-verified.json`.
+- 원격 DB에서 한양CC verified, 4개 경로·36홀·108개 티 거리 행을 저장했습니다. 전체 카탈로그는 512곳: 검수 완료 374, 미진행 137, 반려 1입니다. 미진행은 경기 86, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
