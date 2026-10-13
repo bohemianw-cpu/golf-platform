@@ -1166,5 +1166,3 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [회원제 코스표](https://baliosgc.com/mcourse/m_guide_out.asp)에서 동·서·남 각 9홀의 PAR, 좌·우 그린별 HDCP 및 Back/Regular 티 거리를 반영했습니다. 공식 거리 단위는 m이며, 티는 Back/Regular 명칭만 있고 공식 색상 표기는 없어 두 티에 중립색 칩을 사용합니다. 동일 주소의 발리오스CC 비회원제와 구분된 회원제 27홀 자료입니다. 자료: `balios-membership-2026-official-verified.json`.
 - 원격 DB 대조 결과 3개 경로·27홀·108개 티/그린 행이며 PAR·그린·티·거리·HDCP 대조는 108/108 일치합니다. 동코스 Back 우그린의 홀별 합계는 3,171m로 공식 TOTAL 3,121m와 50m 차이가 있어 홀별 값을 유지하고 경로 검수 메모에 남겼습니다. 나머지 공식 티별 합계는 홀별 값과 일치합니다.
 - 원격 카탈로그는 총 512곳: 검수 완료 387, 미진행 124, 반려 1입니다. 웅포CC·광양CC 추가 확인은 사용자 지시에 따라 보류합니다.
-
-\n
