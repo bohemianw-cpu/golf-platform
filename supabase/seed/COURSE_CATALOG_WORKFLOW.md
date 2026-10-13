@@ -1,5 +1,10 @@
 # 골프장 카탈로그 적재와 검수
 
+### 2026-10-14 — 한림용인CC 사파이어·루비·다이아몬드 코스
+- 운영사 공식 [사파이어](https://yongin.hanlimgolf.co.kr/html/course02.asp), [루비](https://yongin.hanlimgolf.co.kr/html/course02_02.asp), [다이아몬드](https://yongin.hanlimgolf.co.kr/html/course02_03.asp) 코스공략 페이지에서 27홀 PAR·HDCP와 Blue·White1·White2·Red 티별 미터 거리를 입력했습니다. 공식 원문은 m·yd를 함께 표기합니다. 자료: `hanlim-yongin-2026-official-verified.json`.
+- 원격 DB에서 3개 경로·27홀·108개 티 행을 seed와 대조해 누락 0건·불일치 0건을 확인했고, 구장과 경로를 `verified`로 설정했습니다.
+- 카탈로그는 총 512곳: 검수 완료 407, 미진행 104, 반려 1입니다. 미진행은 경기 54, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
 ### 2026-10-14 — 양지파인GC 남·동·서 코스
 - 운영사 공식 [코스 제원표](https://www.pineresort.com/golf/courseinfo.aspx)와 [남코스 상세 페이지](https://www.pineresort.com/club/south01.html), [동코스 상세 페이지](https://www.pineresort.com/club/east01.html), [서코스 상세 페이지](https://www.pineresort.com/club/west01.html)에서 홀별 자료를 반영했습니다. 각 상세 페이지의 PAR·HDCP·챔피언티·레귤러티·레이디 거리(m)를 27홀·81개 티 행으로 저장했습니다.
 - 챔피언티·레귤러티 54개 홀별 거리는 공식 제원표와 상세 페이지가 모두 일치합니다. 동코스 레귤러티 홀별 합계는 2,770m인데 공식 합계는 2,765m로 5m 차이가 있어 홀별 값을 유지하고 메모했습니다. 공식 코스개요의 남·동·서 거리 3,340m·3,212m·3,167m도 티별 홀별 합과 다릅니다.
