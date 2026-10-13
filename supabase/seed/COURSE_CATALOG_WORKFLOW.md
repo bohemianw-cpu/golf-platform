@@ -614,3 +614,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-13 — 순창 금과골프장 공식 행정자료 교차 확인
 - 전북연구원의 [전북 스포츠산업 발전방안 연구](https://repository.jthink.kr/bitstream/2016.oak/530/1/18PR23_18JU04_%EC%A0%84%EB%B6%81%20%EC%8A%A4%ED%8F%AC%EC%B8%A0%EC%82%B0%EC%97%85%20%EB%B0%9C%EC%A0%84%EB%B0%A9%EC%95%88%20%EC%97%B0%EA%B5%AC_%EC%B5%9C%EC%9C%A4%EA%B7%9C.pdf)의 표 3-11은 전라북도 체육정책과 내부자료(2017년 12월 기준)를 인용해 금과골프장을 순창군 대중형 6홀, 코스 길이 1,505m로 기록합니다. 현재 MCST 카탈로그의 6홀 수와 일치하는 행정 근거를 확인했습니다.
 - 이 자료는 오래된 시설 현황표라 홀별 PAR와 티별 거리를 제공하지 않습니다. 운영사 공식 스코어카드나 홀별 자료는 찾지 못했으므로 1,505m를 홀별로 나누지 않고 구장 상태는 `pending`으로 유지했습니다.
+
+### 2026-10-13 — 곤지암GC 공식 코스 데이터 반영
+- 운영사 공식 [코스 개요](https://www.konjiamgolfclub.co.kr/course/info.dev)에서 Mountain·Lake 각 9홀, PAR, 티별 yd 값과 코스별 합계를 확인하고, 공식 [홀별 코스공략](https://www.konjiamgolfclub.co.kr/course/course.dev)의 18개 홀 페이지에서 PAR·HDCP·개별 티 제원을 대조했습니다. Mountain 7번 상세에는 합계표에 없는 Silver Tee 340yd가 추가로 표시되어 해당 홀에만 저장했습니다.
+- 원문 야드 73행을 보존하고 `1yd=0.9144m`로 환산한 정수 미터를 저장했습니다. 두 경로는 각각 PAR36, 합계 PAR72입니다. Mountain 공식 티 합계 Tournament/Champion/Regular/Ladies 3,415/3,198/2,959/2,533yd, Lake 합계 3,687/3,475/3,192/2,696yd와 홀별 원문 합이 일치합니다. Silver Tee는 Mountain 7번 상세에만 제공됩니다.
+- `konjiam-2026-official-verified.json` 관리자 적재 구조 검사를 통과했습니다. 원격 DB에 두 경로·18홀·73개 티 거리를 반영했고, seed와 DB의 홀별 PAR·HDCP 및 티 코드·명칭·색상·원문 단위·거리·환산값·선택 상태를 대조해 73행 일치, 불일치 0건을 확인했습니다. 곤지암GC를 `verified`로 전환했습니다.
+- 원격 전체 카탈로그는 총 516곳 — 검수 완료 290, 미진행 221, 반려 5입니다. 남부 인접 pending 중 사용자 공식 자료 확인이 필요한 두 곳은 블루원상주GC와 금과골프장입니다.

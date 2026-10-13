@@ -1,0 +1,906 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "name": "곤지암GC",
+    "match_name": "곤지암GC",
+    "aliases": [
+      "곤지암 골프클럽",
+      "곤지암골프클럽"
+    ],
+    "region": "경기",
+    "address": "경기도 광주시 도척면 도척윗로 280",
+    "hole_count": 18,
+    "supports_screen": false,
+    "review_notes": [
+      "운영사 공식 코스 개요의 Mountain·Lake 각 9홀, PAR 및 Tournament/Champion/Regular/Ladies 야드 합계와 홀별 코스공략 페이지의 PAR·HDCP·티별 야드 값을 확인했습니다. 공식 홀별 자료에 있는 값을 그대로 입력하고 원문 야드를 보존하며 distance_m은 1yd=0.9144m 기준 반올림 환산합니다.",
+      "Mountain 7번 홀 상세에만 Silver Tee 340yd가 추가 표기되어 해당 홀에 한해 저장합니다."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "MOUNTAIN",
+      "display_name": "마운틴 코스",
+      "hole_count": 9,
+      "primary_tee_code": "black",
+      "source_url": "https://www.konjiamgolfclub.co.kr/course/info.dev",
+      "par_source_url": "https://www.konjiamgolfclub.co.kr/course/info.dev",
+      "source_data_url": "https://www.konjiamgolfclub.co.kr/course/course.dev",
+      "review_notes": [
+        "운영사 공식 마운틴 코스 개요 및 홀별 코스공략 페이지에서 9홀의 PAR·HDCP와 각 홀의 티별 야드 거리를 확인했습니다. 원문 야드와 환산 미터를 함께 보존합니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 5,
+          "handicap_index": 16,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 448,
+              "source_distance": 490,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 432,
+              "source_distance": 472,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 402,
+              "source_distance": 440,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 355,
+              "source_distance": 388,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "handicap_index": 2,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 393,
+              "source_distance": 430,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 369,
+              "source_distance": 404,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 335,
+              "source_distance": 366,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 272,
+              "source_distance": 298,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 4,
+          "handicap_index": 8,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 365,
+              "source_distance": 399,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 332,
+              "source_distance": 363,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 315,
+              "source_distance": 344,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 291,
+              "source_distance": 318,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "handicap_index": 12,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 311,
+              "source_distance": 340,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 304,
+              "source_distance": 332,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 282,
+              "source_distance": 308,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 214,
+              "source_distance": 234,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "handicap_index": 4,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 355,
+              "source_distance": 388,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 335,
+              "source_distance": 366,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 317,
+              "source_distance": 347,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 283,
+              "source_distance": 310,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 3,
+          "handicap_index": 14,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 169,
+              "source_distance": 185,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 149,
+              "source_distance": 163,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 132,
+              "source_distance": 144,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 113,
+              "source_distance": 124,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "handicap_index": 6,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 390,
+              "source_distance": 427,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 359,
+              "source_distance": 393,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 336,
+              "source_distance": 368,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "silver",
+              "display_name": "실버 티",
+              "tee_color": "#94a3b8",
+              "distance_m": 311,
+              "source_distance": 340,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 295,
+              "source_distance": 323,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 3,
+          "handicap_index": 10,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 185,
+              "source_distance": 202,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 167,
+              "source_distance": 183,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 148,
+              "source_distance": 162,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 110,
+              "source_distance": 120,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 5,
+          "handicap_index": 18,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 507,
+              "source_distance": 554,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 477,
+              "source_distance": 522,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 439,
+              "source_distance": 480,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 382,
+              "source_distance": 418,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route_code": "LAKE",
+      "display_name": "레이크 코스",
+      "hole_count": 9,
+      "primary_tee_code": "black",
+      "source_url": "https://www.konjiamgolfclub.co.kr/course/info.dev",
+      "par_source_url": "https://www.konjiamgolfclub.co.kr/course/info.dev",
+      "source_data_url": "https://www.konjiamgolfclub.co.kr/course/course.dev",
+      "review_notes": [
+        "운영사 공식 레이크 코스 개요 및 홀별 코스공략 페이지에서 9홀의 PAR·HDCP와 각 홀의 티별 야드 거리를 확인했습니다. 원문 야드와 환산 미터를 함께 보존합니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 5,
+          "handicap_index": 17,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 529,
+              "source_distance": 579,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 501,
+              "source_distance": 548,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 463,
+              "source_distance": 506,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 411,
+              "source_distance": 449,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "handicap_index": 3,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 423,
+              "source_distance": 463,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 411,
+              "source_distance": 450,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 377,
+              "source_distance": 412,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 283,
+              "source_distance": 309,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 3,
+          "handicap_index": 11,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 165,
+              "source_distance": 180,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 146,
+              "source_distance": 160,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 131,
+              "source_distance": 143,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 115,
+              "source_distance": 126,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "handicap_index": 1,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 435,
+              "source_distance": 476,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 411,
+              "source_distance": 450,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 366,
+              "source_distance": 400,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 306,
+              "source_distance": 335,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "handicap_index": 9,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 347,
+              "source_distance": 380,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 320,
+              "source_distance": 350,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 302,
+              "source_distance": 330,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 249,
+              "source_distance": 272,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 3,
+          "handicap_index": 13,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 167,
+              "source_distance": 183,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 154,
+              "source_distance": 168,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 134,
+              "source_distance": 147,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 106,
+              "source_distance": 116,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "handicap_index": 7,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 375,
+              "source_distance": 410,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 350,
+              "source_distance": 383,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 324,
+              "source_distance": 354,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 271,
+              "source_distance": 296,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 5,
+          "handicap_index": 15,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 518,
+              "source_distance": 566,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 496,
+              "source_distance": 542,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 468,
+              "source_distance": 512,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 409,
+              "source_distance": 447,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "handicap_index": 5,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "토너먼트 티",
+              "tee_color": "#111827",
+              "distance_m": 411,
+              "source_distance": 450,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "blue",
+              "display_name": "챔피언 티",
+              "tee_color": "#2563eb",
+              "distance_m": 388,
+              "source_distance": 424,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "white",
+              "display_name": "레귤러 티",
+              "tee_color": "#f8fafc",
+              "distance_m": 355,
+              "source_distance": 388,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            },
+            {
+              "tee_code": "red",
+              "display_name": "레이디 티",
+              "tee_color": "#ef4444",
+              "distance_m": 316,
+              "source_distance": 346,
+              "source_unit": "yd",
+              "tee_selection_available": true,
+              "distance_m_source": "converted"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
