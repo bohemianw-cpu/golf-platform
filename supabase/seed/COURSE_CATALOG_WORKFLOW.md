@@ -710,4 +710,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-13 — 인천국제CC OUT·IN 공식 제원
 - 운영사 공식 [코스 제원표](https://www.incheoncc.com:1436/pagesite/course/intro.asp) 및 18개 [OUT 홀 상세](https://www.incheoncc.com:1436/pagesite/course/one/hole01.asp)·[IN 홀 상세](https://www.incheoncc.com:1436/pagesite/course/two/hole01.asp)에서 OUT·IN 각 9홀의 PAR·HDCP와 Back/Regular/Front m 거리를 저장했습니다. 총 18홀·54개 선택 가능 티 행입니다.
 - 일부 상세값과 요약표가 다릅니다(OUT 4 Back, OUT 9 Regular, IN 12 Front, IN 14 Back). 홀 상세값을 보존하고 합계 차이를 코스 검수 메모에 남겼습니다. 공식 홀별 HDCP에는 3이 세 차례 표시되고 9·16은 없어 게시값 그대로 기록했습니다. DB에서 구장·경로 `verified`, 2경로·18홀·54행 및 원문 m·선택 가능 상태를 확인했습니다. 자료 파일: `incheon-international-cc-2026-official-verified.json`.
-- 현재 원격 카탈로그는 총 516곳: 검수 완료 303, 미진행 207, 반려 6입니다. 미진행 지역은 강원 48, 경기 121, 세종 1, 인천 8, 제주 28, 충남 1곳입니다.
+- 현재 원격 카탈로그는 총 516곳: 검수 완료 304, 미진행 206, 반려 6입니다. 미진행 지역은 강원 48, 경기 121, 세종 1, 인천 7, 제주 28, 충남 1곳입니다.
+
+### 2026-10-13 — 드림파크CC 공식 코스 자료
+- 운영사 공식 [코스소개](https://www.dreamparkcc.or.kr/03course/course01.asp)의 Dream/Park OUT·IN 표에서 네 구간 각 9홀의 PAR·HDCP·METER 기준거리를 저장했습니다. 각 구간 PAR36이고 홀별 거리합은 공식 소계와 일치합니다. 전체 36홀·36개 기준거리 행입니다.
+- 이 페이지는 홀당 METER 값 하나만 제공하고 티별 거리나 티 이름·색을 구분하지 않습니다. `공식 거리 (티 미표기)`로 기록하고 티 선택을 비활성화했습니다. ScoreTab의 기존 기준거리 경로에서 티 선택 없이 사용할 수 있음을 확인했습니다. 자료 파일: `dream-park-cc-2026-official-verified.json`.
+- 원격 DB에서 구장·4개 경로 모두 `verified`, 36홀·36개 기준거리 행과 티 선택 불가를 확인했습니다. 현재 전체 516곳 중 검수 완료 304, 미진행 206, 반려 6곳입니다.

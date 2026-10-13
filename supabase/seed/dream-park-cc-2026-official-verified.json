@@ -1,0 +1,744 @@
+{
+  "venue": {
+    "verification_status": "verified",
+    "match_name": "드림파크골프장",
+    "review_notes": [
+      "운영사 공식 페이지의 Dream Course·Park Course가 각각 OUT/IN 9홀씩 총 36홀을 구성하며, 코스 개요는 각 코스 PAR72를 명시합니다. 홀별 표의 METER 값은 티 구분이 공개되지 않은 기준 거리로 저장했습니다."
+    ],
+    "aliases": [
+      "드림파크골프장",
+      "드림파크골프클럽",
+      "드림파크 컨트리클럽",
+      "Dream Park CC"
+    ],
+    "supports_screen": false,
+    "hole_count": 36,
+    "name": "드림파크CC",
+    "region": "인천",
+    "address": "인천광역시 검단구 자원순환로260번길 46"
+  },
+  "status": "source_verified_imported_verified",
+  "routes": [
+    {
+      "verification_status": "verified",
+      "official_tee_totals_m": {
+        "official": 3145
+      },
+      "source_data_url": "https://www.dreamparkcc.or.kr/03course/course01.asp",
+      "par_source_url": "https://www.dreamparkcc.or.kr/03course/course01.asp",
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "source_hole_number": 1,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 355,
+              "source_distance": 355,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 11
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "source_hole_number": 2,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 360,
+              "source_distance": 360,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 3
+        },
+        {
+          "hole_number": 3,
+          "par": 4,
+          "source_hole_number": 3,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 320,
+              "source_distance": 320,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 17
+        },
+        {
+          "hole_number": 4,
+          "par": 5,
+          "source_hole_number": 4,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 520,
+              "source_distance": 520,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 1
+        },
+        {
+          "hole_number": 5,
+          "par": 3,
+          "source_hole_number": 5,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 210,
+              "source_distance": 210,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 9
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "source_hole_number": 6,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 340,
+              "source_distance": 340,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 15
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "source_hole_number": 7,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 350,
+              "source_distance": 350,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 5
+        },
+        {
+          "hole_number": 8,
+          "par": 3,
+          "source_hole_number": 8,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 195,
+              "source_distance": 195,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 13
+        },
+        {
+          "hole_number": 9,
+          "par": 5,
+          "source_hole_number": 9,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 495,
+              "source_distance": 495,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 7
+        }
+      ],
+      "source_url": "https://www.dreamparkcc.or.kr/03course/course01.asp",
+      "hole_count": 9,
+      "display_name": "DREAM OUT 코스",
+      "review_notes": [
+        "운영사 공식 코스소개 표에서 DREAM OUT 코스 9홀의 PAR·HDCP 및 METER 값을 저장했습니다. 페이지에는 홀당 기준 거리만 있고 티별 거리·티명·티색은 구분되어 있지 않아 공식 거리 (티 미표기)로 보존했으며 티 선택은 비활성화했습니다."
+      ],
+      "primary_tee_code": "official",
+      "route_code": "DREAM_OUT"
+    },
+    {
+      "verification_status": "verified",
+      "official_tee_totals_m": {
+        "official": 3284
+      },
+      "source_data_url": "https://www.dreamparkcc.or.kr/03course/course01.asp",
+      "par_source_url": "https://www.dreamparkcc.or.kr/03course/course01.asp",
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "source_hole_number": 10,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 375,
+              "source_distance": 375,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 8
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "source_hole_number": 11,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 385,
+              "source_distance": 385,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 6
+        },
+        {
+          "hole_number": 3,
+          "par": 5,
+          "source_hole_number": 12,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 510,
+              "source_distance": 510,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 2
+        },
+        {
+          "hole_number": 4,
+          "par": 3,
+          "source_hole_number": 13,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 195,
+              "source_distance": 195,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 18
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "source_hole_number": 14,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 360,
+              "source_distance": 360,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 12
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "source_hole_number": 15,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 340,
+              "source_distance": 340,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 16
+        },
+        {
+          "hole_number": 7,
+          "par": 5,
+          "source_hole_number": 16,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 574,
+              "source_distance": 574,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 4
+        },
+        {
+          "hole_number": 8,
+          "par": 3,
+          "source_hole_number": 17,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 175,
+              "source_distance": 175,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 14
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "source_hole_number": 18,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 370,
+              "source_distance": 370,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 10
+        }
+      ],
+      "source_url": "https://www.dreamparkcc.or.kr/03course/course01.asp",
+      "hole_count": 9,
+      "display_name": "DREAM IN 코스",
+      "review_notes": [
+        "운영사 공식 코스소개 표에서 DREAM IN 코스 9홀의 PAR·HDCP 및 METER 값을 저장했습니다. 페이지에는 홀당 기준 거리만 있고 티별 거리·티명·티색은 구분되어 있지 않아 공식 거리 (티 미표기)로 보존했으며 티 선택은 비활성화했습니다."
+      ],
+      "primary_tee_code": "official",
+      "route_code": "DREAM_IN"
+    },
+    {
+      "verification_status": "verified",
+      "official_tee_totals_m": {
+        "official": 3340
+      },
+      "source_data_url": "https://www.dreamparkcc.or.kr/03course/course01.asp",
+      "par_source_url": "https://www.dreamparkcc.or.kr/03course/course01.asp",
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "source_hole_number": 1,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 365,
+              "source_distance": 365,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 13
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "source_hole_number": 2,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 410,
+              "source_distance": 410,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 1
+        },
+        {
+          "hole_number": 3,
+          "par": 5,
+          "source_hole_number": 3,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 505,
+              "source_distance": 505,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 5
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "source_hole_number": 4,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 395,
+              "source_distance": 395,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 11
+        },
+        {
+          "hole_number": 5,
+          "par": 3,
+          "source_hole_number": 5,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 200,
+              "source_distance": 200,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 15
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "source_hole_number": 6,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 376,
+              "source_distance": 376,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 9
+        },
+        {
+          "hole_number": 7,
+          "par": 5,
+          "source_hole_number": 7,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 520,
+              "source_distance": 520,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 7
+        },
+        {
+          "hole_number": 8,
+          "par": 3,
+          "source_hole_number": 8,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 179,
+              "source_distance": 179,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 17
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "source_hole_number": 9,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 390,
+              "source_distance": 390,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 3
+        }
+      ],
+      "source_url": "https://www.dreamparkcc.or.kr/03course/course01.asp",
+      "hole_count": 9,
+      "display_name": "PARK OUT 코스",
+      "review_notes": [
+        "운영사 공식 코스소개 표에서 PARK OUT 코스 9홀의 PAR·HDCP 및 METER 값을 저장했습니다. 페이지에는 홀당 기준 거리만 있고 티별 거리·티명·티색은 구분되어 있지 않아 공식 거리 (티 미표기)로 보존했으며 티 선택은 비활성화했습니다."
+      ],
+      "primary_tee_code": "official",
+      "route_code": "PARK_OUT"
+    },
+    {
+      "verification_status": "verified",
+      "official_tee_totals_m": {
+        "official": 3296
+      },
+      "source_data_url": "https://www.dreamparkcc.or.kr/03course/course01.asp",
+      "par_source_url": "https://www.dreamparkcc.or.kr/03course/course01.asp",
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "source_hole_number": 10,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 370,
+              "source_distance": 370,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 10
+        },
+        {
+          "hole_number": 2,
+          "par": 5,
+          "source_hole_number": 11,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 523,
+              "source_distance": 523,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 8
+        },
+        {
+          "hole_number": 3,
+          "par": 3,
+          "source_hole_number": 12,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 138,
+              "source_distance": 138,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 18
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "source_hole_number": 13,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 380,
+              "source_distance": 380,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 14
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "source_hole_number": 14,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 400,
+              "source_distance": 400,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 6
+        },
+        {
+          "hole_number": 6,
+          "par": 3,
+          "source_hole_number": 15,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 160,
+              "source_distance": 160,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 16
+        },
+        {
+          "hole_number": 7,
+          "par": 5,
+          "source_hole_number": 16,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 495,
+              "source_distance": 495,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 12
+        },
+        {
+          "hole_number": 8,
+          "par": 4,
+          "source_hole_number": 17,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 410,
+              "source_distance": 410,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 2
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "source_hole_number": 18,
+          "tees": [
+            {
+              "tee_code": "official",
+              "distance_m": 420,
+              "source_distance": 420,
+              "distance_m_source": "official",
+              "source_unit": "m",
+              "display_name": "공식 거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false
+            }
+          ],
+          "handicap_index": 4
+        }
+      ],
+      "source_url": "https://www.dreamparkcc.or.kr/03course/course01.asp",
+      "hole_count": 9,
+      "display_name": "PARK IN 코스",
+      "review_notes": [
+        "운영사 공식 코스소개 표에서 PARK IN 코스 9홀의 PAR·HDCP 및 METER 값을 저장했습니다. 페이지에는 홀당 기준 거리만 있고 티별 거리·티명·티색은 구분되어 있지 않아 공식 거리 (티 미표기)로 보존했으며 티 선택은 비활성화했습니다."
+      ],
+      "primary_tee_code": "official",
+      "route_code": "PARK_IN"
+    }
+  ],
+  "schema": "course-source-review/1"
+}
