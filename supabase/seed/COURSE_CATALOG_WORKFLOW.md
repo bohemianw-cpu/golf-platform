@@ -1,3 +1,7 @@
+### 2026-10-14 — 몽베르CC(회원제) 명성산 OUT·IN
+- 운영사 공식 [회원제 OUT 상세](https://www.montvertcc.com/membership/swp/courseOut), [IN 상세](https://www.montvertcc.com/membership/swp/courseIn)에서 각 9홀의 PAR·HDCP·기준거리(m)를 반영했습니다. 티 색상별 거리는 공개되지 않아 홀당 선택 불가한 `공식 기준거리` 한 행으로 저장했습니다. 자료: `montvert-membership-2026-official-verified.json`.
+- 공식 [코스 제원 페이지](https://www.montvertcc.com/membership/swp/courseData)와 상세 페이지의 홀별 거리가 다릅니다. OUT 상세값/요약표는 2번 311/331m, 3번 527/543m, 5번 420/411m, 6번 531/526m, 8번 152/150m, 9번 361/363m이며, IN 4번은 398/389m·9번은 420/413m입니다. 홀별 상세 페이지 값을 유지하고 차이를 경로 메모에 기록했습니다. 홀별 입력값으로 DB에서 2개 경로·18홀·18개 공식 거리 행을 대조해 모두 일치(누락·불일치 0건)했습니다.
+- 카탈로그는 총 512곳: 검수 완료 410, 미진행 101, 반려 1입니다. 미진행은 경기 51, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
 # 골프장 카탈로그 적재와 검수
 
 ### 2026-10-14 — H1 CLUB Mountain·Lake 코스
