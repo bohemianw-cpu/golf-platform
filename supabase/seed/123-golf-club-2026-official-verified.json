@@ -1,0 +1,226 @@
+{
+  "courses": [
+    {
+      "match_name": "1·2·3 골프장",
+      "name": "1·2·3 골프클럽",
+      "region": "경기",
+      "address": "경기도 고양시 덕양구 통일로 43-168",
+      "aliases": [
+        "1·2·3 골프장",
+        "1.2.3 골프클럽",
+        "123골프클럽",
+        "123 골프클럽",
+        "123 Golf Club"
+      ],
+      "hole_count": 6,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "운영사 공식 코스공략도에서 6홀의 PAR·HDCP와 각 홀 A/B 그린별 미터 기준거리를 확인했습니다. 공식 페이지는 티 색상별 거리를 공개하지 않아 거리는 선택 불가한 공식 기준거리로 저장하며, A/B는 티 위치가 아닌 서로 다른 그린으로 처리합니다.",
+        "원문은 일부 홀에서 미터와 야드를 병기하지만 서로 환산되지 않는 값이 있어 명시된 미터값을 기준으로 저장했습니다."
+      ],
+      "routes": [
+        {
+          "route_code": "MAIN",
+          "display_name": "1·2·3 코스",
+          "hole_count": 6,
+          "primary_tee_code": "official",
+          "verification_status": "verified",
+          "source_url": "https://123golfclub.co.kr/sub/sub0302.php",
+          "source_data_url": "https://123golfclub.co.kr/sub/sub0302.php",
+          "review_notes": [
+            "운영사 공식 코스공략도는 각 홀의 A/B 그린까지의 미터 거리를 제공합니다. 티별 거리는 표기하지 않습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 3,
+              "handicap_index": 5,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 155,
+                  "distance_m_source": "official",
+                  "source_distance": 155,
+                  "source_unit": "m",
+                  "tee_selection_available": false,
+                  "green_code": "a",
+                  "green_name": "A그린"
+                },
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 155,
+                  "distance_m_source": "official",
+                  "source_distance": 155,
+                  "source_unit": "m",
+                  "tee_selection_available": false,
+                  "green_code": "b",
+                  "green_name": "B그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 5,
+              "handicap_index": 1,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 450,
+                  "distance_m_source": "official",
+                  "source_distance": 450,
+                  "source_unit": "m",
+                  "tee_selection_available": false,
+                  "green_code": "a",
+                  "green_name": "A그린"
+                },
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 430,
+                  "distance_m_source": "official",
+                  "source_distance": 430,
+                  "source_unit": "m",
+                  "tee_selection_available": false,
+                  "green_code": "b",
+                  "green_name": "B그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "handicap_index": 2,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 250,
+                  "distance_m_source": "official",
+                  "source_distance": 250,
+                  "source_unit": "m",
+                  "tee_selection_available": false,
+                  "green_code": "a",
+                  "green_name": "A그린"
+                },
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 210,
+                  "distance_m_source": "official",
+                  "source_distance": 210,
+                  "source_unit": "m",
+                  "tee_selection_available": false,
+                  "green_code": "b",
+                  "green_name": "B그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "handicap_index": 4,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 220,
+                  "distance_m_source": "official",
+                  "source_distance": 220,
+                  "source_unit": "m",
+                  "tee_selection_available": false,
+                  "green_code": "a",
+                  "green_name": "A그린"
+                },
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 210,
+                  "distance_m_source": "official",
+                  "source_distance": 210,
+                  "source_unit": "m",
+                  "tee_selection_available": false,
+                  "green_code": "b",
+                  "green_name": "B그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 3,
+              "handicap_index": 6,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 135,
+                  "distance_m_source": "official",
+                  "source_distance": 135,
+                  "source_unit": "m",
+                  "tee_selection_available": false,
+                  "green_code": "a",
+                  "green_name": "A그린"
+                },
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 100,
+                  "distance_m_source": "official",
+                  "source_distance": 100,
+                  "source_unit": "m",
+                  "tee_selection_available": false,
+                  "green_code": "b",
+                  "green_name": "B그린"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "handicap_index": 3,
+              "tees": [
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 230,
+                  "distance_m_source": "official",
+                  "source_distance": 230,
+                  "source_unit": "m",
+                  "tee_selection_available": false,
+                  "green_code": "a",
+                  "green_name": "A그린"
+                },
+                {
+                  "tee_code": "official",
+                  "display_name": "공식 기준거리",
+                  "tee_color": "#64748b",
+                  "distance_m": 210,
+                  "distance_m_source": "official",
+                  "source_distance": 210,
+                  "source_unit": "m",
+                  "tee_selection_available": false,
+                  "green_code": "b",
+                  "green_name": "B그린"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
