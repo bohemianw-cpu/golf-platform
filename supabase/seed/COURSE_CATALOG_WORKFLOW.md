@@ -706,3 +706,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-13 — 베스트밸리GC 공식 코스 자료
 - 운영사 공식 코스 페이지의 PAR36·HDCP·Blue/White/Yellow/Red 홀별 미터 거리와 좌·우 그린별 상세값을 저장했습니다. 9홀·2그린·4티 조합으로 총 72개 티 거리행이며, 공식 단일 합계표와 그린 상세값 합계의 차이는 원문 상세값을 유지하고 검수 메모에 기록했습니다.
 - 원격 DB에서 구장·MAIN 경로 모두 `verified`, 9홀·72개 티 거리행을 확인했습니다. 자료 파일: `best-valley-gc-2026-official-verified.json`; 출처: [베스트밸리GC 공식 코스안내](https://www.bestvalleygc.com/Club/Course) (2026-10-13 확인).
+
+### 2026-10-13 — 인천국제CC OUT·IN 공식 제원
+- 운영사 공식 [코스 제원표](https://www.incheoncc.com:1436/pagesite/course/intro.asp) 및 18개 [OUT 홀 상세](https://www.incheoncc.com:1436/pagesite/course/one/hole01.asp)·[IN 홀 상세](https://www.incheoncc.com:1436/pagesite/course/two/hole01.asp)에서 OUT·IN 각 9홀의 PAR·HDCP와 Back/Regular/Front m 거리를 저장했습니다. 총 18홀·54개 선택 가능 티 행입니다.
+- 일부 상세값과 요약표가 다릅니다(OUT 4 Back, OUT 9 Regular, IN 12 Front, IN 14 Back). 홀 상세값을 보존하고 합계 차이를 코스 검수 메모에 남겼습니다. 공식 홀별 HDCP에는 3이 세 차례 표시되고 9·16은 없어 게시값 그대로 기록했습니다. DB에서 구장·경로 `verified`, 2경로·18홀·54행 및 원문 m·선택 가능 상태를 확인했습니다. 자료 파일: `incheon-international-cc-2026-official-verified.json`.
+- 현재 원격 카탈로그는 총 516곳: 검수 완료 303, 미진행 207, 반려 6입니다. 미진행 지역은 강원 48, 경기 121, 세종 1, 인천 8, 제주 28, 충남 1곳입니다.

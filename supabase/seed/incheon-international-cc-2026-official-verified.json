@@ -1,0 +1,750 @@
+{
+  "status": "source_verified_imported_verified",
+  "schema": "course-source-review/1",
+  "venue": {
+    "address": "인천광역시 서구 도요지로 37",
+    "name": "인천국제CC",
+    "aliases": [
+      "인천국제컨트리클럽",
+      "인천국제 컨트리클럽",
+      "Incheon International Country Club"
+    ],
+    "verification_status": "verified",
+    "hole_count": 18,
+    "supports_screen": false,
+    "match_name": "인천국제CC",
+    "region": "인천",
+    "review_notes": [
+      "운영사 공식 코스 제원 페이지의 OUT·IN PAR·Back/Regular/Front 거리 합계와 공식 홀별 상세 페이지의 PAR·HDCP·티별 미터 거리를 대조했습니다. 화면 간 거리 불일치는 경로별 관리자 검수 메모에 기록했습니다. 티 색상은 공식 페이지에 지정되어 있지 않아 중립색으로 표시합니다.",
+      "공식 홀별 상세의 18홀 HDCP에는 3이 세 차례 표시되고 9·16은 없어 게시값 그대로 저장했습니다."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "OUT",
+      "source_url": "https://www.incheoncc.com:1436/pagesite/course/intro.asp",
+      "primary_tee_code": "regular",
+      "par_source_url": "https://www.incheoncc.com:1436/pagesite/course/one/hole01.asp",
+      "verification_status": "verified",
+      "hole_count": 9,
+      "display_name": "OUT 코스",
+      "official_tee_totals_m": {
+        "regular": 2999,
+        "back": 3156,
+        "front": 2882
+      },
+      "holes": [
+        {
+          "hole_number": 1,
+          "handicap_index": 3,
+          "source_hole_number": 1,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 360,
+              "distance_m_source": "official",
+              "source_distance": 360,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 334,
+              "distance_m_source": "official",
+              "source_distance": 334,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 317,
+              "distance_m_source": "official",
+              "source_distance": 317,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 4
+        },
+        {
+          "hole_number": 2,
+          "handicap_index": 17,
+          "source_hole_number": 2,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 474,
+              "distance_m_source": "official",
+              "source_distance": 474,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 457,
+              "distance_m_source": "official",
+              "source_distance": 457,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 444,
+              "distance_m_source": "official",
+              "source_distance": 444,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 5
+        },
+        {
+          "hole_number": 3,
+          "handicap_index": 11,
+          "source_hole_number": 3,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 351,
+              "distance_m_source": "official",
+              "source_distance": 351,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 334,
+              "distance_m_source": "official",
+              "source_distance": 334,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 320,
+              "distance_m_source": "official",
+              "source_distance": 320,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 4
+        },
+        {
+          "hole_number": 4,
+          "handicap_index": 5,
+          "source_hole_number": 4,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 171,
+              "distance_m_source": "official",
+              "source_distance": 171,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 157,
+              "distance_m_source": "official",
+              "source_distance": 157,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 142,
+              "distance_m_source": "official",
+              "source_distance": 142,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 3
+        },
+        {
+          "hole_number": 5,
+          "handicap_index": 3,
+          "source_hole_number": 5,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 360,
+              "distance_m_source": "official",
+              "source_distance": 360,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 344,
+              "distance_m_source": "official",
+              "source_distance": 344,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 339,
+              "distance_m_source": "official",
+              "source_distance": 339,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 4
+        },
+        {
+          "hole_number": 6,
+          "handicap_index": 1,
+          "source_hole_number": 6,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 400,
+              "distance_m_source": "official",
+              "source_distance": 400,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 384,
+              "distance_m_source": "official",
+              "source_distance": 384,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 370,
+              "distance_m_source": "official",
+              "source_distance": 370,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 4
+        },
+        {
+          "hole_number": 7,
+          "handicap_index": 15,
+          "source_hole_number": 7,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 175,
+              "distance_m_source": "official",
+              "source_distance": 175,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 153,
+              "distance_m_source": "official",
+              "source_distance": 153,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 136,
+              "distance_m_source": "official",
+              "source_distance": 136,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 3
+        },
+        {
+          "hole_number": 8,
+          "handicap_index": 7,
+          "source_hole_number": 8,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 346,
+              "distance_m_source": "official",
+              "source_distance": 346,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 334,
+              "distance_m_source": "official",
+              "source_distance": 334,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 324,
+              "distance_m_source": "official",
+              "source_distance": 324,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 4
+        },
+        {
+          "hole_number": 9,
+          "handicap_index": 13,
+          "source_hole_number": 9,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 518,
+              "distance_m_source": "official",
+              "source_distance": 518,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 503,
+              "distance_m_source": "official",
+              "source_distance": 503,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 490,
+              "distance_m_source": "official",
+              "source_distance": 490,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 5
+        }
+      ],
+      "source_data_url": "https://www.incheoncc.com:1436/pagesite/course/intro.asp",
+      "review_notes": [
+        "공식 홀별 공략 페이지의 PAR·HDCP와 BACKTEE/REGULAR TEE/FRONT TEE 거리(m)를 사용했습니다. 상세 자료 URL 패턴: https://www.incheoncc.com:1436/pagesite/course/one/hole01.asp ~ hole09.asp.",
+        "코스 제원 요약표와 홀 상세 페이지의 거리가 일부 다릅니다: OUT 4번 Back 172m/상세 171m, OUT 9번 Regular 502m/상세 503m. 상세 페이지 값을 저장했고, 요약표 티 합계(3,156/2,999/2,882m)와 상세 홀 합(3,155/3,000/2,882m)의 차이를 검수 메모로 보존했습니다."
+      ]
+    },
+    {
+      "route_code": "IN",
+      "source_url": "https://www.incheoncc.com:1436/pagesite/course/intro.asp",
+      "primary_tee_code": "regular",
+      "par_source_url": "https://www.incheoncc.com:1436/pagesite/course/two/hole01.asp",
+      "verification_status": "verified",
+      "hole_count": 9,
+      "display_name": "IN 코스",
+      "official_tee_totals_m": {
+        "regular": 3078,
+        "back": 3271,
+        "front": 2940
+      },
+      "holes": [
+        {
+          "hole_number": 1,
+          "handicap_index": 18,
+          "source_hole_number": 10,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 311,
+              "distance_m_source": "official",
+              "source_distance": 311,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 294,
+              "distance_m_source": "official",
+              "source_distance": 294,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 280,
+              "distance_m_source": "official",
+              "source_distance": 280,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 4
+        },
+        {
+          "hole_number": 2,
+          "handicap_index": 2,
+          "source_hole_number": 11,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 369,
+              "distance_m_source": "official",
+              "source_distance": 369,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 356,
+              "distance_m_source": "official",
+              "source_distance": 356,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 343,
+              "distance_m_source": "official",
+              "source_distance": 343,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 4
+        },
+        {
+          "hole_number": 3,
+          "handicap_index": 3,
+          "source_hole_number": 12,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 381,
+              "distance_m_source": "official",
+              "source_distance": 381,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 338,
+              "distance_m_source": "official",
+              "source_distance": 338,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 332,
+              "distance_m_source": "official",
+              "source_distance": 332,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 4
+        },
+        {
+          "hole_number": 4,
+          "handicap_index": 12,
+          "source_hole_number": 13,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 179,
+              "distance_m_source": "official",
+              "source_distance": 179,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 167,
+              "distance_m_source": "official",
+              "source_distance": 167,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 154,
+              "distance_m_source": "official",
+              "source_distance": 154,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 3
+        },
+        {
+          "hole_number": 5,
+          "handicap_index": 10,
+          "source_hole_number": 14,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 519,
+              "distance_m_source": "official",
+              "source_distance": 519,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 497,
+              "distance_m_source": "official",
+              "source_distance": 497,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 482,
+              "distance_m_source": "official",
+              "source_distance": 482,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 5
+        },
+        {
+          "hole_number": 6,
+          "handicap_index": 6,
+          "source_hole_number": 15,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 363,
+              "distance_m_source": "official",
+              "source_distance": 363,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 344,
+              "distance_m_source": "official",
+              "source_distance": 344,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 336,
+              "distance_m_source": "official",
+              "source_distance": 336,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 4
+        },
+        {
+          "hole_number": 7,
+          "handicap_index": 4,
+          "source_hole_number": 16,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 224,
+              "distance_m_source": "official",
+              "source_distance": 224,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 205,
+              "distance_m_source": "official",
+              "source_distance": 205,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 179,
+              "distance_m_source": "official",
+              "source_distance": 179,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 3
+        },
+        {
+          "hole_number": 8,
+          "handicap_index": 14,
+          "source_hole_number": 17,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 380,
+              "distance_m_source": "official",
+              "source_distance": 380,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 370,
+              "distance_m_source": "official",
+              "source_distance": 370,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 357,
+              "distance_m_source": "official",
+              "source_distance": 357,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 4
+        },
+        {
+          "hole_number": 9,
+          "handicap_index": 8,
+          "source_hole_number": 18,
+          "tees": [
+            {
+              "display_name": "BACK TEE",
+              "distance_m": 552,
+              "distance_m_source": "official",
+              "source_distance": 552,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "back"
+            },
+            {
+              "display_name": "REGULAR TEE",
+              "distance_m": 507,
+              "distance_m_source": "official",
+              "source_distance": 507,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "regular"
+            },
+            {
+              "display_name": "FRONT TEE",
+              "distance_m": 487,
+              "distance_m_source": "official",
+              "source_distance": 487,
+              "tee_selection_available": true,
+              "source_unit": "m",
+              "tee_color": "#64748b",
+              "tee_code": "front"
+            }
+          ],
+          "par": 5
+        }
+      ],
+      "source_data_url": "https://www.incheoncc.com:1436/pagesite/course/intro.asp",
+      "review_notes": [
+        "공식 홀별 공략 페이지의 PAR·HDCP와 BACKTEE/REGULAR TEE/FRONT TEE 거리(m)를 사용했습니다. 상세 자료 URL 패턴: https://www.incheoncc.com:1436/pagesite/course/two/hole01.asp ~ hole09.asp.",
+        "코스 제원 요약표와 홀 상세 페이지의 거리가 일부 다릅니다: IN 12번 Front 322m/상세 332m, IN 14번 Back 512m/상세 519m. 상세 페이지 값을 저장했고, 요약표 티 합계(3,271/3,078/2,940m)와 상세 홀 합(3,278/3,078/2,950m)의 차이를 검수 메모로 보존했습니다."
+      ]
+    }
+  ]
+}
