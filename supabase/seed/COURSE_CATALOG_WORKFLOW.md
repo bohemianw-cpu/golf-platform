@@ -533,3 +533,10 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - OUT 7번 HDCP는 개요표에 7, 홀 상세에 9로 다르게 표시되어 홀 상세값 9를 저장하고 OUT 코스 검수 메모에 기록했습니다. 명칭 규칙에 따라 `글렌로스GC`로 저장하고 기존 `글렌로스 GC`와 공식 영문 이름을 별칭으로 보존했습니다.
 - 관리자 seed 구조 검사를 통과했습니다. 원격 DB의 구장·경로 2개·홀 18개·티 행 36개를 seed와 세부 필드별 대조해 불일치 0건을 확인했습니다. 자료 파일: `glenross-gc-2026-official-verified.json`.
 - 원격 전체 카탈로그: 총 516곳 — 검수 완료 277, 미진행 234, 반려 5. 미진행은 강원 55, 경기 134, 경북 1, 세종 1, 인천 10, 전남 1, 전북 3, 제주 28, 충남 1곳이며 부산·울산·경남은 0곳입니다.
+
+### 2026-10-13 — 가평베네스트GC 공식 코스 자료
+- 베네스트 운영사 공식 [가평베네스트 코스 개요](https://www.benestgolf.com/mobile/Course_Gp.html)와 [Maple](https://www.benestgolf.com/mobile/Course_List_Gp_Maple.html), [Pine](https://www.benestgolf.com/mobile/Course_List_Gp_Pine.html), [Birch](https://www.benestgolf.com/mobile/Course_List_Gp_Birch.html) 홀 목록 및 27개 공식 홀 상세 페이지에서 PAR·HDCP와 Gold/Blue/White/Red 티 거리(m)를 확인했습니다. 세 코스 각 PAR36, 27홀·PAR108로 적재했습니다.
+- 원문 사이에 눈에 띄는 차이가 있어 코스별 검수 메모를 남겼습니다. Maple 9번 HDCP는 개요표 5와 홀 목록/상세 6이 다릅니다. Pine 3번 Blue는 203yd와 286m가 맞지 않아 203yd 환산 186m를 사용했습니다. Birch 1번 Gold/Red 거리 표도 홀 제목·개요표·티 표 사이가 일치하지 않아 Gold 508m와 Red 408yd 환산 373m를 적용했습니다. Birch 6번은 개요표 448yd와 목록·상세 488yd가 달라 목록·상세를 사용했습니다.
+- 공식 개요표의 Gold 합계는 Maple/Pine/Birch 3,192/3,251/3,178m이고, 홀 상세 기준 합계는 3,192/3,252/3,177m입니다. Pine·Birch의 각 1m 차이를 기록했습니다. 명칭 규칙에 따라 `가평베네스트GC`로 저장하고 띄어쓰기 및 공식 영문 검색명을 별칭으로 보존했습니다.
+- 관리자 seed 구조 검사를 통과했습니다. 원격 DB의 구장·경로 3개·홀 27개·티 행 108개를 seed와 모든 주요 필드별 대조해 불일치 0건을 확인했습니다. 자료 파일: `gapyeong-benest-gc-2026-official-verified.json`.
+- 원격 전체 카탈로그: 총 516곳 — 검수 완료 278, 미진행 233, 반려 5. 미진행은 강원 55, 경기 133, 경북 1, 세종 1, 인천 10, 전남 1, 전북 3, 제주 28, 충남 1곳이며 부산·울산·경남은 0곳입니다.
