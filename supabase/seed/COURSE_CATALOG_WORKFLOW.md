@@ -1191,3 +1191,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [아시아 코스](https://www.bearsbestcheongnagc.com/Course/CourseInfo?page=2), [유럽 코스](https://www.bearsbestcheongnagc.com/Course/CourseInfo?page=3), [미국 코스](https://www.bearsbestcheongnagc.com/Course/CourseInfo?page=4)의 홀별 표와 지도 범례를 대조해 27홀 PAR와 Black/Blue/White/Red/Gold 135개 티 거리 행을 입력했습니다. 단위 m로 표시된 자료를 그대로 사용했습니다. 자료: `bears-best-cheongna-2026-official-verified.json`.
 - 세 코스 모두 PAR36이며 Black 기준 전장은 아시아 3,179m, 유럽 3,142m, 미국 3,204m로 공식 코스개요 합계와 일치합니다. 공식 페이지에서 HDCP는 제공하지 않아 입력하지 않았습니다.
 - 원격 DB 대조 결과 구장 verified, 3개 경로·27홀·135개 티 행입니다. 현재 카탈로그는 총 512곳: 검수 완료 393, 미진행 118, 반려 1입니다. 미진행은 경기 67, 강원 25, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 검수는 사용자 지시에 따라 별도 요청까지 중단합니다.
+
+### 2026-10-14 — 마이다스레이크 이천 올림푸스·타이탄·마이다스 공식 코스 자료
+- 운영사 공식 [올림푸스](https://www.midasgolf.co.kr/IC/OlympusCourse), [타이탄](https://www.midasgolf.co.kr/IC/TitanCourse), [마이다스](https://www.midasgolf.co.kr/IC/MidasCourse) 페이지에서 각 9홀의 PAR·HDCP와 Blue/Gold/White/Green/Red 티별 미터 거리를 반영했습니다. 공식 명칭을 마이다스레이크 이천 골프앤리조트로 정리하고 기존 명칭은 별칭으로 보존했습니다. 자료: `midas-lake-icheon-2026-official-verified.json`.
+- 올림푸스 3번, 타이탄 4번·7번 홀은 표의 HDCP와 홀 설명 문구가 달라 공식 표 머리글 값을 적용하고 코스 메모에 차이를 남겼습니다. 원격 DB에서 3개 코스·27홀·135개 티 행을 확인했으며 seed 대비 상세 데이터 불일치는 0건입니다. Blue 기준 코스별 홀 거리 합은 올림푸스 3,288m, 타이탄 3,301m, 마이다스 3,296m입니다.
+- 원격 카탈로그는 총 512곳: 검수 완료 394, 미진행 117, 반려 1입니다. 미진행은 경기 66, 강원 25, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
