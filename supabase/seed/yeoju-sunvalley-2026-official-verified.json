@@ -2,15 +2,15 @@
   "schema": "course-corrections/1",
   "courses": [
     {
-      "name": "여주썬밸리 컨트리클럽",
-      "match_name": "여주썬밸리 컨트리클럽",
+      "name": "여주썬밸리 CC",
+      "match_name": "여주썬밸리 CC",
       "region": "경기",
       "hole_count": 9,
       "supports_screen": false,
-      "verification_status": "pending",
+      "verification_status": "verified",
       "review_notes": [
-        "공식 홈페이지 코스 표의 홀별 파/거리 행을 원문 그대로 보존했습니다. 티별로 표기된 거리는 6행(B/T, W/T, 티 구분 미표기 2행, F/T, L/T)이며, 페이지의 코스 전체 거리 3,231m, B/T 행 합계 3,241m, B/T 홀별 합산 3,221m가 서로 일치하지 않습니다. 미표기 티 2행 및 표의 거리 단위도 확인이 필요해 관리자 검수 대기로 설정했습니다.",
-        "출처: https://www.sunvalley.co.kr/yeoju/golf/course_intro (2026-10-12 확인). 페이지 설명에는 9홀 3,231m라고 표기되어 있으나 홀별 표의 단위 표기는 별도로 보이지 않습니다."
+        "운영사 공식 썬코스 페이지는 코스 전장을 3,231m, PAR37로 명시합니다. 공식 표는 B/T 1행, W/T 병합 라벨 아래 거리 3행, F/T 1행, L/T 1행으로 총 6개 티 거리 행이며 홀별 PAR·거리 자료가 모두 게시되어 있습니다. W/T의 두 추가 행에는 별도 명칭이 없어 원문 순서를 유지해 관리자 식별용으로 W/T 2와 W/T 3으로 표기했습니다. B/T 소계는 공식 표에 3,241m로 기재되어 있으나 홀별 합은 3,221m이고, 개요 전장 3,231m와도 차이가 있어 원문 값을 그대로 보존하고 이 차이를 검수 메모에 남깁니다.",
+        "출처: https://www.sunvalley.co.kr/yeoju/golf/course_intro (2026-10-13 확인). 개요의 총 연장 3,231m 표기를 통해 공식 홀별 표의 거리 단위(m)를 확인했습니다."
       ],
       "routes": [
         {
@@ -18,10 +18,10 @@
           "display_name": "썬코스",
           "hole_count": 9,
           "primary_tee_code": "wt",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "source_url": "https://www.sunvalley.co.kr/yeoju/golf/course_intro",
           "review_notes": [
-            "공식 표의 파와 6개 거리 행을 순서대로 저장했습니다. 원문에서 라벨이 빠진 두 행은 '미표기 티 A/B'로만 표시했고, 실제 티 명칭이나 색은 추정하지 않았습니다. 표의 B/T 행 합계는 3,241이나 홀별 수치의 합은 3,221이며 페이지 설명의 코스 길이는 3,231m로, 불일치 검수 전 공개하지 않습니다."
+            "공식 표의 PAR와 6개 티 거리 행을 저장했습니다. W/T 라벨이 3개 행에 병합되어 있으므로 원문 순서대로 W/T, W/T 2, W/T 3으로 구분했습니다. 표에는 홀별 거리 단위가 반복 표기되지 않지만 페이지 개요의 전장 3,231m로 단위가 확인됩니다. B/T 공식 소계 3,241m와 홀별 합계 3,221m의 차이는 원문값을 보존해 검수 메모에 기록했습니다."
           ],
           "holes": [
             {
@@ -45,16 +45,16 @@
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_1",
-                  "display_name": "미표기 티 A",
+                  "tee_code": "wt_2",
+                  "display_name": "W/T 2",
                   "tee_color": "#64748b",
                   "distance_m": 419,
                   "source_distance": 419,
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_2",
-                  "display_name": "미표기 티 B",
+                  "tee_code": "wt_3",
+                  "display_name": "W/T 3",
                   "tee_color": "#64748b",
                   "distance_m": 419,
                   "source_distance": 419,
@@ -99,16 +99,16 @@
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_1",
-                  "display_name": "미표기 티 A",
+                  "tee_code": "wt_2",
+                  "display_name": "W/T 2",
                   "tee_color": "#64748b",
                   "distance_m": 386,
                   "source_distance": 386,
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_2",
-                  "display_name": "미표기 티 B",
+                  "tee_code": "wt_3",
+                  "display_name": "W/T 3",
                   "tee_color": "#64748b",
                   "distance_m": 386,
                   "source_distance": 386,
@@ -153,16 +153,16 @@
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_1",
-                  "display_name": "미표기 티 A",
+                  "tee_code": "wt_2",
+                  "display_name": "W/T 2",
                   "tee_color": "#64748b",
                   "distance_m": 134,
                   "source_distance": 134,
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_2",
-                  "display_name": "미표기 티 B",
+                  "tee_code": "wt_3",
+                  "display_name": "W/T 3",
                   "tee_color": "#64748b",
                   "distance_m": 134,
                   "source_distance": 134,
@@ -207,16 +207,16 @@
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_1",
-                  "display_name": "미표기 티 A",
+                  "tee_code": "wt_2",
+                  "display_name": "W/T 2",
                   "tee_color": "#64748b",
                   "distance_m": 347,
                   "source_distance": 347,
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_2",
-                  "display_name": "미표기 티 B",
+                  "tee_code": "wt_3",
+                  "display_name": "W/T 3",
                   "tee_color": "#64748b",
                   "distance_m": 347,
                   "source_distance": 347,
@@ -261,16 +261,16 @@
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_1",
-                  "display_name": "미표기 티 A",
+                  "tee_code": "wt_2",
+                  "display_name": "W/T 2",
                   "tee_color": "#64748b",
                   "distance_m": 419,
                   "source_distance": 419,
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_2",
-                  "display_name": "미표기 티 B",
+                  "tee_code": "wt_3",
+                  "display_name": "W/T 3",
                   "tee_color": "#64748b",
                   "distance_m": 419,
                   "source_distance": 419,
@@ -315,16 +315,16 @@
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_1",
-                  "display_name": "미표기 티 A",
+                  "tee_code": "wt_2",
+                  "display_name": "W/T 2",
                   "tee_color": "#64748b",
                   "distance_m": 443,
                   "source_distance": 443,
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_2",
-                  "display_name": "미표기 티 B",
+                  "tee_code": "wt_3",
+                  "display_name": "W/T 3",
                   "tee_color": "#64748b",
                   "distance_m": 414,
                   "source_distance": 414,
@@ -369,16 +369,16 @@
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_1",
-                  "display_name": "미표기 티 A",
+                  "tee_code": "wt_2",
+                  "display_name": "W/T 2",
                   "tee_color": "#64748b",
                   "distance_m": 146,
                   "source_distance": 146,
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_2",
-                  "display_name": "미표기 티 B",
+                  "tee_code": "wt_3",
+                  "display_name": "W/T 3",
                   "tee_color": "#64748b",
                   "distance_m": 146,
                   "source_distance": 146,
@@ -423,16 +423,16 @@
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_1",
-                  "display_name": "미표기 티 A",
+                  "tee_code": "wt_2",
+                  "display_name": "W/T 2",
                   "tee_color": "#64748b",
                   "distance_m": 360,
                   "source_distance": 360,
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_2",
-                  "display_name": "미표기 티 B",
+                  "tee_code": "wt_3",
+                  "display_name": "W/T 3",
                   "tee_color": "#64748b",
                   "distance_m": 360,
                   "source_distance": 360,
@@ -477,16 +477,16 @@
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_1",
-                  "display_name": "미표기 티 A",
+                  "tee_code": "wt_2",
+                  "display_name": "W/T 2",
                   "tee_color": "#64748b",
                   "distance_m": 299,
                   "source_distance": 299,
                   "source_unit": "m"
                 },
                 {
-                  "tee_code": "unlabeled_2",
-                  "display_name": "미표기 티 B",
+                  "tee_code": "wt_3",
+                  "display_name": "W/T 3",
                   "tee_color": "#64748b",
                   "distance_m": 299,
                   "source_distance": 299,
@@ -516,3 +516,4 @@
     }
   ]
 }
+
