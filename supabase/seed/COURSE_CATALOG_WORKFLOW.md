@@ -1,3 +1,7 @@
+### 2026-10-14 — 웰링턴CC 그리핀·피닉스·와이번
+- 운영사 공식 [코스 안내](https://www.wellingtoncc.co.kr/golf/golf.do)와 [그리핀 홀 상세](https://www.wellingtoncc.co.kr/golf/one/hole01.do), [피닉스 홀 상세](https://www.wellingtoncc.co.kr/golf/two/hole01.do), [와이번 홀 상세](https://www.wellingtoncc.co.kr/golf/three/hole01.do)의 27개 홀에서 PAR와 6색 티 거리를 입력했습니다. 공식 홀 페이지의 색상 표기와 야드 원값을 보존하고 미터로 환산했습니다. 자료: `wellington-2026-official-verified.json`.
+- 원격 DB와 seed를 대조해 3개 경로·27홀·162개 티 행이 모두 일치(누락·불일치 0건)하는 것을 확인하고 `verified` 처리했습니다. 카탈로그는 총 512곳: 검수 완료 419, 미진행 92, 반려 1입니다. 미진행은 경기 42, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 사용자 요청에 따라 보류합니다.
+
 ### 2026-10-14 — 일동레이크GC 마운틴·힐 코스
 - 운영사 공식 [코스소개](https://www.ildonglakes.co.kr/course/intro)의 홀별 도면에서 18홀 PAR와 티별 거리를 입력했습니다. 도면의 괄호 안 미터 값을 저장했습니다. 자료: `ildong-lakes-2026-official-verified.json`.
 - 마운틴·힐 각 9홀, 총 87개 게시 티 거리 행을 저장했습니다. 도면에서 색상명이 확인되는 블루·옐로우 사이의 흰색 기호 티는 별도 색상명이 없어 거리순으로 화이트·화이트 2~4로 구분했습니다.
