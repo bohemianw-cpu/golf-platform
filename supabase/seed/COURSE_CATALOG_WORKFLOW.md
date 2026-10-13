@@ -559,3 +559,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [스코어카드](https://www.ghcc.kr/course/course02.asp)에서 동·남·북·서 각 9홀의 PAR·HDCP와 Blue/White/Red 티별 미터 거리를 저장했습니다. 코스별 PAR는 모두 36이고, 세 티의 홀별 합계가 네 코스 각각의 공식 소계와 일치합니다. 공식 홀 공략 상세([동](https://www.ghcc.kr/course/course_east01.asp), [남](https://www.ghcc.kr/course/course_south01.asp), [북](https://www.ghcc.kr/course/course_north01.asp), [서](https://www.ghcc.kr/course/course_west01.asp))와 코스명·단위·표기 형식을 대조했습니다.
 - 기흥CC를 `verified`로 전환하고 4개 경로·36홀·108개 티 거리 행을 저장했습니다. seed 구조 검사는 통과했으며 원격 DB read-back에서 코스/홀/티 속성 불일치는 0건입니다. 로컬 `.env.local`에는 공개 키만 있어 importer의 `--apply`는 실행할 수 없었고, 승인된 Supabase 연결을 통해 적재한 뒤 같은 데이터 필드를 원격에서 대조했습니다. 자료 파일: `giheung-cc-2026-official-verified.json`.
 - 적재 후 원격 카탈로그 집계: 총 516곳 — 검수 완료 280, 미진행 231, 반려 5. 부산·울산·경남 미진행은 0곳이며 남부권 잔여는 경북 1, 세종 1, 전남 1, 전북 3, 충남 1곳입니다.
+
+### 2026-10-13 — 화성상록GC 공식 코스 데이터
+- 운영사 공식 [코스공략도](https://www.sangnokresort.co.kr/M050602)의 데이터 호출(`/golf/selectCourseMapAjax.do`, `cat=GF`, `code=S02`, `mnrCd=1/2/3`)에서 남·동·서 각 9홀의 PAR·HDCP와 B/T·R/T·F/T·L/T 거리(m)를 반영했습니다. 원문 티 약어를 유지하고 공개되지 않은 티 색상은 중립 표기로 두었습니다. 세부표의 티별 총합은 남 3,303/3,076/2,831/2,572m, 동 3,265/3,033/2,768/2,436m, 서 3,134/2,916/2,703/2,421m이며 네 티 모두 각 홀값 합과 일치합니다.
+- 운영사 공식 [클럽소개](https://www.sangnokresort.co.kr/M050101)는 남·동·서 B/T 개요 전장을 3,300/3,245/3,132m로 게시해 상세 B/T 합계와 각각 +3/+20/+2m 차이가 납니다. 공식 [코스소개](https://www.sangnokresort.co.kr/M050601)는 세 경로를 각각 3,222m로 표기해 두 출처와도 상충합니다. 홀별 PAR·티별 거리 및 상세표 Total이 함께 제공되는 코스공략도 값을 저장 기준으로 삼고, 공식 출처 간 총장 차이를 검수 메모에 보존했습니다.
+- `화성상록GC`를 검수 완료로 전환하고 경로 3개·홀 27개·티 거리 108개를 저장했습니다. seed 구조 검사를 통과했고 원격 DB read-back 대조의 경로·홀·티 불일치는 0건입니다. 자료 파일: `hwaseong-sangnok-gc-2026-official-verified.json`.
+- 적재 후 원격 카탈로그 집계: 총 516곳 — 검수 완료 281, 미진행 230, 반려 5. 부산·울산·경남 미진행은 0곳이며 남부권 잔여는 경북 1, 세종 1, 전남 1, 전북 3, 충남 1곳입니다.
