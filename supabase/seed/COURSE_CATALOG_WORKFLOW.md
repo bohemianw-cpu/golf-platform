@@ -889,3 +889,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 각 경로의 5개 티 합계가 공식 합계와 모두 일치합니다. Classic의 Blue와 White는 공식 자료에서 거리가 동일해도 각 티 선택지로 보존했습니다.
 - 원격 DB에서 `윈체스트 GC 대중`과 ROMANTIC/CLASSIC 경로가 모두 `verified`, 각 9홀·PAR36으로 저장된 것을 확인했습니다. 파일과 DB의 90개 거리 행 및 코스·경로·홀·티 필드 대조에서 누락·초과·불일치 0건입니다.
 - 현재 원격 카탈로그는 총 516곳: 검수 완료 334, 미진행 176, 반려 6입니다. 미진행 지역은 강원 39, 경기 109, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
+
+### 2026-10-13 — 안성CC 공식 OUT·IN 스코어카드
+- 안성CC pending 레코드의 운영사 공식 [스코어카드](https://www.ansungcc.co.kr/Course/ScoreCard.aspx)에서 OUT 1–9번과 IN 10–18번의 홀별 PAR·HDCP·Back/Regular/Front/Ladies 거리를 확인했습니다. 각 코스는 PAR36입니다.
+- 공식 소개의 전장 안내([코스 소개](https://www.ansungcc.co.kr/Course/Intro.aspx))와 스코어카드 합계 7,067(Back)·5,538(Ladies)를 대조해 표의 거리 단위를 yd로 판정했습니다. 1yd=0.9144m로 홀별 거리를 환산해 가장 가까운 1m로 저장하고 원문 야드 값도 보존했습니다. 색상 이름이 공개되지 않아 티 색상은 중립색으로 두었습니다.
+- 관리자 적재기 구조 검증 및 원격 DB read-back이 통과했습니다. 구장·OUT/IN 경로 `verified`, 18홀·72개 티 행이며 PAR·HDCP·티명·색상·환산 거리·원문 단위·선택 가능 여부의 seed 불일치는 0건입니다. 자료 파일: `anseong-cc-2026-official-verified.json`.
+- 현재 원격 카탈로그는 총 516곳: 검수 완료 337, 미진행 173, 반려 6입니다. 미진행 지역은 강원 39, 경기 106, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
