@@ -1349,3 +1349,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스제원](https://ns.cypress.co.kr/swp/course), [클럽소개](https://ns.cypress.co.kr/swp/club), [회원 안내](https://ns.cypress.co.kr/swp/member_join)에서 구장과 코스 구성을 대조했습니다. 서·북·동·남 각 9홀의 홀별 PAR·HDCP 및 Black/Blue/White/Gold/Red 티별 m 자료를 반영했습니다. 서·북은 회원제, 동·남은 대중형으로 운영되며 전체 36홀입니다. 자료: `cypress-golf-resort-2026-official-verified.json`.
 - 공식 홀별 표의 거리 합계는 각 코스의 표 소계와 일치합니다. 동 코스 홀별 PAR 합은 36인데 공식 소계는 35로 표기되어 홀별 값을 적용했습니다. 코스 소개와 회원 안내의 18홀 전장은 홀별 거리 합과 크게 달라, 출처 간 차이를 구장 메모에 남겼습니다.
 - 원격 DB와 seed를 대조해 verified 구장·4개 경로·36홀·180개 티가 모두 일치하고 누락·초과·필드 불일치는 0건임을 확인했습니다. 카탈로그는 총 512곳: 검수 완료 429, 미진행 82, 반려 1입니다. 웅포CC·광양CC 추가 검수는 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 스프링데일CC 스프링·데일 공식 코스 자료
+- 운영사 공식 [코스 소개](https://www.springdale.co.kr/html/course/course_01.asp), [스프링 코스 홀별 페이지](https://www.springdale.co.kr/html/course/course_02_01.asp), [데일 코스 홀별 페이지](https://www.springdale.co.kr/html/course/course_03_01.asp)에서 18홀의 PAR·HDCP 및 Back/Blue/White/Gold/Red 티별 미터 거리를 반영했습니다. 자료: `springdale-2026-official-verified.json`.
+- 스프링 4번 홀 티별 표의 Red 거리는 254m이나 홀 설명 본문 기준 거리는 356m로 다릅니다. 공식 티별 표 값을 유지하고 경로 메모에 차이를 기록했습니다.
+- 원격 DB와 seed를 비교해 verified 구장·2개 경로·18홀·90개 티가 일치하고 누락·초과·필드 불일치가 0건임을 확인했습니다. 카탈로그는 총 512곳: 검수 완료 430, 미진행 81, 반려 1입니다. 웅포CC·광양CC 추가 검수는 별도 요청까지 보류합니다.
