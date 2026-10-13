@@ -1186,3 +1186,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스 소개](https://lakewood.co.kr/swp/course), [Lake Course](https://lakewood.co.kr/swp/lake_course), [Wood Course](https://lakewood.co.kr/swp/wood_course), 그리고 [예약 안내](https://lakewood.co.kr/swp/reserve_guide)를 확인했습니다. 각 홀 상세의 PAR·HDCP와 홀별 코스 이미지 범례의 Black/Blue/White/Gold/Red 미터 거리를 반영했습니다. 예약 안내가 비회원제를 산길코스로 명시하므로 물길·꽃길·숲길 27홀은 회원제로, 산길 9홀은 비회원제로 분리했습니다. 자료는 `lakewood-membership-2026-official-verified.json`, `lakewood-public-2026-official-verified.json`에 보존했습니다.
 - Lake 코스 Blue 홀별 거리 합은 6,406m, Wood 코스 Blue 합은 6,470m로 공식 코스 소개의 총전장과 일치합니다. 공식 이미지에 없는 블랙티는 해당 홀에만 입력했으며 빠진 홀의 티 거리는 추정하지 않았습니다. 원격 DB에서 회원제 3경로·27홀·120개 티 행과 비회원제 1경로·9홀·36개 티 행을 확인했고, 양쪽 홀·파·HDCP·티 메타데이터·거리의 seed/DB 해시가 일치합니다.
 - 원격 카탈로그는 총 512곳: 검수 완료 392, 미진행 119, 반려 1입니다. 미진행 지역은 경기 67, 강원 25, 제주 25, 인천 1, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 사용자 지시에 따라 보류합니다.
+
+### 2026-10-14 — 베어즈베스트청라GC 아시아·유럽·미국 코스 자료
+- 운영사 공식 [아시아 코스](https://www.bearsbestcheongnagc.com/Course/CourseInfo?page=2), [유럽 코스](https://www.bearsbestcheongnagc.com/Course/CourseInfo?page=3), [미국 코스](https://www.bearsbestcheongnagc.com/Course/CourseInfo?page=4)의 홀별 표와 지도 범례를 대조해 27홀 PAR와 Black/Blue/White/Red/Gold 135개 티 거리 행을 입력했습니다. 단위 m로 표시된 자료를 그대로 사용했습니다. 자료: `bears-best-cheongna-2026-official-verified.json`.
+- 세 코스 모두 PAR36이며 Black 기준 전장은 아시아 3,179m, 유럽 3,142m, 미국 3,204m로 공식 코스개요 합계와 일치합니다. 공식 페이지에서 HDCP는 제공하지 않아 입력하지 않았습니다.
+- 원격 DB 대조 결과 구장 verified, 3개 경로·27홀·135개 티 행입니다. 현재 카탈로그는 총 512곳: 검수 완료 393, 미진행 118, 반려 1입니다. 미진행은 경기 67, 강원 25, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 검수는 사용자 지시에 따라 별도 요청까지 중단합니다.

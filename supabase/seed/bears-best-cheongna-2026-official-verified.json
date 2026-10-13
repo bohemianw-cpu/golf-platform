@@ -1,0 +1,83 @@
+{
+  "courses": [
+    {
+      "match_name": "베어즈베스트청라GC",
+      "name": "베어즈베스트청라GC",
+      "region": "인천",
+      "address": "인천시 서구 청라대로 316번길 45",
+      "aliases": ["베어즈베스트 청라GC", "베어즈베스트 청라", "베어즈베스트청라", "Bear's Best Cheongna GC", "Bears Best Cheongna"],
+      "hole_count": 27,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "운영사 공식 코스개요에서 아시아·유럽·미국 각 9홀의 PAR와 Black Tee 기준 미터 거리를 확인하고, 각 홀 상세 이미지 범례의 Black·Blue·White·Red·Gold 티별 거리를 저장했습니다.",
+        "공식 페이지에는 HDCP가 공개되지 않아 입력하지 않았습니다. 코스개요의 홀별 Black 거리 합계는 아시아 3,179m, 유럽 3,142m, 미국 3,204m로 각 코스 상세 합계와 일치합니다."
+      ],
+      "routes": [
+        {
+          "route_code": "ASIA",
+          "display_name": "아시아 코스",
+          "hole_count": 9,
+          "primary_tee_code": "black",
+          "verification_status": "verified",
+          "source_url": "https://www.bearsbestcheongnagc.com/Course/CourseInfo?page=2",
+          "source_data_url": "https://www.bearsbestcheongnagc.com/Course/CourseInfo?page=2",
+          "review_notes": ["공식 홀별 표의 PAR·Black 기준거리와 각 홀 이미지 범례의 색상별 거리(m)를 사용했습니다. HDCP는 공식 페이지에 표시되지 않습니다."],
+          "holes": [
+            {"hole_number":1,"par":5,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":489},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":464},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":437},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":411},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":389}]},
+            {"hole_number":2,"par":4,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":344},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":337},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":337},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":262},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":217}]},
+            {"hole_number":3,"par":3,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":184},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":154},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":136},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":117},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":117}]},
+            {"hole_number":4,"par":4,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":405},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":367},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":299},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":268},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":268}]},
+            {"hole_number":5,"par":4,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":313},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":300},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":283},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":259},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":213}]},
+            {"hole_number":6,"par":4,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":390},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":362},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":362},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":311},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":243}]},
+            {"hole_number":7,"par":3,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":159},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":141},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":122},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":85},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":85}]},
+            {"hole_number":8,"par":4,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":370},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":357},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":342},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":312},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":312}]},
+            {"hole_number":9,"par":5,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":525},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":500},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":479},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":431},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":431}]}
+          ]
+        },
+        {
+          "route_code": "EUROPE",
+          "display_name": "유럽 코스",
+          "hole_count": 9,
+          "primary_tee_code": "black",
+          "verification_status": "verified",
+          "source_url": "https://www.bearsbestcheongnagc.com/Course/CourseInfo?page=3",
+          "source_data_url": "https://www.bearsbestcheongnagc.com/Course/CourseInfo?page=3",
+          "review_notes": ["공식 홀별 표의 PAR·Black 기준거리와 각 홀 이미지 범례의 색상별 거리(m)를 사용했습니다. HDCP는 공식 페이지에 표시되지 않습니다."],
+          "holes": [
+            {"hole_number":1,"par":4,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":399},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":380},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":359},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":331},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":287}]},
+            {"hole_number":2,"par":4,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":292},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":270},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":241},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":213},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":213}]},
+            {"hole_number":3,"par":3,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":162},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":144},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":126},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":98},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":98}]},
+            {"hole_number":4,"par":5,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":465},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":451},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":426},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":381},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":344}]},
+            {"hole_number":5,"par":3,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":159},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":149},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":132},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":112},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":112}]},
+            {"hole_number":6,"par":5,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":540},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":510},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":468},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":407},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":407}]},
+            {"hole_number":7,"par":4,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":384},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":354},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":309},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":262},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":262}]},
+            {"hole_number":8,"par":4,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":385},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":363},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":337},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":309},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":271}]},
+            {"hole_number":9,"par":4,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":356},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":335},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":308},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":281},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":248}]}
+          ]
+        },
+        {
+          "route_code": "USA",
+          "display_name": "미국 코스",
+          "hole_count": 9,
+          "primary_tee_code": "black",
+          "verification_status": "verified",
+          "source_url": "https://www.bearsbestcheongnagc.com/Course/CourseInfo?page=4",
+          "source_data_url": "https://www.bearsbestcheongnagc.com/Course/CourseInfo?page=4",
+          "review_notes": ["공식 홀별 표의 PAR·Black 기준거리와 각 홀 이미지 범례의 색상별 거리(m)를 사용했습니다. HDCP는 공식 페이지에 표시되지 않습니다."],
+          "holes": [
+            {"hole_number":1,"par":4,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":378},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":356},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":331},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":291},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":253}]},
+            {"hole_number":2,"par":5,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":477},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":450},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":450},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":404},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":357}]},
+            {"hole_number":3,"par":3,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":188},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":167},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":167},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":118},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":118}]},
+            {"hole_number":4,"par":4,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":383},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":364},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":333},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":279},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":279}]},
+            {"hole_number":5,"par":4,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":325},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":310},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":286},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":253},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":230}]},
+            {"hole_number":6,"par":5,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":508},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":494},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":465},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":433},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":433}]},
+            {"hole_number":7,"par":3,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":162},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":145},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":145},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":85},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":85}]},
+            {"hole_number":8,"par":4,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":408},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":390},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":363},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":321},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":288}]},
+            {"hole_number":9,"par":4,"tees":[{"tee_code":"black","display_name":"Black","tee_color":"#111827","distance_m":375},{"tee_code":"blue","display_name":"Blue","tee_color":"#2563eb","distance_m":340},{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","distance_m":310},{"tee_code":"red","display_name":"Red","tee_color":"#ef4444","distance_m":249},{"tee_code":"gold","display_name":"Gold","tee_color":"#d4af37","distance_m":249}]}
+          ]
+        }
+      ]
+    }
+  ]
+}
