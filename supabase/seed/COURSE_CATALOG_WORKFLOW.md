@@ -496,3 +496,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 충남 `계룡산골프장`의 DB 주소는 계룡면 내흥리입니다. 검색 결과에는 별도 계룡산 골프클럽(왕흥장악로 583, 파3)과 계룡대 체력단련장이 함께 나타나 시설 혼동 가능성이 있습니다. 공식 운영사 자료로 동일 시설임을 확정할 수 없고 홀별 공식 자료도 찾지 못해 pending을 유지했습니다.
 - 전북 금과골프장도 공식 운영사 PAR·홀별 거리표를 찾지 못했습니다. 제3자 자료에 홀 길이가 있으나 공식 원천이 아니므로 DB에 입력하지 않았습니다. 다음 조사에서는 시설명·주소를 공식 운영 자료와 먼저 대조하고, 충분한 공식 홀 데이터가 확인될 때 적재합니다.
 - 원격 카탈로그 집계(재확인): 총 516곳, 검수 완료 271, 미진행 240, 반려 5. 남부 인접 pending은 경북 1, 세종 1, 충남 1, 전북 3, 전남 1곳입니다.
+
+### 2026-10-13 — YJC GC (구 YJCGC)
+- 운영사 공식 [코스 제원표](https://www.yeojuclassic.co.kr/swp/course)에서 ACE·CHALLENGE·DREAM 각 9홀의 PAR와 Blue/White/Gold/Red 티별 홀 거리(m)를 반영했습니다. 운영사 공식 [ACE](https://www.yeojuclassic.co.kr/swp/course_ace), [CHALLENGE](https://www.yeojuclassic.co.kr/swp/course_challenge), [DREAM](https://www.yeojuclassic.co.kr/swp/course_dream) 홀 상세 스크립트의 PAR·HDCP와 대조했습니다. 세 코스 모두 PAR36입니다.
+- 공식 코스 제원표의 홀별 합계와 TOTAL을 대조했습니다. ACE는 모든 티가 일치합니다. CHALLENGE는 Blue 홀 합계 3,155m/TOTAL 3,144m, White 2,984m/2,974m, Gold 2,694m/2,703m로 차이가 있고 Red 2,523m는 일치합니다. DREAM은 Gold가 홀 합계 2,853m/TOTAL 2,850m로 3m 차이가 있습니다. 사용자 지침대로 홀별 공식 값을 유지하고 해당 차이를 메모했습니다.
+- 구장 이름은 공식 표기 YJC 골프클럽을 공통 명칭 규칙에 따라 `YJC GC`로 저장하고 YJCGC·여주CC 등 기존 검색명을 별칭으로 보존했습니다. 원격 DB 검증 결과 구장 verified, 경로 3개·홀 27개·티 행 108개, 경로 메타데이터·홀 PAR/HDCP·티 거리/원문값/단위/선택 상태 불일치 0건입니다. 자료 파일: `yjc-gc-2026-official-verified.json`.
+- 적재 후 원격 카탈로그: 총 516곳 — 검수 완료 272, 미진행 239, 반려 5. 미진행 지역은 강원 55, 경기 139, 경북 1, 세종 1, 인천 10, 전남 1, 전북 3, 제주 28, 충남 1곳이며 부산·울산·경남은 0곳입니다.
