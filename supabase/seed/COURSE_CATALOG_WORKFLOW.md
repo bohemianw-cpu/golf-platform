@@ -661,3 +661,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스 제원표](https://www.ownersgc.co.kr/html/course/course_01.asp)와 [모바일 코스 제원표](https://www.ownersgc.co.kr/mobile/course_01.asp), 18개 홀별 공략 페이지의 PAR·HDCP·Black/Blue/White/Gold/Red 거리(m)를 대조해 Hill·Lake 각 9홀로 적재했습니다. Lake 코스 원홀 10~18은 앱 경로에서 1~9번으로 정규화했습니다.
 - 공식 개별 홀 페이지와 제원표의 값이 다른 Lake 13 White(제원표 165m, 모바일 표 195m, 상세 151m), Lake 14 Red(제원표 237m, 상세 195m), Lake 18 Red(제원표 255m, 상세 220m)는 이전에 정한 합계표 우선 기준으로 제원표의 홀별 값을 저장하고 검수 메모에 차이를 보존했습니다. Hill 티별 합계는 3,265/3,100/2,882/2,656/2,337m, Lake 합계는 3,262/3,066/2,897/2,704/2,320m입니다.
 - `owners-gc-2026-official-verified.json` 구조 검사를 통과했습니다. 원격 DB에서 2경로·18홀·90개 선택 가능 거리행, 각 경로 PAR36, White 기준거리 배열 및 구장·경로 `verified` 상태를 확인했습니다.
+- 후속 importer 대조를 위해 공식 출처 메모, MCST 주소, 검색 alias를 seed와 원격 DB에 일치시켰습니다. 90개 티 행과 두 경로의 PAR·거리 배열은 그대로 유지했고, importer의 자동 출처 주석까지 일치함을 재확인했습니다.
+
+### 2026-10-13 — 남춘천CC 공식 코스 자료 반영
+- 운영사 공식 [코스 소개](https://www.namchuncheon.co.kr/course/intro)와 [코스 공략](https://www.namchuncheon.co.kr/course/tip) 페이지가 사용하는 1st-party API에서 빅토리·챌린지 각 9홀의 PAR·HDCP 및 Black/Blue/White/Yellow/Red 티별 거리(m/yd 병기) 90개를 확인해 저장했습니다. 공식 API의 홀 번호는 각 경로에서 1~9번으로 표시됩니다.
+- 90개 m/yd 값쌍을 1yd=0.9144m로 반올림 대조한 결과 차이는 모두 1m 이내였습니다. 공식 미터값을 앱 거리로 사용하고 공식 야드값을 원거리로 보존했습니다. 각 코스 PAR36이며 홀별 합산(m)은 빅토리 Black/Blue/White/Yellow/Red 3,345/3,170/2,952/2,728/2,445, 챌린지 3,468/3,303/3,079/2,871/2,558입니다.
+- `namchuncheon-cc-2026-official-verified.json` 구조 검사를 통과했습니다. 원격 DB에서 경로 2개·홀 18개·선택 가능 티 90개, PAR·HDCP·티 이름·색상·미터·원문 야드·검수 상태를 seed와 대조해 불일치 0건을 확인했습니다. 반영 후 카탈로그는 516곳 — 검수 완료 299, 미진행 212, 반려 5입니다.
