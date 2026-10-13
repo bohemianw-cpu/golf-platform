@@ -1017,3 +1017,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 하이원 공식 페이지는 일반 영업 코스와 대회용 코스레이팅을 구분하므로 일반 영업 기준을 사용했습니다. 밸리 4번 White 285m, 9번 PAR5·Red 387m는 일부 비공식 자료의 값과 다르지만 공식 일반 영업표 및 티별 총합과 일치합니다.
 - 관리자 importer 로컬 자료 검증과 원격 DB 대조에서 72개 티 행, 파·거리·티 선택 가능 상태·출처가 모두 일치했습니다. 구장과 경로 2개 모두 verified입니다.
 - 원격 카탈로그는 총 516곳: 검수 완료 359, 미진행 151, 반려 6입니다. 강원 pending은 27곳입니다.
+
+### 2026-10-13 — 파인밸리CC Pine·Valley 공식 기준거리
+- 운영사 공식 [코스정보](https://www.pinevalley.co.kr/html_valley/course01.asp)에서 Pine·Valley 두 코스의 홀별 METER·PAR·HDCP 표를 확인했습니다. Pine 9홀 3,168m·PAR36, Valley 9홀 3,256m·PAR37이며 공식 전체 합계 6,424m·PAR73과 일치합니다. 기준 표는 코스별로 각각 9홀을 제공하고, 티별 수치와 색상은 공개하지 않습니다.
+- 공식 소개는 네 개의 티잉구역을 모두 개방한다고 안내하지만 홀별 티 거리값은 제공하지 않아, 각 홀에 `official_reference` 거리 한 건씩만 저장하고 라운드 티 선택은 비활성화했습니다. HDCP 18개를 공식 표 그대로 반영했습니다. 자료 파일: `pine-valley-cc-2026-official-reference-verified.json`.
+- 관리자 importer의 자료 검증이 통과했습니다. 원격 DB 대조에서 구장 verified, 경로 2개 verified, 홀 18개, 공식 기준거리 18개, 티 선택 비활성 상태를 확인했고 PAR·HDCP·거리 배열은 seed와 모두 일치했습니다.
+- 원격 카탈로그는 총 516곳: 검수 완료 360, 미진행 150, 반려 6입니다. 강원 미진행은 26곳입니다.
