@@ -1,0 +1,1096 @@
+{
+  "courses": [
+    {
+      "match_name": "자유CC",
+      "name": "자유CC",
+      "aliases": [
+        "자유 컨트리클럽",
+        "자유컨트리클럽",
+        "JAYU CC",
+        "Jayu Country Club"
+      ],
+      "region": "경기",
+      "address": "경기도 여주시 가남읍 자유그린길 69",
+      "hole_count": 18,
+      "venue_kind": "physical",
+      "supports_field": true,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "source_name": "운영사 공식 코스 제원 페이지",
+      "source_record_id": "jayu-cc-official-course-overview-2026",
+      "review_notes": [
+        "운영사 공식 코스 제원표에 OUT·IN 18홀의 PAR·HDCP와 5종 티별 거리가 모두 m 단위로 공개되어 있어 표기값 그대로 저장했습니다. 페이지의 Course Rating은 BLACK·BLUE·WHITE·FRONT·LADIES로 분류하지만 거리표 두 번째 티 행은 Championship으로 표기합니다. 거리값은 공식 거리표의 표기명을 보존했고, Champion/Blue 대응은 코스 레이팅 분류를 근거로 앱 티 색상을 파란색으로 연결했습니다."
+      ],
+      "routes": [
+        {
+          "route_code": "OUT",
+          "display_name": "아웃 코스",
+          "hole_count": 9,
+          "primary_tee_code": "white",
+          "source_url": "https://www.jayucc.co.kr/course-guide/course-overview",
+          "par_source_url": "https://www.jayucc.co.kr/course-guide/course-overview",
+          "verification_status": "verified",
+          "official_tee_totals_m": {
+            "black": 3161.0,
+            "championship": 2975.0,
+            "white": 2772.0,
+            "front": 2550.0,
+            "lady": 2291.0
+          },
+          "review_notes": [
+            "공식 코스 페이지의 거리 표는 합계(m)로 단위를 명시합니다. 거리 행의 Championship 표기와 상단 Course Rating 표의 BLUE 표기가 서로 달라 거리표의 원문 명칭을 저장하고, 챔피언십 티 색상은 상단 표의 BLUE 분류에 맞춰 파란색으로 연결했습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "handicap_index": 11,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 356,
+                  "distance_m_source": "official",
+                  "source_distance": 356,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 338,
+                  "distance_m_source": "official",
+                  "source_distance": 338,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 320,
+                  "distance_m_source": "official",
+                  "source_distance": 320,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 293,
+                  "distance_m_source": "official",
+                  "source_distance": 293,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 263,
+                  "distance_m_source": "official",
+                  "source_distance": 263,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "handicap_index": 17,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 364,
+                  "distance_m_source": "official",
+                  "source_distance": 364,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 348,
+                  "distance_m_source": "official",
+                  "source_distance": 348,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 320,
+                  "distance_m_source": "official",
+                  "source_distance": 320,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 301,
+                  "distance_m_source": "official",
+                  "source_distance": 301,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 280,
+                  "distance_m_source": "official",
+                  "source_distance": 280,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "handicap_index": 5,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 216,
+                  "distance_m_source": "official",
+                  "source_distance": 216,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 203,
+                  "distance_m_source": "official",
+                  "source_distance": 203,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 181,
+                  "distance_m_source": "official",
+                  "source_distance": 181,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 161,
+                  "distance_m_source": "official",
+                  "source_distance": 161,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 126,
+                  "distance_m_source": "official",
+                  "source_distance": 126,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "handicap_index": 1,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 338,
+                  "distance_m_source": "official",
+                  "source_distance": 338,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 313,
+                  "distance_m_source": "official",
+                  "source_distance": 313,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 298,
+                  "distance_m_source": "official",
+                  "source_distance": 298,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 281,
+                  "distance_m_source": "official",
+                  "source_distance": 281,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 250,
+                  "distance_m_source": "official",
+                  "source_distance": 250,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 5,
+              "handicap_index": 15,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 491,
+                  "distance_m_source": "official",
+                  "source_distance": 491,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 457,
+                  "distance_m_source": "official",
+                  "source_distance": 457,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 430,
+                  "distance_m_source": "official",
+                  "source_distance": 430,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 392,
+                  "distance_m_source": "official",
+                  "source_distance": 392,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 392,
+                  "distance_m_source": "official",
+                  "source_distance": 392,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "handicap_index": 7,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 317,
+                  "distance_m_source": "official",
+                  "source_distance": 317,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 305,
+                  "distance_m_source": "official",
+                  "source_distance": 305,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 284,
+                  "distance_m_source": "official",
+                  "source_distance": 284,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 260,
+                  "distance_m_source": "official",
+                  "source_distance": 260,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 228,
+                  "distance_m_source": "official",
+                  "source_distance": 228,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 3,
+              "handicap_index": 13,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 199,
+                  "distance_m_source": "official",
+                  "source_distance": 199,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 176,
+                  "distance_m_source": "official",
+                  "source_distance": 176,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 156,
+                  "distance_m_source": "official",
+                  "source_distance": 156,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 127,
+                  "distance_m_source": "official",
+                  "source_distance": 127,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 127,
+                  "distance_m_source": "official",
+                  "source_distance": 127,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 5,
+              "handicap_index": 9,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 496,
+                  "distance_m_source": "official",
+                  "source_distance": 496,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 470,
+                  "distance_m_source": "official",
+                  "source_distance": 470,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 442,
+                  "distance_m_source": "official",
+                  "source_distance": 442,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 415,
+                  "distance_m_source": "official",
+                  "source_distance": 415,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 359,
+                  "distance_m_source": "official",
+                  "source_distance": 359,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "handicap_index": 3,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 384,
+                  "distance_m_source": "official",
+                  "source_distance": 384,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 365,
+                  "distance_m_source": "official",
+                  "source_distance": 365,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 341,
+                  "distance_m_source": "official",
+                  "source_distance": 341,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 320,
+                  "distance_m_source": "official",
+                  "source_distance": 320,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 266,
+                  "distance_m_source": "official",
+                  "source_distance": 266,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "IN",
+          "display_name": "인 코스",
+          "hole_count": 9,
+          "primary_tee_code": "white",
+          "source_url": "https://www.jayucc.co.kr/course-guide/course-overview",
+          "par_source_url": "https://www.jayucc.co.kr/course-guide/course-overview",
+          "verification_status": "verified",
+          "official_tee_totals_m": {
+            "black": 3230.0,
+            "championship": 3042.0,
+            "white": 2809.0,
+            "front": 2586.0,
+            "lady": 2358.0
+          },
+          "review_notes": [
+            "공식 코스 페이지의 거리 표는 합계(m)로 단위를 명시합니다. 거리 행의 Championship 표기와 상단 Course Rating 표의 BLUE 표기가 서로 달라 거리표의 원문 명칭을 저장하고, 챔피언십 티 색상은 상단 표의 BLUE 분류에 맞춰 파란색으로 연결했습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 10,
+              "par": 4,
+              "handicap_index": 4,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 436,
+                  "distance_m_source": "official",
+                  "source_distance": 436,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 416,
+                  "distance_m_source": "official",
+                  "source_distance": 416,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 377,
+                  "distance_m_source": "official",
+                  "source_distance": 377,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 349,
+                  "distance_m_source": "official",
+                  "source_distance": 349,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 309,
+                  "distance_m_source": "official",
+                  "source_distance": 309,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 11,
+              "par": 5,
+              "handicap_index": 16,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 487,
+                  "distance_m_source": "official",
+                  "source_distance": 487,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 459,
+                  "distance_m_source": "official",
+                  "source_distance": 459,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 419,
+                  "distance_m_source": "official",
+                  "source_distance": 419,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 382,
+                  "distance_m_source": "official",
+                  "source_distance": 382,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 334,
+                  "distance_m_source": "official",
+                  "source_distance": 334,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 12,
+              "par": 4,
+              "handicap_index": 10,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 360,
+                  "distance_m_source": "official",
+                  "source_distance": 360,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 337,
+                  "distance_m_source": "official",
+                  "source_distance": 337,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 319,
+                  "distance_m_source": "official",
+                  "source_distance": 319,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 284,
+                  "distance_m_source": "official",
+                  "source_distance": 284,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 268,
+                  "distance_m_source": "official",
+                  "source_distance": 268,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 13,
+              "par": 3,
+              "handicap_index": 14,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 178,
+                  "distance_m_source": "official",
+                  "source_distance": 178,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 155,
+                  "distance_m_source": "official",
+                  "source_distance": 155,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 136,
+                  "distance_m_source": "official",
+                  "source_distance": 136,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 123,
+                  "distance_m_source": "official",
+                  "source_distance": 123,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 103,
+                  "distance_m_source": "official",
+                  "source_distance": 103,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 14,
+              "par": 4,
+              "handicap_index": 2,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 349,
+                  "distance_m_source": "official",
+                  "source_distance": 349,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 334,
+                  "distance_m_source": "official",
+                  "source_distance": 334,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 322,
+                  "distance_m_source": "official",
+                  "source_distance": 322,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 270,
+                  "distance_m_source": "official",
+                  "source_distance": 270,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 244,
+                  "distance_m_source": "official",
+                  "source_distance": 244,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 15,
+              "par": 5,
+              "handicap_index": 8,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 580,
+                  "distance_m_source": "official",
+                  "source_distance": 580,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 568,
+                  "distance_m_source": "official",
+                  "source_distance": 568,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 531,
+                  "distance_m_source": "official",
+                  "source_distance": 531,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 510,
+                  "distance_m_source": "official",
+                  "source_distance": 510,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 471,
+                  "distance_m_source": "official",
+                  "source_distance": 471,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 16,
+              "par": 3,
+              "handicap_index": 18,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 140,
+                  "distance_m_source": "official",
+                  "source_distance": 140,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 123,
+                  "distance_m_source": "official",
+                  "source_distance": 123,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 113,
+                  "distance_m_source": "official",
+                  "source_distance": 113,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 108,
+                  "distance_m_source": "official",
+                  "source_distance": 108,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 94,
+                  "distance_m_source": "official",
+                  "source_distance": 94,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 17,
+              "par": 4,
+              "handicap_index": 12,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 328,
+                  "distance_m_source": "official",
+                  "source_distance": 328,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 311,
+                  "distance_m_source": "official",
+                  "source_distance": 311,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 295,
+                  "distance_m_source": "official",
+                  "source_distance": 295,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 279,
+                  "distance_m_source": "official",
+                  "source_distance": 279,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 254,
+                  "distance_m_source": "official",
+                  "source_distance": 254,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 18,
+              "par": 4,
+              "handicap_index": 6,
+              "tees": [
+                {
+                  "tee_code": "black",
+                  "display_name": "블랙",
+                  "tee_color": "#111827",
+                  "tee_selection_available": true,
+                  "distance_m": 372,
+                  "distance_m_source": "official",
+                  "source_distance": 372,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "championship",
+                  "display_name": "챔피언십",
+                  "tee_color": "#1d4ed8",
+                  "tee_selection_available": true,
+                  "distance_m": 339,
+                  "distance_m_source": "official",
+                  "source_distance": 339,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "white",
+                  "display_name": "화이트",
+                  "tee_color": "#f8fafc",
+                  "tee_selection_available": true,
+                  "distance_m": 297,
+                  "distance_m_source": "official",
+                  "source_distance": 297,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "프런트",
+                  "tee_color": "#eab308",
+                  "tee_selection_available": true,
+                  "distance_m": 281,
+                  "distance_m_source": "official",
+                  "source_distance": 281,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "lady",
+                  "display_name": "레이디",
+                  "tee_color": "#ef4444",
+                  "tee_selection_available": true,
+                  "distance_m": 281,
+                  "distance_m_source": "official",
+                  "source_distance": 281,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
