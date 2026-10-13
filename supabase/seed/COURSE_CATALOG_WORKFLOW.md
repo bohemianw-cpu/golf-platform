@@ -15,6 +15,11 @@
 - 카탈로그는 총 512곳: 검수 완료 410, 미진행 101, 반려 1입니다. 미진행은 경기 51, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
 # 골프장 카탈로그 적재와 검수
 
+### 2026-10-14 — 더 시에나 벨루토CC 벨라·루체 코스(구 세라지오GC)
+- 운영사 공식 [전체 코스 표](https://thesiena.co.kr/content/velluto_course_1), [벨라 홀 상세](https://thesiena.co.kr/content/velluto_course_3), [루체 홀 상세](https://thesiena.co.kr/content/velluto_course_2)에서 18홀 PAR·HDCP와 블루·화이트·옐로우·레드 티별 거리를 m 단위로 입력했습니다. 자료: `siena-velluto-2026-official-verified.json`.
+- 운영사 공식 소개는 더 시에나 벨루토CC가 구 세라지오GC라고 명시합니다. 기존 MCST 레코드를 현재 정식 명칭으로 갱신하고 세라지오 명칭을 검색 별칭으로 보존했습니다. 전체 표와 홀별 상세의 파·거리는 일치합니다.
+- 원격 DB에서 벨라·루체 2개 경로, 18홀, 티 거리 72행을 seed와 대조해 모두 일치했으며 각 거리의 출처 단위·종류는 공식 m입니다. 구장과 경로를 `verified` 처리했습니다. 카탈로그는 총 512곳: 검수 완료 415, 미진행 96, 반려 1입니다. 미진행은 경기 46, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
 ### 2026-10-14 — 타이거CC 가온·누리 코스
 - 운영사 공식 [코스 제원표](https://www.tigercc.co.kr/course/course.asp)와 [가온](https://www.tigercc.co.kr/course/course_gaon.asp)·[누리](https://www.tigercc.co.kr/course/course_nury.asp) 상세 페이지에서 18홀 PAR·HDCP 및 블루·화이트·옐로우·레이디 거리를 m로 입력했습니다. 가온 5번의 좌·우 그린별 티 거리를 구분해 저장했습니다. 자료: `tiger-cc-2026-official-verified.json`.
 - 누리 요약표와 상세 페이지는 10번·16번 블루 거리가 각각 525/515m·485/488m로 다르고, 공식 블루 총계도 홀별 합계와 72m 차이가 있습니다. 게시된 홀별 상세값을 저장했습니다. 가온 2번 옐로우는 요약표/상세가 302/303m로 1m 차이가 납니다.
