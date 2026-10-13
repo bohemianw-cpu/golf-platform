@@ -1,5 +1,10 @@
 # 골프장 카탈로그 적재와 검수
 
+### 2026-10-14 — 올림픽 골프장 공식 9홀 기준거리 자료
+- 운영사 공식 [홀 공략 페이지](https://www.olympicgolf.co.kr/course-introduction/strategy)에서 9홀별 PAR·HDCP를 확인하고, 운영사 공식 [코스 소개 제원표](https://www.olympiccountryclub.co.kr/club-introduction)에서 단일 기준거리(m)를 저장했습니다. 티별 거리는 공개되지 않아 각 홀은 `official_reference` 거리로 입력했고 티 선택은 비활성화했습니다. 자료: `olympic-cc-2026-official-reference-verified.json`.
+- 공식 합계 3,335m·PAR36와 홀별 합이 일치합니다. 원격 DB에서 1개 경로·9홀·9개 비선택 기준거리 행을 확인했고 구장/경로는 모두 verified입니다.
+- 카탈로그는 총 512곳: 검수 완료 401, 미진행 110, 반려 1입니다. 웅포CC·광양CC의 확인 작업은 사용자의 별도 요청까지 보류합니다.
+
 ## 데이터 단계
 
 구장 저장명은 공통 표기를 사용합니다. `컨트리클럽`/`Country Club`은 `CC`, `골프클럽`/`Golf Club`은 `GC`, 두 명칭이 결합된 `골프&컨트리클럽`/`Golf & Country Club`은 `GCC`로 저장합니다. MCST 및 관리자 보정 importer와 라운드 저장 경로가 이 표기를 적용하며, 검색어도 같은 규칙으로 바꿔 기존 명칭으로 검색해도 결과를 찾을 수 있습니다.
