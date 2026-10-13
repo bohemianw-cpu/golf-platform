@@ -800,3 +800,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영 표기를 `샤인데일CC`로 정리하고 기존 MCST 명칭 `샤인데일골프&리조트`를 alias로 보존했습니다. 공식 페이지는 티 색상을 별도 지정하지 않아 중립색으로 표시했습니다. 자료 파일: `shinedale-cc-2026-official-verified.json`.
 - 원격 DB에서 구장 및 SHINE/DALE/LAKE 경로 `verified`, 각 9홀·PAR36·45개 티 거리 행을 확인했습니다. 시드와 DB의 135개 티 거리·PAR·표시명·선택 상태를 항목별 대조해 누락 0·불일치 0을 확인했습니다.
 - 현재 원격 카탈로그는 총 516곳: 검수 완료 319, 미진행 191, 반려 6입니다. 미진행 지역은 강원 42, 경기 121, 세종 1, 인천 1, 제주 25, 충남 1곳입니다. 동강시스타는 공식 페이지 이미지와 본문에서 PAR/HDCP가 충돌해 보류 중입니다.
+
+### 2026-10-13 — 샌드파인GC 공식 OUT·IN 자료
+- 운영사 공식 [코스안내](https://www.lakaisandpine.co.kr/golf/course_guide) 표에서 OUT·IN 각 9홀의 PAR·HDCP와 Tournament/Champion/Regular/Special/Front 티 거리를 반영했습니다. 공식 단위 yd와 원본 거리를 보존하고 각 홀의 거리를 m로 환산했습니다. 총 18홀·90개 기본 티 거리 행입니다.
+- 공식 표에 일부 홀만 나오는 두 번째 Front 행은 5개 홀 값(OUT 3·7, IN 11·13·16)을 `front_alt` 비선택 티로 보존했습니다. 전 홀에서 공통으로 선택할 수 있는 5개 티만 라운드 선택지로 제공합니다. 자료 파일: `sandpine-gc-2026-official-verified.json`.
+- 원격 DB에서 구장 및 OUT/IN 경로 `verified`, 18홀·HDCP, 기본 90행과 추가 5행을 확인했습니다. 시드와 DB의 95개 티 행을 원본 야드·환산 미터·PAR·HDCP·선택 여부까지 전수 대조해 누락 0·불일치 0을 확인했습니다.
+- 현재 원격 카탈로그는 총 516곳: 검수 완료 320, 미진행 190, 반려 6입니다. 미진행 지역은 강원 41, 경기 121, 세종 1, 인천 1, 제주 25, 충남 1곳입니다. 동강시스타는 공식 페이지의 이미지와 본문에서 PAR/HDCP가 충돌해 보류 중입니다.

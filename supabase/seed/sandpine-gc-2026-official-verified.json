@@ -1,0 +1,1044 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "샌드파인GC",
+      "name": "샌드파인GC",
+      "region": "강원",
+      "address": "강원특별자치도 강릉시 저동등길 53 (저동)",
+      "aliases": [
+        "샌드파인 골프클럽",
+        "샌드파인 골프 클럽",
+        "샌드파인CC",
+        "Sandpine Golf Club"
+      ],
+      "hole_count": 18,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "운영사 공식 코스 안내의 OUT·IN 코스표에서 홀별 PAR·HDCP와 거리 단위(yd), 티 그룹을 확인했습니다.",
+        "출처: https://www.lakaisandpine.co.kr/golf/course_guide (2026-10-13 확인)."
+      ],
+      "routes": [
+        {
+          "route_code": "OUT",
+          "display_name": "OUT 코스",
+          "hole_count": 9,
+          "primary_tee_code": "regular",
+          "verification_status": "verified",
+          "source_url": "https://www.lakaisandpine.co.kr/golf/course_guide",
+          "source_data_url": "https://www.lakaisandpine.co.kr/golf/course_guide",
+          "par_source_url": "https://www.lakaisandpine.co.kr/golf/course_guide",
+          "review_notes": [
+            "운영사 공식 코스안내 스코어카드의 홀별 PAR·HDCP 및 Tournament/Champion/Regular/Special/Front 야드 거리를 반영했습니다. 원본 yd를 보존하고 거리 m는 0.9144 기준으로 홀별 반올림 환산했습니다.",
+            "공식표에는 부분 홀에서 중복 표기된 Front 행이 있습니다. 해당 5개 값은 front_alt로 별도 보존하고 전체 홀에 존재하지 않아 라운드 티 선택은 비활성화했습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 5,
+              "handicap_index": 17,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 521,
+                  "distance_m_source": "converted",
+                  "source_distance": 570,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 507,
+                  "distance_m_source": "converted",
+                  "source_distance": 554,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 482,
+                  "distance_m_source": "converted",
+                  "source_distance": 527,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 450,
+                  "distance_m_source": "converted",
+                  "source_distance": 492,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 416,
+                  "distance_m_source": "converted",
+                  "source_distance": 455,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "handicap_index": 7,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 340,
+                  "distance_m_source": "converted",
+                  "source_distance": 372,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 305,
+                  "distance_m_source": "converted",
+                  "source_distance": 334,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 284,
+                  "distance_m_source": "converted",
+                  "source_distance": 311,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 259,
+                  "distance_m_source": "converted",
+                  "source_distance": 283,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 240,
+                  "distance_m_source": "converted",
+                  "source_distance": 263,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "handicap_index": 9,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 399,
+                  "distance_m_source": "converted",
+                  "source_distance": 436,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 367,
+                  "distance_m_source": "converted",
+                  "source_distance": 401,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 347,
+                  "distance_m_source": "converted",
+                  "source_distance": 380,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 323,
+                  "distance_m_source": "converted",
+                  "source_distance": 353,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 303,
+                  "distance_m_source": "converted",
+                  "source_distance": 331,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front_alt",
+                  "display_name": "Front (추가 표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 265,
+                  "distance_m_source": "converted",
+                  "source_distance": 290,
+                  "source_unit": "yd",
+                  "tee_selection_available": false
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 3,
+              "handicap_index": 13,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 141,
+                  "distance_m_source": "converted",
+                  "source_distance": 154,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 141,
+                  "distance_m_source": "converted",
+                  "source_distance": 154,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 132,
+                  "distance_m_source": "converted",
+                  "source_distance": 144,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 119,
+                  "distance_m_source": "converted",
+                  "source_distance": 130,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 103,
+                  "distance_m_source": "converted",
+                  "source_distance": 113,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "handicap_index": 5,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 379,
+                  "distance_m_source": "converted",
+                  "source_distance": 415,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 376,
+                  "distance_m_source": "converted",
+                  "source_distance": 411,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 359,
+                  "distance_m_source": "converted",
+                  "source_distance": 393,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 336,
+                  "distance_m_source": "converted",
+                  "source_distance": 367,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 315,
+                  "distance_m_source": "converted",
+                  "source_distance": 345,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "handicap_index": 3,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 396,
+                  "distance_m_source": "converted",
+                  "source_distance": 433,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 366,
+                  "distance_m_source": "converted",
+                  "source_distance": 400,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 339,
+                  "distance_m_source": "converted",
+                  "source_distance": 371,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 319,
+                  "distance_m_source": "converted",
+                  "source_distance": 349,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 300,
+                  "distance_m_source": "converted",
+                  "source_distance": 328,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "handicap_index": 1,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 348,
+                  "distance_m_source": "converted",
+                  "source_distance": 381,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 312,
+                  "distance_m_source": "converted",
+                  "source_distance": 341,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 280,
+                  "distance_m_source": "converted",
+                  "source_distance": 306,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 262,
+                  "distance_m_source": "converted",
+                  "source_distance": 287,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 247,
+                  "distance_m_source": "converted",
+                  "source_distance": 270,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front_alt",
+                  "display_name": "Front (추가 표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 221,
+                  "distance_m_source": "converted",
+                  "source_distance": 242,
+                  "source_unit": "yd",
+                  "tee_selection_available": false
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 3,
+              "handicap_index": 15,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 132,
+                  "distance_m_source": "converted",
+                  "source_distance": 144,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 128,
+                  "distance_m_source": "converted",
+                  "source_distance": 140,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 113,
+                  "distance_m_source": "converted",
+                  "source_distance": 124,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 96,
+                  "distance_m_source": "converted",
+                  "source_distance": 105,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 90,
+                  "distance_m_source": "converted",
+                  "source_distance": 98,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 5,
+              "handicap_index": 11,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 467,
+                  "distance_m_source": "converted",
+                  "source_distance": 511,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 450,
+                  "distance_m_source": "converted",
+                  "source_distance": 492,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 420,
+                  "distance_m_source": "converted",
+                  "source_distance": 459,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 395,
+                  "distance_m_source": "converted",
+                  "source_distance": 432,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 382,
+                  "distance_m_source": "converted",
+                  "source_distance": 418,
+                  "source_unit": "yd"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "route_code": "IN",
+          "display_name": "IN 코스",
+          "hole_count": 9,
+          "primary_tee_code": "regular",
+          "verification_status": "verified",
+          "source_url": "https://www.lakaisandpine.co.kr/golf/course_guide",
+          "source_data_url": "https://www.lakaisandpine.co.kr/golf/course_guide",
+          "par_source_url": "https://www.lakaisandpine.co.kr/golf/course_guide",
+          "review_notes": [
+            "운영사 공식 코스안내 스코어카드의 홀별 PAR·HDCP 및 Tournament/Champion/Regular/Special/Front 야드 거리를 반영했습니다. 원본 yd를 보존하고 거리 m는 0.9144 기준으로 홀별 반올림 환산했습니다.",
+            "공식표에는 부분 홀에서 중복 표기된 Front 행이 있습니다. 해당 5개 값은 front_alt로 별도 보존하고 전체 홀에 존재하지 않아 라운드 티 선택은 비활성화했습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "handicap_index": 8,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 371,
+                  "distance_m_source": "converted",
+                  "source_distance": 406,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 351,
+                  "distance_m_source": "converted",
+                  "source_distance": 384,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 327,
+                  "distance_m_source": "converted",
+                  "source_distance": 358,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 303,
+                  "distance_m_source": "converted",
+                  "source_distance": 331,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 283,
+                  "distance_m_source": "converted",
+                  "source_distance": 310,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 4,
+              "handicap_index": 4,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 407,
+                  "distance_m_source": "converted",
+                  "source_distance": 445,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 392,
+                  "distance_m_source": "converted",
+                  "source_distance": 429,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 376,
+                  "distance_m_source": "converted",
+                  "source_distance": 411,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 352,
+                  "distance_m_source": "converted",
+                  "source_distance": 385,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 302,
+                  "distance_m_source": "converted",
+                  "source_distance": 330,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front_alt",
+                  "display_name": "Front (추가 표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 265,
+                  "distance_m_source": "converted",
+                  "source_distance": 290,
+                  "source_unit": "yd",
+                  "tee_selection_available": false
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 3,
+              "handicap_index": 10,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 200,
+                  "distance_m_source": "converted",
+                  "source_distance": 219,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 175,
+                  "distance_m_source": "converted",
+                  "source_distance": 191,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 142,
+                  "distance_m_source": "converted",
+                  "source_distance": 155,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 122,
+                  "distance_m_source": "converted",
+                  "source_distance": 133,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 106,
+                  "distance_m_source": "converted",
+                  "source_distance": 116,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 5,
+              "handicap_index": 2,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 525,
+                  "distance_m_source": "converted",
+                  "source_distance": 574,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 511,
+                  "distance_m_source": "converted",
+                  "source_distance": 559,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 480,
+                  "distance_m_source": "converted",
+                  "source_distance": 525,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 452,
+                  "distance_m_source": "converted",
+                  "source_distance": 494,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 431,
+                  "distance_m_source": "converted",
+                  "source_distance": 471,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front_alt",
+                  "display_name": "Front (추가 표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 394,
+                  "distance_m_source": "converted",
+                  "source_distance": 431,
+                  "source_unit": "yd",
+                  "tee_selection_available": false
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 4,
+              "handicap_index": 6,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 372,
+                  "distance_m_source": "converted",
+                  "source_distance": 407,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 340,
+                  "distance_m_source": "converted",
+                  "source_distance": 372,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 318,
+                  "distance_m_source": "converted",
+                  "source_distance": 348,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 299,
+                  "distance_m_source": "converted",
+                  "source_distance": 327,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 280,
+                  "distance_m_source": "converted",
+                  "source_distance": 306,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 3,
+              "handicap_index": 18,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 203,
+                  "distance_m_source": "converted",
+                  "source_distance": 222,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 188,
+                  "distance_m_source": "converted",
+                  "source_distance": 206,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 163,
+                  "distance_m_source": "converted",
+                  "source_distance": 178,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 146,
+                  "distance_m_source": "converted",
+                  "source_distance": 160,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 132,
+                  "distance_m_source": "converted",
+                  "source_distance": 144,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 5,
+              "handicap_index": 12,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 527,
+                  "distance_m_source": "converted",
+                  "source_distance": 576,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 510,
+                  "distance_m_source": "converted",
+                  "source_distance": 558,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 492,
+                  "distance_m_source": "converted",
+                  "source_distance": 538,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 475,
+                  "distance_m_source": "converted",
+                  "source_distance": 519,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 437,
+                  "distance_m_source": "converted",
+                  "source_distance": 478,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front_alt",
+                  "display_name": "Front (추가 표기)",
+                  "tee_color": "#64748b",
+                  "distance_m": 391,
+                  "distance_m_source": "converted",
+                  "source_distance": 428,
+                  "source_unit": "yd",
+                  "tee_selection_available": false
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 4,
+              "handicap_index": 14,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 363,
+                  "distance_m_source": "converted",
+                  "source_distance": 397,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 363,
+                  "distance_m_source": "converted",
+                  "source_distance": 397,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 319,
+                  "distance_m_source": "converted",
+                  "source_distance": 349,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 292,
+                  "distance_m_source": "converted",
+                  "source_distance": 319,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 272,
+                  "distance_m_source": "converted",
+                  "source_distance": 298,
+                  "source_unit": "yd"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 4,
+              "handicap_index": 16,
+              "tees": [
+                {
+                  "tee_code": "tournament",
+                  "display_name": "Tournament",
+                  "tee_color": "#64748b",
+                  "distance_m": 357,
+                  "distance_m_source": "converted",
+                  "source_distance": 390,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "champion",
+                  "display_name": "Champion",
+                  "tee_color": "#64748b",
+                  "distance_m": 332,
+                  "distance_m_source": "converted",
+                  "source_distance": 363,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "regular",
+                  "display_name": "Regular",
+                  "tee_color": "#64748b",
+                  "distance_m": 310,
+                  "distance_m_source": "converted",
+                  "source_distance": 339,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "special",
+                  "display_name": "Special",
+                  "tee_color": "#64748b",
+                  "distance_m": 289,
+                  "distance_m_source": "converted",
+                  "source_distance": 316,
+                  "source_unit": "yd"
+                },
+                {
+                  "tee_code": "front",
+                  "display_name": "Front",
+                  "tee_color": "#64748b",
+                  "distance_m": 241,
+                  "distance_m_source": "converted",
+                  "source_distance": 264,
+                  "source_unit": "yd"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
