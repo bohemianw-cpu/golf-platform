@@ -554,3 +554,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - EAST 공식 스코어카드와 상세 페이지가 3번 Orange(339/439m), 5번 Blue(162/167m), 8번 Blue·White(138/150m·123/138m), 9번 Blue(347/374m)에서 달라 홀별 상세값을 저장했습니다. Orange는 4·8번 상세 거리 없음으로 7개만 저장했습니다. 홀별 합계와 공식 소계의 차이는 EAST 검수 메모에 남겼습니다.
 - 원격 DB에 구장 verified, WEST/EAST 경로 2개, 홀 18개, 티 행 88개를 반영했습니다. seed 대비 구장 상태, 경로 상태, 홀 수, 티 행 수와 PAR·HDCP·티명·색상·거리·단위·출처값·선택가능 여부를 대조해 필드 불일치 0건을 확인했습니다. 자료 파일: `eunhwasam-2026-official-verified.json`.
 - 원격 카탈로그는 총 516곳 — 검수 완료 279, 미진행 232, 반려 5입니다. 미진행 가운데 부산·울산·경남은 0곳이며, 경북 1·세종 1·전남 1·전북 3·충남 1곳은 공식 홀별 자료를 추가로 찾아야 합니다.
+
+### 2026-10-13 — 기흥CC 공식 코스 데이터
+- 운영사 공식 [스코어카드](https://www.ghcc.kr/course/course02.asp)에서 동·남·북·서 각 9홀의 PAR·HDCP와 Blue/White/Red 티별 미터 거리를 저장했습니다. 코스별 PAR는 모두 36이고, 세 티의 홀별 합계가 네 코스 각각의 공식 소계와 일치합니다. 공식 홀 공략 상세([동](https://www.ghcc.kr/course/course_east01.asp), [남](https://www.ghcc.kr/course/course_south01.asp), [북](https://www.ghcc.kr/course/course_north01.asp), [서](https://www.ghcc.kr/course/course_west01.asp))와 코스명·단위·표기 형식을 대조했습니다.
+- 기흥CC를 `verified`로 전환하고 4개 경로·36홀·108개 티 거리 행을 저장했습니다. seed 구조 검사는 통과했으며 원격 DB read-back에서 코스/홀/티 속성 불일치는 0건입니다. 로컬 `.env.local`에는 공개 키만 있어 importer의 `--apply`는 실행할 수 없었고, 승인된 Supabase 연결을 통해 적재한 뒤 같은 데이터 필드를 원격에서 대조했습니다. 자료 파일: `giheung-cc-2026-official-verified.json`.
+- 적재 후 원격 카탈로그 집계: 총 516곳 — 검수 완료 280, 미진행 231, 반려 5. 부산·울산·경남 미진행은 0곳이며 남부권 잔여는 경북 1, 세종 1, 전남 1, 전북 3, 충남 1곳입니다.
