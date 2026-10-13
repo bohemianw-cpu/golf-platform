@@ -1181,3 +1181,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스 안내](https://www.sscc.co.kr/course)와 해당 페이지가 불러오는 코스 데이터(https://www.sscc.co.kr/_nuxt/course.DoH2E808.js)에서 Lake·Mountain 각 9홀의 PAR와 단일 yd 기준거리를 반영했습니다. 티별 거리는 공식 제공되지 않아 18홀 모두 `official_reference`로 저장하고 티 선택을 비활성화했습니다. yd 원본을 보존하고 미터값은 환산·반올림했습니다. 자료: `south-springs-2026-official-reference.json`.
 - 원격 DB 대조 결과 2개 코스·18홀·18개 기준거리 행이 18/18 일치하며 선택 가능한 티는 0개입니다. 공식 소개의 전장(6,348yd / 코스개요 6,344m)과 현재 코스 페이지의 홀별 합계 7,226yd가 달라 홀별 값을 보존하고 구장·코스 검수 메모에 출처 차이를 기록했습니다.
 - 원격 카탈로그는 총 512곳: 검수 완료 390, 미진행 121, 반려 1입니다. 웅포CC·광양CC 관련 추가 확인은 사용자 지시에 따라 보류합니다.
+
+### 2026-10-14 — 레이크우드CC 회원제·비회원제 코스 자료
+- 운영사 공식 [코스 소개](https://lakewood.co.kr/swp/course), [Lake Course](https://lakewood.co.kr/swp/lake_course), [Wood Course](https://lakewood.co.kr/swp/wood_course), 그리고 [예약 안내](https://lakewood.co.kr/swp/reserve_guide)를 확인했습니다. 각 홀 상세의 PAR·HDCP와 홀별 코스 이미지 범례의 Black/Blue/White/Gold/Red 미터 거리를 반영했습니다. 예약 안내가 비회원제를 산길코스로 명시하므로 물길·꽃길·숲길 27홀은 회원제로, 산길 9홀은 비회원제로 분리했습니다. 자료는 `lakewood-membership-2026-official-verified.json`, `lakewood-public-2026-official-verified.json`에 보존했습니다.
+- Lake 코스 Blue 홀별 거리 합은 6,406m, Wood 코스 Blue 합은 6,470m로 공식 코스 소개의 총전장과 일치합니다. 공식 이미지에 없는 블랙티는 해당 홀에만 입력했으며 빠진 홀의 티 거리는 추정하지 않았습니다. 원격 DB에서 회원제 3경로·27홀·120개 티 행과 비회원제 1경로·9홀·36개 티 행을 확인했고, 양쪽 홀·파·HDCP·티 메타데이터·거리의 seed/DB 해시가 일치합니다.
+- 원격 카탈로그는 총 512곳: 검수 완료 392, 미진행 119, 반려 1입니다. 미진행 지역은 경기 67, 강원 25, 제주 25, 인천 1, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 사용자 지시에 따라 보류합니다.
