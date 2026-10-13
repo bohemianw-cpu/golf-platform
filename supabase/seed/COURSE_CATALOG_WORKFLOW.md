@@ -688,3 +688,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-13 — 에이원CC WEST 부분 티 행 공개
 - 공식 [스코어카드](https://www.a-onecc.co.kr/course_score.asp)는 거리 단위를 m로 명시하며 WEST의 모든 PAR·HDCP와 대부분의 티별 거리를 공개합니다. White 9번은 `1377m`로 게시되지만 나머지 여덟 홀 합계가 2,535m이고 공식 White 합계가 2,911m여서 일치하지 않습니다.
 - 문제 행은 추정값으로 보정하지 않고 저장하지 않았습니다. 전체 홀별 자료가 제공되어 경로를 공개하고, Black/Blue/Yellow/Red는 선택 가능하며 White는 9번 거리 누락으로 전체 라운드 티 선택에서 제외됩니다. 공식 오기와 미제공 행은 경로·구장 검수 메모에 남겼습니다. 공개 경로 집계에는 9홀·44개 티 행이 있습니다.
+
+### 2026-10-13 — 에코랜드 ECO 공식 경로 공개
+- 운영사 공식 [코스 제원표](https://www.ecolandjeju.co.kr/view/viewLink.do?page=homepage%2FENG%2Fcourse%2Fcourse_spec)와 [ECO 홀별 공략](https://www.ecolandjeju.co.kr/view/viewLink.do?page=mobile%2FKOR%2Fcourse%2Fstrategy_eco)를 대조했습니다. 홀별 PAR·HDCP와 BLUE/WHITE/GOLD/RED 티 데이터가 9홀 전체에 있어 4개 완전 티 선택열을 제공합니다. 홀별 상세에만 나온 BLACK 티는 5번 한 홀에 보존했고, 전 홀에 존재하지 않으므로 라운드 티 선택지에는 넣지 않습니다.
+- 제원표의 7번 PAR4와 홀별 상세의 PAR3가 다릅니다. 스코어 기준은 제원표의 PAR36을 사용합니다. 5번 홀의 티 레이블·거리열도 두 원문에서 달라 홀별 상세 거리를 보존하고 차이를 검수 메모에 남겼습니다. 상세 기준 BLUE/WHITE/GOLD/RED 합계는 3,160/2,941/2,707/2,474m이고, 제원표 합계는 3,184/2,964/2,729/2,493m입니다.
+- 원격 DB에서 ECO 9홀·37개 거리행, BLUE/WHITE/GOLD/RED 각 9홀 완비와 BLACK 5번 홀 1행, 경로 `verified`를 확인했습니다. 모든 684개 경로가 `verified`입니다. 전체 516곳의 구장 상태는 검수 완료 301, 미진행 210, 반려 5입니다. 자료 파일: `ecoland-jeju-2026-official-review.json`.
