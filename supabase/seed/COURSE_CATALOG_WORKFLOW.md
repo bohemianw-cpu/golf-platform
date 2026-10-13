@@ -1,3 +1,7 @@
+### 2026-10-14 — 해슬리나인브릿지 CC 해슬리·PGA 코스
+- 운영사 공식 [코스 제원표](https://www.haesley.com/new/introduce/course/plan.asp)에서 두 9홀 코스의 PAR·Men/Ladies HDCP와 토너먼트·블랙·블루·화이트·옐로우·레드 티별 미터 거리를 반영했습니다. 자료: `haesley-nine-bridges-2026-official-verified.json`.
+- 현재 홀 데이터의 단일 HDCP 필드에는 Men Hcp를 저장하고, Ladies Hcp 9개 값은 코스별 검수 메모에 원순서대로 보존했습니다. 원격 DB와 seed의 2개 경로·18홀·108개 티 행을 대조해 불일치 0건으로 확인하고 `verified` 처리했습니다. 카탈로그는 총 512곳: 검수 완료 420, 미진행 91, 반려 1입니다. 웅포CC·광양CC 확인은 별도 요청까지 보류합니다.
+
 ### 2026-10-14 — 웰링턴CC 그리핀·피닉스·와이번
 - 운영사 공식 [코스 안내](https://www.wellingtoncc.co.kr/golf/golf.do)와 [그리핀 홀 상세](https://www.wellingtoncc.co.kr/golf/one/hole01.do), [피닉스 홀 상세](https://www.wellingtoncc.co.kr/golf/two/hole01.do), [와이번 홀 상세](https://www.wellingtoncc.co.kr/golf/three/hole01.do)의 27개 홀에서 PAR와 6색 티 거리를 입력했습니다. 공식 홀 페이지의 색상 표기와 야드 원값을 보존하고 미터로 환산했습니다. 자료: `wellington-2026-official-verified.json`.
 - 원격 DB와 seed를 대조해 3개 경로·27홀·162개 티 행이 모두 일치(누락·불일치 0건)하는 것을 확인하고 `verified` 처리했습니다. 카탈로그는 총 512곳: 검수 완료 419, 미진행 92, 반려 1입니다. 미진행은 경기 42, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 사용자 요청에 따라 보류합니다.
