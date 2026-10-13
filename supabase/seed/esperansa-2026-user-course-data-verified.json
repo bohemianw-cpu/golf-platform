@@ -1,43 +1,45 @@
 {
   "schema": "course-source-review/1",
-  "status": "source_verified_imported_pending",
+  "status": "source_verified_imported_verified",
   "venue": {
     "name": "에스페란사GC",
     "match_name": "에스페란사GC",
     "region": "전북",
     "address": "전북특별자치도 김제시 금구면 낙산로 120",
-    "hole_count": 10,
+    "hole_count": 9,
     "supports_screen": false,
     "review_notes": [
-      "전라북도 도보에 게재된 김제시 공고 제2014-150호의 코스세부시설 조서에서 10개 홀의 홀 길이와 PAR를 확인했습니다. 공식 조서 합계는 1,866m·PAR35입니다.",
-      "이 자료는 행정 인가 문서이며 현재 운영사의 티별 제원표가 아닙니다. 홀별 기준 길이만 공식 참고거리로 저장하고 티 선택은 불가하게 둡니다. 최신 공식 티별 거리 자료가 확인될 때까지 구장과 코스 검수 상태는 pending입니다."
-    ]
+      "이전에 저장한 김제시 공고 제2014-150호의 코스세부시설 조서는 10홀·1,866m·PAR35로 기록되어 있습니다. 이 문서는 당시 행정 인가 자료라 최신 라운드 구성을 나타내지 않아, 사용자가 제공한 현행 9홀 코스 정보로 교체했습니다.",
+      "사용자가 제공한 현행 홀별 정보를 그대로 저장했습니다. 9홀 PAR 합계는 32, 기준거리 합계는 2,010m입니다. 티별 거리와 HDCP는 제공되지 않아 공식 기준 거리로 표시하고 티 선택은 비활성화했습니다. 18홀 라운드는 기존 9홀 반복 선택 기능을 이용합니다."
+    ],
+    "verification_status": "verified"
   },
   "routes": [
     {
       "route_code": "ESPERANSA",
       "display_name": "에스페란사 코스",
-      "hole_count": 10,
+      "hole_count": 9,
+      "primary_tee_code": "official_reference",
+      "verification_status": "verified",
       "source_url": "https://www.jeonbuk.go.kr/upload_data/board_data/BBS_0000017/139475801308187.pdf",
-      "par_source_url": "https://www.jeonbuk.go.kr/upload_data/board_data/BBS_0000017/139475801308187.pdf",
-      "source_data_url": "https://www.jeonbuk.go.kr/upload_data/board_data/BBS_0000017/139475801308187.pdf",
+  "source_data_url": null,
       "review_notes": [
-        "김제시 공고 제2014-150호 붙임3 코스세부시설 조서의 Hole·길이(m)·Par 열을 입력했습니다. 코스 조서는 10홀(1,866m, PAR35)입니다.",
-        "공식 문서에서 티별 위치/색/거리를 제공하지 않아 각 홀의 길이는 선택할 수 없는 공식 참고거리로 저장합니다. 현행 운영사 홀별 티 제원이 없어 verified 처리하지 않습니다."
+        "현재 라운드에 쓰는 1~9번 PAR와 미터 기준거리는 사용자가 제공한 현행 코스 정보로 갱신했습니다. 저장값은 320/120/120/80/120/330/120/320/480m, PAR 4/3/3/3/3/4/3/4/5입니다.",
+        "2014년 행정 조서의 10홀 자료와 현행 9홀 사용자 제공 자료가 달라 최신 사용자 제공 레이아웃을 적용했습니다. 티 이름·색상·HDCP는 별도로 제공되지 않아 티 선택 불가 기준거리로 저장합니다."
       ],
       "holes": [
         {
           "hole_number": 1,
-          "par": 3,
+          "par": 4,
           "handicap_index": null,
           "tees": [
             {
               "tee_code": "official_reference",
-              "display_name": "공식 참고거리",
-              "tee_color": "#94a3b8",
-              "distance_m": 162,
+              "display_name": "기준거리 (티 미지정)",
+              "tee_color": "#64748b",
+              "distance_m": 320,
               "distance_m_source": "official",
-              "source_distance": 162,
+              "source_distance": 320,
               "source_unit": "m",
               "tee_selection_available": false
             }
@@ -45,16 +47,16 @@
         },
         {
           "hole_number": 2,
-          "par": 4,
+          "par": 3,
           "handicap_index": null,
           "tees": [
             {
               "tee_code": "official_reference",
-              "display_name": "공식 참고거리",
-              "tee_color": "#94a3b8",
-              "distance_m": 323,
+              "display_name": "기준거리 (티 미지정)",
+              "tee_color": "#64748b",
+              "distance_m": 120,
               "distance_m_source": "official",
-              "source_distance": 323,
+              "source_distance": 120,
               "source_unit": "m",
               "tee_selection_available": false
             }
@@ -67,11 +69,11 @@
           "tees": [
             {
               "tee_code": "official_reference",
-              "display_name": "공식 참고거리",
-              "tee_color": "#94a3b8",
-              "distance_m": 113,
+              "display_name": "기준거리 (티 미지정)",
+              "tee_color": "#64748b",
+              "distance_m": 120,
               "distance_m_source": "official",
-              "source_distance": 113,
+              "source_distance": 120,
               "source_unit": "m",
               "tee_selection_available": false
             }
@@ -84,11 +86,11 @@
           "tees": [
             {
               "tee_code": "official_reference",
-              "display_name": "공식 참고거리",
-              "tee_color": "#94a3b8",
-              "distance_m": 83,
+              "display_name": "기준거리 (티 미지정)",
+              "tee_color": "#64748b",
+              "distance_m": 80,
               "distance_m_source": "official",
-              "source_distance": 83,
+              "source_distance": 80,
               "source_unit": "m",
               "tee_selection_available": false
             }
@@ -101,11 +103,11 @@
           "tees": [
             {
               "tee_code": "official_reference",
-              "display_name": "공식 참고거리",
-              "tee_color": "#94a3b8",
-              "distance_m": 110,
+              "display_name": "기준거리 (티 미지정)",
+              "tee_color": "#64748b",
+              "distance_m": 120,
               "distance_m_source": "official",
-              "source_distance": 110,
+              "source_distance": 120,
               "source_unit": "m",
               "tee_selection_available": false
             }
@@ -118,11 +120,11 @@
           "tees": [
             {
               "tee_code": "official_reference",
-              "display_name": "공식 참고거리",
-              "tee_color": "#94a3b8",
-              "distance_m": 334,
+              "display_name": "기준거리 (티 미지정)",
+              "tee_color": "#64748b",
+              "distance_m": 330,
               "distance_m_source": "official",
-              "source_distance": 334,
+              "source_distance": 330,
               "source_unit": "m",
               "tee_selection_available": false
             }
@@ -135,11 +137,11 @@
           "tees": [
             {
               "tee_code": "official_reference",
-              "display_name": "공식 참고거리",
-              "tee_color": "#94a3b8",
-              "distance_m": 113,
+              "display_name": "기준거리 (티 미지정)",
+              "tee_color": "#64748b",
+              "distance_m": 120,
               "distance_m_source": "official",
-              "source_distance": 113,
+              "source_distance": 120,
               "source_unit": "m",
               "tee_selection_available": false
             }
@@ -152,11 +154,11 @@
           "tees": [
             {
               "tee_code": "official_reference",
-              "display_name": "공식 참고거리",
-              "tee_color": "#94a3b8",
-              "distance_m": 199,
+              "display_name": "기준거리 (티 미지정)",
+              "tee_color": "#64748b",
+              "distance_m": 320,
               "distance_m_source": "official",
-              "source_distance": 199,
+              "source_distance": 320,
               "source_unit": "m",
               "tee_selection_available": false
             }
@@ -164,40 +166,22 @@
         },
         {
           "hole_number": 9,
-          "par": 4,
+          "par": 5,
           "handicap_index": null,
           "tees": [
             {
               "tee_code": "official_reference",
-              "display_name": "공식 참고거리",
-              "tee_color": "#94a3b8",
-              "distance_m": 211,
+              "display_name": "기준거리 (티 미지정)",
+              "tee_color": "#64748b",
+              "distance_m": 480,
               "distance_m_source": "official",
-              "source_distance": 211,
-              "source_unit": "m",
-              "tee_selection_available": false
-            }
-          ]
-        },
-        {
-          "hole_number": 10,
-          "par": 4,
-          "handicap_index": null,
-          "tees": [
-            {
-              "tee_code": "official_reference",
-              "display_name": "공식 참고거리",
-              "tee_color": "#94a3b8",
-              "distance_m": 218,
-              "distance_m_source": "official",
-              "source_distance": 218,
+              "source_distance": 480,
               "source_unit": "m",
               "tee_selection_available": false
             }
           ]
         }
-      ],
-      "primary_tee_code": "official_reference"
+      ]
     }
   ]
 }

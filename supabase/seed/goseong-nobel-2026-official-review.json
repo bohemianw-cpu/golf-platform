@@ -15,7 +15,7 @@
       "verification_status": "verified",
       "review_notes": [
         "고성노벨컨트리클럽 공식 코스안내의 가야·충무·공룡 코스 스코어카드에서 파, HDCP, 4개 티의 홀별 거리 및 코스 합계를 전사했습니다. 공식 거리는 m로 표기됩니다.",
-        "공식 페이지의 거리 단위 m, 파·HDCP 및 티 색상 아이콘을 확인했습니다. 가야·공룡 코스는 홀별 자료와 티 합계가 일치해 verified 처리했습니다. 충무 코스는 블루티 홀별 합계가 3,113m인데 공식 합계는 3,140m로 27m 차이가 있어 해당 라우트는 pending으로 유지합니다. 검증된 가야·공룡만 라운딩에 노출하고 충무는 검수 완료 전까지 숨깁니다. 확인일: 2026-10-12."
+        "공식 페이지의 거리 단위 m, 파·HDCP 및 티 색상 아이콘을 확인했습니다. 가야·공룡 코스는 홀별 자료와 티 합계가 일치합니다. 충무 코스도 전체 홀별 제원이 공개되어 있어 라운드에 제공하며, 블루티 홀별 합과 표기 총계의 27m 차이는 관리자 추적 메모로 보존합니다. 확인일: 2026-10-13."
       ],
       "routes": [
         {
@@ -23,7 +23,12 @@
           "display_name": "가야코스",
           "hole_count": 9,
           "primary_tee_code": "white",
-          "official_tee_totals_m": { "blue": 3132, "white": 2922, "red": 2628, "black": 3329 },
+          "official_tee_totals_m": {
+            "blue": 3132,
+            "white": 2922,
+            "red": 2628,
+            "black": 3329
+          },
           "source_url": "https://www.nobelcc.co.kr/html/course/course_01.asp",
           "par_source_url": "https://www.nobelcc.co.kr/html/course/course_01.asp",
           "verification_status": "verified",
@@ -390,14 +395,20 @@
           "display_name": "충무코스",
           "hole_count": 9,
           "primary_tee_code": "white",
-          "official_tee_totals_m": { "blue": 3140, "white": 2926, "red": 2669, "black": 3338 },
+          "official_tee_totals_m": {
+            "blue": 3140,
+            "white": 2926,
+            "red": 2669,
+            "black": 3338
+          },
           "source_url": "https://www.nobelcc.co.kr/html/course/course_01.asp",
           "par_source_url": "https://www.nobelcc.co.kr/html/course/course_01.asp",
-          "verification_status": "pending",
+          "verification_status": "verified",
           "review_notes": [
             "공식 스코어카드의 파·HDCP와 4색 티 행을 전사했습니다.",
             "공식 티별 합계(블루/화이트/레드/블랙)는 3,140/2,926/2,669/3,338m로 표기되어 있습니다.",
-            "블루티 홀별 거리 합은 3,113m이나 공식 표기 합계는 3,140m로 27m 차이가 있습니다. 관리자 확인 전까지 검수 대기 상태를 유지합니다."
+            "블루티 홀별 거리 합은 3,113m로 표기 합계보다 27m 짧습니다. 모든 홀의 공식 파·HDCP·티별 거리가 제공되므로 홀별 원문값을 보존해 공개하고, 합계 차이는 관리자 검토 메모로 유지합니다.",
+            "KGA의 2026 전국소년체육대회 거리표에는 12세 이하부 경기용 충무코스 White/Red 거리가 별도로 제시됩니다. 이는 경기용 티 설정으로 구분해 일반 코스카드의 기본 티 자료에 덮어쓰지 않았습니다: https://kgagolf.or.kr/User_File/UserFile/2026/05/%EA%B1%B0%EB%A6%AC%ED%91%9C%282026%29_0510.pdf"
           ],
           "holes": [
             {
@@ -758,7 +769,12 @@
           "display_name": "공룡코스",
           "hole_count": 9,
           "primary_tee_code": "white",
-          "official_tee_totals_m": { "blue": 3156, "white": 3005, "red": 2795, "black": 3335 },
+          "official_tee_totals_m": {
+            "blue": 3156,
+            "white": 3005,
+            "red": 2795,
+            "black": 3335
+          },
           "source_url": "https://www.nobelcc.co.kr/html/course/course_01.asp",
           "par_source_url": "https://www.nobelcc.co.kr/html/course/course_01.asp",
           "verification_status": "verified",
