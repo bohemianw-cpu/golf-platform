@@ -89,16 +89,20 @@ export default function ScoreTab() {
           <input
             id="course-catalog-search"
             type="search"
-            role="combobox"
             aria-label="골프장 이름 검색"
-            aria-autocomplete="list"
-            aria-controls="course-catalog-results"
-            aria-expanded={isCourseSearchOpen && courseSearchQuery.trim().length >= 1}
             autoComplete="off"
             value={isCourseSearchOpen ? courseSearchQuery : round.golfClubName}
             placeholder="골프장 미지정"
             disabled={!!round.currentRoundId || completedHoles.length > 0 || currentShots.length > 0}
-            onFocus={() => { setIsCourseSearchOpen(true); setCourseSearchQuery(round.golfClubName) }}
+            onFocus={() => {
+              const input = document.getElementById('course-catalog-search')
+              if (input?.dataset.skipOpenOnFocus === 'true') {
+                delete input.dataset.skipOpenOnFocus
+                return
+              }
+              if (!isCourseSearchOpen) setCourseSearchQuery(round.golfClubName)
+              setIsCourseSearchOpen(true)
+            }}
             onChange={(event) => {
               const query = event.target.value
               setCourseSearchQuery(query)
@@ -110,8 +114,21 @@ export default function ScoreTab() {
                 configureCourseRoutes([], null, null)
               }
             }}
-            onBlur={() => window.setTimeout(() => setIsCourseSearchOpen(false), 120)}
+            onBlur={(event) => {
+              const nextTarget = event.relatedTarget
+              window.setTimeout(() => {
+                if (nextTarget instanceof HTMLElement && nextTarget.closest('#course-catalog-results')) return
+                setIsCourseSearchOpen(false)
+              }, 120)
+            }}
             onKeyDown={(event) => {
+              if (event.key === 'ArrowDown') {
+                const firstOption = document.querySelector<HTMLButtonElement>('[data-course-option="true"]:not(:disabled)')
+                if (firstOption) {
+                  event.preventDefault()
+                  firstOption.focus()
+                }
+              }
               if (event.key === 'Escape') {
                 setIsCourseSearchOpen(false)
                 setCourseSearchQuery(round.golfClubName)

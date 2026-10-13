@@ -222,13 +222,42 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
   return (
     <section aria-label="골프장과 코스 검색" style={{ marginTop: searchOpen || (courseId && selectedCourse) ? '10px' : 0 }}>
       {searchOpen && searchQuery.trim().length > 0 && <div style={{ position: 'relative' }}>
-        <ul id="course-catalog-results" role="listbox" aria-label="골프장 검색 결과" style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 20, maxHeight: '220px', overflowY: 'auto', margin: 0, padding: '4px', listStyle: 'none', background: '#fff', border: '1px solid #cbd5e1', borderRadius: '8px', boxShadow: '0 8px 20px #0f172a1a' }}>
+        <ul id="course-catalog-results" aria-label="골프장 검색 결과" style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 20, maxHeight: '220px', overflowY: 'auto', margin: 0, padding: '4px', listStyle: 'none', background: '#fff', border: '1px solid #cbd5e1', borderRadius: '8px', boxShadow: '0 8px 20px #0f172a1a' }}>
           {loading ? <li role="status" style={{ padding: '9px', fontSize: '12px', color: '#64748b' }}>검색 중…</li>
             : catalogError ? <li role="alert" style={{ padding: '9px', fontSize: '12px', color: '#b91c1c' }}>구장 카탈로그를 불러오지 못했습니다.</li>
               : courses.length === 0 ? <li style={{ padding: '9px', fontSize: '12px', color: '#64748b' }}>검증된 결과가 없습니다. 입력한 구장명으로 임시 기록할 수 있으며, 이 기록은 구장 평균 비교에서 제외됩니다.</li>
                 : courses.map((course) => (
                   <li key={course.id}>
-                    <button type="button" role="option" aria-selected={course.id === courseId} disabled={locked} onMouseDown={(event) => event.preventDefault()} onClick={() => { setSelectedCourse(course); onCourseSelect(course); onSearchQueryChange(''); onSearchOpenChange(false) }} style={{ width: '100%', padding: '9px', border: 0, borderRadius: '6px', textAlign: 'left', background: course.id === courseId ? '#ecfdf4' : '#fff', cursor: 'pointer' }}>
+                    <button
+                      type="button"
+                      data-course-option="true"
+                      disabled={locked}
+                      onMouseDown={(event) => event.preventDefault()}
+                      onKeyDown={(event) => {
+                        const options = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-course-option="true"]:not(:disabled)'))
+                        const index = options.indexOf(event.currentTarget)
+                        if (event.key === 'ArrowDown') {
+                          event.preventDefault()
+                          options[index + 1]?.focus()
+                        } else if (event.key === 'ArrowUp') {
+                          event.preventDefault()
+                          if (index === 0) document.getElementById('course-catalog-search')?.focus()
+                          else options[index - 1]?.focus()
+                        } else if (event.key === 'Escape') {
+                          event.preventDefault()
+                          onSearchOpenChange(false)
+                          // Focusing the input normally opens the search again; skip that
+                          // one focus event so Escape leaves the result list dismissed.
+                          const input = document.getElementById('course-catalog-search')
+                          if (input) {
+                            input.dataset.skipOpenOnFocus = 'true'
+                            input.focus()
+                          }
+                        }
+                      }}
+                      onClick={() => { setSelectedCourse(course); onCourseSelect(course); onSearchQueryChange(''); onSearchOpenChange(false) }}
+                      style={{ width: '100%', padding: '9px', border: 0, borderRadius: '6px', textAlign: 'left', background: course.id === courseId ? '#ecfdf4' : '#fff', cursor: 'pointer' }}
+                    >
                       <span style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: '#0f172a' }}>{course.name}</span>
                       <span style={{ display: 'block', marginTop: '2px', fontSize: '10px', color: '#64748b' }}>
                         {course.region || '지역 미등록'} · {course.venue_kind === 'virtual_screen' ? '스크린' : course.supports_field && course.supports_screen ? '필드/스크린' : course.supports_field ? '필드' : '스크린'}
