@@ -1084,3 +1084,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 사용자가 안내한 [웅포컨트리클럽 공식 코스안내](https://www.bearportcc.co.kr/pagesite/course/intro.asp) 하단 표를 기준으로 OUT 1–9홀과 IN 10–18홀의 PAR·HDCP·Gold/Black/Blue/White/Yellow/Red 티별 m 거리를 반영했습니다. 표에 거리가 없는 Blue·Yellow 홀은 티별 미지원으로 두고, 추가 검수 메모 없이 공식 원문 표기대로 저장했습니다.
 - 웅포CC 독립 레코드의 두 경로에 총 18홀·92개 티 거리 행을 저장했습니다. 공식 전 홀 거리 합계가 제시된 Gold/Black/White/Red 공식 합계와 모두 일치하며, 원격 DB에서 각 9홀 경로와 합계 거리를 확인했습니다. 자료: `wungpo-cc-2026-official-verified.json`. 포세븐금강CC는 별도 구장으로 유지됩니다.
 - 기존 카탈로그 수는 유지됩니다: 총 512곳, 검수 완료 371, 미진행 140, 반려 1.
+
+### 2026-10-13 — 빅토리아일반대중골프장 공식 코스 자료
+- 운영사 공식 [홀별 코스공략도](https://www.victoriagc.co.kr/04course/p1.asp) 및 [코스제원](https://victoriagc.co.kr/mobile/04course/course.asp)의 9홀 PAR·Blue/White/Yellow/Red 티별 m 거리를 반영했습니다. 코스제원 페이지는 티박스와 핀 위치 변경에 따른 전후반 공략 차이를 안내합니다. HDCP는 공식 페이지에 표기되지 않아 저장하지 않았습니다.
+- 원격 DB에서 구장·경로 verified, 9홀·36개 티 거리 행, PAR 배열과 티별 합계를 확인했습니다. 티별 합계는 Blue 3,028m, White 2,867m, Yellow 2,707m, Red 2,528m입니다. 자료: `victoria-gc-2026-official-verified.json`.
+- 원격 카탈로그: 총 512곳, 검수 완료 372, 미진행 139, 반려 1입니다. 미진행은 경기 87, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
