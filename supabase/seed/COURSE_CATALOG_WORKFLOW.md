@@ -994,3 +994,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - Asia 12번 홀은 요약·공략 설명에서 PAR5이지만 상세표는 PAR4로 상충합니다. 홀 요약과 18홀 전체 PAR72가 서로 일치하므로 PAR5를 적용하고 상세표 차이는 경로 검수 메모에 남겼습니다. Alps 9번 공략 문장도 PAR5라고 서술하지만 홀 요약·티표 및 9홀 PAR36이 일치하는 PAR4를 적용했습니다.
 - ScoreTab의 기존 코스 선택은 각 홀에 공통으로 존재하는 티만 선택지로 제공합니다. 이 구장은 각 경로에서 Tee1·Tee2가 공통이므로 UI나 스키마 수정은 필요하지 않습니다. 관리자 적재기 로컬 자료 검증은 통과했습니다. 서버 전용 키가 로컬 환경에 없어 기존 importer의 `--apply/--check` 대신 Supabase MCP로 적재했고, 원격 행 64개를 seed와 필드별 대조해 불일치 0건, 경로 2개·홀 18개·티 64개와 구장/경로 verified 상태를 확인했습니다.
 - 현재 원격 카탈로그는 총 516곳: 검수 완료 355, 미진행 155, 반려 6입니다. 미진행 지역은 강원 31, 경기 97, 인천 1, 제주 25, 충남 1곳입니다.
+
+### 2026-10-13 — 알프스대영CC 공식 OUT·IN 코스
+- 운영사 공식 [OUT(블루) 코스](https://www.alpsdy.com/Course/BlueCourse.aspx)와 [IN(코스모스) 코스](https://www.alpsdy.com/Course/CosmosCourse.aspx)에서 각 코스 9홀의 PAR 및 Blue·White·Yellow·Red Tee별 미터 거리를 확인했습니다. 두 코스 모두 PAR36이며 각 홀에 네 종류 티가 공개되어 총 18홀·72개 티 행을 입력했습니다. HDCP는 공식 페이지에 공개되지 않아 입력하지 않았습니다.
+- 공식 코스 안내와 사업장 주소를 대조해 횡성군 우천면 한우로 1295의 MCST `알프스대영CC` pending 레코드에 연결했습니다. 자료 파일: `alps-daeyoung-cc-2026-official-verified.json`. 원격 Supabase에 반영한 뒤 구장·경로 verified 상태, 경로 2개·홀 18개·티 행 72개를 seed와 필드별 대조했고 불일치 0건을 확인했습니다. 로컬 환경에 Supabase 서버 키가 없어 데이터 입력은 Supabase MCP로 수행했습니다.
+- 원격 카탈로그는 총 516곳: 검수 완료 356, 미진행 154, 반려 6입니다. 미진행 지역은 강원 30, 경기 97, 인천 1, 제주 25, 충남 1곳입니다.
