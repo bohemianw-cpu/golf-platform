@@ -13,7 +13,8 @@
     "supports_screen": false,
     "verification_status": "verified",
     "review_notes": [
-      "운영사 공식 회원제 OUT 코스표의 동·서·남 각 9홀 PAR, 좌·우 그린별 핸디캡과 Back/Regular 티 미터 거리를 반영했습니다. 동일 주소의 비회원제 9홀 발리오스 레코드와 구분해 회원제 27홀 레이아웃으로 저장했습니다."
+      "운영사 공식 회원제 OUT 코스표의 동·서·남 각 9홀 PAR, 좌·우 그린별 핸디캡과 Back/Regular 티 미터 거리를 반영했습니다. 동일 주소의 비회원제 9홀 발리오스 레코드와 구분해 회원제 27홀 레이아웃으로 저장했습니다.",
+      "공식 표는 Back/Regular 명칭만 제공하고 티 색은 지정하지 않아 두 티의 표시색은 구분용 중립색으로 두었습니다. 색상은 공식 자료값으로 취급하지 않습니다."
     ]
   },
   "routes": [
@@ -28,7 +29,8 @@
       "par_source_url": "https://baliosgc.com/mcourse/m_guide_out.asp",
       "review_notes": [
         "공식 홀별 표의 좌/우 그린 × Back/Regular 거리와 PAR를 반영했습니다. 공식 합계 표시는 Back L/R 3118/3121m, Regular L/R 2933/2931m입니다. 핸디캡은 좌/우 그린별 공식 값을 보존했습니다.",
-        "공식 Back R 홀별 합계 3171m와 표기 TOTAL 3121m가 50m 차이납니다. 공식 홀별 수치를 그대로 저장했습니다."
+        "공식 Back R 홀별 합계 3171m와 표기 TOTAL 3121m가 50m 차이납니다. 공식 홀별 수치를 그대로 저장했습니다.",
+        "공식 표에 티 색상 정보가 없어 Back/Regular는 공식 명칭으로만 표시하고 색상 칩은 중립색을 사용합니다."
       ],
       "holes": [
         {
@@ -42,7 +44,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 400,
                   "distance_m_source": "official",
@@ -53,7 +55,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 379,
                   "distance_m_source": "official",
@@ -70,7 +72,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 400,
                   "distance_m_source": "official",
@@ -81,7 +83,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 379,
                   "distance_m_source": "official",
@@ -104,7 +106,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 523,
                   "distance_m_source": "official",
@@ -115,7 +117,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 502,
                   "distance_m_source": "official",
@@ -132,7 +134,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 518,
                   "distance_m_source": "official",
@@ -143,7 +145,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 496,
                   "distance_m_source": "official",
@@ -166,7 +168,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 359,
                   "distance_m_source": "official",
@@ -177,7 +179,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 342,
                   "distance_m_source": "official",
@@ -194,7 +196,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 379,
                   "distance_m_source": "official",
@@ -205,7 +207,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 363,
                   "distance_m_source": "official",
@@ -228,7 +230,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 157,
                   "distance_m_source": "official",
@@ -239,7 +241,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 138,
                   "distance_m_source": "official",
@@ -256,7 +258,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 136,
                   "distance_m_source": "official",
@@ -267,7 +269,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 112,
                   "distance_m_source": "official",
@@ -290,7 +292,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 428,
                   "distance_m_source": "official",
@@ -301,7 +303,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 414,
                   "distance_m_source": "official",
@@ -318,7 +320,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 420,
                   "distance_m_source": "official",
@@ -329,7 +331,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 406,
                   "distance_m_source": "official",
@@ -352,7 +354,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 437,
                   "distance_m_source": "official",
@@ -363,7 +365,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 418,
                   "distance_m_source": "official",
@@ -380,7 +382,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 439,
                   "distance_m_source": "official",
@@ -391,7 +393,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 420,
                   "distance_m_source": "official",
@@ -414,7 +416,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 335,
                   "distance_m_source": "official",
@@ -425,7 +427,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 295,
                   "distance_m_source": "official",
@@ -442,7 +444,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 388,
                   "distance_m_source": "official",
@@ -453,7 +455,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 298,
                   "distance_m_source": "official",
@@ -476,7 +478,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 143,
                   "distance_m_source": "official",
@@ -487,7 +489,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 131,
                   "distance_m_source": "official",
@@ -504,7 +506,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 145,
                   "distance_m_source": "official",
@@ -515,7 +517,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 133,
                   "distance_m_source": "official",
@@ -538,7 +540,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 336,
                   "distance_m_source": "official",
@@ -549,7 +551,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 314,
                   "distance_m_source": "official",
@@ -566,7 +568,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 346,
                   "distance_m_source": "official",
@@ -577,7 +579,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 324,
                   "distance_m_source": "official",
@@ -601,7 +603,8 @@
       "source_data_url": "https://baliosgc.com/mcourse/m_guide_out.asp",
       "par_source_url": "https://baliosgc.com/mcourse/m_guide_out.asp",
       "review_notes": [
-        "공식 홀별 표의 좌/우 그린 × Back/Regular 거리와 PAR를 반영했습니다. 공식 합계 표시는 Back L/R 3124/3157m, Regular L/R 2930/2963m입니다. 핸디캡은 좌/우 그린별 공식 값을 보존했습니다."
+        "공식 홀별 표의 좌/우 그린 × Back/Regular 거리와 PAR를 반영했습니다. 공식 합계 표시는 Back L/R 3124/3157m, Regular L/R 2930/2963m입니다. 핸디캡은 좌/우 그린별 공식 값을 보존했습니다.",
+        "공식 표에 티 색상 정보가 없어 Back/Regular는 공식 명칭으로만 표시하고 색상 칩은 중립색을 사용합니다."
       ],
       "holes": [
         {
@@ -615,7 +618,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 337,
                   "distance_m_source": "official",
@@ -626,7 +629,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 319,
                   "distance_m_source": "official",
@@ -643,7 +646,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 316,
                   "distance_m_source": "official",
@@ -654,7 +657,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 298,
                   "distance_m_source": "official",
@@ -677,7 +680,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 391,
                   "distance_m_source": "official",
@@ -688,7 +691,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 361,
                   "distance_m_source": "official",
@@ -705,7 +708,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 400,
                   "distance_m_source": "official",
@@ -716,7 +719,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 370,
                   "distance_m_source": "official",
@@ -739,7 +742,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 378,
                   "distance_m_source": "official",
@@ -750,7 +753,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 345,
                   "distance_m_source": "official",
@@ -767,7 +770,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 357,
                   "distance_m_source": "official",
@@ -778,7 +781,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 324,
                   "distance_m_source": "official",
@@ -801,7 +804,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 147,
                   "distance_m_source": "official",
@@ -812,7 +815,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 132,
                   "distance_m_source": "official",
@@ -829,7 +832,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 165,
                   "distance_m_source": "official",
@@ -840,7 +843,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 151,
                   "distance_m_source": "official",
@@ -863,7 +866,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 333,
                   "distance_m_source": "official",
@@ -874,7 +877,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 314,
                   "distance_m_source": "official",
@@ -891,7 +894,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 357,
                   "distance_m_source": "official",
@@ -902,7 +905,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 338,
                   "distance_m_source": "official",
@@ -925,7 +928,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 499,
                   "distance_m_source": "official",
@@ -936,7 +939,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 477,
                   "distance_m_source": "official",
@@ -953,7 +956,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 508,
                   "distance_m_source": "official",
@@ -964,7 +967,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 486,
                   "distance_m_source": "official",
@@ -987,7 +990,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 358,
                   "distance_m_source": "official",
@@ -998,7 +1001,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 336,
                   "distance_m_source": "official",
@@ -1015,7 +1018,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 359,
                   "distance_m_source": "official",
@@ -1026,7 +1029,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 337,
                   "distance_m_source": "official",
@@ -1049,7 +1052,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 488,
                   "distance_m_source": "official",
@@ -1060,7 +1063,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 470,
                   "distance_m_source": "official",
@@ -1077,7 +1080,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 497,
                   "distance_m_source": "official",
@@ -1088,7 +1091,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 478,
                   "distance_m_source": "official",
@@ -1111,7 +1114,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 193,
                   "distance_m_source": "official",
@@ -1122,7 +1125,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 176,
                   "distance_m_source": "official",
@@ -1139,7 +1142,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 198,
                   "distance_m_source": "official",
@@ -1150,7 +1153,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 181,
                   "distance_m_source": "official",
@@ -1174,7 +1177,8 @@
       "source_data_url": "https://baliosgc.com/mcourse/m_guide_out.asp",
       "par_source_url": "https://baliosgc.com/mcourse/m_guide_out.asp",
       "review_notes": [
-        "공식 홀별 표의 좌/우 그린 × Back/Regular 거리와 PAR를 반영했습니다. 공식 합계 표시는 Back L/R 2935/2946m, Regular L/R 2776/2787m입니다. South는 공식 핸디캡이 좌/우 구분 없이 공통 표기되어 양쪽 그린에 동일 적용했습니다."
+        "공식 홀별 표의 좌/우 그린 × Back/Regular 거리와 PAR를 반영했습니다. 공식 합계 표시는 Back L/R 2935/2946m, Regular L/R 2776/2787m입니다. South는 공식 핸디캡이 좌/우 구분 없이 공통 표기되어 양쪽 그린에 동일 적용했습니다.",
+        "공식 표에 티 색상 정보가 없어 Back/Regular는 공식 명칭으로만 표시하고 색상 칩은 중립색을 사용합니다."
       ],
       "holes": [
         {
@@ -1188,7 +1192,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 356,
                   "distance_m_source": "official",
@@ -1199,7 +1203,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 337,
                   "distance_m_source": "official",
@@ -1216,7 +1220,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 362,
                   "distance_m_source": "official",
@@ -1227,7 +1231,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 343,
                   "distance_m_source": "official",
@@ -1250,7 +1254,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 143,
                   "distance_m_source": "official",
@@ -1261,7 +1265,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 126,
                   "distance_m_source": "official",
@@ -1278,7 +1282,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 143,
                   "distance_m_source": "official",
@@ -1289,7 +1293,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 126,
                   "distance_m_source": "official",
@@ -1312,7 +1316,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 350,
                   "distance_m_source": "official",
@@ -1323,7 +1327,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 327,
                   "distance_m_source": "official",
@@ -1340,7 +1344,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 355,
                   "distance_m_source": "official",
@@ -1351,7 +1355,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 332,
                   "distance_m_source": "official",
@@ -1374,7 +1378,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 468,
                   "distance_m_source": "official",
@@ -1385,7 +1389,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 454,
                   "distance_m_source": "official",
@@ -1402,7 +1406,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 468,
                   "distance_m_source": "official",
@@ -1413,7 +1417,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 454,
                   "distance_m_source": "official",
@@ -1436,7 +1440,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 349,
                   "distance_m_source": "official",
@@ -1447,7 +1451,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 338,
                   "distance_m_source": "official",
@@ -1464,7 +1468,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 349,
                   "distance_m_source": "official",
@@ -1475,7 +1479,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 338,
                   "distance_m_source": "official",
@@ -1498,7 +1502,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 326,
                   "distance_m_source": "official",
@@ -1509,7 +1513,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 306,
                   "distance_m_source": "official",
@@ -1526,7 +1530,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 326,
                   "distance_m_source": "official",
@@ -1537,7 +1541,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 306,
                   "distance_m_source": "official",
@@ -1560,7 +1564,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 126,
                   "distance_m_source": "official",
@@ -1571,7 +1575,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 109,
                   "distance_m_source": "official",
@@ -1588,7 +1592,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 126,
                   "distance_m_source": "official",
@@ -1599,7 +1603,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 109,
                   "distance_m_source": "official",
@@ -1622,7 +1626,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 457,
                   "distance_m_source": "official",
@@ -1633,7 +1637,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 439,
                   "distance_m_source": "official",
@@ -1650,7 +1654,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 457,
                   "distance_m_source": "official",
@@ -1661,7 +1665,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 439,
                   "distance_m_source": "official",
@@ -1684,7 +1688,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 360,
                   "distance_m_source": "official",
@@ -1695,7 +1699,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 340,
                   "distance_m_source": "official",
@@ -1712,7 +1716,7 @@
                 {
                   "tee_code": "back",
                   "display_name": "Back Tee",
-                  "tee_color": "#111827",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 360,
                   "distance_m_source": "official",
@@ -1723,7 +1727,7 @@
                 {
                   "tee_code": "regular",
                   "display_name": "Regular Tee",
-                  "tee_color": "#f8fafc",
+                  "tee_color": "#64748b",
                   "tee_selection_available": true,
                   "distance_m": 340,
                   "distance_m_source": "official",
