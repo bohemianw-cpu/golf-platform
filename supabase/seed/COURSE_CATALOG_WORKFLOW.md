@@ -1,3 +1,7 @@
+### 2026-10-14 — 화산CC OUT·IN
+- 운영사 공식 [코스 제원표](https://www.hwasancc.com/course/spec)에서 OUT·IN 18홀의 PAR·HDCP, Champion·Regular·Front·Ladies·Children 티별 야드 및 미터를 반영했습니다. 야드 원값과 공식 미터값을 보존했습니다. 공식 표에 티 색상 표시는 없어 티 이름을 그대로 사용하고 DB 색상값은 중립색으로 설정했습니다. 자료: `hwasan-cc-2026-official-verified.json`.
+- 원격 DB와 seed를 대조해 2개 경로·18홀·90개 티 행에서 PAR·HDCP·티명·거리·원본 단위·선택 가능 여부 불일치 및 추가 행 0건을 확인했고, 구장과 두 경로를 `verified` 처리했습니다. 카탈로그는 총 512곳: 검수 완료 424, 미진행 87, 반려 1입니다. 미진행은 경기 37, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC의 추가 확인은 별도 요청까지 보류합니다.
+
 ### 2026-10-14 — 양주 CC 서코스·동코스
 - 운영사 공식 [서코스 1번 홀](https://www.yangjucc.co.kr/course/one/hole01.asp)과 [동코스 1번 홀](https://www.yangjucc.co.kr/course/two/hole01.asp)을 포함한 홀별 도면에서 PAR·HDCP와 Black·Regular·Lady 티별 야드 거리를 입력했습니다. 원본 야드와 미터 환산값을 함께 보존했습니다. 자료: `yangju-cc-2026-official-verified.json`.
 - 원격 DB에서 2개 경로·18홀·54개 티 행을 확인했습니다. PAR·HDCP·티 거리와 원본 단위가 자료와 일치하고 구장·경로 검수 상태는 `verified`입니다. 카탈로그는 총 512곳: 검수 완료 423, 미진행 88, 반려 1입니다. 미진행은 경기 38, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC의 추가 확인은 별도 요청까지 보류합니다.
