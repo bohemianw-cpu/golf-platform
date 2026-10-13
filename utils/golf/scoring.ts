@@ -2,6 +2,9 @@ import type { ClubItem, BallLie, ShotRecord } from '@/types/golf'
 import { fallbackClubDistance } from './clubs'
 
 export const PENALTY_LIES: BallLie[] = ['해저드', '해저드티', 'OB', 'OB티']
+export const MIN_GOLF_PAR = 3
+export const MAX_GOLF_PAR = 7
+export const MAX_GOLF_DISTANCE_M = 2000
 
 export const getPenaltyByLie = (lie: BallLie): number => {
   switch (lie) {

@@ -2,7 +2,7 @@
 
 import React from 'react'
 import type { BallLie, ClubItem } from '@/types/golf'
-import { getPenaltyByLie } from '@/utils/golf/scoring'
+import { getPenaltyByLie, MAX_GOLF_DISTANCE_M, MAX_GOLF_PAR, MIN_GOLF_PAR } from '@/utils/golf/scoring'
 import type { RoundApi } from '@/hooks/useRound'
 
 const BALL_LIE_OPTIONS: { lie: BallLie; label: string; badge: string | null; color: string }[] = [
@@ -75,6 +75,7 @@ function DistanceStepper({
       <input
         type="number"
         min={0}
+        max={MAX_GOLF_DISTANCE_M}
         step={step}
         disabled={disabled}
         value={value}
@@ -158,7 +159,7 @@ export default function ShotInputCard({ round: r, clubs }: Props) {
             aria-label="기준 파"
             style={{ height: '32px', padding: '0 4px', borderRadius: '8px', border: '1px solid #cbd5e1', fontSize: '13px', fontWeight: 'bold', color: '#0f172a', flexShrink: 0 }}
           >
-            {[3, 4, 5, 6].map((p) => (
+            {Array.from({ length: MAX_GOLF_PAR - MIN_GOLF_PAR + 1 }, (_, index) => MIN_GOLF_PAR + index).map((p) => (
               <option key={p} value={p}>
                 Par {p}
               </option>

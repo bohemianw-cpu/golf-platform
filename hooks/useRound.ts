@@ -17,6 +17,9 @@ import {
   getPenaltyByLie,
   isFairwayHit,
   isGreenInRegulation,
+  MAX_GOLF_DISTANCE_M,
+  MAX_GOLF_PAR,
+  MIN_GOLF_PAR,
   recommendClub,
   roundTo10,
   type ClubStatsMap,
@@ -674,7 +677,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
         ? teeVariants.map((variants, index) => variants.find((tee) => tee.green_code === restoredGreenCodes[index])?.distance_m ?? preferredGreen(variants)?.distance_m ?? 0)
         : routeRows.flatMap((route) => route.distances_m)
       const hasFullRouteLayout = routePars.length >= 1 && routePars.length <= 18 && routeDistancesForRound.length === routePars.length &&
-        routeDistancesForRound.every((distance) => distance > 0 && distance <= 800)
+        routeDistancesForRound.every((distance) => distance > 0 && distance <= MAX_GOLF_DISTANCE_M)
       const pars = hasFullRouteLayout ? [...routePars] : [...INITIAL_HOLE_PARS]
       const eventsByHole = new Map<number, ShotRecord[]>()
       for (const row of (shotRows ?? []) as RoundShotRow[]) {
@@ -845,10 +848,10 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
     const greenNamesForRoutes = selectedGreens.map((tee) => tee?.green_name ?? '기본 그린')
     const distances = selectedGreens.map((tee) => tee?.distance_m ?? 0)
     const validCourseLayout = pars.length >= 1 && pars.length <= 18 && distances.length === pars.length &&
-      pars.every((par) => par >= 3 && par <= 6) && distances.every((distance) => distance > 0 && distance <= 800)
+      pars.every((par) => par >= MIN_GOLF_PAR && par <= MAX_GOLF_PAR) && distances.every((distance) => distance > 0 && distance <= MAX_GOLF_DISTANCE_M)
     setRouteHoles(routes.flatMap((route) => route.holes ?? []))
     if (!validCourseLayout) {
-      const hasValidPars = pars.length >= 1 && pars.length <= 18 && pars.every((par) => par >= 3 && par <= 6)
+      const hasValidPars = pars.length >= 1 && pars.length <= 18 && pars.every((par) => par >= MIN_GOLF_PAR && par <= MAX_GOLF_PAR)
       setHolePars(hasValidPars ? pars : INITIAL_HOLE_PARS)
       setRouteDistances([])
       setGreenCodes([])
@@ -886,19 +889,19 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
     setGreenNames((previous) => previous.map((value, index) => index === currentHole - 1 ? greenName : value))
     const basePar = routeHoles?.[currentHole - 1]?.par
     setHolePars((previous) => previous.map((value, index) => index === currentHole - 1 ? (par ?? basePar ?? value) : value))
-    const safeDistance = clamp(Math.round(distance), 0, 800)
+    const safeDistance = clamp(Math.round(distance), 0, MAX_GOLF_DISTANCE_M)
     setRouteDistances((previous) => previous.map((value, index) => index === currentHole - 1 ? safeDistance : value))
     setHoleDistance(safeDistance)
     setRemainingDistance(roundTo10(safeDistance - expectedDistance(selectedClub)))
   }, [currentShots.length, completedHoles, currentHole, expectedDistance, selectedClub, routeHoles])
 
   const changeHoleDistance = (raw: number) => {
-    const val = clamp(Math.round(raw), 0, 800)
+    const val = clamp(Math.round(raw), 0, MAX_GOLF_DISTANCE_M)
     setHoleDistance(val)
     if (currentShots.length === 0) setRemainingDistance(roundTo10(val - expectedDistance(selectedClub)))
   }
 
-  const changeRemaining = (v: number) => setRemainingDistance(clamp(Math.round(v), 0, 800))
+  const changeRemaining = (v: number) => setRemainingDistance(clamp(Math.round(v), 0, MAX_GOLF_DISTANCE_M))
 
   const completeHole = (shots: ShotRecord[]) => {
     void syncShotEvents(currentHole, shots)
@@ -974,7 +977,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
       club,
       distanceToPinBefore: currentPrevDistance,
       distanceToPinAfter: finalRemaining,
-      shotDistance: isOb ? 0 : calcShotDistance(currentPrevDistance, finalRemaining, isPinOver && !isHoleOut),
+      shotDistance: isOb ? 0 : clamp(calcShotDistance(currentPrevDistance, finalRemaining, isPinOver && !isHoleOut), 0, MAX_GOLF_DISTANCE_M),
       ballLie: finalLie,
       penalty: getPenaltyByLie(finalLie),
     }
