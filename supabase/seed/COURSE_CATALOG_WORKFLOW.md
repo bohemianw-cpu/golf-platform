@@ -1,5 +1,11 @@
 # 골프장 카탈로그 적재와 검수
 
+### 2026-10-14 — 베뉴지CC G·NEW·HILL 코스
+- 운영사 공식 [코스공략도](https://www.venuegcc.com/Web/course/courseinfo.asp)와 [코스소개](https://www.venuegcc.com/Web/course/courseIntro.asp)에서 27홀 PAR·HDCP 및 Red·Yellow·White·Blue 티별 거리를 입력했습니다. 코스소개는 거리를 m 단위로 안내합니다. 자료: `venueg-cc-2026-official-verified.json`.
+- 공식 코스 요약 전장과 홀별 티 거리 합계가 일치하지 않아 홀별 게시값을 기준으로 저장했습니다. NEW 코스 블루티는 4번·9번 거리가 게시되지 않아 두 행은 만들지 않았습니다.
+- 원격 DB에서 3개 경로·27홀·106개 실제 게시 티 행을 seed와 대조해 누락 0건·불일치 0건을 확인했습니다. 구장과 경로는 `verified`입니다.
+- 카탈로그는 총 512곳: 검수 완료 408, 미진행 103, 반려 1입니다. 미진행은 경기 53, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
 ### 2026-10-14 — 한림용인CC 사파이어·루비·다이아몬드 코스
 - 운영사 공식 [사파이어](https://yongin.hanlimgolf.co.kr/html/course02.asp), [루비](https://yongin.hanlimgolf.co.kr/html/course02_02.asp), [다이아몬드](https://yongin.hanlimgolf.co.kr/html/course02_03.asp) 코스공략 페이지에서 27홀 PAR·HDCP와 Blue·White1·White2·Red 티별 미터 거리를 입력했습니다. 공식 원문은 m·yd를 함께 표기합니다. 자료: `hanlim-yongin-2026-official-verified.json`.
 - 원격 DB에서 3개 경로·27홀·108개 티 행을 seed와 대조해 누락 0건·불일치 0건을 확인했고, 구장과 경로를 `verified`로 설정했습니다.
