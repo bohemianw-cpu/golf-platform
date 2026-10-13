@@ -1023,3 +1023,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 공식 소개는 네 개의 티잉구역을 모두 개방한다고 안내하지만 홀별 티 거리값은 제공하지 않아, 각 홀에 `official_reference` 거리 한 건씩만 저장하고 라운드 티 선택은 비활성화했습니다. HDCP 18개를 공식 표 그대로 반영했습니다. 자료 파일: `pine-valley-cc-2026-official-reference-verified.json`.
 - 관리자 importer의 자료 검증이 통과했습니다. 원격 DB 대조에서 구장 verified, 경로 2개 verified, 홀 18개, 공식 기준거리 18개, 티 선택 비활성 상태를 확인했고 PAR·HDCP·거리 배열은 seed와 모두 일치했습니다.
 - 원격 카탈로그는 총 516곳: 검수 완료 360, 미진행 150, 반려 6입니다. 강원 미진행은 26곳입니다.
+
+### 2026-10-13 — 소노펠리체 CC 비발디파크 WEST
+- 운영사 공식 [OUT 코스](https://www.sonofelicecc.com/course.vivaldiCCCourseInfo.dp/dmparse.dm?on_flag=01)와 [IN 코스](https://www.sonofelicecc.com/course.vivaldiCCCourseInfo.dp/dmparse.dm?on_flag=02) 상세 페이지에서 각 홀의 PAR 및 BLACK·BLUE·WHITE·GOLD·RED 티별 미터 거리를 확인했습니다. OUT 1~9홀, IN 10~18홀을 각각 별도 9홀 경로로 저장했습니다. 총 18홀·90개 티 행이며 두 경로는 PAR36입니다. 자료 파일: `sonofelice-vivaldi-west-2026-official-verified.json`.
+- IN 페이지 하단 점수 요약표는 OUT 홀별 거리와 PAR를 반복 표시하므로 IN의 홀별 제목·상세 티표를 기준으로 입력하고 경로 검수 메모에 출처 페이지의 요약표 오류를 기록했습니다. 구장 및 두 경로를 verified로 저장했습니다.
+- seed와 원격 DB 티 행을 필드별 대조해 예상 90행·저장 90행, 불일치 0건을 확인했습니다. 티/경로 선택은 기존 라운딩 카탈로그 구조를 사용하므로 UI 변경은 필요하지 않습니다.
+- 반영 후 원격 카탈로그는 총 516곳: 검수 완료 361, 미진행 149, 반려 6입니다. 강원 미진행은 25곳입니다.
