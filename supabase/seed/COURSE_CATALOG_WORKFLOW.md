@@ -1070,3 +1070,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스개요](https://www.linknine.co.kr/html/course/course01.asp)의 표에서 9홀 PAR36과 Mens/Social/Ladies 각 홀의 미터 거리를 반영했습니다. 원문은 미터·야드를 함께 제공하며 세 거리 구분은 티 색상 대신 공식 명칭으로 저장했습니다. 공식 미터 총계는 Mens 2,716m·Social 2,546m·Ladies 2,287m이고 각 홀 합계와 일치합니다. 3번 홀 Mens만 362m·362yd로 표기되어 공식 미터 열을 기준으로 저장하고 메모했습니다.
 - 원격 DB에서 구장·경로 1개, 홀 9개, 티 거리 27행을 확인했습니다. 경로 PAR/기준거리와 홀·티별 저장값이 공식 표 seed와 일치합니다. 자료: `linknine-gc-2026-official-verified.json`.
 - 현재 원격 카탈로그는 총 512곳: 검수 완료 369, 미진행 142, 반려 1입니다. 미진행은 경기 90, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
+
+### 2026-10-13 — 그린힐CC OUT·IN 공식 코스 자료
+- 신안그룹 골프 운영사 공식 [그린힐CC 코스소개](https://www.shinangolf.com/club/course/greenhillcc) 하단 표에서 OUT·IN 각 9홀의 PAR·HDCP와 BLUE·REGULAR·RED 티별 미터 거리를 반영했습니다. 각 경로는 PAR36, 총 18홀·54개 티 거리 행이며, 공식 티 합계(OUT 2,985/2,861/2,481m, IN 2,797/2,574/2,211m)와 홀별 합이 모두 일치합니다. 별도 추가 검수 없이 공식 표 기준으로 적재했습니다. 자료: `greenhill-cc-2026-official-verified.json`.
+- 원격 DB 대조 결과 구장·경로 verified, 경로 2개·홀 18개·티 행 54개이며 PAR·HDCP·티 거리와 공식 합계가 seed와 일치합니다. 경기 pending은 90곳에서 89곳으로 감소했습니다. 현재 원격 카탈로그는 총 512곳: 검수 완료 370, 미진행 141, 반려 1입니다. 미진행은 경기 89, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
