@@ -1005,3 +1005,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 코스 개요와 개별 홀 상세 페이지의 HDCP 표기가 달라 이번 적재 범위에서는 HDCP를 저장하지 않았습니다. 공식 이용 규정은 블랙티를 프로 자격증 소지자에게 허용합니다. 사용자 프로필에는 면허 필드가 없어 공식 거리 데이터는 보존하되 라운드 티 선택에서 자격을 제한하지 않는 점을 구장 메모에 기록했습니다.
 - 관리자 importer의 로컬 자료 검증과 원격 Supabase 필드 대조를 완료했습니다. 구장과 두 경로는 verified이며, 원격 DB에 경로 2개·홀 18개·티 행 90개가 있습니다.
 - 원격 카탈로그는 총 516곳: 검수 완료 357, 미진행 153, 반려 6입니다. 강원 pending은 29곳입니다. `코스모스CC`는 폐업된 별도 구장으로 rejected 상태·코스 0개이고, `골프존카운티 영암45`와 관련이 없습니다.
+
+### 2026-10-13 — 세이지우드CC홍천 Dream·Vision·Challenge 코스
+- 운영사 공식 [골프 안내](https://www.sagewood.co.kr/hongcheon/golf)와 [Dream](https://www.sagewood.co.kr/hongcheon/golf/dream), [Vision](https://www.sagewood.co.kr/hongcheon/golf/vision), [Challenge](https://www.sagewood.co.kr/hongcheon/golf/challenge) 홀별 페이지에서 각 9홀의 PAR·HDCP·미터 기준거리를 확인했습니다. 티 색상별 거리는 게시되지 않아 공식 기준거리 27개를 `official_reference`로 저장하고 라운드 티 선택은 비활성화했습니다. 자료 파일: `sagewood-hongcheon-2026-official-reference-verified.json`.
+- 공식 소개 페이지의 전체 거리는 9,622m지만 홀별 상세 페이지 거리 합계는 9,605m로 17m 차이가 있습니다. 상세 홀별 표시를 보존하고 구장 검수 메모에 차이를 기록했습니다. 각 코스는 PAR36이며 합산 PAR108로 공식 개요와 일치합니다.
+- 관리자 importer의 로컬 자료 검증과 원격 DB의 seed 필드 대조를 완료했습니다. 구장·경로 3개 모두 verified이며 홀 27개, 공식 기준 거리 27개가 저장되고 비교 불일치는 0건입니다.
+- 원격 카탈로그는 총 516곳: 검수 완료 358, 미진행 152, 반려 6입니다. 강원 pending은 28곳입니다.
