@@ -1,0 +1,76 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "match_name": "라온GC",
+    "name": "라온GC",
+    "region": "제주",
+    "address": "제주특별자치도 제주시 한경면 용금로 998",
+    "aliases": ["라온GC", "라온 골프클럽", "RAON GOLF CLUB"],
+    "supports_screen": false,
+    "hole_count": 27,
+    "review_notes": ["운영사 공식 모바일 코스 페이지에 각 코스 9홀의 PAR와 단일 기준거리(m)가 게시되어 있습니다. 티별 명칭과 거리는 제공되지 않아 공식 기준거리로 저장하고 티 선택을 비활성화했습니다."]
+  },
+  "routes": [
+    {
+      "route_code": "STONE",
+      "primary_tee_code": "official",
+      "display_name": "Stone",
+      "hole_count": 9,
+      "source_url": "https://www.raon.co.kr/mobile_web/course_02.asp",
+      "source_data_url": "https://www.raon.co.kr/mobile_web/course_02.asp",
+      "par_source_url": "https://www.raon.co.kr/mobile_web/course_02.asp",
+      "holes": [
+        {"hole_number":1,"par":4,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":340,"source_distance":340,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":2,"par":4,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":313,"source_distance":313,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":3,"par":5,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":507,"source_distance":507,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":4,"par":3,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":189,"source_distance":189,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":5,"par":4,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":428,"source_distance":428,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":6,"par":5,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":485,"source_distance":485,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":7,"par":3,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":194,"source_distance":194,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":8,"par":4,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":405,"source_distance":405,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":9,"par":4,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":424,"source_distance":424,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]}
+      ]
+    },
+    {
+      "route_code": "LAKE",
+      "primary_tee_code": "official",
+      "display_name": "Lake",
+      "hole_count": 9,
+      "source_url": "https://www.raon.co.kr/mobile_web/course_03.asp",
+      "source_data_url": "https://www.raon.co.kr/mobile_web/course_03.asp",
+      "par_source_url": "https://www.raon.co.kr/mobile_web/course_03.asp",
+      "holes": [
+        {"hole_number":1,"par":5,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":543,"source_distance":543,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":2,"par":4,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":377,"source_distance":377,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":3,"par":4,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":330,"source_distance":330,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":4,"par":3,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":186,"source_distance":186,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":5,"par":4,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":366,"source_distance":366,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":6,"par":3,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":174,"source_distance":174,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":7,"par":5,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":485,"source_distance":485,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":8,"par":4,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":422,"source_distance":422,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":9,"par":4,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":405,"source_distance":405,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]}
+      ]
+    },
+    {
+      "route_code": "PINE",
+      "primary_tee_code": "official",
+      "display_name": "Pine",
+      "hole_count": 9,
+      "source_url": "https://www.raon.co.kr/mobile_web/course_04.asp",
+      "source_data_url": "https://www.raon.co.kr/mobile_web/course_04.asp",
+      "par_source_url": "https://www.raon.co.kr/mobile_web/course_04.asp",
+      "holes": [
+        {"hole_number":1,"par":5,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":532,"source_distance":532,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":2,"par":3,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":174,"source_distance":174,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":3,"par":4,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":391,"source_distance":391,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":4,"par":4,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":416,"source_distance":416,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":5,"par":5,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":492,"source_distance":492,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":6,"par":3,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":160,"source_distance":160,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":7,"par":4,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":353,"source_distance":353,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":8,"par":4,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":437,"source_distance":437,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]},
+        {"hole_number":9,"par":4,"tees":[{"tee_code":"official","display_name":"공식 거리 (티 미표기)","tee_color":"#64748b","distance_m":359,"source_distance":359,"source_unit":"m","distance_m_source":"official","tee_selection_available":false}]}
+      ]
+    }
+  ]
+}

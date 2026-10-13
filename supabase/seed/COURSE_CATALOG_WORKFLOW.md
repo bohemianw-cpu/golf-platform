@@ -747,3 +747,14 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 현행 공식 [코스공략팁](https://jacknicklausgolfclubkorea.com/course/tip) 화면의 공식 API에서 Urban Course와 Links Course 각 9홀을 확인했습니다. 홀별 PAR·HDCP와 Black/Blue/White/Yellow/Red 티 야드 거리를 저장했으며 원본 야드값을 보존하고 1yd=0.9144m로 홀별 미터값을 환산했습니다. 전체 PAR72, 18홀, 티 거리 90건입니다.
 - 원격 DB에서 `verified`, 2개 경로·18홀·90개 티 행을 확인했습니다. seed와 PAR·HDCP·티 색상·원본 단위·환산 거리·선택 가능 여부를 대조해 누락 0·불일치 0입니다. 자료 파일: `jack-nicklaus-gc-korea-2026-official-verified.json`.
 - 현재 전체 카탈로그는 516곳: 검수 완료 310, 미진행 200, 반려 6입니다. 미진행 지역은 강원 48, 경기 121, 세종 1, 인천 1, 제주 28, 충남 1곳입니다. 인천 잔여 `베어즈베스트청라GC`는 공식 보존 페이지에서 세 코스의 Black 기준 PAR·거리는 확인했으나, 다른 티 값은 동적 홀 상세 POST 응답이 보존되지 않아 추가 자료를 찾고 있습니다. 공식 현재 도메인은 HTTP 406을 반환합니다.
+
+### 2026-10-13 — 라온GC 공식 코스 기준거리
+- 운영사 [코스개요](https://www.raon.co.kr/mobile_web/course_01.asp)에서 STONE·LAKE·PINE 27홀을 확인하고, 각 [STONE](https://www.raon.co.kr/mobile_web/course_02.asp)·[LAKE](https://www.raon.co.kr/mobile_web/course_03.asp)·[PINE](https://www.raon.co.kr/mobile_web/course_04.asp) 홀 상세에서 PAR와 공식 미터 기준거리를 저장했습니다. 각 코스 PAR36이며 거리 합계는 STONE 3,285m, LAKE 3,288m, PINE 3,314m입니다. 공식 페이지는 티별 명칭·거리를 공개하지 않으므로 기준거리는 기록하되 티 선택은 비활성화했습니다.
+- 원격 DB에서 구장 및 3개 경로 `verified`, 27홀·27개 공식 기준거리 행을 확인했습니다. 코스별 PAR·거리 배열이 시드와 일치하고 티 선택 가능 행은 0개입니다. 자료 파일: `raon-gc-2026-official-reference-distances.json`.
+- 원격 카탈로그 현황: 전체 516곳, 검수 완료 311, 미진행 199, 반려 6. 미진행은 강원 48, 경기 121, 세종 1, 인천 1, 제주 27, 충남 1곳입니다. 부산·경남·울산·경북·전남에는 미진행 구장이 없습니다.
+
+### 2026-10-13 — 롯데스카이힐CC 제주 공식 코스 자료
+- 운영사 [제주CC 코스소개](https://www.lotteskyhill.com/club/course/club-course-jeju)에서 SKY·HILL·OCEAN·FOREST 4개 9홀 코스의 홀별 PAR·HDCP 및 Black/Blue/White/Red 티별 미터 거리를 반영했습니다. 코스별 PAR 합계는 36/36/36/37이며, Black 티 거리 합계는 3,174/3,272/3,338/3,337m입니다. 티 색상은 공식 페이지의 각 거리 항목 표기로 구분했습니다.
+- 페이지 개요의 전체 길이 14,423yd와 네 코스 Black 티 홀별 공식 yard 합계 14,347yd는 76yd 차이가 있어 관리자 메모에 기록했습니다. FOREST 홀별 PAR 합계도 37로 게시되어 원문을 유지하고 메모에 남겼습니다.
+- 원격 DB에서 기존 MCST 행을 현행 명칭 `롯데스카이힐CC 제주`로 연결하고, 홀 수를 18에서 36으로 갱신했습니다. 4개 경로·36홀·144개 티 거리 행을 적재했으며 seed와 티 코드·색상·거리·원본 단위·선택 가능 여부·PAR·HDCP를 대조해 누락 0·불일치 0을 확인했습니다. 자료 파일: `lotte-skyhill-jeju-2026-official-verified.json`.
+- 원격 카탈로그 현황: 전체 516곳, 검수 완료 312, 미진행 198, 반려 6. 미진행은 강원 48, 경기 121, 세종 1, 인천 1, 제주 26, 충남 1곳입니다. 부산·경남·울산·경북·전남에는 미진행 구장이 없습니다.
