@@ -901,3 +901,4 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 1–9홀의 PAR·HDCP와 White 1·Red의 티별 거리를 확인했습니다. 모든 홀에 두 티 거리가 있고 공식 페이지에 m 및 yd가 같이 표기되어, 공식 m 수치로 저장했습니다. 총 PAR36·티 18행입니다. 공개되지 않은 다른 티는 추가하지 않았습니다. 자료 파일: `hanlim-anseong-cc-2026-official-verified.json`.
 - 관리자 적재기와 원격 DB 전수 대조가 통과했습니다. 구장·MAIN 경로 `verified`, 홀 9개·티 18개이며 PAR·HDCP·티명·색상·m 거리·원문 단위·선택 가능 여부 불일치는 0건입니다.
 - 현재 원격 카탈로그는 총 516곳: 검수 완료 338, 미진행 172, 반려 6입니다. 미진행 지역은 강원 39, 경기 105, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
+- 파인크리크CC 공식 [코스정보](https://www.pinevalley.co.kr/html_creek/course01.asp)와 [홀별 코스공략](https://www.pinevalley.co.kr/html_creek/course02.asp)을 확인했습니다. 세 코스의 PAR·HDCP·홀 기준 METER/YARD는 게시하지만 홀별 티 위치·티별 거리는 제공하지 않아 해당 단일 거리를 티별 자료로 잘못 해석하지 않고 pending으로 유지합니다.
