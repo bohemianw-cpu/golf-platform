@@ -1,0 +1,69 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "match_name": "김포SEASIDE CC",
+    "name": "김포SEASIDE CC",
+    "region": "경기",
+    "address": "경기도 김포시 월곶면 김포대로 2801번길 219",
+    "aliases": [
+      "김포씨사이드CC",
+      "김포 씨사이드 CC",
+      "Gimpo Seaside Country Club"
+    ],
+    "hole_count": 18,
+    "supports_screen": false,
+    "verification_status": "verified",
+    "review_notes": [
+      "운영사 공식 코스 스코어카드의 서코스·남코스 18개 홀 PAR, HDCP, B.T·R.T·L.T별 거리(m)를 반영했습니다. 티 약어는 공식 표의 Back Tee·Regular Tee·Ladies Tee를 뜻합니다.",
+      "공식 스코어카드의 서코스 합계 표기와 홀별 값을 합산한 결과가 B.T 33m, R.T 18m 차이납니다. 홀별 공식 표기값은 보존하고 합계 차이를 자료 검수 메모로 기록했습니다. 남코스 합계는 홀별 합과 일치합니다."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "WEST",
+      "display_name": "서코스",
+      "hole_count": 9,
+      "primary_tee_code": "regular",
+      "verification_status": "verified",
+      "source_url": "https://www.gimpocc.co.kr/Course/CourseInfo.aspx",
+      "par_source_url": "https://www.gimpocc.co.kr/Course/CourseInfo.aspx",
+      "official_tee_totals_m": { "back": 3130, "regular": 2937, "lady": 2754 },
+      "review_notes": [
+        "운영사 공식 점수표의 홀별 값: B.T 343·176·351·497·340·403·168·484·401m, R.T 328·143·321·477·310·373·160·462·381m, L.T 310·118·301·459·286·348·142·444·346m. B.T·R.T 홀별 합계는 공식 TOTAL 표기와 각각 33m·18m 차이가 있습니다."
+      ],
+      "holes": [
+        { "hole_number": 1, "par": 4, "handicap_index": 14, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 343, "distance_m_source": "official", "source_distance": 343, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 328, "distance_m_source": "official", "source_distance": 328, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 310, "distance_m_source": "official", "source_distance": 310, "source_unit": "m" }] },
+        { "hole_number": 2, "par": 3, "handicap_index": 18, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 176, "distance_m_source": "official", "source_distance": 176, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 143, "distance_m_source": "official", "source_distance": 143, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 118, "distance_m_source": "official", "source_distance": 118, "source_unit": "m" }] },
+        { "hole_number": 3, "par": 4, "handicap_index": 4, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 351, "distance_m_source": "official", "source_distance": 351, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 321, "distance_m_source": "official", "source_distance": 321, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 301, "distance_m_source": "official", "source_distance": 301, "source_unit": "m" }] },
+        { "hole_number": 4, "par": 5, "handicap_index": 8, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 497, "distance_m_source": "official", "source_distance": 497, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 477, "distance_m_source": "official", "source_distance": 477, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 459, "distance_m_source": "official", "source_distance": 459, "source_unit": "m" }] },
+        { "hole_number": 5, "par": 4, "handicap_index": 10, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 340, "distance_m_source": "official", "source_distance": 340, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 310, "distance_m_source": "official", "source_distance": 310, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 286, "distance_m_source": "official", "source_distance": 286, "source_unit": "m" }] },
+        { "hole_number": 6, "par": 4, "handicap_index": 6, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 403, "distance_m_source": "official", "source_distance": 403, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 373, "distance_m_source": "official", "source_distance": 373, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 348, "distance_m_source": "official", "source_distance": 348, "source_unit": "m" }] },
+        { "hole_number": 7, "par": 3, "handicap_index": 16, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 168, "distance_m_source": "official", "source_distance": 168, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 160, "distance_m_source": "official", "source_distance": 160, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 142, "distance_m_source": "official", "source_distance": 142, "source_unit": "m" }] },
+        { "hole_number": 8, "par": 5, "handicap_index": 12, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 484, "distance_m_source": "official", "source_distance": 484, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 462, "distance_m_source": "official", "source_distance": 462, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 444, "distance_m_source": "official", "source_distance": 444, "source_unit": "m" }] },
+        { "hole_number": 9, "par": 4, "handicap_index": 2, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 401, "distance_m_source": "official", "source_distance": 401, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 381, "distance_m_source": "official", "source_distance": 381, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 346, "distance_m_source": "official", "source_distance": 346, "source_unit": "m" }] }
+      ]
+    },
+    {
+      "route_code": "SOUTH",
+      "display_name": "남코스",
+      "hole_count": 9,
+      "primary_tee_code": "regular",
+      "verification_status": "verified",
+      "source_url": "https://www.gimpocc.co.kr/Course/CourseInfo.aspx",
+      "par_source_url": "https://www.gimpocc.co.kr/Course/CourseInfo.aspx",
+      "official_tee_totals_m": { "back": 3221, "regular": 3029, "lady": 2817 },
+      "holes": [
+        { "hole_number": 1, "par": 5, "handicap_index": 17, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 488, "distance_m_source": "official", "source_distance": 488, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 468, "distance_m_source": "official", "source_distance": 468, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 440, "distance_m_source": "official", "source_distance": 440, "source_unit": "m" }] },
+        { "hole_number": 2, "par": 4, "handicap_index": 3, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 362, "distance_m_source": "official", "source_distance": 362, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 347, "distance_m_source": "official", "source_distance": 347, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 327, "distance_m_source": "official", "source_distance": 327, "source_unit": "m" }] },
+        { "hole_number": 3, "par": 3, "handicap_index": 13, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 196, "distance_m_source": "official", "source_distance": 196, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 169, "distance_m_source": "official", "source_distance": 169, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 126, "distance_m_source": "official", "source_distance": 126, "source_unit": "m" }] },
+        { "hole_number": 4, "par": 4, "handicap_index": 7, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 380, "distance_m_source": "official", "source_distance": 380, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 340, "distance_m_source": "official", "source_distance": 340, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 320, "distance_m_source": "official", "source_distance": 320, "source_unit": "m" }] },
+        { "hole_number": 5, "par": 4, "handicap_index": 11, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 340, "distance_m_source": "official", "source_distance": 340, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 307, "distance_m_source": "official", "source_distance": 307, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 292, "distance_m_source": "official", "source_distance": 292, "source_unit": "m" }] },
+        { "hole_number": 6, "par": 3, "handicap_index": 15, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 185, "distance_m_source": "official", "source_distance": 185, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 170, "distance_m_source": "official", "source_distance": 170, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 153, "distance_m_source": "official", "source_distance": 153, "source_unit": "m" }] },
+        { "hole_number": 7, "par": 4, "handicap_index": 5, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 382, "distance_m_source": "official", "source_distance": 382, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 362, "distance_m_source": "official", "source_distance": 362, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 338, "distance_m_source": "official", "source_distance": 338, "source_unit": "m" }] },
+        { "hole_number": 8, "par": 5, "handicap_index": 9, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 500, "distance_m_source": "official", "source_distance": 500, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 498, "distance_m_source": "official", "source_distance": 498, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 476, "distance_m_source": "official", "source_distance": 476, "source_unit": "m" }] },
+        { "hole_number": 9, "par": 4, "handicap_index": 1, "tees": [{ "tee_code": "back", "display_name": "백티", "tee_color": "#111827", "distance_m": 388, "distance_m_source": "official", "source_distance": 388, "source_unit": "m" }, { "tee_code": "regular", "display_name": "레귤러티", "tee_color": "#ffffff", "distance_m": 368, "distance_m_source": "official", "source_distance": 368, "source_unit": "m" }, { "tee_code": "lady", "display_name": "레이디티", "tee_color": "#ef4444", "distance_m": 345, "distance_m_source": "official", "source_distance": 345, "source_unit": "m" }] }
+      ]
+    }
+  ]
+}
