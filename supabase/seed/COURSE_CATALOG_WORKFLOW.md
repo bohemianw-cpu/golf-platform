@@ -940,3 +940,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - SUN 5번 White는 전체 표 텍스트에 341m로 표시되나 홀 상세 155m와 White 9홀 합계 3,020m가 일치해 155m를 저장했습니다. POINT Blue 1번은 홀 상세 333m이고 전체 표/홀별 합계는 3,122/3,132m로 10m 차이가 나 홀별 상세값을 우선 저장하고 메모했습니다. 나머지 티별 합계는 공식 표와 일치합니다.
 - PAR6를 포함한 공식 값은 현재 DB·ScoreTab·관리자 importer의 PAR 3~7 지원 범위에 들어가 별도 스키마/UI 변경 없이 저장할 수 있음을 확인했습니다. 관리자 보정 자료 구조 검사와 원격 `--check` 통과: 코스 2개·홀 18개·티 90개, seed/DB 불일치 0건.
 - 현재 원격 카탈로그는 총 516곳: 검수 완료 344, 미진행 166, 반려 6입니다. 미진행 지역은 강원 39, 경기 99, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
+
+### 2026-10-13 — 뉴스프링빌CC 회원제 ROCKY·OLYMPUS·ALPS·MONT_BLANC
+- 운영사 공식 [록키](https://icheon.newspring.co.kr/Mobile/Course/MemberShip?tab=1), [올림프스](https://icheon.newspring.co.kr/Mobile/Course/MemberShip?tab=2), [알프스](https://icheon.newspring.co.kr/Mobile/Course/MemberShip?tab=3), [몽블랑](https://icheon.newspring.co.kr/Mobile/Course/MemberShip?tab=4) 코스 안내에서 회원제 4개 경로의 홀별 PAR와 Blue·White·Senior·Lady 거리를 반영했습니다. 원문 거리 단위 yd를 보존하고 앱 저장값은 0.9144 환산계수로 m 변환했습니다. 자료 파일: `newspringville-2026-official-verified.json`.
+- 홀별 HDCP는 공식 페이지에 없어 입력하지 않았습니다. 공식 요약 전장과 홀별 Blue 합계는 Rocky 3,385/3,356yd, Olympus 3,333/3,295yd, Alps 3,398/3,333yd로 차이가 있어 홀별 상세값을 우선 저장하고 경로 검수 메모에 남겼습니다. Mont Blanc은 두 값이 모두 3,322yd입니다.
+- 관리자 보정 자료 구조 검사와 원격 `--check` 통과: 4개 코스·36홀·144개 티 행, seed/DB 대조 불일치 0건. ScoreTab은 경로별 티 선택지를 DB에서 공통 코드 기준으로 동적으로 구성하므로 Blue·White·Senior·Lady가 모두 선택 가능하며 UI/schema 수정은 필요하지 않습니다.
+- 현재 원격 카탈로그는 총 516곳: 검수 완료 345, 미진행 165, 반려 6입니다.
