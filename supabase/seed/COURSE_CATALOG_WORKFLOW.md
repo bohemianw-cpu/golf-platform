@@ -1,3 +1,6 @@
+### 2026-10-14 — 비에이비스타CC 회원제 몽티·벨라·라고·비스타
+- 운영사 공식 [회원제 코스 소개](https://www.bavista.co.kr/Member/Club/Greeting)와 [몽티](https://www.bavista.co.kr/Member/course/info), [벨라](https://www.bavista.co.kr/Member/course/info2), [라고](https://www.bavista.co.kr/Member/course/info3), [비스타](https://www.bavista.co.kr/Member/course/info4) 코스 페이지를 반영했습니다. 4개 9홀 코스의 PAR·HDCP와 공식 페이지에 실제 제공된 티 거리 총 90행을 저장했습니다. 페이지에 거리 단위 표기가 없어 국내 코스 표기값을 m로 해석했고, 이 점을 각 코스 메모에 남겼습니다. 몽티 4·6·7번, 벨라 6번, 라고 4·7번은 페이지 내 PAR·거리 또는 설명 간 불일치가 있어 원문 값을 유지하고 코스 검수 메모에 표시했습니다. 자료: `bavista-member-2026-official-verified.json`.
+- 원격 DB에서 구장 `verified`, 4개 경로·36홀·90개 티 행을 확인했고, 각 경로의 PAR·HDCP·거리 및 티 목록을 seed와 대조해 불일치·누락·추가 행 0건을 확인했습니다. 카탈로그는 총 512곳: 검수 완료 425, 미진행 86, 반려 1입니다. 미진행은 경기 36, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 확인 작업은 별도 요청까지 보류합니다.
 ### 2026-10-14 — 화산CC OUT·IN
 - 운영사 공식 [코스 제원표](https://www.hwasancc.com/course/spec)에서 OUT·IN 18홀의 PAR·HDCP, Champion·Regular·Front·Ladies·Children 티별 야드 및 미터를 반영했습니다. 야드 원값과 공식 미터값을 보존했습니다. 공식 표에 티 색상 표시는 없어 티 이름을 그대로 사용하고 DB 색상값은 중립색으로 설정했습니다. 자료: `hwasan-cc-2026-official-verified.json`.
 - 원격 DB와 seed를 대조해 2개 경로·18홀·90개 티 행에서 PAR·HDCP·티명·거리·원본 단위·선택 가능 여부 불일치 및 추가 행 0건을 확인했고, 구장과 두 경로를 `verified` 처리했습니다. 카탈로그는 총 512곳: 검수 완료 424, 미진행 87, 반려 1입니다. 미진행은 경기 37, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC의 추가 확인은 별도 요청까지 보류합니다.
