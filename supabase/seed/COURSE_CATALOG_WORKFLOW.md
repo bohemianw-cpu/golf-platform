@@ -999,3 +999,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [OUT(블루) 코스](https://www.alpsdy.com/Course/BlueCourse.aspx)와 [IN(코스모스) 코스](https://www.alpsdy.com/Course/CosmosCourse.aspx)에서 각 코스 9홀의 PAR 및 Blue·White·Yellow·Red Tee별 미터 거리를 확인했습니다. 두 코스 모두 PAR36이며 각 홀에 네 종류 티가 공개되어 총 18홀·72개 티 행을 입력했습니다. HDCP는 공식 페이지에 공개되지 않아 입력하지 않았습니다.
 - 공식 코스 안내와 사업장 주소를 대조해 횡성군 우천면 한우로 1295의 MCST `알프스대영CC` pending 레코드에 연결했습니다. 자료 파일: `alps-daeyoung-cc-2026-official-verified.json`. 원격 Supabase에 반영한 뒤 구장·경로 verified 상태, 경로 2개·홀 18개·티 행 72개를 seed와 필드별 대조했고 불일치 0건을 확인했습니다. 로컬 환경에 Supabase 서버 키가 없어 데이터 입력은 Supabase MCP로 수행했습니다.
 - 원격 카탈로그는 총 516곳: 검수 완료 356, 미진행 154, 반려 6입니다. 미진행 지역은 강원 30, 경기 97, 인천 1, 제주 25, 충남 1곳입니다.
+
+### 2026-10-13 — 힐드로사이CC Birch·Pine 코스
+- 운영사 공식 [Birch 코스](https://www.hilldeloci.co.kr/course/birch), [Pine 코스](https://www.hilldeloci.co.kr/course/pine), [코스 개요](https://hilldeloci.co.kr/course/introduction)에서 PAR와 홀별 Black·Blue·White·Yellow·Pink 티 거리를 확인했습니다. 각 코스 9홀 PAR36, 총 18홀·90개 티 행을 미터 단위로 저장했습니다. 자료 파일: `hilldeloci-cc-2026-official-verified.json`.
+- 코스 개요와 개별 홀 상세 페이지의 HDCP 표기가 달라 이번 적재 범위에서는 HDCP를 저장하지 않았습니다. 공식 이용 규정은 블랙티를 프로 자격증 소지자에게 허용합니다. 사용자 프로필에는 면허 필드가 없어 공식 거리 데이터는 보존하되 라운드 티 선택에서 자격을 제한하지 않는 점을 구장 메모에 기록했습니다.
+- 관리자 importer의 로컬 자료 검증과 원격 Supabase 필드 대조를 완료했습니다. 구장과 두 경로는 verified이며, 원격 DB에 경로 2개·홀 18개·티 행 90개가 있습니다.
+- 원격 카탈로그는 총 516곳: 검수 완료 357, 미진행 153, 반려 6입니다. 강원 pending은 29곳입니다. `코스모스CC`는 폐업된 별도 구장으로 rejected 상태·코스 0개이고, `골프존카운티 영암45`와 관련이 없습니다.
