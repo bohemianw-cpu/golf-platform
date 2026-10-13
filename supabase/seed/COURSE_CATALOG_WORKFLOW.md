@@ -565,3 +565,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [클럽소개](https://www.sangnokresort.co.kr/M050101)는 남·동·서 B/T 개요 전장을 3,300/3,245/3,132m로 게시해 상세 B/T 합계와 각각 +3/+20/+2m 차이가 납니다. 공식 [코스소개](https://www.sangnokresort.co.kr/M050601)는 세 경로를 각각 3,222m로 표기해 두 출처와도 상충합니다. 홀별 PAR·티별 거리 및 상세표 Total이 함께 제공되는 코스공략도 값을 저장 기준으로 삼고, 공식 출처 간 총장 차이를 검수 메모에 보존했습니다.
 - `화성상록GC`를 검수 완료로 전환하고 경로 3개·홀 27개·티 거리 108개를 저장했습니다. seed 구조 검사를 통과했고 원격 DB read-back 대조의 경로·홀·티 불일치는 0건입니다. 자료 파일: `hwaseong-sangnok-gc-2026-official-verified.json`.
 - 적재 후 원격 카탈로그 집계: 총 516곳 — 검수 완료 281, 미진행 230, 반려 5. 부산·울산·경남 미진행은 0곳이며 남부권 잔여는 경북 1, 세종 1, 전남 1, 전북 3, 충남 1곳입니다.
+
+### 2026-10-13 — 리베라CC 공식 36홀 자료
+- 운영사 신안그룹 공식 [리베라CC 소개](https://www.shinan.co.kr/business/golf/rivieracc)와 [통합 코스 페이지](https://www.shinangolf.com/club/course/rivieracc)에서 Lake·Valley·Pinehill·Cherryhill 각 9홀의 구성과 홀별 PAR·HDCP를 확인했습니다. 각 홀 공략도 이미지에 Red·White(두 위치)·Blue 점 색상 순서로 미터 거리가 게시되어 총 140개 티 행을 반영했습니다.
+- 공식 도면은 두 White 티의 별도 명칭을 제공하지 않아 행 순서에 따라 `White 1`·`White 2`로 구분했습니다. 각 홀에 실제 표시된 티만 저장했으며 누락된 행은 추정하지 않았습니다. Pinehill 6번은 투명 레이어 때문에 본문 표시에서 숫자가 묻히지만 원본 이미지에서 Red 104m, White 124m·134m, Blue 154m를 확인했습니다.
+- 네 경로 모두 PAR36이며 총 36홀·PAR144입니다. 관리자 seed 구조 검사를 통과했고 원격 DB에서 구장, 경로 4개, 홀 36개, 티 거리 140개를 주요 필드별 대조해 불일치 0건을 확인했습니다. 자료 파일: `rivieracc-2026-official-verified.json`; 출처: 공식 [코스 페이지](https://www.shinangolf.com/club/course/rivieracc) 및 페이지 내 홀별 지도 이미지 (2026-10-13 확인).
+- 적재 후 원격 전체 카탈로그: 총 516곳 — 검수 완료 282, 미진행 229, 반려 5. 미진행 지역별로 강원 55, 경기 129, 경북 1, 세종 1, 인천 10, 전남 1, 전북 3, 제주 28, 충남 1곳입니다. 부산·울산·경남 미진행은 0곳입니다.
