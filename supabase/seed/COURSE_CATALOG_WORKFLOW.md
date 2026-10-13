@@ -545,6 +545,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-13 — 블루원 상주 공식 홀 자료 재조사
 - [공식 코스 안내](https://sj.blueone.com/club-introduction/information?type=1)와 공개된 [코스 정보 스크립트](https://sj.blueone.com/chunks/CourseInformation-DTxqQo2-.js)에서 East·West 각 9홀의 PAR·HDCP, 홀 이미지, 홀별 공식 영상 18개 경로를 확인했습니다. 공식 개요는 18홀·PAR72·총전장 6,737m입니다.
 - 텍스트 코스 안내에는 홀별 티 거리가 나타나지 않습니다. 영상 첫 프레임의 티 거리 표기를 확인하지 못해 PAR/HDCP만으로 verified 전환하거나 티 거리를 추정하지 않았습니다. 기존 `블루원상주골프리조트` pending 상태는 유지합니다. 다음 조사 시 공식 홀 영상 또는 운영사 스코어카드에서 BlueOne 자료와 직접 대조할 수 있을 때 진행합니다.
+- 후속으로 West 1번 공식 영상의 시작부(0.2·1·3·6·10초)와 공식 홀 도면을 확인했습니다. 영상은 홀 전경이고 도면 숫자는 홀 안의 공략 지점 거리로 보여 티별 티-핀 총거리를 뒷받침하지 않으므로 입력하지 않았습니다. KGA [블루원배 2026 거리표 공지](https://www.kgagolf.or.kr/web/notice/noticeDetail?boardCode=6986&partCode=2109)에서 받은 표도 PDF 표제가 `블루원용인컨트리클럽(서·중)`임을 시각 확인했습니다. BlueOne 상주와 다른 시설의 BLUE/WHITE/RED 수치여서 상주 자료로 사용하지 않았습니다.
+- 현재 공식 홀별 티 거리를 확인할 수 있는 상주 자료는 없어 pending을 유지합니다. 재조회 시점의 원격 카탈로그는 총 516곳 — 검수 완료 279, 미진행 232, 반려 5입니다.
 - 이번 조사로 DB의 검수 상태와 데이터는 변경하지 않았습니다. 원격 집계는 총 516곳 — 검수 완료 278, 미진행 233, 반려 5입니다.
 
 ### 2026-10-13 — 은화삼CC 공식 코스 데이터
