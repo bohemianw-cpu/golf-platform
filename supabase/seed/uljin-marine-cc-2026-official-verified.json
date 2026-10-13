@@ -14,7 +14,7 @@
     "hole_count": 18,
     "supports_screen": false,
     "review_notes": [
-      "운영사 공식 코스 홀 표의 PAR·HDCP 및 BLUE/WHITE/GOLD/RED 티별 거리를 m 단위 원문대로 입력했습니다. MARINE 4번 홀의 공략 문구는 3번 홀로 잘못 표기되고 White 348m로 안내하지만, 홀별 거리표는 4번 402/370/343/304m이므로 표 수치를 사용하고 불일치를 메모했습니다. HEALING 12번 홀은 표에 Gold 268m·Red 264m로 표시되어 있지만 같은 홀 공략 문구에는 Ladies tee 111m라고 기재되어 서로 일치하지 않습니다. 홀별 티 거리표의 수치를 그대로 저장하고 사용자 관리자 검토 항목으로 남겼습니다. HEALING 16번 홀도 표 White 341m와 공략 문구 W-330m가 달라 표값을 저장했습니다. 자료 확인일 2026-10-12."
+      "운영사 공식 코스 홀 표의 PAR·HDCP 및 티별 거리를 m 단위로 입력했습니다. 사용자가 확인한 값으로 MARINE 4번은 BLUE 402m·WHITE 370m·GOLD 343m·레이디 304m, HEALING 12번은 BLUE 147m·WHITE 127m·레이디 111m이며 GOLD 티가 없습니다. HEALING 16번은 BLUE 366m·WHITE 341m·GOLD 326m·레이디 293m입니다. 사용자가 이 세 홀의 추가 검증은 불필요하다고 확인했습니다. 자료 원본 확인일 2026-10-12; 사용자 정정 반영 2026-10-13."
     ]
   },
   "routes": [
@@ -28,7 +28,7 @@
       "source_data_url": "https://www.marinecc.co.kr/course/course01",
       "par_source_url": "https://www.marinecc.co.kr/course/course01",
       "review_notes": [
-        "운영사 공식 코스 홀 표의 PAR·HDCP 및 BLUE/WHITE/GOLD/RED 티별 거리를 m 단위 원문대로 입력했습니다. MARINE 4번 홀의 공략 문구는 3번 홀로 잘못 표기되고 White 348m로 안내하지만, 홀별 거리표는 4번 402/370/343/304m이므로 표 수치를 사용하고 불일치를 메모했습니다. HEALING 12번 홀은 표에 Gold 268m·Red 264m로 표시되어 있지만 같은 홀 공략 문구에는 Ladies tee 111m라고 기재되어 서로 일치하지 않습니다. 홀별 티 거리표의 수치를 그대로 저장하고 사용자 관리자 검토 항목으로 남겼습니다. HEALING 16번 홀도 표 White 341m와 공략 문구 W-330m가 달라 표값을 저장했습니다. 자료 확인일 2026-10-12."
+        "운영사 공식 코스 홀 표의 PAR·HDCP 및 티별 거리를 m 단위로 입력했습니다. 사용자가 확인한 값으로 MARINE 4번은 BLUE 402m·WHITE 370m·GOLD 343m·레이디 304m, HEALING 12번은 BLUE 147m·WHITE 127m·레이디 111m이며 GOLD 티가 없습니다. HEALING 16번은 BLUE 366m·WHITE 341m·GOLD 326m·레이디 293m입니다. 사용자가 이 세 홀의 추가 검증은 불필요하다고 확인했습니다. 자료 원본 확인일 2026-10-12; 사용자 정정 반영 2026-10-13."
       ],
       "holes": [
         {
@@ -197,9 +197,9 @@
               "source_unit": "m"
             },
             {
-              "tee_code": "red",
-              "display_name": "RED",
-              "tee_color": "#ef4444",
+              "tee_code": "lady",
+              "display_name": "레이디",
+              "tee_color": "#ec4899",
               "distance_m": 304,
               "distance_m_source": "official",
               "source_distance": 304,
@@ -439,7 +439,7 @@
       "source_data_url": "https://www.marinecc.co.kr/course/course02",
       "par_source_url": "https://www.marinecc.co.kr/course/course02",
       "review_notes": [
-        "운영사 공식 코스 홀 표의 PAR·HDCP 및 BLUE/WHITE/GOLD/RED 티별 거리를 m 단위 원문대로 입력했습니다. MARINE 4번 홀의 공략 문구는 3번 홀로 잘못 표기되고 White 348m로 안내하지만, 홀별 거리표는 4번 402/370/343/304m이므로 표 수치를 사용하고 불일치를 메모했습니다. HEALING 12번 홀은 표에 Gold 268m·Red 264m로 표시되어 있지만 같은 홀 공략 문구에는 Ladies tee 111m라고 기재되어 서로 일치하지 않습니다. 홀별 티 거리표의 수치를 그대로 저장하고 사용자 관리자 검토 항목으로 남겼습니다. HEALING 16번 홀도 표 White 341m와 공략 문구 W-330m가 달라 표값을 저장했습니다. 자료 확인일 2026-10-12."
+        "운영사 공식 코스 홀 표의 PAR·HDCP 및 티별 거리를 m 단위로 입력했습니다. 사용자가 확인한 값으로 MARINE 4번은 BLUE 402m·WHITE 370m·GOLD 343m·레이디 304m, HEALING 12번은 BLUE 147m·WHITE 127m·레이디 111m이며 GOLD 티가 없습니다. HEALING 16번은 BLUE 366m·WHITE 341m·GOLD 326m·레이디 293m입니다. 사용자가 이 세 홀의 추가 검증은 불필요하다고 확인했습니다. 자료 원본 확인일 2026-10-12; 사용자 정정 반영 2026-10-13."
       ],
       "holes": [
         {
@@ -555,21 +555,12 @@
               "source_unit": "m"
             },
             {
-              "tee_code": "gold",
-              "display_name": "GOLD",
-              "tee_color": "#eab308",
-              "distance_m": 268,
+              "tee_code": "lady",
+              "display_name": "레이디",
+              "tee_color": "#ec4899",
+              "distance_m": 111,
               "distance_m_source": "official",
-              "source_distance": 268,
-              "source_unit": "m"
-            },
-            {
-              "tee_code": "red",
-              "display_name": "RED",
-              "tee_color": "#ef4444",
-              "distance_m": 264,
-              "distance_m_source": "official",
-              "source_distance": 264,
+              "source_distance": 111,
               "source_unit": "m"
             }
           ]
@@ -740,9 +731,9 @@
               "source_unit": "m"
             },
             {
-              "tee_code": "red",
-              "display_name": "RED",
-              "tee_color": "#ef4444",
+              "tee_code": "lady",
+              "display_name": "레이디",
+              "tee_color": "#ec4899",
               "distance_m": 293,
               "distance_m_source": "official",
               "source_distance": 293,
