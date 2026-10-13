@@ -1,0 +1,347 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "match_name": "용평리조트대중골프장",
+    "name": "용평9",
+    "region": "강원",
+    "address": "강원특별자치도 평창군 대관령면 올림픽로 715",
+    "aliases": [
+      "용평리조트대중골프장",
+      "용평9 골프코스",
+      "YongPyong 9 Golf Course"
+    ],
+    "hole_count": 9,
+    "supports_screen": false,
+    "review_notes": [
+      "용평리조트 공식 용평9 코스 페이지에서 9홀 PAR36과 홀별 Champion/Regular/Lady 미터 거리를 확인했습니다.",
+      "공식 홀별 거리 합계는 Lady 2,388m, Regular 2,533m, Champion 2,578m입니다. 전체지형도는 별도로 5,146yd를 표시하므로 길이 요약 차이를 메모하고 홀별 상세를 보존했습니다.",
+      "공식 출처(2026-10-13 확인): https://www.yongpyong.co.kr/kor/golf/course/yongpyong9/course.do?section=7 · https://www.yongpyong.co.kr/kor/golf/course/yongpyong9/fullMap.do"
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "YONGPYONG9",
+      "display_name": "용평9 코스",
+      "hole_count": 9,
+      "primary_tee_code": "regular",
+      "verification_status": "verified",
+      "source_url": "https://www.yongpyong.co.kr/kor/golf/course/yongpyong9/course.do?section=7",
+      "source_data_url": "https://www.yongpyong.co.kr/kor/golf/course/yongpyong9/course.do?section=7",
+      "review_notes": [
+        "공식 홀별 페이지의 PAR, HDCP, Champion/Regular/Lady 티별 거리(m)를 그대로 입력했습니다. 페이지의 거리 설명은 홀에 따라 티에서 1차 퍼팅 지역까지 또는 그린 지역까지로 표시됩니다.",
+        "공식 전체지형도 요약은 5,146yd·9홀·PAR36으로 표기되나, 홀별 미터 거리 합계와 길이 기준이 일치하지 않습니다. 홀별 공식값을 우선 저장했습니다.",
+        "공식 페이지의 9번 Lady 거리 176m와 HDCP 1 중복, 7번 HDCP15 및 8번 HDCP13은 페이지 표시 그대로 보존했습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "handicap_index": 2,
+          "tees": [
+            {
+              "tee_code": "lady",
+              "display_name": "LADY",
+              "tee_color": "#64748b",
+              "distance_m": 298,
+              "distance_m_source": "official",
+              "source_distance": 298,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "REGULAR",
+              "tee_color": "#64748b",
+              "distance_m": 303,
+              "distance_m_source": "official",
+              "source_distance": 303,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "CHAMPION",
+              "tee_color": "#64748b",
+              "distance_m": 308,
+              "distance_m_source": "official",
+              "source_distance": 308,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "handicap_index": 7,
+          "tees": [
+            {
+              "tee_code": "lady",
+              "display_name": "LADY",
+              "tee_color": "#64748b",
+              "distance_m": 249,
+              "distance_m_source": "official",
+              "source_distance": 249,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "REGULAR",
+              "tee_color": "#64748b",
+              "distance_m": 254,
+              "distance_m_source": "official",
+              "source_distance": 254,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "CHAMPION",
+              "tee_color": "#64748b",
+              "distance_m": 259,
+              "distance_m_source": "official",
+              "source_distance": 259,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 3,
+          "handicap_index": 5,
+          "tees": [
+            {
+              "tee_code": "lady",
+              "display_name": "LADY",
+              "tee_color": "#64748b",
+              "distance_m": 131,
+              "distance_m_source": "official",
+              "source_distance": 131,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "REGULAR",
+              "tee_color": "#64748b",
+              "distance_m": 136,
+              "distance_m_source": "official",
+              "source_distance": 136,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "CHAMPION",
+              "tee_color": "#64748b",
+              "distance_m": 141,
+              "distance_m_source": "official",
+              "source_distance": 141,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 5,
+          "handicap_index": 3,
+          "tees": [
+            {
+              "tee_code": "lady",
+              "display_name": "LADY",
+              "tee_color": "#64748b",
+              "distance_m": 415,
+              "distance_m_source": "official",
+              "source_distance": 415,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "REGULAR",
+              "tee_color": "#64748b",
+              "distance_m": 420,
+              "distance_m_source": "official",
+              "source_distance": 420,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "CHAMPION",
+              "tee_color": "#64748b",
+              "distance_m": 425,
+              "distance_m_source": "official",
+              "source_distance": 425,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "handicap_index": 1,
+          "tees": [
+            {
+              "tee_code": "lady",
+              "display_name": "LADY",
+              "tee_color": "#64748b",
+              "distance_m": 310,
+              "distance_m_source": "official",
+              "source_distance": 310,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "REGULAR",
+              "tee_color": "#64748b",
+              "distance_m": 315,
+              "distance_m_source": "official",
+              "source_distance": 315,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "CHAMPION",
+              "tee_color": "#64748b",
+              "distance_m": 320,
+              "distance_m_source": "official",
+              "source_distance": 320,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "handicap_index": 6,
+          "tees": [
+            {
+              "tee_code": "lady",
+              "display_name": "LADY",
+              "tee_color": "#64748b",
+              "distance_m": 295,
+              "distance_m_source": "official",
+              "source_distance": 295,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "REGULAR",
+              "tee_color": "#64748b",
+              "distance_m": 300,
+              "distance_m_source": "official",
+              "source_distance": 300,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "CHAMPION",
+              "tee_color": "#64748b",
+              "distance_m": 305,
+              "distance_m_source": "official",
+              "source_distance": 305,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 5,
+          "handicap_index": 15,
+          "tees": [
+            {
+              "tee_code": "lady",
+              "display_name": "LADY",
+              "tee_color": "#64748b",
+              "distance_m": 387,
+              "distance_m_source": "official",
+              "source_distance": 387,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "REGULAR",
+              "tee_color": "#64748b",
+              "distance_m": 392,
+              "distance_m_source": "official",
+              "source_distance": 392,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "CHAMPION",
+              "tee_color": "#64748b",
+              "distance_m": 397,
+              "distance_m_source": "official",
+              "source_distance": 397,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 3,
+          "handicap_index": 13,
+          "tees": [
+            {
+              "tee_code": "lady",
+              "display_name": "LADY",
+              "tee_color": "#64748b",
+              "distance_m": 127,
+              "distance_m_source": "official",
+              "source_distance": 127,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "REGULAR",
+              "tee_color": "#64748b",
+              "distance_m": 132,
+              "distance_m_source": "official",
+              "source_distance": 132,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "CHAMPION",
+              "tee_color": "#64748b",
+              "distance_m": 137,
+              "distance_m_source": "official",
+              "source_distance": 137,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "handicap_index": 1,
+          "tees": [
+            {
+              "tee_code": "lady",
+              "display_name": "LADY",
+              "tee_color": "#64748b",
+              "distance_m": 176,
+              "distance_m_source": "official",
+              "source_distance": 176,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "REGULAR",
+              "tee_color": "#64748b",
+              "distance_m": 281,
+              "distance_m_source": "official",
+              "source_distance": 281,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "CHAMPION",
+              "tee_color": "#64748b",
+              "distance_m": 286,
+              "distance_m_source": "official",
+              "source_distance": 286,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ],
+      "par_source_url": "https://www.yongpyong.co.kr/kor/golf/course/yongpyong9/course.do?section=7"
+    }
+  ]
+}

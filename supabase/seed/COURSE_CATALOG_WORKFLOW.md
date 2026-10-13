@@ -958,3 +958,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 세 경로의 PAR는 모두 36입니다. 공식 티별 9홀 합계와 홀별 합산값은 세종 3,529/3,355/2,740m, 레이 3,496/3,315/2,598m, 캐슬 3,251/3,078/2,479m (Blue/White/Red)로 각각 일치합니다. 각 코스 HDCP는 1~9를 한 번씩 포함합니다.
 - MCST 미진행 `세종레이캐슬골프&리조트`를 `레이캐슬CC`로 정리하고 기존 이름을 별칭으로 유지했습니다. 원격 DB와 관리자 시드를 `--check`로 대조해 구장 1곳·경로 3개·홀 27개·티 81개가 모두 일치했습니다. ScoreTab의 동적 티 선택으로 Blue/White/Red를 선택할 수 있어 별도 UI 변경은 필요하지 않습니다.
 - 원격 카탈로그는 총 516곳: 검수 완료 347, 미진행 163, 반려 6입니다. 미진행은 강원 39, 경기 97, 인천 1, 제주 25, 충남 1곳입니다.
+
+### 2026-10-13 — 용평9 공식 9홀 코스
+- 모나용평 공식 [용평9 홀별 코스 안내](https://www.yongpyong.co.kr/kor/golf/course/yongpyong9/course.do?section=7)에서 9홀 PAR·HDCP와 CHAMPION/REGULAR/LADY 티별 미터 거리를 입력했습니다. 공식 [전체지형도](https://www.yongpyong.co.kr/kor/golf/course/yongpyong9/fullMap.do)는 용평9가 9홀·PAR36임을 확인하는 데 사용했습니다. 자료 파일: `yongpyong9-2026-official-verified.json`.
+- 홀별 티 거리 합계는 Lady 2,388m, Regular 2,533m, Champion 2,578m입니다. 전체지형도에 표시된 5,146yd 길이와 일치하지 않아 홀별 표기값을 보존하고 메모했습니다. 9번 Lady 176m와 HDCP 1 중복, 7번 HDCP15·8번 HDCP13도 공식 페이지 표기대로 저장했습니다.
+- MCST `용평리조트대중골프장`을 공식 코스명 `용평9`로 정리하고 기존 이름을 별칭에 보존했습니다. 관리자 보정 자료와 원격 DB의 `--check`에서 구장 1곳·경로 1개·홀 9개·티 거리 27개가 일치했습니다. ScoreTab은 공통 티 코드를 기준으로 선택지를 구성하므로 CHAMPION/REGULAR/LADY에 UI 수정은 필요하지 않습니다.
+- 원격 카탈로그는 총 516곳: 검수 완료 348, 미진행 162, 반려 6입니다. 미진행은 강원 38, 경기 97, 인천 1, 제주 25, 충남 1곳입니다.
