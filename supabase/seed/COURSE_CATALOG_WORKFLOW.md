@@ -1129,3 +1129,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 공식 티 총계와 홀별 합이 다른 항목은 가든 Black 3,120m 대 3,140m, 팰리스 Red 2,542m 대 2,515m입니다. 홀별 공식 값은 유지하고 코스 메모에 차이를 기록했습니다. 다른 티별 홀 합은 공식 총계와 일치합니다.
 - 원격 DB 대조 결과 구장 verified, 3개 경로·27홀·108개 티 자료이며 seed와 DB 간 코스/PAR/HDCP/거리 행 불일치는 0건입니다.
 - 원격 카탈로그는 총 512곳: 검수 완료 380, 미진행 131, 반려 1입니다. 미진행은 경기 79, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
+
+### 2026-10-13 — 서서울 CC 레이크·힐 공식 코스 자료
+- 서서울CC 공식 [코스개요](https://www.seoseoul.co.kr/html/course/course_01.asp)와 [Lake 홀별 페이지](https://www.seoseoul.co.kr/html/course/course_02_01.asp), [Hill 홀별 페이지](https://www.seoseoul.co.kr/html/course/course_03_01.asp)를 확인해 각 9홀의 PAR·HDCP·Back/Regular/Lady 티별 미터 거리를 반영했습니다. 개요 표에 단위 m가 명시되어 있고, 각 홀 상세의 내용도 개요표와 일치합니다. 자료: `seoseoul-cc-2026-official-verified.json`.
+- 원격 DB 대조 결과 구장 verified, 2개 경로·18홀·54개 티 행입니다. Lake 합계는 PAR36 및 Back/Regular/Lady 2,952/2,795/2,414m, Hill은 PAR36 및 3,108/2,950/2,495m로 공식 합계와 일치합니다.
+- 원격 카탈로그는 총 512곳: 검수 완료 381, 미진행 130, 반려 1입니다.
