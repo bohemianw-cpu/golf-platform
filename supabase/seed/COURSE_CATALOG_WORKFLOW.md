@@ -1,3 +1,6 @@
+### 2026-10-14 — 비에이비스타CC 퍼블릭 BUONA·HOPARK
+- 운영사 공식 [BUONA 코스공략](https://www.bavista.co.kr/Public/Course/Info)과 [HOPARK 코스공략](https://www.bavista.co.kr/Public/Course/Info2)에서 각 9홀 PAR·HDCP와 White·Red 티별 거리를 입력했습니다. 자료: `bavista-public-2026-official-verified.json`.
+- 원격 DB에서 2개 경로·18홀·36개 티 거리 행을 seed와 대조해 누락 0건·불일치 0건을 확인하고 `verified`로 설정했습니다. 카탈로그는 총 512곳: 검수 완료 412, 미진행 99, 반려 1입니다. 미진행은 경기 49, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
 ### 2026-10-14 — 몽베르CC(비회원제) 망무봉 OUT·IN
 - 운영사 공식 [OUT 1번 상세](https://www.montvertcc.com/public/swp/course/one/hole01), [IN 1번 상세](https://www.montvertcc.com/public/swp/course/two/hole01)에서 망무봉 OUT·IN 18홀의 PAR·HDCP·기준거리(m)를 입력했습니다. 티 색깔별 거리는 공개되지 않아 선택 불가 `공식 기준거리` 행을 홀당 하나씩 저장했습니다. 자료: `montvert-public-2026-official-verified.json`.
 - 공식 [코스 제원표](https://www.montvertcc.com/public/swp/courseData)와 상세 페이지 비교에서 OUT 1번 PAR는 제원표 4·상세 5로 달라 상세값을 저장했습니다. IN 상세/제원표 거리 차이는 2번 335/330m, 3번 185/181m, 4번 403/405m, 7번 188/191m입니다. OUT 상세의 HDCP 9번·12번 값은 각각 중복 게시되어 원문 그대로 기록하고 메모했습니다.
@@ -1275,3 +1278,4 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-14 — 솔트베이GC OUT·IN 공식 코스 자료
 - 운영사 공식 [코스 정보](https://www.saltbay.co.kr/Course/CourseInfo)의 OUT·IN 표에서 18홀 PAR·HDCP 및 Black/Blue/White/Yellow/Red 티별 m 거리를 반영했습니다. 코스별 티 합계를 공식 표와 대조했고 모두 일치합니다. 자료: `saltbay-2026-official-verified.json`.
 - 원격 DB에서 2개 경로·18홀·90개 티 행을 대조해 90/90 일치, PAR·HDCP·거리 불일치 0건을 확인했습니다. 카탈로그는 총 512곳: 검수 완료 400, 미진행 111, 반려 1입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
