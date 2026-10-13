@@ -763,3 +763,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스 안내](https://pinxgc.thepinx.co.kr/p/Course)에서 EAST·WEST·NORTH 각 9홀의 PAR·HDCP와 지도 범례에 표시된 티별 미터 거리를 반영했습니다. Black은 공개된 홀만 저장했고, Gold/Blue/White/Red는 전 홀 자료가 있습니다. 일부 홀에만 표시된 `T` 거리도 원문 티명 그대로 개별 보존했으며, 모든 홀에 공통되지 않아 전체 라운드 티 선택지에는 포함되지 않습니다.
 - 공식 소개의 EAST+WEST PAR72·7,361yd와 NORTH PAR36·3,197yd를 각 코스 지도 최대 티의 yard 합계와 대조했습니다. ScoreTab은 이미 경로별 공통 티만 라운드 선택지로 제공하므로 별도 UI 수정은 필요하지 않습니다.
 - 원격 DB에서 핀크스GC `verified`, 3개 경로·27홀·110개 거리 행을 확인했습니다. 전체 카탈로그는 516곳: 검수 완료 313, 미진행 197, 반려 6입니다. 자료 파일: `pinx-gc-2026-official-verified.json`.
+
+### 2026-10-13 — 라비에벨CC 올드·듄스 공식 36홀 자료
+- 운영사 공식 [올드코스 OUT](https://www.lavieestbellegolfnresort.com/oldcourse/pagesite/course/one/hole01.asp), [올드코스 IN](https://www.lavieestbellegolfnresort.com/oldcourse/pagesite/course/two/hole01.asp), [듄스 OUT](https://www.lavieestbellegolfnresort.com/dunescourse/pagesite/course/one/hole01.asp), [듄스 IN](https://www.lavieestbellegolfnresort.com/dunescourse/pagesite/course/two/hole01.asp) 및 각 홀 상세에서 PAR·HDCP·Black/Gold/White/Silver/Red m 자료를 저장했습니다. 4개 경로 모두 각 9홀이고 PAR36입니다.
+- 올드 OUT 2·6번 및 올드 IN 6번 페이지는 Red Tee를 두 번 표기해 두 번째 거리를 `red_extra`로 별도 보존했습니다. 듄스 OUT 6번의 단일 `특설티`도 함께 저장했습니다. 이 4개 부분 티 행은 모든 홀에 있지 않아 라운드 전체 티 선택에서 제외하고, 기본 5개 티는 각 경로에 9홀 모두 있어 선택 가능합니다.
+- 원격 DB에서 구장 및 4개 경로 `verified`, 36홀·184개 티 행, 선택 가능한 기본 티 180개를 확인했습니다. 시드와 DB의 티·거리·PAR·HDCP 비교 불일치 0건입니다. 자료 파일: `lavie-est-belle-2026-official-verified.json`.
+- 현재 카탈로그는 516곳: 검수 완료 314, 미진행 196, 반려 6입니다. 미진행은 강원 47, 경기 121, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
