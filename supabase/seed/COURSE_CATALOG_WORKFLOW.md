@@ -1102,3 +1102,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-13 — 한양파인CC 공식 코스 자료
 - 한양파인CC 공식 [코스공략도](https://www.hypine.co.kr/course/course.asp)에서 코스 1~9홀의 PAR·HDCP와 Blue/White/Red 티별 야드 거리를 입력했습니다. 티별 원본 야드를 보존하고 홀마다 미터로 환산해 저장했습니다. Blue 9홀 원본 합계 3,129yd는 운영사 공식 [코스 소개](https://www.hanyangcc.co.kr/en/course/course5.asp)의 총 전장과 일치합니다. 자료: `hanyang-pine-cc-2026-official-verified.json`.
 - 원격 DB에서 구장 및 경로 verified, PAR36·9홀·27개 티 거리 행을 확인했습니다. 환산 미터 합계는 Blue 2,861m, White 2,450m, Red 2,174m입니다. 전체 카탈로그는 512곳: 검수 완료 375, 미진행 136, 반려 1입니다. 미진행은 경기 84, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
+
+### 2026-10-13 — 솔모로CC 공식 4개 코스 자료
+- 솔모로 공식 [코스 안내](https://www.solmoro.com/Course/Index)와 체리·퍼시먼·파인·메이플 코스의 홀 상세 페이지에서 각 9홀 PAR·HDCP, Red/Yellow/White/Blue/Black 티별 야드 거리를 저장했습니다. 원본 야드를 보존하고 홀별 미터 거리는 환산값으로 함께 저장했습니다. 자료: `solmoro-cc-2026-official-verified.json`.
+- 4개 코스, 36홀, 180개 티 행을 적재했습니다. 공식 코스 안내 총전장 13,852yd와 홀별 Black 거리 합계 13,860yd 사이에 8yd 차이가 있어 홀별 공식 표 값을 유지하고 메모에 남겼습니다. 원격 DB와 seed의 홀·PAR·HDCP·티별 원본 야드 및 환산 거리를 대조한 결과 불일치 0건입니다.
+- 원격 카탈로그는 총 512곳: 검수 완료 376, 미진행 135, 반려 1입니다. 미진행 지역은 경기 83, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
