@@ -27,19 +27,19 @@ node scripts/import-mcst-courses.mjs --input supabase/seed/mcst-courses-2024-12-
 보정 파일은 `supabase/seed/` 아래에 둡니다. 구조 검사는 파일만 읽으며 DB를 변경하지 않습니다. 기존 `course-source-review/1` 자료도 같은 importer에서 처리하며, 좌·우 그린별 티 거리를 별도 티 행으로 펼쳐 저장합니다. `par_source_url`은 라우트 검수 메모에 보존합니다. 출처 검수 상태가 명시적으로 완료된 경우에만 verified로 적용합니다.
 
 ```powershell
-node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-official-review.json
+node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-official-verified.json
 ```
 
 검수 메모, 코스별 9개 홀, 각 홀의 파와 실제 공개된 티 행을 확인합니다. 공식값을 반영할 때는 `--apply`를 사용합니다.
 
 ```powershell
-node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-official-review.json --apply
+node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-official-verified.json --apply
 ```
 
 `--check`는 DB를 변경하지 않고 구장, 코스, 홀, 티 데이터와 기록한 원자료 URL을 파일과 대조합니다. `--apply`는 저장을 마친 뒤 같은 대조를 자동으로 실행합니다.
 
 ```powershell
-node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-official-review.json --check
+node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-official-verified.json --check
 ```
 
 검토가 끝난 항목만 파일에서 `verification_status`를 `verified`로 변경하고 다시 `--apply`, `--check` 순서로 실행합니다. 변경한 자료와 출처 URL을 함께 커밋해 검수 이력을 남깁니다. 코스·티 보정은 동일한 코스 코드로 재실행해 갱신할 수 있습니다.
@@ -482,3 +482,10 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-13 — 금과골프장 공식 사업 자료 재확인
 - DB/MCST의 6홀 항목과 일치하는 주소의 금과골프장 도시계획시설사업은 전라북도 고시 제2004-325호에서 확인됩니다. 고시 자료는 사업 및 위치를 입증하지만, 현재 운영 중인 6개 홀의 PAR·티별 거리 자료나 코스가 현재도 같은 구성인지까지는 확인하지 못했습니다.
 - 현재 운영사 공식 코스 페이지나 거리표를 찾지 못했고, 외부 디렉터리의 6홀·9홀 표기는 서로 달라 참고 수준으로만 기록했습니다. 제3자 수치로 홀 정보를 채우지 않고 pending을 유지합니다.
+
+### 2026-10-13 — 360도 CC (경기 여주)
+- 운영사 공식 [OUT 코스 홀 상세](https://www.360cc.co.kr/mobile/subContents/course/out_01.do)와 [IN 코스 홀 상세](https://www.360cc.co.kr/mobile/subContents/course/in_10.do)에서 현재 운영 경로를 확인했습니다. 각 홀의 PAR·HDCP는 공식 표에 있고, 홀별 상세와 색상선 코스 도면에서 Black·Blue·White·Gold·Red 거리를 확인했습니다. 18홀 전체에서 도면의 Black 거리와 홀 상세 제목의 Yrd 값이 일치해 색상선 거리도 야드로 저장했습니다.
+- 앱 경로는 OUT 1~9번, IN 원문 10~18번을 각각 1~9번으로 정규화했습니다. 두 경로 모두 PAR36이며, 티 5종씩 총 90개 원문 야드 거리와 환산 미터 거리를 저장했습니다. 변환은 1yd=0.9144m, 미터 반올림이며 출처 단위와 원문값도 DB에 보존했습니다.
+- 공식 데스크톱 [코스 개요](https://www.360cc.co.kr/course/courseIntro.do)는 세종·행복 코스명과 현재 OUT·IN 홀 상세와 다른 PAR 배열을 표시합니다. KGA 2023 [코스레이팅 현황](https://www.kgagolf.or.kr/infor/infor_data/AllRatings_23.pdf)의 합산 티 거리(Black 7,026yd, Blue 6,604yd, White 6,295yd, Gold 5,577yd, Red 4,700yd)도 공식 모바일 도면의 합계(7,036/6,667/6,312/5,809/4,953yd)와 차이가 있습니다. 현재 라운드에서 선택하는 공식 OUT·IN 홀 상세와 도면을 사용하고 두 출처 차이를 구장 검수 메모에 보존했습니다.
+- 기존 `SEJONG`·`HAENGBOG` 대기 레코드는 `OUT`·`IN` 현행 경로로 갱신했습니다. 관리자 적재 형식 검사를 통과했고, 원격 DB에서 구장 verified, 경로 2개, 홀 18개, 티 90개 및 PAR·HDCP·거리·단위·티 선택 속성을 seed와 대조해 불일치 0건을 확인했습니다. 자료 파일: `360cc-2026-official-verified.json`.
+- 적재 뒤 원격 카탈로그는 검수 완료 271곳, 미진행 240곳, 반려 5곳(총 516곳)입니다. 지역별 미진행은 강원 55, 경기 140, 경북 1, 세종 1, 인천 10, 전남 1, 전북 3, 제주 28, 충남 1곳이며 부산·울산·경남은 0곳입니다.
