@@ -1,0 +1,77 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "뉴스프링빌골프장(대중형)",
+      "name": "뉴스프링빌CC(대중형)",
+      "region": "경기",
+      "address": "경기도 이천시 모가면 사실로 527번길 158",
+      "aliases": [
+        "뉴스프링빌골프장(대중형)",
+        "뉴스프링빌 와이트혼",
+        "뉴스프링빌 화이트혼",
+        "New Springville Whitehorn"
+      ],
+      "hole_count": 9,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "운영사 공식 대중제 와이트혼 코스 안내의 9홀 PAR와 Red/White 티별 야드 거리를 저장했습니다. 원문 yd를 보존하고 1yd=0.9144m로 환산했습니다. 홀별 HDCP는 공식 자료에 공개되지 않아 입력하지 않았습니다.",
+        "공식 페이지 요약 전장 3,385yd는 홀별 White 합계 2,955yd 및 Red 합계 2,694yd와 일치하지 않습니다. 홀별 공식 값을 기준으로 저장하고 요약 전장 차이를 기록합니다.",
+        "공식 출처(2026-10-13 확인): https://icheon.newspring.co.kr/Course/Public?tab=1"
+      ],
+      "routes": [
+        {
+          "route_code": "WHITEHORN",
+          "display_name": "와이트혼 코스",
+          "hole_count": 9,
+          "primary_tee_code": "white",
+          "verification_status": "verified",
+          "source_url": "https://icheon.newspring.co.kr/Course/Public?tab=1",
+          "source_data_url": "https://icheon.newspring.co.kr/Course/Public?tab=1",
+          "review_notes": [
+            "공식 홀 설명에서 확인한 PAR는 3, 4, 3, 4, 4, 4, 5, 5, 4입니다. 공식 홀별 표에는 Red와 White 두 티만 공개되어 있습니다."
+          ],
+          "holes": [
+            { "hole_number": 1, "par": 3, "handicap_index": null, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#ef4444", "distance_m": 105, "distance_m_source": "converted", "source_distance": 115, "source_unit": "yd" },
+              { "tee_code": "white", "display_name": "White", "tee_color": "#f8fafc", "distance_m": 105, "distance_m_source": "converted", "source_distance": 115, "source_unit": "yd" }
+            ] },
+            { "hole_number": 2, "par": 4, "handicap_index": null, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#ef4444", "distance_m": 292, "distance_m_source": "converted", "source_distance": 319, "source_unit": "yd" },
+              { "tee_code": "white", "display_name": "White", "tee_color": "#f8fafc", "distance_m": 315, "distance_m_source": "converted", "source_distance": 345, "source_unit": "yd" }
+            ] },
+            { "hole_number": 3, "par": 3, "handicap_index": null, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#ef4444", "distance_m": 89, "distance_m_source": "converted", "source_distance": 97, "source_unit": "yd" },
+              { "tee_code": "white", "display_name": "White", "tee_color": "#f8fafc", "distance_m": 124, "distance_m_source": "converted", "source_distance": 136, "source_unit": "yd" }
+            ] },
+            { "hole_number": 4, "par": 4, "handicap_index": null, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#ef4444", "distance_m": 290, "distance_m_source": "converted", "source_distance": 317, "source_unit": "yd" },
+              { "tee_code": "white", "display_name": "White", "tee_color": "#f8fafc", "distance_m": 369, "distance_m_source": "converted", "source_distance": 404, "source_unit": "yd" }
+            ] },
+            { "hole_number": 5, "par": 4, "handicap_index": null, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#ef4444", "distance_m": 304, "distance_m_source": "converted", "source_distance": 332, "source_unit": "yd" },
+              { "tee_code": "white", "display_name": "White", "tee_color": "#f8fafc", "distance_m": 304, "distance_m_source": "converted", "source_distance": 332, "source_unit": "yd" }
+            ] },
+            { "hole_number": 6, "par": 4, "handicap_index": null, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#ef4444", "distance_m": 245, "distance_m_source": "converted", "source_distance": 268, "source_unit": "yd" },
+              { "tee_code": "white", "display_name": "White", "tee_color": "#f8fafc", "distance_m": 245, "distance_m_source": "converted", "source_distance": 268, "source_unit": "yd" }
+            ] },
+            { "hole_number": 7, "par": 5, "handicap_index": null, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#ef4444", "distance_m": 357, "distance_m_source": "converted", "source_distance": 390, "source_unit": "yd" },
+              { "tee_code": "white", "display_name": "White", "tee_color": "#f8fafc", "distance_m": 430, "distance_m_source": "converted", "source_distance": 470, "source_unit": "yd" }
+            ] },
+            { "hole_number": 8, "par": 5, "handicap_index": null, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#ef4444", "distance_m": 411, "distance_m_source": "converted", "source_distance": 450, "source_unit": "yd" },
+              { "tee_code": "white", "display_name": "White", "tee_color": "#f8fafc", "distance_m": 421, "distance_m_source": "converted", "source_distance": 460, "source_unit": "yd" }
+            ] },
+            { "hole_number": 9, "par": 4, "handicap_index": null, "tees": [
+              { "tee_code": "red", "display_name": "Red", "tee_color": "#ef4444", "distance_m": 371, "distance_m_source": "converted", "source_distance": 406, "source_unit": "yd" },
+              { "tee_code": "white", "display_name": "White", "tee_color": "#f8fafc", "distance_m": 389, "distance_m_source": "converted", "source_distance": 425, "source_unit": "yd" }
+            ] }
+          ]
+        }
+      ]
+    }
+  ]
+}
