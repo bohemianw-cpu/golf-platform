@@ -620,3 +620,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 원문 야드 73행을 보존하고 `1yd=0.9144m`로 환산한 정수 미터를 저장했습니다. 두 경로는 각각 PAR36, 합계 PAR72입니다. Mountain 공식 티 합계 Tournament/Champion/Regular/Ladies 3,415/3,198/2,959/2,533yd, Lake 합계 3,687/3,475/3,192/2,696yd와 홀별 원문 합이 일치합니다. Silver Tee는 Mountain 7번 상세에만 제공됩니다.
 - `konjiam-2026-official-verified.json` 관리자 적재 구조 검사를 통과했습니다. 원격 DB에 두 경로·18홀·73개 티 거리를 반영했고, seed와 DB의 홀별 PAR·HDCP 및 티 코드·명칭·색상·원문 단위·거리·환산값·선택 상태를 대조해 73행 일치, 불일치 0건을 확인했습니다. 곤지암GC를 `verified`로 전환했습니다.
 - 원격 전체 카탈로그는 총 516곳 — 검수 완료 290, 미진행 221, 반려 5입니다. 남부 인접 pending 중 사용자 공식 자료 확인이 필요한 두 곳은 블루원상주GC와 금과골프장입니다.
+
+### 2026-10-13 — 남부 pending 공식 자료 조사 및 에스페란사 기준 코스 반영
+- 레이캐슬CC 운영사 공식 [세종](https://www.sjraycastle.com/Golf/Course/Sejong.aspx)·[레이](https://www.sjraycastle.com/Golf/Course/Ray.aspx)·[캐슬](https://www.sjraycastle.com/Golf/Course/Castle.aspx) 코스 페이지를 확인했습니다. 코스별 6개 이미지 슬라이더는 경관 사진이고 텍스트에도 홀별 PAR·티 거리가 없어 현재 자료로는 적재하지 않았습니다. `세종레이캐슬골프&리조트`는 pending을 유지합니다.
+- 전라북도 도보의 김제시 공고 제2014-150호 [원문 PDF](https://www.jeonbuk.go.kr/upload_data/board_data/BBS_0000017/139475801308187.pdf) 붙임3 코스세부시설 조서에서 에스페란사 10개 홀의 PAR와 길이를 확인했습니다. 총 PAR35·1,866m이며 DB의 9홀과 달라 MCST의 개수를 그대로 쓰지 않고 공식 조서의 10홀로 정정했습니다. 현재 운영사 티별 제원은 확인되지 않아 홀 길이는 선택 불가 `official_reference` 행으로 저장하고 구장·경로는 `pending`에 두었습니다. 자료 파일: `esperansa-2026-official-partial-pending.json`.
+- 원격 DB에서 에스페란사 10홀·PAR35·1,866m·참고거리 10행, 티 선택 불가 및 pending 상태를 확인했습니다. 전체 카탈로그는 총 516곳 — 검수 완료 290, 미진행 221, 반려 5입니다. 사용자 확인 자료를 기다리는 대상은 블루원상주GC와 금과골프장입니다.

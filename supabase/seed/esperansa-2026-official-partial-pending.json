@@ -1,0 +1,203 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_pending",
+  "venue": {
+    "name": "에스페란사GC",
+    "match_name": "에스페란사GC",
+    "region": "전북",
+    "address": "전북특별자치도 김제시 금구면 낙산로 120",
+    "hole_count": 10,
+    "supports_screen": false,
+    "review_notes": [
+      "전라북도 도보에 게재된 김제시 공고 제2014-150호의 코스세부시설 조서에서 10개 홀의 홀 길이와 PAR를 확인했습니다. 공식 조서 합계는 1,866m·PAR35입니다.",
+      "이 자료는 행정 인가 문서이며 현재 운영사의 티별 제원표가 아닙니다. 홀별 기준 길이만 공식 참고거리로 저장하고 티 선택은 불가하게 둡니다. 최신 공식 티별 거리 자료가 확인될 때까지 구장과 코스 검수 상태는 pending입니다."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "ESPERANSA",
+      "display_name": "에스페란사 코스",
+      "hole_count": 10,
+      "source_url": "https://www.jeonbuk.go.kr/upload_data/board_data/BBS_0000017/139475801308187.pdf",
+      "par_source_url": "https://www.jeonbuk.go.kr/upload_data/board_data/BBS_0000017/139475801308187.pdf",
+      "source_data_url": "https://www.jeonbuk.go.kr/upload_data/board_data/BBS_0000017/139475801308187.pdf",
+      "review_notes": [
+        "김제시 공고 제2014-150호 붙임3 코스세부시설 조서의 Hole·길이(m)·Par 열을 입력했습니다. 코스 조서는 10홀(1,866m, PAR35)입니다.",
+        "공식 문서에서 티별 위치/색/거리를 제공하지 않아 각 홀의 길이는 선택할 수 없는 공식 참고거리로 저장합니다. 현행 운영사 홀별 티 제원이 없어 verified 처리하지 않습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 3,
+          "handicap_index": null,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 참고거리",
+              "tee_color": "#94a3b8",
+              "distance_m": 162,
+              "distance_m_source": "official",
+              "source_distance": 162,
+              "source_unit": "m",
+              "tee_selection_available": false
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "handicap_index": null,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 참고거리",
+              "tee_color": "#94a3b8",
+              "distance_m": 323,
+              "distance_m_source": "official",
+              "source_distance": 323,
+              "source_unit": "m",
+              "tee_selection_available": false
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 3,
+          "handicap_index": null,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 참고거리",
+              "tee_color": "#94a3b8",
+              "distance_m": 113,
+              "distance_m_source": "official",
+              "source_distance": 113,
+              "source_unit": "m",
+              "tee_selection_available": false
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 3,
+          "handicap_index": null,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 참고거리",
+              "tee_color": "#94a3b8",
+              "distance_m": 83,
+              "distance_m_source": "official",
+              "source_distance": 83,
+              "source_unit": "m",
+              "tee_selection_available": false
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 3,
+          "handicap_index": null,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 참고거리",
+              "tee_color": "#94a3b8",
+              "distance_m": 110,
+              "distance_m_source": "official",
+              "source_distance": 110,
+              "source_unit": "m",
+              "tee_selection_available": false
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "handicap_index": null,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 참고거리",
+              "tee_color": "#94a3b8",
+              "distance_m": 334,
+              "distance_m_source": "official",
+              "source_distance": 334,
+              "source_unit": "m",
+              "tee_selection_available": false
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 3,
+          "handicap_index": null,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 참고거리",
+              "tee_color": "#94a3b8",
+              "distance_m": 113,
+              "distance_m_source": "official",
+              "source_distance": 113,
+              "source_unit": "m",
+              "tee_selection_available": false
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 4,
+          "handicap_index": null,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 참고거리",
+              "tee_color": "#94a3b8",
+              "distance_m": 199,
+              "distance_m_source": "official",
+              "source_distance": 199,
+              "source_unit": "m",
+              "tee_selection_available": false
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "handicap_index": null,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 참고거리",
+              "tee_color": "#94a3b8",
+              "distance_m": 211,
+              "distance_m_source": "official",
+              "source_distance": 211,
+              "source_unit": "m",
+              "tee_selection_available": false
+            }
+          ]
+        },
+        {
+          "hole_number": 10,
+          "par": 4,
+          "handicap_index": null,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 참고거리",
+              "tee_color": "#94a3b8",
+              "distance_m": 218,
+              "distance_m_source": "official",
+              "source_distance": 218,
+              "source_unit": "m",
+              "tee_selection_available": false
+            }
+          ]
+        }
+      ],
+      "primary_tee_code": "official_reference"
+    }
+  ]
+}
