@@ -274,12 +274,15 @@ async function verifyCourse(correction, courseId) {
     if (!savedRoute.source_checked_at) throw new Error(`${correction.name}/${expectedRoute.route_code}: DB에 공식 자료 확인 시각이 없습니다.`)
 
     const { data: holeRows, error: holeError } = await supabase.from('golf_course_holes')
-      .select('id,hole_number,par,handicap_index').eq('route_id', savedRoute.id).order('hole_number')
+      .select('id,hole_number,play_order,par,handicap_index').eq('route_id', savedRoute.id).order('play_order')
     if (holeError) throw holeError
     if ((holeRows ?? []).length !== expectedRoute.holes.length) throw new Error(`${correction.name}/${expectedRoute.route_code}: 홀 수 불일치 (DB=${holeRows?.length ?? 0}, seed=${expectedRoute.holes.length})`)
     const expectedHoleNumbers = expectedRoute.holes.map((hole) => hole.hole_number).sort((a, b) => a - b)
     const actualHoleNumbers = (holeRows ?? []).map((hole) => hole.hole_number).sort((a, b) => a - b)
     if (!sameValue(actualHoleNumbers, expectedHoleNumbers)) throw new Error(`${correction.name}/${expectedRoute.route_code}: DB 홀 번호 구성이 seed와 다릅니다 (DB=${JSON.stringify(actualHoleNumbers)}, seed=${JSON.stringify(expectedHoleNumbers)})`)
+    const expectedPlayOrder = expectedRoute.holes.map((hole, index) => ({ hole_number: hole.hole_number, play_order: index + 1 }))
+    const actualPlayOrder = (holeRows ?? []).map(({ hole_number, play_order }) => ({ hole_number, play_order }))
+    if (!sameValue(actualPlayOrder, expectedPlayOrder)) throw new Error(`${correction.name}/${expectedRoute.route_code}: DB 플레이 순서가 seed와 다릅니다 (DB=${JSON.stringify(actualPlayOrder)}, seed=${JSON.stringify(expectedPlayOrder)})`)
     const { data: teeRows, error: teeError } = await supabase.from('golf_course_hole_tees')
       .select('id,hole_id,tee_code,display_name,tee_color,tee_selection_available,distance_m,distance_m_source,source_distance,source_unit,green_code,green_name,handicap_index,par')
       .in('hole_id', (holeRows ?? []).map((hole) => hole.id))
@@ -390,14 +393,15 @@ for (const sourceCorrection of corrections) {
   for (const route of correction.routes ?? []) {
     const savedRoute = savedRoutes?.find((row) => row.route_code === route.route_code)
     if (!savedRoute) throw new Error(`${correction.name}/${route.route_code}: 저장된 코스 ID를 확인하지 못했습니다.`)
-    const holes = route.holes.map((hole) => ({
+    const holes = route.holes.map((hole, index) => ({
       route_id: savedRoute.id,
       hole_number: hole.hole_number,
+      play_order: index + 1,
       par: hole.par,
       handicap_index: hole.handicap_index ?? null,
     }))
     const { data: savedHoles, error: holesError } = await supabase.from('golf_course_holes')
-      .upsert(holes, { onConflict: 'route_id,hole_number' }).select('id,hole_number')
+      .upsert(holes, { onConflict: 'route_id,hole_number' }).select('id,hole_number,play_order')
     if (holesError) throw holesError
     const holeIdByNumber = new Map((savedHoles ?? []).map((hole) => [hole.hole_number, hole.id]))
     const { data: existingTeeRows, error: existingTeesError } = await supabase.from('golf_course_hole_tees')

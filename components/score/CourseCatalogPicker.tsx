@@ -161,9 +161,9 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
 
       const { data: holeData, error: holeError } = await supabase
         .from('golf_course_holes')
-        .select('id,route_id,hole_number,par,handicap_index')
+        .select('id,route_id,hole_number,play_order,par,handicap_index')
         .in('route_id', routeRows.map((route) => route.id))
-        .order('hole_number')
+        .order('play_order')
       if (holeError) throw holeError
       const holeRows = (holeData ?? []) as Omit<GolfCourseHole, 'tees'>[]
       const { data: teeData, error: teeError } = holeRows.length
@@ -256,6 +256,7 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
                       const checked = routeUseCount > 0
                       const cannotAdd = !checked && selectedHoleCount + route.hole_count > 18
                       const canRepeat = checked && selectedHoleCount + route.hole_count <= 18
+                      const isNineHoleChoice = selectedCourse.hole_count === 9 && selectedCourseRoutes.length === 1 && route.hole_count === 9
                       return <div key={route.id} style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
                         <label style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '11px', color: '#334155' }}>
                           <input type="checkbox" checked={checked} disabled={locked || cannotAdd} onChange={() => {
@@ -274,7 +275,7 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
                           }} aria-label={`${route.display_name} ${route.hole_count}홀 코스`} />
                           {route.display_name} ({route.hole_count}홀{routeUseCount > 1 ? ` · ${routeUseCount}회 선택` : ''})
                         </label>
-                        {canRepeat && <button type="button" disabled={locked} aria-label={`${route.display_name} 코스 ${route.hole_count}홀 추가 반복`} onClick={() => {
+                        {canRepeat && !isNineHoleChoice && <button type="button" disabled={locked} aria-label={`${route.display_name} 코스 ${route.hole_count}홀 추가 반복`} onClick={() => {
                           const next = [...selectedRoutes, route]
                           const options = completeTeeOptions(next, next.reduce((sum, item) => sum + item.hole_count, 0))
                           const retained = options.find((item) => item.tee_code === teeCode) ?? null
@@ -283,6 +284,18 @@ export default function CourseCatalogPicker({ courseId, routeIds, teeCode, locke
                       </div>
                     })}
                   </div>
+                  {selectedCourse.hole_count === 9 && selectedCourseRoutes.length === 1 && selectedCourseRoutes[0].hole_count === 9 && selectedRoutes.length > 0 && selectedRoutes.every((route) => route.id === selectedCourseRoutes[0].id) && (
+                    <fieldset style={{ display: 'flex', gap: '14px', margin: '8px 0 0', padding: '6px 8px', border: '1px solid #cbd5e1', borderRadius: '6px' }}>
+                      <legend style={{ fontSize: '10px', fontWeight: 700 }}>라운드 홀 수</legend>
+                      {[9, 18].map((count) => <label key={count} style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '11px' }}>
+                        <input type="radio" name="course-hole-count" value={count} checked={selectedHoleCount === count} disabled={locked} onChange={() => {
+                          const next = Array.from({ length: count / 9 }, () => selectedCourseRoutes[0])
+                          onRoutesChange(next, null, null)
+                        }} />
+                        {count}홀
+                      </label>)}
+                    </fieldset>
+                  )}
                   <div style={{ marginTop: '5px', fontSize: '10px', color: '#64748b' }}>
                     선택 순서: {selectedRoutes.length ? selectedRoutes.map((route) => route.display_name).join(' → ') : '미선택'}
                   </div>

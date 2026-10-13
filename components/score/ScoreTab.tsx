@@ -52,6 +52,7 @@ export default function ScoreTab() {
         <RoundReport
           completedHoles={completedHoles}
           holePars={round.holePars}
+          courseHoleNumbers={round.routeHoles?.map((hole) => hole.hole_number)}
           clubs={clubs}
           currentCcName={round.golfClubName.trim() || undefined}
           onBackToScore={() => round.setShowRoundReport(false)}
@@ -226,6 +227,7 @@ export default function ScoreTab() {
         <div style={{ padding: '2px' }}>
           <div style={statLabel}>진행 홀</div>
           <div style={{ ...statValue, color: '#38bdf8' }}>{currentHole}H</div>
+          {round.routeHoles?.[currentHole - 1] && <div style={statSub}>코스 {round.routeHoles[currentHole - 1].hole_number}번 홀</div>}
         </div>
         <div style={{ padding: '2px', borderLeft: '1px solid #1e293b' }}>
           <div style={statLabel}>기준파 대비</div>
@@ -291,7 +293,7 @@ export default function ScoreTab() {
 
       <ClubStatsTable clubs={clubs} clubStats={round.clubStatsAll} clubApproach={round.clubApproach} />
 
-      <Scorecard holePars={round.holePars} completedHoles={completedHoles} routeNames={round.courseName.split(' → ')} />
+      <Scorecard holePars={round.holePars} completedHoles={completedHoles} routeNames={round.courseName.split(' → ')} courseHoleNumbers={round.routeHoles?.map((hole) => hole.hole_number)} />
 
       <ClubModal
         clubs={clubs}

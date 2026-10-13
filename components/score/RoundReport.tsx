@@ -6,6 +6,7 @@ import type { ClubItem, HoleRecord } from '@/types/golf'
 interface RoundReportProps {
   completedHoles?: HoleRecord[]
   holePars?: number[]
+  courseHoleNumbers?: number[]
   clubs?: ClubItem[]
   currentCcName?: string
   onBackToScore?: () => void
@@ -15,7 +16,7 @@ interface RoundReportProps {
 const card: CSSProperties = { background: '#fff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '16px' }
 const muted: CSSProperties = { color: '#64748b', fontSize: '12px', lineHeight: 1.6 }
 
-export default function RoundReport({ completedHoles = [], currentCcName, onBackToScore, onStartNewRound }: RoundReportProps) {
+export default function RoundReport({ completedHoles = [], courseHoleNumbers, currentCcName, onBackToScore, onStartNewRound }: RoundReportProps) {
   const holes = completedHoles
   const totalScore = holes.reduce((sum, hole) => sum + hole.score, 0)
   const totalPar = holes.reduce((sum, hole) => sum + hole.par, 0)
@@ -59,7 +60,7 @@ export default function RoundReport({ completedHoles = [], currentCcName, onBack
         <h2 id="report-holes-title" style={{ margin: '0 0 10px', fontSize: '16px' }}>홀별 기록과 샷</h2>
         {holes.length === 0 ? <p style={muted}>저장된 홀 기록이 없습니다.</p> : <div style={{ display: 'grid', gap: '8px' }}>
           {holes.map((hole) => <article key={hole.holeNumber} style={{ border: '1px solid #e2e8f0', borderRadius: '9px', padding: '10px', background: '#f8fafc' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', gap: '8px', fontSize: '12px' }}><strong>{hole.holeNumber}번 홀 · Par {hole.par}</strong><span>{hole.score}타 · 퍼트 {hole.putts} · {hole.gir ? 'GIR' : 'GIR 미달'}</span></div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', gap: '8px', fontSize: '12px' }}><strong>{hole.holeNumber}번째 · 코스 {courseHoleNumbers?.[hole.holeNumber - 1] ?? hole.holeNumber}번 홀 · Par {hole.par}</strong><span>{hole.score}타 · 퍼트 {hole.putts} · {hole.gir ? 'GIR' : 'GIR 미달'}</span></div>
             <ol style={{ margin: '7px 0 0', paddingLeft: '20px', display: 'grid', gap: '4px', color: '#475569', fontSize: '11px' }}>
               {hole.shots.map((shot) => <li key={`${hole.holeNumber}-${shot.shotNumber}`}>{shot.club} · {shot.shotDistance}m · {shot.ballLie}{shot.penalty ? ` · 벌타 ${shot.penalty}` : ''}</li>)}
               {hole.shots.length === 0 && <li style={{ color: '#94a3b8' }}>샷 상세가 저장되지 않았습니다.</li>}

@@ -60,6 +60,7 @@ export interface GolfCourseHole {
   id: string
   route_id: string
   hole_number: number
+  play_order: number
   par: number
   handicap_index: number | null
   tees: GolfCourseTee[]

@@ -624,11 +624,11 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
         routeRows = round.route_ids.flatMap((id) => routeMap.get(id) ? [routeMap.get(id)!] : [])
         const { data: holeData, error: courseHolesError } = await supabase
           .from('golf_course_holes')
-          .select('id,route_id,hole_number,par,handicap_index')
+          .select('id,route_id,hole_number,play_order,par,handicap_index')
           .in('route_id', round.route_ids)
-          .order('hole_number')
+          .order('play_order')
         if (courseHolesError) throw courseHolesError
-        const courseHoles = (holeData ?? []) as { id: string; route_id: string; hole_number: number; par: number; handicap_index: number | null }[]
+        const courseHoles = (holeData ?? []) as { id: string; route_id: string; hole_number: number; play_order: number; par: number; handicap_index: number | null }[]
         const { data: teeData, error: courseTeesError } = courseHoles.length
           ? await supabase.from('golf_course_hole_tees')
             .select('hole_id,tee_code,display_name,tee_color,tee_selection_available,distance_m,distance_m_source,source_distance,source_unit,green_code,green_name,par')
@@ -1113,7 +1113,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs) {
     golfClubName, setGolfClubName, courseName, setCourseName, playMode, setPlayMode, courseId, setCourseId, routeIds, setRouteIds, teeCode, teeName, routeDistances, greenCodes, greenNames, configureCourseRoutes,
     currentRoundId, isSaving, saveError, retrySync, ready,
     // 진행 상태
-    currentHole, currentPar, holeDistance, currentShots, completedHoles,
+    currentHole, currentPar, holeDistance, currentShots, completedHoles, routeHoles,
     currentGreenOptions, currentGreenCode: greenCodes[currentHole - 1] ?? 'standard', changeGreen,
     isRoundComplete, showRoundReport, setShowRoundReport, holePars,
     // 입력 상태
