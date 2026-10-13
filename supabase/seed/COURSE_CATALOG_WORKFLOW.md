@@ -970,3 +970,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 공식 두 번째 Yellow 행은 설악코스 홀별 표시값 합계가 2,375m인데 표기 합계는 2,675m이며, 밸리코스는 표시된 315m·285m 합계가 600m인데 표기 합계는 2,390m입니다. 홀별 표시값을 보존하고 두 행의 합계 불일치를 경로 메모에 남겼습니다. 이 두 Yellow 행은 일부 홀 값이 없어 라운드 전체에 사용할 티로 선택되지 않습니다.
 - 원격 DB에 구장 1곳·경로 3개·홀 27개·티 거리 112개를 반영했습니다. 관리자 적재기 원격 `--check`에서 seed/DB 대조 불일치 0건을 확인했습니다. 공통으로 거리가 있는 Blue/White/Red 티는 ScoreTab에서 선택할 수 있으며 UI 수정은 필요하지 않습니다.
 - 원격 카탈로그는 총 516곳: 검수 완료 349, 미진행 161, 반려 6입니다. 미진행 지역은 강원 37, 경기 97, 인천 1, 제주 25, 충남 1곳입니다.
+
+### 2026-10-13 — 소노펠리체 CC 델피노 공식 OUT·IN 코스
+- 소노호텔앤리조트 공식 [OUT 코스](https://hotel.sonohotelsresorts.com/dp.course.delpinoCourseInfo.dp/dmparse.dm?on_flag=01)와 [IN 코스](https://hotel.sonohotelsresorts.com/dp.course.delpinoCourseInfo.dp/dmparse.dm?on_flag=02)에서 각각 9홀의 티별 미터 거리를 수집했습니다. 코스맵 PAR는 OUT·IN 각 36이며, 개별 페이지의 홀 상세 티 행을 입력했습니다. HDCP는 공개되지 않았습니다. 자료 파일: `delpino-2026-official-verified.json`.
+- 공식 페이지의 홀 상세와 코스맵이 일부 다릅니다. OUT 1번은 코스맵 329m 대 홀 상세 CHAMPION 170m, OUT 2번 PAR는 상세 제목 4 대 코스맵 5입니다. IN은 13번 코스맵/제목 338m 대 CHAMPION 388m, 14번 167m 대 CHAMPION 145m, 16번 제목 420m 대 코스맵/CHAMPION 437m입니다. 티별 상세 거리와 코스맵 PAR 행을 저장하고 차이를 경로 메모에 남겼습니다.
+- SENIOR 거리가 없는 OUT 1·4·7번과 일부 홀에만 있는 LADY2도 공식 표시값만 저장했습니다. 원격 DB 반영 후 관리자 `--check`에서 구장 1곳·경로 2개·홀 18개·티 73개 모두 일치했습니다. 전체 홀에 존재하는 CHAMPION/WHITE/LADY 티는 라운드 선택에 제공되며, 거리가 부분적으로 공개된 SENIOR/LADY2는 공통 티 선택에서 제외됩니다.
+- 원격 카탈로그는 총 516곳: 검수 완료 350, 미진행 160, 반려 6입니다. 미진행 지역은 강원 36, 경기 97, 인천 1, 제주 25, 충남 1곳입니다.
