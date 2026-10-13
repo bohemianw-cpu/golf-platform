@@ -693,3 +693,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스 제원표](https://www.ecolandjeju.co.kr/view/viewLink.do?page=homepage%2FENG%2Fcourse%2Fcourse_spec)와 [ECO 홀별 공략](https://www.ecolandjeju.co.kr/view/viewLink.do?page=mobile%2FKOR%2Fcourse%2Fstrategy_eco)를 대조했습니다. 홀별 PAR·HDCP와 BLUE/WHITE/GOLD/RED 티 데이터가 9홀 전체에 있어 4개 완전 티 선택열을 제공합니다. 홀별 상세에만 나온 BLACK 티는 5번 한 홀에 보존했고, 전 홀에 존재하지 않으므로 라운드 티 선택지에는 넣지 않습니다.
 - 제원표의 7번 PAR4와 홀별 상세의 PAR3가 다릅니다. 스코어 기준은 제원표의 PAR36을 사용합니다. 5번 홀의 티 레이블·거리열도 두 원문에서 달라 홀별 상세 거리를 보존하고 차이를 검수 메모에 남겼습니다. 상세 기준 BLUE/WHITE/GOLD/RED 합계는 3,160/2,941/2,707/2,474m이고, 제원표 합계는 3,184/2,964/2,729/2,493m입니다.
 - 원격 DB에서 ECO 9홀·37개 거리행, BLUE/WHITE/GOLD/RED 각 9홀 완비와 BLACK 5번 홀 1행, 경로 `verified`를 확인했습니다. 모든 684개 경로가 `verified`입니다. 전체 516곳의 구장 상태는 검수 완료 301, 미진행 210, 반려 5입니다. 자료 파일: `ecoland-jeju-2026-official-review.json`.
+
+### 2026-10-13 — 포웰CC 김해 스카이 3번 Yellow 거리 정정
+- 사용자가 확인한 스카이 3번 PAR3 Yellow Tee 138m를 관리자 seed와 원격 DB에 추가했습니다. 기존 홀 이미지의 `420m` 표기 때문에 누락했던 행을 138m로 정정했으며, 티 색상은 Yellow로 저장했습니다.
+- 해당 Yellow 행은 이 홀에만 확인되었으므로 라운드 전체 티 선택지는 되지 않습니다. ScoreTab은 모든 홀에 있는 동일 티만 완주 티 옵션으로 제공하며, 다른 티 행은 추정해 만들지 않았습니다. 자료 파일: `powel-gimhae-2026-official-verified.json`.

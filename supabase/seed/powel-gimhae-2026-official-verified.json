@@ -130,6 +130,15 @@
                   "display_name": "White Tee"
                 },
                 {
+                  "source_distance": 138,
+                  "source_unit": "m",
+                  "distance_m_source": "official",
+                  "tee_color": "#eab308",
+                  "distance_m": 138,
+                  "tee_code": "yellow",
+                  "display_name": "Yellow Tee"
+                },
+                {
                   "source_distance": 120,
                   "source_unit": "m",
                   "distance_m_source": "official",
@@ -417,7 +426,7 @@
             "공식 코스공략 페이지의 홀별 이미지에 표시된 티별 거리를 m 단위로 옮겼습니다. 공식 코스정보 페이지의 코스 길이와 Black Tee 9홀 합계가 일치합니다.",
             "홀별 파는 공식 코스공략 페이지의 각 홀 제목에서 확인했습니다. 공식 공개 자료에 홀별 핸디캡 인덱스가 없어 입력하지 않았습니다.",
             "홀별 원자료 이미지: https://www.4wellcc.co.kr/images/course/hole_sky01.jpg ~ hole_sky09.jpg",
-            "스카이 3번 홀 노란 티 이미지에는 420으로 표시되어 파3 및 다른 티 거리와 현저히 맞지 않아 저장에서 제외했습니다. 구장 확인 대상입니다."
+            "스카이 3번 홀 Yellow Tee는 기존 코스 이미지에 420m로 표시되어 비정상 값으로 제외했으나, 사용자 확인값 138m로 정정해 저장했습니다."
           ],
           "hole_count": 9
         },
@@ -864,7 +873,7 @@
       "region": "경남",
       "review_notes": [
         "포웰CC 공식 코스정보 페이지는 스카이 3,246m·힐 3,157m를 안내합니다. 두 코스의 공식 홀별 이미지에서 티별 거리와 공략 페이지의 파를 확인했습니다.",
-        "스카이 3번 홀 Yellow Tee가 이미지상 420m로 비정상 표시되어 제외했습니다. 공식 데이터 수정 또는 구장 확인이 필요한 특이사항입니다.",
+        "스카이 3번 홀 Yellow Tee는 기존 코스 이미지에 420m로 표시되어 비정상 값으로 제외했으나, 사용자 확인값 138m로 정정해 저장했습니다.",
         "출처: https://www.4wellcc.co.kr/course/courseIntro.asp, https://www.4wellcc.co.kr/course/course.asp (2026-10-12 확인)."
       ]
     }
