@@ -1,0 +1,339 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "링크나인GC",
+      "name": "링크나인GC",
+      "region": "경기",
+      "address": "경기도 화성시 마도면 해운로 630번길 49",
+      "aliases": [
+        "링크나인 골프클럽",
+        "링크나인컨트리클럽"
+      ],
+      "hole_count": 9,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "링크나인GC 공식 코스개요의 9홀 PAR와 Mens/Social/Ladies 홀별 미터 거리를 반영했습니다. 공식 자료의 티 표기는 색상이 아닌 Mens/Social/Ladies로 저장했습니다."
+      ],
+      "routes": [
+        {
+          "route_code": "main",
+          "display_name": "링크나인 코스",
+          "hole_count": 9,
+          "primary_tee_code": "mens",
+          "verification_status": "verified",
+          "source_url": "https://www.linknine.co.kr/html/course/course01.asp",
+          "source_data_url": "https://www.linknine.co.kr/html/course/course01.asp",
+          "official_tee_totals_m": {
+            "mens": 2716,
+            "social": 2546,
+            "ladies": 2287
+          },
+          "review_notes": [
+            "공식 표의 3번 홀 Mens 거리는 362m·362yd로 표기되어 일반적인 환산 관계와 다릅니다. 미터 열의 홀별 합계 2,716m가 공식 M 총계와 일치해 미터 열을 반영했습니다."
+          ],
+          "holes": [
+            {
+              "hole_number": 1,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "mens",
+                  "display_name": "Mens",
+                  "tee_color": "#64748b",
+                  "distance_m": 303,
+                  "distance_m_source": "official",
+                  "source_distance": 303,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "social",
+                  "display_name": "Social",
+                  "tee_color": "#64748b",
+                  "distance_m": 290,
+                  "distance_m_source": "official",
+                  "source_distance": 290,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 265,
+                  "distance_m_source": "official",
+                  "source_distance": 265,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 2,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "mens",
+                  "display_name": "Mens",
+                  "tee_color": "#64748b",
+                  "distance_m": 180,
+                  "distance_m_source": "official",
+                  "source_distance": 180,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "social",
+                  "display_name": "Social",
+                  "tee_color": "#64748b",
+                  "distance_m": 161,
+                  "distance_m_source": "official",
+                  "source_distance": 161,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 124,
+                  "distance_m_source": "official",
+                  "source_distance": 124,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 3,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "mens",
+                  "display_name": "Mens",
+                  "tee_color": "#64748b",
+                  "distance_m": 362,
+                  "distance_m_source": "official",
+                  "source_distance": 362,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "social",
+                  "display_name": "Social",
+                  "tee_color": "#64748b",
+                  "distance_m": 353,
+                  "distance_m_source": "official",
+                  "source_distance": 353,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 332,
+                  "distance_m_source": "official",
+                  "source_distance": 332,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 4,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "mens",
+                  "display_name": "Mens",
+                  "tee_color": "#64748b",
+                  "distance_m": 306,
+                  "distance_m_source": "official",
+                  "source_distance": 306,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "social",
+                  "display_name": "Social",
+                  "tee_color": "#64748b",
+                  "distance_m": 289,
+                  "distance_m_source": "official",
+                  "source_distance": 289,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 263,
+                  "distance_m_source": "official",
+                  "source_distance": 263,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 5,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "mens",
+                  "display_name": "Mens",
+                  "tee_color": "#64748b",
+                  "distance_m": 432,
+                  "distance_m_source": "official",
+                  "source_distance": 432,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "social",
+                  "display_name": "Social",
+                  "tee_color": "#64748b",
+                  "distance_m": 410,
+                  "distance_m_source": "official",
+                  "source_distance": 410,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 364,
+                  "distance_m_source": "official",
+                  "source_distance": 364,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 6,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "mens",
+                  "display_name": "Mens",
+                  "tee_color": "#64748b",
+                  "distance_m": 262,
+                  "distance_m_source": "official",
+                  "source_distance": 262,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "social",
+                  "display_name": "Social",
+                  "tee_color": "#64748b",
+                  "distance_m": 240,
+                  "distance_m_source": "official",
+                  "source_distance": 240,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 216,
+                  "distance_m_source": "official",
+                  "source_distance": 216,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 7,
+              "par": 4,
+              "tees": [
+                {
+                  "tee_code": "mens",
+                  "display_name": "Mens",
+                  "tee_color": "#64748b",
+                  "distance_m": 263,
+                  "distance_m_source": "official",
+                  "source_distance": 263,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "social",
+                  "display_name": "Social",
+                  "tee_color": "#64748b",
+                  "distance_m": 226,
+                  "distance_m_source": "official",
+                  "source_distance": 226,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 208,
+                  "distance_m_source": "official",
+                  "source_distance": 208,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 8,
+              "par": 5,
+              "tees": [
+                {
+                  "tee_code": "mens",
+                  "display_name": "Mens",
+                  "tee_color": "#64748b",
+                  "distance_m": 458,
+                  "distance_m_source": "official",
+                  "source_distance": 458,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "social",
+                  "display_name": "Social",
+                  "tee_color": "#64748b",
+                  "distance_m": 442,
+                  "distance_m_source": "official",
+                  "source_distance": 442,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 398,
+                  "distance_m_source": "official",
+                  "source_distance": 398,
+                  "source_unit": "m"
+                }
+              ]
+            },
+            {
+              "hole_number": 9,
+              "par": 3,
+              "tees": [
+                {
+                  "tee_code": "mens",
+                  "display_name": "Mens",
+                  "tee_color": "#64748b",
+                  "distance_m": 150,
+                  "distance_m_source": "official",
+                  "source_distance": 150,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "social",
+                  "display_name": "Social",
+                  "tee_color": "#64748b",
+                  "distance_m": 135,
+                  "distance_m_source": "official",
+                  "source_distance": 135,
+                  "source_unit": "m"
+                },
+                {
+                  "tee_code": "ladies",
+                  "display_name": "Ladies",
+                  "tee_color": "#64748b",
+                  "distance_m": 117,
+                  "distance_m_source": "official",
+                  "source_distance": 117,
+                  "source_unit": "m"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
