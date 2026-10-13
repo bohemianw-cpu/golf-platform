@@ -1074,3 +1074,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-13 — 그린힐CC OUT·IN 공식 코스 자료
 - 신안그룹 골프 운영사 공식 [그린힐CC 코스소개](https://www.shinangolf.com/club/course/greenhillcc) 하단 표에서 OUT·IN 각 9홀의 PAR·HDCP와 BLUE·REGULAR·RED 티별 미터 거리를 반영했습니다. 각 경로는 PAR36, 총 18홀·54개 티 거리 행이며, 공식 티 합계(OUT 2,985/2,861/2,481m, IN 2,797/2,574/2,211m)와 홀별 합이 모두 일치합니다. 별도 추가 검수 없이 공식 표 기준으로 적재했습니다. 자료: `greenhill-cc-2026-official-verified.json`.
 - 원격 DB 대조 결과 구장·경로 verified, 경로 2개·홀 18개·티 행 54개이며 PAR·HDCP·티 거리와 공식 합계가 seed와 일치합니다. 경기 pending은 90곳에서 89곳으로 감소했습니다. 현재 원격 카탈로그는 총 512곳: 검수 완료 370, 미진행 141, 반려 1입니다. 미진행은 경기 89, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
+
+### 2026-10-13 — 라싸GC 마운틴·레이크·밸리 공식 코스 자료
+- 라싸GC 운영사 공식 [마운틴 코스](https://www.lassagc.com/course/mountain), [레이크 코스](https://www.lassagc.com/course/lake), [밸리 코스](https://www.lassagc.com/course/valley) 표에서 각 9홀 PAR와 Black/Blue/White/Gold/Red 티별 m 거리를 입력했습니다. HDCP는 공식 표에 없어 기록하지 않았습니다. 총 27홀·135개 거리 행이며 자료: `lassa-gc-2026-official-verified.json`.
+- 밸리 Gold 7번 거리는 공식 표에 384m, Gold 합계는 2,643m로 표시되어 홀별 합계 2,743m와 100m 차이가 납니다. 공식 홀별 값을 유지하고 차이를 구장 및 경로 검수 메모에 남겼습니다.
+- 원격 DB에서 마운틴·레이크·밸리 3경로, 27홀, 135개 티 행과 공식 합계를 대조했습니다. 세 경로와 구장은 verified입니다. 원격 카탈로그는 총 512곳: 검수 완료 371, 미진행 140, 반려 1입니다. 미진행은 경기 88, 강원 25, 제주 25, 인천 1, 충남 1곳입니다.
