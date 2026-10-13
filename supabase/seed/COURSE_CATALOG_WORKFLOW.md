@@ -867,3 +867,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 원격 DB에서 Tomato·Apple·Orange 세 경로 모두 `verified`, 각 9홀·PAR36을 확인했습니다. 파일과 DB의 107개 거리 행을 PAR·HDCP·티·색상·거리·원단위·그린 선택·선택 가능 여부까지 대조해 누락·초과·불일치 0건을 확인했습니다.
 - 코스모스CC 관련 사용자 확인도 재대조했습니다. 폐업한 `코스모스CC`는 `rejected`이며 경로·홀·티 자료가 0개이고, `골프존카운티 영암45`는 별도 `verified` 레코드(5경로·45홀·135티 행)로 유지됩니다. 주소와 별칭도 분리되어 있습니다.
 - 현재 원격 카탈로그는 총 516곳: 검수 완료 332, 미진행 178, 반려 6입니다. 미진행 지역은 강원 39, 경기 111, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
+
+### 2026-10-13 — 에덴블루CC 공식 27홀 자료
+- 운영사 공식 [코스공략도](https://www.edenblue.co.kr/_mobile/PageSite/course/lake1.asp)에서 Lake·Valley·Mountain 각 9홀의 PAR·HDCP와 Black/Blue/White/Red 티별 거리를 m 단위로 반영했습니다. 운영사 [클럽 소개](https://www.edenblue.co.kr/pagesite/club/greet.asp)는 이 세 코스가 총 27홀임을 확인합니다. 전체 27홀·PAR108·108개 티 거리 행을 저장했습니다. 자료 파일: `edenblue-2026-official-verified.json`.
+- 각 코스별로 공식 표의 9홀 티 합계(`m`)와 홀별 값의 합을 대조했습니다. Lake는 4개 티 모두 일치합니다. Valley는 Blue가 2,950/2,956m, Red가 2,517/2,510m로 각각 6m·7m 차이 나며, Mountain White는 2,743/2,746m로 3m 차이 납니다. 공식 홀별 값을 유지하고 합계 차이는 코스 검수 메모에 기록했습니다.
+- 원격 DB에서 `에덴블루 CC`와 LAKE/VALLEY/MOUNTAIN 경로 모두 `verified`, 각 경로 9홀·PAR36을 확인했습니다. 파일과 DB를 전수 대조해 티 행 108개, PAR·HDCP·티 이름·색상·거리·원단위·선택 가능 여부, 경로 PAR/기본 White 거리 배열의 누락·초과·불일치 0건입니다.
+- 현재 원격 카탈로그는 총 516곳: 검수 완료 333, 미진행 177, 반려 6입니다. 미진행 지역은 강원 39, 경기 110, 세종 1, 인천 1, 제주 25, 충남 1곳입니다.
