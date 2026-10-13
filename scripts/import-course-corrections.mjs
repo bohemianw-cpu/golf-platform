@@ -117,7 +117,10 @@ for (const course of corrections) {
     }
     const holeNumbers = new Set()
     for (const hole of route.holes) {
-      if (!Number.isInteger(hole.hole_number) || hole.hole_number < 1 || hole.hole_number > route.hole_count || holeNumbers.has(hole.hole_number)) {
+      // Keep the venue's printed hole number (for example 10–18) even when
+      // a 9-hole route represents the back half. Array order is stored as
+      // play_order, so route-local position remains independent.
+      if (!Number.isInteger(hole.hole_number) || hole.hole_number < 1 || hole.hole_number > 18 || holeNumbers.has(hole.hole_number)) {
         throw new Error(`${course.name}/${route.route_code}: 홀 번호가 범위를 벗어나거나 중복되었습니다.`)
       }
       holeNumbers.add(hole.hole_number)

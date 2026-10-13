@@ -1,0 +1,106 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "국가보훈부 88골프장",
+      "name": "국가보훈부 88골프장",
+      "region": "경기",
+      "address": "경기도 용인시 기흥구 석성로 521번길 169",
+      "aliases": ["88CC", "88컨트리클럽", "88 컨트리클럽", "국가보훈부88골프장"],
+      "hole_count": 36,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "운영사 공식 동·서 코스 페이지의 홀별 PAR·HDCP 및 Champion/Regular 티의 공식 미터 거리를 반영했습니다. 실제 홀 번호를 보존하고 OUT/IN 각 9홀 경로로 나눴습니다.",
+        "공식 페이지의 각 홀 티 거리 텍스트를 사용했습니다. 홀 사진의 R/L 표기는 티가 아닌 우·좌 그린별 거리입니다.",
+        "출처: https://www.88countryclub.co.kr/Course/CourseInfo.aspx 및 공식 홀별 페이지 ca_01–ca_18.aspx, cb_01–cb_18.aspx (2026-10-13 확인)."
+      ],
+      "routes": [
+        {
+          "route_code": "EAST_OUT",
+          "display_name": "동코스 1구간 OUT (1–9홀)",
+          "hole_count": 9,
+          "primary_tee_code": "regular",
+          "verification_status": "verified",
+          "source_url": "https://www.88countryclub.co.kr/Course/ca_01.aspx",
+          "source_data_url": "https://www.88countryclub.co.kr/Course/ca_01.aspx",
+          "review_notes": ["공식 홀별 페이지 ca_01.aspx–ca_09.aspx의 PAR·HDCP와 Champion/Regular 미터 거리를 반영했습니다."],
+          "holes": [
+            {"hole_number":1,"par":4,"handicap_index":3,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":396,"distance_m_source":"official","source_distance":396,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":360,"distance_m_source":"official","source_distance":360,"source_unit":"m"}]},
+            {"hole_number":2,"par":4,"handicap_index":13,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":334,"distance_m_source":"official","source_distance":334,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":302,"distance_m_source":"official","source_distance":302,"source_unit":"m"}]},
+            {"hole_number":3,"par":5,"handicap_index":15,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":510,"distance_m_source":"official","source_distance":510,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":459,"distance_m_source":"official","source_distance":459,"source_unit":"m"}]},
+            {"hole_number":4,"par":3,"handicap_index":5,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":195,"distance_m_source":"official","source_distance":195,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":162,"distance_m_source":"official","source_distance":162,"source_unit":"m"}]},
+            {"hole_number":5,"par":4,"handicap_index":1,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":422,"distance_m_source":"official","source_distance":422,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":384,"distance_m_source":"official","source_distance":384,"source_unit":"m"}]},
+            {"hole_number":6,"par":3,"handicap_index":11,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":166,"distance_m_source":"official","source_distance":166,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":143,"distance_m_source":"official","source_distance":143,"source_unit":"m"}]},
+            {"hole_number":7,"par":4,"handicap_index":9,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":356,"distance_m_source":"official","source_distance":356,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":324,"distance_m_source":"official","source_distance":324,"source_unit":"m"}]},
+            {"hole_number":8,"par":5,"handicap_index":17,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":494,"distance_m_source":"official","source_distance":494,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":409,"distance_m_source":"official","source_distance":409,"source_unit":"m"}]},
+            {"hole_number":9,"par":4,"handicap_index":7,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":382,"distance_m_source":"official","source_distance":382,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":348,"distance_m_source":"official","source_distance":348,"source_unit":"m"}]}
+          ]
+        },
+        {
+          "route_code": "EAST_IN",
+          "display_name": "동코스 2구간 IN (10–18홀)",
+          "hole_count": 9,
+          "primary_tee_code": "regular",
+          "verification_status": "verified",
+          "source_url": "https://www.88countryclub.co.kr/Course/ca_10.aspx",
+          "source_data_url": "https://www.88countryclub.co.kr/Course/ca_10.aspx",
+          "review_notes": ["공식 홀별 페이지 ca_10.aspx–ca_18.aspx의 PAR·HDCP와 Champion/Regular 미터 거리를 반영했습니다. 표시 홀 번호 10–18을 보존합니다."],
+          "holes": [
+            {"hole_number":10,"par":5,"handicap_index":18,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":478,"distance_m_source":"official","source_distance":478,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":444,"distance_m_source":"official","source_distance":444,"source_unit":"m"}]},
+            {"hole_number":11,"par":4,"handicap_index":4,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":388,"distance_m_source":"official","source_distance":388,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":360,"distance_m_source":"official","source_distance":360,"source_unit":"m"}]},
+            {"hole_number":12,"par":3,"handicap_index":12,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":142,"distance_m_source":"official","source_distance":142,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":125,"distance_m_source":"official","source_distance":125,"source_unit":"m"}]},
+            {"hole_number":13,"par":4,"handicap_index":10,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":363,"distance_m_source":"official","source_distance":363,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":327,"distance_m_source":"official","source_distance":327,"source_unit":"m"}]},
+            {"hole_number":14,"par":4,"handicap_index":2,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":411,"distance_m_source":"official","source_distance":411,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":369,"distance_m_source":"official","source_distance":369,"source_unit":"m"}]},
+            {"hole_number":15,"par":4,"handicap_index":16,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":362,"distance_m_source":"official","source_distance":362,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":332,"distance_m_source":"official","source_distance":332,"source_unit":"m"}]},
+            {"hole_number":16,"par":5,"handicap_index":14,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":535,"distance_m_source":"official","source_distance":535,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":491,"distance_m_source":"official","source_distance":491,"source_unit":"m"}]},
+            {"hole_number":17,"par":3,"handicap_index":8,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":176,"distance_m_source":"official","source_distance":176,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":149,"distance_m_source":"official","source_distance":149,"source_unit":"m"}]},
+            {"hole_number":18,"par":4,"handicap_index":6,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":374,"distance_m_source":"official","source_distance":374,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":345,"distance_m_source":"official","source_distance":345,"source_unit":"m"}]}
+          ]
+        },
+        {
+          "route_code": "WEST_OUT",
+          "display_name": "서코스 1구간 OUT (1–9홀)",
+          "hole_count": 9,
+          "primary_tee_code": "regular",
+          "verification_status": "verified",
+          "source_url": "https://www.88countryclub.co.kr/Course/cb_01.aspx",
+          "source_data_url": "https://www.88countryclub.co.kr/Course/cb_01.aspx",
+          "review_notes": ["공식 홀별 페이지 cb_01.aspx–cb_09.aspx의 PAR·HDCP와 Champion/Regular 미터 거리를 반영했습니다."],
+          "holes": [
+            {"hole_number":1,"par":4,"handicap_index":5,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":387,"distance_m_source":"official","source_distance":387,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":358,"distance_m_source":"official","source_distance":358,"source_unit":"m"}]},
+            {"hole_number":2,"par":4,"handicap_index":3,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":383,"distance_m_source":"official","source_distance":383,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":347,"distance_m_source":"official","source_distance":347,"source_unit":"m"}]},
+            {"hole_number":3,"par":3,"handicap_index":9,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":177,"distance_m_source":"official","source_distance":177,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":151,"distance_m_source":"official","source_distance":151,"source_unit":"m"}]},
+            {"hole_number":4,"par":5,"handicap_index":13,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":552,"distance_m_source":"official","source_distance":552,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":551,"distance_m_source":"official","source_distance":551,"source_unit":"m"}]},
+            {"hole_number":5,"par":4,"handicap_index":7,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":376,"distance_m_source":"official","source_distance":376,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":350,"distance_m_source":"official","source_distance":350,"source_unit":"m"}]},
+            {"hole_number":6,"par":4,"handicap_index":15,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":310,"distance_m_source":"official","source_distance":310,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":290,"distance_m_source":"official","source_distance":290,"source_unit":"m"}]},
+            {"hole_number":7,"par":3,"handicap_index":11,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":156,"distance_m_source":"official","source_distance":156,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":142,"distance_m_source":"official","source_distance":142,"source_unit":"m"}]},
+            {"hole_number":8,"par":5,"handicap_index":17,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":445,"distance_m_source":"official","source_distance":445,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":412,"distance_m_source":"official","source_distance":412,"source_unit":"m"}]},
+            {"hole_number":9,"par":4,"handicap_index":1,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":389,"distance_m_source":"official","source_distance":389,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":356,"distance_m_source":"official","source_distance":356,"source_unit":"m"}]}
+          ]
+        },
+        {
+          "route_code": "WEST_IN",
+          "display_name": "서코스 2구간 IN (10–18홀)",
+          "hole_count": 9,
+          "primary_tee_code": "regular",
+          "verification_status": "verified",
+          "source_url": "https://www.88countryclub.co.kr/Course/cb_10.aspx",
+          "source_data_url": "https://www.88countryclub.co.kr/Course/cb_10.aspx",
+          "review_notes": ["공식 홀별 페이지 cb_10.aspx–cb_18.aspx의 PAR·HDCP와 Champion/Regular 미터 거리를 반영했습니다. 표시 홀 번호 10–18을 보존합니다."],
+          "holes": [
+            {"hole_number":10,"par":5,"handicap_index":18,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":508,"distance_m_source":"official","source_distance":508,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":479,"distance_m_source":"official","source_distance":479,"source_unit":"m"}]},
+            {"hole_number":11,"par":4,"handicap_index":6,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":397,"distance_m_source":"official","source_distance":397,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":360,"distance_m_source":"official","source_distance":360,"source_unit":"m"}]},
+            {"hole_number":12,"par":4,"handicap_index":12,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":335,"distance_m_source":"official","source_distance":335,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":310,"distance_m_source":"official","source_distance":310,"source_unit":"m"}]},
+            {"hole_number":13,"par":3,"handicap_index":10,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":160,"distance_m_source":"official","source_distance":160,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":141,"distance_m_source":"official","source_distance":141,"source_unit":"m"}]},
+            {"hole_number":14,"par":4,"handicap_index":8,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":388,"distance_m_source":"official","source_distance":388,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":353,"distance_m_source":"official","source_distance":353,"source_unit":"m"}]},
+            {"hole_number":15,"par":3,"handicap_index":4,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":211,"distance_m_source":"official","source_distance":211,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":179,"distance_m_source":"official","source_distance":179,"source_unit":"m"}]},
+            {"hole_number":16,"par":4,"handicap_index":2,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":402,"distance_m_source":"official","source_distance":402,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":366,"distance_m_source":"official","source_distance":366,"source_unit":"m"}]},
+            {"hole_number":17,"par":4,"handicap_index":16,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":322,"distance_m_source":"official","source_distance":322,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":299,"distance_m_source":"official","source_distance":299,"source_unit":"m"}]},
+            {"hole_number":18,"par":5,"handicap_index":14,"tees":[{"tee_code":"champion","display_name":"Champion","tee_color":"#64748b","distance_m":529,"distance_m_source":"official","source_distance":529,"source_unit":"m"},{"tee_code":"regular","display_name":"Regular","tee_color":"#cbd5e1","distance_m":479,"distance_m_source":"official","source_distance":479,"source_unit":"m"}]}
+          ]
+        }
+      ]
+    }
+  ]
+}
