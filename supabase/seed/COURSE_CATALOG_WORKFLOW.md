@@ -1139,3 +1139,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 아세코밸리GC 공식 [코스소개](https://www.asecovalley.co.kr/course-guide)의 코스표에서 9홀 PAR·HDCP와 Black/Blue/Red 티별 거리를 반영했습니다. 공식 페이지의 단위 문구는 ㎡로 기재되어 있으나, 거리표의 홀 전장과 티별 총계(2,658/2,512/2,060)를 기준으로 m로 해석했습니다. 이 단위 표기 차이는 검수 메모로 남겼습니다. 자료: `aseco-valley-gc-2026-official-verified.json`.
 - 원격 DB 대조 결과 구장·경로 verified, PAR36·9홀·27개 티 행이며 티별 합계가 공식표와 일치합니다. 같은 검증 과정에서 서서울CC 두 경로의 레거시 `distances_m` 배열이 기본티(Regular) 대신 짧은 Lady 거리로 저장된 것을 발견해 Regular 기준으로 정정했습니다. 홀별 티 행 자체는 변경하지 않았습니다.
 - 원격 카탈로그는 총 512곳: 검수 완료 382, 미진행 129, 반려 1입니다.
+
+### 2026-10-13 — 신원CC 솔로몬·에벤에셀·데이비드 공식 코스 자료
+- 신원CC 공식 [코스소개](https://www.swcc.co.kr/swp/course)와 [솔로몬](https://www.swcc.co.kr/swp/course_solomon), [에벤에셀](https://www.swcc.co.kr/swp/course_ebenezer), [데이비드](https://www.swcc.co.kr/swp/course_david) 홀별 페이지 및 각 페이지가 사용하는 공식 거리 배열을 확인했습니다. 3개 코스 27홀의 PAR·HDCP와 Left/Right 그린별 Blue/White/Yellow/Red 거리를 저장했고, 공식 배열에 White 2가 표기된 홀은 별도 선택 가능한 티로 보존했습니다. 자료: `shinwon-cc-2026-official-verified.json`.
+- 홀별 상세 합계와 코스개요 Champion/Regular/Lady 합계가 여러 곳에서 다릅니다. Solomon은 Blue 3,166/3,168m 대 3,159m, White 2,989/2,991m 대 2,977m, Red 2,508/2,512m 대 2,496m입니다. Ebenezer는 Blue 3,078/3,073m 대 3,070m, White 2,908/2,903m 대 2,902m, Red 2,464/2,459m 대 2,373m입니다. David는 Blue 3,247/3,246m 대 3,238m, White 3,019/3,017m 대 3,008m, Red 2,563/2,561m 대 2,233m입니다. 공식 홀별 상세값을 유지하고 차이는 경로별 검수 메모에 기록했습니다.
+- 원격 DB에서 3개 경로 모두 PAR36·9홀을 확인했으며 홀·그린·티·거리·원본 단위 대조 불일치는 0건입니다. 총 27홀·220개 티/그린 행을 저장했습니다. 원격 카탈로그는 총 512곳: 검수 완료 383, 미진행 128, 반려 1입니다.
