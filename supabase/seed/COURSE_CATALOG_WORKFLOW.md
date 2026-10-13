@@ -1201,3 +1201,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [밸리 코스](https://www.midasgolf.co.kr/CP/ValleyCourse)와 [마이다스 코스](https://www.midasgolf.co.kr/CP/MidasCourse)에서 각 9홀의 PAR·HDCP와 Blue/Gold/White/Green/Red 티별 미터 거리를 반영했습니다. 공식 명칭은 마이다스밸리 청평 골프클럽이며 정규화 명칭 마이다스밸리 청평 GC로 저장했습니다. 자료: `midas-valley-cheongpyeong-2026-official-verified.json`.
 - 마이다스 코스 2번 홀은 공식 페이지에서 Lady Tee를 Par 6로 운영한다고 안내해 Red 티 PAR만 6으로 저장했고, 나머지 티는 홀 기본 PAR 5를 사용합니다. 원격 DB에서 2개 코스·18홀·90개 티 행을 대조해 PAR·HDCP·티·거리 불일치 0건을 확인했습니다.
 - 원격 카탈로그는 총 512곳: 검수 완료 395, 미진행 116, 반려 1입니다. 미진행은 경기 65, 강원 25, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 렉스필드CC 회원제·대중제 공식 코스 자료
+- 운영사 공식 [레이크](https://www.rexfield.com/course/lake), [마운틴](https://www.rexfield.com/course/mountain), [밸리](https://www.rexfield.com/course/valley) 코스표에서 각 9홀의 PAR·HDCP 및 Blue/White/Red 야드 거리를 반영했습니다. 원본 야드를 보존하고 미터 거리는 0.9144 환산 후 반올림했습니다. 표에 없는 Black 티는 추가하지 않았습니다. 자료: `rexfield-membership-2026-official-verified.json`, `rexfield-public-2026-official-verified.json`.
+- 렉스필드의 회원제 18홀(레이크·마운틴)과 대중제 9홀(밸리)을 기존 두 카탈로그 항목에 각각 연결했습니다. KGA 코스레이팅도 회원제 코스 조합을 레이크+마운틴으로 표기합니다. 세 코스는 각각 PAR36이며 공식 티별 야드 합계와 홀별 입력 합계가 일치합니다.
+- 원격 DB 대조 결과 회원제 2경로·18홀·54개 티 행, 대중제 1경로·9홀·27개 티 행으로 총 81개 티 자료가 81/81 일치합니다. 원격 카탈로그는 총 512곳: 검수 완료 397, 미진행 114, 반려 1입니다. 미진행은 경기 63, 강원 25, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 검수는 별도 요청까지 보류합니다.
