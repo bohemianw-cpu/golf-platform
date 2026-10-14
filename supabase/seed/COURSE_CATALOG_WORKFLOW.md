@@ -1597,3 +1597,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스 제원표](https://shinevilleparkcc.com/02course/01intro.asp)와 [PALM 1번 홀 상세](https://shinevilleparkcc.com/02course/02hole_p1.asp), [PALM 8번 홀 상세](https://shinevilleparkcc.com/02course/02hole_p8.asp)에서 RIVER·PALM 각 9홀의 PAR·HDCP와 Black·Regular·Lady 티별 미터 거리를 반영했습니다. 자료: `shineville-park-2026-official-verified.json`.
 - 두 경로 모두 PAR36, 각 27개 티 행입니다. 공식 요약표 PALM Black 총거리는 2,733m라고 표기하지만 홀별 값 합은 3,033m이며, PALM 8번 공식 상세 페이지도 521m를 표시합니다. 홀별 값을 보존하고 시설 검수 메모에 합계 불일치를 기록했습니다.
 - 원격 DB 행 단위 대조 결과 구장 verified, 코스 2개·홀 18개·티 54개, PAR·HDCP·거리·티 메타데이터 누락/불일치 0건입니다. 최신 카탈로그는 verified 480, pending 30, rejected 1(총 511곳)입니다.
+
+### 2026-10-14 — 크라운CC WEST·SOUTH·EAST 코스
+- 운영사 공식 [스코어카드](https://jejucrowncc.com/sub/sub02_03_01.html?i_m1=02&i_m2=03&i_m3=01)에서 27홀의 PAR·HDCP와 Champion·Regular 3/2/1·Lady 티별 거리를 입력했습니다. West는 Regular2/3 항목이 비어 있어 해당 티를 생성하지 않았습니다. 공식 티 색 정보가 없어 이름은 원문 표기를 유지하고 색상은 UI 분류용으로 구분했습니다. 자료: `crown-jeju-2026-official-verified.json`.
+- 스코어카드 홀별 PAR는 각 코스 36, 전체 108입니다. 운영사 별도 코스 제원 요약은 East PAR35로 표기하여 충돌 내용을 시설 검수 메모에 남기고 홀별 스코어카드를 적용했습니다.
+- 원격 DB 행 단위 대조 결과 verified, 코스 3개·홀 27개·티 117개이며 PAR·HDCP·거리·티 메타데이터 누락/불일치 0건입니다. 최신 카탈로그 verified 481, pending 29, rejected 1(총 511곳)입니다.
