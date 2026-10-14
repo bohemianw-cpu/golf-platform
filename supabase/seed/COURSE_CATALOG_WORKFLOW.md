@@ -1382,3 +1382,6 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-14 — 해비치 컨트리클럽 서울 OUT·IN 공식 코스 자료
 - 운영사 공식 [코스맵](https://www.haevichi.com/ccseoul/ko/course-guide/course-map)의 OUT·IN 표에서 18홀 PAR·HDCP 및 Back/Regular/Lady 티별 yd 거리를 반영했습니다. 앱 검색명을 정식 명칭인 해비치 컨트리클럽 서울로 정리하고 기존 명칭은 별칭으로 보존했습니다. 원본 야드와 0.9144 환산 후 반올림한 미터를 모두 기록했습니다. 공식 티 이름에 색상은 표기되지 않아 앱 색상 팔레트를 연결했습니다. 자료: `haevichi-seoul-2026-official-verified.json`.
 - 원격 DB와 seed를 대조해 verified 구장·2개 경로·18홀·54개 티가 일치하고 누락·초과·필드 불일치가 0건임을 확인했습니다. 카탈로그는 총 512곳: 검수 완료 431, 미진행 80, 반려 1입니다. 웅포CC·광양CC 추가 검수는 별도 요청까지 보류합니다.
+### 2026-10-14 — 휘닉스 CC MOUNTAIN·LAKE 코스
+- 운영사 공식 [전체 안내](https://phoenixhnr.co.kr/static/pyeongchang/golf/phoenix-intro), [MOUNTAIN 상세](https://phoenixhnr.co.kr/static/pyeongchang/golf/phoenix-intro-mountain), [LAKE 상세](https://phoenixhnr.co.kr/static/pyeongchang/golf/phoenix-intro-lake)에서 두 9홀 코스의 PAR·HDCP와 Gold·Blue·White·Red 티별 m 거리를 반영했습니다. 자료: `phoenix-cc-2026-official-verified.json`.
+- 공식 안내 전장 6,338m와 Gold 홀별 합계 6,355m 차이 17m 및 MOUNTAIN 6·9번 HDCP 중복(15)을 메모하고 상세 홀 값을 유지했습니다. 원격 DB와 seed의 구장·경로·홀·티 전체 72행을 대조해 누락·불일치 0건, 출처 확인 시각 및 verified 상태를 확인했습니다. 카탈로그 총 512곳: 검수 완료 443, 미진행 68, 반려 1곳입니다. 미진행은 강원 18, 경기 32, 제주 17, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
