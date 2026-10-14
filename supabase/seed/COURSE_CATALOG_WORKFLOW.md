@@ -1506,3 +1506,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - GA KOREA 운영사 공식 [레이크](https://www.gakorea.com/korea/course/lakeCouse.asp)·[챌린지](https://www.gakorea.com/korea/course/challCouse.asp)·[크릭](https://www.gakorea.com/korea/course/creekCouse.asp) 코스공략도에서 각 9홀의 PAR·HDCP 및 Blue·White·Red 티별 m 거리를 입력했습니다. 자료: `korea-cc-2026-official-verified.json`.
 - 세 코스 모두 PAR36이며 티별 홀 거리 합계(m)는 레이크 3,125/2,940/2,625, 챌린지 3,265/3,075/2,695, 크릭 3,080/2,870/2,425 (Blue/White/Red 순)입니다. 크릭코스는 공식 표에 HDCP 3이 2·4번 홀에 중복 표기되어 원문대로 보존했습니다.
 - 공식 seed 정적 검증 후 원격 DB와 행 단위 비교: 구장 verified, 경로 3개·홀 27개·티 81개, 티 거리/단위/선택 여부·PAR·HDCP 불일치 0건, 출처 확인 시각 누락 0건입니다. 현재 카탈로그는 총 511곳: 검수 완료 463, 미진행 47, 반려 1곳입니다. 미진행은 경기 15, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 확인은 별도 요청 전까지 보류합니다.
+
+### 2026-10-14 — 필로스GC 동·서·남 코스
+- 운영사 공식 [동코스 홀별 안내](https://www.philosgc.com/Course/Course_a1.aspx), [서코스 홀별 안내](https://www.philosgc.com/Course/Course_b1.aspx), [남코스 홀별 안내](https://www.philosgc.com/Course/Course_c1.aspx)와 각 페이지에서 연결된 1~9번 홀 세부 정보를 확인해 27홀의 PAR·HDCP 및 Back·Regular·Front·Ladies 티 거리를 입력했습니다. 원문 티 등급명과 공식 m 거리를 보존했고, 각 페이지에서 제공하지 않는 Front 티는 해당 홀에 추가하지 않았습니다. 색은 공식 자료에 지정되지 않아 식별용 대표색으로만 사용했습니다. 자료: `philos-gc-2026-official-verified.json`.
+- 동·서·남 코스는 각각 PAR36이고, 홀별 티 행은 각 34개씩 총 102개입니다. 거리 합계(m)는 동 3,231/3,043/2,414/2,600, 서 2,946/2,775/1,908/2,451, 남 3,017/2,811/1,861/2,339 (Back/Regular/Front/Ladies 순)입니다. 홀 페이지마다 티 제공 여부가 달라 공통 티 합계는 표시되지 않았습니다.
+- seed 정적 검증 후 원격 DB를 행 단위로 대조했습니다: verified 구장, 코스 3개·홀 27개·티 102개, PAR·HDCP·티 코드/등급·색상·거리·단위 불일치 0건입니다. 원격 카탈로그는 총 511곳: verified 464, pending 46, rejected 1입니다. 미진행은 경기 14, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 확인은 별도 요청 전까지 보류합니다.
