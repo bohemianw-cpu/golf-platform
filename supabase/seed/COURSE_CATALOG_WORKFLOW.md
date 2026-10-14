@@ -1487,3 +1487,12 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 재부팅 요청 시점의 원격 카탈로그 집계 쿼리를 다시 실행해 총 511곳(verified 460, pending 50, rejected 1)을 확인했습니다. 지산CC 레코드 `46922684-e586-421b-aca1-1b25522ec585`는 경기, 27홀, pending이며, 지산퍼블릭(기존 verified)과 별도 구장입니다.
 - 운영사 [회원제 코스 안내](https://www.jisanresort.co.kr/m/golf/member/course01.asp)와 [동](https://www.jisanresort.co.kr/w/golf/member/course02.asp)·[남](https://www.jisanresort.co.kr/w/golf/member/course03.asp)·[서](https://www.jisanresort.co.kr/w/golf/member/course04.asp) 코스 페이지에서 세 9홀 코스 및 홀별 PAR를 확인했습니다. 사이트 안내 단위는 yd입니다. 27개 홀별 도면은 공식 이미지 `m_course_print_member_{east,south,west}01.jpg`~`09.jpg`에 있으며, 브라우저에서 전체 도면을 열어 확인했습니다.
 - **아직 완료하지 않은 일:** 이미지 내 티별 거리 숫자를 홀별로 확정·전사하고, 각 코스 합계/홀 PAR를 검토해 seed를 작성한 다음 importer로 검증 및 원격 DB 반영해야 합니다. 숫자 판독과 티별 원색 대응이 끝나지 않았으므로 이번 재개 구간에서는 지산CC seed·DB 데이터를 수정하지 않았습니다. 조사 중인 브라우저 탭은 handoff 표시했습니다.
+
+### 2026-10-14 — 지산CC 이스트·사우스·웨스트 공식 자료 반영
+- 운영사 공식 [동](https://www.jisanresort.co.kr/w/golf/member/course02.asp)·[남](https://www.jisanresort.co.kr/w/golf/member/course03.asp)·[서](https://www.jisanresort.co.kr/w/golf/member/course04.asp) 코스 페이지에서 각 9홀 PAR 및 yd 단위를 확인하고, 공식 홀 도면 27장을 대조해 Black·Blue·White·Red 티 거리를 입력했습니다. 코스별 PAR는 36입니다. 공식 HDCP 및 티 합계는 게시되지 않아 입력하지 않았습니다. 자료: `jisan-cc-2026-official-verified.json`.
+- 홀 도면의 일부 홀에는 반복된 Red 티 마커가 있어 East 2·3번, South 4·8번의 추가 거리를 `red_alt` 계열로 보존하고 라운드 공통 선택에서는 제외했습니다. 기본 Red는 해당 홀의 Red 거리 중 가장 짧은 위치로 두었습니다. 원본 yd와 환산·반올림한 m를 함께 저장했습니다.
+- 원격 DB와 seed를 행 단위로 대조했습니다: 구장 verified, 경로 3개, 홀 27개, 티 113개, 경로·홀·티 필드 불일치 0건, yd→m 환산 불일치 0건. 코스별 PAR 합계는 East/South/West 모두 36입니다. 카탈로그는 총 511곳: 검수 완료 461, 미진행 49, 반려 1곳입니다. 미진행은 경기 17, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 확인은 별도 요청 전까지 계속 보류합니다.
+
+### 작업 일시 중지 지점 — 2026-10-14 지산CC 반영 완료
+- 지산CC 자료 seed와 원격 DB 반영·행 단위 검증을 마쳤습니다. 다음 진행은 새 후보를 정해 공식 출처를 찾는 단계이며, 재개 시점에는 최신 미진행 목록부터 다시 조회합니다. 현 카탈로그 집계는 verified 461, pending 49, rejected 1(총 511)입니다.
+- 재부팅 전 남아 있던 미커밋 변경은 사용자 작업으로 보여 건드리지 않았습니다. 지산CC seed와 이 작업 기록만 별도로 커밋·푸시합니다.
