@@ -1,0 +1,923 @@
+{
+  "venue": {
+    "hole_count": 18,
+    "address": "경기도 용인시 처인구 백암면 황새울로 255",
+    "region": "경기",
+    "review_notes": [
+      "운영사 공식 제원표는 용인(OUT) 9홀 PAR36과 석천(IN) 9홀 PAR37, 총 18홀 PAR73으로 안내합니다. 기존 MCST 레코드의 홀 수 9를 공식자료에 맞춰 18로 정정했습니다.",
+      "각 코스의 공식 홀별 거리 합계는 제원표 소계와 모든 티에서 일치합니다: OUT 3,247/3,232/3,050/2,917/2,696m, IN 3,560/3,434/3,283/3,096/2,864m (B/G/R/F/L).",
+      "B/T는 OUT 5번 및 IN 2·4·6번만 거리가 게시되어 해당 원본 행은 보존하고 코스 전체 선택에서는 제외했습니다. 공식표는 티별 색상과 HDCP를 제공하지 않습니다.",
+      "공식 출처: https://yongincc.com/Course/CourseInfo.aspx (2026-10-14 확인)."
+    ],
+    "supports_screen": false,
+    "name": "용인CC",
+    "aliases": [
+      "용인컨트리클럽",
+      "용인 컨트리클럽",
+      "Yong In Country Club"
+    ],
+    "match_name": "용인CC"
+  },
+  "status": "source_verified_imported_verified",
+  "routes": [
+    {
+      "review_notes": [
+        "운영사 공식 코스 제원표의 G/T·R/T·F/T·L/T 미터값을 그대로 저장했습니다. B/T는 일부 홀에서만 게시되어 기록은 보존하되 코스 전체 티 선택은 불가로 표시했습니다. 티 색상은 공식표에 없어 UI용 표시 팔레트를 사용했습니다."
+      ],
+      "verification_status": "verified",
+      "display_name": "OUT COURSE (용인)",
+      "par_source_url": "https://yongincc.com/Course/CourseInfo.aspx",
+      "primary_tee_code": "gold",
+      "source_data_url": "https://yongincc.com/Course/CourseInfo.aspx",
+      "route_code": "OUT",
+      "hole_count": 9,
+      "source_url": "https://yongincc.com/Course/CourseInfo.aspx",
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "tees": [
+            {
+              "display_name": "G/T",
+              "distance_m": 334,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 334
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 320,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 320
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 300,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 300
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 273,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 273
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "tees": [
+            {
+              "display_name": "G/T",
+              "distance_m": 437,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 437
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 421,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 421
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 405,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 405
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 389,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 389
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 4,
+          "tees": [
+            {
+              "display_name": "G/T",
+              "distance_m": 360,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 360
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 345,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 345
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 329,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 329
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 313,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 313
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "tees": [
+            {
+              "display_name": "G/T",
+              "distance_m": 345,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 345
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 312,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 312
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 303,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 303
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 275,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 275
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 5,
+          "tees": [
+            {
+              "display_name": "B/T",
+              "distance_m": 546,
+              "distance_m_source": "official",
+              "tee_color": "#111827",
+              "source_unit": "m",
+              "tee_code": "back",
+              "tee_selection_available": false,
+              "source_distance": 546
+            },
+            {
+              "display_name": "G/T",
+              "distance_m": 531,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 531
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 511,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 511
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 493,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 493
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 472,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 472
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 3,
+          "tees": [
+            {
+              "display_name": "G/T",
+              "distance_m": 160,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 160
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 142,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 142
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 119,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 119
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 109,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 109
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "tees": [
+            {
+              "display_name": "G/T",
+              "distance_m": 386,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 386
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 351,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 351
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 336,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 336
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 293,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 293
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 3,
+          "tees": [
+            {
+              "display_name": "G/T",
+              "distance_m": 164,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 164
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 148,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 148
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 148,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 148
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 109,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 109
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 5,
+          "tees": [
+            {
+              "display_name": "G/T",
+              "distance_m": 515,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 515
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 500,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 500
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 484,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 484
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 463,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 463
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "review_notes": [
+        "운영사 공식 코스 제원표의 G/T·R/T·F/T·L/T 미터값을 그대로 저장했습니다. B/T는 일부 홀에서만 게시되어 기록은 보존하되 코스 전체 티 선택은 불가로 표시했습니다. 티 색상은 공식표에 없어 UI용 표시 팔레트를 사용했습니다."
+      ],
+      "verification_status": "verified",
+      "display_name": "IN COURSE (석천)",
+      "par_source_url": "https://yongincc.com/Course/CourseInfo.aspx",
+      "primary_tee_code": "gold",
+      "source_data_url": "https://yongincc.com/Course/CourseInfo.aspx",
+      "route_code": "IN",
+      "hole_count": 9,
+      "source_url": "https://yongincc.com/Course/CourseInfo.aspx",
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "tees": [
+            {
+              "display_name": "G/T",
+              "distance_m": 415,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 415
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 385,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 385
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 363,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 363
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 324,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 324
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 6,
+          "tees": [
+            {
+              "display_name": "B/T",
+              "distance_m": 650,
+              "distance_m_source": "official",
+              "tee_color": "#111827",
+              "source_unit": "m",
+              "tee_code": "back",
+              "tee_selection_available": false,
+              "source_distance": 650
+            },
+            {
+              "display_name": "G/T",
+              "distance_m": 580,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 580
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 568,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 568
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 524,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 524
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 496,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 496
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 4,
+          "tees": [
+            {
+              "display_name": "G/T",
+              "distance_m": 370,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 370
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 355,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 355
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 335,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 335
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 317,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 317
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 3,
+          "tees": [
+            {
+              "display_name": "B/T",
+              "distance_m": 220,
+              "distance_m_source": "official",
+              "tee_color": "#111827",
+              "source_unit": "m",
+              "tee_code": "back",
+              "tee_selection_available": false,
+              "source_distance": 220
+            },
+            {
+              "display_name": "G/T",
+              "distance_m": 192,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 192
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 180,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 180
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 168,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 168
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 136,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 136
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "tees": [
+            {
+              "display_name": "G/T",
+              "distance_m": 415,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 415
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 410,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 410
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 388,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 388
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 356,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 356
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "tees": [
+            {
+              "display_name": "B/T",
+              "distance_m": 438,
+              "distance_m_source": "official",
+              "tee_color": "#111827",
+              "source_unit": "m",
+              "tee_code": "back",
+              "tee_selection_available": false,
+              "source_distance": 438
+            },
+            {
+              "display_name": "G/T",
+              "distance_m": 410,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 410
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 396,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 396
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 364,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 364
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 338,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 338
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 3,
+          "tees": [
+            {
+              "display_name": "G/T",
+              "distance_m": 140,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 140
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 121,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 121
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 112,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 112
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 92,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 92
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 4,
+          "tees": [
+            {
+              "display_name": "G/T",
+              "distance_m": 363,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 363
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 338,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 338
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 330,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 330
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 311,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 311
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 5,
+          "tees": [
+            {
+              "display_name": "G/T",
+              "distance_m": 549,
+              "distance_m_source": "official",
+              "tee_color": "#eab308",
+              "source_unit": "m",
+              "tee_code": "gold",
+              "tee_selection_available": true,
+              "source_distance": 549
+            },
+            {
+              "display_name": "R/T",
+              "distance_m": 530,
+              "distance_m_source": "official",
+              "tee_color": "#f8fafc",
+              "source_unit": "m",
+              "tee_code": "regular",
+              "tee_selection_available": true,
+              "source_distance": 530
+            },
+            {
+              "display_name": "F/T",
+              "distance_m": 512,
+              "distance_m_source": "official",
+              "tee_color": "#2563eb",
+              "source_unit": "m",
+              "tee_code": "front",
+              "tee_selection_available": true,
+              "source_distance": 512
+            },
+            {
+              "display_name": "L/T",
+              "distance_m": 494,
+              "distance_m_source": "official",
+              "tee_color": "#ef4444",
+              "source_unit": "m",
+              "tee_code": "lady",
+              "tee_selection_available": true,
+              "source_distance": 494
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "schema": "course-source-review/1"
+}
