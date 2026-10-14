@@ -1581,3 +1581,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [북코스 1번 홀](https://bsweb.bsgrcc.com/jj/courseView?where=course-north-01)과 각 코스의 공식 1~9번 홀 안내에서 PAR와 Red·Yellow·White·Blue·Black 티별 m 거리를 입력했습니다. 공식 하단 주소와 MCST 주소가 일치하며, 공식 출처는 HDCP를 게시하지 않아 핸디캡 값을 추가하지 않았습니다. 자료: `blackstone-jeju-2026-official-verified.json`.
 - 코스별 PAR는 모두 36입니다. 티별 홀 거리 합계(m, Red/Yellow/White/Blue/Black)는 North 2,482/2,661/2,901/3,145/3,350, South 2,482/2,754/3,046/3,233/3,429, East 2,402/2,681/2,949/3,139/3,359입니다.
 - 원격 DB와 seed의 행 단위 대조: 구장 verified, 경로 3개·홀 27개·티 135개, PAR·거리·단위·티 이름/색/선택 가능 여부 및 경로 출처 메타데이터 불일치 0건입니다. 확인 시각 누락 0건입니다. 최신 원격 카탈로그는 verified 477, pending 33, rejected 1(총 511)이며 미진행은 제주 16, 강원 9, 경기 7, 충남 1곳입니다.
+
+### 2026-10-14 — 엘리시안제주 LAKE·CAMPO·PINE·OCEAN 코스
+- 운영사 공식 [골프 코스 소개](https://www.elysian.co.kr/about-jeju/golf) 각 홀 상세에서 36홀의 PAR·HDCP, Black·Blue·White·Gold·Red 티별 yd 값을 확인했습니다. 원본 yd를 보존하고 1yd=0.9144m로 환산·반올림한 거리도 함께 저장했습니다. Ocean 2~4번은 공식 페이지에서 Red 거리를 `-`로 표기해 해당 티를 만들지 않았습니다. 자료: `elysian-jeju-2026-official-verified.json`.
+- 공식 주소 및 회원제 Lake/Pine 18홀·대중형 Campo/Ocean 18홀 구성을 대조하고, 기존 pending `엘리시안제주` 레코드에 네 코스를 반영했습니다. 각 코스는 PAR36입니다. 공식 대중형 요약 합계 7,022yd와 Campo·Ocean 홀별 Black 합계 7,047yd가 25yd 차이 나므로 홀별 상세 원문은 그대로 보존하고 시설 검수 메모에 차이를 기록했습니다.
+- 정적 seed 검증 후 원격 DB에 구장 1곳·경로 4개·홀 36개·티 177개를 저장했습니다. 원격 seed 행 단위 대조를 마친 뒤 최종 카탈로그 수와 오류 여부를 기록합니다.
+- 원격 seed 행 단위 대조 결과 구장 verified, 경로 4개·홀 36개·티 177개, PAR·HDCP·티 거리·출처 메타데이터 차이 0건입니다. Ocean의 Red 티 누락도 공식 표기와 일치합니다. 최신 원격 카탈로그는 verified 478, pending 32, rejected 1(총 511곳)입니다.
