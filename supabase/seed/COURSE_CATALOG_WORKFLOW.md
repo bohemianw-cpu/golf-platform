@@ -1524,3 +1524,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스 제원표](https://www.foresthill.kr/html/course01.asp)에서 ROCK·HILL 각 9홀 및 FOREST 6홀의 홀별 PAR와 Black·Blue·White·Gold·Red 티별 미터 거리를 입력했습니다. FOREST에는 공식적으로 공개된 Black·White·Red 티만 저장했습니다. 정규 코스 운영 안내는 [이용요금 페이지](https://www.foresthill.kr/html/guide02.asp)에서 대조했습니다. 자료: `foresthill-cc-2026-official-verified.json`.
 - 공식 표 기준으로 ROCK과 HILL은 각각 PAR36, FOREST는 PAR22입니다. HILL 3번 홀 상세 설명에는 다른 홀의 거리 설명이 섞여 있어 공식 코스 제원표의 PAR·거리값을 기준으로 했습니다. 원격 DB 대조 결과 구장 verified, 경로 3개·홀 24개·티 108개이며 PAR·티 이름/색상·거리/단위·선택 가능 여부 불일치는 0건입니다.
 - 최신 원격 집계는 총 511곳: verified 467, pending 43, rejected 1입니다. 미진행은 강원 14, 경기 11, 제주 17, 충남 1곳입니다. 웅포CC·광양CC 확인은 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 아난티 코드 GC 자작나무·느티나무·잣나무 코스
+- 운영사 공식 [자작나무 코스](https://ananti.kr/ko/chord/CD0205), [느티나무 코스](https://ananti.kr/ko/chord/CD0206), [잣나무 코스](https://ananti.kr/ko/chord/CD0207)에서 각 9홀 PAR와 색상별 공식 거리(m)를 입력했습니다. 구 DB의 `아난티클럽서울`은 공식 아난티 코드 주소(경기도 가평군 설악면 유명로 961-34)와 일치해 공식 표기 `아난티 코드 GC`로 이름을 정리하고 기존 이름과 ANANTI CHORD를 검색 별칭으로 남겼습니다. 각 코스 PAR36, 총 27홀·82개 티 거리입니다. 공식 홀별 표에서 느티나무 5번만 Yellow 티가 있어 포함했고, 그 외 없는 티는 추가하지 않았습니다. 잣나무 7번은 공식 로컬 룰에 따라 안전상 그린 직접 공략이 불가하다는 안내를 구장·코스 메모에 남겼습니다. 자료: `ananti-chord-2026-official-verified.json`.
+- seed 정적 검증 및 원격 DB 행 단위 대조를 마쳤습니다: verified 구장·경로 3개·홀 27개·티 82개, 코스/홀/티 및 출처 메타데이터 불일치 0건입니다. 원격 집계는 총 511곳: verified 468, pending 42, rejected 1입니다. 미진행은 강원 14, 경기 10, 제주 17, 충남 1곳입니다. 웅포CC·광양CC는 별도 요청 전까지 보류합니다.
