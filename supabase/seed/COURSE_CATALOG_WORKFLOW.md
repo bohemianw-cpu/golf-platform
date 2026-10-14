@@ -1,3 +1,7 @@
+### 2026-10-14 — 크리스탈밸리CC Crystal·Valley 코스
+- 운영사 공식 [Crystal 제원표](https://www.crystalvalley.co.kr/html/course/course01.asp)와 [Valley 제원표](https://www.crystalvalley.co.kr/html/course/course01_02.asp)에서 각 9홀의 PAR·HDCP 및 Blue·White·Silver·Red 티별 공식 m/yd 거리를 반영했습니다. 앱 기준 미터 거리와 원본 미터값을 보존했고, 두 표의 티별 홀 거리 합계는 코스별 S/T 표기 합계와 일치합니다. 자료: `crystal-valley-cc-2026-official-verified.json`.
+- 원격 DB와 seed를 대조해 구장 verified, 경로 2개·홀 18개·티 행 72개 및 경로/홀/티 필드 불일치 0건을 확인했습니다. 원격 카탈로그는 총 512곳: 검수 완료 437, 미진행 74, 반려 1입니다. 웅포CC·광양CC 관련 확인은 별도 요청까지 보류합니다.
+
 ### 2026-10-14 — 서귀포팬텀 골프앤리조트 북·남 코스
 - 운영사 공식 [북코스 홀 상세](https://spgr.co.kr/swp/north_hole_01)와 [남코스 홀 상세](https://spgr.co.kr/swp/south_hole_01)에서 18홀의 PAR·HDCP와 Gold·Blue·White·Yellow·Red 티별 m 거리를 반영했습니다. 공식 번호를 유지해 북코스 1~9번, 남코스 10~18번으로 9홀 경로 두 개를 저장했습니다. 남코스 18번 PAR 항목(PAR4)과 같은 페이지 공략 문구(짧은 PAR5)가 충돌해 명시된 PAR 항목과 충돌 메모를 보존했습니다. 자료: `seogwipo-phantom-2026-official-verified.json`.
 - seed와 원격 DB를 대조해 구장 verified, 경로 2개·홀 18개·티 거리 행 90개 및 경로/홀/티 필드 불일치 0건을 확인했습니다. 원격 카탈로그는 총 512곳: 검수 완료 436, 미진행 75, 반려 1입니다. 웅포CC·광양CC 관련 확인은 별도 요청까지 보류합니다.
