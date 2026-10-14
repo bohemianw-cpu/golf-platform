@@ -1610,5 +1610,5 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 
 ### 2026-10-14 — 다음 작업 재개 지점
 - 에버리스CC는 새별·레이크·파인 27홀의 공식 PAR·HDCP와 티별 거리를 적재·검수 완료했습니다. 원격 대조는 코스 3개·홀 27개·티 161개, 불일치 0건입니다.
-- 다음 조사 후보는 제주 지역 미진행 구장 중 공식 홀별 자료를 확보할 수 있는 곳입니다. 테디밸리CC의 공식 코스 자료를 우선 조사하고, 확보가 어려우면 다른 제주 후보로 이동합니다.
+- 테디밸리CC 공식 사이트가 응답 시간 초과로 열리지 않아 홀별 자료를 확보하지 못했습니다. 다음 후보인 나인브릿지 공식 [크릭 홀별 코스 안내](https://www.ninebridges.co.kr/eng/Course/creek_course.asp), [하이랜드 안내](https://www.ninebridges.co.kr/eng/course/highland.asp)와 코스별 홀 지도(`/eng/images/course/{creek|highland}/z_{1..9}.png`)를 확인했습니다. 지도는 티별 거리(m)와 티 색을 보여주며, 크릭 페이지는 PAR·기준 거리를 제공합니다. 하이랜드의 공식 PAR 자료를 확보한 뒤 18홀 데이터를 적재하고 전체 행을 대조합니다.
 - 최신 원격 카탈로그 수: verified 482, pending 28, rejected 1(총 511곳). 사용자 소유의 미커밋 UI·온보딩·마이그레이션 변경은 그대로 보존합니다.
