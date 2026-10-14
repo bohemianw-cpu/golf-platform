@@ -1397,3 +1397,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-14 — 스프링베일GC 코스
 - 운영사 공식 [1~9번 홀 상세](https://www.springvale.co.kr/04course/p1.asp)~[9번 홀 상세](https://www.springvale.co.kr/04course/p9.asp)에서 PAR와 Black·Blue·White·Red 티별 m 거리를 반영했습니다. 공식 PAR 합은 36, 홀별 거리 합은 Black 3,287m·Blue 3,103m·White 2,844m·Red 2,496m입니다. 공식 HDCP는 공개되지 않아 비워 두었습니다. 이전 레코드 `스프링베일리조트`는 별칭으로 보존하고 통칭 `스프링베일GC`로 이름을 정리했습니다.
 - 공식 8번 상세의 헤더/표는 홀 번호 8/2가 다르고 공략 문구는 515m, 티별 거리표는 Black 535m·Blue 510m·White 485m·Red 433m라 표의 티별 값을 저장하고 충돌을 검수 메모에 남겼습니다. 원격 DB와 seed의 9홀·36개 티 행 전부 일치(누락·불일치 0건), verified 상태와 출처 확인 시각을 확인했습니다. 카탈로그 총 512곳: 검수 완료 446, 미진행 65, 반려 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 성문안CC OUT·IN 코스
+- 운영사 [공식 코스 페이지](https://ipark-golf.com/seongmunan/course)와 웹 앱의 [공식 코스 상세 API](https://api.hdcgolf.com/api/v1/courses?idGolfCC=132)에서 1~9홀 OUT·10~18홀 IN, 각 PAR36 및 Black·Blue·White·Brown·Red 티별 m 거리를 반영했습니다. API의 미터 원값 105개를 모두 저장했고 HDCP는 공개되지 않았습니다.
+- 14번 홀의 좌·우 그린은 각각 저장했습니다. 다른 일부 티의 복수 거리는 원문에서 좌우를 명시하지 않아 공식 1/2 표기 변형으로 보존했습니다. 14번 우측 그린을 적용한 Black 합계 6,651m가 운영사 개요 전장과 일치하며, 좌측은 6,630m입니다. seed와 원격 DB의 구장·2경로·18홀·105개 티/그린 행 전부 대조 결과 누락·불일치 0건, 두 경로 verified와 출처 확인 시각을 확인했습니다. 카탈로그 총 512곳: 검수 완료 448, 미진행 63, 반려 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
