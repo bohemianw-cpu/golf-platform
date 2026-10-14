@@ -1519,3 +1519,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-14 — 한원CC 고구려·백제·신라 코스
 - 운영사 공식 [코스 제원표](https://hanwoncc.co.kr/course/course_info.asp)에서 3개 9홀 코스의 PAR·HDCP 및 Blue·White·Red 티별 미터 거리와 원문 합계를 반영했습니다. 코스별 PAR는 모두 36이고 티 행은 27홀에 81개입니다. 홀별 합계(m, Blue/White/Red)는 고구려 2,955/2,802/2,597, 백제 2,948/2,772/2,489, 신라 2,887/2,762/2,497입니다. 공식 표의 총합은 고구려 Blue 2,935m(홀별 합과 20m 차이), 백제 Red 2,498m(홀별 합과 9m 차이)로 표시되어 원문 홀 값은 그대로 반영하고 두 차이를 코스 메모에 남겼습니다. 자료: `hanwon-cc-2026-official-verified.json`.
 - seed 정적 검증 후 원격 DB와 행 단위 대조: 구장 verified, 코스 3개·홀 27개·티 81개, PAR·HDCP·티 명칭/색/거리/단위 불일치 0건입니다. 원격 카탈로그 총 511곳: verified 466, pending 44, rejected 1입니다. 미진행은 경기 12, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 확인은 별도 요청 전까지 보류합니다.
+
+### 2026-10-14 — 포레스트힐 CC ROCK·HILL·FOREST 코스
+- 운영사 공식 [코스 제원표](https://www.foresthill.kr/html/course01.asp)에서 ROCK·HILL 각 9홀 및 FOREST 6홀의 홀별 PAR와 Black·Blue·White·Gold·Red 티별 미터 거리를 입력했습니다. FOREST에는 공식적으로 공개된 Black·White·Red 티만 저장했습니다. 정규 코스 운영 안내는 [이용요금 페이지](https://www.foresthill.kr/html/guide02.asp)에서 대조했습니다. 자료: `foresthill-cc-2026-official-verified.json`.
+- 공식 표 기준으로 ROCK과 HILL은 각각 PAR36, FOREST는 PAR22입니다. HILL 3번 홀 상세 설명에는 다른 홀의 거리 설명이 섞여 있어 공식 코스 제원표의 PAR·거리값을 기준으로 했습니다. 원격 DB 대조 결과 구장 verified, 경로 3개·홀 24개·티 108개이며 PAR·티 이름/색상·거리/단위·선택 가능 여부 불일치는 0건입니다.
+- 최신 원격 집계는 총 511곳: verified 467, pending 43, rejected 1입니다. 미진행은 강원 14, 경기 11, 제주 17, 충남 1곳입니다. 웅포CC·광양CC 확인은 별도 요청까지 보류합니다.
