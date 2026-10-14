@@ -1425,3 +1425,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스소개](https://www.suwoncc.co.kr/course/intro) 및 [코스공략팁](https://www.suwoncc.co.kr/course/tip)에서 공개되는 코스 API의 홀별 PAR·HDCP와 Blue/White/Yellow/Red 티 야드 거리를 반영했습니다. 홈페이지 메타데이터의 단위는 YARD이며, 원 yd 값과 0.9144 환산·반올림한 미터를 함께 저장했습니다. 자료: `suwon-cc-2026-official-verified.json`.
 - NEW OUT·NEW IN·OLD OUT·OLD IN은 각각 9홀 PAR36입니다. 각 코스별 홀 합계가 공식 API 티 합계와 일치합니다(Blue/White/Yellow/Red yd): NEW OUT 3,462/3,302/3,024/2,626, NEW IN 3,542/3,399/3,088/2,697, OLD OUT 3,544/3,335/3,171/2,811, OLD IN 3,375/3,193/3,019/2,661.
 - 원격 DB와 seed의 구장·경로·홀·티 데이터를 행 단위 대조해 불일치 0건을 확인했습니다(4경로·36홀·144 티 행). 카탈로그 총 511곳: 검수 완료 451, 미진행 59, 반려 1곳입니다. 미진행은 경기 27, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 스마트KU 골프 파빌리온 바른·미쁨·혼솔 공식 자료
+- 운영사 공식 [코스 개요](https://www.kugolf.co.kr/swp/course)의 코스 구성과 [바른](https://www.kugolf.co.kr/swp/justitia_course), [미쁨](https://www.kugolf.co.kr/swp/trust_course), [혼솔](https://www.kugolf.co.kr/swp/honesta_course) 홀별 페이지 및 각 페이지에서 사용하는 공식 JS 자료를 확인해 PAR·HDCP와 Black/Blue/White/Red 미터 거리를 입력했습니다. 자료: `smartku-golf-pavilion-2026-official-verified.json`.
+- 세 코스는 각각 9홀 PAR36입니다. 홀별 티 거리 합계(m): 바른 3,295/3,057/2,846/2,471, 미쁨 3,450/3,207/2,975/2,455, 혼솔 3,006/2,814/2,625/2,105 (Black/Blue/White/Red). 코스 소개 HTML의 1번 홀 값도 공식 JS 자료와 일치합니다.
+- 원격 DB와 seed의 구장·경로·홀·티를 행 단위 대조해 불일치 0건을 확인했습니다(3경로·27홀·108 티 행). 카탈로그 총 511곳: 검수 완료 452, 미진행 58, 반려 1곳입니다. 미진행은 경기 26, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
