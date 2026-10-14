@@ -1501,3 +1501,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스 안내](https://pocheon.hillmaru.com/club-intro/courses)와 공식 CDN 홀 도면 `https://cdn.pocheon.hillmaru.com/images/course-images/pc/clubCourse-course{A-E}01.png`~`09.png`에서 시그니처 A·시그니처 B·브리즈·선샤인·네스트 각 9홀의 PAR와 Black·Blue·White·Yellow·Red 티 거리를 확인했습니다. 도면에 표시된 m 값을 그대로 입력했고, 다섯 코스 모두 PAR36입니다. 자료: `hillmaru-pocheon-2026-official-verified.json`.
 - 원격 DB 반영 후 seed와 행 단위 대조: 구장 verified, 경로 5개, 홀 45개, 티 225개, 경로·홀·티 및 메타데이터 불일치 0건. 티별 합계(m)는 시그니처 A 3,361/3,128/2,851/2,561/2,211, 시그니처 B 3,256/3,011/2,831/2,551/2,191, 브리즈 3,118/2,893/2,698/2,438/2,143, 선샤인 3,177/2,967/2,712/2,457/2,122, 네스트 3,372/3,182/2,977/2,612/2,292 (Black/Blue/White/Yellow/Red 순)입니다. 공식 HDCP는 도면에 표시되지 않아 입력하지 않았습니다.
 - 원격 카탈로그는 총 511곳: verified 462, pending 48, rejected 1입니다. 미진행은 경기 16, 제주 17, 강원 14, 충남 1곳입니다. 미진행 중 부산·경남·경북·전남·전북 구장은 없어 남부권 우선 진행 후보는 없습니다. 웅포CC·광양CC는 별도 요청 전까지 보류합니다.
+
+### 2026-10-14 — 코리아CC 레이크·챌린지·크릭 코스
+- GA KOREA 운영사 공식 [레이크](https://www.gakorea.com/korea/course/lakeCouse.asp)·[챌린지](https://www.gakorea.com/korea/course/challCouse.asp)·[크릭](https://www.gakorea.com/korea/course/creekCouse.asp) 코스공략도에서 각 9홀의 PAR·HDCP 및 Blue·White·Red 티별 m 거리를 입력했습니다. 자료: `korea-cc-2026-official-verified.json`.
+- 세 코스 모두 PAR36이며 티별 홀 거리 합계(m)는 레이크 3,125/2,940/2,625, 챌린지 3,265/3,075/2,695, 크릭 3,080/2,870/2,425 (Blue/White/Red 순)입니다. 크릭코스는 공식 표에 HDCP 3이 2·4번 홀에 중복 표기되어 원문대로 보존했습니다.
+- 공식 seed 정적 검증 후 원격 DB와 행 단위 비교: 구장 verified, 경로 3개·홀 27개·티 81개, 티 거리/단위/선택 여부·PAR·HDCP 불일치 0건, 출처 확인 시각 누락 0건입니다. 현재 카탈로그는 총 511곳: 검수 완료 463, 미진행 47, 반려 1곳입니다. 미진행은 경기 15, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 확인은 별도 요청 전까지 보류합니다.
