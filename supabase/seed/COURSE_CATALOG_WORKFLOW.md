@@ -1622,3 +1622,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-14 — 웰리힐리퍼블릭 공식 홀수 보정
 - 운영사 공식 [퍼블릭 코스 안내](https://mapi.wellihillipark.com/webpage/golf/public.asp)는 9홀·PAR36·총연장 2,874m라고 명시하지만, 홀별 PAR 및 티별 거리는 제공하지 않습니다. MCST 대기 레코드의 홀수 10을 공식 정보에 맞춰 9로 보정하고 근거를 검수 메모에 남겼습니다.
 - 홀별 값이 확보되지 않아 구장은 pending으로 유지했습니다. 티 거리나 개별 홀 PAR는 추정하지 않았습니다.
+
+### 2026-10-14 — 웰리힐리퍼블릭 티별 거리 추가 반영
+- 사용자가 제공한 운영사 공식 [퍼블릭 홀별 코스 안내](https://mapi.wellihillipark.com/webpage/golf/public02.asp) 이미지 9장을 확인해 Blue·White·Red 티의 거리, 각 홀 PAR·HDCP를 입력했습니다. Blue 홀별 합계 2,874m는 공식 퍼블릭 소개 총연장과 일치하고, PAR 합계는 36입니다. 자료: `wellihilli-public-2026-official-verified.json`.
+- 원격 DB에서 퍼블릭 코스 1개·9홀·27개 티 행을 확인하고 PAR·HDCP·티 메타데이터·거리·미터 원값·선택 가능 여부를 seed와 대조했습니다. 불일치·누락 0건으로 구장과 코스를 `verified` 처리했습니다.
