@@ -1482,3 +1482,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 제일CC SOUTH·CENTER·EAST 자료 입력, 원격 DB 대조 및 push까지 완료했습니다 (`ef9b85e`). 카탈로그는 총 511곳: 검수 완료 460, 미진행 50, 반려 1곳이며 미진행은 경기 18, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 확인은 별도 요청 전까지 보류합니다.
 - 다음 후보는 회원제 지산CC(27홀, pending; id `46922684-e586-421b-aca1-1b25522ec585`)입니다. 공식 [회원제 코스 페이지](https://www.jisanresort.co.kr/m/golf/member/course01.asp)는 거리를 yd 단위로 안내하며 동·남·서 각 9홀과 PAR/홀 설명을 제공합니다. 티별 거리는 홀 도면 이미지에 있어 아직 전사·입력하지 않았습니다. 지산CC는 이미 검수 완료된 지산퍼블릭과 별도 구장으로 유지합니다.
 - 재개하면 공식 홀 이미지에서 지산CC의 티별 거리를 확인한 뒤 seed 작성, 검수 및 DB 반영을 이어갑니다.
+
+### 작업 일시 중지 지점 — 2026-10-14 지산CC 자료 확인 중
+- 재부팅 요청 시점의 원격 카탈로그 집계 쿼리를 다시 실행해 총 511곳(verified 460, pending 50, rejected 1)을 확인했습니다. 지산CC 레코드 `46922684-e586-421b-aca1-1b25522ec585`는 경기, 27홀, pending이며, 지산퍼블릭(기존 verified)과 별도 구장입니다.
+- 운영사 [회원제 코스 안내](https://www.jisanresort.co.kr/m/golf/member/course01.asp)와 [동](https://www.jisanresort.co.kr/w/golf/member/course02.asp)·[남](https://www.jisanresort.co.kr/w/golf/member/course03.asp)·[서](https://www.jisanresort.co.kr/w/golf/member/course04.asp) 코스 페이지에서 세 9홀 코스 및 홀별 PAR를 확인했습니다. 사이트 안내 단위는 yd입니다. 27개 홀별 도면은 공식 이미지 `m_course_print_member_{east,south,west}01.jpg`~`09.jpg`에 있으며, 브라우저에서 전체 도면을 열어 확인했습니다.
+- **아직 완료하지 않은 일:** 이미지 내 티별 거리 숫자를 홀별로 확정·전사하고, 각 코스 합계/홀 PAR를 검토해 seed를 작성한 다음 importer로 검증 및 원격 DB 반영해야 합니다. 숫자 판독과 티별 원색 대응이 끝나지 않았으므로 이번 재개 구간에서는 지산CC seed·DB 데이터를 수정하지 않았습니다. 조사 중인 브라우저 탭은 handoff 표시했습니다.
