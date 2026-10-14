@@ -1618,3 +1618,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [Sky](https://www.haevichi.com/ccjeju/ko/course-guide/sky), [Palm](https://www.haevichi.com/ccjeju/ko/course-guide/palm), [Lake](https://www.haevichi.com/ccjeju/ko/course-guide/lake), [Valley](https://www.haevichi.com/ccjeju/ko/course-guide/valley) 코스 안내에서 각 9홀의 PAR·HDCP와 홀별 거리 안내도의 색상별 m 전장을 확인했습니다. MCST 대기 레코드는 18홀·코스 미등록이었으므로 운영사 주소와 4개 코스 구성을 대조한 뒤 총 36홀로 갱신했습니다. 자료: `haevichi-jeju-2026-official-verified.json`.
 - Sky/Palm/Lake는 Black·Blue·White·Yellow·Red 5개 티, Valley는 공식 홀에 보이는 티만 반영했습니다(Valley에는 블랙티가 없고 홀에 따라 Blue도 미제공). 총 36홀·PAR144·티별 거리 169행입니다. 9홀 PAR는 각 36이며 티별 총거리(m)는 Sky Black/Blue/White/Yellow/Red 3,211/3,024/2,894/2,691/2,318, Palm 3,159/3,027/2,886/2,702/2,374, Lake 3,284/3,115/2,923/2,697/2,330, Valley Blue/White/Yellow/Red 2,212(7홀)/2,779/2,606/2,349입니다.
 - seed 정적 검증과 원격 DB 행 단위 비교를 마쳤습니다. 구장 verified, 경로 4개·홀 36개·티 169개, 경로·홀·티 누락/불일치 0건입니다. 최신 카탈로그는 verified 484, pending 26, rejected 1(총 511곳)입니다. 다음 후보는 최신 pending 구장에서 공식 홀별 자료가 확인되는 곳으로 선정합니다.
+
+### 2026-10-14 — 웰리힐리퍼블릭 공식 홀수 보정
+- 운영사 공식 [퍼블릭 코스 안내](https://mapi.wellihillipark.com/webpage/golf/public.asp)는 9홀·PAR36·총연장 2,874m라고 명시하지만, 홀별 PAR 및 티별 거리는 제공하지 않습니다. MCST 대기 레코드의 홀수 10을 공식 정보에 맞춰 9로 보정하고 근거를 검수 메모에 남겼습니다.
+- 홀별 값이 확보되지 않아 구장은 pending으로 유지했습니다. 티 거리나 개별 홀 PAR는 추정하지 않았습니다.
