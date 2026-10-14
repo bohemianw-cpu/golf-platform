@@ -1627,10 +1627,10 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 사용자가 제공한 운영사 공식 [퍼블릭 홀별 코스 안내](https://mapi.wellihillipark.com/webpage/golf/public02.asp) 이미지 9장을 확인해 Blue·White·Red 티의 거리, 각 홀 PAR·HDCP를 입력했습니다. Blue 홀별 합계 2,874m는 공식 퍼블릭 소개 총연장과 일치하고, PAR 합계는 36입니다. 자료: `wellihilli-public-2026-official-verified.json`.
 - 원격 DB에서 퍼블릭 코스 1개·9홀·27개 티 행을 확인하고 PAR·HDCP·티 메타데이터·거리·미터 원값·선택 가능 여부를 seed와 대조했습니다. 불일치·누락 0건으로 구장과 코스를 `verified` 처리했습니다.
 
-### 2026-10-14 — 웰리힐리CC 남코스 사용자 제공 홀 도면
-- 남코스 JPG 17장(1–12, 14–18)의 색상별 거리표를 전사해 `wellihilli-cc-south-2026-partial-source-review.json`에 보존했습니다. 17홀·티 거리 82개이며 모든 수치는 미터입니다. 같은 색 표식이 반복되는 경우 색상 내 순번을 별도 부여해 표기 순서와 거리를 함께 보존했습니다.
-- 남코스 13번은 JPG가 아직 없고, 원래 전달된 PNG에는 숫자 거리표가 없습니다. 북코스 홀별 자료도 미수집이라 DB에는 반영하지 않았습니다.
-- 운영사 [남코스 안내](https://www.wellihillipark.com/golf/course/map/south)의 개별 홀 PAR 표시는 PAR75(8번 PAR6 포함)로 합산되나, 별도 운영사 [기본 제원](https://mapi.wellihillipark.com/webpage/golf/cc02.asp)은 PAR72라고 표기합니다. 이 주요 충돌과 남은 홀 자료 때문에 구장 검수는 미완료입니다.
+### 2026-10-14 — 웰리힐리CC 남·북코스 사용자 제공 홀 도면
+- 사용자가 제공한 남·북코스 JPG 36장(각 1~18홀)의 색상별 거리표를 전사해 `wellihilli-cc-2026-user-maps-source-review.json`에 보존하고 DB에 반영했습니다. 남코스 18홀·티 87개, 북코스 18홀·티 99개이며 모든 수치는 미터입니다. 같은 색 표식이 반복되는 경우 색상 내 순번을 부여해 별도 티 행으로 저장했습니다.
+- 홀별 PAR는 운영사 공식 [남코스 안내](https://www.wellihillipark.com/golf/course/map/south)와 [북코스 안내](https://www.wellihillipark.com/golf/course/map/north)에서 확인했습니다. 북코스 PAR 합은 72입니다. 남코스는 사용자가 PAR75가 맞다고 확인해 홀별 공식 PAR 합계 75를 적용했습니다. 별도 기본 제원 페이지의 South PAR72 표기 충돌은 사용자 확인으로 해소했습니다.
+- 원격 DB 대조 결과 경로 2개·36홀·186개 티 행이 전사 자료와 일치하며 홀 및 티 필드 불일치는 0건입니다. 남코스 PAR75와 북코스 PAR72가 저장됐습니다. 다만 북코스 기본 제원은 PAR72·6,425m인데 제공 도면의 색상별 티 거리 합계에서 6,425m에 대응하는 일관된 티 그룹을 확인하지 못해 구장과 두 경로는 pending 상태입니다. HDCP는 도면에 없어 비워 두었습니다.
 
 ### 2026-10-14 — 프리스틴밸리GC PRISTINE·VALLEY
 - 운영사 공식 [코스 제원](https://www.pristinevalley.co.kr/course/courseInfo.asp)과 [PRISTINE 홀별 안내](https://www.pristinevalley.co.kr/course/course01.asp) 및 [VALLEY 홀별 안내](https://www.pristinevalley.co.kr/course/course10.asp)에서 18홀 PAR·HDCP와 각 홀에 실제 표기된 Black·Blue·White·Red 및 `T` 티의 미터 거리를 저장했습니다. PRISTINE은 41개, VALLEY는 39개 실제 티 행입니다. 같은 홀에 `T`가 두 번 나오는 1번 홀은 이름은 원문 그대로 두고 저장 코드만 구분했습니다. 자료: `pristine-valley-gc-2026-official-verified.json`.
