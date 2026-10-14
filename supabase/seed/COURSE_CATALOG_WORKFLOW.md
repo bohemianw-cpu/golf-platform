@@ -1571,3 +1571,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [COCOON](https://whistlingrockcc.com/En/Course/Course1), [TEMPLE](https://whistlingrockcc.com/En/Course/Course2), [CLOUD](https://whistlingrockcc.com/En/Course/Course3) 홀별 안내에서 27홀의 PAR·HDCP와 야드 단일 기준거리를 확인해 저장했습니다. 원본 yd와 0.9144 환산·반올림 m를 함께 기록했습니다. 공식 표에 티 그룹 색상/등급 거리는 없어서 이를 임의로 블랙/화이트 등 특정 티에 연결하지 않고 `official_reference`로 저장했으며, 사용자 티 선택은 비활성화했습니다. 자료: `whistling-rock-2026-official-reference-verified.json`.
 - 원격 DB 행 검증: 구장 verified, 코스 3개·홀 27개·티 기준행 27개, 각 코스 PAR36, 야드→미터 환산/선택 불가/원본 거리 필드 불일치 0건입니다. 카탈로그는 verified 475, pending 35, rejected 1(총 511)입니다. pending 분포는 제주 17, 강원 10, 경기 7, 충남 1곳입니다.
 - 클럽모우 공식 [코스 분석](https://www.clubmow.com/course-info/course-analyze)은 홀별 PAR와 평균 타수는 제공하지만 홀별 티 거리표는 제공하지 않아 거리 입력을 보류했습니다.
+
+### 2026-10-14 — 파가니카CC 힐·포레스트 코스
+- 운영사 원더클럽 공식 [힐 코스 공략도](https://www.onetheclub.com/paganica/course_hill), [포레스트 코스 공략도](https://www.onetheclub.com/paganica/course_forest), [코스 제원표](https://www.onetheclub.com/paganica/course)에서 두 코스의 18홀 PAR·HDCP와 Black·Blue·White·Yellow·Red 티별 m 거리를 확인했습니다. 홀 지도 이미지 범례에 티 색과 거리가 모두 표시됩니다. 힐 4번의 공식 Left/Right 그린 거리를 분리해 저장했습니다. 자료: `paganica-cc-2026-official-verified.json`.
+- 원격 DB 검증: MCST 파가니카CC 레코드에 경로 2개·홀 18개·티 95행을 반영하고 verified 처리했습니다. PAR·HDCP 홀 18개, 티 명칭·색상·거리·단위·그린 분류 등 기대 행과 비교해 누락·불일치 0건이며 각 경로의 공식 출처 확인 시각도 저장됐습니다. 힐 코스는 PAR36·Black 합계 3,317m로 제원표와 일치합니다. 포레스트 Black 홀별 합계는 3,118m인데 공식 제원표는 3,110m로 표기해 홀별 공식 값은 유지하고 8m 차이를 기록했습니다.
+- 카탈로그 최신 집계는 verified 476, pending 34, rejected 1(총 511곳)입니다. 남은 pending은 강원 9, 경기 7, 제주 17, 충남 1곳입니다.
