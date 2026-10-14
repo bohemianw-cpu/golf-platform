@@ -1533,3 +1533,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [HAE 코스](https://www.haesoliacc.co.kr/course/h01.asp), [SOL 코스](https://www.haesoliacc.co.kr/course/s01.asp), [LIA 코스](https://www.haesoliacc.co.kr/course/l01.asp)와 각 홀 상세 페이지의 공식 표에서 PAR·HDCP 및 Black·Blue·White·Red 티별 미터 거리를 확인해 입력했습니다. 각 코스 PAR36, 총 27홀·108개 티 거리 행입니다. 티별 거리 합계(m)는 HAE 3,435/3,081/2,841/2,592, SOL 3,070/2,818/2,604/2,369, LIA 3,040/2,726/2,492/2,098 (Black/Blue/White/Red 순)입니다. 자료: `haesolia-cc-2026-official-verified.json`.
 - 기존 pending `해솔리아 CC` 후보와 공식 주소(경기도 용인시 처인구 이동읍 백자로 369)를 대조해 동일 구장임을 확인했습니다. 원격 DB와 seed를 홀·티 행 단위로 비교해 3개 코스·27홀·108개 티, 누락·불일치 0건, 구장 및 코스 verified, 출처 확인 시각 존재를 확인했습니다. 최신 원격 카탈로그 총 511곳: verified 469, pending 41, rejected 1곳입니다. 미진행은 제주 17, 강원 14, 경기 9, 충남 1곳입니다. 웅포CC·광양CC 확인은 별도 요청 전까지 보류합니다.
 - 다음 후보는 최신 pending 목록을 다시 조회해 공식 홀별 PAR·티 자료가 충분한 곳을 고릅니다. 자료가 불완전한 구장은 추정값을 입력하지 않고 다음 후보로 넘어갑니다.
+
+### 2026-10-14 — 다음 후보 자료 추가 조사
+- 파주 J-Public은 운영사 공식 [클럽 개요](https://www.jpublic.co.kr/pagesite/club/recommend.asp)와 [홀별 공략도](https://www.jpublic.co.kr/pagesite/course/one/hole01.asp)에서 6홀 운영과 PAR·홀 설명을 확인했습니다. 공식 페이지의 접근 가능한 텍스트에는 홀별 티 거리표가 없어 값을 추정해 넣지 않았고, 원격 DB 상태도 변경하지 않았습니다.
+- `코리아대중CC`는 GA KOREA 공식 [홈페이지](https://www.koreapublic.co.kr/)에서 코리아CC와 별도 표기된 코리아퍼블릭GC이며 주소가 MCST 후보(경기도 용인시 기흥구 기흥단지로 224)와 일치함을 확인했습니다. 현재 공식 홈페이지 본문 및 검색 가능한 공식 자료에서는 홀별 PAR·티 거리를 확보하지 못해 pending으로 유지합니다.
+- 다음 조사에서도 기존 검수 완료 코스 및 주소가 같은 별도 시설을 혼동하지 않도록 운영사·주소·코스 구성을 먼저 대조합니다.
