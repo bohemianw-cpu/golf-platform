@@ -1562,3 +1562,12 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스 개요](https://ibgolfclub.com/view/viewLink.do?page=homepage/KOR/Course/course)에서 9홀의 PAR·HDCP와 White·Ladies 티별 야드 거리를 확인했습니다. 공식 티 합계는 White 2,625yd, Ladies 2,188yd입니다. 원본 야드를 보존하고 개별 미터값은 1yd=0.9144m로 환산·반올림했습니다. MCST 주소와 운영사 공식 주소가 일치합니다. 자료: `interburgo-wonju-2026-official-verified.json`.
 - 4번 홀 PAR6를 포함한 공식 PAR 합은 36입니다. 원격 DB에 퍼블릭 경로 1개·홀 9개·티 거리 18개를 저장하고 확인했습니다. PAR·HDCP 전체 일치, yd 원본값 합계 일치, 모든 미터 환산 및 티 메타데이터 일치로 검수 완료 처리했습니다.
 - 다음 조사 후보는 강원권 `벨라45 오너스 CC`입니다. 공식 운영사 페이지에서 해당 오너스 코스의 자료만 확인해 등록된 별도 Masters 코스와 혼동하지 않도록 주소·코스 구성을 대조합니다.
+
+### 2026-10-14 — 벨라45 오너스 CC 자료 접근 확인
+- 공식 [Owners 페이지](https://www.bella45.com/owners/) 및 공식 코스 경로(`/owners/swp/courseInfo`, `/owners/swp/courseInfoA`)를 확인했습니다. 코스 상세 경로는 회원 로그인 화면으로 이동해 공개 상태의 PAR·티별 거리 자료를 확인할 수 없었습니다.
+- 동일 운영사의 공개 Masters 코스 정보는 Owners와 다른 시설 구역이므로 가져오지 않았습니다. `벨라45 오너스 CC`는 pending으로 유지하고, 자격 증명을 요청하지 않고 다른 후보 조사를 계속합니다.
+
+### 2026-10-14 — 휘슬링락CC COCOON·TEMPLE·CLOUD 코스
+- 운영사 공식 [COCOON](https://whistlingrockcc.com/En/Course/Course1), [TEMPLE](https://whistlingrockcc.com/En/Course/Course2), [CLOUD](https://whistlingrockcc.com/En/Course/Course3) 홀별 안내에서 27홀의 PAR·HDCP와 야드 단일 기준거리를 확인해 저장했습니다. 원본 yd와 0.9144 환산·반올림 m를 함께 기록했습니다. 공식 표에 티 그룹 색상/등급 거리는 없어서 이를 임의로 블랙/화이트 등 특정 티에 연결하지 않고 `official_reference`로 저장했으며, 사용자 티 선택은 비활성화했습니다. 자료: `whistling-rock-2026-official-reference-verified.json`.
+- 원격 DB 행 검증: 구장 verified, 코스 3개·홀 27개·티 기준행 27개, 각 코스 PAR36, 야드→미터 환산/선택 불가/원본 거리 필드 불일치 0건입니다. 카탈로그는 verified 475, pending 35, rejected 1(총 511)입니다. pending 분포는 제주 17, 강원 10, 경기 7, 충남 1곳입니다.
+- 클럽모우 공식 [코스 분석](https://www.clubmow.com/course-info/course-analyze)은 홀별 PAR와 평균 타수는 제공하지만 홀별 티 거리표는 제공하지 않아 거리 입력을 보류했습니다.

@@ -1,0 +1,86 @@
+{
+  "schema": "course-corrections/1",
+  "courses": [
+    {
+      "match_name": "휘슬링락CC",
+      "name": "휘슬링락CC",
+      "region": "강원",
+      "address": "춘천시 남산면 동촌로 501",
+      "aliases": ["휘슬링락 컨트리클럽", "Whistling Rock Country Club"],
+      "hole_count": 27,
+      "supports_screen": false,
+      "verification_status": "verified",
+      "review_notes": [
+        "운영사 공식 영문 홀별 페이지에서 Cocoon·Temple·Cloud 3개 코스의 27홀 PAR, HDCP 및 단일 야드 기준거리를 확인했습니다. 공식 자료에 티 색상·티 그룹별 거리는 따로 표기되지 않아 기준거리만 저장하고 사용자 티 선택은 비활성화했습니다."
+      ],
+      "routes": [
+        {
+          "route_code": "cocoon",
+          "display_name": "코쿤코스",
+          "hole_count": 9,
+          "primary_tee_code": "official_reference",
+          "verification_status": "verified",
+          "source_url": "https://whistlingrockcc.com/En/Course/Course1",
+          "par_source_url": "https://whistlingrockcc.com/En/Course/Course1",
+          "source_data_url": "https://whistlingrockcc.com/En/Course/Layout",
+          "review_notes": ["단일 공식 기준거리는 원문 야드와 환산 미터를 보존했습니다. 개별 티 색상/등급 자료는 공개 페이지에 없습니다."],
+          "holes": [
+            {"hole_number":1,"par":4,"handicap_index":8,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":313,"distance_m_source":"converted","source_distance":342,"source_unit":"yd"}]},
+            {"hole_number":2,"par":5,"handicap_index":3,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":540,"distance_m_source":"converted","source_distance":591,"source_unit":"yd"}]},
+            {"hole_number":3,"par":4,"handicap_index":1,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":430,"distance_m_source":"converted","source_distance":470,"source_unit":"yd"}]},
+            {"hole_number":4,"par":4,"handicap_index":6,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":322,"distance_m_source":"converted","source_distance":352,"source_unit":"yd"}]},
+            {"hole_number":5,"par":3,"handicap_index":9,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":163,"distance_m_source":"converted","source_distance":178,"source_unit":"yd"}]},
+            {"hole_number":6,"par":4,"handicap_index":4,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":324,"distance_m_source":"converted","source_distance":354,"source_unit":"yd"}]},
+            {"hole_number":7,"par":5,"handicap_index":2,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":564,"distance_m_source":"converted","source_distance":617,"source_unit":"yd"}]},
+            {"hole_number":8,"par":3,"handicap_index":7,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":187,"distance_m_source":"converted","source_distance":205,"source_unit":"yd"}]},
+            {"hole_number":9,"par":4,"handicap_index":5,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":375,"distance_m_source":"converted","source_distance":410,"source_unit":"yd"}]}
+          ]
+        },
+        {
+          "route_code": "temple",
+          "display_name": "템플코스",
+          "hole_count": 9,
+          "primary_tee_code": "official_reference",
+          "verification_status": "verified",
+          "source_url": "https://whistlingrockcc.com/En/Course/Course2",
+          "par_source_url": "https://whistlingrockcc.com/En/Course/Course2",
+          "source_data_url": "https://whistlingrockcc.com/En/Course/Layout",
+          "review_notes": ["단일 공식 기준거리는 원문 야드와 환산 미터를 보존했습니다. 개별 티 색상/등급 자료는 공개 페이지에 없습니다."],
+          "holes": [
+            {"hole_number":1,"par":4,"handicap_index":8,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":329,"distance_m_source":"converted","source_distance":360,"source_unit":"yd"}]},
+            {"hole_number":2,"par":5,"handicap_index":1,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":521,"distance_m_source":"converted","source_distance":570,"source_unit":"yd"}]},
+            {"hole_number":3,"par":4,"handicap_index":4,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":432,"distance_m_source":"converted","source_distance":472,"source_unit":"yd"}]},
+            {"hole_number":4,"par":4,"handicap_index":3,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":401,"distance_m_source":"converted","source_distance":439,"source_unit":"yd"}]},
+            {"hole_number":5,"par":4,"handicap_index":6,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":401,"distance_m_source":"converted","source_distance":439,"source_unit":"yd"}]},
+            {"hole_number":6,"par":3,"handicap_index":9,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":149,"distance_m_source":"converted","source_distance":163,"source_unit":"yd"}]},
+            {"hole_number":7,"par":5,"handicap_index":7,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":486,"distance_m_source":"converted","source_distance":532,"source_unit":"yd"}]},
+            {"hole_number":8,"par":4,"handicap_index":2,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":349,"distance_m_source":"converted","source_distance":382,"source_unit":"yd"}]},
+            {"hole_number":9,"par":3,"handicap_index":5,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":185,"distance_m_source":"converted","source_distance":202,"source_unit":"yd"}]}
+          ]
+        },
+        {
+          "route_code": "cloud",
+          "display_name": "클라우드코스",
+          "hole_count": 9,
+          "primary_tee_code": "official_reference",
+          "verification_status": "verified",
+          "source_url": "https://whistlingrockcc.com/En/Course/Course3",
+          "par_source_url": "https://whistlingrockcc.com/En/Course/Course3",
+          "source_data_url": "https://whistlingrockcc.com/En/Course/Layout",
+          "review_notes": ["단일 공식 기준거리는 원문 야드와 환산 미터를 보존했습니다. 개별 티 색상/등급 자료는 공개 페이지에 없습니다."],
+          "holes": [
+            {"hole_number":1,"par":4,"handicap_index":9,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":330,"distance_m_source":"converted","source_distance":361,"source_unit":"yd"}]},
+            {"hole_number":2,"par":5,"handicap_index":4,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":515,"distance_m_source":"converted","source_distance":563,"source_unit":"yd"}]},
+            {"hole_number":3,"par":4,"handicap_index":3,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":374,"distance_m_source":"converted","source_distance":409,"source_unit":"yd"}]},
+            {"hole_number":4,"par":3,"handicap_index":8,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":195,"distance_m_source":"converted","source_distance":213,"source_unit":"yd"}]},
+            {"hole_number":5,"par":4,"handicap_index":7,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":334,"distance_m_source":"converted","source_distance":365,"source_unit":"yd"}]},
+            {"hole_number":6,"par":4,"handicap_index":6,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":401,"distance_m_source":"converted","source_distance":438,"source_unit":"yd"}]},
+            {"hole_number":7,"par":5,"handicap_index":1,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":494,"distance_m_source":"converted","source_distance":540,"source_unit":"yd"}]},
+            {"hole_number":8,"par":3,"handicap_index":5,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":227,"distance_m_source":"converted","source_distance":248,"source_unit":"yd"}]},
+            {"hole_number":9,"par":4,"handicap_index":2,"tees":[{"tee_code":"official_reference","tee_selection_available":false,"display_name":"공식 기준 (티 미표기)","tee_color":"#64748b","distance_m":465,"distance_m_source":"converted","source_distance":509,"source_unit":"yd"}]}
+          ]
+        }
+      ]
+    }
+  ]
+}
