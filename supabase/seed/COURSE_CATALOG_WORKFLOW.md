@@ -1552,3 +1552,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스 개요](https://www.benestgolf.com/mobile/Course_Ay.html) 및 [OUT 홀 상세](https://www.benestgolf.com/mobile/Course_View_Ay_Out1.html), [IN 홀 상세](https://www.benestgolf.com/mobile/Course_View_Ay_In1.html)에서 각 9홀의 PAR·HDCP와 Gold·Blue·White·Yellow·Red 티의 미터 거리를 확인했습니다. 운영사 공식 연혁은 안양컨트리클럽이 안양베네스트골프클럽으로 명칭 변경된 이력을 밝히고 있어 기존 MCST `안양CC` 레코드에 이름 별칭을 추가했습니다. 자료: `anyang-cc-2026-official-verified.json`.
 - 공식 홀 상세표의 3번 홀 Gold 티는 414yd와 479m로 불일치하고 코스 요약 기준 거리는 379m입니다. 야드값과 요약값이 일치해 379m를 저장하고 메모했습니다. 13번 홀은 코스 개요에서 PAR 9로 잘못 표기됐으나 홀 상세에서는 PAR 3이므로 상세값을 적용하고 메모했습니다.
 - seed 정적 검증 및 원격 행 단위 비교 결과 verified 구장 1곳·코스 2개·홀 18개·티 90개이며 누락·불일치·추가 행은 0건입니다. 최신 원격 카탈로그는 총 511곳: verified 472, pending 38, rejected 1곳입니다.
+
+### 2026-10-14 — 한탄강CC VALLEY·MOUNTAIN 코스
+- 운영사 공식 [VALLEY 홀별 제원](https://hantancc.co.kr/m23.php?hole=1)과 [MOUNTAIN 홀별 제원](https://hantancc.co.kr/m24.php?hole=1)에서 각 9홀의 PAR·HDCP, Champion·Regular·Front·Ladies 티별 미터 거리를 확인했습니다. 기존 MCST 후보의 주소가 운영사 공식 주소와 일치합니다. 자료: `hantan-river-cc-2026-official-verified.json`.
+- 두 코스 모두 PAR36입니다. 공식 홀별 합계(m, Champion/Regular/Front/Ladies)는 VALLEY 3,175/2,939/2,708/2,586, MOUNTAIN 3,196/2,969/2,758/2,567입니다. 원격 DB 저장 후 코스 2개·홀 18개·티 72개, PAR·HDCP·티별 행 및 원본 거리 합계를 대조했고 불일치는 0건입니다. 구장은 verified로 변경했습니다.
+- 원격 카탈로그는 총 511곳: verified 473, pending 37, rejected 1입니다. 남은 pending은 강원 13, 경기 7, 제주 16, 충남 1곳입니다. 다음 조사 후보는 강원권 `인터불고원주GC`이며, 공식 홀별 PAR·거리 자료부터 확인합니다. 웅포CC·광양CC 작업은 별도 요청까지 보류합니다.
