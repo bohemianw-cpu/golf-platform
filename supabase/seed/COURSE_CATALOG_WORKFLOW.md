@@ -1430,3 +1430,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스 개요](https://www.kugolf.co.kr/swp/course)의 코스 구성과 [바른](https://www.kugolf.co.kr/swp/justitia_course), [미쁨](https://www.kugolf.co.kr/swp/trust_course), [혼솔](https://www.kugolf.co.kr/swp/honesta_course) 홀별 페이지 및 각 페이지에서 사용하는 공식 JS 자료를 확인해 PAR·HDCP와 Black/Blue/White/Red 미터 거리를 입력했습니다. 자료: `smartku-golf-pavilion-2026-official-verified.json`.
 - 세 코스는 각각 9홀 PAR36입니다. 홀별 티 거리 합계(m): 바른 3,295/3,057/2,846/2,471, 미쁨 3,450/3,207/2,975/2,455, 혼솔 3,006/2,814/2,625/2,105 (Black/Blue/White/Red). 코스 소개 HTML의 1번 홀 값도 공식 JS 자료와 일치합니다.
 - 원격 DB와 seed의 구장·경로·홀·티를 행 단위 대조해 불일치 0건을 확인했습니다(3경로·27홀·108 티 행). 카탈로그 총 511곳: 검수 완료 452, 미진행 58, 반려 1곳입니다. 미진행은 경기 26, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 썬힐GC 썬·밸리·파인·힐 공식 코스 자료
+- 운영사 공식 [썬](https://www.sunhillgolf.co.kr/HomePage/views/course/sun), [밸리](https://www.sunhillgolf.co.kr/HomePage/views/course/valley), [파인](https://www.sunhillgolf.co.kr/HomePage/views/course/pine), [힐](https://www.sunhillgolf.co.kr/HomePage/views/course/hill) 코스 페이지의 36개 홀별 그림에서 PAR와 C.T./R.T./F.T./S.T. 및 그림에 표시된 L.T./P.T. 미터 거리를 전사했습니다. 자료: `sunhill-gc-2026-official-verified.json`. 공식 HDCP 표기는 없어 비워 뒀습니다.
+- 네 코스는 각각 PAR36이며 원격 DB에 4경로·36홀·165 티 행을 저장했습니다. seed와 DB의 구장 메타데이터, 코스, 홀 순서/PAR, 티 이름·색상·선택 가능 여부·공식 m 거리 행을 대조해 불일치 0건을 확인했습니다. 파인 6번의 반복 S.T. 표기는 별도 `st_alt` 코드로 보존하고 전 홀에 없는 보조 티이므로 라운드 전체 선택에서는 제외했습니다. 파인 8번 목록 S.T. 231m/그림 308m와 힐 2번 목록 394m/그림 390m의 내부 표기 차이는 코스 메모에 기록했습니다.
+- 카탈로그 총 511곳: 검수 완료 453, 미진행 57, 반려 1곳입니다. 미진행은 경기 25, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
