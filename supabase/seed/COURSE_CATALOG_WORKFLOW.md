@@ -1626,3 +1626,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-14 — 웰리힐리퍼블릭 티별 거리 추가 반영
 - 사용자가 제공한 운영사 공식 [퍼블릭 홀별 코스 안내](https://mapi.wellihillipark.com/webpage/golf/public02.asp) 이미지 9장을 확인해 Blue·White·Red 티의 거리, 각 홀 PAR·HDCP를 입력했습니다. Blue 홀별 합계 2,874m는 공식 퍼블릭 소개 총연장과 일치하고, PAR 합계는 36입니다. 자료: `wellihilli-public-2026-official-verified.json`.
 - 원격 DB에서 퍼블릭 코스 1개·9홀·27개 티 행을 확인하고 PAR·HDCP·티 메타데이터·거리·미터 원값·선택 가능 여부를 seed와 대조했습니다. 불일치·누락 0건으로 구장과 코스를 `verified` 처리했습니다.
+
+### 2026-10-14 — 프리스틴밸리GC PRISTINE·VALLEY
+- 운영사 공식 [코스 제원](https://www.pristinevalley.co.kr/course/courseInfo.asp)과 [PRISTINE 홀별 안내](https://www.pristinevalley.co.kr/course/course01.asp) 및 [VALLEY 홀별 안내](https://www.pristinevalley.co.kr/course/course10.asp)에서 18홀 PAR·HDCP와 각 홀에 실제 표기된 Black·Blue·White·Red 및 `T` 티의 미터 거리를 저장했습니다. PRISTINE은 41개, VALLEY는 39개 실제 티 행입니다. 같은 홀에 `T`가 두 번 나오는 1번 홀은 이름은 원문 그대로 두고 저장 코드만 구분했습니다. 자료: `pristine-valley-gc-2026-official-verified.json`.
+- seed 구조 검사는 통과했습니다. 원격 행 단위 조회에서 구장·코스 2개 verified, 홀 18개(PAR36씩), 티 80개이며 조회된 거리·원단위·선택 상태는 공식 미터 자료와 일치했습니다. VALLEY의 공식 코스 요약 총연장 3,154m와 홀별 Black 상세 합 3,155m의 1m 차이는 요약값으로 홀별 값을 바꾸지 않고 세부 공식표를 저장했습니다.
+- 최신 원격 카탈로그는 verified 485, pending 25, rejected 1(총 511곳)입니다. 웰리힐리CC 남코스 자료는 사용자가 전달한 홀 도면에 거리·PAR 숫자가 없어, 공식 페이지의 숫자 자료와 대조를 이어갑니다.
