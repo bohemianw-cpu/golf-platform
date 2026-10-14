@@ -1441,3 +1441,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - Silk 8번 홀 제목의 Par-5와 공략 본문의 Par-4 표기가 달라, 제목의 Par-5를 적용하고 충돌을 경로 메모에 기록했습니다. Lake 7번 홀은 Champion·Back·Regular·Front·Lady’s 표기를 원문 이름으로 보존하고, 다른 홀의 Black·Blue·White·Yellow·Red 순서에 맞춰 티 코드를 연결했습니다. 공식 HDCP는 공개되지 않았습니다.
 - 원격 DB와 seed를 전체 필드로 대조해 구장 메타데이터 일치, 3개 경로·27홀·135개 티 전부 일치, 출처 확인 시각 존재, 누락·불일치 0건을 확인했습니다. 각 경로 PAR 합계는 Silk 37, Lake 36, Valley 36입니다.
 - 최신 원격 카탈로그 총 511곳: 검수 완료 454, 미진행 56, 반려 1곳입니다. 미진행은 경기 24, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 검수는 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 페럼클럽 동·서 코스
+- 운영사 공식 [동코스 홀별 자료](https://www.ferrumclub.com/course/east.asp)와 [서코스 홀별 자료](https://www.ferrumclub.com/course/west.asp)에서 각 홀의 PAR, Red·Yellow·White·Blue·Black 티별 yd 거리를 모두 확인했습니다. yd 원값을 보존하고 1yd=0.9144m로 홀별 반올림 환산했습니다. 공식 HDCP는 게시되지 않아 입력하지 않았습니다. 자료: `ferrum-club-2026-official-verified.json`.
+- 동·서 코스는 각각 9홀 PAR36입니다. 원거리 합계(Black/Blue/White/Yellow/Red)는 동 3,627/3,392/3,189/2,990/2,587yd, 서 3,608/3,411/3,219/2,956/2,602yd입니다.
+- 원격 DB와 seed를 구장 메타데이터·2개 경로·18홀·90개 티 행까지 비교해 누락·불일치 0건, 구장과 경로 `verified`, 출처 확인 시각 존재를 확인했습니다. 카탈로그는 총 511곳: 검수 완료 455, 미진행 55, 반려 1곳입니다. 미진행은 경기 23, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 확인은 별도 요청까지 보류합니다.
