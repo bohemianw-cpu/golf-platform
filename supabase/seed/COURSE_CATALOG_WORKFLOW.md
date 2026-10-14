@@ -1592,3 +1592,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [Mountain](https://www.tameuscc.co.kr/swp/mountain_course), [Woods](https://www.tameuscc.co.kr/swp/woods_course), [Lake](https://www.tameuscc.co.kr/swp/lake_course) 홀별 안내와 각 페이지가 불러오는 공식 코스 데이터를 확인해 27홀의 PAR·HDCP·Black·Blue·White·Yellow·Red m 거리를 입력했습니다. 홀에 따라 White 2가 별도 티 위치로 제공되어 빠짐없이 고유 티로 보존했습니다. 공식 표에 yd도 병기되어 원본 yd와 m 값을 함께 기록했습니다. 자료: `tameus-2026-official-verified.json`.
 - 공식 주소가 MCST pending 레코드와 일치합니다. 원격 DB 행 단위 대조 결과 verified, 코스 3개·홀 27개·티 145개, PAR·HDCP·티 메타데이터 및 거리의 누락·불일치 0건입니다. 세 코스 모두 PAR36이고 기준 Black 코스 배열과 티 상세가 일치합니다.
 - 최신 원격 카탈로그는 verified 479, pending 31, rejected 1(총 511곳)입니다.
+
+### 2026-10-14 — 샤인빌파크CC RIVER·PALM 코스
+- 운영사 공식 [코스 제원표](https://shinevilleparkcc.com/02course/01intro.asp)와 [PALM 1번 홀 상세](https://shinevilleparkcc.com/02course/02hole_p1.asp), [PALM 8번 홀 상세](https://shinevilleparkcc.com/02course/02hole_p8.asp)에서 RIVER·PALM 각 9홀의 PAR·HDCP와 Black·Regular·Lady 티별 미터 거리를 반영했습니다. 자료: `shineville-park-2026-official-verified.json`.
+- 두 경로 모두 PAR36, 각 27개 티 행입니다. 공식 요약표 PALM Black 총거리는 2,733m라고 표기하지만 홀별 값 합은 3,033m이며, PALM 8번 공식 상세 페이지도 521m를 표시합니다. 홀별 값을 보존하고 시설 검수 메모에 합계 불일치를 기록했습니다.
+- 원격 DB 행 단위 대조 결과 구장 verified, 코스 2개·홀 18개·티 54개, PAR·HDCP·거리·티 메타데이터 누락/불일치 0건입니다. 최신 카탈로그는 verified 480, pending 30, rejected 1(총 511곳)입니다.
