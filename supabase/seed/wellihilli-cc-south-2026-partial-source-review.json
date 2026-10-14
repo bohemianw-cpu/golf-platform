@@ -1,0 +1,43 @@
+{
+  "schema": "course-source-review-partial/1",
+  "status": "pending_missing_hole_and_north_course",
+  "venue": {
+    "match_name": "웰리힐리CC",
+    "course_count": 36,
+    "region": "강원",
+    "address": "횡성군 둔내면 고원로 451"
+  },
+  "route": {
+    "route_code": "SOUTH",
+    "display_name": "남코스",
+    "hole_count": 18,
+    "source_url": "https://www.wellihillipark.com/golf/course/map/south",
+    "source_par_reference": "공식 페이지 홀별 표기(공식 총제원 요약은 South PAR72로 별도 표기)",
+    "missing_holes": [13],
+    "tee_label_policy": "도면 범례의 색상만 읽을 수 있으며 티 이름은 없다. marker_color와 같은 색 안의 occurrence를 보존하고, 티 명칭을 추정하지 않는다.",
+    "holes": [
+      {"hole_number":1,"par":4,"tees":[{"marker_color":"red","occurrence":1,"distance_m":326},{"marker_color":"white","occurrence":1,"distance_m":347},{"marker_color":"white","occurrence":2,"distance_m":368},{"marker_color":"blue","occurrence":1,"distance_m":385},{"marker_color":"blue","occurrence":2,"distance_m":403}]},
+      {"hole_number":2,"par":4,"tees":[{"marker_color":"red","occurrence":1,"distance_m":238},{"marker_color":"white","occurrence":1,"distance_m":270},{"marker_color":"white","occurrence":2,"distance_m":289},{"marker_color":"blue","occurrence":1,"distance_m":298},{"marker_color":"blue","occurrence":2,"distance_m":326}]},
+      {"hole_number":3,"par":3,"tees":[{"marker_color":"red","occurrence":1,"distance_m":131},{"marker_color":"white","occurrence":1,"distance_m":149},{"marker_color":"white","occurrence":2,"distance_m":157},{"marker_color":"blue","occurrence":1,"distance_m":170},{"marker_color":"blue","occurrence":2,"distance_m":184}]},
+      {"hole_number":4,"par":5,"tees":[{"marker_color":"red","occurrence":1,"distance_m":481},{"marker_color":"white","occurrence":1,"distance_m":503},{"marker_color":"white","occurrence":2,"distance_m":529},{"marker_color":"blue","occurrence":1,"distance_m":555},{"marker_color":"blue","occurrence":2,"distance_m":578}]},
+      {"hole_number":5,"par":4,"tees":[{"marker_color":"red","occurrence":1,"distance_m":290},{"marker_color":"white","occurrence":1,"distance_m":322},{"marker_color":"white","occurrence":2,"distance_m":334},{"marker_color":"blue","occurrence":1,"distance_m":353},{"marker_color":"blue","occurrence":2,"distance_m":368}]},
+      {"hole_number":6,"par":3,"tees":[{"marker_color":"red","occurrence":1,"distance_m":87},{"marker_color":"white","occurrence":1,"distance_m":111},{"marker_color":"white","occurrence":2,"distance_m":139},{"marker_color":"blue","occurrence":1,"distance_m":164},{"marker_color":"blue","occurrence":2,"distance_m":181}]},
+      {"hole_number":7,"par":4,"tees":[{"marker_color":"red","occurrence":1,"distance_m":342},{"marker_color":"white","occurrence":1,"distance_m":373},{"marker_color":"white","occurrence":2,"distance_m":405},{"marker_color":"blue","occurrence":1,"distance_m":416},{"marker_color":"blue","occurrence":2,"distance_m":438}]},
+      {"hole_number":8,"par":6,"tees":[{"marker_color":"red","occurrence":1,"distance_m":440},{"marker_color":"white","occurrence":1,"distance_m":477},{"marker_color":"white","occurrence":2,"distance_m":505},{"marker_color":"blue","occurrence":1,"distance_m":516},{"marker_color":"blue","occurrence":2,"distance_m":541}]},
+      {"hole_number":9,"par":5,"tees":[{"marker_color":"red","occurrence":1,"distance_m":375},{"marker_color":"white","occurrence":1,"distance_m":410},{"marker_color":"blue","occurrence":1,"distance_m":430}]},
+      {"hole_number":10,"par":4,"tees":[{"marker_color":"red","occurrence":1,"distance_m":440},{"marker_color":"white","occurrence":1,"distance_m":477},{"marker_color":"white","occurrence":2,"distance_m":505},{"marker_color":"blue","occurrence":1,"distance_m":516},{"marker_color":"blue","occurrence":2,"distance_m":541}]},
+      {"hole_number":11,"par":3,"tees":[{"marker_color":"red","occurrence":1,"distance_m":93},{"marker_color":"white","occurrence":1,"distance_m":110},{"marker_color":"white","occurrence":2,"distance_m":122},{"marker_color":"blue","occurrence":1,"distance_m":142},{"marker_color":"blue","occurrence":2,"distance_m":172}]},
+      {"hole_number":12,"par":4,"tees":[{"marker_color":"red","occurrence":1,"distance_m":210},{"marker_color":"red","occurrence":2,"distance_m":300},{"marker_color":"red","occurrence":3,"distance_m":310},{"marker_color":"white","occurrence":1,"distance_m":330},{"marker_color":"white","occurrence":2,"distance_m":350},{"marker_color":"blue","occurrence":1,"distance_m":370}]},
+      {"hole_number":14,"par":4,"tees":[{"marker_color":"red","occurrence":1,"distance_m":281},{"marker_color":"white","occurrence":1,"distance_m":322},{"marker_color":"white","occurrence":2,"distance_m":359},{"marker_color":"blue","occurrence":1,"distance_m":380},{"marker_color":"blue","occurrence":2,"distance_m":395}]},
+      {"hole_number":15,"par":4,"tees":[{"marker_color":"red","occurrence":1,"distance_m":307},{"marker_color":"white","occurrence":1,"distance_m":317},{"marker_color":"white","occurrence":2,"distance_m":338},{"marker_color":"blue","occurrence":1,"distance_m":350},{"marker_color":"blue","occurrence":2,"distance_m":375}]},
+      {"hole_number":16,"par":5,"tees":[{"marker_color":"red","occurrence":1,"distance_m":389},{"marker_color":"white","occurrence":1,"distance_m":416},{"marker_color":"blue","occurrence":1,"distance_m":435}]},
+      {"hole_number":17,"par":3,"tees":[{"marker_color":"red","occurrence":1,"distance_m":81},{"marker_color":"white","occurrence":1,"distance_m":106},{"marker_color":"white","occurrence":2,"distance_m":124},{"marker_color":"blue","occurrence":1,"distance_m":130},{"marker_color":"blue","occurrence":2,"distance_m":140}]},
+      {"hole_number":18,"par":5,"tees":[{"marker_color":"red","occurrence":1,"distance_m":281},{"marker_color":"white","occurrence":1,"distance_m":322},{"marker_color":"white","occurrence":2,"distance_m":359},{"marker_color":"blue","occurrence":1,"distance_m":380},{"marker_color":"blue","occurrence":2,"distance_m":395}]}
+    ]
+  },
+  "open_issues": [
+    "사용자가 전달한 거리 표기 JPG에는 13번 홀이 포함되지 않았다. 기존 PNG는 도면만 있고 숫자 범례가 없다.",
+    "공식 홀별 화면의 PAR 합은 75(8번 PAR6 포함)이며 공식 기본 제원 요약은 South Course PAR72로 표기한다. 홀별 값 적용 전 최종 기준을 확인한다.",
+    "북코스 공식 홀별 PAR·티별 거리가 확인되지 않아 구장 전체 검수는 완료할 수 없다."
+  ]
+}
