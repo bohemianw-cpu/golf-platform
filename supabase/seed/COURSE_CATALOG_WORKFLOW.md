@@ -1538,3 +1538,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 파주 J-Public은 운영사 공식 [클럽 개요](https://www.jpublic.co.kr/pagesite/club/recommend.asp)와 [홀별 공략도](https://www.jpublic.co.kr/pagesite/course/one/hole01.asp)에서 6홀 운영과 PAR·홀 설명을 확인했습니다. 공식 페이지의 접근 가능한 텍스트에는 홀별 티 거리표가 없어 값을 추정해 넣지 않았고, 원격 DB 상태도 변경하지 않았습니다.
 - `코리아대중CC`는 GA KOREA 공식 [홈페이지](https://www.koreapublic.co.kr/)에서 코리아CC와 별도 표기된 코리아퍼블릭GC이며 주소가 MCST 후보(경기도 용인시 기흥구 기흥단지로 224)와 일치함을 확인했습니다. 현재 공식 홈페이지 본문 및 검색 가능한 공식 자료에서는 홀별 PAR·티 거리를 확보하지 못해 pending으로 유지합니다.
 - 다음 조사에서도 기존 검수 완료 코스 및 주소가 같은 별도 시설을 혼동하지 않도록 운영사·주소·코스 구성을 먼저 대조합니다.
+
+### 2026-10-14 — 코브스윙(구 참밸리 CC) COVE·SWING 코스
+- 운영사 공식 [코브 공략도](https://www.coveswing.com/course/cove.asp), [스윙 공략도](https://www.coveswing.com/course/swing.asp), [코스 개요](https://www.coveswing.com/mobile/course/courseIntro.asp)에서 18홀의 PAR·HDCP와 Blue·White·Gray·Red 티별 yd 및 병기된 m 거리를 입력했습니다. 코스별 9홀 PAR36, 각 36개씩 총 72개 티 거리입니다. 자료: `cove-swing-2026-official-verified.json`.
+- 기존 pending `참밸리 CC`와 공식 주소·운영 정보를 대조해 같은 구장임을 확인하고, 현재 이름 `코브스윙`으로 정리했습니다. 참밸리 CC 및 COVE Swing 명칭은 검색 별칭으로 보존했습니다. COVE 8번 Blue 상세표에는 `310yd (119m)`로 서로 모순된 표기가 있고 코스 개요는 130yd이므로, 상세표의 119m와 개요의 130yd가 가리키는 값으로 저장하고 해당 홀에만 근거 메모를 남겼습니다.
+- 원격 DB와 seed의 코스·홀·티 전체를 대조했습니다: verified 구장 1개, 코스 2개, 홀 18개, 티 72개이며 티 행 비교 누락·불일치 0건입니다. 최신 카탈로그 총 511곳: verified 470, pending 40, rejected 1곳입니다.
