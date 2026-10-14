@@ -1435,3 +1435,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [썬](https://www.sunhillgolf.co.kr/HomePage/views/course/sun), [밸리](https://www.sunhillgolf.co.kr/HomePage/views/course/valley), [파인](https://www.sunhillgolf.co.kr/HomePage/views/course/pine), [힐](https://www.sunhillgolf.co.kr/HomePage/views/course/hill) 코스 페이지의 36개 홀별 그림에서 PAR와 C.T./R.T./F.T./S.T. 및 그림에 표시된 L.T./P.T. 미터 거리를 전사했습니다. 자료: `sunhill-gc-2026-official-verified.json`. 공식 HDCP 표기는 없어 비워 뒀습니다.
 - 네 코스는 각각 PAR36이며 원격 DB에 4경로·36홀·165 티 행을 저장했습니다. seed와 DB의 구장 메타데이터, 코스, 홀 순서/PAR, 티 이름·색상·선택 가능 여부·공식 m 거리 행을 대조해 불일치 0건을 확인했습니다. 파인 6번의 반복 S.T. 표기는 별도 `st_alt` 코드로 보존하고 전 홀에 없는 보조 티이므로 라운드 전체 선택에서는 제외했습니다. 파인 8번 목록 S.T. 231m/그림 308m와 힐 2번 목록 394m/그림 390m의 내부 표기 차이는 코스 메모에 기록했습니다.
 - 카탈로그 총 511곳: 검수 완료 453, 미진행 57, 반려 1곳입니다. 미진행은 경기 25, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 이천실크밸리GC Silk·Lake·Valley 공식 코스 자료
+- 운영사 공식 [Silk](https://silkvalleygc.co.kr/course/three.asp), [Lake](https://silkvalleygc.co.kr/course/two.asp), [Valley](https://silkvalleygc.co.kr/course/one.asp) 홀별 자료 이미지에서 각 9홀의 PAR와 Black·Blue·White·Yellow·Red 티별 m 거리를 반영했습니다. 자료: `icheon-silk-valley-2026-official-verified.json`.
+- Silk 8번 홀 제목의 Par-5와 공략 본문의 Par-4 표기가 달라, 제목의 Par-5를 적용하고 충돌을 경로 메모에 기록했습니다. Lake 7번 홀은 Champion·Back·Regular·Front·Lady’s 표기를 원문 이름으로 보존하고, 다른 홀의 Black·Blue·White·Yellow·Red 순서에 맞춰 티 코드를 연결했습니다. 공식 HDCP는 공개되지 않았습니다.
+- 원격 DB와 seed를 전체 필드로 대조해 구장 메타데이터 일치, 3개 경로·27홀·135개 티 전부 일치, 출처 확인 시각 존재, 누락·불일치 0건을 확인했습니다. 각 경로 PAR 합계는 Silk 37, Lake 36, Valley 36입니다.
+- 최신 원격 카탈로그 총 511곳: 검수 완료 454, 미진행 56, 반려 1곳입니다. 미진행은 경기 24, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 검수는 별도 요청까지 보류합니다.
