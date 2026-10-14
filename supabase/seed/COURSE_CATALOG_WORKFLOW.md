@@ -1496,3 +1496,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 작업 일시 중지 지점 — 2026-10-14 지산CC 반영 완료
 - 지산CC 자료 seed와 원격 DB 반영·행 단위 검증을 마쳤습니다. 다음 진행은 새 후보를 정해 공식 출처를 찾는 단계이며, 재개 시점에는 최신 미진행 목록부터 다시 조회합니다. 현 카탈로그 집계는 verified 461, pending 49, rejected 1(총 511)입니다.
 - 재부팅 전 남아 있던 미커밋 변경은 사용자 작업으로 보여 건드리지 않았습니다. 지산CC seed와 이 작업 기록만 별도로 커밋·푸시합니다.
+
+### 2026-10-14 — 힐마루 골프앤리조트 포천 5개 코스
+- 운영사 공식 [코스 안내](https://pocheon.hillmaru.com/club-intro/courses)와 공식 CDN 홀 도면 `https://cdn.pocheon.hillmaru.com/images/course-images/pc/clubCourse-course{A-E}01.png`~`09.png`에서 시그니처 A·시그니처 B·브리즈·선샤인·네스트 각 9홀의 PAR와 Black·Blue·White·Yellow·Red 티 거리를 확인했습니다. 도면에 표시된 m 값을 그대로 입력했고, 다섯 코스 모두 PAR36입니다. 자료: `hillmaru-pocheon-2026-official-verified.json`.
+- 원격 DB 반영 후 seed와 행 단위 대조: 구장 verified, 경로 5개, 홀 45개, 티 225개, 경로·홀·티 및 메타데이터 불일치 0건. 티별 합계(m)는 시그니처 A 3,361/3,128/2,851/2,561/2,211, 시그니처 B 3,256/3,011/2,831/2,551/2,191, 브리즈 3,118/2,893/2,698/2,438/2,143, 선샤인 3,177/2,967/2,712/2,457/2,122, 네스트 3,372/3,182/2,977/2,612/2,292 (Black/Blue/White/Yellow/Red 순)입니다. 공식 HDCP는 도면에 표시되지 않아 입력하지 않았습니다.
+- 원격 카탈로그는 총 511곳: verified 462, pending 48, rejected 1입니다. 미진행은 경기 16, 제주 17, 강원 14, 충남 1곳입니다. 미진행 중 부산·경남·경북·전남·전북 구장은 없어 남부권 우선 진행 후보는 없습니다. 웅포CC·광양CC는 별도 요청 전까지 보류합니다.
