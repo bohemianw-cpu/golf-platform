@@ -1,0 +1,40 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "match_name": "인터불고원주GC",
+    "name": "인터불고원주GC",
+    "region": "강원",
+    "address": "강원도 원주시 동부순환로 200 (반곡동 1401-10)",
+    "aliases": ["호텔인터불고 원주 퍼블릭 골프 클럽", "인터불고 원주 퍼블릭 골프클럽", "Interburgo Public Golf Club"],
+    "hole_count": 9,
+    "supports_field": true,
+    "supports_screen": false,
+    "verification_status": "verified",
+    "review_notes": ["운영사 공식 코스 개요에서 9홀의 PAR·HDCP와 White·Ladies 티별 야드 거리를 확인했습니다. 원본 야드값을 보존하고 미터 거리는 1yd=0.9144m로 환산해 반올림했습니다. 기존 MCST 주소와 운영사 공식 주소가 일치합니다."]
+  },
+  "routes": [
+    {
+      "route_code": "PUBLIC",
+      "display_name": "퍼블릭 코스",
+      "hole_count": 9,
+      "primary_tee_code": "white",
+      "verification_status": "verified",
+      "source_url": "https://ibgolfclub.com/view/viewLink.do?page=homepage/KOR/Course/course",
+      "source_data_url": "https://ibgolfclub.com/view/viewLink.do?page=homepage/KOR/Course/course",
+      "par_source_url": "https://ibgolfclub.com/view/viewLink.do?page=homepage/KOR/Course/course",
+      "review_notes": ["공식 코스 표기 단위는 야드입니다. 거리 합계는 공식 White 2,625yd, Ladies 2,188yd입니다."] ,
+      "holes": [
+        {"hole_number":1,"par":3,"handicap_index":4,"tees":[{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","tee_selection_available":true,"distance_m":126,"distance_m_source":"converted","source_distance":138,"source_unit":"yd"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#ef4444","tee_selection_available":true,"distance_m":106,"distance_m_source":"converted","source_distance":116,"source_unit":"yd"}]},
+        {"hole_number":2,"par":5,"handicap_index":2,"tees":[{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","tee_selection_available":true,"distance_m":369,"distance_m_source":"converted","source_distance":404,"source_unit":"yd"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#ef4444","tee_selection_available":true,"distance_m":294,"distance_m_source":"converted","source_distance":321,"source_unit":"yd"}]},
+        {"hole_number":3,"par":3,"handicap_index":5,"tees":[{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","tee_selection_available":true,"distance_m":129,"distance_m_source":"converted","source_distance":141,"source_unit":"yd"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#ef4444","tee_selection_available":true,"distance_m":106,"distance_m_source":"converted","source_distance":116,"source_unit":"yd"}]},
+        {"hole_number":4,"par":6,"handicap_index":1,"tees":[{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","tee_selection_available":true,"distance_m":505,"distance_m_source":"converted","source_distance":552,"source_unit":"yd"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#ef4444","tee_selection_available":true,"distance_m":454,"distance_m_source":"converted","source_distance":497,"source_unit":"yd"}]},
+        {"hole_number":5,"par":4,"handicap_index":6,"tees":[{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","tee_selection_available":true,"distance_m":311,"distance_m_source":"converted","source_distance":340,"source_unit":"yd"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#ef4444","tee_selection_available":true,"distance_m":251,"distance_m_source":"converted","source_distance":275,"source_unit":"yd"}]},
+        {"hole_number":6,"par":4,"handicap_index":7,"tees":[{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","tee_selection_available":true,"distance_m":299,"distance_m_source":"converted","source_distance":327,"source_unit":"yd"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#ef4444","tee_selection_available":true,"distance_m":231,"distance_m_source":"converted","source_distance":253,"source_unit":"yd"}]},
+        {"hole_number":7,"par":4,"handicap_index":8,"tees":[{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","tee_selection_available":true,"distance_m":282,"distance_m_source":"converted","source_distance":308,"source_unit":"yd"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#ef4444","tee_selection_available":true,"distance_m":251,"distance_m_source":"converted","source_distance":275,"source_unit":"yd"}]},
+        {"hole_number":8,"par":4,"handicap_index":3,"tees":[{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","tee_selection_available":true,"distance_m":247,"distance_m_source":"converted","source_distance":270,"source_unit":"yd"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#ef4444","tee_selection_available":true,"distance_m":183,"distance_m_source":"converted","source_distance":200,"source_unit":"yd"}]},
+        {"hole_number":9,"par":3,"handicap_index":9,"tees":[{"tee_code":"white","display_name":"White","tee_color":"#f8fafc","tee_selection_available":true,"distance_m":133,"distance_m_source":"converted","source_distance":145,"source_unit":"yd"},{"tee_code":"ladies","display_name":"Ladies","tee_color":"#ef4444","tee_selection_available":true,"distance_m":123,"distance_m_source":"converted","source_distance":135,"source_unit":"yd"}]}
+      ]
+    }
+  ]
+}

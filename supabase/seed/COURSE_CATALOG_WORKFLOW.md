@@ -1557,3 +1557,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [VALLEY 홀별 제원](https://hantancc.co.kr/m23.php?hole=1)과 [MOUNTAIN 홀별 제원](https://hantancc.co.kr/m24.php?hole=1)에서 각 9홀의 PAR·HDCP, Champion·Regular·Front·Ladies 티별 미터 거리를 확인했습니다. 기존 MCST 후보의 주소가 운영사 공식 주소와 일치합니다. 자료: `hantan-river-cc-2026-official-verified.json`.
 - 두 코스 모두 PAR36입니다. 공식 홀별 합계(m, Champion/Regular/Front/Ladies)는 VALLEY 3,175/2,939/2,708/2,586, MOUNTAIN 3,196/2,969/2,758/2,567입니다. 원격 DB 저장 후 코스 2개·홀 18개·티 72개, PAR·HDCP·티별 행 및 원본 거리 합계를 대조했고 불일치는 0건입니다. 구장은 verified로 변경했습니다.
 - 원격 카탈로그는 총 511곳: verified 473, pending 37, rejected 1입니다. 남은 pending은 강원 13, 경기 7, 제주 16, 충남 1곳입니다. 다음 조사 후보는 강원권 `인터불고원주GC`이며, 공식 홀별 PAR·거리 자료부터 확인합니다. 웅포CC·광양CC 작업은 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 인터불고원주GC 퍼블릭 코스
+- 운영사 공식 [코스 개요](https://ibgolfclub.com/view/viewLink.do?page=homepage/KOR/Course/course)에서 9홀의 PAR·HDCP와 White·Ladies 티별 야드 거리를 확인했습니다. 공식 티 합계는 White 2,625yd, Ladies 2,188yd입니다. 원본 야드를 보존하고 개별 미터값은 1yd=0.9144m로 환산·반올림했습니다. MCST 주소와 운영사 공식 주소가 일치합니다. 자료: `interburgo-wonju-2026-official-verified.json`.
+- 4번 홀 PAR6를 포함한 공식 PAR 합은 36입니다. 원격 DB에 퍼블릭 경로 1개·홀 9개·티 거리 18개를 저장하고 확인했습니다. PAR·HDCP 전체 일치, yd 원본값 합계 일치, 모든 미터 환산 및 티 메타데이터 일치로 검수 완료 처리했습니다.
+- 다음 조사 후보는 강원권 `벨라45 오너스 CC`입니다. 공식 운영사 페이지에서 해당 오너스 코스의 자료만 확인해 등록된 별도 Masters 코스와 혼동하지 않도록 주소·코스 구성을 대조합니다.
