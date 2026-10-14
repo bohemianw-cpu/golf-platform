@@ -7,14 +7,16 @@
       "운영사 공식 제원표는 용인(OUT) 9홀 PAR36과 석천(IN) 9홀 PAR37, 총 18홀 PAR73으로 안내합니다. 기존 MCST 레코드의 홀 수 9를 공식자료에 맞춰 18로 정정했습니다.",
       "각 코스의 공식 홀별 거리 합계는 제원표 소계와 모든 티에서 일치합니다: OUT 3,247/3,232/3,050/2,917/2,696m, IN 3,560/3,434/3,283/3,096/2,864m (B/G/R/F/L).",
       "B/T는 OUT 5번 및 IN 2·4·6번만 거리가 게시되어 해당 원본 행은 보존하고 코스 전체 선택에서는 제외했습니다. 공식표는 티별 색상과 HDCP를 제공하지 않습니다.",
-      "공식 출처: https://yongincc.com/Course/CourseInfo.aspx (2026-10-14 확인)."
+      "공식 출처: https://yongincc.com/Course/CourseInfo.aspx (2026-10-14 확인).",
+      "MCST에 별도 9홀 항목으로 있던 석천CC는 이 공식 자료의 IN 코스(석천)와 일치합니다. 용인CC OUT(용인)·IN(석천)으로 이미 저장된 동일 시설이므로 석천CC는 별칭으로 통합했습니다. 중복 레코드에는 경로·라운드 참조가 없었습니다."
     ],
     "supports_screen": false,
     "name": "용인CC",
     "aliases": [
       "용인컨트리클럽",
       "용인 컨트리클럽",
-      "Yong In Country Club"
+      "Yong In Country Club",
+      "석천CC"
     ],
     "match_name": "용인CC"
   },

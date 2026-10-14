@@ -1416,3 +1416,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [전체 코스표](https://www.sehyeoncc.com/course/allcourse.asp)와 [VALLEY 홀별 자료](https://www.sehyeoncc.com/course/v1.asp), [LAKE 홀별 자료](https://www.sehyeoncc.com/course/l1.asp)를 대조해 두 9홀 코스의 PAR와 Black·Blue·White·Gold·Red 티별 미터 거리를 입력했습니다. 공식 자료에 HDCP는 공개되지 않아 저장하지 않았습니다. 코스별 홀별 거리 합계는 공식 전체표의 티별 합계와 일치합니다. 자료: `sehyeon-cc-2026-official-verified.json`.
 - LAKE 홀은 라운드 인덱스 10~18로 저장하고 각 경로 내부 play_order 1~9를 보존했습니다. seed와 원격 DB의 구장 메타데이터·경로·홀·티 전체를 대조해 불일치 0건을 확인했습니다(2경로·18홀·90 티 행).
 - 원격 카탈로그 총 512곳: 검수 완료 450, 미진행 61, 반려 1곳입니다. 미진행은 경기 29, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 용인CC·석천CC 중복 카탈로그 통합
+- [용인컨트리클럽 공식 코스 제원표](https://yongincc.com/Course/CourseInfo.aspx)는 한 시설을 OUT COURSE(용인)와 IN COURSE(석천)로 안내합니다. 이미 verified 상태인 용인CC에 두 경로가 저장되어 있어, MCST의 별도 9홀 석천CC 레코드를 같은 구장의 별칭으로 통합했습니다.
+- 중복 레코드는 경로·홀·라운드 참조가 없음을 확인한 뒤 제거했습니다. seed에도 `석천CC` 별칭과 통합 근거를 기록했습니다. 현재 카탈로그는 총 511곳: 검수 완료 450, 미진행 60, 반려 1곳입니다. 미진행은 경기 28, 제주 17, 강원 14, 충남 1곳입니다.
