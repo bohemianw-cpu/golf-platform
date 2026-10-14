@@ -1,3 +1,7 @@
+### 2026-10-14 — 파크밸리GC Park·Valley 코스
+- 운영사 공식 [코스 제원표](https://parkvalley.co.kr/Course/View.aspx)에서 Park 1~9번, Valley 10~18번 홀의 PAR·HDCP와 Champion·Regular·Lady 티별 공식 미터 거리를 반영했습니다. 공식 홀 번호를 보존했습니다. 두 코스는 각각 PAR36이며 티별 홀 거리 합계가 각 코스 소계(Champion 3,059/3,090m, Regular 2,916/2,937m, Lady 2,701/2,658m)와 일치합니다. 자료: `park-valley-gc-2026-official-verified.json`.
+- 원격 DB와 seed를 행 단위로 대조해 verified 구장·2개 경로·18홀·54개 티 행, 경로/홀/티 불일치 0건을 확인했습니다. 카탈로그는 총 512곳: 검수 완료 438, 미진행 73, 반려 1입니다. 웅포CC·광양CC 확인 작업은 별도 요청까지 보류합니다.
+
 ### 2026-10-14 — 크리스탈밸리CC Crystal·Valley 코스
 - 운영사 공식 [Crystal 제원표](https://www.crystalvalley.co.kr/html/course/course01.asp)와 [Valley 제원표](https://www.crystalvalley.co.kr/html/course/course01_02.asp)에서 각 9홀의 PAR·HDCP 및 Blue·White·Silver·Red 티별 공식 m/yd 거리를 반영했습니다. 앱 기준 미터 거리와 원본 미터값을 보존했고, 두 표의 티별 홀 거리 합계는 코스별 S/T 표기 합계와 일치합니다. 자료: `crystal-valley-cc-2026-official-verified.json`.
 - 원격 DB와 seed를 대조해 구장 verified, 경로 2개·홀 18개·티 행 72개 및 경로/홀/티 필드 불일치 0건을 확인했습니다. 원격 카탈로그는 총 512곳: 검수 완료 437, 미진행 74, 반려 1입니다. 웅포CC·광양CC 관련 확인은 별도 요청까지 보류합니다.
