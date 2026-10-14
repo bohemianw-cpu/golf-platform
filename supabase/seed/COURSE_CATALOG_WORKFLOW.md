@@ -1,3 +1,7 @@
+### 2026-10-14 — 서귀포팬텀 골프앤리조트 북·남 코스
+- 운영사 공식 [북코스 홀 상세](https://spgr.co.kr/swp/north_hole_01)와 [남코스 홀 상세](https://spgr.co.kr/swp/south_hole_01)에서 18홀의 PAR·HDCP와 Gold·Blue·White·Yellow·Red 티별 m 거리를 반영했습니다. 공식 번호를 유지해 북코스 1~9번, 남코스 10~18번으로 9홀 경로 두 개를 저장했습니다. 남코스 18번 PAR 항목(PAR4)과 같은 페이지 공략 문구(짧은 PAR5)가 충돌해 명시된 PAR 항목과 충돌 메모를 보존했습니다. 자료: `seogwipo-phantom-2026-official-verified.json`.
+- seed와 원격 DB를 대조해 구장 verified, 경로 2개·홀 18개·티 거리 행 90개 및 경로/홀/티 필드 불일치 0건을 확인했습니다. 원격 카탈로그는 총 512곳: 검수 완료 436, 미진행 75, 반려 1입니다. 웅포CC·광양CC 관련 확인은 별도 요청까지 보류합니다.
+
 ### 2026-10-14 — 중문GC 한라·해안 코스
 - 한국관광공사 공식 [코스 제원표](https://jungmungolf.visitkorea.or.kr/swp/courseInfo)에서 한라 1~9번·해안 10~18번의 PAR·HDCP와 Gold·Blue·White·Red 티별 m 거리를 반영했습니다. 자료: `jungmun-gc-2026-official-verified.json`.
 - 원격 DB에 2개 경로·18홀·72개 티 행을 저장하고 seed와 PAR·HDCP·티 이름·색상·거리·단위·선택 여부·그린 구분을 행 단위로 비교해 누락·불일치·추가 0건을 확인했습니다. 두 경로와 구장을 `verified` 처리했습니다. 코스 제원표의 Gold 거리 합계는 6,540m이며 클럽 개요에 안내된 전장 6,820m와 다릅니다. 홀별 값은 상세 제원표를 기준으로 저장하고 총거리 차이는 메모했습니다.
