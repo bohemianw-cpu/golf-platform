@@ -1411,3 +1411,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스 개요](https://www.rockgarden.kr/course)에서 락코스 1~6번과 가든코스 7~12번의 홀별 PAR·HDCP 및 Blue·White·Red 야드 거리를 반영했습니다. 각 코스는 6홀로 묶었고, 원본 야드를 보존하면서 0.9144를 곱해 미터로 환산·반올림했습니다. Blue 거리 합계는 락 2,351yd·가든 1,758yd로 공식 코스 합계와 일치합니다. 자료: `rock-garden-public-2026-official-verified.json`.
 - 기존 `일동레이크대중제골프장` pending 항목을 정식 명칭 규칙에 따라 `락가든GC`로 정리하고 이전 이름을 별칭으로 남겼습니다. 별도 회원제 `일동레이크 GC` 항목과 구분했습니다. 원격 DB와 seed를 행 단위 대조해 verified 구장·경로 2개·홀 12개·티 36개, 메타데이터·거리·단위 불일치 0건을 확인했습니다.
 - 카탈로그 총 512곳: 검수 완료 449, 미진행 62, 반려 1곳입니다. 미진행은 경기 30, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다. 각 경로가 6홀인 점은 라운딩 선택 UI 작업 때 반영할 항목입니다.
+
+### 2026-10-14 — 세현CC VALLEY·LAKE 공식 코스 자료
+- 운영사 공식 [전체 코스표](https://www.sehyeoncc.com/course/allcourse.asp)와 [VALLEY 홀별 자료](https://www.sehyeoncc.com/course/v1.asp), [LAKE 홀별 자료](https://www.sehyeoncc.com/course/l1.asp)를 대조해 두 9홀 코스의 PAR와 Black·Blue·White·Gold·Red 티별 미터 거리를 입력했습니다. 공식 자료에 HDCP는 공개되지 않아 저장하지 않았습니다. 코스별 홀별 거리 합계는 공식 전체표의 티별 합계와 일치합니다. 자료: `sehyeon-cc-2026-official-verified.json`.
+- LAKE 홀은 라운드 인덱스 10~18로 저장하고 각 경로 내부 play_order 1~9를 보존했습니다. seed와 원격 DB의 구장 메타데이터·경로·홀·티 전체를 대조해 불일치 0건을 확인했습니다(2경로·18홀·90 티 행).
+- 원격 카탈로그 총 512곳: 검수 완료 450, 미진행 61, 반려 1곳입니다. 미진행은 경기 29, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
