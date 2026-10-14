@@ -1576,3 +1576,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 원더클럽 공식 [힐 코스 공략도](https://www.onetheclub.com/paganica/course_hill), [포레스트 코스 공략도](https://www.onetheclub.com/paganica/course_forest), [코스 제원표](https://www.onetheclub.com/paganica/course)에서 두 코스의 18홀 PAR·HDCP와 Black·Blue·White·Yellow·Red 티별 m 거리를 확인했습니다. 홀 지도 이미지 범례에 티 색과 거리가 모두 표시됩니다. 힐 4번의 공식 Left/Right 그린 거리를 분리해 저장했습니다. 자료: `paganica-cc-2026-official-verified.json`.
 - 원격 DB 검증: MCST 파가니카CC 레코드에 경로 2개·홀 18개·티 95행을 반영하고 verified 처리했습니다. PAR·HDCP 홀 18개, 티 명칭·색상·거리·단위·그린 분류 등 기대 행과 비교해 누락·불일치 0건이며 각 경로의 공식 출처 확인 시각도 저장됐습니다. 힐 코스는 PAR36·Black 합계 3,317m로 제원표와 일치합니다. 포레스트 Black 홀별 합계는 3,118m인데 공식 제원표는 3,110m로 표기해 홀별 공식 값은 유지하고 8m 차이를 기록했습니다.
 - 카탈로그 최신 집계는 verified 476, pending 34, rejected 1(총 511곳)입니다. 남은 pending은 강원 9, 경기 7, 제주 17, 충남 1곳입니다.
+
+### 2026-10-14 — 블랙스톤제주 NORTH·SOUTH·EAST 코스
+- 운영사 공식 [북코스 1번 홀](https://bsweb.bsgrcc.com/jj/courseView?where=course-north-01)과 각 코스의 공식 1~9번 홀 안내에서 PAR와 Red·Yellow·White·Blue·Black 티별 m 거리를 입력했습니다. 공식 하단 주소와 MCST 주소가 일치하며, 공식 출처는 HDCP를 게시하지 않아 핸디캡 값을 추가하지 않았습니다. 자료: `blackstone-jeju-2026-official-verified.json`.
+- 코스별 PAR는 모두 36입니다. 티별 홀 거리 합계(m, Red/Yellow/White/Blue/Black)는 North 2,482/2,661/2,901/3,145/3,350, South 2,482/2,754/3,046/3,233/3,429, East 2,402/2,681/2,949/3,139/3,359입니다.
+- 원격 DB와 seed의 행 단위 대조: 구장 verified, 경로 3개·홀 27개·티 135개, PAR·거리·단위·티 이름/색/선택 가능 여부 및 경로 출처 메타데이터 불일치 0건입니다. 확인 시각 누락 0건입니다. 최신 원격 카탈로그는 verified 477, pending 33, rejected 1(총 511)이며 미진행은 제주 16, 강원 9, 경기 7, 충남 1곳입니다.
