@@ -1472,3 +1472,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [전체 코스표](https://thesiena.co.kr/content/seoulcc_course_1), [동코스](https://thesiena.co.kr/content/seoulcc_course_2), [서코스](https://thesiena.co.kr/content/seoulcc_course_3)에서 각 9홀의 PAR·HDCP·미터 거리와 홀 도면의 Blue·White·Gray·Red 티 색상을 확인해 입력했습니다. 티별 공식 합계는 동코스 3,162/2,995/2,826/2,576m, 서코스 3,040/2,878/2,713/2,375m로 홀별 합계와 각각 일치합니다. 자료: `the-siena-seoul-2026-official-verified.json`.
 - 공식 소개는 더 시에나 서울CC가 구 곤지암 중부CC임을 명시하고 주소도 MCST `중부CC` 항목과 일치합니다. 이름을 `더 시에나 서울CC`로 표준화하고 이전 명칭을 별칭으로 보존했습니다. 원격 DB와 seed의 구장 메타데이터·2경로·18홀·72 티 행을 필드별 대조해 누락·불일치 0건, 모든 출처 확인 시각과 `verified` 상태를 확인했습니다.
 - 현재 카탈로그는 총 511곳: 검수 완료 459, 미진행 51, 반려 1곳입니다. 미진행은 경기 19, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 제일CC SOUTH·CENTER·EAST 코스
+- 운영사 공식 [코스소개](https://www.jaeil-cc.co.kr/jaeil/course/intro.asp)와 [SOUTH 1번 홀](https://www.jaeil-cc.co.kr/jaeil/course/hole/01.asp)부터 EAST 9번 홀까지의 홀별 페이지에서 각 9홀 PAR·HDCP·Back Tee·Regular Tee·Lady 미터 거리를 입력했습니다. 전체표의 티 컬러 표기는 없어 티 이름을 보존하고 중립색을 사용했습니다. 자료: `jaeil-cc-2026-official-verified.json`.
+- 전체표와 홀 상세 사이의 LADY 거리 합계 차이는 원문 상세 데이터를 우선해 남코스 2,590m(전체표 2,769m), 중코스 2,522m(전체표 2,532m)로 저장하고 각 코스 검수 메모에 기록했습니다. 나머지 코스/티 합계는 공식 전체표와 일치합니다.
+- seed와 원격 DB를 전 필드 대조해 구장 `verified`, 3개 경로·27홀·81 티 행, 누락·불일치 0건을 확인했습니다. 카탈로그 총 511곳: 검수 완료 460, 미진행 50, 반려 1곳입니다. 미진행은 경기 18, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
