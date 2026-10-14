@@ -78,6 +78,10 @@
 - 카탈로그는 총 512곳: 검수 완료 410, 미진행 101, 반려 1입니다. 미진행은 경기 51, 강원 24, 제주 25, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
 # 골프장 카탈로그 적재와 검수
 
+### 2026-10-14 — 소노펠리체CC 비발디파크 EAST·MOUNTAIN 코스
+- 운영사 공식 [EAST OUT](https://hotel.sonohotelsresorts.com/course.sonoCourseInfo.dp/dmparse.dm?on_flag=01), [EAST IN](https://hotel.sonohotelsresorts.com/course.sonoCourseInfo.dp/dmparse.dm?on_flag=02), [MOUNTAIN 제원표](https://hotel.sonohotelsresorts.com/course.vivaldiCourseInfo.dp/dmparse.dm?on_flag=00)에서 PAR와 BLACK·BLUE·WHITE·GOLD·RED 티별 m 거리를 입력했습니다. EAST는 OUT·IN 각 9홀 PAR36, 총 18홀·88개 티 거리 행이고 MOUNTAIN은 9홀 PAR36·17개 티 거리 행입니다. 자료: `sono-vivaldi-east-2026-official-verified.json`, `sono-vivaldi-mountain-2026-official-verified.json`.
+- 공식 EAST 요약표 전장과 BLACK 홀별 합계는 OUT 3,326/3,327m, IN 3,290/3,291m로 각각 1m 차이가 있어 홀별 값을 보존하고 기록했습니다. GOLD 거리는 OUT 8번·IN 17번에 게시되지 않았습니다. MOUNTAIN RED 9번도 제원표 칸이 비어 있으며 표기 합계만으로 추정하지 않았습니다. 두 구장 레코드·세 경로를 verified 처리했고 검색 정규화값과 원본 검수 파일 메모를 적재 규칙에 맞췄습니다. DB에서 MOUNTAIN 9홀·17티 행과 EAST 18홀·88티 행, PAR 배열, 출처 확인 시각 및 검수 상태를 확인했습니다. 카탈로그 총 512곳: 검수 완료 441, 미진행 70, 반려 1곳입니다. 미진행은 강원 20, 경기 32, 제주 17, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
 ### 2026-10-14 — 파주CC 동·서 코스
 - 운영사 공식 [코스 전경 및 제원](https://www.onetheclub.com/paju/course)에서 동·서 18홀 PAR·HDCP와 Champion·Back·Regular·Front·Lady 티별 m 거리를 반영했습니다. 자료: `paju-cc-2026-official-verified.json`.
 - 원격 DB와 seed의 파·HDCP·티 구분·색상 표시·거리·출처를 행 단위로 대조해 90개 티 행 모두 일치(누락·불일치 0건)했습니다. 구장과 2개 경로를 `verified`로 설정했습니다. 공식 표는 색을 명시하지 않아 앱 표시 색상은 티 종류에 맞춘 표준 팔레트로 연결했습니다.
