@@ -1,3 +1,7 @@
+### 2026-10-14 — 용평CC 강나루·산마루 코스
+- 모나용평 공식 [강나루 홀 상세](https://www.yongpyong.co.kr/kor/golf/course/yongpyongClub/riverNaaru.do?section=1), [산마루 홀 상세](https://www.yongpyong.co.kr/kor/golf/course/yongpyongClub/ridge.do?section=1), [전체 코스 지도](https://www.yongpyong.co.kr/kor/golf/course/yongpyongClub/fullMap.do)에서 각 9홀의 PAR·HDCP 및 Lady·Regular·Gold·Champion 티별 m 거리를 반영했습니다. Par 3의 거리는 티에서 그린 지역까지, 다른 홀은 티에서 1차 퍼팅 지역까지로 공식 설명되어 있어 게시된 값을 그대로 저장했습니다. Champion 합계 6,218m는 전체 코스 지도 표기 6,800yd와 환산상 일치합니다. 공식 상세의 두 코스에 HDCP 17이 각각 한 번씩 있어 원문 값을 보존했습니다. 자료: `yongpyong-cc-2026-official-verified.json`.
+- 원격 DB와 seed를 행 단위로 대조해 구장 verified, 경로 2개·홀 18개·티 행 72개를 확인했습니다. 구장·경로·홀·티 메타데이터와 거리/단위 일치 0건, 출처 시각 누락 0건입니다. 카탈로그는 총 512곳: 검수 완료 439, 미진행 72, 반려 1입니다. 웅포CC·광양CC 확인 작업은 별도 요청까지 보류합니다.
+
 ### 2026-10-14 — 파크밸리GC Park·Valley 코스
 - 운영사 공식 [코스 제원표](https://parkvalley.co.kr/Course/View.aspx)에서 Park 1~9번, Valley 10~18번 홀의 PAR·HDCP와 Champion·Regular·Lady 티별 공식 미터 거리를 반영했습니다. 공식 홀 번호를 보존했습니다. 두 코스는 각각 PAR36이며 티별 홀 거리 합계가 각 코스 소계(Champion 3,059/3,090m, Regular 2,916/2,937m, Lady 2,701/2,658m)와 일치합니다. 자료: `park-valley-gc-2026-official-verified.json`.
 - 원격 DB와 seed를 행 단위로 대조해 verified 구장·2개 경로·18홀·54개 티 행, 경로/홀/티 불일치 0건을 확인했습니다. 카탈로그는 총 512곳: 검수 완료 438, 미진행 73, 반려 1입니다. 웅포CC·광양CC 확인 작업은 별도 요청까지 보류합니다.
