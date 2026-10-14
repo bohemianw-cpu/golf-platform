@@ -1385,3 +1385,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-14 — 휘닉스 CC MOUNTAIN·LAKE 코스
 - 운영사 공식 [전체 안내](https://phoenixhnr.co.kr/static/pyeongchang/golf/phoenix-intro), [MOUNTAIN 상세](https://phoenixhnr.co.kr/static/pyeongchang/golf/phoenix-intro-mountain), [LAKE 상세](https://phoenixhnr.co.kr/static/pyeongchang/golf/phoenix-intro-lake)에서 두 9홀 코스의 PAR·HDCP와 Gold·Blue·White·Red 티별 m 거리를 반영했습니다. 자료: `phoenix-cc-2026-official-verified.json`.
 - 공식 안내 전장 6,338m와 Gold 홀별 합계 6,355m 차이 17m 및 MOUNTAIN 6·9번 HDCP 중복(15)을 메모하고 상세 홀 값을 유지했습니다. 원격 DB와 seed의 구장·경로·홀·티 전체 72행을 대조해 누락·불일치 0건, 출처 확인 시각 및 verified 상태를 확인했습니다. 카탈로그 총 512곳: 검수 완료 443, 미진행 68, 반려 1곳입니다. 미진행은 강원 18, 경기 32, 제주 17, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 태기산 나인CC 레이크 퍼블릭 코스
+- 운영사 공식 [태기산 나인 CC 소개](https://phoenixhnr.co.kr/static/pyeongchang/golf/taegisan-intro)에서 레이크 코스는 퍼블릭 6홀, 마운틴은 연습장 4홀로 구분됨을 확인했습니다. 라운드용 레이크 6홀의 PAR·HDCP와 Blue·Red 티별 m를 입력하고 연습장 홀은 제외했습니다. 공식 미터값 합계는 Blue 1,379m, Red 1,180m입니다. 기존 MCST 이름 `휘닉스대중골프장`은 별칭으로 보존했습니다. 자료: `taegisan-nine-public-2026-official-verified.json`.
+- 원격 DB와 seed를 대조해 verified 구장·1개 경로·6홀·12개 티 행을 확인했고 모든 필드 누락·불일치 0건입니다. catalog 총 512곳: 검수 완료 444, 미진행 67, 반려 1곳입니다. 태기산 퍼블릭이 6홀인 점은 ScoreTab 경로/라운드 선택 UI 변경 시 6홀 코스 지원을 함께 확인할 항목입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
