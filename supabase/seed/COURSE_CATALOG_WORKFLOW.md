@@ -1467,3 +1467,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [OUT 코스](https://www.castlexseoul.com/html/course/course02.asp)와 [IN 코스](https://www.castlexseoul.com/html/course/course03.asp)의 홀별 도면에서 18홀 PAR·HDCP와 도면 색상 점으로 구분된 Blue·Pink·Red·Yellow 티별 야드 거리를 입력했습니다. 원본 yd를 보존하고 홀별 0.9144 환산·반올림 m를 저장했습니다. 티 구성이 홀마다 다르므로 자료에 표시된 티만 각 홀에 기록했습니다. 자료: `castlex-seoul-2026-official-verified.json`.
 - 캐슬렉스 서울 공식 주소와 MCST 경기 후보 주소가 일치하는 것을 확인하고 명칭 `캐슬렉스GC`로 표준화했습니다. 공식 홀 도면의 값으로 OUT·IN 각 9홀 PAR36, 72개 티 행을 저장했습니다. seed 대조 결과 구장·경로·홀·티 누락/불일치 0건이며 출처 확인 시각과 verified 상태를 확인했습니다.
 - 원격 카탈로그 총 511곳: 검수 완료 458, 미진행 52, 반려 1곳입니다. 미진행은 경기 20, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 더 시에나 서울CC 동·서 코스
+- 운영사 공식 [전체 코스표](https://thesiena.co.kr/content/seoulcc_course_1), [동코스](https://thesiena.co.kr/content/seoulcc_course_2), [서코스](https://thesiena.co.kr/content/seoulcc_course_3)에서 각 9홀의 PAR·HDCP·미터 거리와 홀 도면의 Blue·White·Gray·Red 티 색상을 확인해 입력했습니다. 티별 공식 합계는 동코스 3,162/2,995/2,826/2,576m, 서코스 3,040/2,878/2,713/2,375m로 홀별 합계와 각각 일치합니다. 자료: `the-siena-seoul-2026-official-verified.json`.
+- 공식 소개는 더 시에나 서울CC가 구 곤지암 중부CC임을 명시하고 주소도 MCST `중부CC` 항목과 일치합니다. 이름을 `더 시에나 서울CC`로 표준화하고 이전 명칭을 별칭으로 보존했습니다. 원격 DB와 seed의 구장 메타데이터·2경로·18홀·72 티 행을 필드별 대조해 누락·불일치 0건, 모든 출처 확인 시각과 `verified` 상태를 확인했습니다.
+- 현재 카탈로그는 총 511곳: 검수 완료 459, 미진행 51, 반려 1곳입니다. 미진행은 경기 19, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
