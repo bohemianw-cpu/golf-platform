@@ -1393,3 +1393,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-14 — 용인CC OUT·IN 코스
 - 운영사 공식 [코스 제원표](https://yongincc.com/Course/CourseInfo.aspx)에서 용인 OUT 1~9홀(PAR36), 석천 IN 1~9홀(PAR37)의 G/T·R/T·F/T·L/T 및 일부 B/T 공식 m 거리를 입력했습니다. 공식 거리 소계는 모든 티에서 홀별 합계와 일치합니다. 기존 MCST 레코드의 9홀을 공식 운영 정보에 맞춰 18홀로 정정했으며, PAR73과 HDCP 미공개도 원문대로 기록했습니다. B/T는 전체 홀에 값이 없어 선택 불가로 저장했습니다. 자료: `yongin-cc-2026-official-verified.json`.
 - 원격 DB와 seed의 구장·경로·홀·티 전체 76행(OUT 37, IN 39)을 비교해 누락·불일치 0건, 두 경로 verified와 출처 확인 시각을 확인했습니다. 카탈로그 총 512곳: 검수 완료 445, 미진행 66, 반려 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 스프링베일GC 코스
+- 운영사 공식 [1~9번 홀 상세](https://www.springvale.co.kr/04course/p1.asp)~[9번 홀 상세](https://www.springvale.co.kr/04course/p9.asp)에서 PAR와 Black·Blue·White·Red 티별 m 거리를 반영했습니다. 공식 PAR 합은 36, 홀별 거리 합은 Black 3,287m·Blue 3,103m·White 2,844m·Red 2,496m입니다. 공식 HDCP는 공개되지 않아 비워 두었습니다. 이전 레코드 `스프링베일리조트`는 별칭으로 보존하고 통칭 `스프링베일GC`로 이름을 정리했습니다.
+- 공식 8번 상세의 헤더/표는 홀 번호 8/2가 다르고 공략 문구는 515m, 티별 거리표는 Black 535m·Blue 510m·White 485m·Red 433m라 표의 티별 값을 저장하고 충돌을 검수 메모에 남겼습니다. 원격 DB와 seed의 9홀·36개 티 행 전부 일치(누락·불일치 0건), verified 상태와 출처 확인 시각을 확인했습니다. 카탈로그 총 512곳: 검수 완료 446, 미진행 65, 반려 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
