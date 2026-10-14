@@ -1515,3 +1515,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-14 — 한성CC 오렌지·블루·그린 코스
 - 운영사 공식 [오렌지 1번 홀](https://www.hansung-cc.co.kr/hcc/cont_course/sub002_01_01.asp), [블루 1번 홀](https://www.hansung-cc.co.kr/hcc/cont_course/sub002_02_01.asp), [그린 1번 홀](https://www.hansung-cc.co.kr/hcc/cont_course/sub002_03_01.asp) 페이지와 연결된 개별 홀 페이지를 확인해 27홀의 PAR·HDCP 및 Blue·White·Gold·Red 티의 m 거리를 입력했습니다. 세 코스 모두 PAR36이며 코스별 36개, 총 108개 티 거리 행입니다. 티별 거리 합계(m)는 오렌지 3,252/3,090/2,916/2,474, 블루 3,302/3,137/2,952/2,422, 그린 3,299/3,136/2,972/2,519 (Blue/White/Gold/Red 순)입니다. 자료: `hansung-cc-2026-official-verified.json`.
 - seed 정적 검증 후 원격 DB를 행 단위로 대조했습니다: verified 구장, 코스 3개·홀 27개·티 108개, PAR·HDCP·티 명칭/색/거리/단위 불일치 0건입니다. 원격 카탈로그는 총 511곳: verified 465, pending 45, rejected 1입니다. 미진행은 경기 13, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 확인은 별도 요청 전까지 보류합니다.
+
+### 2026-10-14 — 한원CC 고구려·백제·신라 코스
+- 운영사 공식 [코스 제원표](https://hanwoncc.co.kr/course/course_info.asp)에서 3개 9홀 코스의 PAR·HDCP 및 Blue·White·Red 티별 미터 거리와 원문 합계를 반영했습니다. 코스별 PAR는 모두 36이고 티 행은 27홀에 81개입니다. 홀별 합계(m, Blue/White/Red)는 고구려 2,955/2,802/2,597, 백제 2,948/2,772/2,489, 신라 2,887/2,762/2,497입니다. 공식 표의 총합은 고구려 Blue 2,935m(홀별 합과 20m 차이), 백제 Red 2,498m(홀별 합과 9m 차이)로 표시되어 원문 홀 값은 그대로 반영하고 두 차이를 코스 메모에 남겼습니다. 자료: `hanwon-cc-2026-official-verified.json`.
+- seed 정적 검증 후 원격 DB와 행 단위 대조: 구장 verified, 코스 3개·홀 27개·티 81개, PAR·HDCP·티 명칭/색/거리/단위 불일치 0건입니다. 원격 카탈로그 총 511곳: verified 466, pending 44, rejected 1입니다. 미진행은 경기 12, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 확인은 별도 요청 전까지 보류합니다.
