@@ -1587,3 +1587,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 공식 주소 및 회원제 Lake/Pine 18홀·대중형 Campo/Ocean 18홀 구성을 대조하고, 기존 pending `엘리시안제주` 레코드에 네 코스를 반영했습니다. 각 코스는 PAR36입니다. 공식 대중형 요약 합계 7,022yd와 Campo·Ocean 홀별 Black 합계 7,047yd가 25yd 차이 나므로 홀별 상세 원문은 그대로 보존하고 시설 검수 메모에 차이를 기록했습니다.
 - 정적 seed 검증 후 원격 DB에 구장 1곳·경로 4개·홀 36개·티 177개를 저장했습니다. 원격 seed 행 단위 대조를 마친 뒤 최종 카탈로그 수와 오류 여부를 기록합니다.
 - 원격 seed 행 단위 대조 결과 구장 verified, 경로 4개·홀 36개·티 177개, PAR·HDCP·티 거리·출처 메타데이터 차이 0건입니다. Ocean의 Red 티 누락도 공식 표기와 일치합니다. 최신 원격 카탈로그는 verified 478, pending 32, rejected 1(총 511곳)입니다.
+
+### 2026-10-14 — 타미우스CC MOUNTAIN·WOODS·LAKE 코스
+- 운영사 공식 [Mountain](https://www.tameuscc.co.kr/swp/mountain_course), [Woods](https://www.tameuscc.co.kr/swp/woods_course), [Lake](https://www.tameuscc.co.kr/swp/lake_course) 홀별 안내와 각 페이지가 불러오는 공식 코스 데이터를 확인해 27홀의 PAR·HDCP·Black·Blue·White·Yellow·Red m 거리를 입력했습니다. 홀에 따라 White 2가 별도 티 위치로 제공되어 빠짐없이 고유 티로 보존했습니다. 공식 표에 yd도 병기되어 원본 yd와 m 값을 함께 기록했습니다. 자료: `tameus-2026-official-verified.json`.
+- 공식 주소가 MCST pending 레코드와 일치합니다. 원격 DB 행 단위 대조 결과 verified, 코스 3개·홀 27개·티 145개, PAR·HDCP·티 메타데이터 및 거리의 누락·불일치 0건입니다. 세 코스 모두 PAR36이고 기준 Black 코스 배열과 티 상세가 일치합니다.
+- 최신 원격 카탈로그는 verified 479, pending 31, rejected 1(총 511곳)입니다.
