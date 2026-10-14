@@ -189,15 +189,23 @@ for (const course of corrections) {
   if (course.hole_count != null && routes.length) {
     const catalogHoleCount = routes.reduce((sum, route) => sum + route.hole_count, 0)
     if (catalogHoleCount !== course.hole_count) {
+      const hasAlternativeFullLayouts = course.allow_alternative_routes === true
+        && catalogHoleCount > course.hole_count
+        && routes.length > 1
+        && routes.every((route) => route.hole_count === course.hole_count)
       const canPublishPartialCatalog = course.allow_partial_routes === true
         && course.verification_status === 'verified'
         && catalogHoleCount < course.hole_count
         && routes.every((route) => (route.verification_status ?? course.verification_status) === 'verified')
         && course.review_notes?.some((note) => /미확인|미공개|업데이트 예정|자료 확인/.test(note))
-      if (!canPublishPartialCatalog) {
-        throw new Error(`${course.name}: 코스 레이아웃 합계와 구장 hole_count가 일치하지 않습니다. 일부 레이아웃을 제공하려면 allow_partial_routes=true와 미수록 코스 설명을 review_notes에 명시하세요.`)
+      if (!hasAlternativeFullLayouts && !canPublishPartialCatalog) {
+        throw new Error(`${course.name}: 코스 레이아웃 합계와 구장 hole_count가 일치하지 않습니다. 각 레이아웃이 구장 전체 홀 수와 같은 대체 코스라면 allow_alternative_routes=true를, 일부 레이아웃만 제공한다면 allow_partial_routes=true와 미수록 코스 설명을 review_notes에 명시하세요.`)
       }
-      console.warn(`부분 카탈로그: ${course.name}의 전체 ${course.hole_count}홀 중 공식 검증된 ${catalogHoleCount}홀 레이아웃만 공개합니다.`)
+      if (hasAlternativeFullLayouts) {
+        console.log(`대체 레이아웃: ${course.name}의 물리 홀 ${course.hole_count}홀에 각각 전체 홀을 가진 ${routes.length}개 코스를 등록합니다.`)
+      } else {
+        console.warn(`부분 카탈로그: ${course.name}의 전체 ${course.hole_count}홀 중 공식 검증된 ${catalogHoleCount}홀 레이아웃만 공개합니다.`)
+      }
     }
   }
 }
