@@ -1528,3 +1528,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-14 — 아난티 코드 GC 자작나무·느티나무·잣나무 코스
 - 운영사 공식 [자작나무 코스](https://ananti.kr/ko/chord/CD0205), [느티나무 코스](https://ananti.kr/ko/chord/CD0206), [잣나무 코스](https://ananti.kr/ko/chord/CD0207)에서 각 9홀 PAR와 색상별 공식 거리(m)를 입력했습니다. 구 DB의 `아난티클럽서울`은 공식 아난티 코드 주소(경기도 가평군 설악면 유명로 961-34)와 일치해 공식 표기 `아난티 코드 GC`로 이름을 정리하고 기존 이름과 ANANTI CHORD를 검색 별칭으로 남겼습니다. 각 코스 PAR36, 총 27홀·82개 티 거리입니다. 공식 홀별 표에서 느티나무 5번만 Yellow 티가 있어 포함했고, 그 외 없는 티는 추가하지 않았습니다. 잣나무 7번은 공식 로컬 룰에 따라 안전상 그린 직접 공략이 불가하다는 안내를 구장·코스 메모에 남겼습니다. 자료: `ananti-chord-2026-official-verified.json`.
 - seed 정적 검증 및 원격 DB 행 단위 대조를 마쳤습니다: verified 구장·경로 3개·홀 27개·티 82개, 코스/홀/티 및 출처 메타데이터 불일치 0건입니다. 원격 집계는 총 511곳: verified 468, pending 42, rejected 1입니다. 미진행은 강원 14, 경기 10, 제주 17, 충남 1곳입니다. 웅포CC·광양CC는 별도 요청 전까지 보류합니다.
+
+### 2026-10-14 — 해솔리아CC HAE·SOL·LIA 공식 코스 자료
+- 운영사 공식 [HAE 코스](https://www.haesoliacc.co.kr/course/h01.asp), [SOL 코스](https://www.haesoliacc.co.kr/course/s01.asp), [LIA 코스](https://www.haesoliacc.co.kr/course/l01.asp)와 각 홀 상세 페이지의 공식 표에서 PAR·HDCP 및 Black·Blue·White·Red 티별 미터 거리를 확인해 입력했습니다. 각 코스 PAR36, 총 27홀·108개 티 거리 행입니다. 티별 거리 합계(m)는 HAE 3,435/3,081/2,841/2,592, SOL 3,070/2,818/2,604/2,369, LIA 3,040/2,726/2,492/2,098 (Black/Blue/White/Red 순)입니다. 자료: `haesolia-cc-2026-official-verified.json`.
+- 기존 pending `해솔리아 CC` 후보와 공식 주소(경기도 용인시 처인구 이동읍 백자로 369)를 대조해 동일 구장임을 확인했습니다. 원격 DB와 seed를 홀·티 행 단위로 비교해 3개 코스·27홀·108개 티, 누락·불일치 0건, 구장 및 코스 verified, 출처 확인 시각 존재를 확인했습니다. 최신 원격 카탈로그 총 511곳: verified 469, pending 41, rejected 1곳입니다. 미진행은 제주 17, 강원 14, 경기 9, 충남 1곳입니다. 웅포CC·광양CC 확인은 별도 요청 전까지 보류합니다.
+- 다음 후보는 최신 pending 목록을 다시 조회해 공식 홀별 PAR·티 자료가 충분한 곳을 고릅니다. 자료가 불완전한 구장은 추정값을 입력하지 않고 다음 후보로 넘어갑니다.
