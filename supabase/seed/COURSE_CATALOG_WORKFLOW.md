@@ -1420,3 +1420,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-14 — 용인CC·석천CC 중복 카탈로그 통합
 - [용인컨트리클럽 공식 코스 제원표](https://yongincc.com/Course/CourseInfo.aspx)는 한 시설을 OUT COURSE(용인)와 IN COURSE(석천)로 안내합니다. 이미 verified 상태인 용인CC에 두 경로가 저장되어 있어, MCST의 별도 9홀 석천CC 레코드를 같은 구장의 별칭으로 통합했습니다.
 - 중복 레코드는 경로·홀·라운드 참조가 없음을 확인한 뒤 제거했습니다. seed에도 `석천CC` 별칭과 통합 근거를 기록했습니다. 현재 카탈로그는 총 511곳: 검수 완료 450, 미진행 60, 반려 1곳입니다. 미진행은 경기 28, 제주 17, 강원 14, 충남 1곳입니다.
+
+### 2026-10-14 — 수원CC NEW·OLD OUT/IN 공식 자료
+- 운영사 공식 [코스소개](https://www.suwoncc.co.kr/course/intro) 및 [코스공략팁](https://www.suwoncc.co.kr/course/tip)에서 공개되는 코스 API의 홀별 PAR·HDCP와 Blue/White/Yellow/Red 티 야드 거리를 반영했습니다. 홈페이지 메타데이터의 단위는 YARD이며, 원 yd 값과 0.9144 환산·반올림한 미터를 함께 저장했습니다. 자료: `suwon-cc-2026-official-verified.json`.
+- NEW OUT·NEW IN·OLD OUT·OLD IN은 각각 9홀 PAR36입니다. 각 코스별 홀 합계가 공식 API 티 합계와 일치합니다(Blue/White/Yellow/Red yd): NEW OUT 3,462/3,302/3,024/2,626, NEW IN 3,542/3,399/3,088/2,697, OLD OUT 3,544/3,335/3,171/2,811, OLD IN 3,375/3,193/3,019/2,661.
+- 원격 DB와 seed의 구장·경로·홀·티 데이터를 행 단위 대조해 불일치 0건을 확인했습니다(4경로·36홀·144 티 행). 카탈로그 총 511곳: 검수 완료 451, 미진행 59, 반려 1곳입니다. 미진행은 경기 27, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
