@@ -1477,3 +1477,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코스소개](https://www.jaeil-cc.co.kr/jaeil/course/intro.asp)와 [SOUTH 1번 홀](https://www.jaeil-cc.co.kr/jaeil/course/hole/01.asp)부터 EAST 9번 홀까지의 홀별 페이지에서 각 9홀 PAR·HDCP·Back Tee·Regular Tee·Lady 미터 거리를 입력했습니다. 전체표의 티 컬러 표기는 없어 티 이름을 보존하고 중립색을 사용했습니다. 자료: `jaeil-cc-2026-official-verified.json`.
 - 전체표와 홀 상세 사이의 LADY 거리 합계 차이는 원문 상세 데이터를 우선해 남코스 2,590m(전체표 2,769m), 중코스 2,522m(전체표 2,532m)로 저장하고 각 코스 검수 메모에 기록했습니다. 나머지 코스/티 합계는 공식 전체표와 일치합니다.
 - seed와 원격 DB를 전 필드 대조해 구장 `verified`, 3개 경로·27홀·81 티 행, 누락·불일치 0건을 확인했습니다. 카탈로그 총 511곳: 검수 완료 460, 미진행 50, 반려 1곳입니다. 미진행은 경기 18, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
+### 작업 일시 중지 지점 — 2026-10-14
+- 제일CC SOUTH·CENTER·EAST 자료 입력, 원격 DB 대조 및 push까지 완료했습니다 (`ef9b85e`). 카탈로그는 총 511곳: 검수 완료 460, 미진행 50, 반려 1곳이며 미진행은 경기 18, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 확인은 별도 요청 전까지 보류합니다.
+- 다음 후보는 회원제 지산CC(27홀, pending; id `46922684-e586-421b-aca1-1b25522ec585`)입니다. 공식 [회원제 코스 페이지](https://www.jisanresort.co.kr/m/golf/member/course01.asp)는 거리를 yd 단위로 안내하며 동·남·서 각 9홀과 PAR/홀 설명을 제공합니다. 티별 거리는 홀 도면 이미지에 있어 아직 전사·입력하지 않았습니다. 지산CC는 이미 검수 완료된 지산퍼블릭과 별도 구장으로 유지합니다.
+- 재개하면 공식 홀 이미지에서 지산CC의 티별 거리를 확인한 뒤 seed 작성, 검수 및 DB 반영을 이어갑니다.
