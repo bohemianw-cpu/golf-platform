@@ -1603,7 +1603,12 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 스코어카드 홀별 PAR는 각 코스 36, 전체 108입니다. 운영사 별도 코스 제원 요약은 East PAR35로 표기하여 충돌 내용을 시설 검수 메모에 남기고 홀별 스코어카드를 적용했습니다.
 - 원격 DB 행 단위 대조 결과 verified, 코스 3개·홀 27개·티 117개이며 PAR·HDCP·거리·티 메타데이터 누락/불일치 0건입니다. 최신 카탈로그 verified 481, pending 29, rejected 1(총 511곳)입니다.
 
+### 2026-10-14 — 에버리스CC SAEBYUL·LAKE·PINE 코스
+- 운영사 [공식 코스 안내](https://www.shinangolf.com/club/course/everis)에서 새별·레이크·파인 각 9홀의 PAR·HDCP와 미터 제원표를 확인하고, [새별](https://www.shinangolf.com/assets/images/sub/club/course/everis/saebyul-map-01.png), [레이크](https://www.shinangolf.com/assets/images/sub/club/course/everis/lake-map-01.png), [파인](https://www.shinangolf.com/assets/images/sub/club/course/everis/pine-map-01.png) 각 홀의 공식 거리 지도에서 색상별 거리를 입력했습니다. 지도에 이름 대신 색만 표시되어 색상명을 유지했고, 같은 색 티가 여러 위치에 있으면 (2), (3)으로 구분했습니다. 자료: `everis-2026-official-verified.json`.
+- 공식 표의 PAR·HDCP를 사용하고, 티별 거리는 홀 지도에 표시된 색상 수치 그대로 보존했습니다. 기존 pending 레코드와 공식 주소를 대조해 주소를 애월읍까지 보완했으며, 총 27홀로 갱신했습니다.
+- 원격 DB 행 단위 대조 결과 verified, 코스 3개·홀 27개·티 161개이며 코스 요약·PAR·HDCP·티 거리·티 메타데이터 차이 0건입니다. 최신 카탈로그는 verified 482, pending 28, rejected 1(총 511곳)입니다.
+
 ### 2026-10-14 — 다음 작업 재개 지점
-- 다음 검토 후보는 에버리스CC입니다. 신안그룹 공식 페이지에서 구장 소개는 확인되지만, 공식 홀별 PAR·티 거리 자료는 현재 접근 제한으로 열리지 않았습니다. 제3자 자료 간 거리 차이가 있어 임의로 적재하지 않았으며 MCST 레코드는 미진행 상태로 유지합니다.
-- 재개 시 에버리스CC 공식 코스 자료 접근을 다시 확인합니다. 공식 자료가 계속 불가하면 다른 제주 지역 미진행 구장 중 공식 홀별 제원이 충분한 곳으로 이동합니다.
-- 직전 완료 구장: 크라운CC. 최신 원격 카탈로그 수: verified 481, pending 29, rejected 1(총 511곳). 사용자 소유의 미커밋 UI·온보딩·마이그레이션 변경은 그대로 보존합니다.
+- 에버리스CC는 새별·레이크·파인 27홀의 공식 PAR·HDCP와 티별 거리를 적재·검수 완료했습니다. 원격 대조는 코스 3개·홀 27개·티 161개, 불일치 0건입니다.
+- 다음 조사 후보는 제주 지역 미진행 구장 중 공식 홀별 자료를 확보할 수 있는 곳입니다. 테디밸리CC의 공식 코스 자료를 우선 조사하고, 확보가 어려우면 다른 제주 후보로 이동합니다.
+- 최신 원격 카탈로그 수: verified 482, pending 28, rejected 1(총 511곳). 사용자 소유의 미커밋 UI·온보딩·마이그레이션 변경은 그대로 보존합니다.
