@@ -1,0 +1,1079 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "name": "용평버치힐CC",
+    "match_name": "버치힐컨트리클럽",
+    "region": "강원",
+    "address": "평창군 대관령면 올림픽로 715",
+    "aliases": [
+      "용평버치힐GC",
+      "버치힐컨트리클럽",
+      "버치힐 컨트리클럽",
+      "BirchHill CC",
+      "Birch Hill Country Club"
+    ],
+    "supports_screen": false,
+    "hole_count": 18,
+    "review_notes": [
+      "운영사 공식 FULL MAP의 전체 코스 안내는 7,000 YARD(약 6,400.8m)로 표시합니다. 홀별 Champion 상세 값 합은 BIRCH 3,180m + HILL 3,129m = 6,309m로 약 92m 차이가 있어, 상세 페이지의 홀별 수치를 기준으로 저장했습니다.",
+      "운영사 공식 상세의 Par 3 거리는 티에서 그린 지역까지, 그 외 홀은 티에서 1차 퍼팅 지역까지로 표기된 값입니다. 게시된 티-목표 거리값을 원문 그대로 저장했습니다."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "BIRCH",
+      "display_name": "BIRCH COURSE",
+      "hole_count": 9,
+      "primary_tee_code": "regular",
+      "source_url": "https://www.yongpyong.co.kr/kor/golf/course/birchhillClub/birch.do?section=1",
+      "par_source_url": "https://www.yongpyong.co.kr/kor/golf/course/birchhillClub/birch.do?section=1",
+      "source_data_url": "https://www.yongpyong.co.kr/kor/golf/course/birchhillClub/birch.do?section=1",
+      "review_notes": [
+        "운영사 공식 상세의 Par 3 거리는 티에서 그린 지역까지, 그 외 홀은 티에서 1차 퍼팅 지역까지로 표기된 값입니다. 게시된 티-목표 거리값을 원문 그대로 저장했습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 5,
+          "handicap_index": 16,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 407,
+              "distance_m_source": "official",
+              "source_distance": 407,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 439,
+              "distance_m_source": "official",
+              "source_distance": 439,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 468,
+              "distance_m_source": "official",
+              "source_distance": 468,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 484,
+              "distance_m_source": "official",
+              "source_distance": 484,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 499,
+              "distance_m_source": "official",
+              "source_distance": 499,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "handicap_index": 2,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 315,
+              "distance_m_source": "official",
+              "source_distance": 315,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 338,
+              "distance_m_source": "official",
+              "source_distance": 338,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 369,
+              "distance_m_source": "official",
+              "source_distance": 369,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 395,
+              "distance_m_source": "official",
+              "source_distance": 395,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 417,
+              "distance_m_source": "official",
+              "source_distance": 417,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 3,
+          "handicap_index": 12,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 123,
+              "distance_m_source": "official",
+              "source_distance": 123,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 123,
+              "distance_m_source": "official",
+              "source_distance": 123,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 143,
+              "distance_m_source": "official",
+              "source_distance": 143,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 165,
+              "distance_m_source": "official",
+              "source_distance": 165,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 184,
+              "distance_m_source": "official",
+              "source_distance": 184,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "handicap_index": 18,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 221,
+              "distance_m_source": "official",
+              "source_distance": 221,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 237,
+              "distance_m_source": "official",
+              "source_distance": 237,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 277,
+              "distance_m_source": "official",
+              "source_distance": 277,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 280,
+              "distance_m_source": "official",
+              "source_distance": 280,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 295,
+              "distance_m_source": "official",
+              "source_distance": 295,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "handicap_index": 14,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 223,
+              "distance_m_source": "official",
+              "source_distance": 223,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 242,
+              "distance_m_source": "official",
+              "source_distance": 242,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 266,
+              "distance_m_source": "official",
+              "source_distance": 266,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 282,
+              "distance_m_source": "official",
+              "source_distance": 282,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 312,
+              "distance_m_source": "official",
+              "source_distance": 312,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "handicap_index": 4,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 324,
+              "distance_m_source": "official",
+              "source_distance": 324,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 342,
+              "distance_m_source": "official",
+              "source_distance": 342,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 368,
+              "distance_m_source": "official",
+              "source_distance": 368,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 396,
+              "distance_m_source": "official",
+              "source_distance": 396,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 415,
+              "distance_m_source": "official",
+              "source_distance": 415,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "handicap_index": 10,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 270,
+              "distance_m_source": "official",
+              "source_distance": 270,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 308,
+              "distance_m_source": "official",
+              "source_distance": 308,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 330,
+              "distance_m_source": "official",
+              "source_distance": 330,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 348,
+              "distance_m_source": "official",
+              "source_distance": 348,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 365,
+              "distance_m_source": "official",
+              "source_distance": 365,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 3,
+          "handicap_index": 6,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 142,
+              "distance_m_source": "official",
+              "source_distance": 142,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 158,
+              "distance_m_source": "official",
+              "source_distance": 158,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 164,
+              "distance_m_source": "official",
+              "source_distance": 164,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 182,
+              "distance_m_source": "official",
+              "source_distance": 182,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 197,
+              "distance_m_source": "official",
+              "source_distance": 197,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 5,
+          "handicap_index": 8,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 372,
+              "distance_m_source": "official",
+              "source_distance": 372,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 421,
+              "distance_m_source": "official",
+              "source_distance": 421,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 460,
+              "distance_m_source": "official",
+              "source_distance": 460,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 481,
+              "distance_m_source": "official",
+              "source_distance": 481,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 496,
+              "distance_m_source": "official",
+              "source_distance": 496,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route_code": "HILL",
+      "display_name": "HILL COURSE",
+      "hole_count": 9,
+      "primary_tee_code": "regular",
+      "source_url": "https://www.yongpyong.co.kr/kor/golf/course/birchhillClub/hill.do?section=1",
+      "par_source_url": "https://www.yongpyong.co.kr/kor/golf/course/birchhillClub/hill.do?section=1",
+      "source_data_url": "https://www.yongpyong.co.kr/kor/golf/course/birchhillClub/hill.do?section=1",
+      "review_notes": [
+        "운영사 공식 상세의 Par 3 거리는 티에서 그린 지역까지, 그 외 홀은 티에서 1차 퍼팅 지역까지로 표기된 값입니다. 게시된 티-목표 거리값을 원문 그대로 저장했습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "handicap_index": 13,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 258,
+              "distance_m_source": "official",
+              "source_distance": 258,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 283,
+              "distance_m_source": "official",
+              "source_distance": 283,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 285,
+              "distance_m_source": "official",
+              "source_distance": 285,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 309,
+              "distance_m_source": "official",
+              "source_distance": 309,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 329,
+              "distance_m_source": "official",
+              "source_distance": 329,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 3,
+          "handicap_index": 11,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 91,
+              "distance_m_source": "official",
+              "source_distance": 91,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 116,
+              "distance_m_source": "official",
+              "source_distance": 116,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 134,
+              "distance_m_source": "official",
+              "source_distance": 134,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 153,
+              "distance_m_source": "official",
+              "source_distance": 153,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 175,
+              "distance_m_source": "official",
+              "source_distance": 175,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 5,
+          "handicap_index": 5,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 381,
+              "distance_m_source": "official",
+              "source_distance": 381,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 407,
+              "distance_m_source": "official",
+              "source_distance": 407,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 441,
+              "distance_m_source": "official",
+              "source_distance": 441,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 452,
+              "distance_m_source": "official",
+              "source_distance": 452,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 476,
+              "distance_m_source": "official",
+              "source_distance": 476,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "handicap_index": 1,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 331,
+              "distance_m_source": "official",
+              "source_distance": 331,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 352,
+              "distance_m_source": "official",
+              "source_distance": 352,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 379,
+              "distance_m_source": "official",
+              "source_distance": 379,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 407,
+              "distance_m_source": "official",
+              "source_distance": 407,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 426,
+              "distance_m_source": "official",
+              "source_distance": 426,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "handicap_index": 7,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 263,
+              "distance_m_source": "official",
+              "source_distance": 263,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 296,
+              "distance_m_source": "official",
+              "source_distance": 296,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 316,
+              "distance_m_source": "official",
+              "source_distance": 316,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 336,
+              "distance_m_source": "official",
+              "source_distance": 336,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 357,
+              "distance_m_source": "official",
+              "source_distance": 357,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 3,
+          "handicap_index": 17,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 89,
+              "distance_m_source": "official",
+              "source_distance": 89,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 114,
+              "distance_m_source": "official",
+              "source_distance": 114,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 117,
+              "distance_m_source": "official",
+              "source_distance": 117,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 136,
+              "distance_m_source": "official",
+              "source_distance": 136,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 156,
+              "distance_m_source": "official",
+              "source_distance": 156,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "handicap_index": 15,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 225,
+              "distance_m_source": "official",
+              "source_distance": 225,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 257,
+              "distance_m_source": "official",
+              "source_distance": 257,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 279,
+              "distance_m_source": "official",
+              "source_distance": 279,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 305,
+              "distance_m_source": "official",
+              "source_distance": 305,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 326,
+              "distance_m_source": "official",
+              "source_distance": 326,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 5,
+          "handicap_index": 9,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 390,
+              "distance_m_source": "official",
+              "source_distance": 390,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 420,
+              "distance_m_source": "official",
+              "source_distance": 420,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 437,
+              "distance_m_source": "official",
+              "source_distance": 437,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 461,
+              "distance_m_source": "official",
+              "source_distance": 461,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 486,
+              "distance_m_source": "official",
+              "source_distance": 486,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "handicap_index": 3,
+          "tees": [
+            {
+              "tee_code": "senior",
+              "display_name": "Senior",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 280,
+              "distance_m_source": "official",
+              "source_distance": 280,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "lady",
+              "display_name": "Lady",
+              "tee_color": "#ef4444",
+              "tee_selection_available": true,
+              "distance_m": 315,
+              "distance_m_source": "official",
+              "source_distance": 315,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#cbd5e1",
+              "tee_selection_available": true,
+              "distance_m": 342,
+              "distance_m_source": "official",
+              "source_distance": 342,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "gold",
+              "display_name": "Gold",
+              "tee_color": "#eab308",
+              "tee_selection_available": true,
+              "distance_m": 373,
+              "distance_m_source": "official",
+              "source_distance": 373,
+              "source_unit": "m"
+            },
+            {
+              "tee_code": "champion",
+              "display_name": "Champion",
+              "tee_color": "#64748b",
+              "tee_selection_available": true,
+              "distance_m": 398,
+              "distance_m_source": "official",
+              "source_distance": 398,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
