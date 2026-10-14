@@ -1543,3 +1543,7 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [코브 공략도](https://www.coveswing.com/course/cove.asp), [스윙 공략도](https://www.coveswing.com/course/swing.asp), [코스 개요](https://www.coveswing.com/mobile/course/courseIntro.asp)에서 18홀의 PAR·HDCP와 Blue·White·Gray·Red 티별 yd 및 병기된 m 거리를 입력했습니다. 코스별 9홀 PAR36, 각 36개씩 총 72개 티 거리입니다. 자료: `cove-swing-2026-official-verified.json`.
 - 기존 pending `참밸리 CC`와 공식 주소·운영 정보를 대조해 같은 구장임을 확인하고, 현재 이름 `코브스윙`으로 정리했습니다. 참밸리 CC 및 COVE Swing 명칭은 검색 별칭으로 보존했습니다. COVE 8번 Blue 상세표에는 `310yd (119m)`로 서로 모순된 표기가 있고 코스 개요는 130yd이므로, 상세표의 119m와 개요의 130yd가 가리키는 값으로 저장하고 해당 홀에만 근거 메모를 남겼습니다.
 - 원격 DB와 seed의 코스·홀·티 전체를 대조했습니다: verified 구장 1개, 코스 2개, 홀 18개, 티 72개이며 티 행 비교 누락·불일치 0건입니다. 최신 카탈로그 총 511곳: verified 470, pending 40, rejected 1곳입니다.
+
+### 2026-10-14 — 카스카디아GC Stone·Tree·Water 코스
+- 운영사 공식 [골프클럽 코스 제원](https://cascadia.kr/swp/golfclub)에서 Stone·Tree·Water 각 9홀의 PAR·HDCP 및 Black·Blue·White·Yellow·Red 티별 야드 거리를 확인했습니다. 원본 yd와 각 홀의 0.9144 환산·반올림 m를 함께 저장했습니다. 각 코스 PAR36, 총 27홀·135개 티 거리입니다. 자료: `cascadia-2026-official-verified.json`.
+- MCST pending `카스카디아 GC`의 주소가 공식 사이트 주소와 일치함을 확인했습니다. 공식 자료 기준 원격 DB와 seed 전체 비교 결과 구장 verified, 코스 3개·홀 27개·티 135개, 코스 메타데이터·PAR·HDCP·거리·티 표시 정보 누락/불일치 0건이며 세 코스 모두 출처 확인 시각이 저장됐습니다. 최신 카탈로그는 총 511곳: verified 471, pending 39, rejected 1곳입니다.
