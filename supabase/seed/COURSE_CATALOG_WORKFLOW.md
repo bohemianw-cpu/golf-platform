@@ -1462,3 +1462,8 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 - 운영사 공식 [퍼블릭 코스 안내](https://www.jisanresort.co.kr/w/golf/public/course.asp)와 해당 페이지에서 연결된 1~9번 홀별 도면을 확인해 각 홀의 PAR와 White·Red 티 거리를 입력했습니다. 페이지의 거리 단위 안내에 따라 도면의 yd 원값을 보존하고 홀별로 0.9144를 곱해 반올림한 m 값을 저장했습니다. 홀별 PAR 합은 36이며, White 2,345yd/2,143m, Red 2,093yd/1,913m(홀별 m 반올림 합)입니다. 홈페이지에 공식 티 총합과 HDCP는 게시되지 않아 입력하지 않았습니다. 자료: `jisan-public-2026-official-verified.json`.
 - 지산 리조트의 회원제 `지산CC`와 별도 퍼블릭 코스 레코드 `지산퍼블릭`은 각각 유지했습니다. 원격 DB와 seed의 구장·1경로·9홀·18개 티를 전 필드 대조해 불일치 0건, 출처 확인 시각과 verified 상태를 확인했습니다.
 - 최신 원격 카탈로그 총 511곳: 검수 완료 457, 미진행 53, 반려 1곳입니다. 미진행은 경기 21, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
+
+### 2026-10-14 — 캐슬렉스GC OUT·IN 코스
+- 운영사 공식 [OUT 코스](https://www.castlexseoul.com/html/course/course02.asp)와 [IN 코스](https://www.castlexseoul.com/html/course/course03.asp)의 홀별 도면에서 18홀 PAR·HDCP와 도면 색상 점으로 구분된 Blue·Pink·Red·Yellow 티별 야드 거리를 입력했습니다. 원본 yd를 보존하고 홀별 0.9144 환산·반올림 m를 저장했습니다. 티 구성이 홀마다 다르므로 자료에 표시된 티만 각 홀에 기록했습니다. 자료: `castlex-seoul-2026-official-verified.json`.
+- 캐슬렉스 서울 공식 주소와 MCST 경기 후보 주소가 일치하는 것을 확인하고 명칭 `캐슬렉스GC`로 표준화했습니다. 공식 홀 도면의 값으로 OUT·IN 각 9홀 PAR36, 72개 티 행을 저장했습니다. seed 대조 결과 구장·경로·홀·티 누락/불일치 0건이며 출처 확인 시각과 verified 상태를 확인했습니다.
+- 원격 카탈로그 총 511곳: 검수 완료 458, 미진행 52, 반려 1곳입니다. 미진행은 경기 20, 제주 17, 강원 14, 충남 1곳입니다. 웅포CC·광양CC 추가 확인은 별도 요청까지 보류합니다.
