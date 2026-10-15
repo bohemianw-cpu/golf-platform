@@ -1,0 +1,45 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "name": "계룡산골프클럽",
+    "match_name": "계룡산골프장",
+    "region": "충남",
+    "address": "공주시 계룡면 아랫난댕이길 17(내흥리)",
+    "aliases": ["계룡산골프클럽", "계룡산골프장", "Gyeryongsan Golf Club"],
+    "hole_count": 9,
+    "supports_screen": false,
+    "verification_status": "verified",
+    "review_notes": [
+      "사용자가 제공한 계룡산골프클럽 스코어카드 사진에서 9홀의 PAR와 RT 기준거리(m)를 그대로 입력했습니다. PAR는 3,3,4,3,4,4,3,3,3(합계 30), 거리는 70,130,280,105,300,210,80,120,110m(합계 1405m)입니다.",
+      "사진의 단위 표시는 M입니다. 홀별 거리 옆 티 색상 구분이 없으므로 선택 가능한 티로 분류하지 않고 사용자 제공 기준거리로 저장했습니다.",
+      "운영사 공식 홀별 자료는 확인하지 못했습니다. 공주시 공식 과거 인허가 문서는 시설 식별 참고이며 홀별 데이터의 출처는 사용자 제공 사진입니다."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "MAIN",
+      "display_name": "계룡산 코스",
+      "hole_count": 9,
+      "primary_tee_code": "official_reference",
+      "verification_status": "verified",
+      "source_url": "https://www.gongju.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000010111Gz6&fileSn=0",
+      "source_data_url": "https://www.gongju.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000010111Gz6&fileSn=0",
+      "review_notes": [
+        "홀 PAR와 RT 기준거리의 직접 출처는 사용자가 제공한 스코어카드 사진입니다. 거리는 미터로 표시되어 그대로 저장했습니다.",
+        "공주시 공식 과거 인허가 자료는 이 시설의 과거 사업 계획을 식별하는 참고자료일 뿐, 홀별 PAR·거리값의 출처가 아닙니다."
+      ],
+      "holes": [
+        {"hole_number": 1, "par": 3, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 70, "distance_m_source": "official", "source_distance": 70, "source_unit": "m"}]},
+        {"hole_number": 2, "par": 3, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 130, "distance_m_source": "official", "source_distance": 130, "source_unit": "m"}]},
+        {"hole_number": 3, "par": 4, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 280, "distance_m_source": "official", "source_distance": 280, "source_unit": "m"}]},
+        {"hole_number": 4, "par": 3, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 105, "distance_m_source": "official", "source_distance": 105, "source_unit": "m"}]},
+        {"hole_number": 5, "par": 4, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 300, "distance_m_source": "official", "source_distance": 300, "source_unit": "m"}]},
+        {"hole_number": 6, "par": 4, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 210, "distance_m_source": "official", "source_distance": 210, "source_unit": "m"}]},
+        {"hole_number": 7, "par": 3, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 80, "distance_m_source": "official", "source_distance": 80, "source_unit": "m"}]},
+        {"hole_number": 8, "par": 3, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 120, "distance_m_source": "official", "source_distance": 120, "source_unit": "m"}]},
+        {"hole_number": 9, "par": 3, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 110, "distance_m_source": "official", "source_distance": 110, "source_unit": "m"}]}
+      ]
+    }
+  ]
+}

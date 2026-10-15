@@ -55,7 +55,7 @@ function normalizeSourceReview(review) {
     ],
     routes: review.routes.map((route) => ({
       ...route,
-      primary_tee_code: route.primary_tee_code ?? 'white',
+      primary_tee_code: route.primary_tee_code ?? (route.par_only_pending ? undefined : 'white'),
       verification_status: verified ? 'verified' : 'pending',
       review_notes: [
         ...(route.review_notes ?? []),
@@ -116,6 +116,9 @@ for (const course of corrections) {
       throw new Error(`${course.name}/${route.route_code}: 공식 합계 허용 차이를 쓰려면 검수 근거를 입력해야 합니다.`)
     }
     const holeNumbers = new Set()
+    const parOnlyPending = route.par_only_pending === true
+      && course.verification_status === 'pending'
+      && (route.verification_status ?? course.verification_status) === 'pending'
     for (const hole of route.holes) {
       // Keep the venue's printed hole number (for example 10–18) even when
       // a 9-hole route represents the back half. Array order is stored as
@@ -128,7 +131,7 @@ for (const course of corrections) {
       if (hole.handicap_index != null && (!Number.isInteger(hole.handicap_index) || hole.handicap_index < 1 || hole.handicap_index > 18)) {
         throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 핸디캡 인덱스는 1~18이어야 합니다.`)
       }
-      if (!Array.isArray(hole.tees) || hole.tees.length === 0) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 실제 확인된 티 자료가 하나 이상 필요합니다.`)
+      if (!Array.isArray(hole.tees) || (hole.tees.length === 0 && !parOnlyPending)) throw new Error(`${course.name}/${route.route_code}/${hole.hole_number}홀: 실제 확인된 티 자료가 하나 이상 필요합니다. 홀 파만 확인된 pending 경로에는 par_only_pending=true를 지정할 수 있습니다.`)
       const teeCodes = new Set()
       for (const tee of hole.tees) {
         const greenCode = tee.green_code ?? 'standard'
@@ -204,7 +207,7 @@ for (const course of corrections) {
       if (hasAlternativeFullLayouts) {
         console.log(`대체 레이아웃: ${course.name}의 물리 홀 ${course.hole_count}홀에 각각 전체 홀을 가진 ${routes.length}개 코스를 등록합니다.`)
       } else {
-        console.warn(`부분 카탈로그: ${course.name}의 전체 ${course.hole_count}홀 중 공식 검증된 ${catalogHoleCount}홀 레이아웃만 공개합니다.`)
+        console.warn(`부분 카탈로그: ${course.name}의 전체 ${course.hole_count}홀 중 검증된 ${catalogHoleCount}홀 레이아웃만 공개합니다.`)
       }
     }
   }
@@ -231,7 +234,7 @@ function normalizeCorrection(correction) {
 
 function routeDistances(route) {
   const primaryTeeCode = route.primary_tee_code ?? 'white'
-  return route.holes.map((hole) => hole.tees.find((tee) => tee.tee_code === primaryTeeCode)?.distance_m ?? hole.tees[0].distance_m)
+  return route.holes.map((hole) => hole.tees.find((tee) => tee.tee_code === primaryTeeCode)?.distance_m ?? hole.tees[0]?.distance_m ?? null)
 }
 
 async function verifyCourse(correction, courseId) {
@@ -258,10 +261,13 @@ async function verifyCourse(correction, courseId) {
   const { data: routeRows, error: routeError } = await supabase.from('golf_course_routes')
     .select('id,route_code,display_name,hole_count,pars,distances_m,source_name,source_url,source_data_url,source_checked_at,verification_status,review_notes')
     .eq('course_id', courseId)
+    .eq('play_mode', 'field')
   if (routeError) throw routeError
   const expectedRoutes = correction.routes ?? []
   const routeCodes = new Set(expectedRoutes.map((route) => route.route_code))
-  const unexpectedRoutes = (routeRows ?? []).filter((route) => !routeCodes.has(route.route_code))
+  const unexpectedRoutes = correction.preserve_existing_routes
+    ? []
+    : (routeRows ?? []).filter((route) => !routeCodes.has(route.route_code))
   if (unexpectedRoutes.length) throw new Error(`${correction.name}: seed에 없는 DB 코스가 있습니다: ${unexpectedRoutes.map((route) => route.route_code).join(', ')}`)
   for (const expectedRoute of expectedRoutes) {
     const savedRoute = routeRows?.find((route) => route.route_code === expectedRoute.route_code)
@@ -370,17 +376,22 @@ for (const sourceCorrection of corrections) {
   const { error: updateError } = await supabase.from('golf_courses').update(courseUpdate).eq('id', courseId)
   if (updateError) throw updateError
 
-  // Routes absent from the correction must not reappear when the venue is published.
-  const { error: hideRoutesError } = await supabase.from('golf_course_routes')
-    .update({ verification_status: 'pending' }).eq('course_id', courseId)
-  if (hideRoutesError) throw hideRoutesError
+  // Routes absent from the correction stay hidden unless the correction explicitly preserves them.
+  if (!correction.preserve_existing_routes) {
+    const { error: hideRoutesError } = await supabase.from('golf_course_routes')
+      .update({ verification_status: 'pending' }).eq('course_id', courseId).eq('play_mode', 'field')
+    if (hideRoutesError) throw hideRoutesError
+  }
 
   const { data: existingRouteSources, error: existingRouteSourcesError } = await supabase.from('golf_course_routes')
     .select('route_code,source_data_url')
     .eq('course_id', courseId)
+    .eq('play_mode', 'field')
   if (existingRouteSourcesError) throw existingRouteSourcesError
   const routes = (correction.routes ?? []).map((route) => ({
     course_id: courseId,
+    play_mode: 'field',
+    screen_provider: '',
     route_code: route.route_code,
     display_name: route.display_name ?? route.route_code,
     hole_count: route.hole_count,
@@ -397,7 +408,7 @@ for (const sourceCorrection of corrections) {
   }))
   const { data: savedRoutes, error: routesError } = routes.length
     ? await supabase.from('golf_course_routes')
-      .upsert(routes, { onConflict: 'course_id,route_code' }).select('id,route_code')
+      .upsert(routes, { onConflict: 'course_id,play_mode,screen_provider,route_code' }).select('id,route_code')
     : { data: [], error: null }
   if (routesError) throw routesError
 
@@ -433,8 +444,9 @@ for (const sourceCorrection of corrections) {
       handicap_index: tee.handicap_index ?? null,
       par: tee.par ?? null,
     })))
-    const { error: teesError } = await supabase.from('golf_course_hole_tees')
-      .upsert(teeRows, { onConflict: 'hole_id,tee_code,green_code' })
+    const { error: teesError } = teeRows.length
+      ? await supabase.from('golf_course_hole_tees').upsert(teeRows, { onConflict: 'hole_id,tee_code,green_code' })
+      : { error: null }
     if (teesError) throw teesError
 
     for (const hole of route.holes) {

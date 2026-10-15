@@ -1,0 +1,136 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "name": "파주 J-Public 골프장",
+    "match_name": "파주 J-Public 골프장",
+    "region": "경기",
+    "address": "경기도 파주시 조리읍 장곡로 100",
+    "aliases": [
+      "파주 J-Public 골프장",
+      "제이퍼블릭컨트리클럽",
+      "제이퍼블릭 골프클럽",
+      "PAJU J-PUBLIC GOLF CLUB",
+      "J-PUBLIC"
+    ],
+    "hole_count": 6,
+    "supports_screen": false,
+    "verification_status": "verified",
+    "review_notes": [
+      "운영사 공식 코스 소개에서 6홀의 PAR와 미터 기준거리를 확인했습니다. 전체 PAR는 24이며 기준거리 합계는 1,854m입니다. 공식 자료에 티 색상·티 그룹별 거리가 없어 티별 거리로 추정 연결하지 않고 공식 기준거리만 저장했습니다."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "MAIN",
+      "display_name": "J-Public 코스",
+      "hole_count": 6,
+      "primary_tee_code": "official_reference",
+      "verification_status": "verified",
+      "source_url": "https://www.jpublic.co.kr/pagesite/course/intro.asp",
+      "par_source_url": "https://www.jpublic.co.kr/pagesite/course/intro.asp",
+      "source_data_url": "https://www.jpublic.co.kr/pagesite/course/intro.asp",
+      "review_notes": [
+        "공식 표는 PAR와 홀별 M·YD 기준거리를 제공하지만 티 색상이나 티별 거리는 구분하지 않습니다. M 행의 수치를 원문 그대로 적용하고, 기준 거리 행은 라운딩 중 티 선택을 비활성화합니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false,
+              "distance_m": 348,
+              "distance_m_source": "official",
+              "source_distance": 348,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false,
+              "distance_m": 135,
+              "distance_m_source": "official",
+              "source_distance": 135,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false,
+              "distance_m": 251,
+              "distance_m_source": "official",
+              "source_distance": 251,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false,
+              "distance_m": 435,
+              "distance_m_source": "official",
+              "source_distance": 435,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false,
+              "distance_m": 352,
+              "distance_m_source": "official",
+              "source_distance": 352,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "official_reference",
+              "display_name": "공식 기준거리 (티 미표기)",
+              "tee_color": "#64748b",
+              "tee_selection_available": false,
+              "distance_m": 333,
+              "distance_m_source": "official",
+              "source_distance": 333,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

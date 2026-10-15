@@ -15,9 +15,10 @@
       "supports_screen": false,
       "verification_status": "verified",
       "review_notes": [
-        "운영사 공식 마스터스클럽 스코어카드의 C·D·E 각 9홀 PAR와 5개 티 거리 자료를 저장했습니다. 거리 단위는 페이지 표기대로 m이며 각 티의 9홀 합계가 공식 합계와 일치합니다.",
-        "공식 페이지의 홀별 상세 소개도 PAR와 대표 거리를 교차 대조했습니다. 홀별 HDCP는 공식 스코어카드에 공개되지 않아 입력하지 않았습니다.",
-        "출처: https://www.bella45.com/masters/swp/courseInfo (2026-10-13 확인)."
+        "벨라45 마스터스 공식 C/D/E 코스 합계표를 원문대로 입력했습니다. 각 코스는 PAR 36, 9홀입니다. 거리 단위는 페이지 표기대로 m입니다.",
+        "공식표의 홀별 PAR·티 거리는 각 코스 route에, 티별 TOTAL은 official_tee_totals_m에 저장했습니다. HDCP는 표에 없어 입력하지 않았습니다.",
+        "출처: https://www.bella45.com/masters/swp/courseInfoC, https://www.bella45.com/masters/swp/courseInfoD, https://www.bella45.com/masters/swp/courseInfoE (2026-10-14 확인).",
+        "D코스 LADY 5번 홀은 공식 표에 394m, LADY TOTAL은 2,091m로 표시되어 홀별 합계와 공식 TOTAL이 100m 다릅니다. 두 값을 원문 그대로 저장하고 불일치를 기록했습니다."
       ],
       "routes": [
         {
@@ -26,9 +27,9 @@
           "hole_count": 9,
           "primary_tee_code": "champion",
           "verification_status": "verified",
-          "source_url": "https://www.bella45.com/masters/swp/courseInfo",
-          "source_data_url": "https://www.bella45.com/masters/swp/courseInfo",
-          "par_source_url": "https://www.bella45.com/masters/swp/courseInfo",
+          "source_url": "https://www.bella45.com/masters/swp/courseInfoC",
+          "source_data_url": "https://www.bella45.com/masters/swp/courseInfoC",
+          "par_source_url": "https://www.bella45.com/masters/swp/courseInfoC",
           "official_tee_totals_m": {
             "back": 3337,
             "champion": 3132,
@@ -37,8 +38,8 @@
             "lady": 2242
           },
           "review_notes": [
-            "공식 코스 스코어카드의 홀별 PAR 및 BACK/CHAMPION/FRONT/SENIOR/LADY 거리(m)를 반영했습니다. 티별 홀 합계는 같은 공식표의 합계와 대조했습니다.",
-            "공식 스코어카드에는 HDCP가 표시되지 않아 홀 핸디캡은 미입력입니다."
+            "공식 C코스 합계표에 게시된 홀별 PAR와 BACK/CHAMPION/FRONT/SENIOR/LADY 티 거리(m)를 입력했습니다. 티별 TOTAL: BACK 3,337m, CHAMPION 3,132m, FRONT 2,916m, SENIOR 2,648m, LADY 2,242m.",
+            "공식 표에 HDCP가 없어 홀 핸디캡은 미입력입니다."
           ],
           "holes": [
             {
@@ -517,9 +518,9 @@
           "hole_count": 9,
           "primary_tee_code": "champion",
           "verification_status": "verified",
-          "source_url": "https://www.bella45.com/masters/swp/courseInfo",
-          "source_data_url": "https://www.bella45.com/masters/swp/courseInfo",
-          "par_source_url": "https://www.bella45.com/masters/swp/courseInfo",
+          "source_url": "https://www.bella45.com/masters/swp/courseInfoD",
+          "source_data_url": "https://www.bella45.com/masters/swp/courseInfoD",
+          "par_source_url": "https://www.bella45.com/masters/swp/courseInfoD",
           "official_tee_totals_m": {
             "back": 2965,
             "champion": 2770,
@@ -528,8 +529,9 @@
             "lady": 2091
           },
           "review_notes": [
-            "공식 코스 스코어카드의 홀별 PAR 및 BACK/CHAMPION/FRONT/SENIOR/LADY 거리(m)를 반영했습니다. 티별 홀 합계는 같은 공식표의 합계와 대조했습니다.",
-            "공식 스코어카드에는 HDCP가 표시되지 않아 홀 핸디캡은 미입력입니다."
+            "공식 D코스 합계표에 게시된 홀별 PAR와 BACK/CHAMPION/FRONT/SENIOR/LADY 티 거리(m)를 입력했습니다. 티별 TOTAL: BACK 2,965m, CHAMPION 2,770m, FRONT 2,590m, SENIOR 2,389m, LADY 2,091m.",
+            "공식 표에 HDCP가 없어 홀 핸디캡은 미입력입니다.",
+            "공식 표의 LADY 5번 홀 394m와 공식 LADY TOTAL 2,091m 간 100m 불일치를 원문 그대로 보존했습니다. 홀별 합계는 2,191m입니다."
           ],
           "holes": [
             {
@@ -785,7 +787,7 @@
                   "tee_code": "lady",
                   "display_name": "LADY",
                   "tee_color": "#64748b",
-                  "distance_m": 294,
+                  "distance_m": 394,
                   "distance_m_source": "official",
                   "source_distance": 294,
                   "source_unit": "m"
@@ -1008,9 +1010,9 @@
           "hole_count": 9,
           "primary_tee_code": "champion",
           "verification_status": "verified",
-          "source_url": "https://www.bella45.com/masters/swp/courseInfo",
-          "source_data_url": "https://www.bella45.com/masters/swp/courseInfo",
-          "par_source_url": "https://www.bella45.com/masters/swp/courseInfo",
+          "source_url": "https://www.bella45.com/masters/swp/courseInfoE",
+          "source_data_url": "https://www.bella45.com/masters/swp/courseInfoE",
+          "par_source_url": "https://www.bella45.com/masters/swp/courseInfoE",
           "official_tee_totals_m": {
             "back": 3062,
             "champion": 2857,
@@ -1019,8 +1021,8 @@
             "lady": 2148
           },
           "review_notes": [
-            "공식 코스 스코어카드의 홀별 PAR 및 BACK/CHAMPION/FRONT/SENIOR/LADY 거리(m)를 반영했습니다. 티별 홀 합계는 같은 공식표의 합계와 대조했습니다.",
-            "공식 스코어카드에는 HDCP가 표시되지 않아 홀 핸디캡은 미입력입니다."
+            "공식 E코스 합계표에 게시된 홀별 PAR와 BACK/CHAMPION/FRONT/SENIOR/LADY 티 거리(m)를 입력했습니다. 티별 TOTAL: BACK 3,062m, CHAMPION 2,857m, FRONT 2,652m, SENIOR 2,350m, LADY 2,148m.",
+            "공식 표에 HDCP가 없어 홀 핸디캡은 미입력입니다."
           ],
           "holes": [
             {

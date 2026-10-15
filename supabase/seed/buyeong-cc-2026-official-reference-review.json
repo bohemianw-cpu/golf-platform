@@ -1,0 +1,516 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "name": "부영CC",
+    "match_name": "부영CC",
+    "region": "제주",
+    "address": "제주특별자치도 서귀포시 남원읍 남조로 960",
+    "aliases": [
+      "부영CC",
+      "부영 컨트리클럽",
+      "부영컨트리클럽",
+      "BOOYOUNG CC"
+    ],
+    "hole_count": 27,
+    "supports_screen": false,
+    "verification_status": "verified",
+    "review_notes": [
+      "운영사 공식 원앙·사랑·우정 홀별 페이지의 METER 값을 각 홀 전체 길이로 보존했습니다. 대한골프협회 2024 코스레이팅 공식표는 조합별 티세트 합계를 야드로 공개하며, 공식 홀별 METER 합을 yd로 환산하면 세 조합 모두 Black 총거리와 0~1yd 차이로 일치합니다: 사랑+원앙 7,026yd(일치), 원앙+우정 7,037yd 대 7,038yd, 우정+사랑 6,933yd 대 6,932yd. 이에 운영사 단일 METER 전장을 Black 티 홀별 거리로 식별했습니다. Black 이외 티별 전체 홀 길이는 공식 자료에서 확정되지 않아 생성하지 않았습니다. 공식 코스맵의 다섯 색 숫자는 단위·측정 대상이 명시되지 않아 티 전장으로 사용하지 않았습니다."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "WONWANG",
+      "display_name": "원앙 코스",
+      "hole_count": 9,
+      "primary_tee_code": "black",
+      "verification_status": "verified",
+      "allow_insecure_source": true,
+      "source_transport_note": "운영사 공식 사이트 www.booyoungcc.co.kr의 홀별 페이지는 HTTP로 제공되며 HTTPS 연결은 거부됩니다. 이 전송 방식을 확인해 공식 페이지를 읽었습니다.",
+      "source_url": "http://www.booyoungcc.co.kr/course/course01.asp",
+      "par_source_url": "http://www.booyoungcc.co.kr/course/course01.asp",
+      "source_data_url": "http://www.booyoungcc.co.kr/course/course01.asp",
+      "review_notes": [
+        "운영사 공식 원앙 코스 각 홀의 METER 값은 홀 전체 길이이며 PAR와 함께 게시됩니다. 공식 전장 합은 3260m입니다. 사랑+원앙 Black 7,026yd는 KGA 공식표와 일치하고, 원앙+우정 7,037yd는 KGA 7,038yd와 1yd 차이입니다. 대한골프협회 2024 코스레이팅 공식표(https://www.kgagolf.or.kr/infor/infor_data/AllRatings_24.pdf)의 야드 합계와 대조해 이 단일 공식 거리 세트를 Black 티로 식별했습니다. 색상별 다른 티 전장은 공개 자료에서 확인되지 않아 추가하지 않았습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 360,
+              "distance_m_source": "official",
+              "source_distance": 360,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 375,
+              "distance_m_source": "official",
+              "source_distance": 375,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 385,
+              "distance_m_source": "official",
+              "source_distance": 385,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 380,
+              "distance_m_source": "official",
+              "source_distance": 380,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 200,
+              "distance_m_source": "official",
+              "source_distance": 200,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 490,
+              "distance_m_source": "official",
+              "source_distance": 490,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 420,
+              "distance_m_source": "official",
+              "source_distance": 420,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 150,
+              "distance_m_source": "official",
+              "source_distance": 150,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 500,
+              "distance_m_source": "official",
+              "source_distance": 500,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ],
+      "official_tee_totals_m": {
+        "black": 3260.0
+      }
+    },
+    {
+      "route_code": "SARANG",
+      "display_name": "사랑 코스",
+      "hole_count": 9,
+      "primary_tee_code": "black",
+      "verification_status": "verified",
+      "allow_insecure_source": true,
+      "source_transport_note": "운영사 공식 사이트 www.booyoungcc.co.kr의 홀별 페이지는 HTTP로 제공되며 HTTPS 연결은 거부됩니다. 이 전송 방식을 확인해 공식 페이지를 읽었습니다.",
+      "source_url": "http://www.booyoungcc.co.kr/course/course02.asp",
+      "par_source_url": "http://www.booyoungcc.co.kr/course/course02.asp",
+      "source_data_url": "http://www.booyoungcc.co.kr/course/course02.asp",
+      "review_notes": [
+        "운영사 공식 사랑 코스 각 홀의 METER 값은 홀 전체 길이이며 PAR와 함께 게시됩니다. 공식 전장 합은 3165m입니다. 사랑+원앙 Black 7,026yd는 KGA 공식표와 일치하고, 우정+사랑 6,933yd는 KGA 6,932yd와 1yd 차이입니다. 대한골프협회 2024 코스레이팅 공식표(https://www.kgagolf.or.kr/infor/infor_data/AllRatings_24.pdf)의 야드 합계와 대조해 이 단일 공식 거리 세트를 Black 티로 식별했습니다. 색상별 다른 티 전장은 공개 자료에서 확인되지 않아 추가하지 않았습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 10,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 410,
+              "distance_m_source": "official",
+              "source_distance": 410,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 11,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 470,
+              "distance_m_source": "official",
+              "source_distance": 470,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 12,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 190,
+              "distance_m_source": "official",
+              "source_distance": 190,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 13,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 355,
+              "distance_m_source": "official",
+              "source_distance": 355,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 14,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 400,
+              "distance_m_source": "official",
+              "source_distance": 400,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 15,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 145,
+              "distance_m_source": "official",
+              "source_distance": 145,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 16,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 495,
+              "distance_m_source": "official",
+              "source_distance": 495,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 17,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 185,
+              "distance_m_source": "official",
+              "source_distance": 185,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 18,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 515,
+              "distance_m_source": "official",
+              "source_distance": 515,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ],
+      "official_tee_totals_m": {
+        "black": 3165.0
+      }
+    },
+    {
+      "route_code": "WOOJEONG",
+      "display_name": "우정 코스",
+      "hole_count": 9,
+      "primary_tee_code": "black",
+      "verification_status": "verified",
+      "allow_insecure_source": true,
+      "source_transport_note": "운영사 공식 사이트 www.booyoungcc.co.kr의 홀별 페이지는 HTTP로 제공되며 HTTPS 연결은 거부됩니다. 이 전송 방식을 확인해 공식 페이지를 읽었습니다.",
+      "source_url": "http://www.booyoungcc.co.kr/course/course03.asp",
+      "par_source_url": "http://www.booyoungcc.co.kr/course/course03.asp",
+      "source_data_url": "http://www.booyoungcc.co.kr/course/course03.asp",
+      "review_notes": [
+        "운영사 공식 우정 코스 각 홀의 METER 값은 홀 전체 길이이며 PAR와 함께 게시됩니다. 공식 전장 합은 3175m입니다. 원앙+우정 Black 7,037yd는 KGA 7,038yd와, 우정+사랑 6,933yd는 KGA 6,932yd와 각각 1yd 차이입니다. 대한골프협회 2024 코스레이팅 공식표(https://www.kgagolf.or.kr/infor/infor_data/AllRatings_24.pdf)의 야드 합계와 대조해 이 단일 공식 거리 세트를 Black 티로 식별했습니다. 색상별 다른 티 전장은 공개 자료에서 확인되지 않아 추가하지 않았습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 530,
+              "distance_m_source": "official",
+              "source_distance": 530,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 350,
+              "distance_m_source": "official",
+              "source_distance": 350,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 410,
+              "distance_m_source": "official",
+              "source_distance": 410,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 200,
+              "distance_m_source": "official",
+              "source_distance": 200,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 350,
+              "distance_m_source": "official",
+              "source_distance": 350,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 335,
+              "distance_m_source": "official",
+              "source_distance": 335,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 3,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 150,
+              "distance_m_source": "official",
+              "source_distance": 150,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 5,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 495,
+              "distance_m_source": "official",
+              "source_distance": 495,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 4,
+          "tees": [
+            {
+              "tee_code": "black",
+              "display_name": "Black",
+              "tee_color": "#111827",
+              "tee_selection_available": true,
+              "distance_m": 355,
+              "distance_m_source": "official",
+              "source_distance": 355,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ],
+      "official_tee_totals_m": {
+        "black": 3175.0
+      }
+    }
+  ]
+}

@@ -1450,8 +1450,9 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-14 — 다음 후보 자료 조사 메모
 - 최신 원격 카탈로그 확인: 총 511곳(검수 완료 455, 미진행 55, 반려 1). 미진행은 경기 23, 제주 17, 강원 14, 충남 1이며 부산·경남·경북·전라권 미진행 후보는 없습니다. 웅포CC·광양CC 확인은 계속 보류합니다.
 - 충남의 유일한 미진행 `계룡산골프장`은 공식 코스 페이지나 현재 홀별 스코어카드를 찾지 못했습니다. 공주시 공식 자료는 2017년 사업 인가 및 2018년까지의 조성 기간만 보여 현재 운영 코스의 PAR·티 거리를 입증하지 않으므로, 추정 입력과 상태 변경 없이 pending으로 둡니다.
-- 다음 지역 우선 후보 `강남300 CC`는 운영사 공식 [코스소개](https://kn300.com/Mobile/Club/Course)에서 18홀·PAR72·총 전장 6,344m와 OUT/IN 구성을 확인했고, [OUT](https://kn300.com/Mobile/Club/CourseOut)·IN 코스공략도는 홀별 PAR와 이미지 자료를 제공합니다. 확인 가능한 페이지 텍스트에는 티별 홀 거리표가 없어 이 자료만으로 티 거리를 입력하지 않았습니다.
-- 다음 단계: 계룡산골프장의 현재 운영 및 공신력 있는 홀별 거리 자료를 추가 조사하고, 근거가 계속 없으면 미진행으로 유지합니다. 이어서 강남300의 공식 홀 이미지/스코어카드에서 티별 거리를 판독할 수 있는 공개 자료를 찾고, 부족하면 다음 후보로 넘어갑니다. 이 조사 중에는 원격 카탈로그나 ScoreTab을 변경하지 않았습니다.
+- 다음 지역 우선 후보 `강남300 CC`는 운영사 공식 [코스소개](https://kn300.com/Mobile/Club/Course)에서 18홀·PAR72·총 전장 6,348yd, [클럽정보](https://kn300.com/Mobile/Club/Index)에서 6,344m를 확인했습니다. 홀별 전략도는 OUT PAR36·IN PAR37로 합계가 73이며 전체 PAR72와 충돌합니다. 공식 [코스맵](https://www.kn300.com/Content/mobile/img/sub0201.png)은 홀 번호 위치만 보여주고 티별 거리를 제공하지 않아, 거리를 생성하지 않고 pending을 유지합니다.
+- 추가 조사에서 `계룡산골프장`은 현재 운영 및 공식 홀별 거리 근거를 확인하지 못했고, `강남300 CC`는 공식 전장 단위·총합 PAR 충돌이 해소되지 않았습니다. 외부 로그인이 필요한 예약 흐름이나 비공식 자료로 숫자를 대체하지 않고, 공식 홀별 제원이 공개될 때까지 두 항목을 pending으로 둡니다.
+- 보류 자료를 다시 조사했습니다. 설해원 씨뷰·샐몬 공개 페이지는 홀별 PAR·거리를 게시하지 않고 Pine은 9홀 합계 PAR37만 공개합니다. 예약 화면 진입은 로그인으로 이동합니다. 남양주CC의 공식 홀별공략 메뉴는 현재 클럽 홈으로 돌아갑니다. `㈜그랜드부민 꿈드림목장`과 `계룡산골프장`은 MCST 명칭·주소만 있고 운영사 홀별 출처를 확인하지 못해 경로·PAR·거리값을 만들지 않았습니다. 현재 원격 카탈로그는 verified 504, pending 6, rejected 1(총 511곳)입니다.
 
 ### 2026-10-14 — 이포CC OUT·IN 코스
 - 운영사 공식 [코스소개](https://ipocc.com/course/intro)에서 OUT·IN 각 9홀의 PAR·HDCP와 Blue·Skyblue·White·Red 티의 홀별 미터 거리를 입력했습니다. 코스별 공식 합계는 OUT 3,270/3,181/2,898/2,596m, IN 3,180/3,053/2,795/2,541m(Blue/Skyblue/White/Red)이며 각 홀 거리 합과 일치합니다. 자료: `ipo-cc-2026-official-verified.json`.
@@ -1626,13 +1627,217 @@ node scripts/import-course-corrections.mjs --input supabase/seed/360cc-2026-offi
 ### 2026-10-14 — 웰리힐리퍼블릭 티별 거리 추가 반영
 - 사용자가 제공한 운영사 공식 [퍼블릭 홀별 코스 안내](https://mapi.wellihillipark.com/webpage/golf/public02.asp) 이미지 9장을 확인해 Blue·White·Red 티의 거리, 각 홀 PAR·HDCP를 입력했습니다. Blue 홀별 합계 2,874m는 공식 퍼블릭 소개 총연장과 일치하고, PAR 합계는 36입니다. 자료: `wellihilli-public-2026-official-verified.json`.
 - 원격 DB에서 퍼블릭 코스 1개·9홀·27개 티 행을 확인하고 PAR·HDCP·티 메타데이터·거리·미터 원값·선택 가능 여부를 seed와 대조했습니다. 불일치·누락 0건으로 구장과 코스를 `verified` 처리했습니다.
+- 이후 현재 원격 상태를 재대조해 27개 티 행은 맞지만 구장과 경로가 `pending`으로 남아 있던 상태를 찾아 seed의 검증 상태·검수 메모와 동일하게 `verified`로 맞췄습니다. 퍼블릭 9홀 PAR36, Blue 2,874m를 포함해 데이터 필드 불일치 0건입니다.
 
 ### 2026-10-14 — 웰리힐리CC 남·북코스 사용자 제공 홀 도면
 - 사용자가 제공한 남·북코스 JPG 36장(각 1~18홀)의 색상별 거리표를 전사해 `wellihilli-cc-2026-user-maps-source-review.json`에 보존하고 DB에 반영했습니다. 남코스 18홀·티 87개, 북코스 18홀·티 99개이며 모든 수치는 미터입니다. 같은 색 표식이 반복되는 경우 색상 내 순번을 부여해 별도 티 행으로 저장했습니다.
 - 홀별 PAR는 운영사 공식 [남코스 안내](https://www.wellihillipark.com/golf/course/map/south)와 [북코스 안내](https://www.wellihillipark.com/golf/course/map/north)에서 확인했습니다. 북코스 PAR 합은 72입니다. 남코스는 사용자가 PAR75가 맞다고 확인해 홀별 공식 PAR 합계 75를 적용했습니다. 별도 기본 제원 페이지의 South PAR72 표기 충돌은 사용자 확인으로 해소했습니다.
-- 원격 DB 대조 결과 경로 2개·36홀·186개 티 행이 전사 자료와 일치하며 홀 및 티 필드 불일치는 0건입니다. 남코스 PAR75와 북코스 PAR72가 저장됐습니다. 다만 북코스 기본 제원은 PAR72·6,425m인데 제공 도면의 색상별 티 거리 합계에서 6,425m에 대응하는 일관된 티 그룹을 확인하지 못해 구장과 두 경로는 pending 상태입니다. HDCP는 도면에 없어 비워 두었습니다.
+- 원격 DB 대조 결과 경로 2개·36홀·186개 티 행이 전사 자료와 일치하며 홀 및 티 필드 불일치는 0건입니다. 남코스 PAR75와 북코스 PAR72를 적용했습니다. 사용자는 남코스 PAR75가 맞으므로 별도 재검수하지 말고 그대로 입력하도록 확인했습니다. 북코스도 제공 도면의 홀별 티 거리를 그대로 보존하고, 기본 제원 총거리 6,425m와 티 색상별 합계가 대응하지 않는다는 이유로 입력값을 보류하지 않습니다. 구장과 두 경로를 verified로 공개합니다. HDCP는 도면에 없어 비워 두었습니다.
 
 ### 2026-10-14 — 프리스틴밸리GC PRISTINE·VALLEY
 - 운영사 공식 [코스 제원](https://www.pristinevalley.co.kr/course/courseInfo.asp)과 [PRISTINE 홀별 안내](https://www.pristinevalley.co.kr/course/course01.asp) 및 [VALLEY 홀별 안내](https://www.pristinevalley.co.kr/course/course10.asp)에서 18홀 PAR·HDCP와 각 홀에 실제 표기된 Black·Blue·White·Red 및 `T` 티의 미터 거리를 저장했습니다. PRISTINE은 41개, VALLEY는 39개 실제 티 행입니다. 같은 홀에 `T`가 두 번 나오는 1번 홀은 이름은 원문 그대로 두고 저장 코드만 구분했습니다. 자료: `pristine-valley-gc-2026-official-verified.json`.
 - seed 구조 검사는 통과했습니다. 원격 행 단위 조회에서 구장·코스 2개 verified, 홀 18개(PAR36씩), 티 80개이며 조회된 거리·원단위·선택 상태는 공식 미터 자료와 일치했습니다.
-- 최신 원격 카탈로그는 verified 485, pending 25, rejected 1(총 511곳)입니다. 웰리힐리CC 남코스 자료는 사용자가 전달한 홀 도면에 거리·PAR 숫자가 없어, 공식 페이지의 숫자 자료와 대조를 이어갑니다.
+- 현재 원격 카탈로그는 verified 488, pending 22, rejected 1(총 511곳)입니다. 웰리힐리CC는 사용자가 확인한 남코스 PAR75를 별도 재검수 없이 적용했고, 남·북코스 36홀·티 186개가 seed와 원격 DB에서 일치합니다. 북코스 기본 제원 총거리 6,425m에 대응하는 단일 티 행 조합은 찾지 못했으나, 홀별 사용자 제공 도면 값을 그대로 저장하고 공개했습니다.
+
+### 2026-10-14 — 캐슬렉스제주 회원제 South·East 코스
+- 운영사 공식 [South](https://www.castlexjj.com/html/course/course02.asp) 및 [East](https://www.castlexjj.com/html/course/course03.asp) 1~9번 상세의 PAR·HDCP와 각 홀 공식 PNG 도면의 티별 미터 전장을 입력했습니다. 자료 파일: `castlex-jeju-south-2026-official-review.json`.
+- South와 East는 각각 9홀 PAR36으로 총 PAR72입니다. South는 티 36개, East는 티 34개를 저장했습니다. 두 코스 모두 Blue·White·Red가 매 홀에 있으며, 홀별로 없는 Orange 티는 추정하지 않고 도면에 반복 표기된 East 8번 Orange 두 행도 별도 코드로 보존했습니다.
+- South 도면 수치는 Blue/White/Red 3,177/2,923/2,434m, East는 3,167/2,903/2,537m입니다. 각 코스 Blue 합을 더한 6,344m가 운영사 공식 [코스 개요](https://www.castlexjj.com/html/course/course01.asp)의 회원제 18홀 총연장과 일치합니다. East의 Orange 표식은 7개 행으로 합계 1,639m입니다.
+- MCST 기본 홀 수 9를 공식 전체 27홀에 맞춰 정정했습니다. 원격 DB에는 South·East 18홀과 70개 티 행이 있으며, North/퍼블릭 9홀은 홀별 자료가 없어 미수록입니다. South만 있던 부분 카탈로그를 South·East 선택 가능 상태로 확장했습니다.
+- 원격 DB를 재조회해 두 경로의 홀 수·PAR 합과 티별 거리 합계를 확인했습니다. South/East 각각 9홀·PAR36, 티 36/34행이며, Blue 3,177/3,167m, White 2,923/2,903m, Red 2,434/2,537m로 seed와 일치합니다. East의 Orange 반복 표식 7행 합은 1,639m입니다. 공식 개요에 퍼블릭 9홀 PAR36·2,594m는 있으나 홀별 PAR·티 거리는 공개된 공식 상세에서 확인하지 못해 추가하지 않았습니다.
+
+### 2026-10-14 — 올데이 옥스필드 OX·Field 코스
+- 운영사 공식 [OX 홀 상세](https://www.ilcc.co.kr/course/ox1.asp), [Field 홀 상세](https://www.ilcc.co.kr/course/fi1.asp) 및 [두 코스 전체 제원표](https://www.ilcc.co.kr/course/course_ox.asp)에서 각 9홀 PAR와 Blue·White·Yellow·Red 티별 미터 거리를 반영했습니다. 홀별 HDCP는 공개되지 않아 비워 두었습니다. 각 경로 PAR36, 총 18홀·PAR72입니다. 같은 색에 복수 거리가 있으면 첫 번째는 해당 티 코드, 이후 공식 표기는 `White 2` 등 보조 코드로 보존했습니다. 자료: `allday-oxfield-2026-official-verified.json`.
+- OX 1번 Yellow는 공식 홀 상세 394m와 전체 제원표 294m가 다릅니다. 전체 제원표값 294m를 적용하고 이 충돌을 OX 경로 메모에 기록했습니다. OX Blue/White/Yellow/Red 합계는 3,303/2,994/1,806/2,292m, Field는 Blue/White/Yellow/Red 3,236/2,934/689/2,372m(공식 공개 홀만)입니다.
+- 원격 DB 행 단위 대조 결과 구장 verified, 경로 2개·홀 18개·티 78개입니다. 경로 메타데이터·출처 시각, 홀별 PAR·플레이 순서, 티 코드·표시·거리·단위·선택 상태 누락/불일치/추가 0건입니다. 최신 원격 카탈로그는 verified 489, pending 21, rejected 1(총 511곳)입니다.
+
+### 2026-10-14 — 파주 J-Public 6홀 코스
+- 운영사 공식 [코스 제원표](https://www.jpublic.co.kr/pagesite/course/intro.asp)에서 6홀의 PAR와 M/YD 기준거리를 반영했습니다. M 행 거리는 348·135·251·435·352·333m, 합계 1,854m이며 PAR는 4·3·4·5·4·4, 합계 24입니다. 운영사 자료는 티 색상이나 티별 거리를 구분하지 않으므로 `공식 기준거리`로 저장하고 사용자 티 선택은 비활성화했습니다. 자료: `paju-j-public-2026-official-reference-verified.json`.
+- 원격 DB 행 비교 결과 구장 verified, MAIN 경로 1개·홀 6개·공식 기준거리 6개입니다. 코스 배열, PAR·플레이 순서, 미터 거리·출처·선택 불가 상태 비교에서 누락·불일치·추가 0건입니다. 최신 원격 카탈로그는 verified 490, pending 20, rejected 1(총 511곳)입니다.
+
+### 2026-10-14 — 다음 pending 조사 메모
+- 설해원 운영사 공식 [씨뷰 코스](https://www.seolhaeone.com/golf/seaview.do)와 [샐몬 코스](https://www.seolhaeone.com/golf/salmon.do)는 코스 소개만 보여주며 홀별 PAR·티 거리를 게시하지 않습니다. [Pine 코스](https://www.seolhaeone.com/golf/pine.do)는 9홀 합계 PAR37을, [더 레전드 코스](https://www.seolhaeone.com/golf/new.do)는 18홀 구성을 공개하지만 홀별 데이터는 없습니다. 페이지가 안내하는 예약 진입은 로그인 화면으로 이동합니다. 공식 공개자료에 개별 PAR와 거리가 없어 설해원 및 설해원더 레전드는 pending으로 둡니다.
+- 태광CC 운영사 공식 [코스 안내](https://taekwangcc.co.kr/Facilities/CourseGuide.aspx)에는 북·남·서·동 코스 공략 iframe 메뉴가 있고 공식 [남코스 홀별 안내](https://taekwangcc.co.kr/course/south03.html)도 검색 색인에서 1~9H를 확인했습니다. 최초 자동 페이지 요청은 응답 시간 초과/콘텐츠 길이 불일치였으나, 뒤이은 브라우저 확인으로 네 코스 PAR·HDCP와 동코스 티 거리 자료를 적재했습니다. 상세 결과는 아래 후속 점검 항목을 따릅니다.
+- 태광CC에서 남은 작업은 공식 도면 티 표식의 중간 색상명과 거리행 코드 대응을 확정하고 북·남·서 티 거리를 전사하는 것입니다.
+
+### 2026-10-14 — 아난티클럽제주 김녕·한라 코스
+- 운영사 공식 [김녕 코스](https://ananti.kr/ko/jeju/JJ0105)와 [한라 코스](https://ananti.kr/ko/jeju/JJ0106)의 홀별 PAR·거리·색상 배지를 반영했습니다. 두 페이지는 18홀 코스와 홀별 거리를 미터로 안내합니다. 운영사 [표준약관](https://cdn.ananti.kr/plf/ui/file/jeju-policy-250528.pdf)은 김녕 OUT·IN 18홀, 한라 OUT 대중제 9홀과 IN 회원제 9홀로 구분하므로, 대중제 27홀뿐 아니라 실제 보유한 회원제 9홀도 포함해 구장 홀 수를 36으로 기록했습니다. 자료: `ananti-club-jeju-2026-official-verified.json`.
+- 4개 경로 모두 PAR36이며, 총 36홀·192개 티 행입니다. Black·Blue·White·Yellow·Red 색상은 운영사 HTML 배지 클래스로 확인했습니다. 같은 홀에서 Red가 중복 표기된 것은 `Red (2)`로 별도 보존했습니다. 홀별 핸디캡은 공식 자료에 없어 비워 두었습니다.
+- 원격 DB와 seed를 행 단위로 비교했습니다. 구장 verified, 경로 4개·홀 36개·티 192개이며 경로·홀·티 불일치/누락/추가 0건입니다.
+- 최신 원격 카탈로그 집계는 verified 491, pending 19, rejected 1(총 511곳)입니다.
+- 다음 조사 후보 클럽모우는 운영사 [코스 소개](https://www.clubmow.com/)에서 Mountain·Oasis·Wild 각 PAR36와 총연장(3,099/3,201/3,021m)을 공개하고, [코스 분석](https://www.clubmow.com/course-info/course-analyze)에서 홀별 PAR를 공개합니다. 현재 확인한 공식 페이지에는 홀별 티 거리표가 없어 거리 데이터는 만들지 않았습니다. 코스 분석은 2022·2023 연도별 평균 타수도 함께 제공하므로 PAR 근거는 있으나 티별 길이 근거가 아닙니다.
+
+### 2026-10-14 — 클럽모우 Mountain·Oasis·Wild 코스
+- 운영사 공식 [코스소개](https://www.clubmow.com/course-info/courseInfo-infoForum-forum-introduction)의 각 홀 상세에 있는 PAR·HDCP와 Blue·White·White (2)/(3)·Yellow·Red 티별 미터 거리를 전사했습니다. 공식 [코스분석](https://www.clubmow.com/course-info/course-analyze)은 홀별 PAR를 다시 제공하며, 공식 코스 소개 메인에는 각 9홀의 PAR36과 Blue 총연장 Mountain 3,099m·Oasis 3,201m·Wild 3,021m가 표시됩니다. Blue 티별 홀 합계는 각 공식 총연장과 정확히 일치합니다. 자료: `club-mow-2026-official-verified.json`.
+- 3개 경로 27홀·PAR108, 티 행 124개를 저장했습니다. 중복 White 거리도 별도 티 코드로 모두 보존했습니다. 구장·경로는 verified입니다.
+- 원격 DB와 seed를 대조해 경로·홀·티 누락/불일치/추가 0건을 확인했습니다. 공식 코스소개가 PAR·거리 모두를 포함하므로 DB 출처 URL을 그 페이지로 지정했습니다.
+- 클럽모우 반영 후 원격 카탈로그 집계는 verified 492, pending 18, rejected 1(총 511곳)입니다.
+- 2026-10-14 추가 조사: 한라산CC 공식 [코스 안내](http://hallasancc.co.kr/s3.html)는 홀별 상세 도면 01~18을 별도 이미지로 제공합니다(이미지 1~9는 Ocean, 10~18은 Mountain). 도면에서 각 홀 PAR와 색상으로 구분된 미터·야드 숫자열을 확인할 수 있습니다. 일부 홀에 거리 묶음이 두 개 이상 있어 주 거리열과 IP/표적 기준 거리열을 구분하고, 숫자 색과 실제 티 명칭 대응을 확인한 다음에 적재할 예정입니다. 공식 이미지 외의 값을 보충하거나 추정하지 않습니다.
+- 태광CC 공식 코스 페이지 응답은 2026-10-14에도 중간 종료/타임아웃되어 원문 거리 수치를 읽지 못했습니다. 숫자 입력은 계속 보류합니다.
+
+### 2026-10-14 — 오로라골프앤리조트 Lake·Mountain
+- 운영사 공식 [코스 안내](https://auroragolfnresort.co.kr/course-info)는 Lake·Mountain 각 9홀의 PAR·HDCP와 PAR36을 공개합니다. 공식 홀별 SVG(`/images/site/course-info/img_{lake|mountain}_hole{1..9}.svg`)에 Black·Blue·White·Red·Yellow 티의 거리(m·yd)가 있어 각 티별 미터값을 입력했습니다. 자료: `aurora-golf-resort-2026-official-verified.json`.
+- Lake 9홀 PAR36·티 45개, Mountain 9홀 PAR36·티 45개로 총 18홀·PAR72·티 90개입니다. Lake의 Black 홀별 합계 3,229m는 공식 코스 요약과 일치합니다. Mountain 도면 Black 합계는 3,224m로 공식 요약 3,257m와 33m 차이가 있어 홀별 도면의 수치를 그대로 적용하고 검수 메모에 차이를 남겼습니다.
+- 원격 DB와 seed를 행 단위 대조했습니다. 구장·코스 verified, 경로 2개·홀 18개·티 90개이며 PAR·HDCP·티 이름/색·거리·단위·선택 가능 여부의 누락 또는 불일치는 0건입니다.
+- 남양주CC 운영사 공식 [코스 안내](https://www.clublonge.com/Club/namyangju/Course)는 퍼블릭 9홀·PAR36을 공개하지만 홀별 PAR·티별 전장은 게시하지 않습니다. 공식 [홀별 공략 경로](https://www.clublonge.com/Club/namyangju/HoleInfo)는 HTTP 200으로 응답하지만, 현재 응답에는 일반 코스 소개만 있고 홀별 전략도나 거리표가 없습니다. 원격 pending 검수 메모에는 최신 직접 조회 결과를 기록했습니다. 벨라45 오너스 공식 코스 경로는 회원 로그인 화면으로 이동합니다. 공개된 마스터스클럽 홀 자료는 별도 코스이므로 오너스클럽 자료로 대체하지 않습니다.
+- 최신 원격 카탈로그는 verified 494, pending 16, rejected 1(총 511곳)입니다.
+
+### 2026-10-14 — 한라산CC Ocean·Mountain 코스
+- 운영사 공식 [홀별 코스 안내](http://hallasancc.co.kr/s3.html)의 상세 도면 01~09(Ocean)과 10~18(Mountain)에서 PAR 및 상단 티 전장표의 미터값을 입력했습니다. 도면에 괄호로 병기된 야드값도 전사 시 대조했습니다. 도면 안의 두 번째 거리열은 코스의 전장이 아닌 IP/표적 지점 거리라 티 전장으로 입력하지 않았습니다. 거리 색상으로 식별되는 반복 Red 계열은 `Red (2)` 코드로 분리 보존했습니다. 공식 자료에 HDCP는 없어 비워 두었습니다. 공식 사이트는 HTTP로만 제공되어 HTTPS 요청은 TLS 연결에 실패하며, importer가 요구하는 보안 연결 예외 사유와 공식 URL을 기록했습니다. 자료: `hallasan-cc-2026-official-verified.json`.
+- Ocean과 Mountain은 각각 PAR36, 총 18홀·티 행 77개입니다. 원격 DB 행 단위 비교에서 경로·홀·티 누락/불일치/추가 0건을 확인했습니다.
+- 최신 원격 카탈로그 집계는 verified 493, pending 17, rejected 1(총 511곳)입니다.
+
+### 2026-10-14 — 강남300CC 공식자료 조사
+- 운영사 공식 [코스 소개](https://kn300.com/Mobile/Club/Course)는 18홀·PAR72·6,344m를, 홀별 [OUT](https://kn300.com/Mobile/Club/CourseOut)·[IN](https://kn300.com/Mobile/Club/CourseIn) 공략도는 각 홀 PAR를 공개합니다. OUT 순서는 5·4·3·4·3·4·4·4·5(PAR36), IN은 5·4·4·4·4·4·3·4·5(PAR37)입니다. IN 홀 PAR 합이 공식 개요의 PAR72와 1타 충돌해 원문 파를 pending 상태로 보존했습니다.
+- 공략도의 각 홀 지도에는 티별 전장 숫자가 없어 티 행은 생성하지 않았습니다. 관리자 importer에 `par_only_pending` 경로 입력을 추가해 공식 PAR만 확인된 자료도 pending 상태와 빈 거리로 저장할 수 있게 했습니다. 원격 DB에는 OUT·IN 경로 2개·홀 18개·티 0개가 있으며, 구장과 경로는 pending입니다. 자료: `gangnam300-2026-official-par-review.json`.
+
+### 2026-10-14 — 볼카노골프앤리조트 Aquamarine·Topaz·Emerald
+- 운영사 공식 [Aquamarine 홀별 안내](https://www.volcanocc.co.kr/html/course02.asp), [Topaz 홀별 안내](https://www.volcanocc.co.kr/html/course02_2.asp), [Emerald 홀별 안내](https://www.volcanocc.co.kr/html/course02_3.asp)의 현재 HTML 표에서 27홀의 PAR·HDCP와 Black·Blue·White·Red 티별 전장 원값을 전사했습니다. 단위 표기가 없어 [KGA 2024 코스레이팅 자료](https://www.kgagolf.or.kr/infor/infor_data/AllRatings_24.pdf)의 `코스길이(야드)` 표기로 yd를 확인하고 0.9144 환산·반올림한 m도 저장했습니다. 자료: `volcano-golf-resort-2026-official-verified.json`.
+- 각 코스는 PAR36, 티 36개이며 전체 27홀·PAR108·108개 티 행입니다. 운영사 Blue 두 코스 조합 합계와 KGA 야드 기준 총 길이는 Aquamarine+Topaz 6,596/6,561yd, Emerald+Aquamarine 6,516/6,162yd, Topaz+Emerald 6,370/5,981yd로 차이가 각각 35/354/389yd입니다. KGA 값은 이전 연도 코스레이팅의 조합 총 길이이므로 운영사 최신 홀별 값을 수정하지 않고 세 차이를 검수 메모에 보존했습니다.
+- 원격 DB의 티 행 108개를 seed와 대조해 누락·불일치 0건을 확인했고, 3개 경로와 구장을 verified 처리했습니다. 최신 원격 카탈로그는 verified 495, pending 15, rejected 1(총 511곳)입니다.
+
+### 2026-10-14 — 제이드팰리스 East·West 코스
+- 운영사 공식 [코스 페이지](https://www.jadepalacegc.com/kr/course/course.do)에서 East 1~9홀·West 10~18홀의 PAR·HDCP와 Black·Blue·White·Yellow·Red 티별 거리(m/Y)를 입력했습니다. 색상 순서는 공식 페이지 CSS의 거리표시 순서로 확인했습니다. 원 yd와 환산 m를 모두 저장했습니다. 자료: `jade-palace-gc-2026-official-verified.json`.
+- 홀별 블랙티 yd 합은 East 3,531yd·West 3,488yd이며 코스 상세 요약 3,537/3,490yd와 각각 6/2yd 차이입니다. 사이트 본문 상단의 전체 7,072yd와 상세 Length 7,027yd 표기도 45yd 차이입니다. 홀별 표의 m/yd 쌍은 7H Blue 355m(366Y), 8H Black 327m(406Y), 10H Yellow 464m(570Y), 18H Red 264m(321Y)에서 크게 다릅니다. 두 코스 설명과 상세 전장 및 다수의 m/yd 쌍에 부합하는 yd 원값을 기준으로 환산하고 모든 충돌을 구장 메모에 남겼습니다.
+- East·West 각 PAR36, 총 18홀·PAR72·티 90개입니다. 원격 DB 대조 결과 경로 2개·홀 18개·티 90개의 코스 요약·홀·티 필드 누락/불일치 0건입니다. 최신 카탈로그는 verified 496, pending 14, rejected 1(총 511곳)입니다.
+
+### 2026-10-14 — 제주부영CC 공식 홀 페이지 조사
+- 운영사 공식 [원앙 코스 1~9홀](http://www.booyoungcc.co.kr/course/course01.asp), [사랑 코스 10~18홀](http://www.booyoungcc.co.kr/course/course02.asp), [우정 코스 1~9홀](http://www.booyoungcc.co.kr/course/course03.asp) 페이지의 홀 상세 설명에서 세 경로의 홀별 PAR와 단일 미터 표기를 확인했습니다. 공식 페이지는 개별 홀 상세 페이지로 이동하는 탭을 제공합니다.
+- KGA 2024 [코스레이팅 공식표](https://www.kgagolf.or.kr/infor/infor_data/AllRatings_24.pdf)는 코스 길이를 야드로 표기합니다. 운영사 METER 홀 전장 합을 yd로 바꾼 결과와 조합 총거리를 대조해 단일 전장 세트를 Black 티로 식별했습니다: 사랑+원앙 7,026yd(일치), 원앙+우정 7,037yd 대 7,038yd(1yd 차이), 우정+사랑 6,933yd 대 6,932yd(1yd 차이). 이에 기존 27개 공식 홀 기준거리 행을 Black 티의 선택 가능한 M 행으로 전환해 구장과 세 경로를 verified 처리했습니다.
+- 공식 코스맵 JPEG에는 검정·파랑·흰색·노랑·빨강 점과 숫자 다섯 개가 있으나 단위·측정 대상이 표기되지 않고, 예를 들어 원앙 2번 공식 전체 길이 375m와 지도 숫자 최댓값 260이 맞지 않습니다. 이 숫자는 티별 거리로 사용하지 않았으며 Black 이외 티도 추가하지 않았습니다. DB 대조에서 세 경로 모두 PAR36·9홀·9개 선택 가능한 Black 거리 행이며 거리 합은 3,260m·3,165m·3,175m입니다. 자료: `buyeong-cc-2026-official-reference-review.json`.
+
+### 2026-10-14 — 라헨느CC Lake·Ocean 코스
+- 운영사 공식 Lake 홀별 페이지(예: [1번 홀](http://www.lareine.co.kr/test/02course/l1.asp), [공식 홀 제원 이미지](http://www.lareine.co.kr/test/images/l1.png))와 Ocean 홀별 페이지(예: [1번 홀](http://www.lareine.co.kr/test/02course/o1.asp), [공식 홀 제원 이미지](http://www.lareine.co.kr/test/images/o1.png))에서 각 9홀 PAR·HDCP와 Black·Blue·White·Gold·Red 티별 YARD 거리를 전사했습니다. 원 yd와 1yd=0.9144m로 반올림 환산한 미터를 함께 저장했습니다. 자료: `la-reine-cc-2026-official-verified.json`.
+- Lake·Ocean 각 PAR36이며 합계 18홀·PAR72·티 90개입니다. 운영사 코스 이미지의 Mountain 항목에는 `인허가중` 표시가 있고 현재 상세 이미지의 티 거리는 모두 433yd로 반복되며 일부 홀번호·PAR가 누락/반복되어 미운영·미완성 자료로 판단해 제외했습니다. 기존 구장 등록의 18홀 수는 Lake·Ocean과 일치합니다.
+- 원격 DB와 seed의 구장·경로 메타데이터·홀 PAR/HDCP·티 메타데이터·yd 원값·환산거리 비교에서 누락·불일치·추가 0건을 확인했습니다. 구장과 두 경로를 verified 처리했습니다. 최신 원격 카탈로그 집계는 verified 497, pending 13, rejected 1(총 511곳)입니다.
+
+### 2026-10-14 — 테디밸리 Teddy·Valley 코스
+- 운영사 공식 [Teddy 홀별 안내](http://www.teddyvalley.com/html/course/teddy_01.asp), [Valley 홀별 안내](http://www.teddyvalley.com/html/course/valley_01.asp) 및 각 홀 코스맵 PNG(예: [Teddy 1번](http://www.teddyvalley.com/images/sub/course/hole_01.png), [Valley 10번](http://www.teddyvalley.com/images/sub/course/hole_10.png))에서 홀별 PAR와 Black·Blue·White 1·White 2·Yellow 미터 거리 및 도면에 표시된 Red 거리를 반영했습니다. 자료: `teddy-valley-2026-official-verified.json`.
+- Teddy·Valley 각각 PAR36, 총 18홀·티 거리 104개입니다. 공식 도면은 8·12·14·16번에서 Red 행을 표시하지 않아 해당 홀의 Red 거리는 추정하지 않았습니다. White1/White2, Yellow/Red 거리값이 같은 홀도 원문대로 각각 보존했습니다. 운영사 코스 설명의 HDCP 값은 중복되어 홀 인덱스로 적용하지 않았습니다.
+- 공식 KGA [코스레이팅 자료](https://www.kgagolf.or.kr/infor/infor_data/AllRatings_17.pdf)의 Teddy+Valley Black/Blue/White1/White2/Yellow/Red 합계는 7,259/6,928/6,562/6,174/5,603/5,288yd입니다. 도면 첫 다섯 열 합계 6,639/6,334/5,999/5,644/5,124m는 yard 환산값과 각각 0~2m 차이로 티 열 순서와 단위를 대조했습니다. Red는 홀별 원자료 4개가 도면에 없어 합계 대조에 사용하지 않았습니다.
+- 원격 DB와 seed 대조 결과 구장·경로 2개·홀 18개·티 104개의 필드 불일치·누락·추가 0건입니다. 구장과 Teddy·Valley를 verified 처리했습니다.
+
+### 2026-10-14 — 코리아퍼블릭GC 코스
+- 운영사 공식 [코스 안내](https://www.gakorea.com/public/course/publicCouse.asp)에서 9홀 PAR·HDCP와 REGULAR 단일 티의 홀별 미터 전장을 입력했습니다. 공식 합계는 PAR36·2,270m이며, 다른 색상 티 거리는 공개되지 않아 추가 행을 만들지 않았습니다. 기존 카탈로그의 코리아대중CC와 같은 주소의 시설이며 현재 공식 명칭인 코리아퍼블릭GC로 정리하고 이전 명칭을 별칭으로 보존했습니다. 자료: `korea-public-2026-official-verified.json`.
+- 원격 DB와 seed 대조에서 경로 1개·홀 9개·REGULAR 티 9개의 PAR·HDCP·거리 누락/불일치/추가 0건을 확인해 구장과 경로를 verified 처리했습니다. 최신 카탈로그는 verified 499, pending 11, rejected 1(총 511곳)입니다.
+
+### 2026-10-14 — 검증 경로 요약 배열 동기화
+- 원격 verified 경로 전체 무결성 점검 중 스타CC Lake·Hill, 일레븐CC Mountain·Park, 중원GC 고구려·백제·신라 총 7개 경로에서 정규화된 홀·티 행은 완전하지만 레거시 코스 요약 `pars`·`distances_m` 배열이 비어 있음을 확인했습니다. 각 경로의 seed `primary_tee_code`를 기준으로 홀 PAR와 기본 티 거리를 순서대로 채웠습니다. 홀·티 원본 행이나 검증 상태는 변경하지 않았습니다.
+
+- 추가 라운드 순서 점검에서 verified 경로 23개의 `play_order` 중복/범위 오류를 찾았습니다. 각 경로의 공식 홀 번호가 1~N 또는 10~18 순서로 이어지고 요약 PAR 배열도 이에 대응함을 확인한 뒤, 코스 안에서 홀 번호 순으로 `play_order` 1~N을 부여했습니다. 재집계 결과 1,139개 검증 경로 전부 홀 수 및 `play_order` 연속성이 맞고 오류 0건입니다.
+- 공식 홀별 티를 기준으로 요약 거리 배열을 비교하는 전수 점검에서 O2리조트 함백과 해운대CC 3개 코스의 요약 전장이 `primary_tee_code` 거리와 맞지 않는 것을 확인했습니다. 저장된 공식 홀별 티 행과 검수 seed의 기본 티 선택값으로 요약 배열을 동기화했습니다. 이후 검증 경로 1,139개에서 홀 PAR 요약/홀 데이터 및 대표 티 거리 요약/티 데이터 값 불일치 0건을 확인했습니다.
+- 전체 40,188개 verified 티 행에서 원 거리·단위·distance_m_source 누락 0건을 확인했습니다. 티를 완전히 선택할 수 없고 공통 공식 기준거리도 없는 verified 경로 0개입니다. 다만 금과골프장 9홀 배치는 별도 마이그레이션에서 사용자 제공 자료로 기록된 예외이며 공식 URL은 없습니다. 운영사 공식 원본과 혼동하지 않도록 이 출처 구분을 유지합니다.
+
+### 2026-10-14 — 코스 카탈로그 재개 점검
+- 사용자가 알려준 캐슬렉스제주 [South 공식 코스 페이지](https://www.castlexjj.com/html/course/course02.asp)를 다시 열어 홀별 도면에 티별 m 거리가 표시되는 것을 확인했습니다. 현재 원격 DB는 South·East 각 9홀·PAR36, 합계 70개 티 거리행이며 누락 거리는 0건입니다. 두 경로 모두 해당 공식 상세 URL과 출처 확인 시각이 저장되어 있어 새 적재는 필요하지 않았습니다.
+- 검증 상태, 티별 전장, 출처 확인 시각을 전수 점검했을 때 누락이 나온 유일한 예외는 금과골프장입니다. 사용자 제공 9홀 자료라 공식 URL이 없다는 예외 메모와 일치해 상태를 바꾸지 않았습니다.
+- 최초 자동 재시도 때는 태광CC 공식 [코스 안내](https://taekwangcc.co.kr/Facilities/CourseGuide.aspx)에서 홀별 숫자를 읽지 못해 pending으로 두었습니다. 이후 브라우저 확인을 거쳐 네 경로의 PAR·HDCP와 동코스 거리 74행을 저장했습니다. (아래 후속 확인 기록 참조.)
+
+### 2026-10-14 — 태광CC 공식 코스 안내 재확인
+- 사용자가 제공한 운영사 [코스 안내](https://taekwangcc.co.kr/introduction/course)를 브라우저에서 확인했습니다. 화면에 북·남·서·동 네 코스 탭이 있고 각 코스마다 1H~9H가 제공됩니다.
+- 각 홀 도면의 거리표는 색상별로 `Left / Right` 두 값이 함께 표시됩니다. 당시에는 티 코드와 회원/대중 코스 귀속이 미확인이라 pending으로 두었습니다. 후속 공식 연혁·대중제 신청서 대조 및 티 지도 전사 결과는 아래 기록에 반영했습니다.
+
+- 후속 확인(2026-10-14): 공식 페이지는 Chrome 브라우저에서 열렸습니다. 공식 연혁은 1997년 일반대중 북코스 개장 및 2006년 북·동 사이 회원제/대중제 코스 변경을 기록합니다. 2026년 운영사 대중제 연단체 신청서가 동코스(9홀×2)를 지정하며, 카탈로그 총 홀 수가 회원제 27·대중제 9이므로 동코스는 대중제, 북·남·서는 회원제로 등록했습니다. 원격 DB에 네 pending 경로(NORTH/SOUTH/WEST/EAST)를 추가했습니다. 각 홀 상세 그림에 색상마다 Left/Right 값이 있어 티 구조와 PAR·거리를 아직 적재하지 않았습니다.
+
+### 2026-10-14 — 태광CC 동코스 공식 PAR·HDCP
+- 운영사 공식 [코스 안내](https://taekwangcc.co.kr/introduction/course)의 동코스 홀 화면에서 1~9번 PAR·HDCP를 확인해 반영했습니다. PAR 배열은 4·5·4·3·5·4·4·3·4로 PAR36, HDCP 배열은 4·8·1·6·2·5·3·9·7입니다. 티 거리 도면도 각 홀에 있지만 표식 색상명과 왼쪽/오른쪽 그린별 전장을 티 코드에 연결하는 작업은 남아 있어, EAST는 pending으로 유지합니다.
+- 원격 DB 검증: EAST 경로 9개 홀, PAR 요약 9개, PAR 합계 36, HDCP 1~9. 티 거리행은 아직 0개라 사용자 티 선택은 열지 않았습니다. 작업 초안은 `taekwang-east-2026-official-par-review.json`입니다.
+- 추가 완료(2026-10-14): 운영사 홀 화면에서 북·남·서 코스 PAR·HDCP 27개 홀을 전사했습니다. 세 경로 모두 PAR36이며 HDCP 1~9 각 1회입니다. 원격 DB에 회원제 27홀 데이터를 기록했습니다. 동코스의 PAR/HDCP와 티 표식 거리 74개도 원격 DB에 저장했으며 1~8번 좌·우 그린은 `green_code`로 나누고 9번은 기본 그린으로 두었습니다. 지도는 파랑·흰색·빨강을 제외한 일부 티 표식에 텍스트 이름이 없어 내부 marker 순번으로 저장했고, 명칭 확인 전까지 네 경로 모두 pending입니다. 티 데이터가 앱 선택에 노출되지 않도록 검증 상태를 pending으로 유지했습니다. seed: `taekwang-east-2026-official-tee-review.json`, `taekwang-members-2026-official-par-review.json`.
+- 북코스 추가 반영: 공식 도면의 좌·우 그린 거리를 9홀에 걸쳐 티 행 78개로 저장했습니다. 푸른색·흰색·빨간색으로 확인되는 행과, 글자명이 없는 중간 표식 3·4를 구분 코드로 보존했습니다. NORTH도 거리 표식 이름 검토 전까지 pending입니다. 업데이트된 멤버 코스 seed는 `taekwang-members-2026-official-review.json`입니다.
+
+- 태광CC 남·서코스 후속 적재(2026-10-14): 공식 코스 화면에서 두 9홀 코스의 PAR·HDCP와 좌·우/단일 그린 티 거리를 전사했습니다. 원격 DB에 남코스 86행, 서코스 77행을 추가했고, 전 거리값은 official로 보존했습니다. 북 78행 및 동 74행과 합쳐 태광 4개 경로에 315개 공식 티 거리행이 저장되어 있습니다. 네 경로 모두 PAR36, HDCP 1~9가 유효하며 거리 누락은 0건입니다. 공식 문자명이 없는 중간 표식이 있어 경로/구장 상태는 pending으로 두었습니다. 회원제 seed: `taekwang-members-2026-official-review.json`.
+
+### 2026-10-14 — 벨라45 오너스 공식 자료 접근 확인
+- 공식 오너스클럽 메뉴의 코스 개요가 `https://www.bella45.com/owners/swp/courseInfoA`로 연결되지만, 운영사 사이트가 비로그인 접속을 회원 로그인으로 돌려 PAR·티별 거리를 확인할 수 없습니다. 같은 운영사의 공개 마스터스 C/D/E는 별도 구장이므로 오너스 자료로 대체하지 않았습니다. 벨라45 오너스 CC는 근거 없는 거리를 만들지 않고 pending으로 유지합니다.
+
+### 2026-10-14 — 태광CC 회원제·퍼블릭 코스 분리 및 공개
+- 사용자 요청에 따라 기존 `태광CC(대중제)` 카탈로그를 `태광CC(퍼블릭)`으로 정리하고 기존 이름은 검색 별칭으로 유지했습니다. [운영사 공식 코스 안내](https://taekwangcc.co.kr/introduction/course)의 동코스 9홀만 퍼블릭에 배정했습니다. 운영사 2026년 대중제 단체 신청 자료의 동코스 9홀×2 운영 방식에 맞춰 라운드 선택 화면에서 퍼블릭을 고르면 동코스가 두 번 포함된 18홀 구성을 기본 적용하며, 9홀로도 바꿀 수 있습니다. 반복 코스는 `18홀 (동코스 2회)`로 표시합니다.
+- `태광CC(회원제)`에는 북·남·서 세 코스만 남겼습니다. 회원제 코스 27홀·241개 티 행, 퍼블릭 동코스 9홀·74개 티 행입니다. 네 경로 모두 홀별 PAR 합계 36, 티 거리 출처 공식, 홀별 티 데이터 누락 0건이며 구장·경로를 verified 처리했습니다. 공식 문자명이 없는 중간 티 표식은 도면의 색·위치 순번을 살린 `거리 표식 N` 이름으로 제공합니다.
+- 원격 `search_verified_golf_courses('태광CC')` 인증 호출 결과 `태광CC(회원제)`와 `태광CC(퍼블릭)` 두 레코드가 검색됩니다. DB 점검에서 퍼블릭은 EAST만, 회원제는 NORTH/SOUTH/WEST만 포함하고, 홀별 자료 및 공식 출처 URL·확인 시각이 저장된 것을 확인했습니다. 관리자 적재 seed: `taekwang-east-2026-official-tee-review.json`, `taekwang-members-2026-official-review.json`.
+
+### 2026-10-14 — 벨라45 마스터스 C/D/E 공식 합계표 반영
+- C/D/E 코스별 공식 페이지(courseInfoC/D/E)의 홀별 PAR와 다섯 티 거리, 게시 TOTAL을 반영하고 출처 URL을 각 라우트에 연결했습니다. 세 코스는 각 9홀, PAR 36입니다.
+- D코스 레이디티 5번 홀은 공식 페이지에 394m, 레이디 합계는 2,091m로 표시되어 홀별 합과 100m 차이가 납니다. 원문 수치를 보존하고 DB 및 적재 자료에 불일치를 기록했습니다.
+- 벨라45 오너스 CC와 마스터스 CC는 서로 다른 코스 자료로 유지합니다.
+
+### 2026-10-14 — 벨라45 오너스 A/B 사용자 제공 스코어카드
+- 사용자가 제공한 스코어카드 사진에서 오너스 A/B 각 9홀의 PAR·HDCP와 Black·Blue·White·Yellow·Red 홀별 거리를 입력했습니다. 사진의 m/y 표시는 Y가 선택된 것으로 재확인했습니다. 원본 yd를 보존하고 1yd=0.9144m로 홀별 환산·반올림해 DB의 m 거리에 저장했습니다. 사진의 티별 TOTAL은 yd 기준 A 3,574/3,311/2,972/2,694/2,388yd, B 3,385/3,135/2,975/2,741/2,382yd입니다. 홀별 m 환산·반올림 DB 합(Black/Blue/White/Yellow/Red)은 A 3,269/3,028/2,717/2,462/2,184m, B 3,096/2,866/2,721/2,507/2,178m입니다.
+- 비로그인 오너스 공식 코스 페이지는 로그인으로 이동해 사진 값의 공식 웹 검증 자료로 쓰지 않았습니다. DB 검수 노트에 사용자 제공 사진이 실제 자료 출처라고 구분해 기록했습니다.
+- 원격 DB에서 구장 verified, 경로 2개·홀 18개·HDCP 18개·티 거리 90개, 각 코스 PAR36을 확인했습니다. 별도 시설인 벨라45 마스터스 C/D/E 레코드는 변경하지 않았습니다. 자료: `bella45-owners-2026-user-scorecard-verified.json`.
+
+
+### 2026-10-14 — 벨라45 오너스 A/B 단위 판독 정정
+- 사진 상단 우측의 m/y 전환에서 Y 선택을 확인했습니다. 앞선 기록의 m 직접 입력 표기를 정정하고, 원본 yd 및 홀별 환산 m를 seed와 DB 모두에 저장했습니다. 각 티 9홀 환산값은 매 홀 반올림했으므로 yd 합계의 단순 총거리 환산과 최대 몇 m 차이가 날 수 있습니다.
+
+
+### 2026-10-14 — 더클래식CC 공식 Valley·Forest 기준거리
+- 운영사 공식 [코스 개요](http://www.theclassicresort.com/pagesite/course/guide.asp)에서 Valley·Forest가 각 9홀·PAR36임을 확인하고, 각 홀 상세 페이지의 PAR·단일 미터 기준거리를 원문대로 기록했습니다. [공식 모바일 코스 개요](http://theclassicresort.com/_mobile/PageSite/course/course.asp)는 OUT 1~9홀·IN 10~18홀 상세 도면으로 연결되며, OUT 1번 `326m / Par4`가 Forest 1번과, IN 10번 `344m / Par4`가 Valley 1번과 일치합니다. 자료: `the-classic-2026-official-reference-review.json`.
+- 두 경로 홀별 기준거리 합계는 Valley 2,873m(공식 합계 3,141yd), Forest 2,884m(3,155yd)로 각각 공식 경로 개요와 일치합니다. 별도 전체 코스소개에는 18홀 PAR72·7,346yd라고 적혀 있어 경로 합계 6,296yd와 1,050yd 차이가 납니다. 모순을 수정하지 않고 메모에 보존했습니다.
+- 원격 DB에는 경로 2개·홀 18개·티 미표기 기준 행 18개를 저장하고 구장과 두 경로를 verified 처리했습니다. 각 코스의 PAR36 및 기준거리 합계는 경로 개요와 일치하며, 실제 티 선택 행은 0개입니다. 라운드 UI에는 완전한 공식 기준거리 행으로 노출되어 티 미지정 상태로 저장됩니다.
+- 사용자가 제공한 스마트스코어 이미지의 두 PAR 행(FOREST `4·4·3·5·4·5·4·3·4`, VALLEY `4·5·4·4·3·4·3·5·4`)이 기존 공식 홀별 PAR와 각각 일치함을 대조했습니다. 값은 이미 원격 홀 데이터에 저장되어 있어 숫자 변경은 없으며, 사용자 이미지의 교차 확인 출처를 seed·DB 검수 메모에 덧붙였습니다. 티별 거리는 여전히 공식 자료에서 확인되지 않아 기준거리만 저장합니다.
+- 사용자가 제공한 [네이버 블로그](https://blog.naver.com/danbi2027/223449384428, 2024-05-18)를 대조했습니다. Valley 1~9홀 전장(344, 448, 296, 325, 160, 313, 128, 512, 347m)과 Forest 2·5·6·7·8홀 전장(334, 338, 445, 347, 137m)이 본문에 M 단위로 있으며 공식 기준거리와 일치합니다. Forest 1·3·4·9홀 전장은 게시되지 않았습니다. 블로그는 보조 출처로 검수 메모에 남기고, 공식 모바일 페이지에서 확인되는 홀별 기준거리 자료는 verified 상태로 유지합니다.
+- 운영사 [공식 모바일 코스 개요](http://theclassicresort.com/_mobile/PageSite/course/course.asp)의 OUT 1~9홀·IN 10~18홀 도면 링크와 상세 이미지 상단의 홀별 PAR·단일 거리 표기를 확인했습니다. OUT 1번 `326m / Par4`는 Forest 1번, IN 10번 `344m / Par4`는 Valley 1번의 저장된 공식 기준값과 일치합니다. 모바일 페이지의 대표/상단 값은 색상별 티 전장표가 아니므로 18개 기준거리 행을 티 선택 불가로 유지하고 공식 mobile course / hole source URL과 교차 확인 메모를 seed·원격 DB에 반영했습니다.
+
+### 2026-10-14 — 강남300CC 사용자 제공 야디지북 반영
+- 사용자 제공 `강남300CC.pdf` 13쪽 야디지북의 PAR·HDCP 및 Championship·Regular·Lady 홀별 거리를 페이지 이미지로 읽어 반영했습니다. 거리는 PDF에 표기된 m를 그대로 보존했고, 18홀 전체에 54개의 티 거리 행을 선택 가능 상태로 저장했습니다.
+- OUT PAR는 36, IN PAR는 37로 홀별 파 합계는 73입니다. 운영사 공식 코스소개 전체 PAR72와 1타 차이가 있어 이를 데이터 검수 메모에 남겼고, 사용자의 요청에 따라 야디지북 홀별 값을 적용했습니다. 기존 코스 PAR를 추정 수정하지 않았습니다.
+- 원격 DB에서 구장과 두 경로의 verified 상태, 18홀, 54개 거리 행, 코스별 파와 세 티의 합계를 다시 확인했습니다. 자료: `gangnam300-2026-user-yardage-book-verified.json`.
+
+### 2026-10-14 — 설해원 공개 자료 추가 확인
+- 운영사 [골프 이용안내](https://www.seolhaeone.com/golf/guide.do)는 기존 PINE/SALMON/SEAVIEW 코스 구분과 야디지북 대여료 30,000원을 안내합니다. 공개 코스 페이지는 개별 홀 PAR·티 거리를 싣지 않고, 코스 상세 예약 링크는 로그인으로 이동해 기존 코스 자료를 완성할 수 없었습니다.
+- 공식 자료의 한계를 `설해원` 검수 메모에 추가하고 pending을 유지했습니다. 골프 예약에 로그인하거나 책자를 구매하지 않고도 공개되는 원본이 발견되면 이어서 반영합니다.
+- 남양주CC의 공식 [홀별 공략 경로](https://www.clublonge.com/Club/namyangju/HoleInfo)를 직접 요청해 200 응답과 페이지 내용을 확인했습니다. 홀별 메뉴 링크는 살아 있지만 현재 페이지는 일반 코스 소개만 표시하고 거리표·홀 도면을 제공하지 않아, 기존 “홈으로 돌아간다” 메모를 정정하고 DB에는 사실에 맞게 남겼습니다.
+- 계룡산골프장과 같은 공주시 계룡면 내흥리 주소를 다룬 [공주시 2012년 고시](https://www.gongju.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000010111Gz6&fileSn=0)는 계룡산골프장 6홀 조성계획과 2013-12-30 사업기간을 명시합니다. 과거 인가 계획만으로 현재 운영·실제 홀별 제원을 확인할 수 없어 DB pending 메모에 기록하고 코스는 생성하지 않았습니다.
+- 강남300CC를 검증 완료로 옮긴 뒤 현재 카탈로그 상태는 verified 505, pending 5, rejected 1입니다.
+
+### 2026-10-14 — 남양주CC 사용자 제공 9홀 자료 입력
+- 사용자가 제공한 남양주CC 홀별 PAR와 기준거리(m)를 1~9홀에 그대로 반영했습니다. 홀별 PAR는 5,3,4,4,4,3,5,4,4(합계 PAR36), 기준거리는 392,124,300,312,266,151,510,334,316m(합계 2705m)입니다. 티별 구분이 없는 단일 거리이므로 선택 불가한 참고 기준거리로 저장했습니다.
+- 공식 코스 안내는 퍼블릭 9홀·PAR36을 확인하는 용도로 유지하고, 입력 원천이 사용자 제공 자료임을 코스 검수 메모에 분명히 적었습니다.
+- 라운드 설정에서 verified 단일 9홀 코스는 동일 경로를 두 번 기본 배치하도록 반복 구성을 일반화했습니다. 남양주CC도 18홀 한 라운드로 자동 구성됩니다.
+- 남양주CC 반영 후 원격 상태 합계는 verified 506, pending 4, rejected 1(총 511곳)입니다. 전체 verified 경로 1,153개를 교차 점검해 경로별 홀 수, PAR 요약 배열, 거리 요약 배열과 티 거리 행이 모두 존재하며 홀 PAR 배열이 실제 홀 순서와 일치함을 확인했습니다(불일치 0건).
+
+### 2026-10-14 — 계룡산골프클럽 사용자 제공 스코어카드 반영
+- 사용자가 제공한 스코어카드에서 단위 `M`, PAR `3,3,4,3,4,4,3,3,3`(합계 30), 홀별 RT 기준거리 `70,130,280,105,300,210,80,120,110m`(합계 1,405m)를 확인해 입력했습니다. 티 색상 구분은 없어 선택 티가 아닌 참고 기준거리로 저장했습니다.
+- 기존 pending `계룡산골프장` 레코드와 같은 공주시 계룡면 내흥리 시설로 보고 현재 사용자 명칭 `계룡산골프클럽`으로 정리했으며, 이전 명칭을 별칭에 보존했습니다. 공주시 과거 인허가 문서는 시설 식별 참고로만 남기고 홀별 수치의 직접 출처는 사용자 사진으로 기록했습니다.
+- 이 코스는 기본 9홀 선택으로 두고 라운드 홀 수에서 9홀 또는 18홀(동일 코스 2회)을 선택할 수 있습니다. 단일 9홀 경로를 자동 18홀로 배치하는 동작은 사용자가 두 바퀴 플레이를 지정한 남양주CC와 태광CC(퍼블릭)에만 유지했습니다.
+- 계룡산골프클럽 반영 후 원격 상태는 verified 507, pending 3, rejected 1(총 511곳)입니다.
+
+### 2026-10-14 — 잔여 pending 공식 출처 재점검
+- 설해원 운영사 코스 페이지(Pine·Salmon·Seaview·The Legend)와 공식 골프 이용안내를 다시 살펴봤습니다. 현재 공개 코스 페이지는 소개와 예약 유도, 이미지 갤러리를 제공하지만 홀별 PAR·티 전장표는 공개하지 않습니다. 공식 이용안내의 야디지북 대여료 30,000원 안내도 확인해 DB 검수 메모에 반영했습니다.
+- 그랜드부민 꿈드림목장은 공식 운영사 페이지를 찾지 못했고, 공개된 비공식 장소 디렉터리는 주소·9홀 기본정보만 제공하며 홀별 수치가 없어 자료로 쓰지 않았습니다. 계룡산골프클럽 등록 후 remaining pending 3곳(그랜드부민 꿈드림목장, 설해원, 설해원더 레전드 코스)을 유지합니다.
+
+### 2026-10-14 — 설해원 더 레전드 KLPGA 대회 참고자료 반영
+- KLPGA 공식 [2024 셀트리온 퀸즈 마스터즈 코스 정보](https://klpga.co.kr/web/tourInfo/holeInfo?gameCode=2024060013)에서 더 레전드 18홀의 PAR와 미터 전장을 읽어 참고자료로 저장했습니다. PAR 합은 72이며, 예선 거리는 6,082m, 본선 거리는 6,000m입니다. 홀별 데이터는 원문에 표시된 두 세트를 분리해 보존했고 18번 홀은 496m/414m입니다.
+- 이 값은 KLPGA 대회 세팅이고 티 색상이나 일반 라운드용 거리가 아닙니다. 양 세트 모두 티 선택 불가 참고값으로 저장했으며, 운영사 공식 페이지가 일상 라운드용 티 전장을 공개하지 않아 구장·경로 검증 상태는 pending을 유지했습니다. 자료: `seolhaeone-legend-2024-klpga-pending-reference.json`.
+
+### 2026-10-14 — 설해원 KGA 티 총거리 교차검증 자료 추가
+- 대한골프협회 2023 공식 [코스레이팅 자료](https://www.kgagolf.or.kr/infor/infor_data/AllRatings_6.pdf)에서 설해원 Pine+Salmon, Salmon+Seaview, Seaview+Pine 조합의 색상 티세트별 18홀 총 야드를 확인했습니다. 더 레전드 Black/Blue/White/Yellow/Red 역시 7,292/6,795/6,248/5,682/4,934yd 총계가 게시되어 있습니다.
+- 이는 홀별 거리나 티 조합별 개별 홀 제원을 담지 않아 라운드 데이터로 입력할 수 없습니다. 향후 홀별 자료를 확보했을 때 합계 검증에 쓰도록 구장 검수 메모에 남겼으며, 기존 2024 KLPGA 대회별 참고거리도 일반 티 거리와 계속 구분했습니다.
+- KLPGA 2024 The Legend 예선/본선은 6,652/6,563yd이고 KGA 2023 Black/Blue/White/Yellow/Red 총계 7,292/6,795/6,248/5,682/4,934yd와 일치하지 않습니다. 두 공식 자료의 측정연도·용도가 다르므로 KLPGA 거리세트를 특정 색상 티에 대응시키지 않고 대회 참고값으로 유지했습니다.
+
+### 2026-10-14 — 제주힐CC 폐업 및 바람정원 개발계획 반영
+- 사용자가 정정한 대로, pending 후보 `㈜그랜드부민 꿈드림목장`은 현행 운영 골프장으로 취급하지 않고 기존 제주힐CC의 폐업 부지로 정리했습니다. 카탈로그 이름은 `제주힐CC (폐업)`으로 바꾸고 상태를 rejected로 변경해 검색·라운딩 선택에서 제외합니다. 옛 이름은 별칭에 남겨 출처 대조가 가능하도록 했습니다.
+- 제주특별자치도의회 환경도시위원회 [2026년 3월 24일 공식 회의록](https://record.council.jeju.kr/source/view/video.html?angun=4&fidx=3808&pos=428)은 제주시 용강동 산 5번지 사업을 관광단지 개발로 설명하고, 주식회사 그랜드부민 꿈드림목장지점 대표가 참석한 `초원의 바람정원 조성사업` 환경영향평가 협의안의 원안 가결을 기록합니다. 이를 통해 그랜드부민의 바람정원 개발계획을 공식 확인했습니다. 폐업 사실은 사용자가 제공한 정정으로 기록합니다.
+- 홀별 PAR·티 거리는 이 폐업 시설에 만들지 않았습니다. 상태 변경 자료: `jeju-hill-cc-closure-2026-user-correction.json`.
+
+### 2026-10-14 — 설해원 공식 코스·예약 페이지 재확인
+- 운영사 공식 [Pine](https://www.seolhaeone.com/golf/pine.do), [Salmon](https://www.seolhaeone.com/golf/salmon.do), [Seaview](https://www.seolhaeone.com/golf/seaview.do), [The Legend](https://www.seolhaeone.com/golf/new.do) 페이지를 다시 열어 확인했습니다. Pine에는 합계 PAR37이 있지만 개별 홀 PAR·티 전장이 없고, Salmon·Seaview·The Legend는 코스 소개와 갤러리를 제공합니다.
+- Pine 예약 버튼을 열면 로그인 경로(`/member/login_new.do?redirect=/reservation/golf-day.do`)로 이동합니다. 공식 [골프 이용안내](https://www.seolhaeone.com/mobile/golf/guide.do)는 야디지북 대여료 30,000원을 안내합니다. 새 홀별 데이터를 추가할 근거는 없어 설해원 및 더 레전드 코스를 pending으로 유지했습니다. 더 레전드 seed 검수 메모에도 직접 확인 결과를 반영했습니다.
+
+### 2026-10-14 — 더 레전드 2023 KLPGA 홀별 참고 세트 추가
+- KLPGA 공식 [2023 셀트리온 퀸즈 마스터즈 코스 정보](https://klpga.co.kr/web/tourInfo/holeInfo?gameCode=2023060002)의 OUT/IN 표에서 18홀 PAR72와 예선·본선 홀별 미터 거리를 추가했습니다. 예선 합계는 6,106m(6,678yd), 본선 합계는 5,938m(6,495yd)입니다. 두 거리는 2023 대회 세팅으로 명확히 구분했습니다.
+- 2023 세트 36개를 티 선택 불가 참고거리로 DB와 `seolhaeone-legend-2024-klpga-pending-reference.json`에 추가했습니다. 2024 KLPGA 대회 세트와 거리 차이가 있는 홀은 각각의 연도별 원문값을 보존했습니다. 정규 티 색상별 거리표는 아니므로 더 레전드 코스는 계속 pending입니다.
+
+### 2026-10-14 — 티 선택·홀 데이터 원격 카탈로그 일괄 점검
+- 현재 원격 DB는 verified 507, pending 2, rejected 2입니다. 검증 완료 1,154개 경로 모두 등록 홀 수와 실제 홀 데이터 수가 일치합니다(불일치 0).
+- 이 중 1,031개 경로에는 모든 홀에 공통으로 적용 가능한 선택 티가 하나 이상 있습니다. 나머지 123개는 사용자 제공 단일 기준거리 또는 대회 참고자료 등 비선택형 거리 경로입니다. 티가 일부 홀에서만 빠져 실제 라운드 선택이 막히는 verified 경로는 확인되지 않았습니다.
+
+### 2026-10-14 — 설해원 사용자 제공 야디지 화면 반영
+- 사용자가 제공한 야디지 화면에서 PINE, SALMON, SEA VIEW 각 9홀과 THE LEGEND O(OUT) 9홀의 PAR·핸디캡 인덱스·Black/Blue/White/Gold/Red 티별 거리를 입력했습니다. 네 화면 모두 meter 단위가 선택되어 있어 표기 거리를 m 원문값 그대로 저장했습니다.
+- 설해원 27홀의 경로 파 합은 PINE 37, SALMON 36, SEA VIEW 36이며, 티별 9홀 합계(m)는 PINE 3,349/3,126/2,882/2,649/2,333, SALMON 3,315/3,127/2,914/2,659/2,288, SEA VIEW 3,322/3,105/2,888/2,670/2,281(Black/Blue/White/Gold/Red)입니다.
+- 설해원 더 레전드는 마지막 이미지가 THE LEGEND O 코스로 확인되어 9홀 PAR36만 선택 경로로 공개했습니다. O 티별 합계는 2,965/2,713/2,449/2,191/1,732m입니다. THE LEGEND I 9홀 자료가 없어 해당 경로는 만들지 않았고, 기존 KLPGA 대회 참고자료 MAIN 경로는 pending·티 선택 불가로 보존했습니다.
+- 원격 DB에서 위 경로 4개·홀 36개·선택 티 거리 180개를 확인했습니다. 설해원과 설해원더 레전드 코스 레코드는 라운드 검색을 위해 verified로 전환했고, 레전드 코스에서는 확인된 O 9홀만 선택됩니다. 현재 카탈로그는 verified 509, pending 0, rejected 2입니다. 재적재 파일: `seolhaeone-2026-user-yardage-book-verified.json`.
+# 2026-10-15 — 남한강에스파크CC·예미지CC 추가
+- **남한강에스파크CC(강원 원주)**: 운영사 [공식 코스 제원](https://nhg.s-parkcc.kr/Info/Resort)에서 피크·아쿠아·키네틱 3개 9홀의 Black/Blue/White/Yellow/Red 티 거리 135개를 미터 원문 그대로 입력했습니다. 홀별 PAR는 운영사 연계 [코스 인포 자료](https://namhangangs-parkcc.tistory.com/2)와 2026년 현장 라운드 코스별 PAR 기록([아쿠아·피크 현장 리뷰](https://fromzenal.tistory.com/entry/남한강-에스파크cc-아쿠아-피크-코스-사진-및-공략-정보), [키네틱 홀별 리뷰](https://video.korea.com/view/?id=ZtA6hpCEQZg))을 대조했습니다. 세 코스는 각각 PAR36입니다. 운영사 현재 제원표에는 HDCP가 없어 null로 두었습니다. 현재 공식 페이지에는 코스별 티 총계가 없으므로 DB 거리 요약은 White 티로부터 생성된 파생값이며, 전체 티 합계는 피크 3,172/2,998/2,812/2,630/2,223m, 아쿠아 3,177/2,995/2,810/2,606/2,284m, 키네틱 3,120/2,947/2,757/2,524/2,217m입니다(Black/Blue/White/Yellow/Red). 자료 파일: `namhangang-espark-yemizi-2026-verified.json`.
+- **예미지CC(충남 청양)**: 운영사 [공식 코스 제원표](https://www.yemizicc.co.kr/course/intro)에서 예(藝)·미(美)·지(智) 3개 9홀의 PAR·HDCP·Black/Blue/White/Lady 티별 미터 거리 108개를 입력했습니다. PAR는 각 36이며 각 티별 합계가 공식 표의 합계와 일치합니다. 지 코스 HDCP 4가 6번·9번에 중복 표기되어 원문대로 보존했습니다. 자료 파일은 남한강에스파크CC와 같은 JSON입니다.
+- 원격 DB에 신규 시설 2곳과 6개 경로·54홀을 등록했습니다. 남한강에스파크CC는 공식 거리 135행, 예미지CC는 108행, 총 243개 티 거리 행입니다. 홀 수, PAR 요약 배열, White 거리 요약 배열 및 공식 티별 합계를 DB와 대조했습니다. 남한강에스파크CC 27개 홀은 공식 페이지에 HDCP가 없어서 미입력 상태입니다.

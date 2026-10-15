@@ -12,9 +12,9 @@
       "review_notes": [
         "부산권 우선 수집. 공식 9홀 상세 페이지의 명시된 티별 거리와 좌·우 그린 값을 옮겼으며, 모든 거리는 페이지에 m로 표시되어 source_unit=m로 기록.",
         "공식 코스루틴 표의 행/총거리 및 PAR72/PAR73 표기가 상세 홀 페이지와 다릅니다. 홀별 티·그린 거리와 실제 홀별 파는 상세 페이지 기준으로 저장하고, 루틴 표 총계 차이는 참고 메모로 보존했습니다.",
-        "상세 홀 페이지에서 티 이름이 명시되지 않은 Blue 아래 추가 거리 행은 Black으로 추정하지 않고 제외. 2·4·6·7·9번 상세 페이지에는 별도 Black 행이 게시되지 않음.",
-        "8번 홀은 공식 상세 페이지에서 Par 3 좌그린, Par 4 좌그린, Par 5 우그린의 3가지 운영을 명시. 선택 구성에 따라 파와 거리가 바뀌므로 티·그린별 par override로 기록.",
-        "공식 8번 홀 페이지에서 Blue Par 3 좌그린은 '-'로 제공되지 않으므로 Blue 티의 해당 구성을 만들지 않음."
+        "공식 상세 페이지의 Blue 아래 추가 행은 티 명칭이 명시되지 않아 Black으로 추정하지 않았으나, 사용자 제공 야디지 표에서는 Blue 셀 아래 묶여 있어 Blue 대체 티 위치 자료로 반영함. 2·4·6·7·9번 상세 페이지에는 별도 Black 행이 게시되지 않음.",
+        "8번 홀은 안내에 따라 Par 3 좌그린, Par 4 좌그린, Par 5 우그린으로 운영하는 변형홀임. 실제 티샷 전 선택하는 구성에 따라 파와 거리가 달라지는 의도된 운영이며 자료 오류가 아님.",
+        "사용자 제공 야디지 이미지에서 Blue 표기 아래 추가 행도 Blue의 대체 티 위치 조합으로 확인되어 Par 3/4/5 거리를 267/408/415m로 추가 기록. 공식 상세 페이지의 첫 Blue 조합(Par 4/5: 460/467m)과 구분해 라운드 중 선택하도록 함."
       ],
       "routes": [
         {
@@ -29,7 +29,7 @@
           "review_notes": [
             "각 홀의 파·거리·좌우 그린은 공식 홀별 페이지 1~9번을 기준으로 입력. 홀별 페이지에는 거리 단위 m가 명시됨.",
             "공식 코스루틴 페이지의 PAR72/PAR73, 표 행 및 티별 합계가 개별 홀 상세 페이지와 다릅니다. 상세 홀 페이지를 기준으로 저장했으며, 코스루틴의 총계·표기 차이는 추후 재확인할 수 있도록 기록했습니다.",
-            "8번 홀 거리 구성은 상세 페이지에 표시된 Par3(좌), Par4(좌), Par5(우)를 green variant로 각각 저장. 선택된 구성의 par는 실제 라운드 홀에 적용되어야 함."
+            "8번 홀은 오류가 아닌 변형홀. 기본 티 색상 선택 후 첫 샷 전 Par 3(좌)/Par 4(좌)/Par 5(우)와 Blue 대체 티 위치 중 실제 안내된 구성을 선택하면 해당 파와 거리를 적용한다. 사용자 제공 이미지 기준 Blue 대체 위치 거리는 Par 3/4/5 = 267/408/415m이며 공식 상세 페이지 기준 Blue 기본 조합은 Par 4/5 = 460/467m."
           ],
           "holes": [
             { "hole_number": 1, "par": 4, "tees": [
@@ -103,7 +103,10 @@
               { "tee_code": "red", "display_name": "Red", "tee_color": "#ef4444", "distance_m": 243, "distance_m_source": "official", "source_distance": 243, "source_unit": "m", "green_code": "right", "green_name": "우그린" }
             ]},
             { "hole_number": 8, "par": 3, "tees": [
+              { "tee_code": "blue", "display_name": "Blue", "tee_color": "#2563eb", "distance_m": 267, "distance_m_source": "official", "source_distance": 267, "source_unit": "m", "green_code": "x-left-par3-blue-alt", "green_name": "Blue 대체 위치 · 좌그린 Par 3", "par": 3 },
               { "tee_code": "blue", "display_name": "Blue", "tee_color": "#2563eb", "distance_m": 460, "distance_m_source": "official", "source_distance": 460, "source_unit": "m", "green_code": "left-par4", "green_name": "좌그린 · Par 4", "par": 4 },
+              { "tee_code": "blue", "display_name": "Blue", "tee_color": "#2563eb", "distance_m": 408, "distance_m_source": "official", "source_distance": 408, "source_unit": "m", "green_code": "x-left-par4-blue-alt", "green_name": "Blue 대체 위치 · 좌그린 Par 4", "par": 4 },
+              { "tee_code": "blue", "display_name": "Blue", "tee_color": "#2563eb", "distance_m": 415, "distance_m_source": "official", "source_distance": 415, "source_unit": "m", "green_code": "x-right-par5-blue-alt", "green_name": "Blue 대체 위치 · 우그린 Par 5", "par": 5 },
               { "tee_code": "blue", "display_name": "Blue", "tee_color": "#2563eb", "distance_m": 467, "distance_m_source": "official", "source_distance": 467, "source_unit": "m", "green_code": "right-par5", "green_name": "우그린 · Par 5", "par": 5 },
               { "tee_code": "white", "display_name": "White", "tee_color": "#f8fafc", "distance_m": 239, "distance_m_source": "official", "source_distance": 239, "source_unit": "m", "green_code": "standard", "green_name": "좌그린 · Par 3", "par": 3 },
               { "tee_code": "white", "display_name": "White", "tee_color": "#f8fafc", "distance_m": 384, "distance_m_source": "official", "source_distance": 384, "source_unit": "m", "green_code": "left-par4", "green_name": "좌그린 · Par 4", "par": 4 },

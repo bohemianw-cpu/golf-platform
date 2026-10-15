@@ -2,28 +2,30 @@
 
 import React, { useState } from 'react'
 import { ClubItem, ClubCategory } from '@/types/golf'
+import { clubButtonLabel, MAX_CLUBS, normalizeClubEntry } from '@/utils/golf/clubs'
 import { sortClubs } from './ScoreTab'
 
 interface ClubModalProps {
   clubs: ClubItem[]
-  isOpen: boolean
   onClose: () => void
-  onSave: (clubs: ClubItem[]) => void
+  onSave: (clubs: ClubItem[]) => Promise<void>
 }
 
-export default function ClubModal({ clubs, isOpen, onClose, onSave }: ClubModalProps) {
+export default function ClubModal({ clubs, onClose, onSave }: ClubModalProps) {
   const [currentClubs, setCurrentClubs] = useState<ClubItem[]>(clubs)
   const [newClubName, setNewClubName] = useState('')
   const [newCategory, setNewCategory] = useState<ClubCategory>('iron')
+  const [isSaving, setIsSaving] = useState(false)
+  const [saveError, setSaveError] = useState<string | null>(null)
 
-  if (!isOpen) return null
+  const preferredApproachId = currentClubs.find((club) => club.category === 'wedge' && club.preferredApproach)?.id ?? ''
+  const wedges = currentClubs.filter((club) => club.category === 'wedge')
 
   const handleAddClub = () => {
-    if (!newClubName.trim()) return
+    if (isSaving || !newClubName.trim() || currentClubs.length >= MAX_CLUBS) return
     const newClub: ClubItem = {
       id: `custom_${Date.now()}`,
-      name: newClubName.trim(),
-      category: newCategory,
+      ...normalizeClubEntry(newClubName.trim(), newCategory),
     }
     const updated = sortClubs([...currentClubs, newClub])
     setCurrentClubs(updated)
@@ -31,12 +33,22 @@ export default function ClubModal({ clubs, isOpen, onClose, onSave }: ClubModalP
   }
 
   const handleDeleteClub = (id: string) => {
+    if (isSaving) return
     setCurrentClubs(currentClubs.filter((c) => c.id !== id))
   }
 
-  const handleSaveAndClose = () => {
-    onSave(sortClubs(currentClubs))
-    onClose()
+  const handleSaveAndClose = async () => {
+    if (isSaving) return
+    setIsSaving(true)
+    setSaveError(null)
+    try {
+      await onSave(sortClubs(currentClubs))
+      onClose()
+    } catch {
+      setSaveError('클럽 설정을 저장하지 못했습니다. 다시 시도해 주세요.')
+    } finally {
+      setIsSaving(false)
+    }
   }
 
   return (
@@ -64,7 +76,7 @@ export default function ClubModal({ clubs, isOpen, onClose, onSave }: ClubModalP
           <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 'bold', color: '#1e293b' }}>
             🎒 나의 골프백 클럽 설정
           </h3>
-          <button onClick={onClose} style={{ border: 'none', background: 'none', fontSize: '20px', cursor: 'pointer', color: '#64748b' }}>✕</button>
+          <button onClick={onClose} disabled={isSaving} style={{ border: 'none', background: 'none', fontSize: '20px', cursor: isSaving ? 'wait' : 'pointer', color: '#64748b' }}>✕</button>
         </div>
 
         {/* 새 클럽 추가 영역 */}
@@ -72,6 +84,7 @@ export default function ClubModal({ clubs, isOpen, onClose, onSave }: ClubModalP
           <div style={{ fontSize: '13px', fontWeight: 600, color: '#475569', marginBottom: '8px' }}>새 클럽 추가</div>
           <div style={{ display: 'flex', gap: '6px', marginBottom: '8px' }}>
             <select
+              disabled={isSaving}
               value={newCategory}
               onChange={(e) => setNewCategory(e.target.value as ClubCategory)}
               style={{ padding: '8px', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '13px', backgroundColor: '#fff' }}
@@ -85,7 +98,8 @@ export default function ClubModal({ clubs, isOpen, onClose, onSave }: ClubModalP
             </select>
             <input
               type="text"
-              placeholder="예: 7번 아이언, 58도"
+              disabled={isSaving}
+              placeholder="예: 3번 우드, 5I, 58도 웨지"
               value={newClubName}
               onChange={(e) => setNewClubName(e.target.value)}
               style={{ flex: 1, padding: '8px', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '13px' }}
@@ -93,9 +107,10 @@ export default function ClubModal({ clubs, isOpen, onClose, onSave }: ClubModalP
           </div>
           <button
             onClick={handleAddClub}
-            style={{ width: '100%', padding: '8px', backgroundColor: '#10b981', color: '#fff', border: 'none', borderRadius: '6px', fontWeight: 600, cursor: 'pointer', fontSize: '13px' }}
+            disabled={isSaving || currentClubs.length >= MAX_CLUBS}
+            style={{ width: '100%', padding: '8px', backgroundColor: currentClubs.length >= MAX_CLUBS ? '#94a3b8' : '#10b981', color: '#fff', border: 'none', borderRadius: '6px', fontWeight: 600, cursor: currentClubs.length >= MAX_CLUBS ? 'not-allowed' : 'pointer', fontSize: '13px' }}
           >
-            + 클럽 추가 (자동 순서 정렬)
+            {currentClubs.length >= MAX_CLUBS ? `클럽은 최대 ${MAX_CLUBS}개까지 등록할 수 있습니다` : '+ 클럽 추가 (자동 순서 정렬)'}
           </button>
         </div>
 
@@ -119,9 +134,10 @@ export default function ClubModal({ clubs, isOpen, onClose, onSave }: ClubModalP
                   border: '1px solid #cbd5e1'
                 }}
               >
-                <span>{club.name}</span>
+                <span title={club.name}>{clubButtonLabel(club)}</span>
                 <button
                   onClick={() => handleDeleteClub(club.id)}
+                  disabled={isSaving}
                   style={{ border: 'none', background: 'none', color: '#ef4444', cursor: 'pointer', fontSize: '12px', padding: 0 }}
                 >
                   ✕
@@ -131,21 +147,44 @@ export default function ClubModal({ clubs, isOpen, onClose, onSave }: ClubModalP
           </div>
         </div>
 
+        <div style={{ backgroundColor: '#f0fdf4', padding: '12px', borderRadius: '10px', marginBottom: '20px', border: '1px solid #bbf7d0' }}>
+          <label htmlFor="preferred-approach-wedge" style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#166534', marginBottom: '6px' }}>
+            주로 사용하는 어프로치 웨지
+          </label>
+          <select
+            id="preferred-approach-wedge"
+            value={preferredApproachId}
+            disabled={isSaving || wedges.length === 0}
+            onChange={(event) => setCurrentClubs((previous) => previous.map((club) => ({
+              ...club,
+              preferredApproach: club.category === 'wedge' && club.id === event.target.value,
+            })))}
+            style={{ width: '100%', padding: '8px', borderRadius: '6px', border: '1px solid #86efac', backgroundColor: '#fff', fontSize: '13px' }}
+          >
+            <option value="">{wedges.length === 0 ? '웨지를 먼저 등록해 주세요' : '선택 안 함'}</option>
+            {wedges.map((club) => <option key={club.id} value={club.id}>{clubButtonLabel(club)}</option>)}
+          </select>
+          <p style={{ margin: '6px 0 0', fontSize: '11px', color: '#166534' }}>70m 이하에서는 선택한 웨지를 추천합니다. 그린 위에서는 퍼터를 우선합니다.</p>
+        </div>
+
         {/* 저장/닫기 버튼 */}
         <div style={{ display: 'flex', gap: '8px' }}>
           <button
             onClick={onClose}
+            disabled={isSaving}
             style={{ flex: 1, padding: '10px', backgroundColor: '#e2e8f0', color: '#475569', border: 'none', borderRadius: '8px', fontWeight: 600, cursor: 'pointer' }}
           >
             취소
           </button>
           <button
             onClick={handleSaveAndClose}
-            style={{ flex: 1, padding: '10px', backgroundColor: '#0f172a', color: '#fff', border: 'none', borderRadius: '8px', fontWeight: 600, cursor: 'pointer' }}
+            disabled={isSaving}
+            style={{ flex: 1, padding: '10px', backgroundColor: '#0f172a', color: '#fff', border: 'none', borderRadius: '8px', fontWeight: 600, cursor: isSaving ? 'wait' : 'pointer', opacity: isSaving ? 0.65 : 1 }}
           >
-            설정 저장
+            {isSaving ? '저장 중...' : '설정 저장'}
           </button>
         </div>
+        {saveError && <p role="alert" style={{ margin: '8px 0 0', color: '#dc2626', fontSize: '12px' }}>{saveError}</p>}
       </div>
     </div>
   )

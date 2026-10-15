@@ -3,6 +3,7 @@
 import React from 'react'
 import type { ClubItem } from '@/types/golf'
 import type { ClubStatsMap, ClubApproachMap } from '@/utils/golf/scoring'
+import { clubButtonLabel } from '@/utils/golf/clubs'
 
 interface Props {
   clubs: ClubItem[]
@@ -61,16 +62,15 @@ export default function ClubStatsTable({ clubs, clubStats, clubApproach }: Props
 
                 return (
                   <tr key={c.id} style={{ borderBottom: '1px solid #f1f5f9', height: '42px' }}>
-                    <td style={{ padding: '6px 1px', fontWeight: 'bold', color: '#0f172a', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', fontSize: '11.5px', letterSpacing: '-0.3px' }}>
-                      {c.name}
+                    <td title={c.name} style={{ padding: '6px 1px', fontWeight: 'bold', color: '#0f172a', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', fontSize: '11.5px', letterSpacing: '-0.3px' }}>
+                      {clubButtonLabel(c)}
                     </td>
                     <td style={{ padding: '6px 1px', color: '#64748b', fontSize: '11px', whiteSpace: 'nowrap' }}>{stat.count}회</td>
                     <td style={{ padding: '6px 1px', whiteSpace: 'nowrap' }}>
                       <span style={{ fontSize: '16px', fontWeight: 'bold', color: '#047857', letterSpacing: '-0.5px' }}>{avg}</span>
-                      <span style={{ fontSize: '10.5px', fontWeight: 600, color: '#059669', marginLeft: '1px' }}>m</span>
                     </td>
-                    <td style={{ padding: '6px 1px', color: '#475569', fontSize: '11.5px', fontWeight: 500, whiteSpace: 'nowrap' }}>{stat.minDist}m</td>
-                    <td style={{ padding: '6px 1px', color: '#d97706', fontSize: '11.5px', fontWeight: 'bold', whiteSpace: 'nowrap' }}>{stat.maxDist}m</td>
+                    <td style={{ padding: '6px 1px', color: '#475569', fontSize: '11.5px', fontWeight: 500, whiteSpace: 'nowrap' }}>{stat.minDist}</td>
+                    <td style={{ padding: '6px 1px', color: '#d97706', fontSize: '11.5px', fontWeight: 'bold', whiteSpace: 'nowrap' }}>{stat.maxDist}</td>
                     <td style={{ padding: '6px 1px', color: approachRate !== null ? '#2563eb' : '#94a3b8', fontSize: '12px', fontWeight: 'bold', whiteSpace: 'nowrap' }}>
                       {approachRate !== null ? `${approachRate}%` : '-'}
                     </td>

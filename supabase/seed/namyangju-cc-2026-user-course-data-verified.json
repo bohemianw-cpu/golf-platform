@@ -1,0 +1,43 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "name": "남양주CC",
+    "match_name": "남양주CC",
+    "region": "경기",
+    "address": "경기도 남양주시 오남읍 진건오남로 516-31",
+    "aliases": ["남양주CC", "남양주 컨트리클럽", "남양주컨트리클럽", "Namyangju CC"],
+    "hole_count": 9,
+    "supports_screen": false,
+    "verification_status": "verified",
+    "review_notes": [
+      "사용자가 제공한 남양주CC 9홀별 PAR와 기준거리(m)를 그대로 입력했습니다. 입력값은 1~9홀 순서로 PAR 5,3,4,4,4,3,5,4,4 및 거리 392,124,300,312,266,151,510,334,316m이며 PAR 합은 36, 기준거리 합은 2705m입니다.",
+      "공식 코스 안내는 9홀·PAR36임을 확인하는 데 사용했습니다. 홀별 PAR·거리와 티 색 구분은 공식 사이트에 게시되지 않았으며, 사용자 제공 단일 기준거리는 선택 티가 아닌 참고 거리로 저장했습니다."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "MAIN",
+      "display_name": "남양주 코스",
+      "hole_count": 9,
+      "primary_tee_code": "official_reference",
+      "verification_status": "verified",
+      "source_url": "https://www.clublonge.com/Club/namyangju/Course",
+      "source_data_url": "https://www.clublonge.com/Club/namyangju/Course",
+      "review_notes": ["9홀 코스를 두 번 플레이하는 구성으로 제공하며, 기준거리는 사용자 제공 자료입니다."] ,
+      "pars": [5, 3, 4, 4, 4, 3, 5, 4, 4],
+      "distances_m": [392, 124, 300, 312, 266, 151, 510, 334, 316],
+      "holes": [
+        {"hole_number": 1, "par": 5, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 392, "distance_m_source": "official", "source_distance": 392, "source_unit": "m"}]},
+        {"hole_number": 2, "par": 3, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 124, "distance_m_source": "official", "source_distance": 124, "source_unit": "m"}]},
+        {"hole_number": 3, "par": 4, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 300, "distance_m_source": "official", "source_distance": 300, "source_unit": "m"}]},
+        {"hole_number": 4, "par": 4, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 312, "distance_m_source": "official", "source_distance": 312, "source_unit": "m"}]},
+        {"hole_number": 5, "par": 4, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 266, "distance_m_source": "official", "source_distance": 266, "source_unit": "m"}]},
+        {"hole_number": 6, "par": 3, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 151, "distance_m_source": "official", "source_distance": 151, "source_unit": "m"}]},
+        {"hole_number": 7, "par": 5, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 510, "distance_m_source": "official", "source_distance": 510, "source_unit": "m"}]},
+        {"hole_number": 8, "par": 4, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 334, "distance_m_source": "official", "source_distance": 334, "source_unit": "m"}]},
+        {"hole_number": 9, "par": 4, "tees": [{"tee_code": "official_reference", "display_name": "사용자 제공 기준거리", "tee_color": "#64748b", "tee_selection_available": false, "distance_m": 316, "distance_m_source": "official", "source_distance": 316, "source_unit": "m"}]}
+      ]
+    }
+  ]
+}

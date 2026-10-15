@@ -24,3 +24,64 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.course-hole-preview {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.course-hole-preview__content {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.course-hole-preview__summary::after {
+  content: '접기⌃';
+  flex: 0 0 auto;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.course-hole-preview:not([open]) .course-hole-preview__summary::after {
+  content: '펼치기⌄';
+}
+
+.agreement-copy {
+  margin: 7px 0 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #334155;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.agreement-copy p { margin: 0 0 8px; }
+.agreement-copy p:last-child { margin-bottom: 0; }
+
+.course-hole-preview__table {
+  table-layout: fixed;
+  font-size: 10px;
+}
+
+.course-hole-preview__selected-tee {
+  background-color: #eff6ff;
+  color: #1d4ed8 !important;
+}
+
+@media (max-width: 640px) {
+  .course-hole-preview__table {
+    font-size: 9px;
+  }
+
+  .course-hole-preview__table th,
+  .course-hole-preview__table td {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}

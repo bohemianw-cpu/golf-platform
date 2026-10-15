@@ -1,5 +1,49 @@
 import type { ClubItem, ClubCategory } from '@/types/golf'
 
+export const MAX_CLUBS = 14
+
+/** Keep shot-entry buttons short while retaining the user's saved club name for records. */
+export function clubButtonLabel(club: ClubItem): string {
+  const name = club.name.normalize('NFKC').trim()
+  const compact = name.toUpperCase().replace(/[\s._-]/g, '').replace(/번/g, '')
+  const number = compact.match(/\d{1,2}/)?.[0]
+
+  if (/드라이버|DRIVER|^DR?$/.test(compact) || club.category === 'driver') return '드라이버'
+  if (/퍼터|PUTTER|^PT$/.test(compact) || club.category === 'putter') return '퍼터'
+
+  if (/피칭|PITCHING|^PW$|^P$/.test(compact)) return 'PW'
+  if (/어프로치|APPROACH|^AW$/.test(compact)) return 'AW'
+  if (/갭|GAP|^GW$/.test(compact)) return 'GW'
+  if (/샌드|SAND|^SW$/.test(compact)) return 'SW'
+  if (/로브|LOB|^LW$/.test(compact)) return 'LW'
+
+  if (number) {
+    if (/아이언|IRON|\dI$|^I\d/.test(compact)) return `${number}I`
+    if (/유틸|UTILITY|HYBRID|RESCUE|\d[UH]$|^[UH]\d/.test(compact)) return `${number}U`
+    if (club.category === 'wedge' && (/웨지|WEDGE|도|°|DEG/.test(compact) || (/\dW$/.test(compact) && Number(number) >= 40))) return `${number}°`
+    if (/우드|WOOD|FAIRWAY|\dW$|^W\d/.test(compact)) return `${number}W`
+    if (/웨지|WEDGE|도|°|DEG/.test(compact)) return `${number}°`
+    if (club.category === 'iron') return `${number}I`
+    if (club.category === 'utility') return `${number}U`
+    if (club.category === 'wood') return `${number}W`
+    if (club.category === 'wedge') return `${number}°`
+  }
+
+  return name
+}
+
+/** Normalize newly registered clubs so common name variants share one saved name. */
+export function normalizeClubEntry(name: string, category: ClubCategory): Pick<ClubItem, 'name' | 'category'> {
+  const label = clubButtonLabel({ id: '', name, category })
+  if (label === '드라이버') return { name: label, category: 'driver' }
+  if (label === '퍼터') return { name: label, category: 'putter' }
+  if (/^\d+W$/.test(label)) return { name: label, category: 'wood' }
+  if (/^\d+U$/.test(label)) return { name: label, category: 'utility' }
+  if (/^\d+I$/.test(label)) return { name: label, category: 'iron' }
+  if (/^(PW|AW|GW|SW|LW|\d+°)$/.test(label)) return { name: label, category: 'wedge' }
+  return { name: label, category }
+}
+
 const CATEGORY_ORDER: Record<ClubCategory, number> = {
   driver: 1,
   wood: 2,
@@ -45,7 +89,9 @@ export const sortClubs = (clubs: ClubItem[]): ClubItem[] =>
 export const DEFAULT_CLUB_DISTANCES: Record<string, number> = {
   '드라이버': 210,
   '3번 우드': 190,
+  '3W': 190,
   '4번 유틸': 180,
+  '4U': 180,
   '5번 아이언': 160,
   '6번 아이언': 150,
   '7번 아이언': 140,

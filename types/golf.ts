@@ -4,6 +4,7 @@ export interface ClubItem {
   id: string
   name: string
   category: ClubCategory
+  preferredApproach?: boolean
 }
 
 export type BallLie =
@@ -20,6 +21,7 @@ export type BallLie =
 
 export interface ShotRecord {
   shotNumber: number
+  inputMethod?: 'manual' | 'quick_putt'
   club: string
   distanceToPinBefore: number
   distanceToPinAfter: number
@@ -69,6 +71,8 @@ export interface GolfCourseHole {
 export interface GolfCourseRoute {
   id: string
   course_id: string
+  play_mode?: 'field' | 'screen'
+  screen_provider?: string
   route_code: string
   display_name: string
   hole_count: number

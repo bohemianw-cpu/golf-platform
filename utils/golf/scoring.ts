@@ -22,6 +22,7 @@ export const getPenaltyByLie = (lie: BallLie): number => {
 export const isPenaltyLie = (lie: BallLie): boolean => PENALTY_LIES.includes(lie)
 
 export const roundTo10 = (dist: number): number => Math.max(0, Math.round(dist / 10) * 10)
+export const roundToTenth = (dist: number): number => Math.round(dist * 10) / 10
 
 export const clamp = (v: number, min: number, max: number): number =>
   Math.min(max, Math.max(min, Number.isFinite(v) ? v : min))
@@ -38,7 +39,7 @@ export const calcShotDistance = (
   prevDistance: number,
   remaining: number,
   isPinOver: boolean
-): number => (isPinOver ? prevDistance + remaining : Math.max(0, prevDistance - remaining))
+): number => roundToTenth(isPinOver ? prevDistance + remaining : Math.max(0, prevDistance - remaining))
 
 // ---------- 클럽 통계 ----------
 export interface ClubStat {

@@ -14,6 +14,8 @@ npm run build
 
 필수 환경변수는 `.env.local`의 `NEXT_PUBLIC_SUPABASE_URL` 및 `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`입니다. 레거시 프로젝트는 `NEXT_PUBLIC_SUPABASE_ANON_KEY`도 브라우저 클라이언트에서 지원합니다. 비밀 키(service role)는 브라우저 환경변수로 두지 마세요.
 
+라운드 리포트의 AI 연습 제안에는 서버 전용 `OPENAI_API_KEY`가 필요합니다. `.env.local` 또는 배포 환경의 서버 변수에 추가하세요. 모델을 바꾸려면 `OPENAI_PRACTICE_MODEL`을 지정할 수 있으며 기본값은 `gpt-5-mini`입니다. 이 키를 `NEXT_PUBLIC_` 변수로 설정하지 마세요. 리포트를 열면 이번 라운드의 샷과 로그인 사용자의 최근 라운드 샷 기록을 AI가 분석합니다.
+
 ## 코드 구조
 
 - `app/`: 앱 셸, 메타데이터, 전역 스타일
@@ -24,6 +26,7 @@ npm run build
 - `hooks/useRound.ts`: 라운드 입력 상태와 기기 임시저장, Supabase 동기화
 - `utils/golf/`: 핸디캡 그룹과 골프 계산 로직
 - `supabase/migrations/`: 사용자·코스·라운드·샷·공개 범위 스키마
+- `docs/ROUND_INTEGRITY_POLICY.md`: 샷 입력 서버 이력, 극최소 소요시간, 보상 심사 분류 기준
 
 ## Supabase 설정
 
@@ -74,4 +77,4 @@ node scripts/import-course-corrections.mjs --input 'supabase/seed/<verified-cour
 
 ## 제품 범위와 다음 단계
 
-조인/벙개, 영상, 레슨, 쇼핑 탭은 서비스 준비 안내만 노출합니다. 결제/구독, 코스 관리용 관리자 UI, 공개 원본 자동 갱신, 핸디캡 인증, 실기기 동기화/접근성 수동 검증은 아직 운영 기능으로 제공하지 않습니다. 향후 기능은 API와 스키마를 분리해 추가하고, 외부 데이터는 출처·사용권·검수 상태를 함께 관리합니다.
+조인/벙개, 영상, 레슨, 쇼핑 탭은 서비스 준비 안내만 노출합니다. 회당 이용권·포인트·추천 장부와 MY 조회 화면은 준비했지만 가격·결제 승인·보상 지급은 비활성입니다. 출시 전에 정할 항목과 결제·환불·보존 절차는 [유료 서비스 출시 준비](docs/COMMERCE_LAUNCH_PREPARATION.md)를 참고하세요. 구독, 코스 관리용 관리자 UI, 공개 원본 자동 갱신, 핸디캡 인증, 실기기 동기화/접근성 수동 검증은 아직 운영 기능으로 제공하지 않습니다. 향후 기능은 API와 스키마를 분리해 추가하고, 외부 데이터는 출처·사용권·검수 상태를 함께 관리합니다.

@@ -1,0 +1,192 @@
+{
+  "schema": "course-source-review/1",
+  "status": "source_verified_imported_verified",
+  "venue": {
+    "name": "코리아퍼블릭GC",
+    "match_name": "코리아퍼블릭GC",
+    "region": "경기",
+    "address": "경기도 용인시 기흥구 기흥단지로 224",
+    "aliases": [
+      "코리아퍼블릭GC",
+      "코리아 퍼블릭GC",
+      "코리아퍼블릭컨트리클럽",
+      "코리아대중CC"
+    ],
+    "supports_screen": false,
+    "hole_count": 9,
+    "verification_status": "verified",
+    "review_notes": [
+      "운영사 GA KOREA의 공식 코리아퍼블릭 홀별 코스공략도에서 1~9홀의 PAR·HDCP 및 REGULAR 티별 미터 거리를 입력했습니다. 페이지 제목과 현재 메뉴 표기는 코리아퍼블릭컨트리클럽이며, 기존 카탈로그의 코리아대중CC와 같은 경기도 용인 기흥단지로 224의 9홀 퍼블릭 시설임을 운영사 주소·설명과 대조했습니다."
+    ]
+  },
+  "routes": [
+    {
+      "route_code": "PUBLIC",
+      "display_name": "코리아퍼블릭 코스",
+      "hole_count": 9,
+      "primary_tee_code": "regular",
+      "verification_status": "verified",
+      "source_url": "https://www.gakorea.com/public/course/publicCouse.asp",
+      "par_source_url": "https://www.gakorea.com/public/course/publicCouse.asp",
+      "source_data_url": "https://www.gakorea.com/public/course/publicCouse.asp",
+      "review_notes": [
+        "공식 홀별 안내는 각 홀에 PAR·HDCP와 REGULAR 한 종류의 티 거리(m)를 명시합니다. 색상별 다중 티 거리는 공개되지 않아 별도 색상 행을 만들지 않았습니다."
+      ],
+      "holes": [
+        {
+          "hole_number": 1,
+          "par": 5,
+          "handicap_index": 3,
+          "tees": [
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#6b7280",
+              "tee_selection_available": true,
+              "distance_m": 350,
+              "distance_m_source": "official",
+              "source_distance": 350,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 2,
+          "par": 4,
+          "handicap_index": 6,
+          "tees": [
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#6b7280",
+              "tee_selection_available": true,
+              "distance_m": 260,
+              "distance_m_source": "official",
+              "source_distance": 260,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 3,
+          "par": 3,
+          "handicap_index": 1,
+          "tees": [
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#6b7280",
+              "tee_selection_available": true,
+              "distance_m": 170,
+              "distance_m_source": "official",
+              "source_distance": 170,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 4,
+          "par": 5,
+          "handicap_index": 8,
+          "tees": [
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#6b7280",
+              "tee_selection_available": true,
+              "distance_m": 350,
+              "distance_m_source": "official",
+              "source_distance": 350,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 5,
+          "par": 4,
+          "handicap_index": 2,
+          "tees": [
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#6b7280",
+              "tee_selection_available": true,
+              "distance_m": 300,
+              "distance_m_source": "official",
+              "source_distance": 300,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 6,
+          "par": 3,
+          "handicap_index": 7,
+          "tees": [
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#6b7280",
+              "tee_selection_available": true,
+              "distance_m": 120,
+              "distance_m_source": "official",
+              "source_distance": 120,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 7,
+          "par": 4,
+          "handicap_index": 9,
+          "tees": [
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#6b7280",
+              "tee_selection_available": true,
+              "distance_m": 200,
+              "distance_m_source": "official",
+              "source_distance": 200,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 8,
+          "par": 3,
+          "handicap_index": 3,
+          "tees": [
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#6b7280",
+              "tee_selection_available": true,
+              "distance_m": 130,
+              "distance_m_source": "official",
+              "source_distance": 130,
+              "source_unit": "m"
+            }
+          ]
+        },
+        {
+          "hole_number": 9,
+          "par": 5,
+          "handicap_index": 5,
+          "tees": [
+            {
+              "tee_code": "regular",
+              "display_name": "Regular",
+              "tee_color": "#6b7280",
+              "tee_selection_available": true,
+              "distance_m": 390,
+              "distance_m_source": "official",
+              "source_distance": 390,
+              "source_unit": "m"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

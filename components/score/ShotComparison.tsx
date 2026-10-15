@@ -31,12 +31,13 @@ interface Props {
   currentPar: number
   currentShots: ShotRecord[]
   currentPrevDistance: number
+  courseDataKnown: boolean
 }
 
-export default function ShotComparison({ previousHole, currentHole, currentPar, currentShots, currentPrevDistance }: Props) {
+export default function ShotComparison({ previousHole, currentHole, currentPar, currentShots, currentPrevDistance, courseDataKnown }: Props) {
   return (
     <div style={{ marginBottom: '24px' }}>
-      <h3 style={{ fontSize: '15px', fontWeight: 'bold', color: '#1e293b', marginBottom: '10px' }}>📊 샷 데이터 비교</h3>
+      <h3 style={{ fontSize: '15px', fontWeight: 'bold', color: '#1e293b', marginBottom: '10px' }}>📊 샷 데이터 내역</h3>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', alignItems: 'start' }}>
         <div style={{ backgroundColor: '#ffffff', border: '1px solid #cbd5e1', borderRadius: '10px', padding: '10px 6px' }}>
           <div style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '6px', marginBottom: '8px' }}>
@@ -60,9 +61,9 @@ export default function ShotComparison({ previousHole, currentHole, currentPar, 
             <div style={{ fontSize: '11.5px', fontWeight: 'bold', color: '#0284c7' }}>🔴 현재 홀</div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '2px' }}>
               <span style={{ fontWeight: 'bold', color: '#0f172a', fontSize: '12.5px' }}>
-                {currentHole}번 홀 (Par {currentPar})
+                {currentHole}번 홀 (Par {courseDataKnown ? currentPar : '-'})
               </span>
-              <span style={{ fontSize: '11px', color: '#0284c7', fontWeight: 'bold' }}>남은거리 {currentPrevDistance}m</span>
+              <span style={{ fontSize: '11px', color: '#0284c7', fontWeight: 'bold' }}>남은거리 {courseDataKnown ? currentPrevDistance : '-'}m</span>
             </div>
           </div>
           {currentShots.length === 0 ? empty('티샷을 입력해 주세요.') : <ShotTable shots={currentShots} />}

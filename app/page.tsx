@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import ScoreTab from '@/components/score/ScoreTab'
 import MyTab from '@/components/my/MyTab'
 import ComingSoonTab from '@/components/layout/ComingSoonTab'
@@ -12,12 +12,86 @@ type TabType = 'home' | 'join' | 'score' | 'video' | 'lesson' | 'shop' | 'my'
 
 export default function GolfPlatformPage() {
   const [activeTab, setActiveTab] = useState<TabType>('score')
+  const [sampleSessionId, setSampleSessionId] = useState<string | null>(null)
   const [userNickname, setUserNickname] = useState<string>('골퍼')
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false)
   const [isAuthModalOpen, setIsAuthModalOpen] = useState<boolean>(false)
   const [authLoading, setAuthLoading] = useState<boolean>(true)
+  const [chromeVisible, setChromeVisible] = useState(true)
+  const mainRef = useRef<HTMLElement | null>(null)
+  const hasScrollableContentRef = useRef(false)
+  const chromeHideTimer = useRef<number | null>(null)
+  const chromeVisibleRef = useRef(true)
+  const scrollPositions = useRef(new WeakMap<EventTarget, number>())
+  const scrollDistance = useRef(0)
 
   const supabase = useMemo(() => createClient(), [])
+
+  const showChrome = useCallback(() => {
+    chromeVisibleRef.current = true
+    scrollDistance.current = 0
+    setChromeVisible(true)
+    if (chromeHideTimer.current) window.clearTimeout(chromeHideTimer.current)
+    if (!hasScrollableContentRef.current) return
+    chromeHideTimer.current = window.setTimeout(() => {
+      if (!hasScrollableContentRef.current) {
+        chromeVisibleRef.current = true
+        setChromeVisible(true)
+        return
+      }
+      chromeVisibleRef.current = false
+      scrollDistance.current = 0
+      setChromeVisible(false)
+    }, 2500)
+  }, [])
+
+  useEffect(() => {
+    const measureScrollableContent = () => {
+      const canScroll = document.documentElement.scrollHeight > window.innerHeight + 1
+      const changed = hasScrollableContentRef.current !== canScroll
+      hasScrollableContentRef.current = canScroll
+      if (!canScroll) {
+        if (chromeHideTimer.current) window.clearTimeout(chromeHideTimer.current)
+        chromeVisibleRef.current = true
+        setChromeVisible(true)
+      } else if (changed) {
+        showChrome()
+      }
+    }
+    const onScroll = (event: Event) => {
+      if (!hasScrollableContentRef.current) return
+      const target = event.target
+      if (!(target instanceof Document) && !(target instanceof Element)) return
+      const top = target instanceof Document ? window.scrollY : target.scrollTop
+      const previousTop = scrollPositions.current.get(target) ?? 0
+      scrollPositions.current.set(target, top)
+      const moved = Math.abs(top - previousTop)
+      if (moved === 0) return
+      if (chromeVisibleRef.current) {
+        showChrome()
+      } else {
+        scrollDistance.current += moved
+        if (scrollDistance.current >= 30) showChrome()
+      }
+    }
+    measureScrollableContent()
+    window.addEventListener('scroll', onScroll, true)
+    window.addEventListener('resize', measureScrollableContent)
+    const resizeObserver = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(measureScrollableContent) : null
+    const mutationObserver = typeof MutationObserver !== 'undefined' ? new MutationObserver(measureScrollableContent) : null
+    if (mainRef.current) {
+      resizeObserver?.observe(mainRef.current)
+      mutationObserver?.observe(mainRef.current, { childList: true, subtree: true, attributes: true })
+    }
+    measureScrollableContent()
+    return () => {
+      window.removeEventListener('scroll', onScroll, true)
+      window.removeEventListener('resize', measureScrollableContent)
+      resizeObserver?.disconnect()
+      mutationObserver?.disconnect()
+      if (chromeHideTimer.current) window.clearTimeout(chromeHideTimer.current)
+    }
+  }, [showChrome, activeTab, isLoggedIn, authLoading, isAuthModalOpen, sampleSessionId])
 
   // Supabase 실시간 세션 및 프로필(닉네임) 감지
   useEffect(() => {
@@ -60,18 +134,24 @@ export default function GolfPlatformPage() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc', color: '#0f172a', paddingBottom: '130px', fontFamily: 'sans-serif' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc', color: '#0f172a', paddingBottom: '80px', fontFamily: 'sans-serif' }}>
       
       {/* 1. 상단 글로벌 탑바 */}
       <header
+        aria-hidden={!chromeVisible}
+        inert={!chromeVisible}
         style={{
-          position: 'sticky',
+          position: 'fixed',
           top: 0,
+          left: 0,
+          right: 0,
           zIndex: 50,
           backgroundColor: '#ffffff',
           borderBottom: '1px solid #e2e8f0',
           padding: '12px 20px',
           boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+          transform: chromeVisible ? 'translateY(0)' : 'translateY(-100%)',
+          transition: 'transform 220ms ease',
         }}
       >
         <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -139,7 +219,7 @@ export default function GolfPlatformPage() {
       </header>
 
       {/* 2. 메인 컨텐츠 영역 */}
-      <main style={{ maxWidth: '1000px', margin: '0 auto', paddingTop: '8px' }}>
+      <main ref={mainRef} style={{ maxWidth: '1000px', margin: '0 auto', paddingTop: '80px' }}>
         
         {/* ① 홈 탭 */}
         {activeTab === 'home' && (
@@ -194,7 +274,7 @@ export default function GolfPlatformPage() {
   authLoading ? (
     <div style={{ padding: '40px', textAlign: 'center', color: '#94a3b8', fontSize: '13px' }}>인증 확인 중...</div>
   ) : isLoggedIn ? (
-    <ScoreTab />
+    <ScoreTab bottomNavVisible={chromeVisible} sampleSessionId={sampleSessionId} onExitSample={() => { setSampleSessionId(null); setActiveTab('my') }} />
   ) : (
     <div style={{ padding: '40px 16px', textAlign: 'center' }}>
       <p style={{ fontSize: '14px', color: '#475569', marginBottom: '12px' }}>
@@ -217,12 +297,14 @@ export default function GolfPlatformPage() {
         {activeTab === 'shop' && <ComingSoonTab area="shop" onGoToScore={() => setActiveTab('score')} />}
 
         {/* ⑦ MY 탭 */}
-        {activeTab === 'my' && <MyTab />}
+        {activeTab === 'my' && <MyTab onStartSample={(id) => { setSampleSessionId(id); setActiveTab('score') }} />}
 
       </main>
 
       {/* 4. 하단 고정 메인 네비게이션 바 */}
       <nav
+        aria-hidden={!chromeVisible}
+        inert={!chromeVisible}
         style={{
           position: 'fixed',
           bottom: 0,
@@ -236,6 +318,8 @@ export default function GolfPlatformPage() {
           justifyContent: 'space-around',
           alignItems: 'center',
           boxShadow: '0 -2px 10px rgba(0,0,0,0.05)',
+          transform: chromeVisible ? 'translateY(0)' : 'translateY(100%)',
+          transition: 'transform 220ms ease',
         }}
       >
         {[

@@ -1,7 +1,8 @@
 'use client'
 
-import type { CSSProperties } from 'react'
+import { useEffect, useState, type CSSProperties } from 'react'
 import type { ClubItem, HoleRecord } from '@/types/golf'
+import { createClient } from '@/utils/supabase/client'
 
 interface RoundReportProps {
   completedHoles?: HoleRecord[]
@@ -9,15 +10,95 @@ interface RoundReportProps {
   courseHoleNumbers?: number[]
   clubs?: ClubItem[]
   currentCcName?: string
+  roundId?: string | null
   onBackToScore?: () => void
   onStartNewRound?: () => void
+  onUndoLastShot?: () => void
+  onRegisterRound?: () => void
+  isSample?: boolean
+  isRegistered?: boolean
+  isRegistering?: boolean
+  saveError?: string | null
 }
 
 const card: CSSProperties = { background: '#fff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '16px' }
 const muted: CSSProperties = { color: '#64748b', fontSize: '12px', lineHeight: 1.6 }
+const suggestionCache = new Map<string, string[]>()
+const suggestionRequests = new Map<string, Promise<string[]>>()
 
-export default function RoundReport({ completedHoles = [], courseHoleNumbers, currentCcName, onBackToScore, onStartNewRound }: RoundReportProps) {
+export default function RoundReport({ completedHoles = [], courseHoleNumbers, currentCcName, roundId, onBackToScore, onStartNewRound, onUndoLastShot, onRegisterRound, isSample = false, isRegistered = false, isRegistering = false, saveError }: RoundReportProps) {
   const holes = completedHoles
+  const reportSnapshot = JSON.stringify(holes)
+  const cacheKey = `${roundId ?? 'local'}:${reportSnapshot}`
+  const [practiceSuggestions, setPracticeSuggestions] = useState<string[]>([])
+  const [suggestionError, setSuggestionError] = useState<string | null>(null)
+  const [suggestionLoading, setSuggestionLoading] = useState(false)
+  const [suggestionAttempt, setSuggestionAttempt] = useState(0)
+  const [aiAllowed, setAiAllowed] = useState<boolean | null>(null)
+
+  useEffect(() => {
+    let cancelled = false
+    const supabase = createClient()
+    void (async () => {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) { if (!cancelled) setAiAllowed(false); return }
+      const { data, error } = await supabase.from('user_data_preferences')
+        .select('allow_ai_practice_analysis').eq('user_id', user.id).maybeSingle()
+      if (!cancelled) setAiAllowed(!error && data?.allow_ai_practice_analysis === true)
+    })()
+    return () => { cancelled = true }
+  }, [])
+
+  useEffect(() => {
+    let cancelled = false
+    void (async () => {
+      await Promise.resolve()
+      if (cancelled) return
+      if (isSample || aiAllowed !== true) {
+        setSuggestionLoading(false)
+        return
+      }
+      const reportHoles = JSON.parse(reportSnapshot) as HoleRecord[]
+      const cached = suggestionCache.get(cacheKey)
+      if (cached) {
+        setPracticeSuggestions(cached)
+        setSuggestionError(null)
+        setSuggestionLoading(false)
+        return
+      }
+      if (!reportHoles.some((hole) => hole.shots.length > 0)) {
+        setPracticeSuggestions([])
+        setSuggestionError(null)
+        setSuggestionLoading(false)
+        return
+      }
+      setPracticeSuggestions([])
+      setSuggestionError(null)
+      setSuggestionLoading(true)
+      let pending = suggestionRequests.get(cacheKey)
+      if (!pending) {
+        pending = (async () => {
+          const response = await fetch('/api/practice-suggestions', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ roundId, holes: reportHoles }),
+          })
+          const result = await response.json().catch(() => ({}))
+          if (!response.ok || !Array.isArray(result.suggestions)) throw new Error(result.error || 'AI 연습 제안을 불러오지 못했습니다.')
+          suggestionCache.set(cacheKey, result.suggestions)
+          if (suggestionCache.size > 20) suggestionCache.delete(suggestionCache.keys().next().value!)
+          return result.suggestions as string[]
+        })()
+        suggestionRequests.set(cacheKey, pending)
+        void pending.then(() => suggestionRequests.delete(cacheKey), () => suggestionRequests.delete(cacheKey))
+      }
+      void pending.then(
+        (suggestions) => { if (!cancelled) { setPracticeSuggestions(suggestions); setSuggestionLoading(false) } },
+        (error) => { if (!cancelled) { setSuggestionError(error instanceof Error ? error.message : 'AI 연습 제안을 불러오지 못했습니다.'); setSuggestionLoading(false) } },
+      )
+    })()
+    return () => { cancelled = true }
+  }, [aiAllowed, cacheKey, reportSnapshot, roundId, suggestionAttempt, isSample])
   const totalScore = holes.reduce((sum, hole) => sum + hole.score, 0)
   const totalPar = holes.reduce((sum, hole) => sum + hole.par, 0)
   const totalPutts = holes.reduce((sum, hole) => sum + hole.putts, 0)
@@ -31,19 +112,12 @@ export default function RoundReport({ completedHoles = [], courseHoleNumbers, cu
     ? Math.round(driverShots.reduce((sum, shot) => sum + shot.shotDistance, 0) / driverShots.length)
     : null
   const puttsPerHole = holes.length ? totalPutts / holes.length : null
-  const practiceSuggestions = [
-    ...(puttsPerHole != null && puttsPerHole > 2 ? ['홀당 퍼트가 2개를 넘었습니다. 1~2m 거리의 방향·거리감 퍼팅을 10개씩 나눠 연습해 보세요.'] : []),
-    ...(fairwayHoles.length >= 4 && fairwayHits / fairwayHoles.length < 0.45 ? ['페어웨이 안착률이 낮았습니다. 다음 연습에서는 드라이버 방향성부터 점검하고, 안전한 티샷 클럽도 함께 비교해 보세요.'] : []),
-    ...(holes.length >= 9 && girHits / holes.length < 0.25 ? ['GIR이 낮았습니다. 핀을 직접 노리기보다 다음 샷을 치기 쉬운 넓은 구역을 겨냥하는 코스 매니지먼트를 연습해 보세요.'] : []),
-    ...(penalties >= 2 ? ['벌타가 여러 번 기록됐습니다. 다음 라운드에서 벌타가 난 홀과 샷 상황을 확인하고, 위험 구역을 피하는 목표 지점을 정해 보세요.'] : []),
-  ]
-
   return (
     <main style={{ maxWidth: '900px', margin: '0 auto', padding: '16px', display: 'grid', gap: '12px' }}>
       <header style={{ ...card, background: 'linear-gradient(120deg,#052e2b,#064e3b)', color: '#fff' }}>
         <p style={{ margin: '0 0 4px', color: '#a7f3d0', fontSize: '11px', fontWeight: 800, letterSpacing: '.1em' }}>ROUND REPORT</p>
         <h1 style={{ margin: '0 0 5px', fontSize: '22px' }}>{currentCcName || '라운드'} 분석</h1>
-        <p style={{ margin: 0, color: '#d1fae5', fontSize: '12px' }}>저장된 {holes.length}홀과 샷 기록만으로 계산했습니다. 비교 표본이 없는 통계나 예상 수치는 표시하지 않습니다.</p>
+        <p style={{ margin: 0, color: '#d1fae5', fontSize: '12px' }}>요약 통계는 이번 {holes.length}홀과 샷 기록으로 계산했습니다. 비교 표본이 없는 통계나 예상 수치는 표시하지 않습니다.</p>
       </header>
 
       <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(130px,1fr))', gap: '8px' }} aria-label="라운드 요약">
@@ -71,13 +145,24 @@ export default function RoundReport({ completedHoles = [], courseHoleNumbers, cu
 
       <section style={{ ...card, borderColor: '#bbf7d0', background: '#f0fdf4' }} aria-labelledby="practice-title">
         <h2 id="practice-title" style={{ margin: '0 0 7px', fontSize: '16px' }}>다음 연습 제안</h2>
-        {practiceSuggestions.length ? <ul style={{ margin: 0, paddingLeft: '18px', display: 'grid', gap: '7px', color: '#166534', fontSize: '12px', lineHeight: 1.6 }}>{practiceSuggestions.map((suggestion) => <li key={suggestion}>{suggestion}</li>)}</ul> : <p style={{ ...muted, margin: 0 }}>현재 입력된 데이터에서 우선 보완 항목이 뚜렷하지 않습니다. 라운드와 샷이 더 쌓이면 개인 기록의 변화에 맞춘 제안을 보여드릴게요.</p>}
-        <p style={{ ...muted, margin: '8px 0 0', fontSize: '10px' }}>기록 기반의 연습 아이디어이며, 레슨 전문가의 진단을 대체하지 않습니다.</p>
+        {isSample ? <p style={{ ...muted, margin: 0 }}>샘플 기록은 AI 연습 분석 대상에서 제외됩니다.</p>
+          : aiAllowed === false ? <p style={{ ...muted, margin: 0 }}>AI 연습 제안을 받으려면 MY에서 선택 동의를 켜주세요.</p>
+          : aiAllowed === null ? <p role="status" style={{ ...muted, margin: 0 }}>AI 분석 동의 상태를 확인하고 있습니다.</p>
+          : suggestionLoading ? <p role="status" style={{ ...muted, margin: 0 }}>이번 라운드와 이전 샷 기록을 AI가 살펴보고 있습니다.</p>
+          : suggestionError ? <div role="alert" style={{ ...muted, color: '#b91c1c' }}>{suggestionError} <button type="button" onClick={() => setSuggestionAttempt((value) => value + 1)} style={{ marginLeft: 6, padding: '4px 8px', border: '1px solid #cbd5e1', borderRadius: 6, background: '#fff', cursor: 'pointer' }}>다시 시도</button></div>
+            : practiceSuggestions.length ? <ul style={{ margin: 0, paddingLeft: '18px', display: 'grid', gap: '7px', color: '#166534', fontSize: '12px', lineHeight: 1.6 }}>{practiceSuggestions.map((suggestion, index) => <li key={index}>{suggestion}</li>)}</ul>
+              : <p style={{ ...muted, margin: 0 }}>샷 기록을 입력하면 AI가 다음 연습을 제안합니다.</p>}
+        <p style={{ ...muted, margin: '8px 0 0', fontSize: '10px' }}>기록을 바탕으로 AI가 작성한 연습 아이디어입니다.</p>
       </section>
 
-      <footer style={{ display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
-        {onBackToScore && <button type="button" onClick={onBackToScore} style={{ padding: '10px 14px', border: '1px solid #cbd5e1', borderRadius: '8px', background: '#fff', cursor: 'pointer' }}>스코어로 돌아가기</button>}
-        {onStartNewRound && <button type="button" onClick={onStartNewRound} style={{ padding: '10px 14px', border: 0, borderRadius: '8px', background: '#047857', color: '#fff', fontWeight: 700, cursor: 'pointer' }}>새 라운드 시작</button>}
+      <footer style={{ display: 'grid', gap: '8px', maxWidth: 480, margin: '0 auto', width: '100%' }}>
+        {saveError && !isRegistered && <p role="alert" style={{ margin: 0, padding: '10px 12px', borderRadius: '8px', background: '#fef2f2', color: '#b91c1c', fontSize: '12px' }}>{saveError}</p>}
+        {onUndoLastShot && !isRegistered && completedHoles.length > 0 && <button type="button" onClick={onUndoLastShot} disabled={isRegistering} style={{ padding: '10px 14px', border: '1px solid #fca5a5', borderRadius: '8px', background: '#fff1f2', color: '#b91c1c', fontWeight: 700, cursor: isRegistering ? 'wait' : 'pointer', opacity: isRegistering ? .55 : 1 }}>↶ 마지막 홀의 마지막 샷 취소</button>}
+        {onRegisterRound && !isSample && !isRegistered && <button type="button" onClick={onRegisterRound} disabled={isRegistering} style={{ padding: '12px 14px', border: 0, borderRadius: '8px', background: isRegistering ? '#94a3b8' : '#047857', color: '#fff', fontWeight: 700, cursor: isRegistering ? 'wait' : 'pointer' }}>{isRegistering ? '등록 처리 중…' : '스코어 등록 · 등록 후 수정 불가'}</button>}
+        {isSample && <p style={{ ...muted, margin: 0, textAlign: 'center' }}>샘플 기록은 실제 통계·평균·트로피에 반영되지 않습니다.</p>}
+        {isRegistered && <p role="status" style={{ ...muted, margin: 0, textAlign: 'center' }}>스코어 등록 완료 · 이 기록은 수정할 수 없습니다.</p>}
+        {onBackToScore && !isRegistered && <button type="button" onClick={onBackToScore} style={{ padding: '10px 14px', border: '1px solid #cbd5e1', borderRadius: '8px', background: '#fff', cursor: 'pointer' }}>스코어로 돌아가기</button>}
+        {onStartNewRound && (isRegistered || isSample) && <button type="button" onClick={onStartNewRound} style={{ padding: '10px 14px', border: 0, borderRadius: '8px', background: '#047857', color: '#fff', fontWeight: 700, cursor: 'pointer' }}>새 라운드 시작</button>}
       </footer>
     </main>
   )
