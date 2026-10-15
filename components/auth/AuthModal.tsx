@@ -13,6 +13,7 @@ interface AuthModalProps {
 
 export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
   const [isSignUp, setIsSignUp] = useState(false)
+  const [isPasswordResetRequest, setIsPasswordResetRequest] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [nickname, setNickname] = useState('')
@@ -38,7 +39,15 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
     if (isSignUp) setNoticeMsg('')
 
     try {
-      if (isSignUp) {
+      if (isPasswordResetRequest) {
+        const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
+          redirectTo: window.location.origin,
+        })
+        if (error) throw error
+        setIsPasswordResetRequest(false)
+        setPassword('')
+        setNoticeMsg('비밀번호 재설정 메일을 요청했습니다. 메일의 링크를 요청한 브라우저에서 열어 새 비밀번호를 설정해 주세요. 메일이 보이지 않으면 스팸함도 확인해 주세요.')
+      } else if (isSignUp) {
         if (!acceptedTerms || !acknowledgedPrivacy || !ageOver14) throw new Error('필수 약관·개인정보 안내·만 14세 이상 확인을 완료해 주세요.')
         const parsedHandicap = handicapIndex.trim() === '' ? null : Number(handicapIndex)
         if (parsedHandicap !== null && (!Number.isFinite(parsedHandicap) || parsedHandicap < -10 || parsedHandicap > 54)) {
@@ -116,7 +125,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
       }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
           <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: 0 }}>
-            {isSignUp ? '골프 비서 회원가입' : '골프 비서 로그인'}
+            {isPasswordResetRequest ? '비밀번호 재설정' : isSignUp ? '골프 비서 회원가입' : '골프 비서 로그인'}
           </h2>
           <button
             onClick={onClose}
@@ -212,7 +221,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
             />
           </div>
 
-          <div>
+          {!isPasswordResetRequest && <div>
             <label style={{ fontSize: '12px', color: '#666', display: 'block', marginBottom: '4px' }}>비밀번호</label>
             <input
               type="password"
@@ -223,7 +232,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
               placeholder="6자 이상 입력"
               style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #ddd', boxSizing: 'border-box' }}
             />
-          </div>
+          </div>}
 
           {isSignUp && <fieldset style={{ display: 'grid', gap: 10, margin: 0, padding: 12, border: '1px solid #cbd5e1', borderRadius: 10, background: '#fff' }}>
             <legend style={{ padding: '0 4px', fontSize: 12, fontWeight: 800 }}>가입에 필요한 확인</legend>
@@ -271,17 +280,23 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
               marginTop: '8px'
             }}
           >
-            {loading ? '처리 중...' : isSignUp ? '가입하기' : '로그인'}
+            {loading ? '처리 중...' : isPasswordResetRequest ? '재설정 메일 보내기' : isSignUp ? '가입하기' : '로그인'}
           </button>
         </form>
+
+        {!isSignUp && !isPasswordResetRequest && <div style={{ textAlign: 'right', marginTop: 12 }}>
+          <button type="button" onClick={() => { setIsPasswordResetRequest(true); setErrorMsg(''); setNoticeMsg('') }} style={{ background: 'none', border: 0, color: '#047857', fontSize: 13, cursor: 'pointer', textDecoration: 'underline' }}>
+            비밀번호를 잊으셨나요?
+          </button>
+        </div>}
 
         <div style={{ textAlign: 'center', marginTop: '16px' }}>
           <button
             type="button"
-            onClick={() => { setIsSignUp(!isSignUp); setErrorMsg(''); setNoticeMsg(''); setAllowAnonymousAggregate(false); setAllowFriendSharing(false); setAllowAiAnalysis(false); setAcceptedTerms(false); setAcknowledgedPrivacy(false); setAgeOver14(false) }}
+            onClick={() => { if (isPasswordResetRequest) setIsPasswordResetRequest(false); else setIsSignUp(!isSignUp); setErrorMsg(''); setNoticeMsg(''); setAllowAnonymousAggregate(false); setAllowFriendSharing(false); setAllowAiAnalysis(false); setAcceptedTerms(false); setAcknowledgedPrivacy(false); setAgeOver14(false) }}
             style={{ background: 'none', border: 'none', color: '#4b5563', fontSize: '13px', cursor: 'pointer', textDecoration: 'underline' }}
           >
-            {isSignUp ? '이미 계정이 있으신가요? 로그인' : '계정이 없으신가요? 회원가입'}
+            {isPasswordResetRequest ? '로그인으로 돌아가기' : isSignUp ? '이미 계정이 있으신가요? 로그인' : '계정이 없으신가요? 회원가입'}
           </button>
         </div>
       </div>

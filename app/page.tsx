@@ -5,6 +5,7 @@ import ScoreTab from '@/components/score/ScoreTab'
 import MyTab from '@/components/my/MyTab'
 import ComingSoonTab from '@/components/layout/ComingSoonTab'
 import AuthModal from '@/components/auth/AuthModal'
+import PasswordRecoveryModal from '@/components/auth/PasswordRecoveryModal'
 import { createClient } from '@/utils/supabase/client'
 
 // 탭 종류 정의 (조인 탭 포함)
@@ -16,6 +17,7 @@ export default function GolfPlatformPage() {
   const [userNickname, setUserNickname] = useState<string>('골퍼')
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false)
   const [isAuthModalOpen, setIsAuthModalOpen] = useState<boolean>(false)
+  const [isPasswordRecoveryOpen, setIsPasswordRecoveryOpen] = useState(false)
   const [authLoading, setAuthLoading] = useState<boolean>(true)
   const [chromeVisible, setChromeVisible] = useState(true)
   const mainRef = useRef<HTMLElement | null>(null)
@@ -97,7 +99,11 @@ export default function GolfPlatformPage() {
   useEffect(() => {
     let currentUserId: string | null = null
     // 세션 상태 구독 (로그인, 로그아웃, 토큰 갱신 등)
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === 'PASSWORD_RECOVERY') {
+        setIsAuthModalOpen(false)
+        setIsPasswordRecoveryOpen(true)
+      }
       if (session?.user) {
         currentUserId = session.user.id
         setIsLoggedIn(true)
@@ -364,6 +370,7 @@ export default function GolfPlatformPage() {
         isOpen={isAuthModalOpen}
         onClose={() => setIsAuthModalOpen(false)}
       />
+      {isPasswordRecoveryOpen && <PasswordRecoveryModal onClose={() => setIsPasswordRecoveryOpen(false)} />}
 
     </div>
   )
