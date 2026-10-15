@@ -523,7 +523,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs, sample
                 putts: h.putts,
                 fairway_hit: h.fairwayHit,
                 gir: h.gir,
-                shots: h.shots,
+                // 샷은 round_shots에만 저장한다. round_holes.shots는 예전 기록을 읽을 때만 쓰는 사본이다.
                 total_distance: h.totalDistance,
                 green_code: h.greenCode || 'standard',
                 green_name: h.greenName || '기본 그린',

@@ -493,8 +493,8 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
         supabase.from('round_shots').select('hole_number,shot_number,club,distance_to_pin_before,distance_to_pin_after,shot_distance,ball_lie,penalty').eq('round_id', round.id).order('hole_number').order('shot_number'),
       ])
       if (holesError) throw holesError
-      const detailShots = shotsError ? [] : (shotRows ?? []) as ShotRow[]
-      setDetail({ ...round, holes: toHoleRecords((holeRows ?? []) as HoleRow[], detailShots) })
+      if (shotsError) throw shotsError
+      setDetail({ ...round, holes: toHoleRecords((holeRows ?? []) as HoleRow[], (shotRows ?? []) as ShotRow[]) })
       if (round.course_id && round.play_mode) {
         const { data: aggregateRows } = await supabase.rpc('get_course_round_aggregate', {
           p_course_id: round.course_id,
@@ -674,6 +674,7 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
           supabase.from('round_integrity').select('*').in('round_id', ids),
         ])
         if (holesError) throw holesError
+        if (shotsError) throw shotsError
         if (integrityError) throw integrityError
         const inputEvents: Record<string, unknown>[] = []
         for (let eventFrom = 0; ; eventFrom += 500) {
@@ -685,7 +686,7 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
           if (!eventPage || eventPage.length < 500) break
         }
         const shotsByRound = new Map<string, ShotRow[]>()
-        for (const row of shotsError ? [] : shots ?? []) {
+        for (const row of shots ?? []) {
           const typed = row as ShotRow & { round_id: string }
           shotsByRound.set(typed.round_id, [...(shotsByRound.get(typed.round_id) ?? []), typed])
         }

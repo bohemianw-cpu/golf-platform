@@ -58,7 +58,7 @@ function oneHoleDraft() {
   }
 }
 
-async function mockSignedInApp(page: Page, options: { draft?: boolean; serverRound?: boolean; sampleDraft?: boolean; realWrites?: string[] } = {}) {
+async function mockSignedInApp(page: Page, options: { draft?: boolean; serverRound?: boolean; sampleDraft?: boolean; realWrites?: string[]; holeWrites?: Record<string, unknown>[] } = {}) {
   const projectUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
   if (!projectUrl) throw new Error('NEXT_PUBLIC_SUPABASE_URL is required for browser tests')
   const projectRef = new URL(projectUrl).hostname.split('.')[0]
@@ -87,6 +87,7 @@ async function mockSignedInApp(page: Page, options: { draft?: boolean; serverRou
     const resource = url.pathname.split('/').pop()
     const method = request.method()
     if (method !== 'GET' && ['rounds', 'round_holes', 'round_shots'].includes(resource ?? '')) options.realWrites?.push(resource!)
+    if (method === 'POST' && resource === 'round_holes') options.holeWrites?.push(...[request.postDataJSON()].flat())
     let body: unknown = []
     if (resource === 'profiles') body = { nickname: '브라우저테스트', skill_group: 'beginner' }
     else if (resource === 'user_club_bags') body = null
@@ -113,7 +114,8 @@ async function mockSignedInApp(page: Page, options: { draft?: boolean; serverRou
 }
 
 test('a shot can be undone, restored, and registered without edit controls', async ({ page }) => {
-  await mockSignedInApp(page)
+  const holeWrites: Record<string, unknown>[] = []
+  await mockSignedInApp(page, { holeWrites })
   await page.goto('/')
   await page.getByRole('dialog').getByRole('button', { name: '이어서 하기' }).click()
   await expect(page.getByRole('button', { name: '✓ 샷 결과 저장' })).toBeVisible()
@@ -131,6 +133,9 @@ test('a shot can be undone, restored, and registered without edit controls', asy
   await page.getByRole('dialog').getByRole('button', { name: '스코어 등록' }).click()
   await expect(page.getByText('스코어 등록 완료 · 이 기록은 수정할 수 없습니다.')).toBeVisible()
   await expect(page.getByRole('button', { name: /마지막 홀의 마지막 샷 취소/ })).toHaveCount(0)
+  // 샷은 round_shots에만 저장하고, 홀 저장에는 샷 사본을 싣지 않는다.
+  expect(holeWrites.length).toBeGreaterThan(0)
+  expect(holeWrites.filter((hole) => 'shots' in hole)).toEqual([])
 })
 
 test('an unfinished shot survives a tab change and can be undone and restored', async ({ page }) => {
