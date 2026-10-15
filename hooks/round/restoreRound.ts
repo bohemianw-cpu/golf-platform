@@ -28,7 +28,6 @@ interface HoleRow {
   putts: number
   fairway_hit: boolean | null
   gir: boolean
-  shots?: ShotRecord[] | null
   total_distance?: number | null
   green_code?: string | null
   green_name?: string | null
@@ -170,8 +169,7 @@ export async function loadResumedRound(supabase: SupabaseClient, round: RoundRow
       greenName: h.green_name ?? '기본 그린',
       par: h.par,
       totalDistance: h.total_distance ?? defaultDistanceForPar(h.par),
-      // round_shots가 기준이다. round_holes.shots는 round_shots 도입 전 홀을 위한 예비 사본이다.
-      shots: shotsByHole.get(h.hole_number) ?? (Array.isArray(h.shots) ? h.shots : []),
+      shots: shotsByHole.get(h.hole_number) ?? [],
       score: h.score,
       scoreDiff: h.score - h.par,
       putts: h.putts,

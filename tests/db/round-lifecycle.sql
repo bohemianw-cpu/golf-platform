@@ -54,8 +54,8 @@ begin
     raise exception 'Shot restore failed';
   end if;
 
-  insert into public.round_holes (round_id, hole_number, par, score, putts, shots, total_distance)
-  values (v_round, 1, 4, 1, 0, '[]'::jsonb, 400);
+  insert into public.round_holes (round_id, hole_number, par, score, putts, total_distance)
+  values (v_round, 1, 4, 1, 0, 400);
   begin
     update public.rounds set status = 'completed', total_score = 1,
       total_putts = 0, registered_at = clock_timestamp() where id = v_round;
@@ -64,8 +64,8 @@ begin
     if sqlerrm not like 'All round holes must be saved%' then raise; end if;
   end;
 
-  insert into public.round_holes (round_id, hole_number, par, score, putts, shots, total_distance)
-  values (v_round, 2, 3, 1, 1, '[]'::jsonb, 2);
+  insert into public.round_holes (round_id, hole_number, par, score, putts, total_distance)
+  values (v_round, 2, 3, 1, 1, 2);
   begin
     update public.rounds set status = 'completed', total_score = 2,
       total_putts = 1, registered_at = clock_timestamp() where id = v_round;

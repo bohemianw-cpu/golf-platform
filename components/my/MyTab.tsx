@@ -107,7 +107,6 @@ interface HoleRow {
   putts: number
   fairway_hit: boolean | null
   gir: boolean
-  shots: ShotRecord[] | null
   total_distance: number | null
   green_code?: string | null
   green_name?: string | null
@@ -234,7 +233,7 @@ function toHoleRecords(rows: HoleRow[], shotRows: ShotRow[] = []): HoleRecord[] 
     fairwayHit: row.fairway_hit,
     gir: row.gir,
     totalDistance: row.total_distance ?? 0,
-    shots: shotsByHole.get(row.hole_number)?.length ? shotsByHole.get(row.hole_number)! : Array.isArray(row.shots) ? row.shots : [],
+    shots: shotsByHole.get(row.hole_number) ?? [],
   }))
 }
 

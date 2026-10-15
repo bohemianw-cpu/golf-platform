@@ -28,8 +28,8 @@ begin
 
   -- Writes into another user's round must be rejected by RLS, not by an unrelated error.
   begin
-    insert into public.round_holes (round_id, hole_number, par, score, putts, fairway_hit, gir, shots, total_distance, green_code, green_name)
-    values (v_round_id, 18, 4, 4, 2, null, false, '[]'::jsonb, 360, 'standard', '기본 그린');
+    insert into public.round_holes (round_id, hole_number, par, score, putts, fairway_hit, gir, total_distance, green_code, green_name)
+    values (v_round_id, 18, 4, 4, 2, null, false, 360, 'standard', '기본 그린');
     raise exception 'Another user can add holes to a round';
   exception
     when insufficient_privilege then null;
