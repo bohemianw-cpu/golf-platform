@@ -19,6 +19,8 @@ jobs:
       - run: npm ci
       # 빈 DB에 마이그레이션 전체를 적용하고 권한·회원가입·라운드 잠금 DB 테스트를 실행한다.
       - run: npm run test:db
+      # 스코어·퍼트·GIR·클럽 추천·코스 배치 계산을 확인한다.
+      - run: npm run test:unit
       - run: npx playwright install --with-deps chromium
       - run: npm run lint
       # LayoutProps 같은 라우트 타입은 Next가 생성하므로 빌드 전 타입 검사보다 먼저 만든다.

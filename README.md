@@ -12,7 +12,10 @@ npm run lint
 npm run build
 npm run test:e2e
 npm run test:db
+npm run test:unit
 ```
+
+`test:unit`은 스코어, 퍼트, 그린 적중(GIR), 페어웨이 적중, 클럽 추천, 코스 배치 계산 같은 핵심 계산을 Vitest로 확인합니다(`tests/unit/`).
 
 `test:e2e`는 Chromium에서 라운드 입력·복구·등록 흐름을 클릭해 확인합니다. Supabase 응답은 브라우저에서 가로채어 제공하므로 실제 회원 데이터나 결제 내역을 변경하지 않습니다. 최초 실행 전 `npx playwright install chromium`이 필요합니다. GitHub Actions는 이 검사를 빌드와 함께 실행합니다.
 
