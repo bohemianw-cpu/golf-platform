@@ -58,7 +58,7 @@ function oneHoleDraft() {
   }
 }
 
-async function mockSignedInApp(page: Page, options: { draft?: boolean; serverRound?: boolean; sampleDraft?: boolean; realWrites?: string[]; holeWrites?: Record<string, unknown>[] } = {}) {
+async function mockSignedInApp(page: Page, options: { draft?: boolean; serverRound?: boolean; sampleDraft?: boolean; realWrites?: string[]; holeWrites?: Record<string, unknown>[]; errorReports?: Record<string, unknown>[] } = {}) {
   const projectUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
   if (!projectUrl) throw new Error('NEXT_PUBLIC_SUPABASE_URL is required for browser tests')
   const projectRef = new URL(projectUrl).hostname.split('.')[0]
@@ -88,6 +88,7 @@ async function mockSignedInApp(page: Page, options: { draft?: boolean; serverRou
     const method = request.method()
     if (method !== 'GET' && ['rounds', 'round_holes', 'round_shots'].includes(resource ?? '')) options.realWrites?.push(resource!)
     if (method === 'POST' && resource === 'round_holes') options.holeWrites?.push(...[request.postDataJSON()].flat())
+    if (method === 'POST' && resource === 'report_client_error') options.errorReports?.push(request.postDataJSON())
     let body: unknown = []
     if (resource === 'profiles') body = { nickname: '브라우저테스트', skill_group: 'beginner' }
     else if (resource === 'user_club_bags') body = null
@@ -242,4 +243,14 @@ test('every page is served with basic security headers', async ({ request }) => 
   expect(headers['x-content-type-options']).toBe('nosniff')
   expect(headers['referrer-policy']).toBe('strict-origin-when-cross-origin')
   expect(headers['x-powered-by']).toBeUndefined()
+})
+
+test('an unhandled page error is reported to our server without personal details', async ({ page }) => {
+  const errorReports: Record<string, unknown>[] = []
+  await mockSignedInApp(page, { draft: false, errorReports })
+  await page.goto('/home?from=email-link')
+  await expect(page.getByRole('heading', { name: /오늘 라운드 준비되셨나요/ })).toBeVisible()
+  await page.evaluate(() => { window.setTimeout(() => { throw new Error('홈 오류 golfer@example.com') }, 0) })
+  await expect.poll(() => errorReports.length).toBe(1)
+  expect(errorReports[0]).toMatchObject({ p_kind: 'error', p_message: '홈 오류 [이메일]', p_path: '/home' })
 })

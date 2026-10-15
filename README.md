@@ -17,6 +17,8 @@ npm run test:unit
 
 `test:unit`은 스코어, 퍼트, 그린 적중(GIR), 페어웨이 적중, 클럽 추천, 코스 배치 계산 같은 핵심 계산을 Vitest로 확인합니다(`tests/unit/`).
 
+화면 오류는 외부 서비스 없이 Supabase의 `client_error_reports` 테이블에 모입니다. 로그인한 사용자의 오류만 받고, 이메일은 가리며, 30일 뒤 자동 삭제합니다. 최근 7일 오류는 SQL Editor에서 `scripts/db/recent-client-errors.sql`로 확인합니다.
+
 `test:e2e`는 Chromium에서 라운드 입력·복구·등록 흐름을 클릭해 확인합니다. Supabase 응답은 브라우저에서 가로채어 제공하므로 실제 회원 데이터나 결제 내역을 변경하지 않습니다. 최초 실행 전 `npx playwright install chromium`이 필요합니다. GitHub Actions는 이 검사를 빌드와 함께 실행합니다.
 
 `tests/db/`의 SQL 파일은 다른 회원의 기록 접근, 샘플 기록 분리, 샷 취소·복원, 미완료 라운드 등록 거부, 등록된 라운드의 수정·삭제 차단을 확인합니다. 모든 검사 요청은 트랜잭션 끝에 롤백됩니다. `test:db`는 운영 DB에 연결하지 않고, 테스트마다 빈 Postgres(PGlite)를 만들어 `supabase/migrations` 전체를 적용한 뒤 테스트용 라운드를 넣고 실행합니다. GitHub Actions도 이 검사를 실행합니다. 같은 SQL 파일은 Supabase SQL Editor에서 운영 DB에 직접 실행해 확인할 수도 있습니다.
@@ -53,6 +55,12 @@ npm run test:unit
 - 친구 관계와 친구 공개 라운드/익명 그룹 통계를 위한 RLS 및 RPC
 
 초보는 핸디캡 36 초과, 아마추어는 0 초과~36 이하, 프로 수준은 0 이하를 비교용 그룹으로 사용합니다. 이는 공식 핸디캡 또는 프로 자격 인증이 아닙니다.
+
+### 운영 DB에 마이그레이션 적용하기
+
+`20261011000000_legacy_dashboard_baseline.sql`은 마이그레이션 도입 전 대시보드에서 만든 테이블을 담은 기준 스키마입니다. 빈 DB에서는 이 파일부터 차례로 적용하면 운영과 같은 구조가 됩니다.
+
+운영 DB에 적용할 때는 적용 기록이 남는 방법을 씁니다. Supabase CLI(`supabase db push`)나 Supabase MCP의 마이그레이션 적용 기능은 `supabase_migrations.schema_migrations`에 기록을 남깁니다. SQL Editor에 파일 내용을 붙여넣어 실행하면 기록이 남지 않습니다. 그렇게 적용했다면 이어서 `scripts/db/record-applied-migrations.sql`을 실행해 주세요. 결과물이 실제로 있는 마이그레이션만 "적용됨"으로 기록합니다. 현재 기록 상태는 `scripts/db/check-migration-history.sql`로 확인합니다. 새 마이그레이션을 추가할 때는 `record-applied-migrations.sql`에도 그 결과물을 확인하는 조건을 함께 추가합니다.
 
 ## 골프장 데이터
 
