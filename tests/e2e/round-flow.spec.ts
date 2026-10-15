@@ -143,8 +143,8 @@ test('an unfinished shot survives a tab change and can be undone and restored', 
   await expect(page.getByRole('button', { name: '↩ 직전 샷 취소' })).toBeEnabled()
   await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem('golf-score-draft-v1') ?? '{}').currentShots?.length)).toBe(1)
 
-  await page.getByRole('button', { name: 'Golf Secretary 홈으로 이동' }).click()
-  await page.getByRole('button', { name: /실시간 스코어 기록/ }).click()
+  await page.getByRole('link', { name: 'Golf Secretary 홈으로 이동' }).click()
+  await page.getByRole('link', { name: /실시간 스코어 기록/ }).click()
   await expect(page.getByText('🚩 현재 핀까지')).toBeVisible()
   await expect(page.getByRole('button', { name: '↩ 직전 샷 취소' })).toBeEnabled()
   await page.getByRole('button', { name: '↩ 직전 샷 취소' }).click()
@@ -158,8 +158,8 @@ test('an in-progress server round is offered again after leaving the score tab w
   await page.goto('/')
   await expect(page.getByRole('dialog').getByText(/진행 중이던 라운드/)).toBeVisible()
   await page.getByRole('dialog').getByRole('button', { name: /나중에/ }).click()
-  await page.getByRole('button', { name: 'Golf Secretary 홈으로 이동' }).click()
-  await page.getByRole('button', { name: /실시간 스코어 기록/ }).click()
+  await page.getByRole('link', { name: 'Golf Secretary 홈으로 이동' }).click()
+  await page.getByRole('link', { name: /실시간 스코어 기록/ }).click()
   await expect(page.getByRole('dialog').getByText(/진행 중이던 라운드/)).toBeVisible()
   await page.getByRole('dialog').getByRole('button', { name: '이어서 하기' }).click()
   await expect(page.getByRole('searchbox', { name: '골프장 이름 검색' })).toHaveValue('서버복구 CC')
@@ -171,8 +171,9 @@ test('sample shots stay separate from real round writes', async ({ page }) => {
   await mockSignedInApp(page, { draft: false, sampleDraft: true, realWrites })
   await page.goto('/')
   await page.mouse.wheel(0, 120)
-  await page.getByRole('button', { name: /MY/ }).click()
+  await page.getByRole('navigation').getByRole('link', { name: /MY/ }).click()
   await page.getByRole('button', { name: '샘플 입력 시작' }).click()
+  await expect(page).toHaveURL(new RegExp(`/score\\?sample=${SAMPLE_ID}$`))
   await expect(page.getByText('샘플 입력 중 · 평균·배지·트로피 제외')).toBeVisible()
   await page.getByRole('dialog').getByRole('button', { name: '확인' }).click()
   await expect(page.getByRole('button', { name: '✓ 샷 결과 저장' })).toBeEnabled()
@@ -180,4 +181,42 @@ test('sample shots stay separate from real round writes', async ({ page }) => {
   await page.getByRole('button', { name: '✓ 샷 결과 저장' }).click()
   await expect(page.getByRole('button', { name: '↩ 직전 샷 취소' })).toBeEnabled()
   expect(realWrites).toEqual([])
+})
+
+test('each tab has its own address that survives refresh and back navigation', async ({ page }) => {
+  await mockSignedInApp(page, { draft: false })
+  // 스크롤 가능한 화면에서는 상단바와 하단 메뉴가 잠시 뒤 숨으므로 먼저 다시 보이게 한다.
+  const revealChrome = () => page.mouse.wheel(0, 120)
+  const tabLink = async (name: RegExp) => {
+    await revealChrome()
+    await page.getByRole('navigation').getByRole('link', { name }).click()
+  }
+
+  await page.goto('/')
+  await expect(page).toHaveURL(/\/score$/)
+  await expect(page.getByRole('navigation').getByRole('link', { name: /스코어/ })).toHaveAttribute('aria-current', 'page')
+
+  await tabLink(/MY/)
+  await expect(page).toHaveURL(/\/my$/)
+  await expect(page.getByRole('button', { name: '샘플 입력 시작' })).toBeVisible()
+  await page.reload()
+  await expect(page).toHaveURL(/\/my$/)
+  await expect(page.getByRole('button', { name: '샘플 입력 시작' })).toBeVisible()
+
+  // 개발 서버의 Next.js 표시 버튼이 맨 왼쪽 '홈' 메뉴를 가리므로 상단 로고 링크로 이동한다.
+  await revealChrome()
+  await page.getByRole('link', { name: 'Golf Secretary 홈으로 이동' }).click()
+  await expect(page).toHaveURL(/\/home$/)
+  await expect(page.getByRole('navigation').getByRole('link', { name: /홈/ })).toHaveAttribute('aria-current', 'page')
+  await expect(page.getByRole('heading', { name: /오늘 라운드 준비되셨나요/ })).toBeVisible()
+  await page.goBack()
+  await expect(page).toHaveURL(/\/my$/)
+  await expect(page.getByRole('button', { name: '샘플 입력 시작' })).toBeVisible()
+
+  await page.goto('/lesson')
+  await expect(page.getByRole('heading', { name: '레슨 서비스 준비 중' })).toBeVisible()
+  await expect(page).toHaveTitle('레슨 | Golf Secretary')
+  await page.getByRole('link', { name: '스코어 기록 계속하기' }).click()
+  await expect(page).toHaveURL(/\/score$/)
+  await expect(page.getByRole('button', { name: '✓ 샷 결과 저장' })).toBeVisible()
 })
