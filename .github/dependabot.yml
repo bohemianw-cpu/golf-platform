@@ -1,0 +1,28 @@
+# 의존성 업데이트 PR을 매주 월요일에 만든다. 나온 지 14일이 지난 버전만 제안해,
+# 막 나온 버전의 문제를 피한다. 작은(minor·patch) 업데이트는 한 PR로 묶는다.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Seoul
+    cooldown:
+      default-days: 14
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Seoul
+    cooldown:
+      default-days: 14
