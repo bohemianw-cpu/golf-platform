@@ -1,4 +1,4 @@
-'use client'
+import Link from 'next/link'
 
 type ComingSoonArea = 'join' | 'video' | 'lesson' | 'shop'
 
@@ -9,7 +9,7 @@ const CONTENT: Record<ComingSoonArea, { title: string; description: string; icon
   shop: { title: '쇼핑', description: '검증된 상품과 투명한 혜택을 제공할 수 있도록 준비하고 있습니다.', icon: '🛍️' },
 }
 
-export default function ComingSoonTab({ area, onGoToScore }: { area: ComingSoonArea; onGoToScore: () => void }) {
+export default function ComingSoonTab({ area }: { area: ComingSoonArea }) {
   const content = CONTENT[area]
   return (
     <section aria-labelledby="coming-soon-title" style={{ maxWidth: '720px', margin: '48px auto', padding: '32px 24px', textAlign: 'center', background: '#fff', border: '1px solid #e2e8f0', borderRadius: '20px', boxShadow: '0 12px 32px #0f172a0a' }}>
@@ -17,7 +17,7 @@ export default function ComingSoonTab({ area, onGoToScore }: { area: ComingSoonA
       <p style={{ margin: '0 0 8px', color: '#047857', fontSize: '12px', fontWeight: 800, letterSpacing: '0.12em' }}>COMING SOON</p>
       <h1 id="coming-soon-title" style={{ margin: '0 0 10px', color: '#0f172a', fontSize: '24px' }}>{content.title} 서비스 준비 중</h1>
       <p style={{ maxWidth: '480px', margin: '0 auto', color: '#64748b', fontSize: '14px', lineHeight: 1.7 }}>{content.description}</p>
-      <button type="button" onClick={onGoToScore} style={{ marginTop: '22px', padding: '11px 18px', color: '#fff', background: '#047857', border: 0, borderRadius: '9px', fontWeight: 700, cursor: 'pointer' }}>스코어 기록 계속하기</button>
+      <Link href="/score" style={{ display: 'inline-block', marginTop: '22px', padding: '11px 18px', color: '#fff', background: '#047857', borderRadius: '9px', fontWeight: 700, textDecoration: 'none' }}>스코어 기록 계속하기</Link>
     </section>
   )
 }
