@@ -19,6 +19,8 @@ npm run test:e2e
 
 필수 환경변수는 `.env.local`의 `NEXT_PUBLIC_SUPABASE_URL` 및 `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`입니다. 레거시 프로젝트는 `NEXT_PUBLIC_SUPABASE_ANON_KEY`도 브라우저 클라이언트에서 지원합니다. 비밀 키(service role)는 브라우저 환경변수로 두지 마세요.
 
+이메일 인증과 비밀번호 재설정 링크는 현재 앱 주소로 돌아옵니다. Supabase Auth의 URL Configuration에서 로컬 주소와 실제 배포 주소를 Redirect URLs에 등록해야 합니다. 비밀번호 재설정은 PKCE 인증을 사용하므로 메일의 링크를 재설정을 요청한 브라우저에서 열어야 합니다.
+
 라운드 리포트의 AI 연습 제안에는 서버 전용 `OPENAI_API_KEY`가 필요합니다. `.env.local` 또는 배포 환경의 서버 변수에 추가하세요. 모델을 바꾸려면 `OPENAI_PRACTICE_MODEL`을 지정할 수 있으며 기본값은 `gpt-5-mini`입니다. 이 키를 `NEXT_PUBLIC_` 변수로 설정하지 마세요. 리포트를 열면 이번 라운드의 샷과 로그인 사용자의 최근 라운드 샷 기록을 AI가 분석합니다.
 
 ## 코드 구조
