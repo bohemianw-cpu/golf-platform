@@ -25,6 +25,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
   const [ageOver14, setAgeOver14] = useState(false)
   const [loading, setLoading] = useState(false)
   const [errorMsg, setErrorMsg] = useState('')
+  const [noticeMsg, setNoticeMsg] = useState('')
 
   if (!isOpen) return null
 
@@ -34,6 +35,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
     e.preventDefault()
     setLoading(true)
     setErrorMsg('')
+    if (isSignUp) setNoticeMsg('')
 
     try {
       if (isSignUp) {
@@ -45,10 +47,11 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
         const skillGroup = getGolfLevelGroup(parsedHandicap)
 
         // 프로필 생성 트리거에서 활용할 수 있도록 가입 메타데이터에 함께 저장
-        const { error } = await supabase.auth.signUp({
+        const { data, error } = await supabase.auth.signUp({
           email,
           password,
           options: {
+            emailRedirectTo: window.location.origin,
             data: {
               nickname: nickname.trim() || '골퍼',
               handicap_index: parsedHandicap,
@@ -66,8 +69,13 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
           },
         })
         if (error) throw error
-        alert('회원가입이 완료되었습니다!')
-        onClose()
+        if (data.session) {
+          onClose()
+        } else {
+          setPassword('')
+          setIsSignUp(false)
+          setNoticeMsg('가입 신청이 접수되었습니다. 이메일로 보낸 인증 링크를 확인해 주세요. 인증 후 자동으로 로그인되지 않으면 이 화면에서 로그인해 주세요.')
+        }
       } else {
         // 로그인
         const { error } = await supabase.auth.signInWithPassword({
@@ -75,6 +83,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
           password,
         })
         if (error) throw error
+        setNoticeMsg('')
         onClose()
       }
     } catch (err: unknown) {
@@ -127,6 +136,21 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
             marginBottom: '14px'
           }}>
             {errorMsg}
+          </div>
+        )}
+
+        {noticeMsg && (
+          <div role="status" style={{
+            backgroundColor: '#ecfdf5',
+            color: '#065f46',
+            padding: '12px',
+            borderRadius: '8px',
+            border: '1px solid #a7f3d0',
+            fontSize: '13px',
+            lineHeight: 1.5,
+            marginBottom: '14px',
+          }}>
+            {noticeMsg}
           </div>
         )}
 
@@ -254,7 +278,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
         <div style={{ textAlign: 'center', marginTop: '16px' }}>
           <button
             type="button"
-            onClick={() => { setIsSignUp(!isSignUp); setErrorMsg(''); setAllowAnonymousAggregate(false); setAllowFriendSharing(false); setAllowAiAnalysis(false); setAcceptedTerms(false); setAcknowledgedPrivacy(false); setAgeOver14(false) }}
+            onClick={() => { setIsSignUp(!isSignUp); setErrorMsg(''); setNoticeMsg(''); setAllowAnonymousAggregate(false); setAllowFriendSharing(false); setAllowAiAnalysis(false); setAcceptedTerms(false); setAcknowledgedPrivacy(false); setAgeOver14(false) }}
             style={{ background: 'none', border: 'none', color: '#4b5563', fontSize: '13px', cursor: 'pointer', textDecoration: 'underline' }}
           >
             {isSignUp ? '이미 계정이 있으신가요? 로그인' : '계정이 없으신가요? 회원가입'}
