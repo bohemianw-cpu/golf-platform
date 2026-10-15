@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import AuthModal from '@/components/auth/AuthModal'
 import PasswordRecoveryModal from '@/components/auth/PasswordRecoveryModal'
+import ErrorReporter from '@/components/layout/ErrorReporter'
 import { createClient } from '@/utils/supabase/client'
 
 export const TAB_ITEMS = [
@@ -169,6 +170,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <AppShellContext.Provider value={shellState}>
+      <ErrorReporter />
       <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc', color: '#0f172a', paddingBottom: '80px', fontFamily: 'sans-serif' }}>
 
         {/* 1. 상단 글로벌 탑바 */}
