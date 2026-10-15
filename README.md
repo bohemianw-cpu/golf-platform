@@ -10,7 +10,12 @@ npm run dev
 npx tsc --noEmit
 npm run lint
 npm run build
+npm run test:e2e
 ```
+
+`test:e2e`는 Chromium에서 라운드 입력·복구·등록 흐름을 클릭해 확인합니다. Supabase 응답은 브라우저에서 가로채어 제공하므로 실제 회원 데이터나 결제 내역을 변경하지 않습니다. 최초 실행 전 `npx playwright install chromium`이 필요합니다. GitHub Actions는 이 검사를 빌드와 함께 실행합니다.
+
+`tests/db/`의 두 SQL 파일은 다른 회원의 기록 접근과 등록된 라운드의 수정·삭제 차단을 확인합니다. 기존 라운드와 샷이 있는 DB에서 각각 실행하며, 모든 검사 요청은 트랜잭션 끝에 롤백됩니다. 이 DB 검사는 독립 테스트 DB가 준비되기 전까지 CI에서 자동 실행하지 않습니다.
 
 필수 환경변수는 `.env.local`의 `NEXT_PUBLIC_SUPABASE_URL` 및 `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`입니다. 레거시 프로젝트는 `NEXT_PUBLIC_SUPABASE_ANON_KEY`도 브라우저 클라이언트에서 지원합니다. 비밀 키(service role)는 브라우저 환경변수로 두지 마세요.
 

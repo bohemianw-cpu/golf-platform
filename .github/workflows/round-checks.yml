@@ -1,0 +1,24 @@
+name: Round checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  browser-and-build:
+    runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_SUPABASE_URL: https://browser-tests.supabase.co
+      NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_browser_tests
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run lint
+      - run: npx tsc --noEmit
+      - run: npm run build
+      - run: npm run test:e2e
