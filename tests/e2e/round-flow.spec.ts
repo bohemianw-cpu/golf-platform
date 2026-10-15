@@ -220,3 +220,11 @@ test('each tab has its own address that survives refresh and back navigation', a
   await expect(page).toHaveURL(/\/score$/)
   await expect(page.getByRole('button', { name: '✓ 샷 결과 저장' })).toBeVisible()
 })
+
+test('the root redirect keeps email link parameters for sign-in', async ({ request }) => {
+  const response = await request.get('/?code=email-link-code&type=recovery', { maxRedirects: 0 })
+  expect(response.status()).toBe(307)
+  expect(response.headers().location).toBe('/score?code=email-link-code&type=recovery')
+  const plain = await request.get('/', { maxRedirects: 0 })
+  expect(plain.headers().location).toBe('/score')
+})
