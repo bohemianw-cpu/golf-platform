@@ -233,3 +233,13 @@ test('the root redirect keeps email link parameters for sign-in', async ({ reque
   const plain = await request.get('/', { maxRedirects: 0 })
   expect(plain.headers().location).toBe('/score')
 })
+
+test('every page is served with basic security headers', async ({ request }) => {
+  const response = await request.get('/home')
+  const headers = response.headers()
+  expect(headers['x-frame-options']).toBe('DENY')
+  expect(headers['content-security-policy']).toContain("frame-ancestors 'none'")
+  expect(headers['x-content-type-options']).toBe('nosniff')
+  expect(headers['referrer-policy']).toBe('strict-origin-when-cross-origin')
+  expect(headers['x-powered-by']).toBeUndefined()
+})

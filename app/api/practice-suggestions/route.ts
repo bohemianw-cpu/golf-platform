@@ -103,6 +103,12 @@ export async function POST(request: Request) {
     return Response.json({ error: 'AI 연습 제안 요청을 확인하지 못했습니다. 잠시 후 다시 시도해 주세요.' }, { status: 503 })
   }
   if (!reserved) return Response.json({ error: 'AI 연습 제안 요청이 많습니다. 잠시 후 다시 시도해 주세요. (10분에 3회, 하루에 12회)' }, { status: 429 })
+  // 제안을 만들지 못하면 방금 예약한 횟수를 되돌린다. 되돌리기는 DB에서 하루 3번까지만 허용한다.
+  const failedSuggestion = async () => {
+    const { error: releaseError } = await supabase.rpc('release_practice_suggestion_request')
+    if (releaseError) console.error('AI 연습 제안 요청 횟수 되돌리기 실패:', releaseError)
+    return Response.json({ error: 'AI 연습 제안을 만들지 못했습니다. 잠시 후 다시 시도해 주세요.' }, { status: 502 })
+  }
 
   // 과거 기록도 본인 라운드로 제한하고, 현재 화면의 기록은 저장 동기화 여부와 관계없이 사용한다.
   const { data: recentRounds, error: roundsError } = await supabase.from('rounds')
@@ -156,7 +162,7 @@ export async function POST(request: Request) {
     })
     if (!response.ok) {
       console.error('AI 연습 제안 생성 실패:', response.status)
-      return Response.json({ error: 'AI 연습 제안을 만들지 못했습니다. 잠시 후 다시 시도해 주세요.' }, { status: 502 })
+      return await failedSuggestion()
     }
     const result = await response.json()
     const outputText = (result.output ?? [])
@@ -172,6 +178,6 @@ export async function POST(request: Request) {
     return Response.json({ suggestions })
   } catch (error) {
     console.error('AI 연습 제안 생성 오류:', error)
-    return Response.json({ error: 'AI 연습 제안을 만들지 못했습니다. 잠시 후 다시 시도해 주세요.' }, { status: 502 })
+    return await failedSuggestion()
   }
 }
