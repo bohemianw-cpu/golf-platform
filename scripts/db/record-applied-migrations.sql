@@ -22,7 +22,11 @@ with candidates(version, name, applied) as (
       exists (select 1 from information_schema.columns
               where table_schema = 'public' and table_name = 'practice_suggestion_requests' and column_name = 'released_at')),
     ('20261016170000', 'client_error_reports',
-      pg_catalog.to_regclass('public.client_error_reports') is not null)
+      pg_catalog.to_regclass('public.client_error_reports') is not null),
+    -- 개인정보 안내 v4: 가입 처리 함수가 새 버전을 받아야 한다.
+    ('20261016180000', 'accept_privacy_notice_v4',
+      exists (select 1 from pg_catalog.pg_proc p join pg_catalog.pg_namespace n on n.oid = p.pronamespace
+              where n.nspname = 'public' and p.proname = 'capture_signup_data_preferences' and p.prosrc like '%2026-10-16-v4%'))
 ),
 recorded as (
   insert into supabase_migrations.schema_migrations (version, name)

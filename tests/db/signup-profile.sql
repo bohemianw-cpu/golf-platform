@@ -10,7 +10,7 @@ begin
     'nickname', '가입테스트',
     'handicap_index', '18.5',
     'signup_terms_version', '2026-10-15-v1',
-    'privacy_notice_version', '2026-10-15-v3',
+    'privacy_notice_version', '2026-10-16-v4',
     'age_over_14_confirmed', 'true',
     'allow_anonymous_aggregate', 'false',
     'allow_friend_sharing', 'false',
