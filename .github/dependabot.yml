@@ -12,6 +12,11 @@ updates:
     cooldown:
       default-days: 14
     open-pull-requests-limit: 5
+    ignore:
+      # 앱은 Node 22에서 실행되므로 Node 타입 정의의 큰 버전은 Node를 올릴 때 직접 맞춘다.
+      - dependency-name: "@types/node"
+        update-types:
+          - version-update:semver-major
     groups:
       minor-and-patch:
         update-types:
