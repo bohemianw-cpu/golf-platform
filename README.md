@@ -54,6 +54,12 @@ npm run test:unit
 
 초보는 핸디캡 36 초과, 아마추어는 0 초과~36 이하, 프로 수준은 0 이하를 비교용 그룹으로 사용합니다. 이는 공식 핸디캡 또는 프로 자격 인증이 아닙니다.
 
+### 운영 DB에 마이그레이션 적용하기
+
+`20261011000000_legacy_dashboard_baseline.sql`은 마이그레이션 도입 전 대시보드에서 만든 테이블을 담은 기준 스키마입니다. 빈 DB에서는 이 파일부터 차례로 적용하면 운영과 같은 구조가 됩니다.
+
+운영 DB에 적용할 때는 적용 기록이 남는 방법을 씁니다. Supabase CLI(`supabase db push`)나 Supabase MCP의 마이그레이션 적용 기능은 `supabase_migrations.schema_migrations`에 기록을 남깁니다. SQL Editor에 파일 내용을 붙여넣어 실행하면 기록이 남지 않습니다. 그렇게 적용했다면 이어서 `scripts/db/record-applied-migrations.sql`을 실행해 주세요. 결과물이 실제로 있는 마이그레이션만 "적용됨"으로 기록합니다. 현재 기록 상태는 `scripts/db/check-migration-history.sql`로 확인합니다. 새 마이그레이션을 추가할 때는 `record-applied-migrations.sql`에도 그 결과물을 확인하는 조건을 함께 추가합니다.
+
 ## 골프장 데이터
 
 구장 검색은 `verification_status = 'verified'`인 카탈로그 항목만 반환합니다. 공식 공개 체육시설 데이터와 관리자 보정 자료를 출처로 사용하고, 관리자 검수 후 공개해야 합니다. 공식 원본의 코스별 홀 파·거리 정보는 별도 검증 자료가 없으면 플레이 가능한 레이아웃으로 간주하지 않습니다. 구장에 OUT/IN 등 두 개 9홀 코스를 등록하면 사용자가 오늘의 코스 순서를 고를 수 있습니다.
