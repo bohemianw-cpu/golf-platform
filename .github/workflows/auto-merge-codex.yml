@@ -1,0 +1,42 @@
+name: Auto merge Codex PRs
+
+on:
+  workflow_run:
+    workflows: [Round checks]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  merge:
+    if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+    steps:
+      - name: Merge eligible PR after required checks pass
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # GitHub can leave workflow_run.pull_requests empty. Find the PR by its tested commit.
+          gh api "repos/${GITHUB_REPOSITORY}/commits/${HEAD_SHA}/pulls" \
+            | jq -r --arg repo "$GITHUB_REPOSITORY" --arg head "$HEAD_SHA" '
+                .[]
+                | select(
+                    .state == "open"
+                    and .draft == false
+                    and .base.ref == "main"
+                    and .head.sha == $head
+                    and .head.repo.full_name == $repo
+                    and (.head.ref | startswith("codex/"))
+                    and .user.login == "bohemianw-cpu"
+                  )
+                | .number
+              ' \
+            | while read -r pr_number; do
+                gh pr merge "$pr_number" --repo "$GITHUB_REPOSITORY" --merge
+              done
