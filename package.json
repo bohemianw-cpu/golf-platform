@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "test:e2e": "playwright test",
-    "test:db": "node scripts/db/run-db-tests.mjs"
+    "test:db": "node scripts/db/run-db-tests.mjs",
+    "test:unit": "vitest run"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
@@ -28,6 +29,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.8",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "3.2.4"
   }
 }
