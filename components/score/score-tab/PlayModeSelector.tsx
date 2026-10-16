@@ -14,7 +14,7 @@ export default function PlayModeSelector({ courseInfoLocked, playMode, round, ha
         <legend style={{ padding: '0 4px', fontSize: '11px', fontWeight: 700, color: palette.slate700 }}>이번 라운드 방식 (필드 자동선택)</legend>
         <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
           {(['field', 'screen'] as const).map((mode) => (
-            <label key={mode} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: mode === 'screen' ? palette.slate400 : palette.slate700, cursor: courseInfoLocked || (mode === 'screen' && !SCREEN_ROUNDS_ENABLED) ? 'not-allowed' : 'pointer' }}>
+            <label key={mode} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: mode === 'screen' ? palette.slate500 : palette.slate700, cursor: courseInfoLocked || (mode === 'screen' && !SCREEN_ROUNDS_ENABLED) ? 'not-allowed' : 'pointer' }}>
               <input
                 type="radio"
                 name="round-play-mode"

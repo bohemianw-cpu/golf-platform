@@ -214,7 +214,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
             type="submit"
             disabled={loading}
             style={{
-              backgroundColor: palette.emerald500,
+              backgroundColor: color.brand,
               color: palette.white,
               border: 'none',
               borderRadius: '8px',

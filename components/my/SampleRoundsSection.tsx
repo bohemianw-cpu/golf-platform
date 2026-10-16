@@ -17,7 +17,7 @@ export default function SampleRoundsSection({ sampleSessions, selectedSample, se
   return (
     <section style={{ ...CARD, borderColor: palette.blue300, background: palette.blue50 }} aria-labelledby="sample-round-title">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
-        <div><h2 id="sample-round-title" style={{ margin: '0 0 4px', fontSize: '16px' }}>🧪 샘플 샷 입력</h2><p style={{ ...muted, margin: 0 }}>가상으로 입력해 볼 수 있습니다. 실제 라운드 평균·클럽 분석·배지·트로피에서는 제외됩니다.</p></div>
+        <div><h2 id="sample-round-title" style={{ margin: '0 0 4px', fontSize: '16px' }}>🧪 샘플 샷 입력</h2><p style={{ ...muted, color: palette.slate600, margin: 0 }}>가상으로 입력해 볼 수 있습니다. 실제 라운드 평균·클럽 분석·배지·트로피에서는 제외됩니다.</p></div>
         <button type="button" onClick={() => void startSample()} disabled={startingSample || !onStartSample} style={{ padding: '10px 14px', border: 0, borderRadius: '8px', background: palette.blue700, color: palette.white, fontWeight: 700, cursor: startingSample ? 'wait' : 'pointer' }}>{startingSample ? '준비 중…' : '샘플 입력 시작'}</button>
       </div>
       <div style={{ display: 'grid', gap: '6px', marginTop: '10px' }}>
