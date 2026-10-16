@@ -10,8 +10,10 @@ export default function SignUpProfileFields({ isSignUp, nickname, setNickname, h
     <>
       {isSignUp && (
         <div>
-          <label style={{ fontSize: '12px', color: palette.neutral666, display: 'block', marginBottom: '4px' }}>닉네임</label>
+          <label style={{ fontSize: '12px', color: palette.neutral666, display: 'block', marginBottom: '4px' }} htmlFor="signup-nickname">닉네임</label>
           <input
+            id="signup-nickname"
+            autoComplete="nickname"
             type="text"
             required
             value={nickname}
