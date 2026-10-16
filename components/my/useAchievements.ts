@@ -2,11 +2,11 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import type { createClient } from '@/utils/supabase/client'
-import type { RoundSummary, TrophyStats } from './myTypes'
+import type { TrophyStats } from './myTypes'
 import { buildTrophies, EMPTY_TROPHY_STATS } from './myRecords'
 
 /** 인정 라운드의 트로피 판정용 집계를 서버에서 받아 트로피 목록을 만든다. 홀·샷 기록은 내려받지 않는다. */
-export function useAchievements(supabase: ReturnType<typeof createClient>, achievementRounds: RoundSummary[]) {
+export function useAchievements(supabase: ReturnType<typeof createClient>, achievementRoundIds: string[]) {
   const [stats, setStats] = useState<TrophyStats>(EMPTY_TROPHY_STATS)
   const [achievementsLoading, setAchievementsLoading] = useState(false)
   const [achievementsError, setAchievementsError] = useState<string | null>(null)
@@ -18,8 +18,8 @@ export function useAchievements(supabase: ReturnType<typeof createClient>, achie
       setAchievementsError(null)
       try {
         let next = EMPTY_TROPHY_STATS
-        if (achievementRounds.length > 0) {
-          const { data, error: queryError } = await supabase.rpc('get_my_trophy_stats', { p_round_ids: achievementRounds.map((round) => round.id) })
+        if (achievementRoundIds.length > 0) {
+          const { data, error: queryError } = await supabase.rpc('get_my_trophy_stats', { p_round_ids: achievementRoundIds })
           if (queryError) throw queryError
           const row = Array.isArray(data) ? data[0] : data
           if (row) next = row as TrophyStats
@@ -32,8 +32,8 @@ export function useAchievements(supabase: ReturnType<typeof createClient>, achie
       }
     })()
     return () => { cancelled = true }
-  }, [achievementRounds, supabase])
+  }, [achievementRoundIds, supabase])
 
-  const trophies = useMemo(() => buildTrophies(achievementRounds.length, stats), [achievementRounds.length, stats])
+  const trophies = useMemo(() => buildTrophies(achievementRoundIds.length, stats), [achievementRoundIds.length, stats])
   return { trophies, achievementsLoading, achievementsError }
 }

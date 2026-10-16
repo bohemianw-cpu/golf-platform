@@ -106,6 +106,7 @@ export async function mockSignedInApp(page: Page, options: { draft?: boolean; dr
     else if (resource === 'golf_course_routes') body = [{ id: ROUTE_ID, course_id: COURSE_ID, route_code: 'OUT', display_name: 'OUT 코스', hole_count: 1, pars: [3], distances_m: [100], source_url: 'https://example.invalid' }]
     else if (resource === 'golf_course_holes') body = [{ id: HOLE_ID, route_id: ROUTE_ID, hole_number: 1, play_order: 1, par: 3, handicap_index: 1 }]
     else if (resource === 'golf_course_hole_tees') body = [{ hole_id: HOLE_ID, tee_code: 'white', display_name: '화이트티', tee_color: '#ffffff', tee_selection_available: true, distance_m: 100, distance_m_source: 'official', source_distance: 100, source_unit: 'm', green_code: 'standard', green_name: '기본 그린', par: 3 }]
+    else if (url.pathname.endsWith('/rpc/get_my_round_overview')) body = [{ total_rounds: 0, completed_rounds: 0, average_score: null, best_score: null, achievement_round_ids: [] }]
     else if (url.pathname.includes('/rpc/')) body = []
     await route.fulfill({
       status: 200,

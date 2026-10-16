@@ -5,7 +5,7 @@ import { createClient } from '@/utils/supabase/client'
 import { getGolfLevelGroup } from '@/utils/golf/levels'
 import CommercePanel from '@/components/my/CommercePanel'
 import { AI_ANALYSIS_CONSENT_VERSION, SHARING_CONSENT_VERSION } from '@/utils/consent'
-import type { CourseAggregate, FriendAggregate, FriendConnection, HoleRow, ProfileSummary, RoundDetail, RoundSummary, ShotRow, UserDataPreferences } from './myTypes'
+import type { CourseAggregate, FriendAggregate, FriendConnection, HoleRow, ProfileSummary, RoundDetail, RoundOverview, RoundSummary, ShotRow, UserDataPreferences } from './myTypes'
 import { buildLevelProgress, toHoleRecords } from './myRecords'
 import { useSampleSessions } from './useSampleSessions'
 import { useRoundIntegrity } from './useRoundIntegrity'
@@ -23,6 +23,9 @@ import AccountSection from './AccountSection'
 import SummaryStatsSection from './SummaryStatsSection'
 import HandicapSection from './HandicapSection'
 
+const ROUND_PAGE_SIZE = 50
+const ROUND_COLUMNS = 'id,created_at,registered_at,status,total_score,total_putts,club_name,golf_club,course_name,course_id,play_mode,screen_provider,entry_mode,route_ids,tee_code,tee_name,visibility'
+
 export default function MyTab({ onStartSample }: { onStartSample?: (id: string) => void }) {
   const supabase = useMemo(() => createClient(), [])
   const [userId, setUserId] = useState<string | null>(null)
@@ -32,6 +35,10 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
   const [savingHandicap, setSavingHandicap] = useState(false)
   const [profileSaved, setProfileSaved] = useState(false)
   const [rounds, setRounds] = useState<RoundSummary[]>([])
+  const [roundsExhausted, setRoundsExhausted] = useState(true)
+  const [loadingMoreRounds, setLoadingMoreRounds] = useState(false)
+  const [overview, setOverview] = useState<RoundOverview | null>(null)
+  const [overviewError, setOverviewError] = useState(false)
   const [detail, setDetail] = useState<RoundDetail | null>(null)
   const [loading, setLoading] = useState(true)
   const [detailLoading, setDetailLoading] = useState(false)
@@ -47,22 +54,16 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
   const [withdrawing, setWithdrawing] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  const loadRounds = useCallback(async (uid: string) => {
-    const pageSize = 500
-    const all: RoundSummary[] = []
-    for (let from = 0; ; from += pageSize) {
-      const { data, error: queryError } = await supabase
-        .from('rounds')
-        .select('id,created_at,registered_at,status,total_score,total_putts,club_name,golf_club,course_name,course_id,play_mode,screen_provider,entry_mode,route_ids,tee_code,tee_name,visibility')
-        .eq('user_id', uid)
-        .order('created_at', { ascending: false })
-        .range(from, from + pageSize - 1)
-      if (queryError) throw queryError
-      const page = (data ?? []) as RoundSummary[]
-      all.push(...page)
-      if (page.length < pageSize) break
-    }
-    return all
+  // 목록은 최근 것부터 한 쪽씩 불러온다. 요약(라운드 수·평균·인정 라운드)은 get_my_round_overview로 따로 받는다.
+  const fetchRoundPage = useCallback(async (uid: string, from: number, size = ROUND_PAGE_SIZE) => {
+    const { data, error: queryError } = await supabase
+      .from('rounds')
+      .select(ROUND_COLUMNS)
+      .eq('user_id', uid)
+      .order('created_at', { ascending: false })
+      .range(from, from + size - 1)
+    if (queryError) throw queryError
+    return (data ?? []) as RoundSummary[]
   }, [supabase])
 
   useEffect(() => {
@@ -82,9 +83,10 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
           return
         }
         const uid = session.user.id
-        const [profileResult, loadedRounds] = await Promise.all([
+        const [profileResult, loadedRounds, overviewResult] = await Promise.all([
           supabase.from('profiles').select('nickname,handicap_index,skill_group').eq('id', uid).maybeSingle(),
-          loadRounds(uid),
+          fetchRoundPage(uid, 0),
+          supabase.rpc('get_my_round_overview'),
         ])
         if (profileResult.error) throw profileResult.error
         const { data: preferences, error: preferencesError } = await supabase.from('user_data_preferences')
@@ -100,6 +102,11 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
         })
         setHandicapInput(profileResult.data?.handicap_index == null ? '' : String(profileResult.data.handicap_index))
         setRounds(loadedRounds)
+        setRoundsExhausted(loadedRounds.length < ROUND_PAGE_SIZE)
+        // 요약을 못 받아도 목록과 나머지 화면은 보여 주고, 요약 자리에만 알린다.
+        const overviewRow = Array.isArray(overviewResult.data) ? overviewResult.data[0] : overviewResult.data
+        setOverview(overviewResult.error || !overviewRow ? null : overviewRow as RoundOverview)
+        setOverviewError(!!overviewResult.error || !overviewRow)
         setDataPreferences((preferences as UserDataPreferences | null) ?? {
           user_id: uid,
           allow_anonymous_aggregate: false,
@@ -120,24 +127,36 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
       }
     })()
     return () => { cancelled = true }
-  }, [supabase, loadRounds])
+  }, [supabase, fetchRoundPage])
+
+  const loadMoreRounds = async () => {
+    if (!userId || loadingMoreRounds || roundsExhausted) return
+    setLoadingMoreRounds(true)
+    try {
+      const page = await fetchRoundPage(userId, rounds.length)
+      // 그사이 새 라운드가 생기면 같은 라운드가 다시 올 수 있어 걸러 낸다.
+      setRounds((current) => [...current, ...page.filter((round) => !current.some((item) => item.id === round.id))])
+      setRoundsExhausted(page.length < ROUND_PAGE_SIZE)
+    } catch {
+      setError('이전 기록을 더 불러오지 못했습니다. 다시 시도해 주세요.')
+    } finally {
+      setLoadingMoreRounds(false)
+    }
+  }
 
   const { sampleSessions, selectedSample, setSelectedSample, startingSample, startSample } = useSampleSessions(supabase, userId, setError, onStartSample)
-  const { integrityByRound, integrityLoading, integrityError } = useRoundIntegrity(supabase, userId, rounds)
-  const completedRounds = useMemo(() => rounds.filter((round) => round.status === 'completed' && round.total_score != null), [rounds])
-  const achievementRounds = useMemo(() => completedRounds.filter((round) =>
-    !!round.registered_at && integrityByRound[round.id]?.status === 'time_plausible',
-  ), [completedRounds, integrityByRound])
-  const { trophies, achievementsLoading, achievementsError } = useAchievements(supabase, achievementRounds)
+  // 기록 확인 결과는 목록에 보이는 라운드의 표시에만 쓴다. 레벨과 트로피는 서버 요약의 인정 라운드로 정한다.
+  const { integrityByRound } = useRoundIntegrity(supabase, userId, rounds)
+  const completedRoundCount = overview?.completed_rounds ?? null
+  const achievementRoundIds = useMemo(() => overview?.achievement_round_ids ?? [], [overview])
+  const { trophies, achievementsLoading, achievementsError } = useAchievements(supabase, achievementRoundIds)
   const earnedTrophies = trophies.filter((trophy) => trophy.earned)
-  const { currentLevelIndex, currentLevel, nextLevel, levelProgress } = buildLevelProgress(achievementRounds.length)
-  const averageScore = completedRounds.length
-    ? completedRounds.reduce((sum, round) => sum + (round.total_score ?? 0), 0) / completedRounds.length
-    : null
-  const bestScore = completedRounds.length ? Math.min(...completedRounds.map((round) => round.total_score ?? Infinity)) : null
+  const { currentLevelIndex, currentLevel, nextLevel, levelProgress } = buildLevelProgress(achievementRoundIds.length)
+  const averageScore = overview?.average_score ?? null
+  const bestScore = overview?.best_score ?? null
   const currentGroup = profile?.handicap_index != null ? getGolfLevelGroup(profile.handicap_index) : profile?.skill_group ?? 'beginner'
 
-  const suggestGroupReview = currentGroup === 'beginner' && completedRounds.length >= 5 && averageScore != null && averageScore <= 75
+  const suggestGroupReview = currentGroup === 'beginner' && (completedRoundCount ?? 0) >= 5 && averageScore != null && averageScore <= 75
 
   const saveHandicap = async () => {
     if (!userId) return
@@ -350,7 +369,14 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
     setExporting(true)
     setError(null)
     try {
-      await exportRoundHistory(supabase, rounds)
+      // 내보내기는 화면에 불러온 만큼이 아니라 전체 라운드를 대상으로 한다.
+      const all: RoundSummary[] = []
+      for (let from = 0; ; from += 500) {
+        const page = await fetchRoundPage(userId, from, 500)
+        all.push(...page)
+        if (page.length < 500) break
+      }
+      await exportRoundHistory(supabase, all)
     } catch (err) {
       setError(err instanceof Error ? err.message : '기록 내보내기에 실패했습니다.')
     } finally {
@@ -381,18 +407,18 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
 
       {suggestGroupReview && <section role="status" style={{ ...CARD, borderColor: palette.amber300, background: palette.amber50 }}>
         <strong style={{ color: palette.amber800 }}>실력 그룹을 다시 확인해 볼까요?</strong>
-        <p style={{ ...muted, marginBottom: 0 }}>최근 완료 라운드 {completedRounds.length}회의 평균이 {averageScore?.toFixed(1)}타입니다. 초보 그룹은 비교용으로만 사용하며, 핸디캡 입력을 검토해 보세요. 이 제안은 공식 핸디캡 산정이 아닙니다.</p>
+        <p style={{ ...muted, marginBottom: 0 }}>최근 완료 라운드 {completedRoundCount}회의 평균이 {averageScore?.toFixed(1)}타입니다. 초보 그룹은 비교용으로만 사용하며, 핸디캡 입력을 검토해 보세요. 이 제안은 공식 핸디캡 산정이 아닙니다.</p>
       </section>}
 
-      <SummaryStatsSection completedRounds={completedRounds} averageScore={averageScore} bestScore={bestScore} currentGroup={currentGroup} />
+      <SummaryStatsSection completedRoundCount={completedRoundCount} averageScore={averageScore} bestScore={bestScore} currentGroup={currentGroup} />
 
-      <TrophySection trophies={trophies} earnedTrophies={earnedTrophies} achievementRounds={achievementRounds} currentLevel={currentLevel} currentLevelIndex={currentLevelIndex} nextLevel={nextLevel} levelProgress={levelProgress} achievementsError={achievementsError} achievementsLoading={achievementsLoading} integrityError={integrityError} integrityLoading={integrityLoading} />
+      <TrophySection trophies={trophies} earnedTrophies={earnedTrophies} achievementRoundCount={achievementRoundIds.length} currentLevel={currentLevel} currentLevelIndex={currentLevelIndex} nextLevel={nextLevel} levelProgress={levelProgress} achievementsError={achievementsError} achievementsLoading={achievementsLoading} eligibilityError={overviewError} />
 
       <HandicapSection currentGroup={currentGroup} handicapInput={handicapInput} setHandicapInput={setHandicapInput} setProfileSaved={setProfileSaved} saveHandicap={saveHandicap} savingHandicap={savingHandicap} profileSaved={profileSaved} />
 
       <FriendsSection userId={userId} friends={friends} friendAggregate={friendAggregate} groupAggregate={groupAggregate} detail={detail} friendIdInput={friendIdInput} setFriendIdInput={setFriendIdInput} sendFriendRequest={sendFriendRequest} respondToFriendRequest={respondToFriendRequest} removeFriendConnection={removeFriendConnection} loadFriendComparison={loadFriendComparison} />
 
-      <RoundHistorySection rounds={rounds} integrityByRound={integrityByRound} openRound={openRound} exportHistory={exportHistory} exporting={exporting} />
+      <RoundHistorySection rounds={rounds} integrityByRound={integrityByRound} openRound={openRound} exportHistory={exportHistory} exporting={exporting} totalRounds={overview?.total_rounds ?? null} hasMore={!roundsExhausted} loadingMore={loadingMoreRounds} onLoadMore={() => void loadMoreRounds()} />
 
       {detailLoading && <p role="status" style={{ ...muted, textAlign: 'center' }}>홀별 샷 상세를 불러오는 중입니다…</p>}
       {detail && <RoundDetailSection detail={detail} setDetail={setDetail} integrityByRound={integrityByRound} dataPreferences={dataPreferences} sharing={sharing} updateVisibility={updateVisibility} aggregate={aggregate} courseAllAggregate={courseAllAggregate} />}

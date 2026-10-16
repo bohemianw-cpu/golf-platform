@@ -99,6 +99,16 @@ export interface ShotRow {
   penalty: number
 }
 
+/** 서버 함수 get_my_round_overview가 돌려주는 MY 탭 요약. */
+export interface RoundOverview {
+  total_rounds: number
+  completed_rounds: number
+  average_score: number | null
+  best_score: number | null
+  /** 등록 후 소요시간 확인을 통과해 레벨과 트로피에 인정되는 라운드. */
+  achievement_round_ids: string[]
+}
+
 /** 서버 함수 get_my_trophy_stats가 돌려주는 트로피 판정용 집계. */
 export interface TrophyStats {
   birdies: number
