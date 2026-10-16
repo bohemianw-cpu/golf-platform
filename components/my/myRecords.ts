@@ -1,5 +1,5 @@
 import type { HoleRecord, ShotRecord } from '@/types/golf'
-import type { AchievementHoleRow, AchievementShotRow, HoleRow, RoundIntegritySummary, RoundSummary, ShotRow, TrophyItem } from './myTypes'
+import type { HoleRow, RoundIntegritySummary, RoundSummary, ShotRow, TrophyItem, TrophyStats } from './myTypes'
 
 export const integrityLabel = (value?: RoundIntegritySummary) => {
   if (!value) return '시간 확인 자료 없음'
@@ -36,45 +36,40 @@ export function buildLevelProgress(roundCount: number) {
   return { currentLevelIndex, currentLevel: currentLevelIndex + 1, nextLevel, levelProgress }
 }
 
-export function buildTrophies(rounds: RoundSummary[], holes: AchievementHoleRow[], shots: AchievementShotRow[]): TrophyItem[] {
-  const eligibleIds = new Set(rounds.map((round) => round.id))
-  const eligibleShots = shots.filter((shot) => eligibleIds.has(shot.round_id))
-  const byRound = new Map<string, AchievementHoleRow[]>()
-  const shotsByRound = new Map<string, AchievementShotRow[]>()
-  for (const hole of holes) if (eligibleIds.has(hole.round_id)) byRound.set(hole.round_id, [...(byRound.get(hole.round_id) ?? []), hole])
-  for (const shot of eligibleShots) shotsByRound.set(shot.round_id, [...(shotsByRound.get(shot.round_id) ?? []), shot])
-  const roundHoles = rounds.map((round) => ({ round, holes: byRound.get(round.id) ?? [], shots: shotsByRound.get(round.id) ?? [] }))
-  const allHoles = roundHoles.flatMap(({ holes: items }) => items)
-  const birdies = allHoles.filter((hole) => hole.score <= hole.par - 1).length
-  const eagles = allHoles.filter((hole) => hole.score <= hole.par - 2).length
-  const fairwayHoles = allHoles.filter((hole) => hole.par >= 4 && hole.fairway_hit != null)
-  const girHoles = allHoles.filter((hole) => hole.gir != null)
-  const bestFairway = fairwayHoles.length ? fairwayHoles.filter((hole) => hole.fairway_hit).length / fairwayHoles.length : 0
-  const bestGir = girHoles.length ? girHoles.filter((hole) => hole.gir).length / girHoles.length : 0
-  const fullRoundTotals = roundHoles.filter(({ holes: items }) => items.length >= 18).map(({ holes: items }) => ({ score: items.reduce((sum, hole) => sum + hole.score, 0), par: items.reduce((sum, hole) => sum + hole.par, 0) }))
-  const firstScore = (score: number) => fullRoundTotals.some((item) => item.score <= score)
-  const bestPutts = roundHoles.filter(({ holes: items }) => items.length >= 9).some(({ holes: items }) => items.reduce((sum, hole) => sum + hole.putts, 0) / items.length <= 1.8)
-  const driverLong = eligibleShots.some((shot) => /드라이버|driver/i.test(shot.club) && shot.shot_distance >= 250)
-  const noPenalty = roundHoles.some(({ shots: items }) => items.length > 0 && items.every((shot) => shot.penalty === 0))
-  const parOrBetterNine = roundHoles.some(({ holes: items }) => items.filter((hole) => hole.score <= hole.par).length >= 9)
+/** 집계를 아직 못 불러왔거나 인정 라운드가 없을 때의 값. */
+export const EMPTY_TROPHY_STATS: TrophyStats = {
+  birdies: 0, eagles: 0, fairway_holes: 0, fairway_hits: 0, gir_holes: 0, gir_hits: 0, best_full_round_score: null,
+  has_even_par_round: false, has_under_par_round: false, has_putt_rhythm_round: false, has_long_drive: false, has_clean_round: false, has_par_or_better_nine: false,
+}
+
+/** 인정 라운드 수와 서버 집계로 트로피 목록을 만든다. */
+export function buildTrophies(roundCount: number, stats: TrophyStats): TrophyItem[] {
+  const { birdies, eagles } = stats
+  const bestFairway = stats.fairway_holes ? stats.fairway_hits / stats.fairway_holes : 0
+  const bestGir = stats.gir_holes ? stats.gir_hits / stats.gir_holes : 0
+  const firstScore = (score: number) => stats.best_full_round_score != null && stats.best_full_round_score <= score
+  const bestPutts = stats.has_putt_rhythm_round
+  const driverLong = stats.has_long_drive
+  const noPenalty = stats.has_clean_round
+  const parOrBetterNine = stats.has_par_or_better_nine
 
   return [
-    { id: 'first-round', title: '첫 라운드', description: '첫 라운드를 완료했어요.', icon: '⛳', earned: rounds.length >= 1, category: '레벨업', evidence: `${rounds.length} / 1회` },
-    { id: 'round-3', title: '라운드 수집가', description: '완료 라운드 3회를 기록했어요.', icon: '🗺️', earned: rounds.length >= 3, category: '레벨업', evidence: `${Math.min(rounds.length, 3)} / 3회` },
-    { id: 'round-5', title: '꾸준한 골퍼', description: '완료 라운드 5회를 기록했어요.', icon: '🌱', earned: rounds.length >= 5, category: '레벨업', evidence: `${Math.min(rounds.length, 5)} / 5회` },
-    { id: 'round-10', title: '코스 탐험가', description: '완료 라운드 10회를 기록했어요.', icon: '🧭', earned: rounds.length >= 10, category: '레벨업', evidence: `${Math.min(rounds.length, 10)} / 10회` },
-    { id: 'round-25', title: '클럽하우스 단골', description: '완료 라운드 25회를 기록했어요.', icon: '🏆', earned: rounds.length >= 25, category: '레벨업', evidence: `${Math.min(rounds.length, 25)} / 25회` },
-    { id: 'round-50', title: '골프 라이프', description: '완료 라운드 50회를 기록했어요.', icon: '👑', earned: rounds.length >= 50, category: '레벨업', evidence: `${Math.min(rounds.length, 50)} / 50회` },
+    { id: 'first-round', title: '첫 라운드', description: '첫 라운드를 완료했어요.', icon: '⛳', earned: roundCount >= 1, category: '레벨업', evidence: `${roundCount} / 1회` },
+    { id: 'round-3', title: '라운드 수집가', description: '완료 라운드 3회를 기록했어요.', icon: '🗺️', earned: roundCount >= 3, category: '레벨업', evidence: `${Math.min(roundCount, 3)} / 3회` },
+    { id: 'round-5', title: '꾸준한 골퍼', description: '완료 라운드 5회를 기록했어요.', icon: '🌱', earned: roundCount >= 5, category: '레벨업', evidence: `${Math.min(roundCount, 5)} / 5회` },
+    { id: 'round-10', title: '코스 탐험가', description: '완료 라운드 10회를 기록했어요.', icon: '🧭', earned: roundCount >= 10, category: '레벨업', evidence: `${Math.min(roundCount, 10)} / 10회` },
+    { id: 'round-25', title: '클럽하우스 단골', description: '완료 라운드 25회를 기록했어요.', icon: '🏆', earned: roundCount >= 25, category: '레벨업', evidence: `${Math.min(roundCount, 25)} / 25회` },
+    { id: 'round-50', title: '골프 라이프', description: '완료 라운드 50회를 기록했어요.', icon: '👑', earned: roundCount >= 50, category: '레벨업', evidence: `${Math.min(roundCount, 50)} / 50회` },
     { id: 'first-birdie', title: '첫 버디', description: '홀별 스코어에서 첫 버디 이상을 기록했어요.', icon: '🐦', earned: birdies > 0, category: '스코어', evidence: `${birdies}회` },
     { id: 'first-eagle', title: '이글 헌터', description: '홀별 스코어에서 첫 이글 이상을 기록했어요.', icon: '🦅', earned: eagles > 0, category: '스코어', evidence: `${eagles}회` },
     { id: 'under-100', title: '100타 벽 돌파', description: '100타 이하 스코어를 기록했어요.', icon: '💯', earned: firstScore(100), category: '스코어', evidence: firstScore(100) ? '달성' : '목표 100타 이하' },
     { id: 'under-90', title: '90타 벽 돌파', description: '90타 이하 스코어를 기록했어요.', icon: '🎯', earned: firstScore(90), category: '스코어', evidence: firstScore(90) ? '달성' : '목표 90타 이하' },
     { id: 'single', title: '싱글 입문', description: '79타 이하 스코어를 기록했어요.', icon: '✨', earned: firstScore(79), category: '스코어', evidence: firstScore(79) ? '달성' : '목표 79타 이하' },
     { id: 'par-nine', title: '파 세이브 행진', description: '한 라운드에서 파 또는 버디 이상을 9홀 기록했어요.', icon: '🟢', earned: parOrBetterNine, category: '코스 공략', evidence: parOrBetterNine ? '달성' : '한 라운드 9홀 목표' },
-    { id: 'even-par', title: '이븐파 라운드', description: '18홀 합계 기준 이븐파를 기록했어요.', icon: '⚖️', earned: fullRoundTotals.some((item) => item.score === item.par), category: '코스 공략', evidence: fullRoundTotals.some((item) => item.score === item.par) ? '달성' : '18홀 기록 필요' },
-    { id: 'under-par', title: '언더파 라운드', description: '18홀 합계 기준 언더파를 기록했어요.', icon: '🔥', earned: fullRoundTotals.some((item) => item.score < item.par), category: '코스 공략', evidence: fullRoundTotals.some((item) => item.score < item.par) ? '달성' : '18홀 기록 필요' },
-    { id: 'fairway-70', title: '페어웨이 파인더', description: '기록된 파 4·5 홀에서 페어웨이 안착률 70%를 달성했어요.', icon: '🧭', earned: fairwayHoles.length >= 9 && bestFairway >= 0.7, category: '샷 메이커', evidence: fairwayHoles.length ? `${Math.round(bestFairway * 100)}% · ${fairwayHoles.length}홀` : '페어웨이 기록 대기' },
-    { id: 'gir-50', title: '그린 공략가', description: '기록된 홀에서 GIR 50%를 달성했어요.', icon: '🎯', earned: girHoles.length >= 9 && bestGir >= 0.5, category: '샷 메이커', evidence: girHoles.length ? `${Math.round(bestGir * 100)}% · ${girHoles.length}홀` : '그린 적중 기록 대기' },
+    { id: 'even-par', title: '이븐파 라운드', description: '18홀 합계 기준 이븐파를 기록했어요.', icon: '⚖️', earned: stats.has_even_par_round, category: '코스 공략', evidence: stats.has_even_par_round ? '달성' : '18홀 기록 필요' },
+    { id: 'under-par', title: '언더파 라운드', description: '18홀 합계 기준 언더파를 기록했어요.', icon: '🔥', earned: stats.has_under_par_round, category: '코스 공략', evidence: stats.has_under_par_round ? '달성' : '18홀 기록 필요' },
+    { id: 'fairway-70', title: '페어웨이 파인더', description: '기록된 파 4·5 홀에서 페어웨이 안착률 70%를 달성했어요.', icon: '🧭', earned: stats.fairway_holes >= 9 && bestFairway >= 0.7, category: '샷 메이커', evidence: stats.fairway_holes ? `${Math.round(bestFairway * 100)}% · ${stats.fairway_holes}홀` : '페어웨이 기록 대기' },
+    { id: 'gir-50', title: '그린 공략가', description: '기록된 홀에서 GIR 50%를 달성했어요.', icon: '🎯', earned: stats.gir_holes >= 9 && bestGir >= 0.5, category: '샷 메이커', evidence: stats.gir_holes ? `${Math.round(bestGir * 100)}% · ${stats.gir_holes}홀` : '그린 적중 기록 대기' },
     { id: 'drive-250', title: '장타 기념', description: '드라이버 샷 250m 이상을 기록했어요.', icon: '🚀', earned: driverLong, category: '샷 메이커', evidence: driverLong ? '달성' : '목표 250m' },
     { id: 'putt-rhythm', title: '퍼트 리듬', description: '9홀 이상 라운드에서 홀당 평균 퍼트 1.8 이하를 기록했어요.', icon: '🏌️', earned: bestPutts, category: '샷 메이커', evidence: bestPutts ? '달성' : '9홀 평균 1.8 이하' },
     { id: 'clean-round', title: '무벌타 기록', description: '저장된 샷 기록에 벌타가 없어요.', icon: '🍀', earned: noPenalty, category: '샷 메이커', evidence: noPenalty ? '달성' : '샷별 벌타 기록 대기' },
