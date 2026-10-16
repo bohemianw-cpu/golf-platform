@@ -13,7 +13,7 @@ import { useChoiceDialog } from './ConfirmDialog'
 import { useRound } from '@/hooks/useRound'
 import { DEFAULT_CLUBS, MAX_CLUBS, sortClubs } from '@/utils/golf/clubs'
 import type { GolfCourseOption } from './CourseCatalogPicker'
-import { createClient } from '@/utils/supabase/client'
+import { createClient, getSignedInUser } from '@/utils/supabase/client'
 import { palette } from '@/utils/theme'
 import ShotFlowNotice from './score-tab/ShotFlowNotice'
 import HoleResultDialog from './score-tab/HoleResultDialog'
@@ -52,7 +52,7 @@ export default function ScoreTab({ bottomNavVisible, sampleSessionId = null, onE
     let cancelled = false
     void (async () => {
       try {
-        const { data: { user }, error: authError } = await supabase.auth.getUser()
+        const { user, error: authError } = await getSignedInUser(supabase)
         if (authError || !user) throw authError ?? new Error('로그인 정보가 없습니다.')
         const { data, error } = await supabase.from('user_club_bags')
           .select('clubs')

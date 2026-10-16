@@ -2,7 +2,7 @@
 
 import { useEffect, useState, type CSSProperties } from 'react'
 import type { ClubItem, HoleRecord } from '@/types/golf'
-import { createClient } from '@/utils/supabase/client'
+import { createClient, getSignedInUser } from '@/utils/supabase/client'
 import { color, palette } from '@/utils/theme'
 
 interface RoundReportProps {
@@ -41,7 +41,7 @@ export default function RoundReport({ completedHoles = [], courseHoleNumbers, cu
     let cancelled = false
     const supabase = createClient()
     void (async () => {
-      const { data: { user } } = await supabase.auth.getUser()
+      const { user } = await getSignedInUser(supabase)
       if (!user) { if (!cancelled) setAiAllowed(false); return }
       const { data, error } = await supabase.from('user_data_preferences')
         .select('allow_ai_practice_analysis').eq('user_id', user.id).maybeSingle()

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { createClient } from '@/utils/supabase/client'
+import { createClient, getSignedInUser } from '@/utils/supabase/client'
 import { palette } from '@/utils/theme'
 
 type PassRow = { id: string; product_code: string; status: string; issued_at: string; expires_at: string | null }
@@ -31,7 +31,7 @@ export default function CommercePanel() {
     const supabase = createClient()
     void (async () => {
       try {
-        const { data: { user }, error: userError } = await supabase.auth.getUser()
+        const { user, error: userError } = await getSignedInUser(supabase)
         if (userError) throw userError
         if (!user) return
         const [passResult, pointResult, orderResult, balanceResult] = await Promise.all([

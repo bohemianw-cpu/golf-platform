@@ -43,3 +43,21 @@ test('an error thrown before the app is ready in the browser is still reported',
   await expect.poll(() => errorReports.length).toBe(1)
   expect(errorReports[0]).toMatchObject({ p_kind: 'error', p_message: '준비 전 오류 [이메일]', p_path: '/home' })
 })
+
+test('score, round report and MY screens read the signed-in user without asking the auth server', async ({ page }) => {
+  await mockSignedInApp(page)
+  const authUserRequests: string[] = []
+  page.on('request', (request) => { if (new URL(request.url()).pathname.endsWith('/auth/v1/user')) authUserRequests.push(request.url()) })
+
+  await page.goto('/score')
+  await page.getByRole('dialog').getByRole('button', { name: '이어서 하기' }).click()
+  await page.getByRole('spinbutton', { name: '샷 후 남은 거리' }).fill('0')
+  await page.getByRole('button', { name: '🏁 홀아웃 기록' }).click()
+  await page.getByRole('dialog').getByRole('button', { name: '라운드 리포트 보기' }).click()
+  await expect(page.getByRole('heading', { name: '다음 연습 제안' })).toBeVisible()
+  await page.waitForLoadState('networkidle')
+  await page.goto('/my')
+  await expect(page.getByText('님의 기록 보관함')).toBeVisible()
+  await page.waitForLoadState('networkidle')
+  expect(authUserRequests).toEqual([])
+})
