@@ -123,6 +123,8 @@ export default function CourseHeader({ round, courseInfoLocked, bottomNavVisible
               }
             }
             if (event.key === 'Escape') {
+              // 검색창의 기본 동작(입력값 지우기)이 목록을 다시 열지 않도록 막는다.
+              event.preventDefault()
               setIsCourseSearchOpen(false)
               setCourseSearchQuery(round.golfClubName)
             }
