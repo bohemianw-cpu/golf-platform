@@ -48,6 +48,8 @@ export function useRoundSync({ supabase, isSample, metaRef, setSaveError, onRegi
   // 아직 서버에 못 올린 것. 모두 저장되기 전에는 저장 실패 안내를 지우지 않는다.
   const holesUnsavedRef = useRef(false)
   const unsavedShotHolesRef = useRef(new Set<number>())
+  /** 서버에 못 올린 홀이나 샷이 남아 있는지. */
+  const hasUnsavedChanges = useCallback(() => holesUnsavedRef.current || unsavedShotHolesRef.current.size > 0, [])
   const clearSaveErrorIfAllSaved = useCallback(() => {
     if (!holesUnsavedRef.current && unsavedShotHolesRef.current.size === 0) setSaveError(null)
   }, [setSaveError])
@@ -324,5 +326,6 @@ export function useRoundSync({ supabase, isSample, metaRef, setSaveError, onRegi
     syncShotEvents,
     finalizeRound,
     deleteServerRound,
+    hasUnsavedChanges,
   }
 }

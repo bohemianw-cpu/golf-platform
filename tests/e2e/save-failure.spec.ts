@@ -90,3 +90,59 @@ test('a shot the server never received survives a reload and is uploaded after r
   await page.getByRole('button', { name: '🏁 홀아웃 기록' }).click()
   await expect.poll(() => writes.filter((write) => write.startsWith('POST round_shots')).length).toBeGreaterThan(0)
 })
+
+test('unsaved shots are sent again automatically when the connection comes back', async ({ page, context }) => {
+  const writes: string[] = []
+  let failing = true
+  await mockSignedInApp(page, { writes })
+  await failWritesTo(page, 'round_shots', () => failing)
+  await page.goto('/score')
+  await page.getByRole('dialog').getByRole('button', { name: '이어서 하기' }).click()
+  await page.getByRole('spinbutton', { name: '샷 후 남은 거리' }).fill('40')
+  await page.getByRole('button', { name: '✓ 샷 결과 저장' }).click()
+  const alert = page.getByRole('alert').filter({ hasText: '샷 서버 저장에 실패했습니다' })
+  await expect(alert).toBeVisible()
+  const writesBefore = writes.filter((write) => write.startsWith('POST round_shots')).length
+
+  // 신호가 끊겼다가 돌아온다. "다시 시도"는 누르지 않는다.
+  failing = false
+  await context.setOffline(true)
+  await context.setOffline(false)
+  await expect(alert).toBeHidden()
+  await expect.poll(() => writes.filter((write) => write.startsWith('POST round_shots')).length).toBeGreaterThan(writesBefore)
+})
+
+test('a failed hole save is sent again when the player comes back to the app', async ({ page }) => {
+  const holeWrites: Record<string, unknown>[] = []
+  let failing = true
+  await mockSignedInApp(page, { holeWrites, draftPatch: TWO_HOLES })
+  await failWritesTo(page, 'round_holes', () => failing)
+  await page.goto('/score')
+  await page.getByRole('dialog').getByRole('button', { name: '이어서 하기' }).click()
+  await page.getByRole('spinbutton', { name: '샷 후 남은 거리' }).fill('0')
+  await page.getByRole('button', { name: '🏁 홀아웃 기록' }).click()
+  await page.getByRole('dialog').getByRole('button', { name: '다음 홀로 이동' }).click()
+  const alert = page.getByRole('alert').filter({ hasText: '서버 저장에 실패했습니다' })
+  await expect(alert).toBeVisible()
+
+  // 다른 앱을 보다가 돌아온 것처럼 화면 표시 상태 변화를 알린다.
+  failing = false
+  await page.evaluate(() => document.dispatchEvent(new Event('visibilitychange')))
+  await expect(alert).toBeHidden()
+  await expect.poll(() => holeWrites.some((hole) => hole.hole_number === 1)).toBe(true)
+})
+
+test('nothing is sent again on reconnect when every shot is already saved', async ({ page, context }) => {
+  const writes: string[] = []
+  await mockSignedInApp(page, { writes })
+  await page.goto('/score')
+  await page.getByRole('dialog').getByRole('button', { name: '이어서 하기' }).click()
+  await page.getByRole('spinbutton', { name: '샷 후 남은 거리' }).fill('40')
+  await page.getByRole('button', { name: '✓ 샷 결과 저장' }).click()
+  await expect.poll(() => writes.filter((write) => write.startsWith('POST round_shots')).length).toBe(1)
+  await context.setOffline(true)
+  await context.setOffline(false)
+  await page.evaluate(() => document.dispatchEvent(new Event('visibilitychange')))
+  await page.waitForTimeout(800)
+  expect(writes.filter((write) => write.startsWith('POST round_shots'))).toHaveLength(1)
+})
