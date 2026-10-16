@@ -99,21 +99,21 @@ export interface ShotRow {
   penalty: number
 }
 
-export interface AchievementHoleRow {
-  round_id: string
-  hole_number: number
-  par: number
-  score: number
-  putts: number
-  fairway_hit: boolean | null
-  gir: boolean
-}
-
-export interface AchievementShotRow {
-  round_id: string
-  club: string
-  shot_distance: number
-  penalty: number
+/** 서버 함수 get_my_trophy_stats가 돌려주는 트로피 판정용 집계. */
+export interface TrophyStats {
+  birdies: number
+  eagles: number
+  fairway_holes: number
+  fairway_hits: number
+  gir_holes: number
+  gir_hits: number
+  best_full_round_score: number | null
+  has_even_par_round: boolean
+  has_under_par_round: boolean
+  has_putt_rhythm_round: boolean
+  has_long_drive: boolean
+  has_clean_round: boolean
+  has_par_or_better_nine: boolean
 }
 
 export interface TrophyItem {
