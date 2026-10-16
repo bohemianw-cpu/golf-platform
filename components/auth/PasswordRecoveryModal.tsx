@@ -2,6 +2,7 @@
 
 import { useMemo, useState, type FormEvent } from 'react'
 import { createClient } from '@/utils/supabase/client'
+import { passwordProblem } from '@/utils/password-check'
 
 interface PasswordRecoveryModalProps {
   onClose: () => void
@@ -18,16 +19,17 @@ export default function PasswordRecoveryModal({ onClose }: PasswordRecoveryModal
   const savePassword = async (event: FormEvent) => {
     event.preventDefault()
     setErrorMsg('')
-    if (password.length < 8) {
-      setErrorMsg('새 비밀번호는 8자 이상 입력해 주세요.')
-      return
-    }
     if (password !== confirmation) {
       setErrorMsg('비밀번호가 일치하지 않습니다.')
       return
     }
     setSaving(true)
     try {
+      const problem = await passwordProblem(password)
+      if (problem) {
+        setErrorMsg(problem)
+        return
+      }
       const { error } = await supabase.auth.updateUser({ password })
       if (error) throw error
       setPassword('')

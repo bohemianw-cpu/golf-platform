@@ -5,6 +5,7 @@ import { createClient } from '@/utils/supabase/client'
 import { getGolfLevelGroup, GOLF_LEVEL_GROUPS } from '@/utils/golf/levels'
 import { AgreementDetails } from './AgreementDetails'
 import { AI_ANALYSIS_CONSENT_VERSION, PRIVACY_NOTICE_VERSION, SHARING_CONSENT_VERSION, SIGNUP_TERMS_VERSION } from '@/utils/consent'
+import { passwordProblem } from '@/utils/password-check'
 
 interface AuthModalProps {
   isOpen: boolean
@@ -54,6 +55,9 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
           throw new Error('핸디캡은 -10부터 54 사이로 입력해 주세요.')
         }
         const skillGroup = getGolfLevelGroup(parsedHandicap)
+        // Supabase 무료 요금제에는 유출 비밀번호 차단이 없어 가입 전에 앱에서 확인한다.
+        const problem = await passwordProblem(password)
+        if (problem) throw new Error(problem)
 
         // 프로필 생성 트리거에서 활용할 수 있도록 가입 메타데이터에 함께 저장
         const { data, error } = await supabase.auth.signUp({
@@ -226,10 +230,10 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
             <input
               type="password"
               required
-              minLength={6}
+              minLength={isSignUp ? 8 : 6}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="6자 이상 입력"
+              placeholder={isSignUp ? '8자 이상, 다른 곳에서 쓰지 않는 비밀번호' : '비밀번호 입력'}
               style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #ddd', boxSizing: 'border-box' }}
             />
           </div>}
