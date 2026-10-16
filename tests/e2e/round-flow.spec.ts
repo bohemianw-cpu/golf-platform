@@ -306,3 +306,61 @@ test('sign-up is blocked before reaching Supabase when the password appears in a
   await expect(page.getByText(/유출된 적이 있는 비밀번호/)).toBeVisible()
   expect(authRequests.filter((path) => path.endsWith('/signup'))).toEqual([])
 })
+
+async function mockCourseSearch(page: Page) {
+  const course = { id: COURSE_ID, name: '서버복구 CC', region: '서울', venue_kind: 'physical', supports_field: true, supports_screen: false, hole_count: 1, aliases: [] }
+  for (const rpc of ['search_verified_golf_courses_by_mode', 'list_popular_verified_golf_courses']) {
+    await page.route(`**/rest/v1/rpc/${rpc}*`, (route) => route.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify([course]) }))
+  }
+}
+
+test('the course search opens on focus, closes with Escape, and clears a chosen course when retyped', async ({ page }) => {
+  await mockSignedInApp(page, { draft: false })
+  await mockCourseSearch(page)
+  await page.goto('/score')
+  const search = page.getByRole('searchbox', { name: '골프장 이름 검색' })
+  const results = page.getByRole('list', { name: '골프장 검색 결과' })
+
+  await search.click()
+  await expect(results.getByText('서버복구 CC')).toBeVisible()
+  await search.fill('서버')
+  await expect(results.getByText('서버복구 CC')).toBeVisible()
+  await search.press('Escape')
+  await expect(results).toBeHidden()
+  await expect(search).toHaveValue('서버')
+
+  await search.fill('서버복')
+  await results.getByText('서버복구 CC').click()
+  await expect(results).toBeHidden()
+  await expect(search).toHaveValue('서버복구 CC')
+  const route = page.getByRole('checkbox', { name: 'OUT 코스 1홀 코스' })
+  await expect(route).toBeVisible()
+
+  await search.fill('다른')
+  await expect(search).toHaveValue('다른')
+  await expect(route).toBeHidden()
+})
+
+test('starting a round locks the course header until it is reset', async ({ page }) => {
+  await mockSignedInApp(page, { draft: false })
+  await mockCourseSearch(page)
+  await page.goto('/score')
+  const search = page.getByRole('searchbox', { name: '골프장 이름 검색' })
+
+  await search.click()
+  await page.getByRole('list', { name: '골프장 검색 결과' }).getByText('서버복구 CC').click()
+  await page.getByRole('checkbox', { name: 'OUT 코스 1홀 코스' }).check()
+  await page.getByRole('radio', { name: '화이트티' }).check()
+  await page.getByRole('button', { name: '라운드 시작', exact: true }).click()
+  await page.getByRole('dialog').getByRole('button', { name: '확인' }).click()
+
+  await expect(search).toBeDisabled()
+  await expect(page.getByRole('button', { name: '라운드 진행 중' })).toBeVisible()
+  await expect(page.getByRole('radio', { name: '필드' })).toBeHidden()
+
+  await page.getByRole('button', { name: '🗑️ 초기화' }).click()
+  await page.getByRole('dialog').getByRole('button', { name: '초기화' }).click()
+  await expect(search).toBeEnabled()
+  await expect(search).toHaveValue('')
+  await expect(page.getByRole('radio', { name: '필드' })).toBeChecked()
+})
