@@ -23,7 +23,7 @@ function ShotTable({ shots }: { shots: ShotRecord[] }) {
 }
 
 const empty = (text: string) => (
-  <div style={{ padding: '24px 6px', textAlign: 'center', color: palette.slate400, fontSize: '11.5px' }}>{text}</div>
+  <div style={{ padding: '24px 6px', textAlign: 'center', color: palette.slate500, fontSize: '11.5px' }}>{text}</div>
 )
 
 interface Props {
@@ -59,12 +59,12 @@ export default function ShotComparison({ previousHole, currentHole, currentPar, 
 
         <div style={{ backgroundColor: palette.white, border: `2px solid ${palette.sky400}`, borderRadius: '10px', padding: '10px 6px' }}>
           <div style={{ borderBottom: `1px solid ${palette.sky100}`, paddingBottom: '6px', marginBottom: '8px' }}>
-            <div style={{ fontSize: '11.5px', fontWeight: 'bold', color: palette.sky600 }}>🔴 현재 홀</div>
+            <div style={{ fontSize: '11.5px', fontWeight: 'bold', color: palette.sky700 }}>🔴 현재 홀</div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '2px' }}>
               <span style={{ fontWeight: 'bold', color: palette.slate900, fontSize: '12.5px' }}>
                 {currentHole}번 홀 (Par {courseDataKnown ? currentPar : '-'})
               </span>
-              <span style={{ fontSize: '11px', color: palette.sky600, fontWeight: 'bold' }}>남은거리 {courseDataKnown ? currentPrevDistance : '-'}m</span>
+              <span style={{ fontSize: '11px', color: palette.sky700, fontWeight: 'bold' }}>남은거리 {courseDataKnown ? currentPrevDistance : '-'}m</span>
             </div>
           </div>
           {currentShots.length === 0 ? empty('티샷을 입력해 주세요.') : <ShotTable shots={currentShots} />}

@@ -7,8 +7,8 @@ import { color, palette } from '@/utils/theme'
 
 export const BALL_LIE_OPTIONS: { lie: BallLie; label: string; compactLabel?: string; badge: string | null; color: string }[] = [
   { lie: '페어웨이', label: '페어웨이', badge: null, color: color.brand },
-  { lie: '러프', label: '러프', badge: null, color: palette.yellow600 },
-  { lie: '벙커', label: '벙커', badge: null, color: palette.amber600 },
+  { lie: '러프', label: '러프', badge: null, color: palette.yellow700 },
+  { lie: '벙커', label: '벙커', badge: null, color: palette.amber700 },
   { lie: '그린', label: '그린 (On)', badge: null, color: palette.green600 },
   { lie: '해저드', label: '해저드', badge: '+1벌타', color: palette.red600 },
   { lie: '해저드티', label: '해저드 특설티', compactLabel: '해저드T', badge: '+1벌타', color: palette.red600 },
@@ -115,7 +115,7 @@ export function DistanceStepper({
           +{d}
         </button>
       ))}
-      <span style={{ fontSize: '12px', color: palette.slate500, marginLeft: '1px' }}>m</span>
+      <span style={{ fontSize: '12px', color: palette.slate600, marginLeft: '1px' }}>m</span>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { palette } from '@/utils/theme'
+import { color, palette } from '@/utils/theme'
 import { MAX_GOLF_PAR, MIN_GOLF_PAR } from '@/utils/golf/scoring'
 import { DistanceStepper } from './parts'
 import type { RoundApi } from '@/hooks/useRound'
@@ -63,7 +63,7 @@ export default function ShotHoleHeader({ previewOnly, r, disabled }: { previewOn
             whiteSpace: 'nowrap',
           }}
         >
-          <span style={{ color: palette.emerald600 }}>💡 추천:</span>
+          <span style={{ color: color.brand }}>💡 추천:</span>
           <span>{previewOnly ? '-' : r.recommendedClub}</span>
         </div>
       </div>

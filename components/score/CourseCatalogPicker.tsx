@@ -223,7 +223,7 @@ export default function CourseCatalogPicker({ courseId, playMode, screenProvider
         <button type="button" onClick={onStartRound} disabled={!canStartRound} style={{ flex: 1, padding: '9px 12px', border: 0, borderRadius: '7px', background: canStartRound ? color.brand : palette.slate400, color: palette.white, fontSize: '12px', fontWeight: 700, cursor: canStartRound ? 'pointer' : 'not-allowed', opacity: canStartRound ? 1 : 0.7 }}>
           {isSaving ? '● 저장 중…' : courseInfoLocked ? '라운드 진행 중' : '라운드 시작'}
         </button>
-        <button type="button" onClick={onUnlockCourse} disabled={!canUnlockCourse} title={canUnlockCourse ? '샷 데이터를 삭제하고 골프장·코스·티 선택을 초기화합니다.' : '등록된 라운드는 변경할 수 없습니다.'} style={{ width: '76px', flexShrink: 0, padding: '7px 8px', border: `1px solid ${palette.red200}`, borderRadius: '7px', background: palette.red100, color: canUnlockCourse ? palette.red600 : palette.slate400, fontSize: '11px', fontWeight: 700, cursor: canUnlockCourse ? 'pointer' : 'not-allowed' }}>
+        <button type="button" onClick={onUnlockCourse} disabled={!canUnlockCourse} title={canUnlockCourse ? '샷 데이터를 삭제하고 골프장·코스·티 선택을 초기화합니다.' : '등록된 라운드는 변경할 수 없습니다.'} style={{ width: '76px', flexShrink: 0, padding: '7px 8px', border: `1px solid ${palette.red200}`, borderRadius: '7px', background: palette.red100, color: canUnlockCourse ? palette.red700 : palette.slate400, fontSize: '11px', fontWeight: 700, cursor: canUnlockCourse ? 'pointer' : 'not-allowed' }}>
           🗑️ 초기화
         </button>
       </div>
