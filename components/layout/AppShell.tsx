@@ -7,6 +7,7 @@ import AuthModal from '@/components/auth/AuthModal'
 import PasswordRecoveryModal from '@/components/auth/PasswordRecoveryModal'
 import ErrorReporter from '@/components/layout/ErrorReporter'
 import { createClient } from '@/utils/supabase/client'
+import { color, palette } from '@/utils/theme'
 
 export const TAB_ITEMS = [
   { href: '/home', icon: '🏠', label: '홈' },
@@ -171,7 +172,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <AppShellContext.Provider value={shellState}>
       <ErrorReporter />
-      <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc', color: '#0f172a', paddingBottom: '80px', fontFamily: 'sans-serif' }}>
+      <div style={{ minHeight: '100vh', backgroundColor: palette.slate50, color: palette.slate900, paddingBottom: '80px', fontFamily: 'sans-serif' }}>
 
         {/* 1. 상단 글로벌 탑바 */}
         <header
@@ -183,8 +184,8 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
             left: 0,
             right: 0,
             zIndex: 50,
-            backgroundColor: '#ffffff',
-            borderBottom: '1px solid #e2e8f0',
+            backgroundColor: palette.white,
+            borderBottom: `1px solid ${palette.slate200}`,
             padding: '12px 20px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
             transform: chromeVisible ? 'translateY(0)' : 'translateY(-100%)',
@@ -199,32 +200,32 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
             >
               <span style={{ fontSize: '24px' }}>⛳</span>
               <div>
-                <div style={{ fontSize: '18px', fontWeight: 'bold', color: '#047857', letterSpacing: '-0.5px' }}>
+                <div style={{ fontSize: '18px', fontWeight: 'bold', color: color.brand, letterSpacing: '-0.5px' }}>
                   GOLF SECRETARY
                 </div>
-                <div style={{ fontSize: '10px', color: '#64748b', fontWeight: 600 }}>골프 비서 & 라운드 플랫폼</div>
+                <div style={{ fontSize: '10px', color: palette.slate500, fontWeight: 600 }}>골프 비서 & 라운드 플랫폼</div>
               </div>
             </Link>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               {authLoading ? (
-                <span style={{ fontSize: '12px', color: '#94a3b8' }}>인증 확인 중...</span>
+                <span style={{ fontSize: '12px', color: palette.slate400 }}>인증 확인 중...</span>
               ) : isLoggedIn ? (
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <Link
                     href="/my"
-                    style={{ fontSize: '13px', fontWeight: 'bold', color: '#0f172a', display: 'flex', alignItems: 'center', gap: '4px', textDecoration: 'none' }}
+                    style={{ fontSize: '13px', fontWeight: 'bold', color: palette.slate900, display: 'flex', alignItems: 'center', gap: '4px', textDecoration: 'none' }}
                   >
-                    <span style={{ color: '#047857' }}>●</span> {userNickname}님
+                    <span style={{ color: color.brand }}>●</span> {userNickname}님
                   </Link>
                   <button
                     onClick={handleLogout}
                     style={{
                       padding: '4px 10px',
                       fontSize: '11px',
-                      backgroundColor: '#f1f5f9',
-                      color: '#64748b',
-                      border: '1px solid #cbd5e1',
+                      backgroundColor: palette.slate100,
+                      color: palette.slate500,
+                      border: `1px solid ${palette.slate300}`,
                       borderRadius: '6px',
                       cursor: 'pointer',
                     }}
@@ -239,8 +240,8 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
                     padding: '6px 14px',
                     fontSize: '12px',
                     fontWeight: 'bold',
-                    backgroundColor: '#047857',
-                    color: '#ffffff',
+                    backgroundColor: color.brand,
+                    color: palette.white,
                     border: 'none',
                     borderRadius: '6px',
                     cursor: 'pointer',
@@ -268,8 +269,8 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
             left: 0,
             right: 0,
             zIndex: 50,
-            backgroundColor: '#ffffff',
-            borderTop: '1px solid #e2e8f0',
+            backgroundColor: palette.white,
+            borderTop: `1px solid ${palette.slate200}`,
             height: '64px',
             display: 'flex',
             justifyContent: 'space-around',
@@ -294,7 +295,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
                   alignItems: 'center',
                   justifyContent: 'center',
                   textDecoration: 'none',
-                  color: isActive ? '#047857' : '#64748b',
+                  color: isActive ? color.brand : palette.slate500,
                   transition: 'all 0.15s ease',
                 }}
               >

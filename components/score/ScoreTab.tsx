@@ -15,6 +15,7 @@ import { DEFAULT_CLUBS, MAX_CLUBS, sortClubs } from '@/utils/golf/clubs'
 import CourseCatalogPicker, { type GolfCourseOption, type GolfRouteOption } from './CourseCatalogPicker'
 import ScoreGuideTour from '@/components/onboarding/ScoreGuideTour'
 import { createClient } from '@/utils/supabase/client'
+import { color, palette } from '@/utils/theme'
 
 // 기존 import 경로 호환 (ClubModal 등에서 './ScoreTab'으로 가져오던 것)
 export { sortClubs } from '@/utils/golf/clubs'
@@ -151,27 +152,27 @@ export default function ScoreTab({ bottomNavVisible, sampleSessionId = null, onE
     }
     setShowEntryInfo(false)
   }
-  const entryInfoPopup = showEntryInfo ? <div role="dialog" aria-modal="true" aria-labelledby="shot-flow-notice-title" style={{ position: 'fixed', inset: 0, zIndex: 120, background: 'rgba(15,23,42,.58)', display: 'grid', placeItems: 'center', padding: 18 }}><section style={{ width: 'min(100%,420px)', padding: 20, borderRadius: 14, background: '#fff', boxShadow: '0 18px 48px rgba(15,23,42,.25)' }}><h2 id="shot-flow-notice-title" style={{ margin: '0 0 9px', fontSize: 17 }}>샷 기록 안내</h2><p style={{ margin: 0, color: '#475569', fontSize: 13, lineHeight: 1.7 }}>샘플 입력은 MY 탭에서 시작하며 가상 기록으로 저장되어 실제 평균과 배지·트로피에 반영되지 않습니다. 실제 샷 기록만 정식 라운드로 저장됩니다.</p><p style={{ margin: '8px 0 16px', color: '#92400e', fontSize: 12, lineHeight: 1.6 }}>실제 기록은 유료 이용 대상이며, 현재 포인트 결제·차감 기능은 준비 중이라 지금은 포인트가 차감되지 않습니다.</p><button type="button" onClick={closeEntryInfo} style={{ width: '100%', padding: 10, border: 0, borderRadius: 8, background: '#047857', color: '#fff', fontWeight: 700 }}>확인</button></section></div> : null
+  const entryInfoPopup = showEntryInfo ? <div role="dialog" aria-modal="true" aria-labelledby="shot-flow-notice-title" style={{ position: 'fixed', inset: 0, zIndex: 120, background: 'rgba(15,23,42,.58)', display: 'grid', placeItems: 'center', padding: 18 }}><section style={{ width: 'min(100%,420px)', padding: 20, borderRadius: 14, background: palette.white, boxShadow: '0 18px 48px rgba(15,23,42,.25)' }}><h2 id="shot-flow-notice-title" style={{ margin: '0 0 9px', fontSize: 17 }}>샷 기록 안내</h2><p style={{ margin: 0, color: palette.slate600, fontSize: 13, lineHeight: 1.7 }}>샘플 입력은 MY 탭에서 시작하며 가상 기록으로 저장되어 실제 평균과 배지·트로피에 반영되지 않습니다. 실제 샷 기록만 정식 라운드로 저장됩니다.</p><p style={{ margin: '8px 0 16px', color: palette.amber800, fontSize: 12, lineHeight: 1.6 }}>실제 기록은 유료 이용 대상이며, 현재 포인트 결제·차감 기능은 준비 중이라 지금은 포인트가 차감되지 않습니다.</p><button type="button" onClick={closeEntryInfo} style={{ width: '100%', padding: 10, border: 0, borderRadius: 8, background: color.brand, color: palette.white, fontWeight: 700 }}>확인</button></section></div> : null
   const resultNotice = round.holeResultNotice ? (() => {
     const notice = round.holeResultNotice
-    const resultColor = notice.scoreDiff < 0 ? '#047857' : notice.scoreDiff > 0 ? '#c2410c' : '#2563eb'
-    const resultTint = notice.scoreDiff < 0 ? '#ecfdf5' : notice.scoreDiff > 0 ? '#fff7ed' : '#eff6ff'
+    const resultColor = notice.scoreDiff < 0 ? color.brand : notice.scoreDiff > 0 ? palette.orange700 : palette.blue600
+    const resultTint = notice.scoreDiff < 0 ? palette.emerald50 : notice.scoreDiff > 0 ? palette.orange50 : palette.blue50
     const scoreLabel = notice.scoreDiff === 0 ? '기준 파' : `${notice.scoreDiff > 0 ? '+' : ''}${notice.scoreDiff}`
     return <div role="dialog" aria-modal="true" aria-labelledby="hole-result-title" style={{ position: 'fixed', inset: 0, zIndex: 130, display: 'grid', placeItems: 'center', padding: 18, background: 'rgba(15,23,42,.62)', backdropFilter: 'blur(3px)' }}>
-      <section style={{ width: 'min(100%,360px)', overflow: 'hidden', borderRadius: 20, background: '#fff', boxShadow: '0 24px 70px rgba(15,23,42,.3)' }}>
-        <div style={{ padding: '20px 20px 17px', textAlign: 'center', background: `linear-gradient(145deg, ${resultTint}, #fff 78%)` }}>
-          <div style={{ color: '#64748b', fontSize: 12, fontWeight: 700, letterSpacing: '.08em' }}>HOLE {notice.holeNumber} · PAR {notice.par}</div>
+      <section style={{ width: 'min(100%,360px)', overflow: 'hidden', borderRadius: 20, background: palette.white, boxShadow: '0 24px 70px rgba(15,23,42,.3)' }}>
+        <div style={{ padding: '20px 20px 17px', textAlign: 'center', background: `linear-gradient(145deg, ${resultTint}, ${palette.white} 78%)` }}>
+          <div style={{ color: palette.slate500, fontSize: 12, fontWeight: 700, letterSpacing: '.08em' }}>HOLE {notice.holeNumber} · PAR {notice.par}</div>
           <h2 id="hole-result-title" style={{ margin: '8px 0 12px', color: resultColor, fontSize: 30, lineHeight: 1.15, fontWeight: 900 }}>{notice.label}</h2>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 9, padding: '7px 14px', borderRadius: 999, background: '#fff', border: `1px solid ${resultColor}33`, color: '#334155', fontSize: 13 }}>
-            <span>타수 <strong style={{ color: '#0f172a', fontSize: 17 }}>{notice.score}</strong></span><span aria-hidden="true" style={{ color: '#cbd5e1' }}>·</span><span style={{ color: resultColor, fontWeight: 800 }}>{scoreLabel}</span>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 9, padding: '7px 14px', borderRadius: 999, background: palette.white, border: `1px solid ${resultColor}33`, color: palette.slate700, fontSize: 13 }}>
+            <span>타수 <strong style={{ color: palette.slate900, fontSize: 17 }}>{notice.score}</strong></span><span aria-hidden="true" style={{ color: palette.slate300 }}>·</span><span style={{ color: resultColor, fontWeight: 800 }}>{scoreLabel}</span>
           </div>
         </div>
         <div style={{ padding: '0 18px 18px' }}>
           <div style={{ display: 'flex', gap: 8, alignItems: 'stretch' }}>
-            <button type="button" onClick={() => { round.dismissHoleResultNotice(); void round.undoPreviousHole(true) }} style={{ flex: '0 0 30%', padding: '8px 4px', border: '1px solid #cbd5e1', borderRadius: 11, background: '#f8fafc', color: '#475569', fontSize: 10, fontWeight: 700, lineHeight: 1.35, cursor: 'pointer' }}>
+            <button type="button" onClick={() => { round.dismissHoleResultNotice(); void round.undoPreviousHole(true) }} style={{ flex: '0 0 30%', padding: '8px 4px', border: `1px solid ${palette.slate300}`, borderRadius: 11, background: palette.slate50, color: palette.slate600, fontSize: 10, fontWeight: 700, lineHeight: 1.35, cursor: 'pointer' }}>
               <span style={{ display: 'block' }}>↶ 직전 샷</span><span style={{ display: 'block' }}>취소</span>
             </button>
-            <button type="button" autoFocus onClick={round.dismissHoleResultNotice} style={{ flex: 1, padding: '13px 10px', border: 0, borderRadius: 11, background: '#047857', color: '#fff', fontSize: 14, fontWeight: 800, cursor: 'pointer', boxShadow: '0 4px 10px rgba(4,120,87,.2)' }}>
+            <button type="button" autoFocus onClick={round.dismissHoleResultNotice} style={{ flex: 1, padding: '13px 10px', border: 0, borderRadius: 11, background: color.brand, color: palette.white, fontSize: 14, fontWeight: 800, cursor: 'pointer', boxShadow: '0 4px 10px rgba(4,120,87,.2)' }}>
               {notice.isFinalHole ? '라운드 리포트 보기' : '다음 홀로 이동'}
             </button>
           </div>
@@ -219,9 +220,9 @@ export default function ScoreTab({ bottomNavVisible, sampleSessionId = null, onE
   }, [configureCourseRoutes])
 
   if (!clubBagLoaded || clubBagError) {
-    return <div role={clubBagError ? 'alert' : 'status'} style={{ margin: '24px auto', padding: '20px 16px', maxWidth: 440, textAlign: 'center', color: '#475569' }}>
+    return <div role={clubBagError ? 'alert' : 'status'} style={{ margin: '24px auto', padding: '20px 16px', maxWidth: 440, textAlign: 'center', color: palette.slate600 }}>
       <p>{clubBagError ?? '클럽 설정을 불러오는 중입니다.'}</p>
-      {clubBagError && <button type="button" onClick={() => { setClubBagLoaded(false); setClubBagError(null); setClubBagLoadAttempt((count) => count + 1) }} style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid #cbd5e1', background: '#fff', cursor: 'pointer' }}>다시 시도</button>}
+      {clubBagError && <button type="button" onClick={() => { setClubBagLoaded(false); setClubBagError(null); setClubBagLoadAttempt((count) => count + 1) }} style={{ padding: '8px 14px', borderRadius: 8, border: `1px solid ${palette.slate300}`, background: palette.white, cursor: 'pointer' }}>다시 시도</button>}
     </div>
   }
 
@@ -247,7 +248,7 @@ export default function ScoreTab({ bottomNavVisible, sampleSessionId = null, onE
           isRegistering={round.isSaving}
           saveError={round.saveError}
         />
-        {round.isSample && onExitSample && <button type="button" onClick={onExitSample} style={{ position: 'fixed', left: 12, bottom: bottomNavVisible ? 74 : 12, zIndex: 60, padding: '8px 11px', border: '1px solid #93c5fd', borderRadius: 999, background: '#eff6ff', color: '#1d4ed8', fontWeight: 700 }}>샘플 종료</button>}
+        {round.isSample && onExitSample && <button type="button" onClick={onExitSample} style={{ position: 'fixed', left: 12, bottom: bottomNavVisible ? 74 : 12, zIndex: 60, padding: '8px 11px', border: `1px solid ${palette.blue300}`, borderRadius: 999, background: palette.blue50, color: palette.blue700, fontWeight: 700 }}>샘플 종료</button>}
         {entryInfoPopup}
         {dialog}
         {resultNotice}
@@ -265,23 +266,23 @@ export default function ScoreTab({ bottomNavVisible, sampleSessionId = null, onE
 
   return (
     <div style={{ padding: '16px', maxWidth: '1000px', margin: '0 auto', fontFamily: 'sans-serif' }}>
-      {round.isSample && <div role="status" style={{ marginBottom: 10, padding: '9px 12px', border: '1px solid #93c5fd', borderRadius: 9, background: '#eff6ff', color: '#1e40af', fontSize: 12, display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'center' }}><span>샘플 입력 중 · 평균·배지·트로피 제외</span><button type="button" onClick={onExitSample} style={{ border: 0, background: 'transparent', color: '#1d4ed8', fontWeight: 700 }}>종료</button></div>}
+      {round.isSample && <div role="status" style={{ marginBottom: 10, padding: '9px 12px', border: `1px solid ${palette.blue300}`, borderRadius: 9, background: palette.blue50, color: palette.blue800, fontSize: 12, display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'center' }}><span>샘플 입력 중 · 평균·배지·트로피 제외</span><button type="button" onClick={onExitSample} style={{ border: 0, background: 'transparent', color: palette.blue700, fontWeight: 700 }}>종료</button></div>}
       {/* 상단 헤더: 골프장/코스 이름 */}
       <div
         data-score-guide-target="course"
         style={{
           padding: '12px',
-          backgroundColor: '#f8fafc',
+          backgroundColor: palette.slate50,
           borderRadius: '12px',
-          border: '1px solid #e2e8f0',
+          border: `1px solid ${palette.slate200}`,
           marginBottom: '12px',
         }}
       >
-        {!courseInfoLocked && <fieldset data-score-guide-target="play-mode" style={{ margin: '0 0 10px', padding: '8px 10px', border: '1px solid #cbd5e1', borderRadius: '8px', background: '#fff' }}>
-          <legend style={{ padding: '0 4px', fontSize: '11px', fontWeight: 700, color: '#334155' }}>이번 라운드 방식 (필드 자동선택)</legend>
+        {!courseInfoLocked && <fieldset data-score-guide-target="play-mode" style={{ margin: '0 0 10px', padding: '8px 10px', border: `1px solid ${palette.slate300}`, borderRadius: '8px', background: palette.white }}>
+          <legend style={{ padding: '0 4px', fontSize: '11px', fontWeight: 700, color: palette.slate700 }}>이번 라운드 방식 (필드 자동선택)</legend>
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             {(['field', 'screen'] as const).map((mode) => (
-              <label key={mode} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: mode === 'screen' ? '#94a3b8' : '#334155', cursor: courseInfoLocked || (mode === 'screen' && !SCREEN_ROUNDS_ENABLED) ? 'not-allowed' : 'pointer' }}>
+              <label key={mode} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: mode === 'screen' ? palette.slate400 : palette.slate700, cursor: courseInfoLocked || (mode === 'screen' && !SCREEN_ROUNDS_ENABLED) ? 'not-allowed' : 'pointer' }}>
                 <input
                   type="radio"
                   name="round-play-mode"
@@ -302,7 +303,7 @@ export default function ScoreTab({ bottomNavVisible, sampleSessionId = null, onE
           </div>
           {playMode === 'screen' && (
             <div style={{ marginTop: 8 }}>
-              <label htmlFor="round-screen-provider" style={{ display: 'block', marginBottom: 4, fontSize: 11, fontWeight: 700, color: '#334155' }}>스크린 서비스 (필수)</label>
+              <label htmlFor="round-screen-provider" style={{ display: 'block', marginBottom: 4, fontSize: 11, fontWeight: 700, color: palette.slate700 }}>스크린 서비스 (필수)</label>
               <select
                 id="round-screen-provider"
                 value={round.screenProvider ?? ''}
@@ -311,13 +312,13 @@ export default function ScoreTab({ bottomNavVisible, sampleSessionId = null, onE
                   handleCourseSelect(null)
                   round.setScreenProvider(event.target.value || null)
                 }}
-                style={{ width: '100%', padding: '7px 8px', border: '1px solid #cbd5e1', borderRadius: 7, background: '#fff', color: '#334155', fontSize: 12 }}
+                style={{ width: '100%', padding: '7px 8px', border: `1px solid ${palette.slate300}`, borderRadius: 7, background: palette.white, color: palette.slate700, fontSize: 12 }}
               >
                 <option value="">{screenProvidersLoading ? '서비스 목록 불러오는 중…' : '스크린 서비스를 선택해 주세요'}</option>
                 {screenProviders.map((provider) => <option key={provider} value={provider}>{provider}</option>)}
               </select>
-              {screenProvidersError && <p role="alert" style={{ margin: '5px 0 0', fontSize: 10, color: '#b91c1c' }}>스크린 서비스 목록을 불러오지 못했습니다.</p>}
-              {!screenProvidersLoading && !screenProvidersError && screenProviders.length === 0 && <p role="status" style={{ margin: '5px 0 0', fontSize: 10, color: '#64748b' }}>검증된 스크린 코스 거리 자료가 아직 없습니다.</p>}
+              {screenProvidersError && <p role="alert" style={{ margin: '5px 0 0', fontSize: 10, color: palette.red700 }}>스크린 서비스 목록을 불러오지 못했습니다.</p>}
+              {!screenProvidersLoading && !screenProvidersError && screenProviders.length === 0 && <p role="status" style={{ margin: '5px 0 0', fontSize: 10, color: palette.slate500 }}>검증된 스크린 코스 거리 자료가 아직 없습니다.</p>}
             </div>
           )}
         </fieldset>}
@@ -372,7 +373,7 @@ export default function ScoreTab({ bottomNavVisible, sampleSessionId = null, onE
                 setCourseSearchQuery(round.golfClubName)
               }
             }}
-            style={{ flex: 1, minWidth: 0, boxSizing: 'border-box', padding: '8px 10px', borderRadius: '6px', border: '1.5px solid #047857', fontWeight: 'bold', fontSize: '13.5px', color: round.golfClubName ? '#0f172a' : '#64748b', backgroundColor: '#ffffff', textAlign: 'left' }}
+            style={{ flex: 1, minWidth: 0, boxSizing: 'border-box', padding: '8px 10px', borderRadius: '6px', border: `1.5px solid ${color.brand}`, fontWeight: 'bold', fontSize: '13.5px', color: round.golfClubName ? palette.slate900 : palette.slate500, backgroundColor: palette.white, textAlign: 'left' }}
           />
           <ScoreGuideTour
             enabled={scoreGuideEnabled}
@@ -409,13 +410,13 @@ export default function ScoreTab({ bottomNavVisible, sampleSessionId = null, onE
       {saveError && (
         <div
           role="alert"
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', padding: '10px 14px', marginBottom: '12px', backgroundColor: '#fef2f2', border: '1px solid #fecaca', borderRadius: '10px', color: '#b91c1c', fontSize: '12.5px' }}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', padding: '10px 14px', marginBottom: '12px', backgroundColor: palette.red50, border: `1px solid ${palette.red200}`, borderRadius: '10px', color: palette.red700, fontSize: '12.5px' }}
         >
           <span>{saveError}</span>
           <button
             onClick={round.retrySync}
             disabled={isSaving}
-            style={{ flexShrink: 0, padding: '6px 10px', backgroundColor: '#dc2626', color: '#ffffff', border: 'none', borderRadius: '6px', fontSize: '12px', fontWeight: 'bold', cursor: 'pointer' }}
+            style={{ flexShrink: 0, padding: '6px 10px', backgroundColor: palette.red600, color: palette.white, border: 'none', borderRadius: '6px', fontSize: '12px', fontWeight: 'bold', cursor: 'pointer' }}
           >
             다시 시도
           </button>
@@ -425,32 +426,32 @@ export default function ScoreTab({ bottomNavVisible, sampleSessionId = null, onE
       {!showShotCard && <RoundMetrics round={round} standalone />}
 
       {!isRoundComplete && round.playMode && hasCompleteCourseLayout && round.currentGreenOptions.length > 1 && (
-        <fieldset style={{ margin: '0 0 12px', padding: '8px 10px', border: '1px solid #93c5fd', borderRadius: '10px', background: '#eff6ff' }}>
-          <legend style={{ padding: '0 4px', fontSize: '11px', fontWeight: 700, color: '#1d4ed8' }}>{new Set(round.currentGreenOptions.map((option) => option.par ?? round.currentPar)).size > 1 ? '현재 홀 기준 파·티 위치 선택' : round.currentGreenOptions.some((option) => option.green_name.toLowerCase().startsWith('white tee')) ? '현재 홀 WHITE 티 위치 선택' : '현재 홀 그린 선택'}</legend>
+        <fieldset style={{ margin: '0 0 12px', padding: '8px 10px', border: `1px solid ${palette.blue300}`, borderRadius: '10px', background: palette.blue50 }}>
+          <legend style={{ padding: '0 4px', fontSize: '11px', fontWeight: 700, color: palette.blue700 }}>{new Set(round.currentGreenOptions.map((option) => option.par ?? round.currentPar)).size > 1 ? '현재 홀 기준 파·티 위치 선택' : round.currentGreenOptions.some((option) => option.green_name.toLowerCase().startsWith('white tee')) ? '현재 홀 WHITE 티 위치 선택' : '현재 홀 그린 선택'}</legend>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-            {round.currentGreenOptions.map((green) => <label key={green.green_code} style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '12px', color: '#1e3a8a' }}>
+            {round.currentGreenOptions.map((green) => <label key={green.green_code} style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '12px', color: palette.blue900 }}>
               <input type="radio" name={`green-hole-${currentHole}`} checked={round.currentGreenCode === green.green_code} disabled={round.isRegistered || currentShots.length > 0 || completedHoles.some((hole) => hole.holeNumber === currentHole)} onChange={() => round.changeGreen(green.green_code, green.green_name, green.distance_m, green.par)} />
               {green.green_name} · {green.distance_m}m
             </label>)}
           </div>
-          <p style={{ margin: '5px 0 0', fontSize: '10px', color: '#475569' }}>{new Set(round.currentGreenOptions.map((option) => option.par ?? round.currentPar)).size > 1 ? '선택한 구성에 따라 기준 파와 거리가 함께 바뀝니다. 그 홀 첫 샷 전까지 변경할 수 있습니다.' : '그 홀 첫 샷을 입력하기 전까지 변경할 수 있습니다.'}</p>
+          <p style={{ margin: '5px 0 0', fontSize: '10px', color: palette.slate600 }}>{new Set(round.currentGreenOptions.map((option) => option.par ?? round.currentPar)).size > 1 ? '선택한 구성에 따라 기준 파와 거리가 함께 바뀝니다. 그 홀 첫 샷 전까지 변경할 수 있습니다.' : '그 홀 첫 샷을 입력하기 전까지 변경할 수 있습니다.'}</p>
         </fieldset>
       )}
 
       {/* 샷 입력 / 라운드 완료 */}
       <div data-score-guide-target="shot-entry">
       {isRoundComplete ? (
-        <div style={{ backgroundColor: '#ecfdf5', border: '1.5px solid #86efac', borderRadius: '12px', padding: '18px 16px', marginBottom: '20px', textAlign: 'center' }}>
-          <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#166534', marginBottom: '4px' }}>라운드가 끝났습니다</div>
-          <div style={{ fontSize: '12.5px', color: '#475569', marginBottom: '14px' }}>{round.isRegistered ? '등록된 스코어는 수정할 수 없습니다.' : '리포트를 보거나 마지막 홀을 수정할 수 있어요.'}</div>
+        <div style={{ backgroundColor: palette.emerald50, border: `1.5px solid ${palette.green300}`, borderRadius: '12px', padding: '18px 16px', marginBottom: '20px', textAlign: 'center' }}>
+          <div style={{ fontSize: '16px', fontWeight: 'bold', color: palette.green800, marginBottom: '4px' }}>라운드가 끝났습니다</div>
+          <div style={{ fontSize: '12.5px', color: palette.slate600, marginBottom: '14px' }}>{round.isRegistered ? '등록된 스코어는 수정할 수 없습니다.' : '리포트를 보거나 마지막 홀을 수정할 수 있어요.'}</div>
           <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <button onClick={() => round.setShowRoundReport(true)} style={{ padding: '10px 14px', backgroundColor: '#047857', color: '#ffffff', border: 'none', borderRadius: '8px', fontSize: '13px', fontWeight: 'bold', cursor: 'pointer' }}>
+            <button onClick={() => round.setShowRoundReport(true)} style={{ padding: '10px 14px', backgroundColor: color.brand, color: palette.white, border: 'none', borderRadius: '8px', fontSize: '13px', fontWeight: 'bold', cursor: 'pointer' }}>
               리포트 보기
             </button>
-            {!round.isRegistered && <button onClick={() => void round.undoPreviousHole()} disabled={isSaving} style={{ padding: '10px 14px', backgroundColor: '#ffffff', color: '#475569', border: '1px solid #cbd5e1', borderRadius: '8px', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
+            {!round.isRegistered && <button onClick={() => void round.undoPreviousHole()} disabled={isSaving} style={{ padding: '10px 14px', backgroundColor: palette.white, color: palette.slate600, border: `1px solid ${palette.slate300}`, borderRadius: '8px', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
               {completedHoles.length}번 홀 수정
             </button>}
-            {(round.isRegistered || round.isSample) && <button onClick={round.startNewRound} style={{ padding: '10px 14px', backgroundColor: '#ffffff', color: '#047857', border: '1px solid #86efac', borderRadius: '8px', fontSize: '13px', fontWeight: 'bold', cursor: 'pointer' }}>
+            {(round.isRegistered || round.isSample) && <button onClick={round.startNewRound} style={{ padding: '10px 14px', backgroundColor: palette.white, color: color.brand, border: `1px solid ${palette.green300}`, borderRadius: '8px', fontSize: '13px', fontWeight: 'bold', cursor: 'pointer' }}>
               새 라운드 시작
             </button>}
           </div>
@@ -458,7 +459,7 @@ export default function ScoreTab({ bottomNavVisible, sampleSessionId = null, onE
       ) : showShotCard ? (
         <ShotInputCard round={round} clubs={clubs} onOpenClubSettings={() => setIsClubModalOpen(true)} disabled={!courseInfoLocked} onDisabledClick={requestRoundStart} />
       ) : (
-        <div role="status" style={{ padding: '24px 16px', marginBottom: '16px', border: '1px dashed #94a3b8', borderRadius: '12px', background: '#fff', textAlign: 'center', color: '#475569', fontSize: '13px' }}>
+        <div role="status" style={{ padding: '24px 16px', marginBottom: '16px', border: `1px dashed ${palette.slate400}`, borderRadius: '12px', background: palette.white, textAlign: 'center', color: palette.slate600, fontSize: '13px' }}>
           선택한 구장이 지원하는 필드/스크린 방식을 확인해 주세요.
         </div>
       )}

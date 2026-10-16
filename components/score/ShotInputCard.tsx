@@ -6,16 +6,17 @@ import { getPenaltyByLie, MAX_GOLF_DISTANCE_M, MAX_GOLF_PAR, MIN_GOLF_PAR } from
 import { clubButtonLabel } from '@/utils/golf/clubs'
 import type { RoundApi } from '@/hooks/useRound'
 import RoundMetrics from './RoundMetrics'
+import { color, palette } from '@/utils/theme'
 
 const BALL_LIE_OPTIONS: { lie: BallLie; label: string; compactLabel?: string; badge: string | null; color: string }[] = [
-  { lie: '페어웨이', label: '페어웨이', badge: null, color: '#047857' },
-  { lie: '러프', label: '러프', badge: null, color: '#ca8a04' },
-  { lie: '벙커', label: '벙커', badge: null, color: '#d97706' },
-  { lie: '그린', label: '그린 (On)', badge: null, color: '#16a34a' },
-  { lie: '해저드', label: '해저드', badge: '+1벌타', color: '#dc2626' },
-  { lie: '해저드티', label: '해저드 특설티', compactLabel: '해저드T', badge: '+1벌타', color: '#dc2626' },
-  { lie: 'OB', label: 'OB (원위치)', compactLabel: 'OB 원위치', badge: '+1벌타', color: '#b91c1c' },
-  { lie: 'OB티', label: 'OB 특설티', compactLabel: 'OB 특설T', badge: '+2벌타', color: '#991b1b' },
+  { lie: '페어웨이', label: '페어웨이', badge: null, color: color.brand },
+  { lie: '러프', label: '러프', badge: null, color: palette.yellow600 },
+  { lie: '벙커', label: '벙커', badge: null, color: palette.amber600 },
+  { lie: '그린', label: '그린 (On)', badge: null, color: palette.green600 },
+  { lie: '해저드', label: '해저드', badge: '+1벌타', color: palette.red600 },
+  { lie: '해저드티', label: '해저드 특설티', compactLabel: '해저드T', badge: '+1벌타', color: palette.red600 },
+  { lie: 'OB', label: 'OB (원위치)', compactLabel: 'OB 원위치', badge: '+1벌타', color: palette.red700 },
+  { lie: 'OB티', label: 'OB 특설티', compactLabel: 'OB 특설T', badge: '+2벌타', color: palette.red800 },
 ]
 
 const distBtn: React.CSSProperties = {
@@ -23,9 +24,9 @@ const distBtn: React.CSSProperties = {
   height: '32px',
   padding: '0 4px',
   borderRadius: '8px',
-  border: '1px solid #cbd5e1',
-  backgroundColor: '#f1f5f9',
-  color: '#1e293b',
+  border: `1px solid ${palette.slate300}`,
+  backgroundColor: palette.slate100,
+  color: palette.slate800,
   fontSize: '12px',
   fontWeight: 'bold',
   cursor: 'pointer',
@@ -39,12 +40,12 @@ const distInput: React.CSSProperties = {
   boxSizing: 'border-box',
   padding: '0 4px',
   borderRadius: '8px',
-  border: '1.5px solid #3b82f6',
+  border: `1.5px solid ${palette.blue500}`,
   fontSize: '14px',
   fontWeight: 'bold',
-  color: '#1d4ed8',
+  color: palette.blue700,
   textAlign: 'center',
-  backgroundColor: '#ffffff',
+  backgroundColor: palette.white,
   flexShrink: 0,
 }
 
@@ -104,11 +105,11 @@ function DistanceStepper({
           ...distInput,
           width: fineAdjustment ? '58px' : '64px',
           height: '40px',
-          border: '2px solid #2563eb',
-          backgroundColor: '#eff6ff',
-          boxShadow: '0 0 0 2px #dbeafe',
+          border: `2px solid ${palette.blue600}`,
+          backgroundColor: palette.blue50,
+          boxShadow: `0 0 0 2px ${palette.blue100}`,
           fontSize: fineAdjustment ? '18px' : '22px',
-          color: '#1e40af',
+          color: palette.blue800,
         } : distInput}
         aria-label={name}
       />
@@ -117,7 +118,7 @@ function DistanceStepper({
           +{d}
         </button>
       ))}
-      <span style={{ fontSize: '12px', color: '#64748b', marginLeft: '1px' }}>m</span>
+      <span style={{ fontSize: '12px', color: palette.slate500, marginLeft: '1px' }}>m</span>
     </div>
   )
 }
@@ -158,9 +159,9 @@ export default function ShotInputCard({ round: r, clubs, onOpenClubSettings, dis
     <div
       style={{
         position: 'relative',
-        backgroundColor: '#ffffff',
+        backgroundColor: palette.white,
         borderRadius: '12px',
-        border: '1px solid #e2e8f0',
+        border: `1px solid ${palette.slate200}`,
         overflow: 'hidden',
         marginBottom: '8px',
         boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
@@ -169,14 +170,14 @@ export default function ShotInputCard({ round: r, clubs, onOpenClubSettings, dis
       <RoundMetrics round={r} />
       <div style={{ padding: '8px 10px' }}>
       {/* 홀 안내 + 기준 파/거리 (한 줄) */}
-      <div style={{ paddingBottom: '5px', borderBottom: '1px solid #f1f5f9', marginBottom: '6px' }}>
+      <div style={{ paddingBottom: '5px', borderBottom: `1px solid ${palette.slate100}`, marginBottom: '6px' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '6px' }}>
           <select
             value={previewOnly ? '' : r.currentPar}
             onChange={(e) => r.changeHolePar(r.currentHole - 1, Number(e.target.value))}
             disabled={disabled || r.isRegistered}
             aria-label="기준 파"
-            style={{ height: '32px', padding: '0 4px', borderRadius: '8px', border: '1px solid #cbd5e1', fontSize: '13px', fontWeight: 'bold', color: '#0f172a', flexShrink: 0, backgroundColor: r.isRegistered ? '#f1f5f9' : '#fff' }}
+            style={{ height: '32px', padding: '0 4px', borderRadius: '8px', border: `1px solid ${palette.slate300}`, fontSize: '13px', fontWeight: 'bold', color: palette.slate900, flexShrink: 0, backgroundColor: r.isRegistered ? palette.slate100 : palette.white }}
           >
             {previewOnly && <option value="">Par -</option>}
             {Array.from({ length: MAX_GOLF_PAR - MIN_GOLF_PAR + 1 }, (_, index) => MIN_GOLF_PAR + index).map((p) => (
@@ -196,33 +197,33 @@ export default function ShotInputCard({ round: r, clubs, onOpenClubSettings, dis
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: '6px',
-          backgroundColor: '#f0fdf4',
-          border: '1.5px solid #86efac',
+          backgroundColor: palette.green50,
+          border: `1.5px solid ${palette.green300}`,
           borderRadius: '10px',
           padding: '4px 8px',
           marginBottom: '5px',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-          <span style={{ fontSize: '12px', fontWeight: 'bold', color: '#166534', whiteSpace: 'nowrap' }}>🚩 현재 핀까지</span>
-          <span style={{ fontSize: '20px', fontWeight: 'bold', color: '#15803d', whiteSpace: 'nowrap' }}>{previewOnly ? '-' : `${r.currentPrevDistance}m`}</span>
+          <span style={{ fontSize: '12px', fontWeight: 'bold', color: palette.green800, whiteSpace: 'nowrap' }}>🚩 현재 핀까지</span>
+          <span style={{ fontSize: '20px', fontWeight: 'bold', color: palette.green700, whiteSpace: 'nowrap' }}>{previewOnly ? '-' : `${r.currentPrevDistance}m`}</span>
         </div>
         <div
           style={{
             display: 'inline-flex',
             alignItems: 'center',
             gap: '4px',
-            backgroundColor: '#ffffff',
+            backgroundColor: palette.white,
             padding: '3px 9px',
             borderRadius: '20px',
-            border: '1px solid #bbf7d0',
+            border: `1px solid ${palette.green200}`,
             fontSize: '11.5px',
             fontWeight: 'bold',
-            color: '#166534',
+            color: palette.green800,
             whiteSpace: 'nowrap',
           }}
         >
-          <span style={{ color: '#059669' }}>💡 추천:</span>
+          <span style={{ color: palette.emerald600 }}>💡 추천:</span>
           <span>{previewOnly ? '-' : r.recommendedClub}</span>
         </div>
       </div>
@@ -231,21 +232,21 @@ export default function ShotInputCard({ round: r, clubs, onOpenClubSettings, dis
       <div style={{ marginBottom: '5px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 'bold', color: '#1e293b' }}>🏌️ 사용한 클럽</span>
+            <span style={{ fontSize: '12px', fontWeight: 'bold', color: palette.slate800 }}>🏌️ 사용한 클럽</span>
             <button
               type="button"
               disabled={disabled}
               onClick={onOpenClubSettings}
               data-score-guide-target="clubs"
               aria-label={`클럽 설정, 등록된 클럽 ${clubs.length}개`}
-              style={{ padding: '2px 6px', border: '1px solid #a7f3d0', borderRadius: '5px', backgroundColor: '#ecfdf5', color: '#047857', fontSize: '10px', fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap' }}
+              style={{ padding: '2px 6px', border: `1px solid ${palette.emerald200}`, borderRadius: '5px', backgroundColor: palette.emerald50, color: color.brand, fontSize: '10px', fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap' }}
             >
               ⚙️ 클럽 설정 {clubs.length}
             </button>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <span style={{ fontSize: '13px', fontWeight: 'bold', color: '#047857' }}>{r.selectedClub}</span>
-            <span style={{ fontSize: '10.5px', color: '#065f46', backgroundColor: '#ecfdf5', padding: '1px 7px', borderRadius: '12px' }}>
+            <span style={{ fontSize: '13px', fontWeight: 'bold', color: color.brand }}>{r.selectedClub}</span>
+            <span style={{ fontSize: '10.5px', color: palette.emerald800, backgroundColor: palette.emerald50, padding: '1px 7px', borderRadius: '12px' }}>
               평균 {r.expectedDistance(r.selectedClub)}m
             </span>
           </div>
@@ -263,9 +264,9 @@ export default function ShotInputCard({ round: r, clubs, onOpenClubSettings, dis
                 style={{
                   height: '30px',
                   borderRadius: '6px',
-                  border: on ? '1.5px solid #047857' : '1px solid #cbd5e1',
-                  backgroundColor: on ? '#ecfdf5' : '#ffffff',
-                  color: on ? '#047857' : '#334155',
+                  border: on ? `1.5px solid ${color.brand}` : `1px solid ${palette.slate300}`,
+                  backgroundColor: on ? palette.emerald50 : palette.white,
+                  color: on ? color.brand : palette.slate700,
                   fontWeight: on ? 'bold' : 'normal',
                   fontSize: '10px',
                   cursor: 'pointer',
@@ -285,8 +286,8 @@ export default function ShotInputCard({ round: r, clubs, onOpenClubSettings, dis
       {/* 볼 위치 */}
       <div style={{ marginBottom: '5px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3px' }}>
-          <span style={{ fontSize: '12px', fontWeight: 'bold', color: '#1e293b' }}>📍 볼이 멈춘 위치</span>
-          <span style={{ fontSize: '12px', fontWeight: 'bold', color: '#2563eb' }}>
+          <span style={{ fontSize: '12px', fontWeight: 'bold', color: palette.slate800 }}>📍 볼이 멈춘 위치</span>
+          <span style={{ fontSize: '12px', fontWeight: 'bold', color: palette.blue600 }}>
             {r.selectedLie} {getPenaltyByLie(r.selectedLie) > 0 && `(+${getPenaltyByLie(r.selectedLie)}벌타)`}
           </span>
         </div>
@@ -303,9 +304,9 @@ export default function ShotInputCard({ round: r, clubs, onOpenClubSettings, dis
                 style={{
                   height: '38px',
                   borderRadius: '6px',
-                  border: on ? '1.5px solid #2563eb' : '1px solid #cbd5e1',
-                  backgroundColor: on ? '#eff6ff' : '#ffffff',
-                  color: on ? '#2563eb' : item.color,
+                  border: on ? `1.5px solid ${palette.blue600}` : `1px solid ${palette.slate300}`,
+                  backgroundColor: on ? palette.blue50 : palette.white,
+                  color: on ? palette.blue600 : item.color,
                   cursor: 'pointer',
                   display: 'flex',
                   flexDirection: 'column',
@@ -316,7 +317,7 @@ export default function ShotInputCard({ round: r, clubs, onOpenClubSettings, dis
                 }}
               >
                 <span style={{ fontSize: '11px', fontWeight: on ? 'bold' : 600, whiteSpace: 'nowrap' }}>{item.compactLabel ?? item.label}</span>
-                {item.badge && <span style={{ fontSize: '8px', color: '#dc2626', fontWeight: 'bold' }}>{item.badge}</span>}
+                {item.badge && <span style={{ fontSize: '8px', color: palette.red600, fontWeight: 'bold' }}>{item.badge}</span>}
               </button>
             )
           })}
@@ -330,15 +331,15 @@ export default function ShotInputCard({ round: r, clubs, onOpenClubSettings, dis
           flexDirection: 'column',
           alignItems: 'center',
           gap: '3px',
-          backgroundColor: isOb ? '#f8fafc' : '#eff6ff',
-          border: isOb ? '1.5px solid #cbd5e1' : '2px solid #60a5fa',
+          backgroundColor: isOb ? palette.slate50 : palette.blue50,
+          border: isOb ? `1.5px solid ${palette.slate300}` : `2px solid ${palette.blue400}`,
           borderRadius: '10px',
           padding: '5px 6px',
           marginBottom: '5px',
           opacity: isOb ? 0.55 : 1,
         }}
       >
-        <span style={{ fontSize: '12px', fontWeight: 'bold', color: isOb ? '#b91c1c' : '#1e3a8a', whiteSpace: 'nowrap', textAlign: 'center' }}>
+        <span style={{ fontSize: '12px', fontWeight: 'bold', color: isOb ? palette.red700 : palette.blue900, whiteSpace: 'nowrap', textAlign: 'center' }}>
           {isOb ? '📍 원위치 유지' : '📍 남은 거리 📍'}
         </span>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '5px' }}>
@@ -363,9 +364,9 @@ export default function ShotInputCard({ round: r, clubs, onOpenClubSettings, dis
               padding: '3px 7px',
               fontSize: '11px',
               borderRadius: '8px',
-              border: r.isPinOver ? '1px solid #d97706' : '1px solid #93c5fd',
-              backgroundColor: r.isPinOver ? '#f59e0b' : '#ffffff',
-              color: r.isPinOver ? '#ffffff' : '#1d4ed8',
+              border: r.isPinOver ? `1px solid ${palette.amber600}` : `1px solid ${palette.blue300}`,
+              backgroundColor: r.isPinOver ? palette.amber500 : palette.white,
+              color: r.isPinOver ? palette.white : palette.blue700,
               fontWeight: 'bold',
               cursor: isOb ? 'not-allowed' : 'pointer',
             }}
@@ -382,19 +383,19 @@ export default function ShotInputCard({ round: r, clubs, onOpenClubSettings, dis
           alignItems: 'center',
           justifyContent: 'center',
           gap: '6px',
-          backgroundColor: r.isPinOver ? '#fef3c7' : '#f0fdf4',
-          border: r.isPinOver ? '1.5px solid #f59e0b' : '1.5px solid #86efac',
+          backgroundColor: r.isPinOver ? palette.amber100 : palette.green50,
+          border: r.isPinOver ? `1.5px solid ${palette.amber500}` : `1.5px solid ${palette.green300}`,
           borderRadius: '10px',
           padding: '3px 8px',
           marginBottom: '5px',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', minWidth: 0 }}>
-          <span style={{ fontSize: '11.5px', fontWeight: 'bold', color: r.isPinOver ? '#92400e' : '#166534', whiteSpace: 'nowrap' }}>🎯 계산 비거리</span>
-          <span style={{ fontSize: '18px', fontWeight: 'bold', color: r.isPinOver ? '#b45309' : '#15803d', whiteSpace: 'nowrap' }}>
+          <span style={{ fontSize: '11.5px', fontWeight: 'bold', color: r.isPinOver ? palette.amber800 : palette.green800, whiteSpace: 'nowrap' }}>🎯 계산 비거리</span>
+          <span style={{ fontSize: '18px', fontWeight: 'bold', color: r.isPinOver ? palette.amber700 : palette.green700, whiteSpace: 'nowrap' }}>
             {previewOnly ? '-' : `${isOb ? 0 : r.calculatedShotDistance}m`}
           </span>
-          <span style={{ fontSize: '10.5px', color: '#64748b', whiteSpace: 'nowrap' }}>({r.selectedClub})</span>
+          <span style={{ fontSize: '10.5px', color: palette.slate500, whiteSpace: 'nowrap' }}>({r.selectedClub})</span>
         </div>
       </div>
 
@@ -403,7 +404,7 @@ export default function ShotInputCard({ round: r, clubs, onOpenClubSettings, dis
         <button
           disabled={disabled}
           onClick={r.saveShot}
-          style={{ width: '100%', minHeight: '38px', padding: '7px 8px', backgroundColor: r.remainingDistance === 0 && !isOb ? '#dc2626' : '#047857', color: '#ffffff', border: 'none', borderRadius: '8px', fontSize: '13px', fontWeight: 'bold', cursor: disabled ? 'not-allowed' : 'pointer', opacity: disabled ? 0.55 : 1 }}
+          style={{ width: '100%', minHeight: '38px', padding: '7px 8px', backgroundColor: r.remainingDistance === 0 && !isOb ? palette.red600 : color.brand, color: palette.white, border: 'none', borderRadius: '8px', fontSize: '13px', fontWeight: 'bold', cursor: disabled ? 'not-allowed' : 'pointer', opacity: disabled ? 0.55 : 1 }}
         >
           {r.remainingDistance === 0 && !isOb ? '🏁 홀아웃 기록' : '✓ 샷 결과 저장'}
         </button>
@@ -411,9 +412,9 @@ export default function ShotInputCard({ round: r, clubs, onOpenClubSettings, dis
 
       {/* 퍼트 빠른 입력: 직전 샷이 그린에 올랐을 때만 노출 */}
       {r.isOnGreen && (
-        <div style={{ marginBottom: '5px', padding: '6px', backgroundColor: '#f0fdf4', border: '1.5px solid #86efac', borderRadius: '10px' }}>
-          <div style={{ fontSize: '12px', fontWeight: 'bold', color: '#166534', marginBottom: '4px' }}>
-            ⛳ 퍼트 한 번에 입력 <span style={{ fontWeight: 'normal', color: '#64748b' }}>(누르면 바로 홀아웃)</span>
+        <div style={{ marginBottom: '5px', padding: '6px', backgroundColor: palette.green50, border: `1.5px solid ${palette.green300}`, borderRadius: '10px' }}>
+          <div style={{ fontSize: '12px', fontWeight: 'bold', color: palette.green800, marginBottom: '4px' }}>
+            ⛳ 퍼트 한 번에 입력 <span style={{ fontWeight: 'normal', color: palette.slate500 }}>(누르면 바로 홀아웃)</span>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '4px' }}>
             {[1, 2, 3, 4].map((n) => (
@@ -421,13 +422,13 @@ export default function ShotInputCard({ round: r, clubs, onOpenClubSettings, dis
                 key={n}
                 disabled={disabled}
                 onClick={() => r.quickPutt(n)}
-                style={{ height: '32px', borderRadius: '8px', border: '1px solid #86efac', backgroundColor: '#ffffff', color: '#15803d', fontSize: '12px', fontWeight: 'bold', cursor: 'pointer' }}
+                style={{ height: '32px', borderRadius: '8px', border: `1px solid ${palette.green300}`, backgroundColor: palette.white, color: palette.green700, fontSize: '12px', fontWeight: 'bold', cursor: 'pointer' }}
               >
                 {n}퍼트
               </button>
             ))}
           </div>
-          <p style={{ margin: '5px 0 0', fontSize: '10px', lineHeight: 1.3, color: '#475569' }}>
+          <p style={{ margin: '5px 0 0', fontSize: '10px', lineHeight: 1.3, color: palette.slate600 }}>
             한 번에 입력하면 남은 거리를 퍼트 횟수로 나눠 추정합니다. 정확한 접근율 계산을 위해 각 퍼트 후 남은 거리를 직접 입력해 주세요.
           </p>
         </div>
@@ -440,7 +441,7 @@ export default function ShotInputCard({ round: r, clubs, onOpenClubSettings, dis
             onClick={r.undoPreviousShot}
             disabled={disabled || r.isSaving || (r.currentShots.length === 0 && r.completedHoles.length === 0)}
             title={r.currentShots.length === 0 ? '직전 홀의 마지막 샷 취소' : '현재 홀의 직전 샷 취소'}
-            style={{ minWidth: 0, minHeight: '34px', padding: '6px 4px', backgroundColor: '#f1f5f9', color: '#475569', border: '1px solid #cbd5e1', borderRadius: '6px', fontSize: '12px', fontWeight: 600, cursor: r.isSaving || (r.currentShots.length === 0 && r.completedHoles.length === 0) ? 'not-allowed' : 'pointer', opacity: r.isSaving || (r.currentShots.length === 0 && r.completedHoles.length === 0) ? 0.5 : 1 }}
+            style={{ minWidth: 0, minHeight: '34px', padding: '6px 4px', backgroundColor: palette.slate100, color: palette.slate600, border: `1px solid ${palette.slate300}`, borderRadius: '6px', fontSize: '12px', fontWeight: 600, cursor: r.isSaving || (r.currentShots.length === 0 && r.completedHoles.length === 0) ? 'not-allowed' : 'pointer', opacity: r.isSaving || (r.currentShots.length === 0 && r.completedHoles.length === 0) ? 0.5 : 1 }}
           >
             ↩ 직전 샷 취소
           </button>
@@ -448,7 +449,7 @@ export default function ShotInputCard({ round: r, clubs, onOpenClubSettings, dis
             type="button"
             onClick={r.redoLastShot}
             disabled={disabled || !r.canRedoLastShot || r.isSaving}
-            style={{ minWidth: 0, minHeight: '34px', padding: '6px 4px', backgroundColor: r.canRedoLastShot ? '#ecfdf5' : '#f1f5f9', color: r.canRedoLastShot ? '#047857' : '#94a3b8', border: '1px solid #cbd5e1', borderRadius: '6px', fontSize: '12px', fontWeight: 600, cursor: r.canRedoLastShot && !r.isSaving ? 'pointer' : 'not-allowed' }}
+            style={{ minWidth: 0, minHeight: '34px', padding: '6px 4px', backgroundColor: r.canRedoLastShot ? palette.emerald50 : palette.slate100, color: r.canRedoLastShot ? color.brand : palette.slate400, border: `1px solid ${palette.slate300}`, borderRadius: '6px', fontSize: '12px', fontWeight: 600, cursor: r.canRedoLastShot && !r.isSaving ? 'pointer' : 'not-allowed' }}
           >
             ↪ 삭제한 샷 복원
           </button>

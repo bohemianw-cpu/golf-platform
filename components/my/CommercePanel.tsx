@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from 'react'
 import { createClient } from '@/utils/supabase/client'
+import { palette } from '@/utils/theme'
 
 type PassRow = { id: string; product_code: string; status: string; issued_at: string; expires_at: string | null }
 type PointRow = { id: string; event_type: string; points_delta: number; created_at: string }
 type OrderRow = { id: string; product_title: string; paid_amount_krw: number; point_discount_krw: number; status: string; created_at: string }
 
-const card = { padding: 16, border: '1px solid #dbe5e1', borderRadius: 12, background: '#fff' } as const
+const card = { padding: 16, border: `1px solid ${palette.sage200}`, borderRadius: 12, background: palette.white } as const
 const names: Record<string, string> = { ROUND_9: '9홀', ROUND_12: '12홀', ROUND_18: '18홀' }
 const pointNames: Record<string, string> = {
   referral_reward: '친구 추천', achievement_reward: '배지·트로피', purchase_discount: '이용권 할인',
@@ -61,14 +62,14 @@ export default function CommercePanel() {
   // There is no client-side grant, spend, or purchase action in this panel.
   return <section style={card} aria-labelledby="commerce-title">
     <h2 id="commerce-title" style={{ margin: '0 0 6px', fontSize: 16 }}>🎟️ 이용권 · 포인트</h2>
-    <p style={{ margin: '0 0 12px', color: '#475569', fontSize: 12, lineHeight: 1.5 }}>회당 이용권과 친구 추천·트로피 포인트를 준비 중입니다. 가격과 보상 기준이 확정되기 전에는 결제하거나 포인트를 받을 수 없습니다.</p>
+    <p style={{ margin: '0 0 12px', color: palette.slate600, fontSize: 12, lineHeight: 1.5 }}>회당 이용권과 친구 추천·트로피 포인트를 준비 중입니다. 가격과 보상 기준이 확정되기 전에는 결제하거나 포인트를 받을 수 없습니다.</p>
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,130px),1fr))', gap: 7 }}>
       {[['포인트', loading || error ? '—' : `${pointBalance.toLocaleString()}P`], ['사용 가능한 이용권', loading || error ? '—' : `${passes.filter((pass) => pass.status === 'available').length}장`], ['결제', '준비 중']].map(([label, value]) =>
-        <div key={label} style={{ padding: '9px 11px', borderRadius: 9, background: '#f0fdf4', color: '#064e3b' }}><div style={{ fontSize: 11 }}>{label}</div><strong style={{ fontSize: 16 }}>{value}</strong></div>) }
+        <div key={label} style={{ padding: '9px 11px', borderRadius: 9, background: palette.green50, color: palette.emerald900 }}><div style={{ fontSize: 11 }}>{label}</div><strong style={{ fontSize: 16 }}>{value}</strong></div>) }
     </div>
-    <p style={{ margin: '10px 0 0', color: '#64748b', fontSize: 11, lineHeight: 1.5 }}>예정 방식: 9·12·18홀 이용권을 라운드 한 번에 사용하고, 같은 라운드를 수정·재개할 때는 다시 차감하지 않습니다. 월 구독은 별도 상품으로 검토합니다.</p>
-    {loading && <p role="status" style={{ fontSize: 11, color: '#64748b' }}>이용 내역을 불러오는 중…</p>}
-    {error && <p role="alert" style={{ fontSize: 11, color: '#b91c1c' }}>{error}</p>}
+    <p style={{ margin: '10px 0 0', color: palette.slate500, fontSize: 11, lineHeight: 1.5 }}>예정 방식: 9·12·18홀 이용권을 라운드 한 번에 사용하고, 같은 라운드를 수정·재개할 때는 다시 차감하지 않습니다. 월 구독은 별도 상품으로 검토합니다.</p>
+    {loading && <p role="status" style={{ fontSize: 11, color: palette.slate500 }}>이용 내역을 불러오는 중…</p>}
+    {error && <p role="alert" style={{ fontSize: 11, color: palette.red700 }}>{error}</p>}
     {!loading && !error && (passes.length > 0 || points.length > 0 || orders.length > 0) && <details style={{ marginTop: 12, fontSize: 11 }}><summary style={{ cursor: 'pointer', fontWeight: 700 }}>이용 내역 보기</summary>
       {passes.length > 0 && <div><h3 style={{ fontSize: 12 }}>이용권</h3>{passes.map((pass) => <p key={pass.id}>{names[pass.product_code] ?? pass.product_code} · {pass.status === 'available' ? '사용 가능' : pass.status === 'used' ? '사용 완료' : '취소'} · {new Date(pass.issued_at).toLocaleDateString('ko-KR')}</p>)}</div>}
       {points.length > 0 && <div><h3 style={{ fontSize: 12 }}>포인트</h3>{points.map((point) => <p key={point.id}>{pointNames[point.event_type] ?? point.event_type} · {point.points_delta > 0 ? '+' : ''}{point.points_delta.toLocaleString()}P · {new Date(point.created_at).toLocaleDateString('ko-KR')}</p>)}</div>}

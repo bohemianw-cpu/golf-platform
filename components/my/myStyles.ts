@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react'
+import { palette } from '@/utils/theme'
 
-export const CARD: CSSProperties = { padding: '18px', background: '#fff', border: '1px solid #e2e8f0', borderRadius: '14px' }
-export const muted: CSSProperties = { color: '#64748b', fontSize: '12px' }
+export const CARD: CSSProperties = { padding: '18px', background: palette.white, border: `1px solid ${palette.slate200}`, borderRadius: '14px' }
+export const muted: CSSProperties = { color: palette.slate500, fontSize: '12px' }
