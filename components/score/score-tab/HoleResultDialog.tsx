@@ -2,13 +2,15 @@
 
 import type { HoleResultNotice, RoundApi } from '@/hooks/useRound'
 import { color, palette } from '@/utils/theme'
+import { useModalKeyboard } from '@/components/layout/useModalKeyboard'
 
 /** 홀아웃 직후 홀 결과(버디·파 등)와 다음 행동을 보여 주는 창. */
 export default function HoleResultDialog({ round, notice }: { round: RoundApi; notice: HoleResultNotice }) {
   const resultColor = notice.scoreDiff < 0 ? color.brand : notice.scoreDiff > 0 ? palette.orange700 : palette.blue600
   const resultTint = notice.scoreDiff < 0 ? palette.emerald50 : notice.scoreDiff > 0 ? palette.orange50 : palette.blue50
+  const dialogRef = useModalKeyboard<HTMLDivElement>(true, round.dismissHoleResultNotice)
   const scoreLabel = notice.scoreDiff === 0 ? '기준 파' : `${notice.scoreDiff > 0 ? '+' : ''}${notice.scoreDiff}`
-  return <div role="dialog" aria-modal="true" aria-labelledby="hole-result-title" style={{ position: 'fixed', inset: 0, zIndex: 130, display: 'grid', placeItems: 'center', padding: 18, background: 'rgba(15,23,42,.62)', backdropFilter: 'blur(3px)' }}>
+  return <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="hole-result-title" style={{ position: 'fixed', inset: 0, zIndex: 130, display: 'grid', placeItems: 'center', padding: 18, background: 'rgba(15,23,42,.62)', backdropFilter: 'blur(3px)' }}>
     <section style={{ width: 'min(100%,360px)', overflow: 'hidden', borderRadius: 20, background: palette.white, boxShadow: '0 24px 70px rgba(15,23,42,.3)' }}>
       <div style={{ padding: '20px 20px 17px', textAlign: 'center', background: `linear-gradient(145deg, ${resultTint}, ${palette.white} 78%)` }}>
         <div style={{ color: palette.slate500, fontSize: 12, fontWeight: 700, letterSpacing: '.08em' }}>HOLE {notice.holeNumber} · PAR {notice.par}</div>

@@ -4,6 +4,7 @@ import { useMemo, useState, type FormEvent } from 'react'
 import { createClient } from '@/utils/supabase/client'
 import { passwordProblem } from '@/utils/password-check'
 import { color, palette } from '@/utils/theme'
+import { useModalKeyboard } from '@/components/layout/useModalKeyboard'
 
 interface PasswordRecoveryModalProps {
   onClose: () => void
@@ -16,6 +17,8 @@ export default function PasswordRecoveryModal({ onClose }: PasswordRecoveryModal
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
   const [errorMsg, setErrorMsg] = useState('')
+  // 취소하면 로그아웃되므로 Esc로는 닫지 않고 키보드 위치만 창 안에 둔다.
+  const dialogRef = useModalKeyboard<HTMLElement>(true)
 
   const savePassword = async (event: FormEvent) => {
     event.preventDefault()
@@ -54,7 +57,7 @@ export default function PasswordRecoveryModal({ onClose }: PasswordRecoveryModal
   }
 
   return <div role="presentation" style={{ position: 'fixed', inset: 0, zIndex: 10000, display: 'grid', placeItems: 'center', padding: 16, background: 'rgba(15,23,42,.58)' }}>
-    <section role="dialog" aria-modal="true" aria-labelledby="password-recovery-title" style={{ width: '100%', maxWidth: 380, padding: 24, borderRadius: 16, background: palette.white, boxShadow: '0 18px 48px rgba(15,23,42,.25)' }}>
+    <section ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="password-recovery-title" style={{ width: '100%', maxWidth: 380, padding: 24, borderRadius: 16, background: palette.white, boxShadow: '0 18px 48px rgba(15,23,42,.25)' }}>
       <h2 id="password-recovery-title" style={{ margin: '0 0 10px', fontSize: 18 }}>새 비밀번호 설정</h2>
       {saved ? <>
         <p role="status" style={{ color: palette.emerald800, fontSize: 14, lineHeight: 1.6 }}>비밀번호가 변경되었습니다. 현재 로그인 상태로 계속 이용할 수 있습니다.</p>
