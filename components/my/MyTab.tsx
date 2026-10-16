@@ -83,15 +83,19 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
           return
         }
         const uid = session.user.id
-        const [profileResult, loadedRounds, overviewResult] = await Promise.all([
+        // 서로 기다릴 필요가 없는 요청은 한꺼번에 보낸다. 오류를 반영하는 순서는 예전과 같다.
+        const [profileResult, loadedRounds, overviewResult, preferencesResult, connectionsResult] = await Promise.all([
           supabase.from('profiles').select('nickname,handicap_index,skill_group').eq('id', uid).maybeSingle(),
           fetchRoundPage(uid, 0),
           supabase.rpc('get_my_round_overview'),
+          supabase.from('user_data_preferences')
+            .select('user_id,allow_anonymous_aggregate,allow_friend_sharing,allow_ai_practice_analysis,score_guide_enabled,score_guide_completed_at')
+            .eq('user_id', uid).maybeSingle(),
+          supabase.from('friend_connections').select('id,requester_id,addressee_id,status')
+            .or(`requester_id.eq.${uid},addressee_id.eq.${uid}`),
         ])
         if (profileResult.error) throw profileResult.error
-        const { data: preferences, error: preferencesError } = await supabase.from('user_data_preferences')
-          .select('user_id,allow_anonymous_aggregate,allow_friend_sharing,allow_ai_practice_analysis,score_guide_enabled,score_guide_completed_at')
-          .eq('user_id', uid).maybeSingle()
+        const { data: preferences, error: preferencesError } = preferencesResult
         if (preferencesError) throw preferencesError
         if (cancelled) return
         setUserId(uid)
@@ -115,9 +119,7 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
           score_guide_enabled: true,
           score_guide_completed_at: null,
         })
-        const { data: connections, error: connectionsError } = await supabase
-          .from('friend_connections').select('id,requester_id,addressee_id,status')
-          .or(`requester_id.eq.${uid},addressee_id.eq.${uid}`)
+        const { data: connections, error: connectionsError } = connectionsResult
         if (connectionsError) throw connectionsError
         setFriends((connections ?? []) as FriendConnection[])
       } catch (err) {
@@ -353,10 +355,13 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
   }
 
   const loadFriendComparison = async (friendId: string, courseId?: string | null, playMode?: 'field' | 'screen' | null) => {
-    const { data: overallRows, error: overallError } = await supabase.rpc('get_friend_round_aggregate', { p_friend_id: friendId, p_course_id: null, p_play_mode: null, p_route_ids: null })
-    const { data: courseRows, error: courseError } = courseId && playMode
-      ? await supabase.rpc('get_friend_round_aggregate', { p_friend_id: friendId, p_course_id: courseId, p_play_mode: playMode, p_route_ids: detail?.route_ids ?? [] })
-      : { data: null, error: null }
+    // 전체 평균과 구장 평균은 서로 관계가 없어 함께 요청한다.
+    const [{ data: overallRows, error: overallError }, { data: courseRows, error: courseError }] = await Promise.all([
+      supabase.rpc('get_friend_round_aggregate', { p_friend_id: friendId, p_course_id: null, p_play_mode: null, p_route_ids: null }),
+      courseId && playMode
+        ? supabase.rpc('get_friend_round_aggregate', { p_friend_id: friendId, p_course_id: courseId, p_play_mode: playMode, p_route_ids: detail?.route_ids ?? [] })
+        : Promise.resolve({ data: null, error: null }),
+    ])
     if (overallError || courseError) { setError('친구 비교를 불러오지 못했습니다. 친구 관계와 공유 설정을 확인해 주세요.'); return }
     const first = (value: unknown) => Array.isArray(value) ? value[0] ?? null : value
     setFriendAggregate((current) => ({ ...current, [friendId]: { overall: first(overallRows) as FriendAggregate | null, course: first(courseRows) as FriendAggregate | null } }))

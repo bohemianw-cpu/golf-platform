@@ -93,3 +93,47 @@ test('opening a round requests its comparison averages together and ignores an e
   await expect(page.getByRole('heading', { name: '빠른 CC 상세' })).toBeVisible()
   await expect(page.getByRole('heading', { name: '느린 CC 상세' })).toHaveCount(0)
 })
+
+test('the MY tab loads its first data together and asks for a friend comparison in one go', async ({ page }) => {
+  const me = '11111111-1111-4111-8111-111111111111'
+  const friend = '77777777-7777-4777-8777-777777777777'
+  await mockSignedInApp(page, { draft: false })
+  const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+  const rounds = [{ id: '00000000-0000-4000-8000-000000000001', created_at: '2026-10-01T01:00:00Z', registered_at: '2026-10-01T05:00:00Z', status: 'completed', total_score: 85, total_putts: 30, club_name: '비교 CC', golf_club: '비교 CC', course_name: 'OUT', course_id: '33333333-3333-4333-8333-333333333333', play_mode: 'field', screen_provider: null, entry_mode: 'live', route_ids: [], tee_code: null, tee_name: null, visibility: 'private' }]
+  const timeline: string[] = []
+  // 첫 화면에 필요한 요청마다 시작·끝을 기록한다. 응답을 늦춰 차례로 기다리는지 드러나게 한다.
+  const firstLoad = /\/rest\/v1\/(profiles|rounds|user_data_preferences|friend_connections|rpc\/get_my_round_overview)(\?|$)/
+  await page.route(firstLoad, async (route) => {
+    const name = new URL(route.request().url()).pathname.split('/').pop()!
+    // 상단바도 닉네임만 따로 불러오므로, MY 탭의 프로필 요청(핸디캡 포함)만 기록한다.
+    if (name === 'profiles' && !route.request().url().includes('handicap_index')) return route.fallback()
+    timeline.push(`start ${name}`)
+    await wait(300)
+    timeline.push(`end ${name}`)
+    if (name === 'rounds') return route.fulfill(json(rounds))
+    if (name === 'friend_connections') return route.fulfill(json([{ id: 'f1', requester_id: me, addressee_id: friend, status: 'accepted' }]))
+    return route.fallback()
+  })
+  const friendCalls: string[] = []
+  await page.route('**/rest/v1/rpc/get_friend_round_aggregate*', async (route) => {
+    const course = (route.request().postDataJSON() as { p_course_id: string | null }).p_course_id
+    friendCalls.push(`start ${course ? 'course' : 'overall'}`)
+    await wait(300)
+    friendCalls.push(`end ${course ? 'course' : 'overall'}`)
+    return route.fulfill(json([course ? { sample_size: 3, average_score: 90 } : { sample_size: 5, average_score: 88 }]))
+  })
+
+  await page.goto('/my')
+  await expect(page.getByText('님의 기록 보관함')).toBeVisible()
+  // 공유 설정과 친구 목록 요청이 첫 응답보다 먼저 시작된다 = 다른 요청을 기다리지 않고 함께 보냈다.
+  const firstEnd = timeline.findIndex((step) => step.startsWith('end'))
+  for (const name of ['profiles', 'rounds', 'get_my_round_overview', 'user_data_preferences', 'friend_connections']) {
+    expect(timeline.indexOf(`start ${name}`), timeline.join(', ')).toBeLessThan(firstEnd)
+  }
+
+  await page.getByRole('region', { name: /내 라운드 전체 기록/ }).getByRole('button', { name: /비교 CC/ }).click()
+  await expect(page.getByRole('heading', { name: '비교 CC 상세' })).toBeVisible()
+  await page.getByRole('button', { name: '평균 비교' }).click()
+  await expect(page.getByText(/전체 88타 \(5회\) · 이 구장 90타 \(3회\)/)).toBeVisible()
+  expect(friendCalls.slice(0, 2).every((step) => step.startsWith('start')), friendCalls.join(', ')).toBe(true)
+})
