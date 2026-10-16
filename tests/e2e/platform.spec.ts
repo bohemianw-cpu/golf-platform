@@ -23,3 +23,23 @@ test('an unhandled page error is reported to our server without personal details
   await expect.poll(() => errorReports.length).toBe(1)
   expect(errorReports[0]).toMatchObject({ p_kind: 'error', p_message: '홈 오류 [이메일]', p_path: '/home' })
 })
+
+test('an error thrown before the app is ready in the browser is still reported', async ({ page }) => {
+  const errorReports: Record<string, unknown>[] = []
+  await mockSignedInApp(page, { draft: false, errorReports })
+  // 앱 코드 내려받기를 늦춰, 오류가 반드시 화면이 준비되기 전에 생기게 한다.
+  await page.route('**/_next/static/chunks/**', async (route) => { await new Promise((resolve) => setTimeout(resolve, 800)); await route.continue() })
+  // 페이지 맨 앞 수집 스크립트가 준비되는 순간 오류를 낸다.
+  await page.addInitScript(() => {
+    let queue: unknown
+    Object.defineProperty(window, '__golfEarlyErrors', {
+      configurable: true,
+      get: () => queue,
+      set: (value) => { queue = value; window.setTimeout(() => { throw new Error('준비 전 오류 golfer@example.com') }, 0) },
+    })
+  })
+  await page.goto('/home')
+  await expect(page.getByRole('link', { name: /브라우저테스트님/ })).toBeVisible()
+  await expect.poll(() => errorReports.length).toBe(1)
+  expect(errorReports[0]).toMatchObject({ p_kind: 'error', p_message: '준비 전 오류 [이메일]', p_path: '/home' })
+})
