@@ -59,7 +59,7 @@ function oneHoleDraft() {
   }
 }
 
-export async function mockSignedInApp(page: Page, options: { draft?: boolean; serverRound?: boolean; sampleDraft?: boolean; realWrites?: string[]; holeWrites?: Record<string, unknown>[]; errorReports?: Record<string, unknown>[]; writes?: string[] } = {}) {
+export async function mockSignedInApp(page: Page, options: { draft?: boolean; draftPatch?: Record<string, unknown>; serverRound?: boolean; sampleDraft?: boolean; realWrites?: string[]; holeWrites?: Record<string, unknown>[]; errorReports?: Record<string, unknown>[]; writes?: string[] } = {}) {
   const projectUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
   if (!projectUrl) throw new Error('NEXT_PUBLIC_SUPABASE_URL is required for browser tests')
   const projectRef = new URL(projectUrl).hostname.split('.')[0]
@@ -73,7 +73,7 @@ export async function mockSignedInApp(page: Page, options: { draft?: boolean; se
     localStorage.setItem(`golf-score-guide-seen:${uid}`, new Date().toISOString())
   }, {
     name: `sb-${projectRef}-auth-token`, value: cookie,
-    draft: options.draft === false ? null : oneHoleDraft(),
+    draft: options.draft === false ? null : { ...oneHoleDraft(), ...options.draftPatch },
     sampleDraft: options.sampleDraft ? { ...oneHoleDraft(), roundId: null, sampleSessionId: SAMPLE_ID } : null,
     uid: USER_ID,
   })
