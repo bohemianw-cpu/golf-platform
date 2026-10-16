@@ -63,3 +63,15 @@ test('score, MY and other tabs have readable text contrast through a round', asy
   await page.getByRole('dialog').getByRole('button', { name: '라운드 리포트 보기' }).click(); await page.waitForTimeout(800); await expectReadable(page, '라운드 리포트')
   for (const path of ['/home', '/my', '/join', '/video', '/lesson', '/shop']) { await page.goto(path); await page.waitForTimeout(1000); await expectReadable(page, path) }
 })
+
+test('the offline notice on the score tab has readable text contrast', async ({ page, context }) => {
+  await mockSignedInApp(page)
+  await page.goto('/score')
+  await page.getByRole('dialog').getByRole('button', { name: '이어서 하기' }).click()
+  await context.setOffline(true)
+  await page.getByText('인터넷 연결이 끊겼어요').waitFor()
+  // 이어하기 직후 샷 내역이 서서히 나타나는 0.2초 전환이 끝난 뒤 잰다.
+  await page.waitForTimeout(600)
+  await expectReadable(page, '오프라인 안내')
+  await context.setOffline(false)
+})

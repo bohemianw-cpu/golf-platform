@@ -146,3 +146,23 @@ test('nothing is sent again on reconnect when every shot is already saved', asyn
   await page.waitForTimeout(800)
   expect(writes.filter((write) => write.startsWith('POST round_shots'))).toHaveLength(1)
 })
+
+test('the score tab says so as soon as the connection drops, and clears it when it returns', async ({ page, context }) => {
+  await mockSignedInApp(page)
+  await page.goto('/score')
+  await page.getByRole('dialog').getByRole('button', { name: '이어서 하기' }).click()
+  const notice = page.getByRole('status').filter({ hasText: '인터넷 연결이 끊겼어요' })
+  await expect(page.getByRole('button', { name: '✓ 샷 결과 저장' })).toBeVisible()
+  await expect(notice).toHaveCount(0)
+
+  await context.setOffline(true)
+  await expect(notice).toBeVisible()
+  await expect(notice).toContainText('연결되면 자동으로 서버에 저장돼요')
+  // 연결이 없어도 샷 입력은 계속할 수 있다.
+  await page.getByRole('spinbutton', { name: '샷 후 남은 거리' }).fill('40')
+  await page.getByRole('button', { name: '✓ 샷 결과 저장' }).click()
+  await expect(page.getByRole('button', { name: '↩ 직전 샷 취소' })).toBeEnabled()
+
+  await context.setOffline(false)
+  await expect(notice).toHaveCount(0)
+})
