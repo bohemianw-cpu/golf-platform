@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useCallback, useState } from 'react'
+import { color, palette } from '@/utils/theme'
 
 export interface Choice<T extends string> {
   label: string
@@ -17,9 +18,9 @@ interface DialogState {
 }
 
 const TONES = {
-  primary: { bg: '#047857', color: '#ffffff', border: '#047857' },
-  danger: { bg: '#fee2e2', color: '#dc2626', border: '#fecaca' },
-  neutral: { bg: '#f1f5f9', color: '#475569', border: '#cbd5e1' },
+  primary: { bg: color.brand, color: palette.white, border: color.brand },
+  danger: { bg: palette.red100, color: palette.red600, border: palette.red200 },
+  neutral: { bg: palette.slate100, color: palette.slate600, border: palette.slate300 },
 }
 
 /** window.confirm 대체. choose()는 선택한 value를 resolve 하는 Promise */
@@ -69,13 +70,13 @@ export function useChoiceDialog() {
         style={{
           width: '100%',
           maxWidth: '340px',
-          backgroundColor: '#ffffff',
+          backgroundColor: palette.white,
           borderRadius: '12px',
           padding: '18px',
           boxShadow: '0 12px 32px rgba(0,0,0,0.25)',
         }}
       >
-        <p style={{ margin: '0 0 16px', fontSize: '14px', lineHeight: 1.55, color: '#0f172a', whiteSpace: 'pre-line' }}>
+        <p style={{ margin: '0 0 16px', fontSize: '14px', lineHeight: 1.55, color: palette.slate900, whiteSpace: 'pre-line' }}>
           {state.message}
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
