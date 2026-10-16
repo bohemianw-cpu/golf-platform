@@ -854,28 +854,6 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs, sample
     [resetRound, clearDraft, prepareHole, holePars, routeDistances]
   )
 
-  const resetCurrentRound = async () => {
-    if (isRegistered) return
-    const ok = await confirm(
-      '현재 진행 중인 라운드를 완전히 삭제하고 처음부터 새로 시작하시겠습니까?',
-      '삭제하고 새로 시작',
-      'danger'
-    )
-    if (!ok) return
-    await waitForQueuedSyncs()
-    const id = roundIdRef.current
-    if (id) {
-      try {
-        await deleteServerRound(id)
-      } catch (err) {
-        console.error('라운드 초기화 실패:', err)
-        setSaveError('서버에서 라운드를 삭제하지 못했습니다. 다시 시도해 주세요.')
-        return
-      }
-    }
-    clearAll(false)
-  }
-
   const startNewRound = () => {
     if (!isSample && !isRegistered) return
     clearAll(false)
@@ -913,7 +891,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs, sample
     isPutterSelected, isPutterOrGreen, summary, currentHoleScore, clubStats, clubStatsAll, clubApproach, recommendedLie, isOnGreen,
     // 액션
     handleClubSelect, changeHolePar, changeHoleDistance, changeRemaining, clearShotsAndUnlockCourse,
-    saveShot, quickPutt, undoLastShot, undoPreviousShot, canRedoLastShot, redoLastShot, undoPreviousHole, resetCurrentRound, startNewRound, registerRound, isSample,
+    saveShot, quickPutt, undoLastShot, undoPreviousShot, canRedoLastShot, redoLastShot, undoPreviousHole, startNewRound, registerRound, isSample,
   }
 }
 
