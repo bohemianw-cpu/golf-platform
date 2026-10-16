@@ -45,6 +45,12 @@ export function useRoundSync({ supabase, isSample, metaRef, setSaveError, onRegi
   const idleWaitersRef = useRef<(() => void)[]>([])
   const shotSyncQueueRef = useRef<Promise<unknown>>(Promise.resolve())
   const holeSyncQueueRef = useRef<Promise<unknown>>(Promise.resolve())
+  // 아직 서버에 못 올린 것. 모두 저장되기 전에는 저장 실패 안내를 지우지 않는다.
+  const holesUnsavedRef = useRef(false)
+  const unsavedShotHolesRef = useRef(new Set<number>())
+  const clearSaveErrorIfAllSaved = useCallback(() => {
+    if (!holesUnsavedRef.current && unsavedShotHolesRef.current.size === 0) setSaveError(null)
+  }, [setSaveError])
 
   const setRoundId = useCallback((id: string | null) => {
     roundIdRef.current = id
@@ -55,6 +61,8 @@ export function useRoundSync({ supabase, isSample, metaRef, setSaveError, onRegi
   const resetRound = useCallback(() => {
     setRoundId(null)
     roundPromiseRef.current = null
+    holesUnsavedRef.current = false
+    unsavedShotHolesRef.current.clear()
   }, [setRoundId])
 
   const track = useCallback(async <T,>(fn: () => Promise<T>): Promise<T> => {
@@ -136,7 +144,6 @@ export function useRoundSync({ supabase, isSample, metaRef, setSaveError, onRegi
     (all: HoleRecord[]): Promise<boolean> => {
       if (isSample) return Promise.resolve(true)
       const pending = holeSyncQueueRef.current.then(async () => {
-        setSaveError(null)
         try {
           await track(async () => {
             const {
@@ -191,9 +198,12 @@ export function useRoundSync({ supabase, isSample, metaRef, setSaveError, onRegi
               .eq('id', roundId)
             if (updateError) throw updateError
           })
+          holesUnsavedRef.current = false
+          clearSaveErrorIfAllSaved()
           return true
         } catch (err) {
           console.error('홀 저장 에러:', err)
+          holesUnsavedRef.current = true
           setSaveError('서버 저장에 실패했습니다. 기록은 이 기기에 보관되어 있습니다.')
           return false
         }
@@ -201,7 +211,7 @@ export function useRoundSync({ supabase, isSample, metaRef, setSaveError, onRegi
       holeSyncQueueRef.current = pending
       return pending
     },
-    [supabase, track, ensureRoundId, isSample, metaRef, setSaveError]
+    [supabase, track, ensureRoundId, isSample, metaRef, setSaveError, clearSaveErrorIfAllSaved]
   )
 
   /** 진행 중인 홀도 샷 단위로 서버에 저장해 기기 간 이어하기를 지원한다. */
@@ -209,7 +219,6 @@ export function useRoundSync({ supabase, isSample, metaRef, setSaveError, onRegi
     (holeNumber: number, shots: ShotRecord[]): Promise<boolean> => {
       if (isSample) return Promise.resolve(true)
       const pending = shotSyncQueueRef.current.then(async () => {
-        setSaveError(null)
         try {
           await track(async () => {
             const { data: { session } } = await supabase.auth.getSession()
@@ -242,8 +251,11 @@ export function useRoundSync({ supabase, isSample, metaRef, setSaveError, onRegi
               .gt('shot_number', shots.length)
             if (error) throw error
           })
+          unsavedShotHolesRef.current.delete(holeNumber)
+          clearSaveErrorIfAllSaved()
           return true
         } catch (err) {
+          unsavedShotHolesRef.current.add(holeNumber)
           const reason = err && typeof err === 'object' && 'message' in err
             ? String(err.message)
             : String(err)
@@ -255,7 +267,7 @@ export function useRoundSync({ supabase, isSample, metaRef, setSaveError, onRegi
       shotSyncQueueRef.current = pending
       return pending
     },
-    [supabase, track, ensureRoundId, isSample, metaRef, setSaveError]
+    [supabase, track, ensureRoundId, isSample, metaRef, setSaveError, clearSaveErrorIfAllSaved]
   )
 
   /** 완료된 라운드를 등록한다. 등록 후에는 서버에서 기록을 고칠 수 없다. */
