@@ -56,7 +56,7 @@ export default function TopBar({ chromeVisible, authLoading, isLoggedIn, userNic
                     padding: '4px 10px',
                     fontSize: '11px',
                     backgroundColor: palette.slate100,
-                    color: palette.slate500,
+                    color: palette.slate600,
                     border: `1px solid ${palette.slate300}`,
                     borderRadius: '6px',
                     cursor: 'pointer',

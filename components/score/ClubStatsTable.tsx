@@ -38,7 +38,7 @@ export default function ClubStatsTable({ clubs, clubStats, clubApproach }: Props
       </h3>
 
       {usedClubs.length === 0 ? (
-        <div style={{ textAlign: 'center', padding: '20px 10px', color: palette.slate400, fontSize: '13px' }}>
+        <div style={{ textAlign: 'center', padding: '20px 10px', color: palette.slate500, fontSize: '13px' }}>
           샷 데이터가 기록되면 클럽별 평균, 최저, 최대 비거리 및 접근율이 자동으로 계산되어 표시됩니다.
         </div>
       ) : (
@@ -80,7 +80,7 @@ export default function ClubStatsTable({ clubs, clubStats, clubApproach }: Props
               })}
             </tbody>
           </table>
-          <div style={{ marginTop: '8px', fontSize: '10.5px', color: palette.slate400, textAlign: 'right' }}>
+          <div style={{ marginTop: '8px', fontSize: '10.5px', color: palette.slate500, textAlign: 'right' }}>
             * 평균·최저·최대는 벌타 샷을 제외한 값입니다. 접근율은 남은 거리 ≤ (평균+20m) 샷 기준입니다.
           </div>
         </>

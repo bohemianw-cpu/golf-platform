@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { ClubItem, ClubCategory } from '@/types/golf'
 import { clubButtonLabel, MAX_CLUBS, normalizeClubEntry } from '@/utils/golf/clubs'
 import { sortClubs } from './ScoreTab'
-import { palette } from '@/utils/theme'
+import { color, palette } from '@/utils/theme'
 import { useModalKeyboard } from '@/components/layout/useModalKeyboard'
 
 interface ClubModalProps {
@@ -114,7 +114,7 @@ export default function ClubModal({ clubs, onClose, onSave }: ClubModalProps) {
           <button
             onClick={handleAddClub}
             disabled={isSaving || currentClubs.length >= MAX_CLUBS}
-            style={{ width: '100%', padding: '8px', backgroundColor: currentClubs.length >= MAX_CLUBS ? palette.slate400 : palette.emerald500, color: palette.white, border: 'none', borderRadius: '6px', fontWeight: 600, cursor: currentClubs.length >= MAX_CLUBS ? 'not-allowed' : 'pointer', fontSize: '13px' }}
+            style={{ width: '100%', padding: '8px', backgroundColor: currentClubs.length >= MAX_CLUBS ? palette.slate400 : color.brand, color: palette.white, border: 'none', borderRadius: '6px', fontWeight: 600, cursor: currentClubs.length >= MAX_CLUBS ? 'not-allowed' : 'pointer', fontSize: '13px' }}
           >
             {currentClubs.length >= MAX_CLUBS ? `클럽은 최대 ${MAX_CLUBS}개까지 등록할 수 있습니다` : '+ 클럽 추가 (자동 순서 정렬)'}
           </button>

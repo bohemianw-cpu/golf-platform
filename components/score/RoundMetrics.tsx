@@ -26,7 +26,7 @@ export default function RoundMetrics({ round, standalone = false }: { round: Rou
   const diffText = completedHoles.length === 0 || totalDiff === 0 ? '0' : totalDiff > 0 ? `+${totalDiff}` : `${totalDiff}`
   const metricLabel = { fontSize: 'clamp(8px, 2.1vw, 10px)', color: palette.sage700, fontWeight: 700, whiteSpace: 'nowrap' as const }
   const metricValue = { fontSize: '19px', fontWeight: 800, lineHeight: 1.3 }
-  const metricSub = { fontSize: '9px', color: palette.sage600, whiteSpace: 'nowrap' as const }
+  const metricSub = { fontSize: '9px', color: palette.sage700, whiteSpace: 'nowrap' as const }
   const metricCell = { display: 'grid', gridTemplateRows: '14px 26px 12px', alignContent: 'center', alignItems: 'center', justifyItems: 'center', rowGap: 3, minWidth: 0, padding: '7px 2px' } as const
 
   return (
