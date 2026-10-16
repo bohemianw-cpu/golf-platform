@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createClient } from '@/utils/supabase/client'
 import { getGolfLevelGroup } from '@/utils/golf/levels'
 import CommercePanel from '@/components/my/CommercePanel'
@@ -187,49 +187,47 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
     setSavingHandicap(false)
   }
 
+  // 상세를 연 순서를 센다. 빨리 다른 라운드를 누르면 앞서 연 라운드의 늦은 응답은 버린다.
+  const openRoundRequest = useRef(0)
   const openRound = async (round: RoundSummary) => {
+    const request = ++openRoundRequest.current
+    const isCurrent = () => request === openRoundRequest.current
     setDetailLoading(true)
     setError(null)
     setAggregate(null)
     setCourseAllAggregate(null)
     setGroupAggregate(null)
+    const skillGroup = profile?.skill_group ?? currentGroup
+    const firstRow = (rows: unknown) => (Array.isArray(rows) ? rows[0] : rows) as CourseAggregate | null | undefined
+    // 비교 평균 세 가지는 홀·샷 기록과 서로 관계가 없어 함께 요청한다. 상세는 홀·샷이 오는 대로 먼저 보여 준다.
+    const courseKnown = !!(round.course_id && round.play_mode)
+    const aggregates = Promise.all([
+      courseKnown ? supabase.rpc('get_course_round_aggregate', { p_course_id: round.course_id, p_play_mode: round.play_mode, p_skill_group: skillGroup, p_route_ids: round.route_ids }) : null,
+      courseKnown ? supabase.rpc('get_course_round_aggregate', { p_course_id: round.course_id, p_play_mode: round.play_mode, p_skill_group: 'all', p_route_ids: round.route_ids }) : null,
+      supabase.rpc('get_course_round_aggregate', { p_course_id: null, p_play_mode: null, p_skill_group: skillGroup }),
+    ]).catch(() => [null, null, null] as const) // 홀·샷이 먼저 실패해도 처리되지 않은 오류로 남지 않게 한다.
     try {
       const [{ data: holeRows, error: holesError }, { data: shotRows, error: shotsError }] = await Promise.all([
         supabase.from('round_holes').select('*').eq('round_id', round.id).order('hole_number'),
         supabase.from('round_shots').select('hole_number,shot_number,club,distance_to_pin_before,distance_to_pin_after,shot_distance,ball_lie,penalty').eq('round_id', round.id).order('hole_number').order('shot_number'),
       ])
+      if (!isCurrent()) return
       if (holesError) throw holesError
       if (shotsError) throw shotsError
       setDetail({ ...round, holes: toHoleRecords((holeRows ?? []) as HoleRow[], (shotRows ?? []) as ShotRow[]) })
-      if (round.course_id && round.play_mode) {
-        const { data: aggregateRows } = await supabase.rpc('get_course_round_aggregate', {
-          p_course_id: round.course_id,
-          p_play_mode: round.play_mode,
-          p_skill_group: profile?.skill_group ?? currentGroup,
-          p_route_ids: round.route_ids,
-        })
-        const first = Array.isArray(aggregateRows) ? aggregateRows[0] : aggregateRows
-        if (first) setAggregate(first as CourseAggregate)
-        const { data: allRows } = await supabase.rpc('get_course_round_aggregate', {
-          p_course_id: round.course_id,
-          p_play_mode: round.play_mode,
-          p_skill_group: 'all',
-          p_route_ids: round.route_ids,
-        })
-        const allFirst = Array.isArray(allRows) ? allRows[0] : allRows
-        if (allFirst) setCourseAllAggregate(allFirst as CourseAggregate)
-      }
-      const { data: groupRows } = await supabase.rpc('get_course_round_aggregate', {
-        p_course_id: null,
-        p_play_mode: null,
-        p_skill_group: profile?.skill_group ?? currentGroup,
-      })
-      const groupRow = Array.isArray(groupRows) ? groupRows[0] : groupRows
-      if (groupRow) setGroupAggregate(groupRow as CourseAggregate)
+      // 비교 평균은 못 받아도 상세는 그대로 보여 준다(예전과 같다).
+      const [course, courseAll, group] = await aggregates
+      if (!isCurrent()) return
+      const courseRow = firstRow(course?.data)
+      if (courseRow) setAggregate(courseRow)
+      const courseAllRow = firstRow(courseAll?.data)
+      if (courseAllRow) setCourseAllAggregate(courseAllRow)
+      const groupRow = firstRow(group?.data)
+      if (groupRow) setGroupAggregate(groupRow)
     } catch (err) {
-      setError(err instanceof Error ? err.message : '라운드 상세를 불러오지 못했습니다.')
+      if (isCurrent()) setError(err instanceof Error ? err.message : '라운드 상세를 불러오지 못했습니다.')
     } finally {
-      setDetailLoading(false)
+      if (isCurrent()) setDetailLoading(false)
     }
   }
 

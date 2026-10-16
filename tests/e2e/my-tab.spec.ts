@@ -53,3 +53,43 @@ test('the MY tab lists rounds 50 at a time and shows totals from the server', as
   // 개발 모드에서는 React가 첫 불러오기를 두 번 실행할 수 있어 중복을 빼고 본다.
   expect([...new Set(pageRequests)]).toEqual(['0+50', '50+50', '100+50'])
 })
+
+test('opening a round requests its comparison averages together and ignores an earlier slow round', async ({ page }) => {
+  await mockSignedInApp(page, { draft: false })
+  const round = (n: number, name: string) => ({ id: `00000000-0000-4000-8000-00000000000${n}`, created_at: `2026-10-0${n}T01:00:00Z`, registered_at: `2026-10-0${n}T05:00:00Z`, status: 'completed', total_score: 80 + n, total_putts: 30, club_name: name, golf_club: name, course_name: 'OUT', course_id: '33333333-3333-4333-8333-333333333333', play_mode: 'field', screen_provider: null, entry_mode: 'live', route_ids: [], tee_code: null, tee_name: null, visibility: 'private' })
+  const rounds = [round(1, '느린 CC'), round(2, '빠른 CC')]
+  const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+  await page.route('**/rest/v1/rounds*', (route) => route.fulfill(json(rounds)))
+  await page.route(/\/rest\/v1\/round_(holes|shots)/, async (route) => {
+    // 첫 라운드의 기록은 늦게 온다.
+    if (route.request().url().includes(rounds[0].id)) await wait(1500)
+    await route.fulfill(json([]))
+  })
+  const timeline: string[] = []
+  const sampleSize: Record<string, number> = { beginner: 11, all: 22 }
+  await page.route('**/rest/v1/rpc/get_course_round_aggregate*', async (route) => {
+    const body = route.request().postDataJSON() as { p_course_id: string | null; p_skill_group: string }
+    const kind = body.p_course_id ? body.p_skill_group : 'group'
+    timeline.push(`start ${kind}`)
+    await wait(400)
+    timeline.push(`end ${kind}`)
+    await route.fulfill(json([{ sample_size: kind === 'group' ? 33 : sampleSize[kind], average_score: 85, average_putts: 32, fairway_hit_percent: 50, gir_percent: 30 }]))
+  })
+
+  await page.goto('/my')
+  const history = page.getByRole('region', { name: /내 라운드 전체 기록/ })
+  await history.getByRole('button', { name: /빠른 CC/ }).click()
+  await expect(page.getByText(/같은 핸디 그룹 · 표본 11회/)).toBeVisible()
+  await expect(page.getByText(/구장 전체 그룹 · 표본 22회/)).toBeVisible()
+  await expect(page.getByText(/같은 그룹 익명 전체 평균 · 표본 33회/)).toBeVisible()
+  // 세 요청이 모두 시작된 뒤에야 첫 응답이 온다 = 동시에 보냈다.
+  expect(timeline.slice(0, 3).every((step) => step.startsWith('start'))).toBe(true)
+
+  // 느린 라운드를 누르고 곧바로 빠른 라운드를 누르면, 늦게 온 느린 라운드 결과가 화면을 덮지 않는다.
+  timeline.length = 0
+  await history.getByRole('button', { name: /느린 CC/ }).click()
+  await history.getByRole('button', { name: /빠른 CC/ }).click()
+  await wait(2000)
+  await expect(page.getByRole('heading', { name: '빠른 CC 상세' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: '느린 CC 상세' })).toHaveCount(0)
+})
