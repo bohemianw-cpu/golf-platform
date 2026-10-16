@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { palette } from '@/utils/theme'
 
 interface ScoreGuideTourProps {
   enabled: boolean
@@ -128,27 +129,27 @@ export default function ScoreGuideTour({ enabled, bottomNavVisible, startAutomat
       onClick={beginReplay}
       aria-label="스코어 입력 도움말 다시 보기"
       title="입력 도움말 다시 보기"
-      style={{ position: 'fixed', left: 12, bottom: `calc(${bottomNavVisible ? 76 : 12}px + env(safe-area-inset-bottom, 0px))`, transition: 'bottom 220ms ease', zIndex: 60, border: '1px solid #7dd3fc', borderRadius: '999px', background: '#f0f9ff', color: '#0369a1', minHeight: 36, padding: '0 11px', fontSize: 12, fontWeight: 800, cursor: 'pointer', boxShadow: '0 2px 8px rgba(15,23,42,.18)' }}
+      style={{ position: 'fixed', left: 12, bottom: `calc(${bottomNavVisible ? 76 : 12}px + env(safe-area-inset-bottom, 0px))`, transition: 'bottom 220ms ease', zIndex: 60, border: `1px solid ${palette.sky300}`, borderRadius: '999px', background: palette.sky50, color: palette.sky700, minHeight: 36, padding: '0 11px', fontSize: 12, fontWeight: 800, cursor: 'pointer', boxShadow: '0 2px 8px rgba(15,23,42,.18)' }}
     >도움말</button>}
     {active && <>
       <div aria-hidden="true" style={{ position: 'fixed', zIndex: 10000, inset: 0, pointerEvents: 'none' }} />
-      {position && <div aria-hidden="true" style={{ position: 'fixed', zIndex: 10001, top: position.top, left: position.left, width: position.width, height: position.height, border: '3px solid #38bdf8', borderRadius: 10, boxShadow: '0 0 0 9999px rgba(15,23,42,.62), 0 0 0 6px rgba(56,189,248,.3)', pointerEvents: 'none', boxSizing: 'border-box' }} />}
+      {position && <div aria-hidden="true" style={{ position: 'fixed', zIndex: 10001, top: position.top, left: position.left, width: position.width, height: position.height, border: `3px solid ${palette.sky400}`, borderRadius: 10, boxShadow: '0 0 0 9999px rgba(15,23,42,.62), 0 0 0 6px rgba(56,189,248,.3)', pointerEvents: 'none', boxSizing: 'border-box' }} />}
       <section
         ref={tooltipRef}
         role="dialog"
         aria-labelledby="score-guide-title"
         aria-describedby="score-guide-description"
         aria-live="polite"
-        style={{ position: 'fixed', zIndex: 10002, top: tooltipPosition.top, left: tooltipPosition.left, width: tooltipPosition.width, boxSizing: 'border-box', padding: 17, background: '#fff', border: '2px solid #38bdf8', borderRadius: 14, boxShadow: '0 16px 44px rgba(15,23,42,.28)' }}
+        style={{ position: 'fixed', zIndex: 10002, top: tooltipPosition.top, left: tooltipPosition.left, width: tooltipPosition.width, boxSizing: 'border-box', padding: 17, background: palette.white, border: `2px solid ${palette.sky400}`, borderRadius: 14, boxShadow: '0 16px 44px rgba(15,23,42,.28)' }}
       >
-        <div style={{ color: '#0369a1', fontSize: 10, fontWeight: 800, letterSpacing: '.08em' }}>스코어 입력 안내 · {stepIndex + 1}/{STEPS.length}</div>
-        <h2 id="score-guide-title" style={{ margin: '6px 0', color: '#0f172a', fontSize: 17 }}>{currentStep.title}</h2>
-        <p id="score-guide-description" style={{ margin: '0 0 14px', color: '#475569', fontSize: 13, lineHeight: 1.6 }}>{currentStep.body}</p>
+        <div style={{ color: palette.sky700, fontSize: 10, fontWeight: 800, letterSpacing: '.08em' }}>스코어 입력 안내 · {stepIndex + 1}/{STEPS.length}</div>
+        <h2 id="score-guide-title" style={{ margin: '6px 0', color: palette.slate900, fontSize: 17 }}>{currentStep.title}</h2>
+        <p id="score-guide-description" style={{ margin: '0 0 14px', color: palette.slate600, fontSize: 13, lineHeight: 1.6 }}>{currentStep.body}</p>
         <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'center' }}>
-          <button type="button" onClick={finish} style={{ padding: '8px 10px', border: 0, borderRadius: 7, background: 'transparent', color: '#64748b', cursor: 'pointer', font: 'inherit', fontSize: 12 }}>건너뛰기</button>
+          <button type="button" onClick={finish} style={{ padding: '8px 10px', border: 0, borderRadius: 7, background: 'transparent', color: palette.slate500, cursor: 'pointer', font: 'inherit', fontSize: 12 }}>건너뛰기</button>
           <div style={{ display: 'flex', gap: 7 }}>
-            {stepIndex > 0 && <button type="button" onClick={() => setStepIndex((value) => value - 1)} style={{ padding: '8px 11px', border: '1px solid #cbd5e1', borderRadius: 7, background: '#fff', color: '#334155', cursor: 'pointer', font: 'inherit', fontSize: 12 }}>이전</button>}
-            <button type="button" autoFocus onClick={() => stepIndex === STEPS.length - 1 ? finish() : setStepIndex((value) => value + 1)} style={{ padding: '8px 13px', border: 0, borderRadius: 7, background: '#0369a1', color: '#fff', cursor: 'pointer', font: 'inherit', fontSize: 12, fontWeight: 700 }}>{stepIndex === STEPS.length - 1 ? '완료' : '다음'}</button>
+            {stepIndex > 0 && <button type="button" onClick={() => setStepIndex((value) => value - 1)} style={{ padding: '8px 11px', border: `1px solid ${palette.slate300}`, borderRadius: 7, background: palette.white, color: palette.slate700, cursor: 'pointer', font: 'inherit', fontSize: 12 }}>이전</button>}
+            <button type="button" autoFocus onClick={() => stepIndex === STEPS.length - 1 ? finish() : setStepIndex((value) => value + 1)} style={{ padding: '8px 13px', border: 0, borderRadius: 7, background: palette.sky700, color: palette.white, cursor: 'pointer', font: 'inherit', fontSize: 12, fontWeight: 700 }}>{stepIndex === STEPS.length - 1 ? '완료' : '다음'}</button>
           </div>
         </div>
       </section>

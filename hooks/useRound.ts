@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { createClient } from '@/utils/supabase/client'
 import { isSelectableTee, resolveHoleTeeVariants } from '@/utils/course-tee'
 import type { ClubItem, BallLie, ShotRecord, HoleRecord, GolfCourseRoute } from '@/types/golf'
-import { fallbackClubDistance, INITIAL_HOLE_PARS } from '@/utils/golf/clubs'
+import { INITIAL_HOLE_PARS } from '@/utils/golf/clubs'
 import {
   buildClubApproach,
   buildClubStats,
@@ -20,37 +20,27 @@ import {
   MAX_GOLF_DISTANCE_M,
   MAX_GOLF_PAR,
   MIN_GOLF_PAR,
-  recommendClub,
   roundTo10,
   roundToTenth,
   type ClubStatsMap,
 } from '@/utils/golf/scoring'
 import type { ChooseFn } from '@/components/score/ConfirmDialog'
+import { createClubAdvice, GREEN_APPROACH_REMAINING, isWithinGreenReach } from './round/clubAdvice'
 import { buildCourseLayout } from './round/courseLayout'
-import { readDraft, writeDraft, type Draft } from './round/draft'
+import { writeDraft, type Draft } from './round/draft'
 import { getHoleResultLabel, type HoleResultNotice } from './round/holeResult'
 import { loadResumedRound, type RoundRow } from './round/restoreRound'
+import { buildRoundSummary } from './round/roundSummary'
+import { runInitialRestore } from './round/initialRestore'
 import { useRoundSync, type RoundMeta } from './round/useRoundSync'
+import { useDraftBackup, type DraftSnapshot } from './round/useDraftBackup'
 
 export type { HoleResultNotice } from './round/holeResult'
-
-// 같은 페이지 세션에서 "이어하기" 확인은 사용자당 한 번만 묻는다.
-// (탭 이동 등으로 컴포넌트가 다시 마운트되어도 상태가 유지됨)
-let promptedUserId: string | null = null
-
-// 그린 온 가능 거리(+10m) 안일 때 샷 후 남은 거리의 기본값 (m).
-// 웨지는 최대 비거리, 다른 클럽은 평균 비거리를 기준으로 한다.
-const GREEN_APPROACH_REMAINING = 5
-const GREEN_REACH_MARGIN_M = 10
-const isWithinGreenReach = (distance: number, averageDistance: number): boolean =>
-  distance <= averageDistance + GREEN_REACH_MARGIN_M
 
 interface Dialogs {
   choose: ChooseFn
   confirm: (message: string, okLabel?: string, tone?: 'primary' | 'danger') => Promise<boolean>
 }
-
-const sumBy = (holes: HoleRecord[], key: 'score' | 'putts') => holes.reduce((a, h) => a + h[key], 0)
 
 export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs, sampleSessionId: string | null = null) {
   // createClient()를 렌더마다 호출하지 않도록 고정
@@ -96,7 +86,6 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs, sample
 
   // ---------- refs ----------
   const undoPreviousHoleBusyRef = useRef(false)
-  const sampleSaveQueueRef = useRef<Promise<unknown>>(Promise.resolve())
   const initRef = useRef(false)
   const userIdRef = useRef<string | null>(null)
   const metaRef = useRef<RoundMeta>({ club: '', course: '', playMode: null, screenProvider: null, entryMode: 'live', holeCount: 18, courseId: null, routeIds: [], teeCode: null, teeName: null })
@@ -126,31 +115,8 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs, sample
   } = useRoundSync({ supabase, isSample, metaRef, setSaveError, onRegistered: markRegistered })
 
   // ---------- 클럽 파생값 (이름이 아닌 category 기준) ----------
-  const teeClubName = useMemo(
-    () => (clubs.find((c) => c.category === 'driver') ?? clubs.find((c) => c.category !== 'putter'))?.name ?? '',
-    [clubs]
-  )
-  const putterName = useMemo(() => clubs.find((c) => c.category === 'putter')?.name ?? null, [clubs])
-  const preferredApproachWedgeName = useMemo(
-    () => clubs.find((c) => c.category === 'wedge' && c.preferredApproach)?.name ?? null,
-    [clubs]
-  )
-  const recommendForDistance = useCallback(
-    (distance: number, stats: ClubStatsMap, exclude?: (club: ClubItem) => boolean) =>
-      distance <= 70 && preferredApproachWedgeName
-        ? preferredApproachWedgeName
-        : recommendClub(distance, clubs, stats, exclude),
-    [clubs, preferredApproachWedgeName]
-  )
-  const isPutter = useCallback(
-    (name: string) => name === '퍼터' || clubs.find((c) => c.name === name)?.category === 'putter',
-    [clubs]
-  )
-
-  const isDriver = useCallback(
-    (name: string) => clubs.find((c) => c.name === name)?.category === 'driver',
-    [clubs]
-  )
+  const { teeClubName, putterName, preferredApproachWedgeName, recommendForDistance, isPutter, isDriver, greenReachDistance, suggestedRemainingForClub } =
+    useMemo(() => createClubAdvice(clubs), [clubs])
 
   // Removed clubs fall back to the current tee club without effect-driven state updates.
   const selectedClub = clubs.some((club) => club.name === selectedClubValue)
@@ -169,21 +135,6 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs, sample
     (name: string) => getExpectedDistance(name, clubs, clubStats),
     [clubs, clubStats]
   )
-  const greenReachDistance = useCallback((clubName: string, stats: ClubStatsMap) => {
-    const club = clubs.find((item) => item.name === clubName)
-    return club?.category === 'wedge'
-      ? Math.max(stats[clubName]?.maxDist ?? 0, fallbackClubDistance(club, clubName))
-      : getExpectedDistance(clubName, clubs, stats)
-  }, [clubs])
-  const suggestedRemainingForClub = useCallback((distance: number, clubName: string, stats: ClubStatsMap) => {
-    const club = clubs.find((item) => item.name === clubName)
-    if (club?.category === 'wedge') {
-      const maxDistance = greenReachDistance(clubName, stats)
-      return Math.min(distance, Math.max(GREEN_APPROACH_REMAINING, roundToTenth(distance - maxDistance)))
-    }
-    return roundTo10(distance - getExpectedDistance(clubName, clubs, stats))
-  }, [clubs, greenReachDistance])
-
   const clubApproach = useMemo(
     () => buildClubApproach(allShots, expectedDistance, isPutter),
     [allShots, expectedDistance, isPutter]
@@ -218,26 +169,10 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs, sample
 
   const recommendedLie: BallLie | null = selectedClub && isWithinGreenReach(currentPrevDistance, greenReachDistance(selectedClub, clubStats)) ? '그린' : null
 
-  const summary = useMemo(() => {
-    const par = completedHoles.reduce((a, h) => a + h.par, 0)
-    const score = sumBy(completedHoles, 'score')
-    const currentFairwayHit = isRoundComplete || completedHoles.some((h) => h.holeNumber === currentHole)
-      ? null
-      : currentShots.length > 0
-        ? isFairwayHit(currentShots, currentPar)
-        : lieSelectedByUser && currentPar > 3 ? selectedLie === '페어웨이' : null
-    const fwEligible = completedHoles.filter((h) => h.fairwayHit !== null).length + (currentFairwayHit !== null ? 1 : 0)
-    const fwHit = completedHoles.filter((h) => h.fairwayHit === true).length + (currentFairwayHit === true ? 1 : 0)
-    const girCount = completedHoles.filter((h) => h.gir).length
-    return {
-      totalDiff: score - par,
-      fwEligible,
-      fwHit,
-      girCount,
-      fwPercent: fwEligible > 0 ? Math.round((fwHit / fwEligible) * 100) : 0,
-      girPercent: completedHoles.length > 0 ? Math.round((girCount / completedHoles.length) * 100) : 0,
-    }
-  }, [completedHoles, currentHole, currentPar, currentShots, isRoundComplete, lieSelectedByUser, selectedLie])
+  const summary = useMemo(
+    () => buildRoundSummary({ completedHoles, currentHole, currentPar, currentShots, isRoundComplete, lieSelectedByUser, selectedLie }),
+    [completedHoles, currentHole, currentPar, currentShots, isRoundComplete, lieSelectedByUser, selectedLie]
+  )
 
   const currentHoleScore = calcHoleScore(currentShots)
 
@@ -288,56 +223,10 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs, sample
   )
 
   // ---------- 이 기기 임시 기록 ----------
-  useEffect(() => {
-    const uid = userIdRef.current
-    if (!ready || !uid || isRegistered) return // 등록 전 마지막 홀까지 복구할 수 있도록 보관
-    const hasData = completedHoles.length > 0 || currentShots.length > 0 || !!roundIdRef.current || courseInfoLocked
-    if (!hasData) {
-      writeDraft(isSample, null)
-      return
-    }
-    writeDraft(isSample, {
-      userId: uid,
-      sampleSessionId: isSample ? sampleSessionId : null,
-      roundId: currentRoundId,
-      golfClubName,
-      courseName,
-      playMode,
-      screenProvider,
-      entryMode,
-      courseId,
-      routeIds,
-      teeCode,
-      teeName,
-      courseInfoLocked,
-      courseParsAvailable,
-      routeDistances,
-      greenCodes,
-      greenNames,
-      routeHoles,
-      holePars,
-      currentHole,
-      holeDistance,
-      currentShots,
-      completedHoles,
-    })
-  }, [ready, isRegistered, currentRoundId, golfClubName, courseName, playMode, screenProvider, entryMode, courseId, routeIds, teeCode, teeName, courseInfoLocked, courseParsAvailable, routeDistances, greenCodes, greenNames, routeHoles, holePars, currentHole, holeDistance, currentShots, completedHoles, isSample, sampleSessionId, roundIdRef])
-
-  useEffect(() => {
-    if (!isSample || !sampleSessionId || !ready || !userIdRef.current) return
-    const payload: Draft = {
-      userId: userIdRef.current, sampleSessionId, roundId: null, golfClubName, courseName, playMode, screenProvider, entryMode, courseInfoLocked, courseParsAvailable,
-      courseId, routeIds, teeCode, teeName, routeDistances, greenCodes, greenNames, routeHoles,
-      holePars, currentHole, holeDistance, currentShots, completedHoles,
-    }
-    sampleSaveQueueRef.current = sampleSaveQueueRef.current.then(async () => {
-      const { error } = await supabase.from('sample_round_sessions')
-        .update({ payload, updated_at: new Date().toISOString() })
-        .eq('id', sampleSessionId).eq('user_id', userIdRef.current!)
-      if (error) setSaveError('샘플 기록을 서버에 저장하지 못했습니다. 연결 상태를 확인해 주세요.')
-      else setSaveError(null)
-    })
-  }, [isSample, sampleSessionId, ready, supabase, golfClubName, courseName, playMode, screenProvider, entryMode, courseInfoLocked, courseParsAvailable, courseId, routeIds, teeCode, teeName, routeDistances, greenCodes, greenNames, routeHoles, holePars, currentHole, holeDistance, currentShots, completedHoles])
+  const draftSnapshot = useMemo<DraftSnapshot>(() => ({
+    golfClubName, courseName, playMode, screenProvider, entryMode, courseId, routeIds, teeCode, teeName, courseInfoLocked, courseParsAvailable, routeDistances, greenCodes, greenNames, routeHoles, holePars, currentHole, holeDistance, currentShots, completedHoles,
+  }), [golfClubName, courseName, playMode, screenProvider, entryMode, courseId, routeIds, teeCode, teeName, courseInfoLocked, courseParsAvailable, routeDistances, greenCodes, greenNames, routeHoles, holePars, currentHole, holeDistance, currentShots, completedHoles])
+  useDraftBackup({ supabase, ready, isRegistered, isSample, sampleSessionId, userIdRef, roundIdRef, roundId: currentRoundId, snapshot: draftSnapshot, setSaveError })
 
   // ---------- 서버 저장 흐름 ----------
   const registerRound = useCallback(async () => {
@@ -466,85 +355,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs, sample
       }
     }
 
-    ;(async () => {
-      try {
-        const {
-          data: { session },
-        } = await supabase.auth.getSession()
-        if (!session?.user) return
-        const userId = session.user.id
-        userIdRef.current = userId
-        const draft = readDraft(userId, isSample, sampleSessionId)
-        if (isSample) {
-          if (draft) applyDraft(draft)
-          else if (sampleSessionId) {
-            const { data: sample, error } = await supabase.from('sample_round_sessions').select('payload')
-              .eq('id', sampleSessionId).eq('user_id', userId).maybeSingle()
-            const payload = sample?.payload as Draft | null
-            if (!error && payload && payload.userId === userId && Array.isArray(payload.holePars) && Array.isArray(payload.completedHoles)) applyDraft(payload)
-          }
-          setReady(true)
-          return
-        }
-
-        // 이미 이 페이지 세션에서 확인을 마친 경우(탭 이동 등으로 재마운트):
-        // 다시 묻지 않고, 로컬 백업이 있으면 조용히 복구한다.
-        if (promptedUserId === userId && draft) {
-          applyDraft(draft)
-          return
-        }
-        const alreadyPrompted = promptedUserId === userId
-        promptedUserId = userId
-
-        // 1) 로컬 백업 (아직 서버에 못 올린 샷까지 포함)
-        if (draft && !alreadyPrompted) {
-          const answer = await choose(
-            `이 기기에 저장된 임시 기록이 있습니다.\n${draft.golfClubName || '골프장 미지정'} · ${draft.completedHoles.length}홀 완료`,
-            [
-              { label: '이어서 하기', value: 'resume', tone: 'primary' },
-              { label: '버리기', value: 'discard', tone: 'danger' },
-            ]
-          )
-          if (answer === 'resume') {
-            applyDraft(draft)
-            return
-          }
-          clearDraft()
-        }
-
-        // 2) 서버의 진행 중 라운드
-        const { data: rounds, error } = await supabase
-          .from('rounds')
-          .select('*')
-          .eq('user_id', session.user.id)
-          .eq('status', 'in_progress')
-          .order('created_at', { ascending: false })
-          .limit(1)
-        if (error) throw error
-
-        const round = rounds?.[0] as RoundRow | undefined
-        if (!round) return
-
-        const answer = await choose(
-          `진행 중이던 라운드(${round.club_name || round.golf_club || '골프장'})가 있습니다.`,
-          [
-            { label: '이어서 하기', value: 'resume', tone: 'primary' },
-            { label: '삭제하고 새로 시작', value: 'delete', tone: 'danger' },
-            { label: '나중에 (그대로 두기)', value: 'later', tone: 'neutral' },
-          ]
-        )
-        if (answer === 'resume') await resumeFromDb(round)
-        else if (answer === 'delete') {
-          const { error: delError } = await supabase.from('rounds').delete().eq('id', round.id).select('id').single()
-          if (delError) throw delError
-        }
-      } catch (err) {
-        console.error('진행 중 라운드 확인 실패:', err)
-        setSaveError('이전 라운드를 불러오지 못했습니다.')
-      } finally {
-        setReady(true)
-      }
-    })()
+    void runInitialRestore({ supabase, isSample, sampleSessionId, choose, userIdRef, applyDraft, resumeFromDb, clearDraft, setSaveError, setReady })
     // 최초 1회만 실행
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -854,28 +665,6 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs, sample
     [resetRound, clearDraft, prepareHole, holePars, routeDistances]
   )
 
-  const resetCurrentRound = async () => {
-    if (isRegistered) return
-    const ok = await confirm(
-      '현재 진행 중인 라운드를 완전히 삭제하고 처음부터 새로 시작하시겠습니까?',
-      '삭제하고 새로 시작',
-      'danger'
-    )
-    if (!ok) return
-    await waitForQueuedSyncs()
-    const id = roundIdRef.current
-    if (id) {
-      try {
-        await deleteServerRound(id)
-      } catch (err) {
-        console.error('라운드 초기화 실패:', err)
-        setSaveError('서버에서 라운드를 삭제하지 못했습니다. 다시 시도해 주세요.')
-        return
-      }
-    }
-    clearAll(false)
-  }
-
   const startNewRound = () => {
     if (!isSample && !isRegistered) return
     clearAll(false)
@@ -913,7 +702,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs, sample
     isPutterSelected, isPutterOrGreen, summary, currentHoleScore, clubStats, clubStatsAll, clubApproach, recommendedLie, isOnGreen,
     // 액션
     handleClubSelect, changeHolePar, changeHoleDistance, changeRemaining, clearShotsAndUnlockCourse,
-    saveShot, quickPutt, undoLastShot, undoPreviousShot, canRedoLastShot, redoLastShot, undoPreviousHole, resetCurrentRound, startNewRound, registerRound, isSample,
+    saveShot, quickPutt, undoLastShot, undoPreviousShot, canRedoLastShot, redoLastShot, undoPreviousHole, startNewRound, registerRound, isSample,
   }
 }
 

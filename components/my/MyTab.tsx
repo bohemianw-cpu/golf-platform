@@ -16,6 +16,7 @@ import TrophySection from './TrophySection'
 import FriendsSection from './FriendsSection'
 import RoundHistorySection from './RoundHistorySection'
 import RoundDetailSection from './RoundDetailSection'
+import { color, palette } from '@/utils/theme'
 
 export default function MyTab({ onStartSample }: { onStartSample?: (id: string) => void }) {
   const supabase = useMemo(() => createClient(), [])
@@ -452,10 +453,10 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
 
   return (
     <main style={{ maxWidth: '1000px', margin: '0 auto', padding: '16px', display: 'grid', gap: '14px' }}>
-      <section style={{ ...CARD, background: 'linear-gradient(120deg,#052e2b,#064e3b)', color: '#fff' }}>
-        <p style={{ margin: '0 0 6px', color: '#a7f3d0', fontSize: '11px', fontWeight: 800, letterSpacing: '0.12em' }}>MY GOLF DATA</p>
+      <section style={{ ...CARD, background: `linear-gradient(120deg,${palette.forest950},${palette.emerald900})`, color: palette.white }}>
+        <p style={{ margin: '0 0 6px', color: palette.emerald200, fontSize: '11px', fontWeight: 800, letterSpacing: '0.12em' }}>MY GOLF DATA</p>
         <h1 style={{ margin: '0 0 8px', fontSize: '23px' }}>{profile?.nickname || '골퍼'}님의 기록 보관함</h1>
-        <p style={{ margin: 0, color: '#d1fae5', fontSize: '13px' }}>모든 라운드와 홀별 샷을 저장하고, 선택한 기록의 전체 상세를 언제든지 다시 볼 수 있습니다.</p>
+        <p style={{ margin: 0, color: palette.emerald100, fontSize: '13px' }}>모든 라운드와 홀별 샷을 저장하고, 선택한 기록의 전체 상세를 언제든지 다시 볼 수 있습니다.</p>
       </section>
 
       <SampleRoundsSection sampleSessions={sampleSessions} selectedSample={selectedSample} setSelectedSample={setSelectedSample} startSample={startSample} startingSample={startingSample} onStartSample={onStartSample} />
@@ -469,13 +470,13 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
         <AgreementDetails kind="terms" />
         <AgreementDetails kind="privacy" />
         <p style={muted}>탈퇴 시 계정·라운드·샷 기록을 삭제합니다. 탈퇴 처리 기록은 6개월 뒤 자동 삭제됩니다.</p>
-        <button type="button" disabled={withdrawing} onClick={() => void withdrawAccount()} style={{ border: '1px solid #fecaca', borderRadius: 7, padding: '8px 12px', color: '#b91c1c', background: '#fff' }}>{withdrawing ? '탈퇴 처리 중…' : '회원 탈퇴'}</button>
+        <button type="button" disabled={withdrawing} onClick={() => void withdrawAccount()} style={{ border: `1px solid ${palette.red200}`, borderRadius: 7, padding: '8px 12px', color: palette.red700, background: palette.white }}>{withdrawing ? '탈퇴 처리 중…' : '회원 탈퇴'}</button>
       </section>
 
-      {error && <div role="alert" style={{ ...CARD, color: '#b91c1c', background: '#fef2f2' }}>{error}</div>}
+      {error && <div role="alert" style={{ ...CARD, color: palette.red700, background: palette.red50 }}>{error}</div>}
 
-      {suggestGroupReview && <section role="status" style={{ ...CARD, borderColor: '#fcd34d', background: '#fffbeb' }}>
-        <strong style={{ color: '#92400e' }}>실력 그룹을 다시 확인해 볼까요?</strong>
+      {suggestGroupReview && <section role="status" style={{ ...CARD, borderColor: palette.amber300, background: palette.amber50 }}>
+        <strong style={{ color: palette.amber800 }}>실력 그룹을 다시 확인해 볼까요?</strong>
         <p style={{ ...muted, marginBottom: 0 }}>최근 완료 라운드 {completedRounds.length}회의 평균이 {averageScore?.toFixed(1)}타입니다. 초보 그룹은 비교용으로만 사용하며, 핸디캡 입력을 검토해 보세요. 이 제안은 공식 핸디캡 산정이 아닙니다.</p>
       </section>}
 
@@ -485,7 +486,7 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
           ['평균 스코어', averageScore == null ? '기록 없음' : `${averageScore.toFixed(1)}타`],
           ['베스트 스코어', bestScore == null ? '기록 없음' : `${bestScore}타`],
           ['비교 그룹', GOLF_LEVEL_GROUPS[currentGroup].label],
-        ].map(([label, value]) => <div key={label} style={CARD}><div style={muted}>{label}</div><strong style={{ display: 'block', marginTop: '7px', color: '#047857', fontSize: '20px' }}>{value}</strong></div>)}
+        ].map(([label, value]) => <div key={label} style={CARD}><div style={muted}>{label}</div><strong style={{ display: 'block', marginTop: '7px', color: color.brand, fontSize: '20px' }}>{value}</strong></div>)}
       </section>
 
       <TrophySection trophies={trophies} earnedTrophies={earnedTrophies} achievementRounds={achievementRounds} currentLevel={currentLevel} currentLevelIndex={currentLevelIndex} nextLevel={nextLevel} levelProgress={levelProgress} achievementsError={achievementsError} achievementsLoading={achievementsLoading} integrityError={integrityError} integrityLoading={integrityLoading} />
@@ -495,11 +496,11 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
         <p style={{ ...muted, margin: '0 0 12px' }}>현재 비교 그룹: {GOLF_LEVEL_GROUPS[currentGroup].label}. 핸디캡 지수를 직접 입력해 비교에 사용할 그룹을 설정할 수 있습니다.</p>
         <div style={{ display: 'flex', gap: '8px', alignItems: 'end', flexWrap: 'wrap' }}>
           <div style={{ flex: '1 1 180px' }}>
-            <label htmlFor="my-handicap-index" style={{ display: 'block', marginBottom: '4px', fontSize: '11px', color: '#475569', fontWeight: 700 }}>내 핸디캡 지수</label>
-            <input id="my-handicap-index" type="number" min="-10" max="54" step="0.1" inputMode="decimal" value={handicapInput} onChange={(event) => { setHandicapInput(event.target.value); setProfileSaved(false) }} placeholder="모르면 비워 두세요" style={{ width: '100%', boxSizing: 'border-box', padding: '8px', border: '1px solid #cbd5e1', borderRadius: '7px' }} />
+            <label htmlFor="my-handicap-index" style={{ display: 'block', marginBottom: '4px', fontSize: '11px', color: palette.slate600, fontWeight: 700 }}>내 핸디캡 지수</label>
+            <input id="my-handicap-index" type="number" min="-10" max="54" step="0.1" inputMode="decimal" value={handicapInput} onChange={(event) => { setHandicapInput(event.target.value); setProfileSaved(false) }} placeholder="모르면 비워 두세요" style={{ width: '100%', boxSizing: 'border-box', padding: '8px', border: `1px solid ${palette.slate300}`, borderRadius: '7px' }} />
           </div>
-          <button type="button" onClick={() => void saveHandicap()} disabled={savingHandicap} style={{ padding: '9px 12px', border: 0, borderRadius: '7px', background: '#047857', color: '#fff', fontWeight: 700, cursor: savingHandicap ? 'wait' : 'pointer' }}>{savingHandicap ? '저장 중…' : '핸디캡 그룹 저장'}</button>
-          {profileSaved && <span role="status" style={{ ...muted, color: '#047857' }}>비교 그룹을 업데이트했습니다.</span>}
+          <button type="button" onClick={() => void saveHandicap()} disabled={savingHandicap} style={{ padding: '9px 12px', border: 0, borderRadius: '7px', background: color.brand, color: palette.white, fontWeight: 700, cursor: savingHandicap ? 'wait' : 'pointer' }}>{savingHandicap ? '저장 중…' : '핸디캡 그룹 저장'}</button>
+          {profileSaved && <span role="status" style={{ ...muted, color: color.brand }}>비교 그룹을 업데이트했습니다.</span>}
         </div>
       </section>
 

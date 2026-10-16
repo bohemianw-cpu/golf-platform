@@ -31,13 +31,15 @@ npm run test:unit
 
 ## 코드 구조
 
-- `app/`: 앱 셸, 메타데이터, 전역 스타일
+- `app/`: 탭별 페이지(`/home`, `/score`, `/my` 등), 탭 오류 화면(`error.tsx`), 메타데이터, 전역 스타일
+- `components/layout/AppShell.tsx`: 모든 탭이 함께 쓰는 상단바·하단 메뉴·로그인 상태·화면 오류 수집
 - `proxy.ts`, `utils/supabase/`: 요청 세션 쿠키와 Supabase 클라이언트
 - `components/score/`: 구장 선택, 코스 레이아웃, 샷 입력, 스코어카드, 라운드 리포트
 - `components/my/`: 내 라운드 전체 목록, 상세 샷 복원, 익명/친구 비교 설정
 - `components/layout/ComingSoonTab.tsx`: 아직 제공하지 않는 서비스 탭의 안내 UI
-- `hooks/useRound.ts`: 라운드 입력 상태와 기기 임시저장, Supabase 동기화
+- `hooks/useRound.ts`, `hooks/round/`: 라운드 입력 상태, 기기 임시저장, 코스 배치 계산, 진행 중 라운드 복구, Supabase 동기화
 - `utils/golf/`: 핸디캡 그룹과 골프 계산 로직
+- `utils/theme.ts`: 화면 공통 색상. 화면 코드는 색상값을 직접 쓰지 않고 `palette`·`color`의 이름을 쓴다. 브랜드 색 같은 역할 색은 `color`에서 한 번에 바꾼다.
 - `supabase/migrations/`: 사용자·코스·라운드·샷·공개 범위 스키마
 - `docs/ROUND_INTEGRITY_POLICY.md`: 샷 입력 서버 이력, 극최소 소요시간, 보상 심사 분류 기준
 

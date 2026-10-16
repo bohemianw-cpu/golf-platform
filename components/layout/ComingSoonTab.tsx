@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { color, palette } from '@/utils/theme'
 
 type ComingSoonArea = 'join' | 'video' | 'lesson' | 'shop'
 
@@ -12,12 +13,12 @@ const CONTENT: Record<ComingSoonArea, { title: string; description: string; icon
 export default function ComingSoonTab({ area }: { area: ComingSoonArea }) {
   const content = CONTENT[area]
   return (
-    <section aria-labelledby="coming-soon-title" style={{ maxWidth: '720px', margin: '48px auto', padding: '32px 24px', textAlign: 'center', background: '#fff', border: '1px solid #e2e8f0', borderRadius: '20px', boxShadow: '0 12px 32px #0f172a0a' }}>
-      <div aria-hidden="true" style={{ width: '64px', height: '64px', display: 'grid', placeItems: 'center', margin: '0 auto 16px', borderRadius: '20px', background: '#ecfdf5', fontSize: '30px' }}>{content.icon}</div>
-      <p style={{ margin: '0 0 8px', color: '#047857', fontSize: '12px', fontWeight: 800, letterSpacing: '0.12em' }}>COMING SOON</p>
-      <h1 id="coming-soon-title" style={{ margin: '0 0 10px', color: '#0f172a', fontSize: '24px' }}>{content.title} 서비스 준비 중</h1>
-      <p style={{ maxWidth: '480px', margin: '0 auto', color: '#64748b', fontSize: '14px', lineHeight: 1.7 }}>{content.description}</p>
-      <Link href="/score" style={{ display: 'inline-block', marginTop: '22px', padding: '11px 18px', color: '#fff', background: '#047857', borderRadius: '9px', fontWeight: 700, textDecoration: 'none' }}>스코어 기록 계속하기</Link>
+    <section aria-labelledby="coming-soon-title" style={{ maxWidth: '720px', margin: '48px auto', padding: '32px 24px', textAlign: 'center', background: palette.white, border: `1px solid ${palette.slate200}`, borderRadius: '20px', boxShadow: `0 12px 32px ${palette.slate900A04}` }}>
+      <div aria-hidden="true" style={{ width: '64px', height: '64px', display: 'grid', placeItems: 'center', margin: '0 auto 16px', borderRadius: '20px', background: palette.emerald50, fontSize: '30px' }}>{content.icon}</div>
+      <p style={{ margin: '0 0 8px', color: color.brand, fontSize: '12px', fontWeight: 800, letterSpacing: '0.12em' }}>COMING SOON</p>
+      <h1 id="coming-soon-title" style={{ margin: '0 0 10px', color: palette.slate900, fontSize: '24px' }}>{content.title} 서비스 준비 중</h1>
+      <p style={{ maxWidth: '480px', margin: '0 auto', color: palette.slate500, fontSize: '14px', lineHeight: 1.7 }}>{content.description}</p>
+      <Link href="/score" style={{ display: 'inline-block', marginTop: '22px', padding: '11px 18px', color: palette.white, background: color.brand, borderRadius: '9px', fontWeight: 700, textDecoration: 'none' }}>스코어 기록 계속하기</Link>
     </section>
   )
 }

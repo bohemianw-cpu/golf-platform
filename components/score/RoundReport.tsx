@@ -3,6 +3,7 @@
 import { useEffect, useState, type CSSProperties } from 'react'
 import type { ClubItem, HoleRecord } from '@/types/golf'
 import { createClient } from '@/utils/supabase/client'
+import { color, palette } from '@/utils/theme'
 
 interface RoundReportProps {
   completedHoles?: HoleRecord[]
@@ -21,8 +22,8 @@ interface RoundReportProps {
   saveError?: string | null
 }
 
-const card: CSSProperties = { background: '#fff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '16px' }
-const muted: CSSProperties = { color: '#64748b', fontSize: '12px', lineHeight: 1.6 }
+const card: CSSProperties = { background: palette.white, border: `1px solid ${palette.slate200}`, borderRadius: '12px', padding: '16px' }
+const muted: CSSProperties = { color: palette.slate500, fontSize: '12px', lineHeight: 1.6 }
 const suggestionCache = new Map<string, string[]>()
 const suggestionRequests = new Map<string, Promise<string[]>>()
 
@@ -114,10 +115,10 @@ export default function RoundReport({ completedHoles = [], courseHoleNumbers, cu
   const puttsPerHole = holes.length ? totalPutts / holes.length : null
   return (
     <main style={{ maxWidth: '900px', margin: '0 auto', padding: '16px', display: 'grid', gap: '12px' }}>
-      <header style={{ ...card, background: 'linear-gradient(120deg,#052e2b,#064e3b)', color: '#fff' }}>
-        <p style={{ margin: '0 0 4px', color: '#a7f3d0', fontSize: '11px', fontWeight: 800, letterSpacing: '.1em' }}>ROUND REPORT</p>
+      <header style={{ ...card, background: `linear-gradient(120deg,${palette.forest950},${palette.emerald900})`, color: palette.white }}>
+        <p style={{ margin: '0 0 4px', color: palette.emerald200, fontSize: '11px', fontWeight: 800, letterSpacing: '.1em' }}>ROUND REPORT</p>
         <h1 style={{ margin: '0 0 5px', fontSize: '22px' }}>{currentCcName || '라운드'} 분석</h1>
-        <p style={{ margin: 0, color: '#d1fae5', fontSize: '12px' }}>요약 통계는 이번 {holes.length}홀과 샷 기록으로 계산했습니다. 비교 표본이 없는 통계나 예상 수치는 표시하지 않습니다.</p>
+        <p style={{ margin: 0, color: palette.emerald100, fontSize: '12px' }}>요약 통계는 이번 {holes.length}홀과 샷 기록으로 계산했습니다. 비교 표본이 없는 통계나 예상 수치는 표시하지 않습니다.</p>
       </header>
 
       <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(130px,1fr))', gap: '8px' }} aria-label="라운드 요약">
@@ -127,42 +128,42 @@ export default function RoundReport({ completedHoles = [], courseHoleNumbers, cu
           ['페어웨이', fairwayHoles.length ? `${Math.round(fairwayHits / fairwayHoles.length * 100)}%` : '기록 없음', `${fairwayHits}/${fairwayHoles.length} 기회`],
           ['GIR', holes.length ? `${Math.round(girHits / holes.length * 100)}%` : '기록 없음', `${girHits}/${holes.length}홀`],
           ['벌타', `${penalties}개`, averageDriverDistance == null ? '드라이버 거리 기록 없음' : `드라이버 평균 ${averageDriverDistance}m`],
-        ].map(([label, value, detail]) => <article key={label} style={card}><div style={muted}>{label}</div><strong style={{ display: 'block', margin: '5px 0', color: '#047857', fontSize: '20px' }}>{value}</strong><div style={muted}>{detail}</div></article>)}
+        ].map(([label, value, detail]) => <article key={label} style={card}><div style={muted}>{label}</div><strong style={{ display: 'block', margin: '5px 0', color: color.brand, fontSize: '20px' }}>{value}</strong><div style={muted}>{detail}</div></article>)}
       </section>
 
       <section style={card} aria-labelledby="report-holes-title">
         <h2 id="report-holes-title" style={{ margin: '0 0 10px', fontSize: '16px' }}>홀별 기록과 샷</h2>
         {holes.length === 0 ? <p style={muted}>저장된 홀 기록이 없습니다.</p> : <div style={{ display: 'grid', gap: '8px' }}>
-          {holes.map((hole) => <article key={hole.holeNumber} style={{ border: '1px solid #e2e8f0', borderRadius: '9px', padding: '10px', background: '#f8fafc' }}>
+          {holes.map((hole) => <article key={hole.holeNumber} style={{ border: `1px solid ${palette.slate200}`, borderRadius: '9px', padding: '10px', background: palette.slate50 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', gap: '8px', fontSize: '12px' }}><strong>{hole.holeNumber}번째 · 코스 {courseHoleNumbers?.[hole.holeNumber - 1] ?? hole.holeNumber}번 홀 · Par {hole.par}</strong><span>{hole.score}타 · 퍼트 {hole.putts} · {hole.gir ? 'GIR' : 'GIR 미달'}</span></div>
-            <ol style={{ margin: '7px 0 0', paddingLeft: '20px', display: 'grid', gap: '4px', color: '#475569', fontSize: '11px' }}>
+            <ol style={{ margin: '7px 0 0', paddingLeft: '20px', display: 'grid', gap: '4px', color: palette.slate600, fontSize: '11px' }}>
               {hole.shots.map((shot) => <li key={`${hole.holeNumber}-${shot.shotNumber}`}>{shot.club} · {shot.shotDistance}m · {shot.ballLie}{shot.penalty ? ` · 벌타 ${shot.penalty}` : ''}</li>)}
-              {hole.shots.length === 0 && <li style={{ color: '#94a3b8' }}>샷 상세가 저장되지 않았습니다.</li>}
+              {hole.shots.length === 0 && <li style={{ color: palette.slate400 }}>샷 상세가 저장되지 않았습니다.</li>}
             </ol>
           </article>)}
         </div>}
       </section>
 
-      <section style={{ ...card, borderColor: '#bbf7d0', background: '#f0fdf4' }} aria-labelledby="practice-title">
+      <section style={{ ...card, borderColor: palette.green200, background: palette.green50 }} aria-labelledby="practice-title">
         <h2 id="practice-title" style={{ margin: '0 0 7px', fontSize: '16px' }}>다음 연습 제안</h2>
         {isSample ? <p style={{ ...muted, margin: 0 }}>샘플 기록은 AI 연습 분석 대상에서 제외됩니다.</p>
           : aiAllowed === false ? <p style={{ ...muted, margin: 0 }}>AI 연습 제안을 받으려면 MY에서 선택 동의를 켜주세요.</p>
           : aiAllowed === null ? <p role="status" style={{ ...muted, margin: 0 }}>AI 분석 동의 상태를 확인하고 있습니다.</p>
           : suggestionLoading ? <p role="status" style={{ ...muted, margin: 0 }}>이번 라운드와 이전 샷 기록을 AI가 살펴보고 있습니다.</p>
-          : suggestionError ? <div role="alert" style={{ ...muted, color: '#b91c1c' }}>{suggestionError} <button type="button" onClick={() => setSuggestionAttempt((value) => value + 1)} style={{ marginLeft: 6, padding: '4px 8px', border: '1px solid #cbd5e1', borderRadius: 6, background: '#fff', cursor: 'pointer' }}>다시 시도</button></div>
-            : practiceSuggestions.length ? <ul style={{ margin: 0, paddingLeft: '18px', display: 'grid', gap: '7px', color: '#166534', fontSize: '12px', lineHeight: 1.6 }}>{practiceSuggestions.map((suggestion, index) => <li key={index}>{suggestion}</li>)}</ul>
+          : suggestionError ? <div role="alert" style={{ ...muted, color: palette.red700 }}>{suggestionError} <button type="button" onClick={() => setSuggestionAttempt((value) => value + 1)} style={{ marginLeft: 6, padding: '4px 8px', border: `1px solid ${palette.slate300}`, borderRadius: 6, background: palette.white, cursor: 'pointer' }}>다시 시도</button></div>
+            : practiceSuggestions.length ? <ul style={{ margin: 0, paddingLeft: '18px', display: 'grid', gap: '7px', color: palette.green800, fontSize: '12px', lineHeight: 1.6 }}>{practiceSuggestions.map((suggestion, index) => <li key={index}>{suggestion}</li>)}</ul>
               : <p style={{ ...muted, margin: 0 }}>샷 기록을 입력하면 AI가 다음 연습을 제안합니다.</p>}
         <p style={{ ...muted, margin: '8px 0 0', fontSize: '10px' }}>기록을 바탕으로 AI가 작성한 연습 아이디어입니다.</p>
       </section>
 
       <footer style={{ display: 'grid', gap: '8px', maxWidth: 480, margin: '0 auto', width: '100%' }}>
-        {saveError && !isRegistered && <p role="alert" style={{ margin: 0, padding: '10px 12px', borderRadius: '8px', background: '#fef2f2', color: '#b91c1c', fontSize: '12px' }}>{saveError}</p>}
-        {onUndoLastShot && !isRegistered && completedHoles.length > 0 && <button type="button" onClick={onUndoLastShot} disabled={isRegistering} style={{ padding: '10px 14px', border: '1px solid #fca5a5', borderRadius: '8px', background: '#fff1f2', color: '#b91c1c', fontWeight: 700, cursor: isRegistering ? 'wait' : 'pointer', opacity: isRegistering ? .55 : 1 }}>↶ 마지막 홀의 마지막 샷 취소</button>}
-        {onRegisterRound && !isSample && !isRegistered && <button type="button" onClick={onRegisterRound} disabled={isRegistering} style={{ padding: '12px 14px', border: 0, borderRadius: '8px', background: isRegistering ? '#94a3b8' : '#047857', color: '#fff', fontWeight: 700, cursor: isRegistering ? 'wait' : 'pointer' }}>{isRegistering ? '등록 처리 중…' : '스코어 등록 · 등록 후 수정 불가'}</button>}
+        {saveError && !isRegistered && <p role="alert" style={{ margin: 0, padding: '10px 12px', borderRadius: '8px', background: palette.red50, color: palette.red700, fontSize: '12px' }}>{saveError}</p>}
+        {onUndoLastShot && !isRegistered && completedHoles.length > 0 && <button type="button" onClick={onUndoLastShot} disabled={isRegistering} style={{ padding: '10px 14px', border: `1px solid ${palette.red300}`, borderRadius: '8px', background: palette.rose50, color: palette.red700, fontWeight: 700, cursor: isRegistering ? 'wait' : 'pointer', opacity: isRegistering ? .55 : 1 }}>↶ 마지막 홀의 마지막 샷 취소</button>}
+        {onRegisterRound && !isSample && !isRegistered && <button type="button" onClick={onRegisterRound} disabled={isRegistering} style={{ padding: '12px 14px', border: 0, borderRadius: '8px', background: isRegistering ? palette.slate400 : color.brand, color: palette.white, fontWeight: 700, cursor: isRegistering ? 'wait' : 'pointer' }}>{isRegistering ? '등록 처리 중…' : '스코어 등록 · 등록 후 수정 불가'}</button>}
         {isSample && <p style={{ ...muted, margin: 0, textAlign: 'center' }}>샘플 기록은 실제 통계·평균·트로피에 반영되지 않습니다.</p>}
         {isRegistered && <p role="status" style={{ ...muted, margin: 0, textAlign: 'center' }}>스코어 등록 완료 · 이 기록은 수정할 수 없습니다.</p>}
-        {onBackToScore && !isRegistered && <button type="button" onClick={onBackToScore} style={{ padding: '10px 14px', border: '1px solid #cbd5e1', borderRadius: '8px', background: '#fff', cursor: 'pointer' }}>스코어로 돌아가기</button>}
-        {onStartNewRound && (isRegistered || isSample) && <button type="button" onClick={onStartNewRound} style={{ padding: '10px 14px', border: 0, borderRadius: '8px', background: '#047857', color: '#fff', fontWeight: 700, cursor: 'pointer' }}>새 라운드 시작</button>}
+        {onBackToScore && !isRegistered && <button type="button" onClick={onBackToScore} style={{ padding: '10px 14px', border: `1px solid ${palette.slate300}`, borderRadius: '8px', background: palette.white, cursor: 'pointer' }}>스코어로 돌아가기</button>}
+        {onStartNewRound && (isRegistered || isSample) && <button type="button" onClick={onStartNewRound} style={{ padding: '10px 14px', border: 0, borderRadius: '8px', background: color.brand, color: palette.white, fontWeight: 700, cursor: 'pointer' }}>새 라운드 시작</button>}
       </footer>
     </main>
   )
