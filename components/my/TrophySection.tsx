@@ -1,4 +1,4 @@
-import type { RoundSummary, TrophyItem } from './myTypes'
+import type { TrophyItem } from './myTypes'
 import { GOLF_LEVELS } from './myRecords'
 import { CARD, muted } from './myStyles'
 import { color, palette } from '@/utils/theme'
@@ -6,18 +6,18 @@ import { color, palette } from '@/utils/theme'
 interface TrophySectionProps {
   trophies: TrophyItem[]
   earnedTrophies: TrophyItem[]
-  achievementRounds: RoundSummary[]
+  achievementRoundCount: number
   currentLevel: number
   currentLevelIndex: number
   nextLevel: (typeof GOLF_LEVELS)[number] | undefined
   levelProgress: number
   achievementsError: string | null
   achievementsLoading: boolean
-  integrityError: boolean
-  integrityLoading: boolean
+  /** 인정 라운드를 확인하지 못했을 때 */
+  eligibilityError: boolean
 }
 
-export default function TrophySection({ trophies, earnedTrophies, achievementRounds, currentLevel, currentLevelIndex, nextLevel, levelProgress, achievementsError, achievementsLoading, integrityError, integrityLoading }: TrophySectionProps) {
+export default function TrophySection({ trophies, earnedTrophies, achievementRoundCount, currentLevel, currentLevelIndex, nextLevel, levelProgress, achievementsError, achievementsLoading, eligibilityError }: TrophySectionProps) {
   return (
     <section style={{ ...CARD, borderColor: palette.emerald200, background: `linear-gradient(180deg,${palette.green50},${palette.white} 48%)` }} aria-labelledby="trophy-collection-title">
       <div style={{ display: 'flex', justifyContent: 'space-between', gap: 10, alignItems: 'start', flexWrap: 'wrap' }}>
@@ -30,14 +30,13 @@ export default function TrophySection({ trophies, earnedTrophies, achievementRou
       <div style={{ marginTop: 14, padding: 14, borderRadius: 12, color: palette.white, background: `linear-gradient(120deg,${palette.emerald900},${color.brand})` }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'center' }}>
           <div><div style={{ color: palette.emerald200, fontSize: 11, fontWeight: 700 }}>MY GOLF LEVEL</div><strong style={{ display: 'block', marginTop: 3, fontSize: 20 }}>Lv.{currentLevel} · {currentLevelIndex >= 0 ? GOLF_LEVELS[currentLevelIndex].label : '첫 라운드 전'}</strong></div>
-          <div style={{ textAlign: 'right', fontSize: 12 }}>{achievementRounds.length}회 인정</div>
+          <div style={{ textAlign: 'right', fontSize: 12 }}>{achievementRoundCount}회 인정</div>
         </div>
         <div role="progressbar" aria-label="다음 레벨 진행도" aria-valuemin={0} aria-valuemax={100} aria-valuenow={levelProgress} style={{ height: 8, marginTop: 11, overflow: 'hidden', borderRadius: 99, background: palette.whiteA25 }}><div style={{ height: '100%', width: `${levelProgress}%`, borderRadius: 99, background: palette.amber200, transition: 'width .25s ease' }} /></div>
-        <p style={{ margin: '6px 0 0', color: palette.emerald100, fontSize: 11 }}>{nextLevel ? `다음 레벨까지 ${Math.max(0, nextLevel.rounds - achievementRounds.length)}회 · ${nextLevel.label}` : '최고 레벨에 도달했어요. 새로운 기록 트로피에 도전해 보세요!'}</p>
+        <p style={{ margin: '6px 0 0', color: palette.emerald100, fontSize: 11 }}>{nextLevel ? `다음 레벨까지 ${Math.max(0, nextLevel.rounds - achievementRoundCount)}회 · ${nextLevel.label}` : '최고 레벨에 도달했어요. 새로운 기록 트로피에 도전해 보세요!'}</p>
       </div>
       {achievementsError && <p role="status" style={{ ...muted, color: palette.amber700, margin: '10px 0 0' }}>{achievementsError} 다시 불러오면 획득 여부가 갱신됩니다.</p>}
-      {integrityError && <p role="alert" style={{ ...muted, color: palette.red700, margin: '10px 0 0' }}>기록 검증 결과를 불러오지 못해 레벨과 트로피를 잠시 표시할 수 없습니다.</p>}
-      {integrityLoading && <p role="status" style={{ ...muted, margin: '10px 0 0' }}>인정되는 라운드를 확인하고 있습니다…</p>}
+      {eligibilityError && <p role="alert" style={{ ...muted, color: palette.red700, margin: '10px 0 0' }}>기록 검증 결과를 불러오지 못해 레벨과 트로피를 잠시 표시할 수 없습니다.</p>}
       {achievementsLoading && <p role="status" style={{ ...muted, margin: '10px 0 0' }}>홀·샷 기록으로 트로피를 확인하고 있습니다…</p>}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,210px),1fr))', gap: 8, marginTop: 12 }}>
         {trophies.map((trophy) => <article key={trophy.id} style={{ minWidth: 0, padding: 10, display: 'flex', gap: 9, alignItems: 'center', border: `1px solid ${trophy.earned ? palette.emerald200 : palette.slate200}`, borderRadius: 10, background: trophy.earned ? palette.green50 : palette.slate50, opacity: 1 }}>
