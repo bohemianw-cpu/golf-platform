@@ -1,7 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
-import type { createClient } from '@/utils/supabase/client'
+import { getSignedInUser, type createClient } from '@/utils/supabase/client'
 
 const SCORE_GUIDE_SEEN_KEY = 'golf-score-guide-seen:'
 
@@ -21,7 +21,7 @@ export function useScoreGuide(supabase: ReturnType<typeof createClient>): ScoreG
   useEffect(() => {
     let cancelled = false
     void (async () => {
-      const { data: { user } } = await supabase.auth.getUser()
+      const { user } = await getSignedInUser(supabase)
       if (!user) {
         if (!cancelled) { setEnabled(false); setLoaded(true) }
         return
