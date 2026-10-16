@@ -6,6 +6,7 @@ import { getGolfLevelGroup } from '@/utils/golf/levels'
 import { AI_ANALYSIS_CONSENT_VERSION, PRIVACY_NOTICE_VERSION, SHARING_CONSENT_VERSION, SIGNUP_TERMS_VERSION } from '@/utils/consent'
 import { passwordProblem } from '@/utils/password-check'
 import { color, palette } from '@/utils/theme'
+import { useModalKeyboard } from '@/components/layout/useModalKeyboard'
 import SignUpProfileFields from './signup/SignUpProfileFields'
 import RequiredAgreements from './signup/RequiredAgreements'
 import OptionalConsents from './signup/OptionalConsents'
@@ -31,6 +32,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
   const [loading, setLoading] = useState(false)
   const [errorMsg, setErrorMsg] = useState('')
   const [noticeMsg, setNoticeMsg] = useState('')
+  const dialogRef = useModalKeyboard<HTMLDivElement>(isOpen, onClose)
 
   if (!isOpen) return null
 
@@ -120,7 +122,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
       zIndex: 9999,
       padding: '16px'
     }}>
-      <div role="dialog" aria-modal="true" aria-labelledby="auth-modal-title" style={{
+      <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="auth-modal-title" style={{
         backgroundColor: palette.white,
         borderRadius: '16px',
         width: '100%',

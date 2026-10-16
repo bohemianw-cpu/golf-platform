@@ -2,6 +2,7 @@
 
 import React, { useCallback, useState } from 'react'
 import { color, palette } from '@/utils/theme'
+import { useModalKeyboard } from '@/components/layout/useModalKeyboard'
 
 export interface Choice<T extends string> {
   label: string
@@ -51,8 +52,13 @@ export function useChoiceDialog() {
     setState(null)
   }
 
+  // Esc는 '취소'처럼 아무것도 바꾸지 않는 선택지가 있을 때만 그것을 고른다.
+  const escapeChoice = state?.choices.find((c) => c.tone === 'neutral')
+  const dialogRef = useModalKeyboard<HTMLDivElement>(!!state, escapeChoice ? () => pick(escapeChoice.value) : undefined)
+
   const dialog = state ? (
     <div
+      ref={dialogRef}
       role="dialog"
       aria-modal="true"
       style={{
