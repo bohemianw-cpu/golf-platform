@@ -4,18 +4,14 @@ import { useEffect, useState } from 'react'
 import type { createClient } from '@/utils/supabase/client'
 import type { RoundIntegritySummary, RoundSummary } from './myTypes'
 
-/** 라운드마다 기록 시간이 그럴듯한지 판정한 결과를 100개씩 나눠 불러온다. */
+/** 목록에 보이는 라운드의 기록 시간 확인 결과를 100개씩 나눠 불러온다. 못 불러오면 '시간 확인 자료 없음'으로 보인다. */
 export function useRoundIntegrity(supabase: ReturnType<typeof createClient>, userId: string | null, rounds: RoundSummary[]) {
   const [integrityByRound, setIntegrityByRound] = useState<Record<string, RoundIntegritySummary>>({})
-  const [integrityLoading, setIntegrityLoading] = useState(false)
-  const [integrityError, setIntegrityError] = useState(false)
 
   useEffect(() => {
     if (!userId || rounds.length === 0) return
     let cancelled = false
     void (async () => {
-      setIntegrityLoading(true)
-      setIntegrityError(false)
       try {
         const result: Record<string, RoundIntegritySummary> = {}
         for (let offset = 0; offset < rounds.length; offset += 100) {
@@ -28,13 +24,11 @@ export function useRoundIntegrity(supabase: ReturnType<typeof createClient>, use
         }
         if (!cancelled) setIntegrityByRound(result)
       } catch {
-        if (!cancelled) { setIntegrityByRound({}); setIntegrityError(true) }
-      } finally {
-        if (!cancelled) setIntegrityLoading(false)
+        if (!cancelled) setIntegrityByRound({})
       }
     })()
     return () => { cancelled = true }
   }, [rounds, userId, supabase])
 
-  return { integrityByRound, integrityLoading, integrityError }
+  return { integrityByRound }
 }
