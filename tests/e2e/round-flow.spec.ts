@@ -59,7 +59,7 @@ function oneHoleDraft() {
   }
 }
 
-async function mockSignedInApp(page: Page, options: { draft?: boolean; serverRound?: boolean; sampleDraft?: boolean; realWrites?: string[]; holeWrites?: Record<string, unknown>[]; errorReports?: Record<string, unknown>[] } = {}) {
+async function mockSignedInApp(page: Page, options: { draft?: boolean; serverRound?: boolean; sampleDraft?: boolean; realWrites?: string[]; holeWrites?: Record<string, unknown>[]; errorReports?: Record<string, unknown>[]; writes?: string[] } = {}) {
   const projectUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
   if (!projectUrl) throw new Error('NEXT_PUBLIC_SUPABASE_URL is required for browser tests')
   const projectRef = new URL(projectUrl).hostname.split('.')[0]
@@ -90,6 +90,7 @@ async function mockSignedInApp(page: Page, options: { draft?: boolean; serverRou
     if (method !== 'GET' && ['rounds', 'round_holes', 'round_shots'].includes(resource ?? '')) options.realWrites?.push(resource!)
     if (method === 'POST' && resource === 'round_holes') options.holeWrites?.push(...[request.postDataJSON()].flat())
     if (method === 'POST' && resource === 'report_client_error') options.errorReports?.push(request.postDataJSON())
+    if (method !== 'GET') options.writes?.push(`${method} ${resource}${url.search}`)
     let body: unknown = []
     if (resource === 'profiles') body = { nickname: '브라우저테스트', skill_group: 'beginner' }
     else if (resource === 'user_club_bags') body = null
@@ -138,6 +139,31 @@ test('a shot can be undone, restored, and registered without edit controls', asy
   // 샷은 round_shots에만 저장하고, 홀 저장에는 샷 사본을 싣지 않는다.
   expect(holeWrites.length).toBeGreaterThan(0)
   expect(holeWrites.filter((hole) => 'shots' in hole)).toEqual([])
+
+  // 등록 뒤 새 라운드를 시작하면 화면과 이 기기의 임시 기록이 비워진다.
+  await page.getByRole('button', { name: '새 라운드 시작' }).first().click()
+  await expect(page.getByRole('searchbox', { name: '골프장 이름 검색' })).toHaveValue('')
+  await expect(page.getByText('스코어 등록 완료 · 이 기록은 수정할 수 없습니다.')).toHaveCount(0)
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('golf-score-draft-v1'))).toBeNull()
+})
+
+test('resetting the course deletes the in-progress server round and the local draft', async ({ page }) => {
+  const writes: string[] = []
+  await mockSignedInApp(page, { writes })
+  await page.goto('/')
+  await page.getByRole('dialog').getByRole('button', { name: '이어서 하기' }).click()
+  await page.getByRole('spinbutton', { name: '샷 후 남은 거리' }).fill('40')
+  await page.getByRole('button', { name: '✓ 샷 결과 저장' }).click()
+  await expect(page.getByRole('button', { name: '↩ 직전 샷 취소' })).toBeEnabled()
+  await expect.poll(() => writes.some((write) => write.startsWith('POST round_shots'))).toBe(true)
+
+  await page.getByRole('button', { name: '🗑️ 초기화' }).click()
+  await page.getByRole('dialog').getByRole('button', { name: '초기화' }).click()
+
+  await expect.poll(() => writes.filter((write) => write.startsWith('DELETE rounds'))).toEqual([expect.stringContaining(`id=eq.${ROUND_ID}`)])
+  await expect(page.getByRole('searchbox', { name: '골프장 이름 검색' })).toHaveValue('')
+  await expect(page.getByRole('button', { name: '↩ 직전 샷 취소' })).toBeDisabled()
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('golf-score-draft-v1'))).toBeNull()
 })
 
 test('an unfinished shot survives a tab change and can be undone and restored', async ({ page }) => {
