@@ -63,7 +63,7 @@ export default function ClubModal({ clubs, onClose, onSave }: ClubModalProps) {
       zIndex: 9999,
       padding: '16px'
     }}>
-      <div style={{
+      <div role="dialog" aria-modal="true" aria-labelledby="club-modal-title" style={{
         backgroundColor: palette.white,
         borderRadius: '16px',
         padding: '24px',
@@ -74,10 +74,10 @@ export default function ClubModal({ clubs, onClose, onSave }: ClubModalProps) {
         boxShadow: '0 10px 25px rgba(0,0,0,0.2)'
       }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-          <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 'bold', color: palette.slate800 }}>
+          <h3 id="club-modal-title" style={{ margin: 0, fontSize: '18px', fontWeight: 'bold', color: palette.slate800 }}>
             🎒 나의 골프백 클럽 설정
           </h3>
-          <button onClick={onClose} disabled={isSaving} style={{ border: 'none', background: 'none', fontSize: '20px', cursor: isSaving ? 'wait' : 'pointer', color: palette.slate500 }}>✕</button>
+          <button type="button" aria-label="닫기" onClick={onClose} disabled={isSaving} style={{ border: 'none', background: 'none', fontSize: '20px', cursor: isSaving ? 'wait' : 'pointer', color: palette.slate500 }}>✕</button>
         </div>
 
         {/* 새 클럽 추가 영역 */}
@@ -85,6 +85,7 @@ export default function ClubModal({ clubs, onClose, onSave }: ClubModalProps) {
           <div style={{ fontSize: '13px', fontWeight: 600, color: palette.slate600, marginBottom: '8px' }}>새 클럽 추가</div>
           <div style={{ display: 'flex', gap: '6px', marginBottom: '8px' }}>
             <select
+              aria-label="새 클럽 종류"
               disabled={isSaving}
               value={newCategory}
               onChange={(e) => setNewCategory(e.target.value as ClubCategory)}
@@ -99,6 +100,7 @@ export default function ClubModal({ clubs, onClose, onSave }: ClubModalProps) {
             </select>
             <input
               type="text"
+              aria-label="새 클럽 이름"
               disabled={isSaving}
               placeholder="예: 3번 우드, 5I, 58도 웨지"
               value={newClubName}
@@ -137,6 +139,8 @@ export default function ClubModal({ clubs, onClose, onSave }: ClubModalProps) {
               >
                 <span title={club.name}>{clubButtonLabel(club)}</span>
                 <button
+                  type="button"
+                  aria-label={`${club.name} 삭제`}
                   onClick={() => handleDeleteClub(club.id)}
                   disabled={isSaving}
                   style={{ border: 'none', background: 'none', color: palette.red500, cursor: 'pointer', fontSize: '12px', padding: 0 }}

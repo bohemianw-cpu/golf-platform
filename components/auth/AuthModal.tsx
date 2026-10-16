@@ -120,7 +120,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
       zIndex: 9999,
       padding: '16px'
     }}>
-      <div style={{
+      <div role="dialog" aria-modal="true" aria-labelledby="auth-modal-title" style={{
         backgroundColor: palette.white,
         borderRadius: '16px',
         width: '100%',
@@ -131,10 +131,12 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
         boxShadow: '0 4px 20px rgba(0,0,0,0.15)'
       }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-          <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: 0 }}>
+          <h2 id="auth-modal-title" style={{ fontSize: '18px', fontWeight: 'bold', margin: 0 }}>
             {isPasswordResetRequest ? '비밀번호 재설정' : isSignUp ? '골프 비서 회원가입' : '골프 비서 로그인'}
           </h2>
           <button
+            type="button"
+            aria-label="닫기"
             onClick={onClose}
             style={{ background: 'none', border: 'none', fontSize: '20px', cursor: 'pointer', color: palette.neutral888 }}
           >
@@ -143,7 +145,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
         </div>
 
         {errorMsg && (
-          <div style={{
+          <div role="alert" style={{
             backgroundColor: palette.red100,
             color: palette.red600,
             padding: '10px',
@@ -174,9 +176,11 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
           <SignUpProfileFields isSignUp={isSignUp} nickname={nickname} setNickname={setNickname} handicapIndex={handicapIndex} setHandicapIndex={setHandicapIndex} />
 
           <div>
-            <label style={{ fontSize: '12px', color: palette.neutral666, display: 'block', marginBottom: '4px' }}>이메일</label>
+            <label style={{ fontSize: '12px', color: palette.neutral666, display: 'block', marginBottom: '4px' }} htmlFor="auth-email">이메일</label>
             <input
+              id="auth-email"
               type="email"
+              autoComplete="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -186,9 +190,11 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
           </div>
 
           {!isPasswordResetRequest && <div>
-            <label style={{ fontSize: '12px', color: palette.neutral666, display: 'block', marginBottom: '4px' }}>비밀번호</label>
+            <label style={{ fontSize: '12px', color: palette.neutral666, display: 'block', marginBottom: '4px' }} htmlFor="auth-password">비밀번호</label>
             <input
+              id="auth-password"
               type="password"
+              autoComplete={isSignUp ? 'new-password' : 'current-password'}
               required
               minLength={isSignUp ? 8 : 6}
               value={password}
