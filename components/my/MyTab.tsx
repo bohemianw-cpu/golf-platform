@@ -2,12 +2,14 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { createClient } from '@/utils/supabase/client'
-import { GOLF_LEVEL_GROUPS, getGolfLevelGroup } from '@/utils/golf/levels'
-import { AgreementDetails } from '@/components/auth/AgreementDetails'
+import { getGolfLevelGroup } from '@/utils/golf/levels'
 import CommercePanel from '@/components/my/CommercePanel'
 import { AI_ANALYSIS_CONSENT_VERSION, SHARING_CONSENT_VERSION } from '@/utils/consent'
-import type { AchievementHoleRow, AchievementShotRow, CourseAggregate, FriendAggregate, FriendConnection, HoleRow, ProfileSummary, RoundDetail, RoundIntegritySummary, RoundSummary, SampleRoundSession, ShotRow, UserDataPreferences } from './myTypes'
-import { buildTrophies, GOLF_LEVELS, toHoleRecords } from './myRecords'
+import type { CourseAggregate, FriendAggregate, FriendConnection, HoleRow, ProfileSummary, RoundDetail, RoundSummary, ShotRow, UserDataPreferences } from './myTypes'
+import { buildLevelProgress, toHoleRecords } from './myRecords'
+import { useSampleSessions } from './useSampleSessions'
+import { useRoundIntegrity } from './useRoundIntegrity'
+import { useAchievements } from './useAchievements'
 import { CARD, muted } from './myStyles'
 import { exportRoundHistory } from './exportRoundHistory'
 import SampleRoundsSection from './SampleRoundsSection'
@@ -16,7 +18,10 @@ import TrophySection from './TrophySection'
 import FriendsSection from './FriendsSection'
 import RoundHistorySection from './RoundHistorySection'
 import RoundDetailSection from './RoundDetailSection'
-import { color, palette } from '@/utils/theme'
+import { palette } from '@/utils/theme'
+import AccountSection from './AccountSection'
+import SummaryStatsSection from './SummaryStatsSection'
+import HandicapSection from './HandicapSection'
 
 export default function MyTab({ onStartSample }: { onStartSample?: (id: string) => void }) {
   const supabase = useMemo(() => createClient(), [])
@@ -27,16 +32,6 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
   const [savingHandicap, setSavingHandicap] = useState(false)
   const [profileSaved, setProfileSaved] = useState(false)
   const [rounds, setRounds] = useState<RoundSummary[]>([])
-  const [sampleSessions, setSampleSessions] = useState<SampleRoundSession[]>([])
-  const [selectedSample, setSelectedSample] = useState<SampleRoundSession | null>(null)
-  const [startingSample, setStartingSample] = useState(false)
-  const [integrityByRound, setIntegrityByRound] = useState<Record<string, RoundIntegritySummary>>({})
-  const [integrityLoading, setIntegrityLoading] = useState(false)
-  const [integrityError, setIntegrityError] = useState(false)
-  const [achievementHoles, setAchievementHoles] = useState<AchievementHoleRow[]>([])
-  const [achievementShots, setAchievementShots] = useState<AchievementShotRow[]>([])
-  const [achievementsLoading, setAchievementsLoading] = useState(false)
-  const [achievementsError, setAchievementsError] = useState<string | null>(null)
   const [detail, setDetail] = useState<RoundDetail | null>(null)
   const [loading, setLoading] = useState(true)
   const [detailLoading, setDetailLoading] = useState(false)
@@ -127,100 +122,15 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
     return () => { cancelled = true }
   }, [supabase, loadRounds])
 
+  const { sampleSessions, selectedSample, setSelectedSample, startingSample, startSample } = useSampleSessions(supabase, userId, setError, onStartSample)
+  const { integrityByRound, integrityLoading, integrityError } = useRoundIntegrity(supabase, userId, rounds)
   const completedRounds = useMemo(() => rounds.filter((round) => round.status === 'completed' && round.total_score != null), [rounds])
   const achievementRounds = useMemo(() => completedRounds.filter((round) =>
     !!round.registered_at && integrityByRound[round.id]?.status === 'time_plausible',
   ), [completedRounds, integrityByRound])
-  useEffect(() => {
-    if (!userId) return
-    void supabase.from('sample_round_sessions').select('id,created_at,updated_at,payload')
-      .eq('user_id', userId).order('updated_at', { ascending: false }).limit(50)
-      .then(({ data, error: queryError }) => {
-        if (queryError) setError('샘플 기록을 불러오지 못했습니다.')
-        else setSampleSessions((data ?? []) as SampleRoundSession[])
-      })
-  }, [userId, supabase])
-
-  const startSample = async () => {
-    if (!userId || startingSample) return
-    setStartingSample(true)
-    setError(null)
-    const { data, error: insertError } = await supabase.from('sample_round_sessions')
-      .insert({ user_id: userId, payload: {} }).select('id,created_at,updated_at,payload').single()
-    if (insertError || !data) setError('샘플 기록을 시작하지 못했습니다. 다시 시도해 주세요.')
-    else onStartSample?.(data.id)
-    setStartingSample(false)
-  }
-  useEffect(() => {
-    if (!userId || rounds.length === 0) return
-    let cancelled = false
-    void (async () => {
-      setIntegrityLoading(true)
-      setIntegrityError(false)
-      try {
-        const result: Record<string, RoundIntegritySummary> = {}
-        for (let offset = 0; offset < rounds.length; offset += 100) {
-          const ids = rounds.slice(offset, offset + 100).map((round) => round.id)
-          const { data, error: queryError } = await supabase.from('round_integrity')
-            .select('round_id,status,observed_seconds,minimum_seconds,reason_codes')
-            .in('round_id', ids)
-          if (queryError) throw queryError
-          for (const row of (data ?? []) as RoundIntegritySummary[]) result[row.round_id] = row
-        }
-        if (!cancelled) setIntegrityByRound(result)
-      } catch {
-        if (!cancelled) { setIntegrityByRound({}); setIntegrityError(true) }
-      } finally {
-        if (!cancelled) setIntegrityLoading(false)
-      }
-    })()
-    return () => { cancelled = true }
-  }, [rounds, userId, supabase])
-  useEffect(() => {
-    let cancelled = false
-    void (async () => {
-      setAchievementsLoading(true)
-      setAchievementsError(null)
-      const holes: AchievementHoleRow[] = []
-      const shots: AchievementShotRow[] = []
-      try {
-        for (let offset = 0; offset < achievementRounds.length; offset += 20) {
-          const ids = achievementRounds.slice(offset, offset + 20).map((round) => round.id)
-          for (let from = 0; ; from += 1000) {
-            const { data, error: queryError } = await supabase.from('round_holes')
-              .select('round_id,hole_number,par,score,putts,fairway_hit,gir').in('round_id', ids).order('round_id').order('hole_number').range(from, from + 999)
-            if (queryError) throw queryError
-            holes.push(...((data ?? []) as AchievementHoleRow[]))
-            if ((data ?? []).length < 1000) break
-          }
-          for (let from = 0; ; from += 1000) {
-            const { data, error: queryError } = await supabase.from('round_shots')
-              .select('round_id,club,shot_distance,penalty').in('round_id', ids).order('round_id').order('hole_number').order('shot_number').range(from, from + 999)
-            if (queryError) throw queryError
-            shots.push(...((data ?? []) as AchievementShotRow[]))
-            if ((data ?? []).length < 1000) break
-          }
-        }
-        if (!cancelled) {
-          setAchievementHoles(holes)
-          setAchievementShots(shots)
-        }
-      } catch {
-        if (!cancelled) setAchievementsError('일부 홀·샷 기록을 불러오지 못했습니다.')
-      } finally {
-        if (!cancelled) setAchievementsLoading(false)
-      }
-    })()
-    return () => { cancelled = true }
-  }, [achievementRounds, supabase])
-
-  const trophies = useMemo(() => buildTrophies(achievementRounds, achievementHoles, achievementShots), [achievementRounds, achievementHoles, achievementShots])
+  const { trophies, achievementsLoading, achievementsError } = useAchievements(supabase, achievementRounds)
   const earnedTrophies = trophies.filter((trophy) => trophy.earned)
-  const currentLevelIndex = GOLF_LEVELS.reduce((index, level, i) => achievementRounds.length >= level.rounds ? i : index, -1)
-  const currentLevel = currentLevelIndex + 1
-  const nextLevel = GOLF_LEVELS[currentLevelIndex + 1]
-  const previousLevelRounds = currentLevelIndex < 0 ? 0 : GOLF_LEVELS[currentLevelIndex].rounds
-  const levelProgress = nextLevel ? Math.max(0, Math.min(100, ((achievementRounds.length - previousLevelRounds) / (nextLevel.rounds - previousLevelRounds)) * 100)) : 100
+  const { currentLevelIndex, currentLevel, nextLevel, levelProgress } = buildLevelProgress(achievementRounds.length)
   const averageScore = completedRounds.length
     ? completedRounds.reduce((sum, round) => sum + (round.total_score ?? 0), 0) / completedRounds.length
     : null
@@ -465,13 +375,7 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
 
       <SharingPreferencesSection dataPreferences={dataPreferences} savingPreferences={savingPreferences} updateDataSharingPreference={updateDataSharingPreference} updateScoreGuidePreference={updateScoreGuidePreference} />
 
-      <section style={CARD} aria-labelledby="account-policy-title">
-        <h2 id="account-policy-title" style={{ margin: '0 0 8px', fontSize: 16 }}>약관·개인정보·탈퇴</h2>
-        <AgreementDetails kind="terms" />
-        <AgreementDetails kind="privacy" />
-        <p style={muted}>탈퇴 시 계정·라운드·샷 기록을 삭제합니다. 탈퇴 처리 기록은 6개월 뒤 자동 삭제됩니다.</p>
-        <button type="button" disabled={withdrawing} onClick={() => void withdrawAccount()} style={{ border: `1px solid ${palette.red200}`, borderRadius: 7, padding: '8px 12px', color: palette.red700, background: palette.white }}>{withdrawing ? '탈퇴 처리 중…' : '회원 탈퇴'}</button>
-      </section>
+      <AccountSection withdrawing={withdrawing} withdrawAccount={withdrawAccount} />
 
       {error && <div role="alert" style={{ ...CARD, color: palette.red700, background: palette.red50 }}>{error}</div>}
 
@@ -480,29 +384,11 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
         <p style={{ ...muted, marginBottom: 0 }}>최근 완료 라운드 {completedRounds.length}회의 평균이 {averageScore?.toFixed(1)}타입니다. 초보 그룹은 비교용으로만 사용하며, 핸디캡 입력을 검토해 보세요. 이 제안은 공식 핸디캡 산정이 아닙니다.</p>
       </section>}
 
-      <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: '10px' }} aria-label="요약 통계">
-        {[
-          ['완료 라운드', `${completedRounds.length}회`],
-          ['평균 스코어', averageScore == null ? '기록 없음' : `${averageScore.toFixed(1)}타`],
-          ['베스트 스코어', bestScore == null ? '기록 없음' : `${bestScore}타`],
-          ['비교 그룹', GOLF_LEVEL_GROUPS[currentGroup].label],
-        ].map(([label, value]) => <div key={label} style={CARD}><div style={muted}>{label}</div><strong style={{ display: 'block', marginTop: '7px', color: color.brand, fontSize: '20px' }}>{value}</strong></div>)}
-      </section>
+      <SummaryStatsSection completedRounds={completedRounds} averageScore={averageScore} bestScore={bestScore} currentGroup={currentGroup} />
 
       <TrophySection trophies={trophies} earnedTrophies={earnedTrophies} achievementRounds={achievementRounds} currentLevel={currentLevel} currentLevelIndex={currentLevelIndex} nextLevel={nextLevel} levelProgress={levelProgress} achievementsError={achievementsError} achievementsLoading={achievementsLoading} integrityError={integrityError} integrityLoading={integrityLoading} />
 
-      <section style={CARD} aria-labelledby="level-progress-title">
-        <h2 id="level-progress-title" style={{ margin: '0 0 4px', fontSize: '16px' }}>⛳ 내 핸디캡 그룹</h2>
-        <p style={{ ...muted, margin: '0 0 12px' }}>현재 비교 그룹: {GOLF_LEVEL_GROUPS[currentGroup].label}. 핸디캡 지수를 직접 입력해 비교에 사용할 그룹을 설정할 수 있습니다.</p>
-        <div style={{ display: 'flex', gap: '8px', alignItems: 'end', flexWrap: 'wrap' }}>
-          <div style={{ flex: '1 1 180px' }}>
-            <label htmlFor="my-handicap-index" style={{ display: 'block', marginBottom: '4px', fontSize: '11px', color: palette.slate600, fontWeight: 700 }}>내 핸디캡 지수</label>
-            <input id="my-handicap-index" type="number" min="-10" max="54" step="0.1" inputMode="decimal" value={handicapInput} onChange={(event) => { setHandicapInput(event.target.value); setProfileSaved(false) }} placeholder="모르면 비워 두세요" style={{ width: '100%', boxSizing: 'border-box', padding: '8px', border: `1px solid ${palette.slate300}`, borderRadius: '7px' }} />
-          </div>
-          <button type="button" onClick={() => void saveHandicap()} disabled={savingHandicap} style={{ padding: '9px 12px', border: 0, borderRadius: '7px', background: color.brand, color: palette.white, fontWeight: 700, cursor: savingHandicap ? 'wait' : 'pointer' }}>{savingHandicap ? '저장 중…' : '핸디캡 그룹 저장'}</button>
-          {profileSaved && <span role="status" style={{ ...muted, color: color.brand }}>비교 그룹을 업데이트했습니다.</span>}
-        </div>
-      </section>
+      <HandicapSection currentGroup={currentGroup} handicapInput={handicapInput} setHandicapInput={setHandicapInput} setProfileSaved={setProfileSaved} saveHandicap={saveHandicap} savingHandicap={savingHandicap} profileSaved={profileSaved} />
 
       <FriendsSection userId={userId} friends={friends} friendAggregate={friendAggregate} groupAggregate={groupAggregate} detail={detail} friendIdInput={friendIdInput} setFriendIdInput={setFriendIdInput} sendFriendRequest={sendFriendRequest} respondToFriendRequest={respondToFriendRequest} removeFriendConnection={removeFriendConnection} loadFriendComparison={loadFriendComparison} />
 

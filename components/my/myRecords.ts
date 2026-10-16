@@ -27,6 +27,15 @@ export const GOLF_LEVELS = [
   { rounds: 50, label: '골프 라이프' },
 ]
 
+/** 기준을 통과한 라운드 수로 골프 레벨과 다음 레벨까지의 진행률(%)을 구한다. */
+export function buildLevelProgress(roundCount: number) {
+  const currentLevelIndex = GOLF_LEVELS.reduce((index, level, i) => roundCount >= level.rounds ? i : index, -1)
+  const nextLevel = GOLF_LEVELS[currentLevelIndex + 1]
+  const previousLevelRounds = currentLevelIndex < 0 ? 0 : GOLF_LEVELS[currentLevelIndex].rounds
+  const levelProgress = nextLevel ? Math.max(0, Math.min(100, ((roundCount - previousLevelRounds) / (nextLevel.rounds - previousLevelRounds)) * 100)) : 100
+  return { currentLevelIndex, currentLevel: currentLevelIndex + 1, nextLevel, levelProgress }
+}
+
 export function buildTrophies(rounds: RoundSummary[], holes: AchievementHoleRow[], shots: AchievementShotRow[]): TrophyItem[] {
   const eligibleIds = new Set(rounds.map((round) => round.id))
   const eligibleShots = shots.filter((shot) => eligibleIds.has(shot.round_id))
