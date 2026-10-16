@@ -5,6 +5,7 @@ import { ClubItem, ClubCategory } from '@/types/golf'
 import { clubButtonLabel, MAX_CLUBS, normalizeClubEntry } from '@/utils/golf/clubs'
 import { sortClubs } from './ScoreTab'
 import { palette } from '@/utils/theme'
+import { useModalKeyboard } from '@/components/layout/useModalKeyboard'
 
 interface ClubModalProps {
   clubs: ClubItem[]
@@ -18,6 +19,8 @@ export default function ClubModal({ clubs, onClose, onSave }: ClubModalProps) {
   const [newCategory, setNewCategory] = useState<ClubCategory>('iron')
   const [isSaving, setIsSaving] = useState(false)
   const [saveError, setSaveError] = useState<string | null>(null)
+  // 저장 중에는 닫기 버튼처럼 Esc로도 닫지 않는다.
+  const dialogRef = useModalKeyboard<HTMLDivElement>(true, isSaving ? undefined : onClose)
 
   const preferredApproachId = currentClubs.find((club) => club.category === 'wedge' && club.preferredApproach)?.id ?? ''
   const wedges = currentClubs.filter((club) => club.category === 'wedge')
@@ -63,7 +66,7 @@ export default function ClubModal({ clubs, onClose, onSave }: ClubModalProps) {
       zIndex: 9999,
       padding: '16px'
     }}>
-      <div role="dialog" aria-modal="true" aria-labelledby="club-modal-title" style={{
+      <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="club-modal-title" style={{
         backgroundColor: palette.white,
         borderRadius: '16px',
         padding: '24px',
