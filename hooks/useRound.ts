@@ -112,6 +112,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs, sample
     syncShotEvents,
     finalizeRound,
     deleteServerRound,
+    hasUnsavedChanges,
   } = useRoundSync({ supabase, isSample, metaRef, setSaveError, onRegistered: markRegistered })
 
   // ---------- 클럽 파생값 (이름이 아닌 category 기준) ----------
@@ -272,6 +273,22 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs, sample
     },
     [isRegistered, syncShotEvents, syncAndMaybeFinalize, completedHoles, currentHole, currentShots]
   )
+
+  // 골프장처럼 신호가 약한 곳에서 저장에 실패했다면, 인터넷 연결이 돌아오거나 앱 화면으로 돌아오는 순간
+  // 못 올린 홀과 샷을 자동으로 다시 보낸다. 직접 "다시 시도"를 누르지 않아도 된다.
+  const retrySyncRef = useRef(retrySync)
+  useEffect(() => { retrySyncRef.current = retrySync })
+  useEffect(() => {
+    const retryIfUnsaved = () => {
+      if (navigator.onLine && document.visibilityState === 'visible' && hasUnsavedChanges()) void retrySyncRef.current()
+    }
+    window.addEventListener('online', retryIfUnsaved)
+    document.addEventListener('visibilitychange', retryIfUnsaved)
+    return () => {
+      window.removeEventListener('online', retryIfUnsaved)
+      document.removeEventListener('visibilitychange', retryIfUnsaved)
+    }
+  }, [hasUnsavedChanges])
 
   // ---------- 초기 복구 (최초 1회) ----------
   useEffect(() => {
