@@ -27,7 +27,7 @@ export default function RoundHistorySection({ rounds, integrityByRound, openRoun
         </div>
         <button type="button" onClick={exportHistory} disabled={exporting || total === 0} style={{ padding: '9px 12px', borderRadius: '8px', border: `1px solid ${palette.slate300}`, background: palette.white, color: palette.slate700, fontWeight: 700, cursor: exporting || total === 0 ? 'not-allowed' : 'pointer' }}>{exporting ? '내보내는 중…' : '전체 기록 JSON 내보내기'}</button>
       </div>
-      {rounds.length === 0 ? <p style={{ ...muted, marginBottom: 0 }}>아직 서버에 저장된 라운드가 없습니다. Score 탭에서 첫 라운드를 기록해 보세요.</p> : (
+      {rounds.length === 0 ? <p style={{ ...muted, marginBottom: 0 }}>아직 서버에 저장된 라운드가 없습니다. 스코어 탭에서 첫 라운드를 기록해 보세요.</p> : (
         <div style={{ marginTop: '12px', display: 'grid', gap: '8px' }}>
           {rounds.map((round) => <button key={round.id} type="button" onClick={() => void openRound(round)} style={{ width: '100%', padding: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '10px', textAlign: 'left', border: `1px solid ${palette.slate200}`, borderRadius: '10px', background: palette.white, cursor: 'pointer' }}>
             <span style={{ minWidth: 0, flex: 1 }}><strong style={{ display: 'block', color: palette.slate900, fontSize: '13px' }}>{roundLocation(round)}</strong><span style={{ display: 'block', marginTop: '4px', color: palette.slate500, fontSize: '11px', overflowWrap: 'anywhere' }}>{formatDate(round.created_at)} · {round.course_name || '코스 미입력'} · {round.tee_name ? `${round.tee_name} · ` : ''}{round.play_mode === 'field' ? '필드' : round.play_mode === 'screen' ? `스크린${round.screen_provider ? ` · ${round.screen_provider}` : ''}` : '방식 미설정'}</span></span>

@@ -42,3 +42,22 @@ test('when the summary cannot be loaded the home tab says so instead of showing 
   await expect(page.getByText('지금은 기록 요약을 불러오지 못했어요', { exact: false })).toBeVisible()
   await expect(page.getByRole('region', { name: '내 라운드' }).getByRole('definition')).toHaveCount(0)
 })
+
+test('a round left in progress on the server is offered on the home tab even without a draft on this device', async ({ page }) => {
+  await mockSignedInApp(page, { draft: false, serverRound: true })
+  await page.goto('/home')
+  await expect(page.getByText('서버복구 CC · OUT 코스 · 진행 중인 라운드')).toBeVisible()
+  await page.getByRole('link', { name: '⛳ 이어서 기록하기' }).click()
+  await expect(page).toHaveURL(/\/score$/)
+  await expect(page.getByRole('dialog').getByText(/진행 중이던 라운드\(서버복구 CC\)/)).toBeVisible()
+})
+
+test('the draft on this device wins over the server round, so the home tab does not ask the server again', async ({ page }) => {
+  const roundQueries: string[] = []
+  page.on('request', (request) => { if (/\/rest\/v1\/rounds\?/.test(request.url()) && request.method() === 'GET') roundQueries.push(request.url()) })
+  await mockSignedInApp(page, { serverRound: true })
+  await page.goto('/home')
+  await expect(page.getByText('검증용 CC · OUT 코스 · 1번 홀 진행 중')).toBeVisible()
+  await expect(page.getByText('아직 등록한 라운드가 없어요', { exact: false })).toBeVisible()
+  expect(roundQueries).toEqual([])
+})
