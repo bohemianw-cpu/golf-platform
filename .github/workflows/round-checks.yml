@@ -28,3 +28,5 @@ jobs:
       - run: npx tsc --noEmit
       - run: npm run build
       - run: npm run test:e2e
+      # 빌드한 앱으로 서비스 워커를 띄워, 연결 없이도 스코어 탭이 열리고 기록이 이어지는지 확인한다.
+      - run: npm run test:offline

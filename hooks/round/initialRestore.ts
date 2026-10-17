@@ -1,4 +1,4 @@
-import type { createClient } from '@/utils/supabase/client'
+import { getSignedInUser, type createClient } from '@/utils/supabase/client'
 import type { ChooseFn } from '@/components/score/ConfirmDialog'
 import { readDraft, type Draft } from './draft'
 import type { RoundRow } from './restoreRound'
@@ -27,11 +27,10 @@ interface Options {
  */
 export async function runInitialRestore({ supabase, isSample, sampleSessionId, choose, userIdRef, applyDraft, resumeFromDb, clearDraft, setSaveError, setReady }: Options) {
   try {
-    const {
-      data: { session },
-    } = await supabase.auth.getSession()
-    if (!session?.user) return
-    const userId = session.user.id
+    // 연결이 없어 토큰을 새로 받지 못해도 이 기기에서 마지막으로 로그인한 사용자의 임시 기록으로 이어 갈 수 있다.
+    const { user } = await getSignedInUser(supabase)
+    if (!user) return
+    const userId = user.id
     userIdRef.current = userId
     const draft = readDraft(userId, isSample, sampleSessionId)
     if (isSample) {
@@ -75,7 +74,7 @@ export async function runInitialRestore({ supabase, isSample, sampleSessionId, c
     const { data: rounds, error } = await supabase
       .from('rounds')
       .select('*')
-      .eq('user_id', session.user.id)
+      .eq('user_id', userId)
       .eq('status', 'in_progress')
       .order('created_at', { ascending: false })
       .limit(1)

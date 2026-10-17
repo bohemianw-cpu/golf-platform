@@ -37,6 +37,20 @@ const isSavedClubBag = (value: unknown): value is ClubItem[] =>
     (item.preferredApproach === undefined || typeof item.preferredApproach === 'boolean'),
   )
 
+// 연결이 없을 때 쓰도록 마지막으로 불러온 클럽 설정을 이 기기에 남겨 둔다.
+const CLUB_BAG_COPY_KEY = 'golf-club-bag-copy:'
+const readClubBagCopy = (userId: string): ClubItem[] | null => {
+  try {
+    const value: unknown = JSON.parse(window.localStorage.getItem(`${CLUB_BAG_COPY_KEY}${userId}`) ?? 'null')
+    return isSavedClubBag(value) ? value : null
+  } catch {
+    return null
+  }
+}
+const writeClubBagCopy = (userId: string, clubs: ClubItem[]) => {
+  try { window.localStorage.setItem(`${CLUB_BAG_COPY_KEY}${userId}`, JSON.stringify(clubs)) } catch { /* Storage may be unavailable. */ }
+}
+
 export default function ScoreTab({ bottomNavVisible, sampleSessionId = null, onExitSample }: { bottomNavVisible: boolean; sampleSessionId?: string | null; onExitSample?: () => void }) {
   const supabase = useMemo(() => createClient(), [])
   const { choose, confirm, dialog } = useChoiceDialog()
@@ -59,11 +73,20 @@ export default function ScoreTab({ bottomNavVisible, sampleSessionId = null, onE
           .select('clubs')
           .eq('user_id', user.id)
           .maybeSingle()
-        if (error) throw error
-        if (data && !isSavedClubBag(data.clubs)) throw new Error('저장된 클럽 설정 형식이 올바르지 않습니다.')
+        let savedClubs: ClubItem[] | null
+        if (error) {
+          // 연결이 없으면 이 기기에 남겨 둔 마지막 클럽 설정으로 기록을 이어 간다.
+          savedClubs = readClubBagCopy(user.id)
+          if (!savedClubs) throw error
+        } else {
+          if (data && !isSavedClubBag(data.clubs)) throw new Error('저장된 클럽 설정 형식이 올바르지 않습니다.')
+          savedClubs = data ? data.clubs : null
+          // 서버에 저장한 적이 없으면 기본 클럽을 쓰므로, 사본도 기본 클럽으로 남긴다.
+          writeClubBagCopy(user.id, savedClubs ?? DEFAULT_CLUBS)
+        }
         if (cancelled) return
         setClubBagUserId(user.id)
-        if (data) setClubs(sortClubs(data.clubs))
+        if (savedClubs) setClubs(sortClubs(savedClubs))
         setClubBagError(null)
       } catch {
         if (cancelled) return
@@ -84,6 +107,7 @@ export default function ScoreTab({ bottomNavVisible, sampleSessionId = null, onE
       updated_at: new Date().toISOString(),
     }, { onConflict: 'user_id' })
     if (error) throw error
+    writeClubBagCopy(clubBagUserId, nextClubs)
     setClubs(nextClubs)
   }, [clubBagUserId, supabase])
 

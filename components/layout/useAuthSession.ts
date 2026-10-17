@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import type { createClient } from '@/utils/supabase/client'
+import { forgetLastUserId, type createClient } from '@/utils/supabase/client'
 
 /**
  * Supabase 로그인 상태와 닉네임을 구독한다(로그인, 로그아웃, 토큰 갱신 등).
@@ -17,6 +17,7 @@ export function useAuthSession(supabase: ReturnType<typeof createClient>, onPass
     // 세션 상태 구독 (로그인, 로그아웃, 토큰 갱신 등)
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       if (event === 'PASSWORD_RECOVERY') onPasswordRecovery()
+      if (event === 'SIGNED_OUT') forgetLastUserId()
       if (session?.user) {
         currentUserId = session.user.id
         setIsLoggedIn(true)

@@ -13,12 +13,33 @@ export function createClient() {
   }
   return createBrowserClient(url, key)
 }
+const LAST_USER_KEY = 'golf-last-user-id'
+
+/** 로그아웃하면 이 기기에 남긴 마지막 사용자 id를 지운다. */
+export function forgetLastUserId() {
+  try { window.localStorage.removeItem(LAST_USER_KEY) } catch { /* Storage may be unavailable. */ }
+}
+
 /**
  * 브라우저에 저장된 로그인 정보로 현재 사용자를 돌려준다. 인증 서버에 따로 묻지 않아 getUser()보다 빠르다.
  * 화면에서 사용자 id를 알아낼 때만 쓴다. 데이터 접근은 DB 행 보안 규칙이 토큰으로 다시 확인한다.
  * 서버(API 라우트, 미들웨어)에서는 토큰을 검증하는 getUser()를 써야 한다.
+ *
+ * 로그인 토큰은 1시간쯤 지나면 새로 받아야 하는데, 연결이 없으면 받지 못해 사용자를 알 수 없다.
+ * 그때는 이 기기에서 마지막으로 로그인한 사용자 id를 돌려준다(offline: true). 이 id로는 이 기기에 저장된
+ * 기록(임시 기록, 클럽 설정 사본)만 읽을 수 있고, 서버 데이터는 연결 뒤 토큰으로 다시 확인된다.
  */
 export async function getSignedInUser(supabase: ReturnType<typeof createClient>) {
   const { data: { session }, error } = await supabase.auth.getSession()
-  return { user: session?.user ?? null, error }
+  if (session?.user) {
+    try { window.localStorage.setItem(LAST_USER_KEY, session.user.id) } catch { /* Storage may be unavailable. */ }
+    return { user: { id: session.user.id }, error: null, offline: false }
+  }
+  const networkFailed = (typeof navigator !== 'undefined' && !navigator.onLine) || error?.name === 'AuthRetryableFetchError'
+  let lastUserId: string | null = null
+  if (networkFailed) {
+    try { lastUserId = window.localStorage.getItem(LAST_USER_KEY) } catch { /* Storage may be unavailable. */ }
+  }
+  if (lastUserId) return { user: { id: lastUserId }, error: null, offline: true }
+  return { user: null, error, offline: false }
 }
