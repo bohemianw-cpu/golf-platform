@@ -52,3 +52,16 @@ test('a page never opened online shows an offline guide instead of a browser err
   await expect(page.getByRole('link', { name: '스코어 기록으로 가기' })).toHaveAttribute('href', '/score')
   await setOnline(true)
 })
+
+test('Chrome reads the app manifest and the service worker controls the built app', async ({ page }) => {
+  await mockSignedInApp(page, { draft: false })
+  await page.goto('/score')
+  await page.evaluate(async () => { await navigator.serviceWorker.ready })
+  await page.reload()
+  expect(await page.evaluate(() => navigator.serviceWorker.controller?.scriptURL)).toMatch(/\/sw\.js$/)
+  const cdp = await page.context().newCDPSession(page)
+  const { url, errors, data } = await cdp.send('Page.getAppManifest')
+  expect(url).toMatch(/\/manifest\.webmanifest$/)
+  expect(errors).toEqual([])
+  expect(JSON.parse(data ?? '{}')).toMatchObject({ short_name: '골프 비서', display: 'standalone', start_url: '/score' })
+})
