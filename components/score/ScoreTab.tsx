@@ -22,6 +22,7 @@ import RoundCompletePanel from './score-tab/RoundCompletePanel'
 import CourseHeader from './score-tab/CourseHeader'
 import { useScoreGuide } from '@/hooks/score/useScoreGuide'
 import { useScreenProviders } from '@/hooks/score/useScreenProviders'
+import { useOnlineStatus } from '@/components/layout/useOnlineStatus'
 
 // 기존 import 경로 호환 (ClubModal 등에서 './ScoreTab'으로 가져오던 것)
 export { sortClubs } from '@/utils/golf/clubs'
@@ -89,6 +90,7 @@ export default function ScoreTab({ bottomNavVisible, sampleSessionId = null, onE
   const scoreGuide = useScoreGuide(supabase)
   const round = useRound(clubs, { choose, confirm }, sampleSessionId)
   const screenProviders = useScreenProviders(supabase, round.playMode)
+  const online = useOnlineStatus()
   useEffect(() => {
     if (!clubBagLoaded || !clubBagUserId) return
     let cancelled = false
@@ -161,6 +163,13 @@ export default function ScoreTab({ bottomNavVisible, sampleSessionId = null, onE
       {round.isSample && <div role="status" style={{ marginBottom: 10, padding: '9px 12px', border: `1px solid ${palette.blue300}`, borderRadius: 9, background: palette.blue50, color: palette.blue800, fontSize: 12, display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'center' }}><span>샘플 입력 중 · 평균·배지·트로피 제외</span><button type="button" onClick={onExitSample} style={{ border: 0, background: 'transparent', color: palette.blue700, fontWeight: 700 }}>종료</button></div>}
       {/* 상단 헤더: 라운드 방식, 골프장·코스·티 선택 */}
       <CourseHeader round={round} courseInfoLocked={courseInfoLocked} bottomNavVisible={bottomNavVisible} choose={choose} confirm={confirm} scoreGuide={scoreGuide} screenProviders={screenProviders} onCatalogCourseChange={setSelectedCatalogCourse} />
+
+      {/* 연결이 끊기면 저장을 시도하기 전에 미리 알린다. 기록은 이 기기에 남고 연결되면 자동으로 다시 저장된다. */}
+      {!online && !round.isSample && (
+        <div role="status" style={{ padding: '10px 14px', marginBottom: '12px', backgroundColor: palette.amber50, border: `1px solid ${palette.amber300}`, borderRadius: '10px', color: palette.amber800, fontSize: '12.5px' }}>
+          📡 인터넷 연결이 끊겼어요. 입력한 기록은 이 기기에 보관되고, 연결되면 자동으로 서버에 저장돼요.
+        </div>
+      )}
 
       {/* 저장 오류 배너 */}
       {saveError && (
