@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test'
-import { mockSignedInApp } from './support/mockApp'
+import { mockSignedInApp, SAMPLE_ID } from './support/mockApp'
 
 const TWO_HOLES = {
   courseParsAvailable: true,
@@ -165,4 +165,25 @@ test('the score tab says so as soon as the connection drops, and clears it when 
 
   await context.setOffline(false)
   await expect(notice).toHaveCount(0)
+})
+
+test('a sample round shows the offline notice and saves again by itself when the connection returns', async ({ page, context }) => {
+  const writes: string[] = []
+  let failing = true
+  await mockSignedInApp(page, { draft: false, sampleDraft: true, writes })
+  await failWritesTo(page, 'sample_round_sessions', () => failing)
+  await page.goto(`/score?sample=${SAMPLE_ID}`)
+  await page.getByRole('dialog').getByRole('button', { name: '확인' }).click()
+  await page.getByRole('spinbutton', { name: '샷 후 남은 거리' }).fill('40')
+  await page.getByRole('button', { name: '✓ 샷 결과 저장' }).click()
+  const alert = page.getByRole('alert').filter({ hasText: '샘플 기록을 서버에 저장하지 못했습니다' })
+  await expect(alert).toBeVisible()
+
+  await context.setOffline(true)
+  await expect(page.getByRole('status').filter({ hasText: '인터넷 연결이 끊겼어요' })).toBeVisible()
+  const savesBefore = writes.filter((write) => write.startsWith('PATCH sample_round_sessions')).length
+  failing = false
+  await context.setOffline(false)
+  await expect(alert).toBeHidden()
+  await expect.poll(() => writes.filter((write) => write.startsWith('PATCH sample_round_sessions')).length).toBeGreaterThan(savesBefore)
 })
