@@ -1,54 +1,144 @@
 'use client'
 
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { useAppShell } from '@/components/layout/AppShell'
+import { TAB_ITEMS } from '@/components/layout/tabs'
+import { readDraft, type Draft } from '@/hooks/round/draft'
+import type { RoundOverview } from '@/components/my/myTypes'
+import { createClient, getSignedInUser } from '@/utils/supabase/client'
 import { color, palette } from '@/utils/theme'
 
-const cardStyle = { display: 'block', backgroundColor: palette.white, padding: '18px', borderRadius: '12px', border: `1px solid ${palette.slate200}`, textAlign: 'left', color: 'inherit', textDecoration: 'none' } as const
+const cardStyle = { backgroundColor: palette.white, padding: '18px', borderRadius: '12px', border: `1px solid ${palette.slate200}`, marginBottom: '14px' } as const
+const primaryButton = { display: 'inline-block', padding: '10px 18px', backgroundColor: color.brand, color: palette.white, border: 'none', borderRadius: '8px', fontWeight: 'bold', fontSize: '14px', textDecoration: 'none', cursor: 'pointer' } as const
+
+// 준비 중인 탭을 한 카드에 모아 짧게 소개한다. 메뉴의 "곧 열려요" 표시와 같은 목록을 쓴다.
+const COMING_SOON_NOTES: Record<string, string> = {
+  '/join': '필드 조인과 스크린 벙개 모집',
+  '/video': '내 기록에 맞춘 골프 영상',
+  '/lesson': '레슨 프로와 연습 피드',
+  '/shop': '골프용품 공동구매',
+}
+const COMING_SOON = TAB_ITEMS.filter((item) => item.comingSoon)
+
+type Overview = Pick<RoundOverview, 'completed_rounds' | 'average_score' | 'best_score'>
+
+/** 이 기기에 남은 진행 중 라운드와 서버의 라운드 요약을 읽는다. 로그인하지 않았으면 둘 다 없다. */
+function useHomeSummary(isLoggedIn: boolean) {
+  const [draft, setDraft] = useState<Draft | null>(null)
+  const [overview, setOverview] = useState<Overview | null>(null)
+  const [overviewState, setOverviewState] = useState<'idle' | 'loading' | 'ready' | 'error'>('idle')
+
+  useEffect(() => {
+    if (!isLoggedIn) return
+    let cancelled = false
+    void (async () => {
+      setOverviewState('loading')
+      const supabase = createClient()
+      const { user, offline } = await getSignedInUser(supabase)
+      if (cancelled || !user) return
+      setDraft(readDraft(user.id))
+      // 연결이 없으면 요약을 묻지 않는다. 이 기기의 진행 중 라운드만 보여 준다.
+      if (offline) { setOverviewState('error'); return }
+      const { data, error } = await supabase.rpc('get_my_round_overview')
+      if (cancelled) return
+      const row = (Array.isArray(data) ? data[0] : data) as Overview | null
+      setOverview(error ? null : row)
+      setOverviewState(error || !row ? 'error' : 'ready')
+    })()
+    return () => {
+      cancelled = true
+      setDraft(null)
+      setOverview(null)
+      setOverviewState('idle')
+    }
+  }, [isLoggedIn])
+
+  return { draft, overview, overviewState }
+}
+
+function draftDescription(draft: Draft) {
+  const place = [draft.golfClubName, draft.courseName].filter(Boolean).join(' · ')
+  return `${place || '골프장 미정'} · ${draft.currentHole}번 홀 진행 중`
+}
 
 export default function HomeTab() {
-  const { userNickname } = useAppShell()
+  const { isLoggedIn, authLoading, userNickname, openAuthModal } = useAppShell()
+  const { draft, overview, overviewState } = useHomeSummary(isLoggedIn)
+
+  const heading = authLoading
+    ? '오늘 라운드 준비되셨나요?'
+    : isLoggedIn
+      ? `${userNickname}님, 오늘 라운드 준비되셨나요?`
+      : '라운드의 모든 샷을 기록해 보세요'
+
   return (
     <div style={{ padding: '16px' }}>
-      <div style={{ backgroundColor: palette.slate900, color: palette.white, padding: '24px', borderRadius: '16px', marginBottom: '20px' }}>
-        <div style={{ fontSize: '13px', color: palette.sky400, fontWeight: 'bold', marginBottom: '4px' }}>TODAY&apos;S GOLF BRIEFING</div>
-        <h2 style={{ margin: '0 0 10px 0', fontSize: '22px' }}>{userNickname}님, 오늘 라운드 준비되셨나요?</h2>
-        <p style={{ margin: 0, fontSize: '14px', color: palette.slate400, lineHeight: 1.5 }}>
-          라운드와 모든 샷 기록을 쌓고, 내 데이터에 맞춘 분석과 연습 방향을 확인하세요.
+      <section style={{ backgroundColor: palette.slate900, color: palette.white, padding: '24px', borderRadius: '16px', marginBottom: '16px' }}>
+        <div style={{ fontSize: '13px', color: palette.sky400, fontWeight: 'bold', marginBottom: '4px' }}>오늘의 골프</div>
+        <h2 style={{ margin: '0 0 10px 0', fontSize: '22px', lineHeight: 1.35, wordBreak: 'keep-all' }}>{heading}</h2>
+        <p style={{ margin: 0, fontSize: '14px', color: palette.slate300, lineHeight: 1.5, wordBreak: 'keep-all' }}>
+          {isLoggedIn || authLoading
+            ? '샷마다 남은 거리와 클럽을 남기면 라운드가 끝난 뒤 내 기록에 맞춘 분석을 볼 수 있어요.'
+            : '로그인하면 샷마다 남은 거리와 클럽을 기록하고, 라운드가 끝난 뒤 내 기록에 맞춘 분석을 볼 수 있어요.'}
         </p>
         <div style={{ display: 'flex', gap: '10px', marginTop: '16px', flexWrap: 'wrap' }}>
-          <Link
-            href="/score"
-            style={{ padding: '10px 18px', backgroundColor: color.brand, color: palette.white, borderRadius: '8px', fontWeight: 'bold', fontSize: '13px', textDecoration: 'none' }}
-          >
-            ⛳ 실시간 스코어 기록
-          </Link>
-          <Link
-            href="/join"
-            style={{ padding: '10px 18px', backgroundColor: palette.slate800, color: palette.sky400, border: `1px solid ${palette.sky400}`, borderRadius: '8px', fontWeight: 'bold', fontSize: '13px', textDecoration: 'none' }}
-          >
-            👥 조인·벙개 (서비스 준비 중)
-          </Link>
+          {!isLoggedIn && !authLoading ? (
+            <button type="button" onClick={openAuthModal} style={primaryButton}>로그인하고 기록 시작하기</button>
+          ) : (
+            <Link href="/score" style={primaryButton}>{draft ? '⛳ 이어서 기록하기' : '⛳ 스코어 기록 시작'}</Link>
+          )}
         </div>
-      </div>
+        {draft && (
+          <p style={{ margin: '10px 0 0', fontSize: '13px', color: palette.slate300 }}>{draftDescription(draft)}</p>
+        )}
+      </section>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px' }}>
-        <Link href="/join" style={cardStyle}>
-          <div style={{ fontSize: '24px', marginBottom: '8px' }}>👥</div>
-          <h3 style={{ margin: '0 0 4px 0', fontSize: '16px', fontWeight: 'bold' }}>필드 조인 & 스크린 벙개</h3>
-          <p style={{ margin: 0, fontSize: '13px', color: palette.slate500 }}>곧 서비스가 시작됩니다.</p>
-        </Link>
-        <Link href="/video" style={cardStyle}>
-          <div style={{ fontSize: '24px', marginBottom: '8px' }}>🎬</div>
-          <h3 style={{ margin: '0 0 4px 0', fontSize: '16px', fontWeight: 'bold' }}>골프 영상 & 레슨 피드</h3>
-          <p style={{ margin: 0, fontSize: '13px', color: palette.slate500 }}>데이터와 연결되는 맞춤 영상 서비스를 준비하고 있습니다.</p>
-        </Link>
-        <Link href="/shop" style={cardStyle}>
-          <div style={{ fontSize: '24px', marginBottom: '8px' }}>🔥</div>
-          <h3 style={{ margin: '0 0 4px 0', fontSize: '16px', fontWeight: 'bold' }}>골프용품 공동구매</h3>
-          <p style={{ margin: 0, fontSize: '13px', color: palette.slate500 }}>곧 서비스를 시작할 예정입니다.</p>
-        </Link>
-      </div>
+      {isLoggedIn && (
+        <section aria-labelledby="home-summary-title" style={cardStyle}>
+          <h3 id="home-summary-title" style={{ margin: '0 0 10px 0', fontSize: '16px' }}>내 라운드</h3>
+          {overviewState === 'loading' && <p style={{ margin: 0, fontSize: '14px', color: palette.slate500 }}>기록을 불러오는 중이에요.</p>}
+          {overviewState === 'error' && <p style={{ margin: 0, fontSize: '14px', color: palette.slate500 }}>지금은 기록 요약을 불러오지 못했어요. MY 탭에서 다시 볼 수 있어요.</p>}
+          {overviewState === 'ready' && overview && (overview.completed_rounds > 0 ? (
+            <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px', margin: 0, textAlign: 'center' }}>
+              {[
+                ['완료 라운드', `${overview.completed_rounds}회`],
+                ['평균 타수', overview.average_score == null ? '-' : Number(overview.average_score).toFixed(1)],
+                ['베스트', overview.best_score == null ? '-' : String(overview.best_score)],
+              ].map(([label, value]) => (
+                <div key={label} style={{ backgroundColor: palette.slate50, borderRadius: '8px', padding: '10px 4px' }}>
+                  <dt style={{ fontSize: '12px', color: palette.slate500 }}>{label}</dt>
+                  <dd style={{ margin: '2px 0 0', fontSize: '18px', fontWeight: 'bold', color: palette.slate900 }}>{value}</dd>
+                </div>
+              ))}
+            </dl>
+          ) : (
+            <p style={{ margin: 0, fontSize: '14px', color: palette.slate600, lineHeight: 1.5 }}>
+              아직 등록한 라운드가 없어요. 첫 라운드를 기록하면 여기에 평균과 베스트 스코어가 보여요.
+            </p>
+          ))}
+          <Link href="/my" style={{ display: 'inline-block', marginTop: '12px', fontSize: '14px', fontWeight: 'bold', color: color.brand }}>MY 탭에서 자세히 보기 →</Link>
+        </section>
+      )}
+
+      <section aria-labelledby="home-coming-soon-title" style={cardStyle}>
+        <h3 id="home-coming-soon-title" style={{ margin: '0 0 4px 0', fontSize: '16px' }}>준비 중인 서비스</h3>
+        <p style={{ margin: '0 0 8px 0', fontSize: '13px', color: palette.slate500 }}>지금은 스코어 기록과 MY 탭을 쓸 수 있어요.</p>
+        <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+          {COMING_SOON.map((item) => (
+            <li key={item.href} style={{ borderTop: `1px solid ${palette.slate100}` }}>
+              <Link href={item.href} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px 0', color: 'inherit', textDecoration: 'none' }}>
+                <span aria-hidden="true" style={{ fontSize: '20px' }}>{item.icon}</span>
+                <span style={{ flex: 1, minWidth: 0 }}>
+                  <span style={{ display: 'block', fontSize: '14px', fontWeight: 'bold' }}>{item.label}</span>
+                  <span style={{ display: 'block', fontSize: '13px', color: palette.slate500 }}>{COMING_SOON_NOTES[item.href]}</span>
+                </span>
+                <span style={{ padding: '0 6px', borderRadius: '6px', background: palette.amber100, color: palette.amber800, fontSize: '11px', fontWeight: 700, lineHeight: '18px', whiteSpace: 'nowrap' }}>곧 열려요</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   )
 }

@@ -62,7 +62,7 @@ test('an unfinished shot survives a tab change and can be undone and restored', 
   await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem('golf-score-draft-v1') ?? '{}').currentShots?.length)).toBe(1)
 
   await page.getByRole('link', { name: 'Golf Secretary 홈으로 이동' }).click()
-  await page.getByRole('link', { name: /실시간 스코어 기록/ }).click()
+  await page.getByRole('link', { name: '⛳ 이어서 기록하기' }).click()
   await expect(page.getByText('🚩 현재 핀까지')).toBeVisible()
   await expect(page.getByRole('button', { name: '↩ 직전 샷 취소' })).toBeEnabled()
   await page.getByRole('button', { name: '↩ 직전 샷 취소' }).click()
@@ -77,7 +77,7 @@ test('an in-progress server round is offered again after leaving the score tab w
   await expect(page.getByRole('dialog').getByText(/진행 중이던 라운드/)).toBeVisible()
   await page.getByRole('dialog').getByRole('button', { name: /나중에/ }).click()
   await page.getByRole('link', { name: 'Golf Secretary 홈으로 이동' }).click()
-  await page.getByRole('link', { name: /실시간 스코어 기록/ }).click()
+  await page.getByRole('link', { name: '⛳ 스코어 기록 시작' }).click()
   await expect(page.getByRole('dialog').getByText(/진행 중이던 라운드/)).toBeVisible()
   await page.getByRole('dialog').getByRole('button', { name: '이어서 하기' }).click()
   await expect(page.getByRole('searchbox', { name: '골프장 이름 검색' })).toHaveValue('서버복구 CC')
