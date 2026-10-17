@@ -189,7 +189,7 @@ export default function ScoreTab({ bottomNavVisible, sampleSessionId = null, onE
       <CourseHeader round={round} courseInfoLocked={courseInfoLocked} bottomNavVisible={bottomNavVisible} choose={choose} confirm={confirm} scoreGuide={scoreGuide} screenProviders={screenProviders} onCatalogCourseChange={setSelectedCatalogCourse} />
 
       {/* 연결이 끊기면 저장을 시도하기 전에 미리 알린다. 기록은 이 기기에 남고 연결되면 자동으로 다시 저장된다. */}
-      {!online && !round.isSample && (
+      {!online && (
         <div role="status" style={{ padding: '10px 14px', marginBottom: '12px', backgroundColor: palette.amber50, border: `1px solid ${palette.amber300}`, borderRadius: '10px', color: palette.amber800, fontSize: '12.5px' }}>
           📡 인터넷 연결이 끊겼어요. 입력한 기록은 이 기기에 보관되고, 연결되면 자동으로 서버에 저장돼요.
         </div>
