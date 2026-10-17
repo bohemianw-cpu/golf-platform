@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   appleWebApp: { capable: true, title: "골프 비서", statusBarStyle: "default" },
 };
 
-// 설치한 앱의 상단 표시줄 색은 브랜드 초록이다.
+// 설치한 앱의 상단 표시줄 색은 앱 아이콘 바탕과 같은 짙은 초록이다.
 export const viewport: Viewport = {
-  themeColor: color.brand,
+  themeColor: color.appChrome,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

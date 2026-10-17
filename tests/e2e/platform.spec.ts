@@ -66,7 +66,7 @@ test('the app describes itself for home screen installation', async ({ page, req
   const manifestResponse = await request.get('/manifest.webmanifest')
   expect(manifestResponse.ok()).toBe(true)
   const manifest = await manifestResponse.json()
-  expect(manifest).toMatchObject({ name: 'Golf Secretary 골프 비서', short_name: '골프 비서', lang: 'ko', start_url: '/score', display: 'standalone', theme_color: '#047857' })
+  expect(manifest).toMatchObject({ name: 'Golf Secretary 골프 비서', short_name: '골프 비서', lang: 'ko', start_url: '/score', display: 'standalone', theme_color: '#054d27' })
   for (const icon of manifest.icons as { src: string; sizes: string }[]) {
     const response = await request.get(icon.src)
     expect(response.headers()['content-type'], icon.src).toContain('image/png')
@@ -76,5 +76,5 @@ test('the app describes itself for home screen installation', async ({ page, req
   await page.goto('/home')
   await expect(page.locator('link[rel="manifest"]')).toHaveAttribute('href', '/manifest.webmanifest')
   await expect(page.locator('link[rel="apple-touch-icon"]')).toHaveCount(1)
-  await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute('content', '#047857')
+  await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute('content', '#054d27')
 })
