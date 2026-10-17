@@ -41,16 +41,24 @@ export default function BottomNav({ chromeVisible, pathname }: { chromeVisible: 
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                justifyContent: 'center',
+                // "곧 열려요"가 붙은 탭과 아닌 탭의 아이콘·이름 높이를 맞추려고 위에서부터 쌓는다.
+                justifyContent: 'flex-start',
+                paddingTop: '7px',
+                boxSizing: 'border-box',
                 textDecoration: 'none',
                 color: isActive ? color.brand : palette.slate500,
                 transition: 'all 0.15s ease',
               }}
             >
-              <span style={{ fontSize: '18px', filter: isActive ? 'none' : 'grayscale(40%)' }}>{item.icon}</span>
-              <span style={{ fontSize: '11px', fontWeight: isActive ? 'bold' : 'normal', marginTop: '2px' }}>
+              <span aria-hidden="true" style={{ fontSize: '18px', lineHeight: '22px', filter: isActive ? 'none' : 'grayscale(40%)' }}>{item.icon}</span>
+              <span style={{ fontSize: '11px', lineHeight: '14px', fontWeight: isActive ? 'bold' : 'normal', marginTop: '2px' }}>
                 {item.label}
               </span>
+              {item.comingSoon && (
+                <span style={{ marginTop: '2px', padding: '0 5px', borderRadius: '6px', background: palette.amber100, color: palette.amber800, fontSize: '9.5px', fontWeight: 700, lineHeight: '14px', whiteSpace: 'nowrap' }}>
+                  곧 열려요
+                </span>
+              )}
             </Link>
           )
         })}

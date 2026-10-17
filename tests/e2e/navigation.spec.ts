@@ -46,3 +46,21 @@ test('the root redirect keeps email link parameters for sign-in', async ({ reque
   const plain = await request.get('/', { maxRedirects: 0 })
   expect(plain.headers().location).toBe('/score')
 })
+
+test('tabs that are not ready yet say "곧 열려요" in the menu, and it fits inside the menu', async ({ page }) => {
+  await mockSignedInApp(page, { draft: false })
+  await page.goto('/home')
+  const nav = page.getByRole('navigation')
+  for (const name of ['조인/벙개', '영상', '레슨', '쇼핑']) {
+    await expect(nav.getByRole('link', { name: `${name} 곧 열려요` })).toBeVisible()
+  }
+  for (const name of ['홈', '스코어', 'MY']) {
+    await expect(nav.getByRole('link', { name, exact: true })).toBeVisible()
+  }
+  await expect(nav.getByText('곧 열려요')).toHaveCount(4)
+  // 표시가 메뉴 아래로 잘려 나가지 않는다.
+  expect(await nav.evaluate((menu) => [...menu.querySelectorAll('a > span')].every((el) => el.getBoundingClientRect().bottom <= menu.getBoundingClientRect().bottom))).toBe(true)
+
+  await nav.getByRole('link', { name: '영상 곧 열려요' }).click()
+  await expect(page.getByRole('heading', { name: '골프 영상 서비스 준비 중' })).toBeVisible()
+})
