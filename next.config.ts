@@ -16,7 +16,17 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    return [
+      { source: "/:path*", headers: securityHeaders },
+      // 서비스 워커 파일은 늘 새로 받아 최신 저장 방식을 쓰고, 같은 사이트 코드만 실행한다.
+      {
+        source: "/sw.js",
+        headers: [
+          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
+          { key: "Content-Security-Policy", value: "default-src 'self'; script-src 'self'" },
+        ],
+      },
+    ];
   },
 };
 
