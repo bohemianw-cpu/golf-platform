@@ -90,6 +90,7 @@ export const palette = {
   sage300: '#cce8d8',
   sage600: '#668675',
   sage700: '#476e5c',
+  forest800: '#054d27',
   forest950: '#052e2b',
 } as const
 
@@ -107,4 +108,6 @@ export const color = {
   surface: palette.white,
   surfaceMuted: palette.slate50,
   danger: palette.red700,
+  /** 앱 아이콘 바탕의 짙은 초록. 설치한 앱의 상단 표시줄 색으로 쓴다. */
+  appChrome: palette.forest800,
 } as const
