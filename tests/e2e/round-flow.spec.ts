@@ -77,7 +77,9 @@ test('an in-progress server round is offered again after leaving the score tab w
   await expect(page.getByRole('dialog').getByText(/진행 중이던 라운드/)).toBeVisible()
   await page.getByRole('dialog').getByRole('button', { name: /나중에/ }).click()
   await page.getByRole('link', { name: 'Golf Secretary 홈으로 이동' }).click()
-  await page.getByRole('link', { name: '⛳ 스코어 기록 시작' }).click()
+  // 이 기기에 임시 기록이 없어도 홈이 서버의 진행 중 라운드를 찾아 이어서 기록하기를 보여 준다.
+  await expect(page.getByText('서버복구 CC · OUT 코스 · 진행 중인 라운드')).toBeVisible()
+  await page.getByRole('link', { name: '⛳ 이어서 기록하기' }).click()
   await expect(page.getByRole('dialog').getByText(/진행 중이던 라운드/)).toBeVisible()
   await page.getByRole('dialog').getByRole('button', { name: '이어서 하기' }).click()
   await expect(page.getByRole('searchbox', { name: '골프장 이름 검색' })).toHaveValue('서버복구 CC')

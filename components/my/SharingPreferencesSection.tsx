@@ -31,7 +31,7 @@ export default function SharingPreferencesSection({ dataPreferences, savingPrefe
         <AgreementDetails kind="ai" />
         <label style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 12, lineHeight: 1.5, color: palette.slate700 }}>
           <input type="checkbox" checked={dataPreferences?.score_guide_enabled ?? true} disabled={savingPreferences} onChange={(event) => void updateScoreGuidePreference(event.target.checked)} style={{ marginTop: 2 }} />
-          <span><strong>스코어 입력 도움말 아이콘 표시 및 첫 사용 안내</strong><br />켜면 Score 탭 첫 사용 때 안내가 나오고, 입력 화면에서 물음표 아이콘으로 언제든 다시 볼 수 있습니다.</span>
+          <span><strong>스코어 입력 도움말 아이콘 표시 및 첫 사용 안내</strong><br />켜면 스코어 탭 첫 사용 때 안내가 나오고, 입력 화면에서 물음표 아이콘으로 언제든 다시 볼 수 있습니다.</span>
         </label>
       </div>
     </section>

@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { useAppShell } from '@/components/layout/AppShell'
 import { TAB_ITEMS } from '@/components/layout/tabs'
 import { readDraft, type Draft } from '@/hooks/round/draft'
+import type { RoundRow } from '@/hooks/round/restoreRound'
 import type { RoundOverview } from '@/components/my/myTypes'
 import { createClient, getSignedInUser } from '@/utils/supabase/client'
 import { color, palette } from '@/utils/theme'
@@ -23,9 +24,15 @@ const COMING_SOON = TAB_ITEMS.filter((item) => item.comingSoon)
 
 type Overview = Pick<RoundOverview, 'completed_rounds' | 'average_score' | 'best_score'>
 
-/** 이 기기에 남은 진행 중 라운드와 서버의 라운드 요약을 읽는다. 로그인하지 않았으면 둘 다 없다. */
+type ServerRound = Pick<RoundRow, 'club_name' | 'golf_club' | 'course_name'>
+
+/**
+ * 이어서 기록할 라운드와 서버의 라운드 요약을 읽는다. 로그인하지 않았으면 둘 다 없다.
+ * 이어서 기록할 라운드는 스코어 탭과 같은 순서로 찾는다: 이 기기의 임시 기록, 없으면 서버의 진행 중 라운드.
+ * 서버 라운드는 다른 기기에서 시작했거나 이 기기의 임시 기록이 지워진 경우다.
+ */
 function useHomeSummary(isLoggedIn: boolean) {
-  const [draft, setDraft] = useState<Draft | null>(null)
+  const [inProgress, setInProgress] = useState<string | null>(null)
   const [overview, setOverview] = useState<Overview | null>(null)
   const [overviewState, setOverviewState] = useState<'idle' | 'loading' | 'ready' | 'error'>('idle')
 
@@ -37,24 +44,33 @@ function useHomeSummary(isLoggedIn: boolean) {
       const supabase = createClient()
       const { user, offline } = await getSignedInUser(supabase)
       if (cancelled || !user) return
-      setDraft(readDraft(user.id))
-      // 연결이 없으면 요약을 묻지 않는다. 이 기기의 진행 중 라운드만 보여 준다.
+      const draft = readDraft(user.id)
+      setInProgress(draft ? draftDescription(draft) : null)
+      // 연결이 없으면 서버에 묻지 않는다. 이 기기의 진행 중 라운드만 보여 준다.
       if (offline) { setOverviewState('error'); return }
-      const { data, error } = await supabase.rpc('get_my_round_overview')
+      const [{ data, error }, serverRound] = await Promise.all([
+        supabase.rpc('get_my_round_overview'),
+        draft ? null : supabase.from('rounds').select('club_name,golf_club,course_name')
+          .eq('user_id', user.id).eq('status', 'in_progress')
+          .order('created_at', { ascending: false }).limit(1),
+      ])
       if (cancelled) return
+      // 진행 중 라운드를 못 읽으면 표시만 하지 않는다. 스코어 탭이 다시 확인한다.
+      const round = serverRound?.data?.[0] as ServerRound | undefined
+      if (round) setInProgress(serverRoundDescription(round))
       const row = (Array.isArray(data) ? data[0] : data) as Overview | null
       setOverview(error ? null : row)
       setOverviewState(error || !row ? 'error' : 'ready')
     })()
     return () => {
       cancelled = true
-      setDraft(null)
+      setInProgress(null)
       setOverview(null)
       setOverviewState('idle')
     }
   }, [isLoggedIn])
 
-  return { draft, overview, overviewState }
+  return { inProgress, overview, overviewState }
 }
 
 function draftDescription(draft: Draft) {
@@ -62,9 +78,14 @@ function draftDescription(draft: Draft) {
   return `${place || '골프장 미정'} · ${draft.currentHole}번 홀 진행 중`
 }
 
+function serverRoundDescription(round: ServerRound) {
+  const place = [round.club_name || round.golf_club, round.course_name].filter(Boolean).join(' · ')
+  return `${place || '골프장 미정'} · 진행 중인 라운드`
+}
+
 export default function HomeTab() {
   const { isLoggedIn, authLoading, userNickname, openAuthModal } = useAppShell()
-  const { draft, overview, overviewState } = useHomeSummary(isLoggedIn)
+  const { inProgress, overview, overviewState } = useHomeSummary(isLoggedIn)
 
   const heading = authLoading
     ? '오늘 라운드 준비되셨나요?'
@@ -86,11 +107,11 @@ export default function HomeTab() {
           {!isLoggedIn && !authLoading ? (
             <button type="button" onClick={openAuthModal} style={primaryButton}>로그인하고 기록 시작하기</button>
           ) : (
-            <Link href="/score" style={primaryButton}>{draft ? '⛳ 이어서 기록하기' : '⛳ 스코어 기록 시작'}</Link>
+            <Link href="/score" style={primaryButton}>{inProgress ? '⛳ 이어서 기록하기' : '⛳ 스코어 기록 시작'}</Link>
           )}
         </div>
-        {draft && (
-          <p style={{ margin: '10px 0 0', fontSize: '13px', color: palette.slate300 }}>{draftDescription(draft)}</p>
+        {inProgress && (
+          <p style={{ margin: '10px 0 0', fontSize: '13px', color: palette.slate300 }}>{inProgress}</p>
         )}
       </section>
 

@@ -18,12 +18,14 @@ import TrophySection from './TrophySection'
 import FriendsSection from './FriendsSection'
 import RoundHistorySection from './RoundHistorySection'
 import RoundDetailSection from './RoundDetailSection'
-import { palette } from '@/utils/theme'
+import { color, palette } from '@/utils/theme'
+import { useAppShell } from '@/components/layout/AppShell'
 import AccountSection from './AccountSection'
 import SummaryStatsSection from './SummaryStatsSection'
 import HandicapSection from './HandicapSection'
 
 const ROUND_PAGE_SIZE = 50
+const primaryButton = { padding: '10px 18px', borderRadius: '8px', border: 'none', background: color.brand, color: palette.white, fontWeight: 700, fontSize: '14px', cursor: 'pointer' } as const
 const ROUND_COLUMNS = 'id,created_at,registered_at,status,total_score,total_putts,club_name,golf_club,course_name,course_id,play_mode,screen_provider,entry_mode,route_ids,tee_code,tee_name,visibility'
 
 export default function MyTab({ onStartSample }: { onStartSample?: (id: string) => void }) {
@@ -53,6 +55,10 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
   const [exporting, setExporting] = useState(false)
   const [withdrawing, setWithdrawing] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  // 처음 불러오기에 실패하면 화면 전체를 다시 불러올 수 있게 한다. 로그인·로그아웃하면 다시 불러온다.
+  const [loadFailed, setLoadFailed] = useState(false)
+  const [reloadKey, setReloadKey] = useState(0)
+  const { isLoggedIn, authLoading, openAuthModal } = useAppShell()
 
   // 목록은 최근 것부터 한 쪽씩 불러온다. 요약(라운드 수·평균·인정 라운드)은 get_my_round_overview로 따로 받는다.
   const fetchRoundPage = useCallback(async (uid: string, from: number, size = ROUND_PAGE_SIZE) => {
@@ -67,10 +73,13 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
   }, [supabase])
 
   useEffect(() => {
+    // 로그인 확인이 끝난 뒤 한 번만 불러온다. 확인 중에 불러오면 끝난 뒤 같은 요청을 또 보내게 된다.
+    if (authLoading) return
     let cancelled = false
     void (async () => {
       setLoading(true)
       setError(null)
+      setLoadFailed(false)
       try {
         const { data: { session }, error: sessionError } = await supabase.auth.getSession()
         if (sessionError) throw sessionError
@@ -123,13 +132,16 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
         if (connectionsError) throw connectionsError
         setFriends((connections ?? []) as FriendConnection[])
       } catch (err) {
-        if (!cancelled) setError(err instanceof Error ? err.message : '내 데이터를 불러오지 못했습니다.')
+        if (!cancelled) {
+          console.error('MY 탭 불러오기 실패:', err)
+          setLoadFailed(true)
+        }
       } finally {
         if (!cancelled) setLoading(false)
       }
     })()
     return () => { cancelled = true }
-  }, [supabase, fetchRoundPage])
+  }, [supabase, fetchRoundPage, authLoading, isLoggedIn, reloadKey])
 
   const loadMoreRounds = async () => {
     if (!userId || loadingMoreRounds || roundsExhausted) return
@@ -388,23 +400,28 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
   }
 
   if (loading) return <div role="status" style={{ padding: '48px 16px', textAlign: 'center', ...muted }}>내 라운드 기록을 불러오는 중입니다…</div>
-  if (!userId) return <div style={{ ...CARD, margin: '20px 16px', textAlign: 'center' }}><h1 style={{ marginTop: 0 }}>MY 데이터</h1><p style={muted}>로그인하면 라운드와 샷 기록을 모든 기기에서 확인할 수 있습니다.</p></div>
+  if (loadFailed) return (
+    <div role="alert" style={{ ...CARD, margin: '20px 16px', textAlign: 'center' }}>
+      <h1 style={{ margin: '0 0 8px', fontSize: '20px' }}>내 기록을 불러오지 못했어요</h1>
+      <p style={muted}>인터넷 연결을 확인한 뒤 다시 시도해 주세요. 저장된 기록은 지워지지 않았어요.</p>
+      <button type="button" onClick={() => setReloadKey((key) => key + 1)} style={primaryButton}>다시 시도</button>
+    </div>
+  )
+  if (!userId) return (
+    <div style={{ ...CARD, margin: '20px 16px', textAlign: 'center' }}>
+      <h1 style={{ margin: '0 0 8px', fontSize: '20px' }}>MY 데이터</h1>
+      <p style={muted}>로그인하면 라운드와 샷 기록, 레벨과 트로피를 모든 기기에서 확인할 수 있어요.</p>
+      <button type="button" onClick={openAuthModal} style={primaryButton}>로그인하고 내 기록 보기</button>
+    </div>
+  )
 
   return (
     <main style={{ maxWidth: '1000px', margin: '0 auto', padding: '16px', display: 'grid', gap: '14px' }}>
       <section style={{ ...CARD, background: `linear-gradient(120deg,${palette.forest950},${palette.emerald900})`, color: palette.white }}>
-        <p style={{ margin: '0 0 6px', color: palette.emerald200, fontSize: '11px', fontWeight: 800, letterSpacing: '0.12em' }}>MY GOLF DATA</p>
+        <p style={{ margin: '0 0 6px', color: palette.emerald200, fontSize: '11px', fontWeight: 800 }}>내 골프 기록</p>
         <h1 style={{ margin: '0 0 8px', fontSize: '23px' }}>{profile?.nickname || '골퍼'}님의 기록 보관함</h1>
         <p style={{ margin: 0, color: palette.emerald100, fontSize: '13px' }}>모든 라운드와 홀별 샷을 저장하고, 선택한 기록의 전체 상세를 언제든지 다시 볼 수 있습니다.</p>
       </section>
-
-      <SampleRoundsSection sampleSessions={sampleSessions} selectedSample={selectedSample} setSelectedSample={setSelectedSample} startSample={startSample} startingSample={startingSample} onStartSample={onStartSample} />
-
-      <CommercePanel />
-
-      <SharingPreferencesSection dataPreferences={dataPreferences} savingPreferences={savingPreferences} updateDataSharingPreference={updateDataSharingPreference} updateScoreGuidePreference={updateScoreGuidePreference} />
-
-      <AccountSection withdrawing={withdrawing} withdrawAccount={withdrawAccount} />
 
       {error && <div role="alert" style={{ ...CARD, color: palette.red700, background: palette.red50 }}>{error}</div>}
 
@@ -417,14 +434,22 @@ export default function MyTab({ onStartSample }: { onStartSample?: (id: string) 
 
       <TrophySection trophies={trophies} earnedTrophies={earnedTrophies} achievementRoundCount={achievementRoundIds.length} currentLevel={currentLevel} currentLevelIndex={currentLevelIndex} nextLevel={nextLevel} levelProgress={levelProgress} achievementsError={achievementsError} achievementsLoading={achievementsLoading} eligibilityError={overviewError} />
 
-      <HandicapSection currentGroup={currentGroup} handicapInput={handicapInput} setHandicapInput={setHandicapInput} setProfileSaved={setProfileSaved} saveHandicap={saveHandicap} savingHandicap={savingHandicap} profileSaved={profileSaved} />
-
-      <FriendsSection userId={userId} friends={friends} friendAggregate={friendAggregate} groupAggregate={groupAggregate} detail={detail} friendIdInput={friendIdInput} setFriendIdInput={setFriendIdInput} sendFriendRequest={sendFriendRequest} respondToFriendRequest={respondToFriendRequest} removeFriendConnection={removeFriendConnection} loadFriendComparison={loadFriendComparison} />
-
       <RoundHistorySection rounds={rounds} integrityByRound={integrityByRound} openRound={openRound} exportHistory={exportHistory} exporting={exporting} totalRounds={overview?.total_rounds ?? null} hasMore={!roundsExhausted} loadingMore={loadingMoreRounds} onLoadMore={() => void loadMoreRounds()} />
 
       {detailLoading && <p role="status" style={{ ...muted, textAlign: 'center' }}>홀별 샷 상세를 불러오는 중입니다…</p>}
       {detail && <RoundDetailSection detail={detail} setDetail={setDetail} integrityByRound={integrityByRound} dataPreferences={dataPreferences} sharing={sharing} updateVisibility={updateVisibility} aggregate={aggregate} courseAllAggregate={courseAllAggregate} />}
+
+      <SampleRoundsSection sampleSessions={sampleSessions} selectedSample={selectedSample} setSelectedSample={setSelectedSample} startSample={startSample} startingSample={startingSample} onStartSample={onStartSample} />
+
+      <HandicapSection currentGroup={currentGroup} handicapInput={handicapInput} setHandicapInput={setHandicapInput} setProfileSaved={setProfileSaved} saveHandicap={saveHandicap} savingHandicap={savingHandicap} profileSaved={profileSaved} />
+
+      <FriendsSection userId={userId} friends={friends} friendAggregate={friendAggregate} groupAggregate={groupAggregate} detail={detail} friendIdInput={friendIdInput} setFriendIdInput={setFriendIdInput} sendFriendRequest={sendFriendRequest} respondToFriendRequest={respondToFriendRequest} removeFriendConnection={removeFriendConnection} loadFriendComparison={loadFriendComparison} />
+
+      <SharingPreferencesSection dataPreferences={dataPreferences} savingPreferences={savingPreferences} updateDataSharingPreference={updateDataSharingPreference} updateScoreGuidePreference={updateScoreGuidePreference} />
+
+      <CommercePanel />
+
+      <AccountSection withdrawing={withdrawing} withdrawAccount={withdrawAccount} />
     </main>
   )
 }

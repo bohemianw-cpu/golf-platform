@@ -137,3 +137,41 @@ test('the MY tab loads its first data together and asks for a friend comparison 
   await expect(page.getByText(/전체 88타 \(5회\) · 이 구장 90타 \(3회\)/)).toBeVisible()
   expect(friendCalls.slice(0, 2).every((step) => step.startsWith('start')), friendCalls.join(', ')).toBe(true)
 })
+
+test('a signed-out visitor can open the login window from the MY tab', async ({ page }) => {
+  await page.route('**/auth/v1/**', (route) => route.fulfill({ status: 401, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: '{}' }))
+  await page.goto('/my')
+  await expect(page.getByRole('heading', { name: 'MY 데이터' })).toBeVisible()
+  await page.getByRole('button', { name: '로그인하고 내 기록 보기' }).click()
+  await expect(page.getByRole('dialog', { name: '골프 비서 로그인' })).toBeVisible()
+})
+
+test('when the MY tab cannot load, a signed-in golfer is told so and can try again', async ({ page }) => {
+  await mockSignedInApp(page, { draft: false })
+  let failProfile = true
+  await page.route('**/rest/v1/profiles*', (route) => failProfile
+    ? route.fulfill({ status: 500, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: '{"message":"boom"}' })
+    : route.fallback())
+  await page.goto('/my')
+  await expect(page.getByRole('heading', { name: '내 기록을 불러오지 못했어요' })).toBeVisible()
+  await expect(page.getByText('로그인하면', { exact: false })).toHaveCount(0)
+  failProfile = false
+  await page.getByRole('button', { name: '다시 시도' }).click()
+  await expect(page.getByRole('heading', { name: '브라우저테스트님의 기록 보관함' })).toBeVisible()
+})
+
+test('a new golfer sees the record summary first and the locked trophies only when asked', async ({ page }) => {
+  await mockSignedInApp(page, { draft: false })
+  await page.goto('/my')
+  await expect(page.getByLabel('요약 통계')).toContainText('0회')
+  const trophies = page.getByRole('region', { name: '🏆 레벨 & 트로피 컬렉션' })
+  await expect(trophies.getByText('아직 받은 트로피가 없어요', { exact: false })).toBeVisible()
+  await expect(trophies.getByRole('article')).toHaveCount(0)
+  const toggle = trophies.getByRole('button', { name: '아직 못 받은 트로피 19개 보기' })
+  await toggle.click()
+  await expect(trophies.getByRole('article')).toHaveCount(19)
+  await expect(trophies.getByRole('button', { name: '아직 못 받은 트로피 접기' })).toHaveAttribute('aria-expanded', 'true')
+  // 기록 요약·트로피·라운드 목록이 계정 설정과 회원 탈퇴보다 먼저 나온다.
+  const order = await page.locator('main h2').allTextContents()
+  expect(order.findIndex((text) => text.includes('내 라운드 전체 기록'))).toBeLessThan(order.findIndex((text) => text.includes('탈퇴')))
+})

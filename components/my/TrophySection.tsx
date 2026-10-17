@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { TrophyItem } from './myTypes'
 import { GOLF_LEVELS } from './myRecords'
 import { CARD, muted } from './myStyles'
@@ -18,6 +19,10 @@ interface TrophySectionProps {
 }
 
 export default function TrophySection({ trophies, earnedTrophies, achievementRoundCount, currentLevel, currentLevelIndex, nextLevel, levelProgress, achievementsError, achievementsLoading, eligibilityError }: TrophySectionProps) {
+  // 받은 트로피는 늘 보여 주고, 아직 못 받은 트로피는 눌러서 펼친다. 처음에는 19개가 모두 잠겨 있어 화면이 길어지기 때문이다.
+  const [showLocked, setShowLocked] = useState(false)
+  const lockedCount = trophies.length - earnedTrophies.length
+  const visibleTrophies = showLocked ? trophies : trophies.filter((trophy) => trophy.earned)
   return (
     <section style={{ ...CARD, borderColor: palette.emerald200, background: `linear-gradient(180deg,${palette.green50},${palette.white} 48%)` }} aria-labelledby="trophy-collection-title">
       <div style={{ display: 'flex', justifyContent: 'space-between', gap: 10, alignItems: 'start', flexWrap: 'wrap' }}>
@@ -29,7 +34,7 @@ export default function TrophySection({ trophies, earnedTrophies, achievementRou
       </div>
       <div style={{ marginTop: 14, padding: 14, borderRadius: 12, color: palette.white, background: `linear-gradient(120deg,${palette.emerald900},${color.brand})` }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'center' }}>
-          <div><div style={{ color: palette.emerald200, fontSize: 11, fontWeight: 700 }}>MY GOLF LEVEL</div><strong style={{ display: 'block', marginTop: 3, fontSize: 20 }}>Lv.{currentLevel} · {currentLevelIndex >= 0 ? GOLF_LEVELS[currentLevelIndex].label : '첫 라운드 전'}</strong></div>
+          <div><div style={{ color: palette.emerald200, fontSize: 11, fontWeight: 700 }}>내 골프 레벨</div><strong style={{ display: 'block', marginTop: 3, fontSize: 20 }}>Lv.{currentLevel} · {currentLevelIndex >= 0 ? GOLF_LEVELS[currentLevelIndex].label : '첫 라운드 전'}</strong></div>
           <div style={{ textAlign: 'right', fontSize: 12 }}>{achievementRoundCount}회 인정</div>
         </div>
         <div role="progressbar" aria-label="다음 레벨 진행도" aria-valuemin={0} aria-valuemax={100} aria-valuenow={levelProgress} style={{ height: 8, marginTop: 11, overflow: 'hidden', borderRadius: 99, background: palette.whiteA25 }}><div style={{ height: '100%', width: `${levelProgress}%`, borderRadius: 99, background: palette.amber200, transition: 'width .25s ease' }} /></div>
@@ -39,11 +44,17 @@ export default function TrophySection({ trophies, earnedTrophies, achievementRou
       {eligibilityError && <p role="alert" style={{ ...muted, color: palette.red700, margin: '10px 0 0' }}>기록 검증 결과를 불러오지 못해 레벨과 트로피를 잠시 표시할 수 없습니다.</p>}
       {achievementsLoading && <p role="status" style={{ ...muted, margin: '10px 0 0' }}>홀·샷 기록으로 트로피를 확인하고 있습니다…</p>}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,210px),1fr))', gap: 8, marginTop: 12 }}>
-        {trophies.map((trophy) => <article key={trophy.id} style={{ minWidth: 0, padding: 10, display: 'flex', gap: 9, alignItems: 'center', border: `1px solid ${trophy.earned ? palette.emerald200 : palette.slate200}`, borderRadius: 10, background: trophy.earned ? palette.green50 : palette.slate50, opacity: 1 }}>
+        {visibleTrophies.map((trophy) => <article key={trophy.id} style={{ minWidth: 0, padding: 10, display: 'flex', gap: 9, alignItems: 'center', border: `1px solid ${trophy.earned ? palette.emerald200 : palette.slate200}`, borderRadius: 10, background: trophy.earned ? palette.green50 : palette.slate50, opacity: 1 }}>
           <span aria-hidden="true" style={{ flex: '0 0 34px', width: 34, height: 34, display: 'grid', placeItems: 'center', borderRadius: 10, background: trophy.earned ? palette.green100 : palette.slate200, fontSize: 19, filter: trophy.earned ? 'none' : 'grayscale(1)' }}>{trophy.earned ? trophy.icon : '🔒'}</span>
           <div style={{ minWidth: 0, flex: 1 }}><div style={{ display: 'flex', justifyContent: 'space-between', gap: 4, alignItems: 'center' }}><strong style={{ color: palette.slate900, fontSize: 12 }}>{trophy.title}</strong><span style={{ color: palette.slate500, fontSize: 9, whiteSpace: 'nowrap' }}>{trophy.category}</span></div><p style={{ margin: '3px 0', color: palette.slate600, fontSize: 10, lineHeight: 1.4 }}>{trophy.description}</p><span style={{ color: trophy.earned ? color.brand : palette.slate500, fontSize: 10, fontWeight: 700 }}>{trophy.earned ? '획득 · ' : '진행 · '}{trophy.evidence}</span></div>
         </article>)}
       </div>
+      {earnedTrophies.length === 0 && !showLocked && <p style={{ ...muted, margin: '12px 0 0' }}>아직 받은 트로피가 없어요. 라운드를 등록하면 첫 트로피를 받을 수 있어요.</p>}
+      {lockedCount > 0 && (
+        <button type="button" aria-expanded={showLocked} onClick={() => setShowLocked((value) => !value)} style={{ marginTop: 10, width: '100%', padding: '9px 12px', borderRadius: 8, border: `1px solid ${palette.slate300}`, background: palette.white, color: palette.slate700, fontWeight: 700, fontSize: 13, cursor: 'pointer' }}>
+          {showLocked ? '아직 못 받은 트로피 접기' : `아직 못 받은 트로피 ${lockedCount}개 보기`}
+        </button>
+      )}
       <p style={{ ...muted, margin: '10px 0 0', fontSize: 10 }}>재미를 위한 개인 기록 배지이며 핸디캡이나 공식 자격에 영향을 주지 않습니다. 9홀 라운드도 기록 가능한 항목에 반영됩니다.</p>
     </section>
   )
