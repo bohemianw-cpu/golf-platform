@@ -11,12 +11,8 @@ import {
   calcHoleScore,
   calcShotDistance,
   clamp,
-  countPutts,
   defaultDistanceForPar,
   getExpectedDistance,
-  getPenaltyByLie,
-  isFairwayHit,
-  isGreenInRegulation,
   MAX_GOLF_DISTANCE_M,
   MAX_GOLF_PAR,
   MIN_GOLF_PAR,
@@ -31,6 +27,7 @@ import { writeDraft, type Draft } from './round/draft'
 import { getHoleResultLabel, type HoleResultNotice } from './round/holeResult'
 import { loadResumedRound, type RoundRow } from './round/restoreRound'
 import { buildRoundSummary } from './round/roundSummary'
+import { buildHoleRecord, buildQuickPutts, buildShot } from './round/shotRecords'
 import { runInitialRestore } from './round/initialRestore'
 import { useRoundSync, type RoundMeta } from './round/useRoundSync'
 import { useDraftBackup, type DraftSnapshot } from './round/useDraftBackup'
@@ -466,20 +463,8 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs, sample
 
   const completeHole = (shots: ShotRecord[]) => {
     void syncShotEvents(currentHole, shots)
-    const finalScore = calcHoleScore(shots)
-    const record: HoleRecord = {
-      holeNumber: currentHole,
-      greenCode: greenCodes[currentHole - 1] ?? 'standard',
-      greenName: greenNames[currentHole - 1] ?? '기본 그린',
-      par: currentPar,
-      totalDistance: holeDistance,
-      shots,
-      score: finalScore,
-      scoreDiff: finalScore - currentPar,
-      putts: countPutts(shots, isPutter),
-      fairwayHit: isFairwayHit(shots, currentPar),
-      gir: isGreenInRegulation(shots, currentPar),
-    }
+    const record = buildHoleRecord({ holeNumber: currentHole, par: currentPar, totalDistance: holeDistance, greenCode: greenCodes[currentHole - 1], greenName: greenNames[currentHole - 1], shots, isPutter })
+    const finalScore = record.score
 
     const updated = [...completedHoles.filter((h) => h.holeNumber !== currentHole), record].sort(
       (a, b) => a.holeNumber - b.holeNumber
@@ -513,49 +498,13 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs, sample
   const quickPutt = (count: number) => {
     if (!putterName || !isOnGreen || count < 1) return
     setUndoneShots((previous) => previous.filter((entry) => entry.holeNumber > currentHole))
-    const base = currentPrevDistance
-    const putts: ShotRecord[] = []
-    let before = base
-    for (let i = 1; i <= count; i++) {
-      const last = i === count
-      const after = last ? 0 : Math.max(0, roundToTenth((base * (count - i)) / count))
-      putts.push({
-        shotNumber: currentShots.length + i,
-        inputMethod: 'quick_putt',
-        club: putterName,
-        distanceToPinBefore: before,
-        distanceToPinAfter: after,
-        shotDistance: Math.max(0, roundToTenth(before - after)),
-        ballLie: last ? '홀아웃' : '그린',
-        penalty: 0,
-      })
-      before = after
-    }
-    completeHole([...currentShots, ...putts])
+    completeHole([...currentShots, ...buildQuickPutts(currentShots, currentPrevDistance, count, putterName)])
   }
 
   const saveShot = () => {
     if (isRegistered || isRoundComplete || !selectedClub) return
     setUndoneShots((previous) => previous.filter((entry) => entry.holeNumber > currentHole))
-    const prevShot = currentShots[currentShots.length - 1]
-    // 남은 거리가 0이면 저장 시 홀아웃으로 처리한다. OB는 원위치 재타이므로 예외다.
-    const isHoleOut = remainingDistance === 0 && selectedLie !== 'OB'
-    const finalLie: BallLie = isHoleOut ? '홀아웃' : selectedLie
-    // 그린 위 홀아웃은 퍼터로 기록 (퍼트 수 정확도)
-    const club = isHoleOut && prevShot?.ballLie === '그린' && putterName ? putterName : selectedClub
-    const isOb = finalLie === 'OB' // 원위치 재타: 거리 유지, 비거리 통계 제외
-    const finalRemaining = isHoleOut ? 0 : isOb ? currentPrevDistance : remainingDistance
-
-    const newShot: ShotRecord = {
-      shotNumber: currentShots.length + 1,
-      inputMethod: 'manual',
-      club,
-      distanceToPinBefore: currentPrevDistance,
-      distanceToPinAfter: finalRemaining,
-      shotDistance: isOb ? 0 : clamp(calcShotDistance(currentPrevDistance, finalRemaining, isPinOver && !isHoleOut), 0, MAX_GOLF_DISTANCE_M),
-      ballLie: finalLie,
-      penalty: getPenaltyByLie(finalLie),
-    }
+    const { shot: newShot, isHoleOut } = buildShot({ currentShots, distanceBefore: currentPrevDistance, remainingDistance, selectedClub, selectedLie, isPinOver, putterName })
     const updatedShots = [...currentShots, newShot]
 
     if (isHoleOut) {
@@ -564,7 +513,7 @@ export function useRound(clubs: ClubItem[], { choose, confirm }: Dialogs, sample
     }
     setCurrentShots(updatedShots)
     void syncShotEvents(currentHole, updatedShots)
-    setNextInputs(finalRemaining, finalLie, buildClubStats([...allShots, newShot], isPutter), club)
+    setNextInputs(newShot.distanceToPinAfter, newShot.ballLie, buildClubStats([...allShots, newShot], isPutter), newShot.club)
   }
 
   const undoLastShot = () => {
